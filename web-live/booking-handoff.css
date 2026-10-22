@@ -1,0 +1,29 @@
+/* "我要建群咨询" section in the contact panel; follows contact-demo.css colours. */
+.bh { margin-top: 16px; border: 1.5px solid #d9c7a1; border-radius: 14px; background: #fffdf7; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+.bh .cd-section-title { margin: 0; }
+.bh-lead { font-size: 12.5px; color: #6e5538; line-height: 1.55; }
+.contact-demo .bh-want { align-self: flex-start; background: #b5462f; color: #fff; border: 2px solid #3b2a1a; border-radius: 10px; padding: 6px 14px; font-family: var(--hand, cursive); font-size: 17px; box-shadow: 2px 3px 0 #3b2a1a; }
+.bh-form { display: flex; flex-direction: column; gap: 10px; }
+.bh-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 10px; }
+.bh-field { display: flex; flex-direction: column; gap: 3px; font-size: 12px; font-weight: 700; color: #6e5538; min-width: 0; }
+.bh-field input, .bh-field select { font: inherit; font-weight: 400; font-size: 13.5px; color: #3b2a1a; border: 1.5px solid #b7a17d; border-radius: 9px; padding: 6px 8px; background: #fff; min-height: 36px; width: 100%; }
+.bh-row { display: flex; gap: 8px; justify-content: flex-end; align-items: center; }
+.bh-log { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.bh-sys { align-self: stretch; text-align: center; font-size: 12px; color: #6e5538; border: 1.5px dashed #b7a17d; border-radius: 10px; padding: 6px 10px; }
+.bh-req { align-self: flex-end; max-width: 92%; display: flex; flex-direction: column; gap: 2px; background: #fbe3da; border: 1.5px solid #b5462f; border-radius: 12px 12px 3px 12px; padding: 7px 11px; font-size: 12.5px; }
+.bh-req b { font-family: var(--hand, cursive); font-weight: normal; font-size: 16px; }
+.bh-msg { max-width: 90%; background: #f2ead8; border-radius: 12px 12px 12px 3px; padding: 7px 11px; }
+.bh-msg p { font-size: 13px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+.bh-who { display: block; font-size: 10px; font-weight: 700; color: #826b4b; margin-bottom: 2px; }
+.bh-wait { font-size: 12px; color: #826b4b; font-style: italic; }
+.bh-qr { position: relative; align-self: center; display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; background: #fff; border: 2.5px solid #3b2a1a; border-radius: 6px; padding: 16px 14px 12px; margin: 6px 0; max-width: 280px; transform: rotate(-.6deg); box-shadow: 0 10px 24px rgba(40, 28, 16, .2), 3px 4px 0 rgba(59, 42, 26, .2); }
+.bh-tape { position: absolute; width: 70px; height: 18px; background: rgba(242, 193, 78, .78); top: -9px; left: 50%; transform: translateX(-50%) rotate(-3deg); }
+.bh-qrtitle { font-family: var(--display, cursive); font-weight: normal; font-size: 21px; }
+.bh-chan { font-family: var(--hand, cursive); font-size: 14px; padding: 0 10px; border-radius: 999px; border: 2px solid currentColor; }
+.bh-qr.wa .bh-chan { color: #1f7a4d; background: #dcefe2; }
+.bh-qr.wx .bh-chan { color: #2a8a3e; background: #e1f3e4; }
+.bh-code { line-height: 0; }
+.bh-code svg { width: 168px; height: 168px; display: block; }
+.bh-small { font-size: 11.5px; color: #6e5538; line-height: 1.45; }
+.contact-demo .bh-open { background: #1f7a4d; color: #fff; border: 2px solid #3b2a1a; border-radius: 10px; padding: 5px 14px; font-family: var(--hand, cursive); font-size: 16px; }
+@media (max-width: 520px) { .bh-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>两端流程演示 · Liverpool Student Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&family=Nunito:wght@400;600;700;800&family=ZCOOL+KuaiLe&display=swap">
+<style>
+  /* Layout: a slim header with the four steps, then the student site in a phone frame beside the adviser console. */
+  :root { --desk: #d9c9a3; --panel: #fffaf0; --ink: #3b2a1a; --ink-soft: #6e5538; --coral: #b5462f; --yellow: #f2c14e;
+    --display: 'Gochi Hand', 'ZCOOL KuaiLe', cursive; --hand: 'Patrick Hand', 'ZCOOL KuaiLe', cursive; --body: 'Nunito', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif; color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--desk); color: var(--ink); font-family: var(--body); display: flex; flex-direction: column; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); background: var(--ink); color: var(--panel); }
+  h1 { margin: 0; font-family: var(--display); font-weight: normal; font-size: 22px; }
+  ol { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; counter-reset: s; }
+  li { counter-increment: s; font-family: var(--hand); font-size: 15px; border: 1.5px solid var(--panel); border-radius: 999px; padding: 1px 10px 1px 4px; display: inline-flex; gap: 6px; align-items: center; }
+  li::before { content: counter(s); width: 20px; height: 20px; border-radius: 50%; background: var(--yellow); color: var(--ink); display: grid; place-items: center; font-family: var(--body); font-weight: 800; font-size: 12px; }
+  header a { margin-left: auto; color: var(--panel); font-family: var(--hand); font-size: 15px; }
+  main { flex: 1; min-height: 0; display: flex; gap: 20px; padding-block: 16px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .col { display: flex; flex-direction: column; gap: 6px; min-height: 0; }
+  .cap { font-family: var(--hand); font-size: 17px; color: var(--ink-soft); }
+  .student { flex: none; width: 400px; }
+  .adviser { flex: 1; min-width: 0; }
+  iframe { flex: 1; width: 100%; min-height: 0; border: 3px solid var(--ink); background: var(--panel); box-shadow: 0 14px 34px rgba(40, 28, 16, .24), 4px 5px 0 rgba(59, 42, 26, .22); }
+  .student iframe { border-width: 10px; border-radius: 40px; }
+  .adviser iframe { border-radius: 16px; }
+  @media (max-width: 899px) {
+    body { height: auto; }
+    main { flex-direction: column; }
+    .student { width: 100%; }
+    .student iframe { height: 760px; flex: none; border-width: 3px; border-radius: 16px; }
+    .adviser iframe { height: 760px; flex: none; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>人工建群 → 群码回传</h1>
+  <ol>
+    <li>学生在公寓对话框点「我要建群咨询」</li>
+    <li>顾问后台收到提醒</li>
+    <li>顾问人工建群，发送群二维码</li>
+    <li>学生在原对话框里扫码进群</li>
+  </ol>
+  <a href="./index.html">← 返回地图</a>
+</header>
+<main>
+  <div class="col student"><span class="cap">学生 · 网站</span><iframe id="student" title="学生网站"></iframe></div>
+  <div class="col adviser"><span class="cap">顾问 · 后台</span><iframe id="adviser" title="顾问后台" src="./adviser.html?embed=1"></iframe></div>
+</main>
+<script src="./home-tools.js"></script>
+<script>
+  /* ?home= carries the home's name from the contact panel; open the student side on that home. */
+  (function () {
+    const name = new URLSearchParams(location.search).get('home') || '';
+    const ids = (window.HomeTools && HomeTools.HOME_IDENTITIES) || {};
+    const id = (ids[name] || ids['iQ Great Newton House'] || {}).id || '';
+    let lang = 'zh';
+    try { lang = localStorage.getItem('lsm-lang') || 'zh'; } catch (e) { /* 忽略 */ }
+    document.getElementById('student').src = './index.html#' + new URLSearchParams(id ? { lang, home: id } : { lang }).toString();
+  })();
+</script>
+</body>
+</html>

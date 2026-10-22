@@ -4,7 +4,8 @@
 
 | 目录 | 内容 |
 |---|---|
-| `web-demo/` | 完整流程的 Web Demo（学生 App + 顾问后台 + 数据看板），见 [web-demo/README.md](web-demo/README.md) |
+| `web-live/` | **线上版网页**（布局与线上一致）+ 房型照片、建群咨询、顾问后台、两端流程演示，见 [web-live/README.md](web-live/README.md) |
+| `web-demo/` | 早前自行设计的手机 App 风格 Demo（学生 App + 顾问后台 + 数据看板），见 [web-demo/README.md](web-demo/README.md) |
 | `web-original/liverpool-life-map-en/` | 网页原版：手绘地图、两个测试、在线咨询、PWA |
 | `web-original/consult-server/` | 客服后台：网页聊天、小程序客服渠道、顾问工作台 |
 | `miniprogram/` | 微信小程序版 |
