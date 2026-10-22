@@ -3,7 +3,7 @@
    由学生端 booking-handoff.js 写入，后台发出的消息和群二维码也写回这里，两边通过 storage 事件同步。 */
 (function (root) {
   'use strict';
-  const KEY = 'lsm-live-admin-v1', ME = 'lsm-live-me-v1';
+  const KEY = 'lsm-live-admin-v2', ME = 'lsm-live-me-v1';
   const listeners = new Set();
   const read = k => { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } };
   const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* 存储不可用时只在内存里演示 */ } };
@@ -38,6 +38,7 @@
   });
 
   const Store = {
+    server: false,
     get s() { return state; },
     on(fn) { listeners.add(fn); },
     save,

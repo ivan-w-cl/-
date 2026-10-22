@@ -44,7 +44,28 @@ SMTP_HOST=smtp.gmail.com SMTP_PORT=465 SMTP_USER=bookings@你的域名 SMTP_PASS
   PUBLIC_URL=https://你的域名 ADMIN_PASSWORD=换成你的密码 node consult-server/server.js
 ```
 
-## 二、流程
+## 二（新）、配合线上版网页：咨询编号 + 群码（`/api/cases`）
+
+线上版网页（`web-live/`）和顾问后台（`web-live/adviser.html`）用的是这一组接口。学生不注册、不留任何资料：
+
+```bash
+# 在仓库根目录
+SITE_DIR=web-live ADMIN_PASSWORD=换成你的密码 node web-original/consult-server/server.js
+# 学生网站 http://localhost:8765/   顾问后台 http://localhost:8765/adviser.html
+```
+
+1. 学生点 **立即进群** → `POST /api/cases`。服务器发一个 **咨询编号**（如 `LSM-7K2Q`）和只有这台设备知道的令牌，按浏览器时区和语言猜地区（新加坡 / 中国 / 香港 / 台湾 / 日本 / 英国），并发邮件或企业微信提醒：「LSM-7K2Q · SG」。
+2. 专家在后台登录，看到「LSM-7K2Q · 新加坡 · 当地时间 21:05」，在 WhatsApp 或微信里**新建一个群**，然后：
+   - WhatsApp：群组信息 → 通过链接邀请 → 复制链接，贴进后台（必须是 `https://chat.whatsapp.com/…`），系统自动生成二维码。
+   - 微信：聊天信息 → 群二维码 → 保存图片，上传到后台（png/jpg ≤ 4MB）。微信群码 7 天后失效，学生端会显示「申请新的二维码」。
+3. 学生网页每 6 秒查询一次 `GET /api/cases/:id?token=…`，群码和专家留言一到就显示；关掉网页下次打开再查（编号存在这台设备的浏览器里）。
+4. 群名带编号（`LSM-7K2Q · Capital Gate`），一个编号只对应一个群：谁扫码进了这个群，谁就是这位学生。
+
+接口：`POST /api/cases`、`GET /api/cases/:id`、`POST /api/cases/:id/homes`、`POST /api/cases/:id/renew`；后台（需登录）`GET /api/admin/cases`、`POST /api/admin/cases/:id/group | status | reply`。测试：`npm test`（`test/cases.cjs`）。
+
+网页没连上服务器（例如只放在静态网站上）时，学生端和后台会自动退回浏览器本地演示模式。
+
+## 二、流程（旧版小程序原型的「在线咨询」对话框）
 
 1. 学生在房源卡片、对比表、测验结果卡上点 **咨询这处公寓**，弹出“在线咨询”对话框：显示房源、测验摘要、快捷回复（我想咨询这套房 / 帮我建群 …）、可选昵称和输入框。
 2. 发送后，后端创建会话（`data/sessions.json`），返回会话 ID 和访问令牌；浏览器把它们存在 `localStorage`（`lsm-consult-v1`），关掉再打开能看到历史记录。

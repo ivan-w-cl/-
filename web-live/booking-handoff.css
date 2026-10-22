@@ -68,3 +68,7 @@
 .bh-askf { display: flex; gap: 6px; }
 .bh-askf input { flex: 1; min-width: 0; border: 1.5px solid #b7a17d; border-radius: 9px; padding: 6px 10px; font: 13.5px var(--body, sans-serif); background: #fff; color: #3b2a1a; }
 .contact-demo .bh-askb { border: 1.5px solid #3b2a1a; border-radius: 9px; background: #f8efd9; padding: 4px 14px; font-weight: 700; }
+.bh-codebox { display: flex; flex-direction: column; gap: 2px; align-items: center; text-align: center; border: 1.5px dashed #b7a17d; border-radius: 10px; padding: 6px 10px; }
+.bh-codebox b { font: 17px var(--hand, cursive); letter-spacing: .04em; }
+.bh-codebox span { font-size: 11.5px; color: #6e5538; }
+.bh-code img { display: block; width: 176px; height: 176px; object-fit: contain; }

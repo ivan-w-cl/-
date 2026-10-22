@@ -9,10 +9,12 @@
   const lang = () => Store.s.demoLang;
   const a = () => U.A(lang());
   const isDone = c => ['joined', 'booked'].includes(c.status);
-  const nameOf = c => c.me ? (c.name ? c.name + ' · ' : '') + a().you : c.name;
+  /* 学生没有名字，用咨询编号区分；本机演示的那位学生后面标「你」 */
+  const nameOf = c => (c.code || c.name || '—') + (c.me ? ' · ' + a().you : '');
+  const localTime = c => { const tz = c.tz || D.TZ[c.region]; if (!tz) return ''; try { return new Date().toLocaleTimeString(lang() === 'en' ? 'en-GB' : 'zh-CN', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }); } catch (_) { return ''; } };
 
   function statusPill(s) { return `<span class="pill st-${s}">${esc(a()['st_' + s])}</span>`; }
-  function regionTag(c) { const r = D.REGIONS[c.region]; return `<span class="rtag">${r.flag} ${esc(U.L(r, lang()))}</span>`; }
+  function regionTag(c) { const r = D.REGIONS[c.region] || { flag: '🌐', en: 'Unknown', zh: '未知' }; return `<span class="rtag">${r.flag} ${esc(U.L(r, lang()))}</span>`; }
 
   function list() {
     const A = a();
@@ -29,7 +31,7 @@
           `<button role="tab" aria-selected="${filter === k}" class="${filter === k ? 'on' : ''} ${k === 'need' && need ? 'alert' : ''}" data-filter="${k}">${esc(l)}</button>`).join('')}</div></div>
       <ul>${cs.map(c => { const last = c.messages[c.messages.length - 1];
         return `<li><button class="conv ${c.id === current ? 'on' : ''} ${c.status === 'requested' ? 'needs' : ''}" data-conv="${c.id}">
-          <span class="av ${c.me ? 'me' : ''}">${esc(nameOf(c).slice(0, 1))}</span>
+          <span class="av ${c.me ? 'me' : ''}">${(D.REGIONS[c.region] || {}).flag || '·'}</span>
           <span class="grow"><span class="row between"><b>${esc(nameOf(c))}</b><span class="fine">${esc(U.ago(c.updated, lang()))}</span></span>
           <span class="row between"><span class="fine trunc">${esc(preview(last))}</span>${c.unread ? `<span class="badge-dot">${c.unread}</span>` : ''}</span>
           <span class="row gap">${regionTag(c)}${statusPill(c.status)}</span></span></button></li>`; }).join('')}</ul></div>`;
@@ -51,10 +53,11 @@
       const side = m.from === 'agent' ? 'out' : 'in';
       let body;
       if (m.type === 'welcome') body = `<div class="bubble">${esc(U.T(c.lang).welcome)}</div>`;
+      else if (m.type === 'home' && !HM.byId(m.homeId)) body = '';
       else if (m.type === 'home') { const h = HM.byId(m.homeId), r = m.room != null ? D.roomsFor(h).types[m.room] : null, cover = D.coverPhoto(h);
         body = `<div class="ctxcard">${cover ? `<img src="${cover}" alt="">` : `<span class="hc-num">${h.n}</span>`}<span><span class="fine">${esc(A.viewed)}</span><b>${h.n} · ${esc(h.name)}</b><span>${r ? esc(r.name + ' · ' + r.price + '/wk') : esc(U.fromPrice(h, lg))}</span></span></div>`; }
       else if (m.type === 'request') body = `<div class="bubble req"><b>🙋 ${esc(A.newReq)}</b>${reqLines(c)}</div>`;
-      else if (m.type === 'qr') body = c.group ? `<div class="bubble qrmini"><div class="qr">${U.qrSvg(c.group.link, 2)}</div><span><b>${esc(c.group.name)}</b><br><span class="fine">${esc(U.L(D.CHANNELS[c.group.channel], lg))} · ${esc(U.L(D.TEAMS.find(x => x.id === c.group.team).name, lg))}${c.group.auto ? (lg === 'en' ? ' · sent from the pre-built pool' : ' · 预建群池自动派发') : ''}</span></span></div>` : '';
+      else if (m.type === 'qr') body = c.group ? `<div class="bubble qrmini"><div class="qr">${c.group.image ? `<img src="${esc(c.group.image)}" alt="">` : U.qrSvg(c.group.link, 2)}</div><span><b>${esc(c.group.name)}</b><br><span class="fine">${esc(U.L(D.CHANNELS[c.group.channel], lg))} · ${esc(U.L(D.TEAMS.find(x => x.id === c.group.team).name, lg))}${c.group.auto ? (lg === 'en' ? ' · sent from the pre-built pool' : ' · 预建群池自动派发') : ''}</span></span></div>` : '';
       else body = `<div class="bubble${m.ai ? ' ai' : ''}">${m.ai ? `<span class="fine">🤖 ${esc(lg === 'en' ? 'AI assistant, before the group' : 'AI 助手 · 进群前')}</span><br>` : ''}${esc(m.text)}</div>`;
       return `<div class="msg ${side}">${body}<time>${U.clock(m.at)} · ${esc(U.ago(m.at, lg))}</time></div>`;
     }).join('');
@@ -91,7 +94,8 @@
       <dl>
         <dt>${esc(A.region)}</dt><dd>${regionTag(c)}</dd>
         <dt>${esc(A.lang)}</dt><dd>${c.lang === 'en' ? 'English' : '中文'}</dd>
-        <dt>${esc(A.source)}</dt><dd>${esc(c.source)}</dd>
+        <dt>${esc(lg === 'en' ? 'Local time' : '学生当地时间')}</dt><dd>${esc(localTime(c) || A.none)}${c.tz ? ` <span class="fine">(${esc(c.tz)})</span>` : ''}</dd>
+        <dt>${esc(A.source)}</dt><dd>${esc(c.source || A.none)}</dd>
         <dt>${esc(A.quiz)}</dt><dd>${esc(c.quiz || A.none)}</dd>
         <dt>${esc(A.viewed)}</dt><dd class="row wrap">${homes(c.viewed)}</dd>
         <dt>${esc(A.favs)}</dt><dd class="row wrap">${homes(c.favorites)}</dd>
@@ -112,16 +116,20 @@
         <p class="fine">${team.members.map(esc).join(' · ')} · ${esc(team.langs)}</p>
         <fieldset class="field"><legend>${esc(A.mChannel)}</legend><div class="row gap">${['whatsapp', 'wechat'].map(ch => `<label class="radio"><input type="radio" name="g-ch" value="${ch}" ${ch === m.channel ? 'checked' : ''}> ${esc(U.L(D.CHANNELS[ch], lg))}</label>`).join('')}</div></fieldset>
         <label class="field"><span>${esc(A.mGroupName)}</span><input id="g-name" value="${esc(m.name)}"></label>
-        <label class="field"><span>${esc(A.mLink)}</span><input id="g-link" value="${esc(m.link)}"></label>
-        <p class="fine">${esc(A.mLinkHint)}</p>
+        ${m.channel === 'wechat'
+          ? `<label class="field"><span>${esc(lg === 'en' ? 'WeChat group QR code (image)' : '微信群二维码图片')}</span><input id="g-img" type="file" accept="image/png,image/jpeg"></label>
+             <p class="fine">${esc(lg === 'en' ? 'In WeChat open the group → Group info → Group QR code → Save image, then upload it here. WeChat group codes expire after 7 days.' : '在微信里打开这个群 → 聊天信息 → 群二维码 → 保存图片，再上传到这里。微信群二维码 7 天后失效。')}${Store.server ? '' : esc(lg === 'en' ? ' (Demo: if you skip it, a sample code is used.)' : '（演示：不上传就用示例二维码。）')}</p>`
+          : `<label class="field"><span>${esc(A.mLink)}</span><input id="g-link" value="${esc(m.link)}" placeholder="https://chat.whatsapp.com/…"></label>
+             <p class="fine">${esc(lg === 'en' ? 'In WhatsApp open the group → Group info → Invite via link → Copy link, then paste it here. The QR code is generated for you.' : '在 WhatsApp 里打开这个群 → 群组信息 → 通过链接邀请 → 复制链接，粘贴到这里，系统自动生成二维码。')}</p>`}
       </div>
-      <div class="mprev"><span class="fine">${esc(A.mPreview)}</span><div class="qr" id="g-qr">${U.qrSvg(m.link, 3)}</div><b>${esc(m.name)}</b><span class="fine">${esc(U.L(D.CHANNELS[m.channel], lg))}</span></div></div>
+      <div class="mprev"><span class="fine">${esc(A.mPreview)}</span><div class="qr" id="g-qr">${m.image ? `<img src="${m.image}" alt="">` : (m.channel === 'wechat' && Store.server ? `<span class="fine">${esc(lg === 'en' ? 'Upload the group QR image' : '请上传群二维码图片')}</span>` : U.qrSvg(m.link, 3))}</div><b>${esc(m.name)}</b><span class="fine">${esc(U.L(D.CHANNELS[m.channel], lg))}</span></div></div>
       <div class="row gap end"><button class="btn" type="button" data-act="closemodal">${esc(U.T(lg).cancel)}</button><button class="btn main" type="submit">${esc(A.mSend)}</button></div>
     </form></div>`;
   }
   function openModal() {
     const c = Store.conv(current), ch = (c.request && c.request.channel) || D.REGIONS[c.region].channel;
-    modal = { team: c.region === 'JP' ? 'C' : 'A', channel: ch, name: ['LSM', c.request ? c.request.name : c.name, c.request && (c.request.homeName || c.request.intake)].filter(Boolean).join(' · '), link: D.demoLink(ch, c.id + Date.now().toString(36).slice(-4)) };
+    modal = { team: c.region === 'JP' ? 'C' : 'A', channel: ch, name: [c.code || (c.request && c.request.name), c.request && c.request.homeName].filter(Boolean).join(' · '),
+      link: Store.server ? '' : D.demoLink(ch, c.id + Date.now().toString(36).slice(-4)), image: '' };
     render();
   }
 
@@ -136,13 +144,13 @@
     const max = visitors;
     const pct = (n, d) => d ? (n / d * 100).toFixed(n / d < .1 ? 1 : 0) + '%' : '—';
     const regions = Object.keys(D.REGIONS).map(r => {
-      const rc = cs.filter(c => c.region === r), v = D.VISITORS[r] + (Store.me().region === r ? 1 : 0);
-      return { r, v, chats: rc.filter(c => reached(c, 'chatting')).length, req: rc.filter(c => reached(c, 'requested')).length, joined: rc.filter(c => reached(c, 'joined')).length, booked: rc.filter(c => reached(c, 'booked')).length };
-    });
+      const rc = cs.filter(c => c.region === r), v = (D.VISITORS[r] || 0) + (Store.me() && Store.me().region === r ? 1 : 0);
+      return { r, v, n: rc.length, chats: rc.filter(c => reached(c, 'chatting')).length, req: rc.filter(c => reached(c, 'requested')).length, joined: rc.filter(c => reached(c, 'joined')).length, booked: rc.filter(c => reached(c, 'booked')).length };
+    }).filter(x => x.v || x.n);
     const sources = D.SOURCES.map(s => { const sc = cs.filter(c => c.source === s); return { s, n: sc.length, req: sc.filter(c => reached(c, 'requested')).length, booked: sc.filter(c => reached(c, 'booked')).length }; });
     const smax = Math.max(...sources.map(s => s.n), 1);
     return `<div class="dash">
-      <p class="demo-note">${esc(A.demoData)}</p>
+      <p class="demo-note">${esc(Store.server ? (lg === 'en' ? 'Live data from the server. Visitor numbers are not tracked yet, so the first row is a sample.' : '服务器上的真实数据；访客数暂未统计，第一行是示例数字。') : A.demoData)}</p>
       <div class="kpis">${all.map(([k, n], i) => `<div class="kpi"><span class="fine">${esc(A[k])}</span><b>${n.toLocaleString()}</b>${i ? `<span class="fine">${esc(A.conv)} ${pct(n, all[i - 1][1])}</span>` : '<span class="fine">&nbsp;</span>'}</div>`).join('')}</div>
       <section class="panel"><div class="row between"><b class="h3">${esc(A.funnel)}</b><span class="fine">${esc(A.funnelNote)}</span></div>
         <div class="funnel">${all.map(([k, n]) => { const w = Math.max(1.5, Math.sqrt(n / max) * 100);
@@ -202,12 +210,22 @@
   function onChange(e) {
     const x = e.target; if (!modal) return;
     if (x.id === 'g-team') { modal.team = x.value; render(); }
-    if (x.name === 'g-ch') { modal.channel = x.value; modal.link = D.demoLink(x.value, current + Date.now().toString(36).slice(-4)); render(); }
+    if (x.name === 'g-ch') { modal.channel = x.value; modal.image = ''; modal.link = Store.server ? '' : D.demoLink(x.value, current + Date.now().toString(36).slice(-4)); render(); }
+    if (x.id === 'g-img' && x.files && x.files[0]) {
+      const f = x.files[0]; if (f.size > 4e6) { U.toast(lang() === 'en' ? 'Image is too large (max 4 MB)' : '图片太大（最多 4 MB）'); return; }
+      const r = new FileReader(); r.onload = () => { modal.image = r.result; render(); }; r.readAsDataURL(f);
+    }
   }
   function onSubmit(e) {
     e.preventDefault();
-    if (e.target.id === 'acomposer') { const v = reply.trim(); if (!v) return; reply = ''; Store.agentSend(current, { text: v }); render(); el.querySelector('#aIn').focus(); }
-    if (e.target.id === 'gform') { Store.sendGroup(current, { team: modal.team, channel: modal.channel, name: modal.name, link: modal.link }); modal = null; render(); U.toast(a().sentQr); }
+    if (e.target.id === 'acomposer') { const v = reply.trim(); if (!v) return; reply = ''; Promise.resolve(Store.agentSend(current, { text: v })).catch(() => U.toast(lang() === 'en' ? 'Not sent' : '没有发出')); render(); el.querySelector('#aIn').focus(); }
+    if (e.target.id === 'gform') {
+      const g = { team: modal.team, channel: modal.channel, name: modal.name, link: modal.channel === 'wechat' ? (modal.image ? '' : modal.link) : modal.link, image: modal.image || '' };
+      if (Store.server && g.channel === 'wechat' && !g.image) { U.toast(lang() === 'en' ? 'Upload the WeChat group QR image first' : '请先上传微信群二维码图片'); return; }
+      if (g.channel === 'whatsapp' && !/^https:\/\/chat\.whatsapp\.com\/[A-Za-z0-9]{10,40}$/.test(g.link)) { U.toast(lang() === 'en' ? 'Paste the WhatsApp group invite link (https://chat.whatsapp.com/…)' : '请粘贴 WhatsApp 群邀请链接（https://chat.whatsapp.com/…）'); return; }
+      Promise.resolve(Store.sendGroup(current, g)).then(() => { modal = null; render(); U.toast(a().sentQr); })
+        .catch(err => U.toast((lang() === 'en' ? 'Not sent: ' : '没有发出：') + (err && err.message || '')));
+    }
   }
   function onKey(e) { if (e.key === 'Escape' && modal) { modal = null; render(); } }
   function mount(node) {

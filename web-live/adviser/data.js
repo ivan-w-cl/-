@@ -53,8 +53,13 @@
   const REGIONS = {
     SG: { flag: '🇸🇬', en: 'Singapore', zh: '新加坡', channel: 'whatsapp', lang: 'en' },
     CN: { flag: '🇨🇳', en: 'China', zh: '中国', channel: 'wechat', lang: 'zh' },
-    JP: { flag: '🇯🇵', en: 'Japan', zh: '日本', channel: 'whatsapp', lang: 'en' }
+    JP: { flag: '🇯🇵', en: 'Japan', zh: '日本', channel: 'whatsapp', lang: 'en' },
+    HK: { flag: '🇭🇰', en: 'Hong Kong', zh: '香港', channel: 'whatsapp', lang: 'zh' },
+    TW: { flag: '🇹🇼', en: 'Taiwan', zh: '台湾', channel: 'whatsapp', lang: 'zh' },
+    UK: { flag: '🇬🇧', en: 'UK', zh: '英国', channel: 'whatsapp', lang: 'en' }
   };
+  /* 学生的地区只按浏览器时区和界面语言推测；顾问后台据此显示当地时间 */
+  const TZ = { SG: 'Asia/Singapore', CN: 'Asia/Shanghai', JP: 'Asia/Tokyo', HK: 'Asia/Hong_Kong', TW: 'Asia/Taipei', UK: 'Europe/London' };
   const CHANNELS = { whatsapp: { en: 'WhatsApp group', zh: 'WhatsApp 群' }, wechat: { en: 'WeChat group', zh: '微信群' } };
   const SOURCES = ['Instagram', 'TikTok', '小红书', 'Google', 'Referral'];
   const STATUSES = ['browsing', 'chatting', 'requested', 'qr_sent', 'joined', 'booked'];
@@ -114,7 +119,7 @@
   };
   const ADMIN = {
     zh: {
-      inbox: '会话', dash: '数据看板', all: '全部', needGroup: '待建群', active: '跟进中', done: '已完成', search: '搜索姓名…',
+      inbox: '会话', dash: '数据看板', all: '全部', needGroup: '待建群', active: '跟进中', done: '已完成', search: '搜索咨询编号…',
       st_browsing: '浏览中', st_chatting: '已对话', st_requested: '待建群', st_qr_sent: 'QR 已发送', st_joined: '已进群', st_booked: '已预定',
       ctx: '用户资料', region: '地区', lang: '界面语言', source: '来源', quiz: '测试结果', viewed: '看过的公寓', favs: '收藏', request: '建群请求',
       buildGroup: '建群并发送 QR', markJoined: '标记已进群', markBooked: '标记已预定', reply: '回复…', aiSuggest: 'AI 建议回复（占位）',
@@ -128,7 +133,7 @@
       minutes: '{n} 分钟', hours: '{n} 小时', days: '{n} 天', rate: '占比', count: '人数', remind: 'QR 已发出超过 24 小时，学生还没进群，建议跟进。'
     },
     en: {
-      inbox: 'Inbox', dash: 'Dashboard', all: 'All', needGroup: 'Needs a group', active: 'In progress', done: 'Done', search: 'Search names…',
+      inbox: 'Inbox', dash: 'Dashboard', all: 'All', needGroup: 'Needs a group', active: 'In progress', done: 'Done', search: 'Search request codes…',
       st_browsing: 'Browsing', st_chatting: 'Chatting', st_requested: 'Needs a group', st_qr_sent: 'QR sent', st_joined: 'In group', st_booked: 'Booked',
       ctx: 'Student', region: 'Region', lang: 'App language', source: 'Source', quiz: 'Quiz result', viewed: 'Homes viewed', favs: 'Saved', request: 'Group request',
       buildGroup: 'Create group & send QR', markJoined: 'Mark as in group', markBooked: 'Mark as booked', reply: 'Reply…', aiSuggest: 'AI suggested reply (placeholder)',
@@ -171,7 +176,9 @@
       const ago = Math.round((0.2 + rand() * (status === 'booked' ? 14 : status === 'requested' ? 0.6 : 5)) * 864e5) / 1;
       const start = now - ago, msgs = [], src = SOURCES[Math.floor(rand() * SOURCES.length)];
       const life = rand() < .55 ? pickCharacter(rand, lang) : '';
-      const conv = { id: 'c' + (i + 1), name, region, lang, source: src, status, viewed, favorites: rand() < .6 ? [h.id] : [],
+      /* 真实学生没有名字：只有咨询编号（示例里的名字只用来生成固定的编号） */
+      const code = 'LSM-' + [0, 1, 2, 3].map(() => '23456789ABCDEFGHJKMNPQRSTUVWXYZ'[Math.floor(rand() * 31)]).join(''); void name;
+      const conv = { id: 'c' + (i + 1), code, name: code, tz: TZ[region], region, lang, source: src, status, viewed, favorites: rand() < .6 ? [h.id] : [],
         quiz: life, request: null, group: null, unread: 0, updated: start, seed: true, messages: msgs };
       if (status === 'browsing') { conv.updated = start; out.push(conv); return; }
       msgs.push({ from: 'agent', text: lang === 'zh' ? '你好！我是你的住宿顾问，有问题随时问我。' : "Hi! I'm your housing adviser. Ask me anything.", at: start });
@@ -181,12 +188,11 @@
       else conv.unread = 1;
       if (['requested', 'qr_sent', 'joined', 'booked'].includes(status)) {
         const at = start + (status === 'requested' ? 9 * 6e4 : 36e5);
-        conv.request = { name, intake: rand() < .7 ? 'Sep 2027' : 'Jan 2027', uni: ['uol', 'ljmu-city', 'ljmu-mp', 'uol'][i % 4], budget: [180, 200, 250, 300][i % 4],
-          room: ['ensuite', 'studio', 'any'][i % 3], channel: REGIONS[region].channel, at };
+        conv.request = { name: code, channel: REGIONS[region].channel, homeId: h.id, homeName: h.name, at, oneTap: true };
         msgs.push({ from: 'student', type: 'request', at });
         if (status !== 'requested') {
           const team = TEAMS[region === 'JP' ? 2 : i % 4 === 3 ? 3 : i % 2];
-          conv.group = { team: team.id, channel: REGIONS[region].channel, name: 'LSM · ' + name + ' · ' + conv.request.intake, link: demoLink(REGIONS[region].channel, conv.id), at: at + 25 * 6e4 };
+          conv.group = { team: team.id, channel: REGIONS[region].channel, name: code + ' · ' + h.name, link: demoLink(REGIONS[region].channel, conv.id), at: at + 25 * 6e4 };
           msgs.push({ from: 'agent', type: 'qr', at: at + 25 * 6e4 });
         }
         if (status === 'requested') conv.unread = 1;
@@ -208,5 +214,5 @@
   /* 访问量（看板分母）：演示用的固定数字 */
   const VISITORS = { SG: 1460, CN: 1180, JP: 410 };
 
-  root.DemoData = { ROOMS, roomsFor, coverPhoto, PHOTO, TEAMS, REGIONS, CHANNELS, SOURCES, STATUSES, EXT, ADMIN, seedConversations, demoLink, VISITORS };
+  root.DemoData = { TZ, ROOMS, roomsFor, coverPhoto, PHOTO, TEAMS, REGIONS, CHANNELS, SOURCES, STATUSES, EXT, ADMIN, seedConversations, demoLink, VISITORS };
 })(typeof globalThis !== 'undefined' ? globalThis : this);

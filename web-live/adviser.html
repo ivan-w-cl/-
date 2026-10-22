@@ -52,11 +52,27 @@
 <script src="./group-pool.js"></script>
 <script src="./mail-outbox.js"></script>
 <script src="./adviser/email-template.js"></script>
-<script src="./adviser/store-live.js"></script>
-<script src="./adviser/admin.js"></script>
-<script src="./adviser/mail-panel.js"></script>
 <script>
-(function () {
+/* 和 consult-server 一起部署时用服务器数据（store-server.js），否则用浏览器本地演示（store-live.js） */
+(async function boot() {
+  'use strict';
+  const load = src => new Promise((ok, no) => { const x = document.createElement('script'); x.src = src; x.onload = ok; x.onerror = no; document.body.appendChild(x); });
+  let server = false;
+  if (/^https?:$/.test(location.protocol)) {
+    try {
+      const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), 2500);
+      const r = await fetch('./api/health', { signal: ctl.signal, cache: 'no-store' }); clearTimeout(t);
+      server = !!(r.ok && (await r.json()).cases);
+    } catch (e) { /* 没有服务器：演示模式 */ }
+  }
+  await load(server ? './adviser/store-server.js' : './adviser/store-live.js');
+  if (server) document.body.classList.add('server');
+  await load('./adviser/admin.js');
+  await load('./adviser/mail-panel.js');
+  if (window.Store.ready) await window.Store.ready;
+  start(server);
+})();
+function start(server) {
   'use strict';
   const Store = window.Store, U = window.UI, bar = document.getElementById('bar');
   if (/[?&]embed=1/.test(location.search)) document.body.classList.add('embed');
@@ -69,6 +85,11 @@
   function renderBar() {
     const k = c();
     const P = window.GroupPool.load();
+    if (server) {
+      bar.innerHTML = `<span class="brand">${k.brand} <small>${k.tag}</small></span>
+        <div class="tools"><a href="./index.html" target="_blank" rel="noopener">${k.site}</a><button data-act="lang">${k.lang}</button><button data-act="logout">${Store.s.demoLang === 'en' ? 'Sign out' : '退出登录'}</button></div>`;
+      return;
+    }
     bar.innerHTML = `<span class="brand">${k.brand} <small>${k.tag}</small></span>
       <div class="pool"><b>${k.pool}</b><label><input type="checkbox" id="poolAuto" ${P.auto ? 'checked' : ''}> ${k.auto}</label>
         <span>${k.left.replace('{a}', window.GroupPool.count('whatsapp')).replace('{b}', window.GroupPool.count('wechat'))}</span><button data-act="refill">${k.refill}</button></div>
@@ -78,6 +99,7 @@
   bar.addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
     if (b.dataset.act === 'lang') { Store.s.demoLang = Store.s.demoLang === 'en' ? 'zh' : 'en'; Store.save(); renderBar(); window.Admin.render(); }
+    if (b.dataset.act === 'logout') { fetch('./api/admin/logout', { method: 'POST' }).then(() => location.reload()); return; }
     if (b.dataset.act === 'mail') { window.MailPanel.open(); return; }
     if (b.dataset.act === 'refill') { window.GroupPool.refill(5); renderBar(); U.toast(c().refilled); return; }
     if (b.dataset.act === 'reset') {
@@ -94,7 +116,7 @@
   openFromHash(); addEventListener('hashchange', openFromHash);
   Store.on(() => { window.Admin.refresh(); badge(); renderBar(); });
   renderBar(); badge();
-})();
+}
 </script>
 </body>
 </html>

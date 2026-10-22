@@ -9,6 +9,7 @@ const http = require('http'), fs = require('fs'), path = require('path'), crypto
 const { Store } = require('./lib/store');
 const { createNotifiers } = require('./lib/notifiers');
 const { createAuth } = require('./lib/auth');
+const { createCasesApi } = require('./lib/cases');
 const channels = { web: require('./channels/web'), miniprogram: require('./channels/miniprogram') };
 
 const env = process.env;
@@ -17,6 +18,7 @@ const SITE_DIR = path.resolve(env.SITE_DIR || path.join(__dirname, '..', 'liverp
 const DATA_DIR = path.resolve(env.DATA_DIR || path.join(__dirname, 'data'));
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
 const PUBLIC_URL = (env.PUBLIC_URL || '').replace(/\/$/, '');
+const ADVISER_PATH = env.ADVISER_PATH || '/adviser.html';   // 订房专家后台（web-live/adviser.html）
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 
 const store = new Store(path.join(DATA_DIR, 'sessions.json'));
@@ -54,6 +56,7 @@ function limited(req, key, max, windowMs) {
   const ip = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim(), k = key + ip, now = Date.now();
   const arr = (hits.get(k) || []).filter(t => now - t < windowMs); arr.push(now); hits.set(k, arr); return arr.length > max;
 }
+let casesApi = null;   // 咨询编号 + 群码（lib/cases.js），在 helpers 定义完之后创建
 function readUpload(name) {
   if (!/^[a-z0-9_-]+\.(png|jpg)$/.test(name)) throw new Error('bad upload name');
   return { buffer: fs.readFileSync(path.join(UPLOAD_DIR, name)), name, mime: name.endsWith('.png') ? 'image/png' : 'image/jpeg' };
@@ -69,7 +72,10 @@ function decodeImage(dataUrl) {
 /* ---------- API ---------- */
 async function api(req, res, url) {
   const p = url.pathname, method = req.method;
-  if (p === '/api/health') return send(res, 200, { ok: true, service: 'consult', channels: Object.values(channels).filter(c => c.enabled).map(c => c.name), notifiers: notifier.names });
+  if (p === '/api/health') return send(res, 200, { ok: true, service: 'consult', cases: true, channels: Object.values(channels).filter(c => c.enabled).map(c => c.name), notifiers: notifier.names });
+  if (!casesApi) casesApi = createCasesApi({ store, notifier, send, readBody, json, clean, limited, decodeImage, uploadDir: UPLOAD_DIR,
+    adviserUrl: r => (PUBLIC_URL || (r ? `http://${r.headers.host || 'localhost:' + PORT}` : '')) + ADVISER_PATH });
+  if (p === '/api/cases' || p.startsWith('/api/cases/')) return casesApi(req, res, url, false);
 
   // ---- student (web channel) ----
   if (p === '/api/consult/sessions' && method === 'POST') {
@@ -120,6 +126,7 @@ async function api(req, res, url) {
   if (p === '/api/admin/logout' && method === 'POST') return send(res, 200, { ok: true }, { 'Set-Cookie': 'consult_admin=; Path=/; Max-Age=0' });
   if (p.startsWith('/api/admin/')) {
     if (!auth.verify(req.headers.cookie)) return send(res, 401, { error: 'login_required' });
+    if (p.startsWith('/api/admin/cases')) { const done = await casesApi(req, res, url, true); if (done !== false) return; }
     if (p === '/api/admin/sessions' && method === 'GET') {
       return send(res, 200, { usingDefaultPassword: auth.usingDefault, sessions: store.list().map(s => ({ ...publicSession(s), channel: s.channel, updatedAt: s.updatedAt, lastStudentAt: s.lastStudentAt,
         replyWindowEndsAt: s.channel === 'miniprogram' ? new Date(Date.parse(s.lastStudentAt) + 48 * 3600e3).toISOString() : null })) });

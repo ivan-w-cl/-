@@ -8,6 +8,12 @@
 
 另存时没有一起保存 `sw.js`，这里按网页原版补了一份。
 
+## 真实运行（跨设备）
+
+和 `web-original/consult-server` 一起部署：`SITE_DIR=web-live node web-original/consult-server/server.js`（见那里的 README）。
+网页一打开先查 `./api/health`：有服务器就用真实数据（`case-api.js`、`adviser/store-server.js`，后台需要登录）；没有就退回浏览器本地演示（`adviser/store-live.js`），两种模式界面一样。
+学生只有一个 **咨询编号**（如 `LSM-7K2Q`），后台按编号、地区、当地时间区分学生，不收集姓名或联系方式。
+
 ## 在线版布局之上补充的功能
 
 线上版原有文件只改了 `index.html` 里的几行引用，以及 `home-match.js` 的答题交互（单选题点选后自动进入下一题；两道多选题选满上限或选「都可以」时自动进入下一题，少选可点「下一题」），新功能都在新文件里，不改变原有布局：

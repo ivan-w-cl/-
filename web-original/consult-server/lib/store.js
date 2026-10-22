@@ -7,6 +7,7 @@ class Store {
     this.file = file; this.data = { sessions: {} }; this.queue = Promise.resolve();
     fs.mkdirSync(path.dirname(file), { recursive: true });
     try { this.data = JSON.parse(fs.readFileSync(file, 'utf8')); if (!this.data.sessions) this.data.sessions = {}; } catch (_) {}
+    if (!this.data.cases) this.data.cases = {};
   }
   save() {
     const json = JSON.stringify(this.data, null, 1);
@@ -35,5 +36,23 @@ class Store {
   }
   setStatus(id, status) { const s = this.get(id); if (!s) return null; s.status = status; s.updatedAt = new Date().toISOString(); this.save(); return s; }
   list() { return Object.values(this.data.sessions).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)); }
+
+  /* ---------- 咨询编号（cases）：学生不注册，一次「立即进群」= 一个编号，一个编号 = 一个专属群 ---------- */
+  newCode() {
+    const ABC = '23456789ABCDEFGHJKMNPQRSTUVWXYZ';   // 去掉容易看错的 0 O 1 I L
+    for (;;) {
+      const code = 'LSM-' + Array.from(crypto.randomBytes(4), b => ABC[b % ABC.length]).join('');
+      if (!Object.values(this.data.cases).some(c => c.code === code)) return code;
+    }
+  }
+  createCase(fields) {
+    const now = new Date().toISOString();
+    const c = { id: 'k_' + Date.now().toString(36) + crypto.randomBytes(3).toString('hex'), token: crypto.randomBytes(18).toString('base64url'), code: this.newCode(),
+      status: 'requested', createdAt: now, updatedAt: now, requestedAt: now, group: null, messages: [], ...fields };
+    this.data.cases[c.id] = c; this.save(); return c;
+  }
+  getCase(id) { return this.data.cases[id] || null; }
+  updateCase(id, fn) { const c = this.getCase(id); if (!c) return null; fn(c); c.updatedAt = new Date().toISOString(); this.save(); return c; }
+  listCases() { return Object.values(this.data.cases).sort((a, b) => (b.status === 'requested') - (a.status === 'requested') || b.updatedAt.localeCompare(a.updatedAt)); }
 }
 module.exports = { Store };

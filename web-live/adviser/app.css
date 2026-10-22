@@ -294,7 +294,8 @@ table { border-collapse: collapse; width: 100%; font-size: 13px; }
 .amsgs .msg.in .bubble { background: var(--panel); }
 .amsgs .msg.out .bubble { background: #dcefe9; }
 .qrmini { display: flex; gap: 10px; align-items: center; }
-.qrmini .qr svg { width: 74px; height: 74px; }
+.qrmini .qr svg, .qrmini .qr img { width: 74px; height: 74px; display: block; object-fit: contain; }
+#g-qr img { display: block; width: 180px; max-width: 100%; height: 180px; object-fit: contain; }
 .suggest { padding: 6px 12px 0; }
 .suggest .chip { background: #efe6fb; border-color: #5b3f8c; color: #4a2f78; font-family: var(--body); font-size: 12.5px; }
 .ctx { border-left: 2px dashed var(--line); padding: 12px 14px; overflow-y: auto; min-height: 0; display: flex; flex-direction: column; gap: 8px; }

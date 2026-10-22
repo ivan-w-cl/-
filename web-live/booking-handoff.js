@@ -21,6 +21,7 @@
       qrTitle: '你的预定专家群', qrWa: '用手机扫码，或点下方按钮加入 WhatsApp 群。', qrWx: '用微信扫码或长按二维码加入群聊。',
       openWa: '在 WhatsApp 中打开', openNote: '演示：正式版会在这里打开 WhatsApp。', team: '你的团队', demo: '演示二维码，扫码不会进入真实群。',
       forwarded: '已把「{home}」发给你的专家群，进群后专家会接着跟你聊。', adviser: '顾问',
+      code: '你的咨询编号 {code}', codeNote: '不用登录、不用留资料，专家用这个编号为你建群。', sending: '正在通知专家…', failed: '没连上服务器，请稍后再试。',
       askH: '先问一个小问题', askPh: '比如：还有房吗？', ask: '问', ai: 'AI 助手（演示）', you: '你',
       chips: ['还有房吗？', '每周多少钱？', '离学校多远？', '包水电网吗？', '可以两个人住吗？'],
       nudge: '这类问题需要专家查实时房态和合同，进群直接问最快：', nudge2: '看起来你在认真考虑「{home}」，要不要直接进群和专家确认？',
@@ -32,6 +33,7 @@
       qrTitle: 'Your booking expert group', qrWa: 'Scan with your phone, or tap the button to join the WhatsApp group.', qrWx: 'Scan or long-press the QR code in WeChat to join.',
       openWa: 'Open in WhatsApp', openNote: 'Demo: the real app opens WhatsApp here.', team: 'Your team', demo: 'Demo QR code. It does not open a real group.',
       forwarded: 'We sent "{home}" to your expert group. The experts will pick it up with you there.', adviser: 'Adviser',
+      code: 'Your request code {code}', codeNote: 'No sign-up, no personal details. The experts use this code to set up your group.', sending: 'Notifying the experts…', failed: 'Could not reach the server. Please try again.',
       askH: 'Ask a quick question first', askPh: 'e.g. Is a room still available?', ask: 'Ask', ai: 'AI assistant (demo)', you: 'You',
       chips: ['Any rooms left?', 'How much per week?', 'How far from campus?', 'Are bills included?', 'Can two people share?'],
       nudge: 'Live availability and contracts need an expert. The quickest way is to ask in your group:', nudge2: 'Looks like you are serious about "{home}". Confirm it with an expert in your group?',
@@ -43,6 +45,7 @@
       qrTitle: 'あなたの予約サポートグループ', qrWa: 'スマホで読み取るか、ボタンから WhatsApp グループに参加できます。', qrWx: 'WeChat で読み取ってグループに参加してください。',
       openWa: 'WhatsApp で開く', openNote: 'デモ：正式版ではここで WhatsApp が開きます。', team: '担当チーム', demo: 'デモ用 QR コードです。実際のグループには参加しません。',
       forwarded: '「{home}」をあなたのグループに共有しました。グループで続きを相談できます。', adviser: '担当者',
+      code: 'あなたの相談番号 {code}', codeNote: '登録も個人情報も不要です。担当者はこの番号でグループを作ります。', sending: '担当者に通知中…', failed: 'サーバーに接続できませんでした。もう一度お試しください。',
       askH: 'まずは気軽に質問', askPh: '例：まだ空いていますか？', ask: '質問', ai: 'AI アシスタント（デモ）', you: 'あなた',
       chips: ['まだ空いていますか？', '週いくらですか？', '大学まで遠いですか？', '光熱費込みですか？', '2人で住めますか？'],
       nudge: '最新の空室や契約は担当者の確認が必要です。グループで聞くのが一番早いです：', nudge2: '「{home}」を本気で検討中のようです。グループで担当者に確認しませんか？',
@@ -86,14 +89,51 @@
     return { text: L3('这个问题专家在群里回答会更准确。', 'An expert in your group can answer that more accurately.', 'この質問はグループで担当者が答える方が正確です。'), push: true };
   }
 
+  /* ---------- 咨询编号：学生不注册，一个编号 = 一个专属群 ---------- */
+  const ABC = '23456789ABCDEFGHJKMNPQRSTUVWXYZ';
+  const demoCode = () => 'LSM-' + Array.from(crypto.getRandomValues(new Uint8Array(4)), b => ABC[b % ABC.length]).join('');
+  const API = () => window.CaseAPI && window.CaseAPI.enabled;
+  /* 服务器返回的 case → 本页使用的会话格式（和演示模式相同，渲染代码不用分两套） */
+  function toMe(c, prev) {
+    const t = x => (x ? Date.parse(x) : null), first = c.homes && c.homes[0], prevAgent = prev ? prev.messages.filter(m => m.from === 'agent' && !m.ai).length : 0;
+    const msgs = (c.homes || []).map((hh, i) => ({ from: 'student', type: 'home', homeId: hh.id, at: t(c.createdAt) - 10 + i, forwarded: i > 0 }))
+      .concat([{ from: 'student', type: 'request', at: t(c.requestedAt) }]);
+    if (c.group) msgs.push({ from: 'agent', type: 'qr', at: t(c.group.at) });
+    (c.messages || []).forEach(m => msgs.push({ from: 'agent', text: m.text, at: t(m.at) }));
+    const agentNow = msgs.filter(m => m.from === 'agent').length;
+    return { id: 'me', me: true, server: true, caseId: c.id, code: c.code, region: c.region, lang: c.lang, status: c.status, channel: c.channel,
+      viewed: (c.homes || []).map(hh => hh.id), messages: msgs, updated: Date.now(),
+      studentUnread: ((prev && prev.studentUnread) || 0) + Math.max(0, prev ? agentNow - prevAgent : 0),
+      request: { name: c.code, channel: c.channel, homeId: first && first.id, homeName: first && first.name, at: t(c.requestedAt), oneTap: true },
+      group: c.group ? { ...c.group, image: c.group.image ? window.CaseAPI.media(c.group.image) : '', at: t(c.group.at), expiresAt: t(c.group.expiresAt) } : null };
+  }
+  let busy = '';
+  function setBusy(v) { busy = v; const box = root.querySelector('.bh'); if (box) render(box); }
+  async function poll() {
+    if (!API() || !window.CaseAPI.stored() || document.hidden) return;
+    try { const c = await window.CaseAPI.get(); if (!c) return; const prev = load(), next = toMe(c, prev);
+      if (!prev || JSON.stringify([prev.status, prev.group, prev.messages.length, prev.viewed]) !== JSON.stringify([next.status, next.group, next.messages.length, next.viewed])) save(next); } catch (_) { /* offline: try again later */ }
+  }
+
   /* ---------- 一键进群 ---------- */
   let chosen = null;   // channel picked in this panel; null = default for the language
-  function join(h) {
-    const now = Date.now(), channel = chosen || defaultChannel(), prev = load();
+  async function join(h) {
+    if (busy) return;
+    if (API()) {
+      setBusy('sending');
+      try {
+        const sp = new URLSearchParams(location.search);
+        const c = await window.CaseAPI.create({ lang: lang(), tz: Intl.DateTimeFormat().resolvedOptions().timeZone || '', channel: chosen || defaultChannel(),
+          homes: h ? [{ id: h.id, n: h.n, name: h.name }] : [], qa: qa.map(x => ({ q: x.q, a: x.a })), source: sp.get('ref') || sp.get('utm_source') || '' });
+        busy = ''; save(toMe(c, null));
+      } catch (_) { setBusy('failed'); }
+      return;
+    }
+    const now = Date.now(), channel = chosen || defaultChannel(), prev = load(), code = (prev && prev.code) || demoCode();
     const viewed = [h && h.id].concat((prev && prev.viewed) || []).filter((x, i, a) => x && a.indexOf(x) === i).slice(0, 6);
-    const me = { id: 'me', me: true, name: '', region: regionOf(), lang: lang(), source: 'Website', status: 'requested',
+    const me = { id: 'me', me: true, code, name: '', region: regionOf(), lang: lang(), source: 'Website', status: 'requested',
       viewed, favorites: favorites(), quiz: '', group: null, unread: 1, studentUnread: 0, updated: now,
-      request: { name: { en: 'Website student', zh: '网站学生', ja: 'サイトの学生' }[lang()], region: regionOf(), channel, intake: '', budget: 0, uni: 'uol', room: 'any',
+      request: { name: code, region: regionOf(), channel, intake: '', budget: 0, uni: 'uol', room: 'any',
         homeId: h && h.id, homeName: h && h.name, at: now, oneTap: true },
       messages: (h ? [{ from: 'student', type: 'home', homeId: h.id, at: now - 1 - qa.length * 2 }] : []).concat(qa.flatMap((x, i) => [{ from: 'student', text: x.q, at: now - (qa.length - i) * 2 }, { from: 'agent', text: x.a, ai: true, at: now - (qa.length - i) * 2 + 1 }]), [{ from: 'student', type: 'request', at: now }]) };
     const g = window.GroupPool && window.GroupPool.take(channel);
@@ -109,6 +149,7 @@
   /* 微信群码过期：学生一键申请新群码，专家收到提醒后重新发 */
   function renew() {
     const me = load(); if (!me) return;
+    if (me.server) { window.CaseAPI.renew().then(c => save(toMe(c, load()))).catch(() => setBusy('failed')); return; }
     const now = Date.now();
     me.status = 'requested'; me.request = Object.assign({}, me.request, { at: now, renew: true }); me.unread = (me.unread || 0) + 1; me.updated = now;
     me.messages.push({ from: 'student', type: 'request', at: now, renew: true });
@@ -123,6 +164,7 @@
     me.viewed = [h.id].concat(me.viewed || []).filter((x, i, a) => a.indexOf(x) === i).slice(0, 6);
     me.unread = (me.unread || 0) + 1; me.updated = Date.now();
     save(me);
+    if (me.server) { window.CaseAPI.addHome({ id: h.id, n: h.n, name: h.name }).catch(() => {}); return; }
     if (window.MailOutbox) window.MailOutbox.add('forward', me, [{ n: h.n, name: h.name }]);
   }
 
@@ -137,13 +179,16 @@
       const sw = btn('bh-switch', fmt(k.switchTo, { app: k[other] }));
       sw.addEventListener('click', () => { chosen = other; render(box); box.querySelector('.bh-join').focus(); });
       const via = el('p', 'bh-via', fmt(k.via, { app: k[channel] + ' ' })); via.append(' · ', sw);
-      box.append(go, via, askBlock(box, h));
+      if (busy) { go.disabled = busy === 'sending'; box.append(go, el('p', busy === 'failed' ? 'bh-small bh-warn' : 'bh-small', busy === 'failed' ? k.failed : k.sending)); if (busy === 'failed') busy = ''; }
+      else box.append(go);
+      box.append(via, askBlock(box, h));
       return;
     }
     if (me.group && h && h.id !== me.request.homeId) forward(me, h);
     const log = el('div', 'bh-log');
     if (me.group) log.append(qrCard(me.group, k));
     else { log.append(el('p', 'bh-wait', k.waiting), el('p', 'bh-small', k.waitingNote)); }
+    if (me.code) { const cd = el('div', 'bh-codebox'); cd.append(el('b', '', fmt(k.code, { code: me.code })), el('span', '', k.codeNote)); log.append(cd); }
     if (me.group && h && me.messages.some(m => m.forwarded && m.homeId === h.id)) log.append(el('p', 'bh-sys', fmt(k.forwarded, { home: h.name })));
     me.messages.filter(m => m.from === 'agent' && m.text && !m.ai).forEach(m => {
       const b = el('div', 'bh-msg'); b.append(el('span', 'bh-who', `${k.adviser} · ${clock(m.at)}`), el('p', '', m.text)); log.append(b);
@@ -183,19 +228,23 @@
     const team = TEAMS[g.team] || TEAMS.A, wa = g.channel === 'whatsapp';
     const c = el('div', 'bh-qr ' + (wa ? 'wa' : 'wx'));
     c.append(el('span', 'bh-tape'), el('b', 'bh-qrtitle', k.qrTitle), el('span', 'bh-chan', wa ? 'WhatsApp' : '微信 WeChat'));
-    const q = el('div', 'bh-code'); q.innerHTML = qrSvg(g.link); c.append(q);
+    const q = el('div', 'bh-code');
+    if (g.image) { const img = el('img'); img.src = g.image; img.alt = k.qrTitle; q.append(img); } else q.innerHTML = qrSvg(g.link);   // 微信：专家上传的群二维码图片
+    c.append(q);
     c.append(el('b', '', g.name), el('p', 'bh-small', wa ? k.qrWa : k.qrWx), el('p', 'bh-small', `${k.team}: ${team[lang()] || team.en} · ${team.members.join(' · ')}`));
     if (g.expiresAt) {
       const expired = Date.now() > g.expiresAt, d = new Date(g.expiresAt).toLocaleDateString(lang() === 'en' ? 'en-GB' : lang() === 'ja' ? 'ja-JP' : 'zh-CN', { month: 'short', day: 'numeric' });
       if (expired) { c.classList.add('expired'); const r = btn('bh-open', k.renew); r.addEventListener('click', renew); c.append(el('p', 'bh-small bh-warn', k.expired), r); }
       else c.append(el('p', 'bh-small', fmt(k.validTill, { d })));
     }
-    if (wa) {
+    const real = !!(API() && (load() || {}).server);
+    if (wa && real && /^https:\/\/chat\.whatsapp\.com\//.test(g.link)) { const a = el('a', 'bh-open', k.openWa); a.href = g.link; a.target = '_blank'; a.rel = 'noopener'; c.append(a); }
+    else if (wa) {
       const b = btn('bh-open', k.openWa), note = el('p', 'bh-small', ''); note.setAttribute('role', 'status');
       b.addEventListener('click', () => { note.textContent = k.openNote; });
       c.append(b, note);
     }
-    c.append(el('p', 'bh-small', k.demo));
+    if (!real) c.append(el('p', 'bh-small', k.demo));
     return c;
   }
 
@@ -204,7 +253,7 @@
   if (!root) return;
   function decorate() {
     const who = document.getElementById('ctWho');
-    if (who) who.textContent = { zh: '预定专家群 · 演示', en: 'Booking expert group · demo', ja: '予約サポートグループ · デモ' }[lang()];
+    if (who) who.textContent = API() ? { zh: '预定专家群', en: 'Booking expert group', ja: '予約サポートグループ' }[lang()] : { zh: '预定专家群 · 演示', en: 'Booking expert group · demo', ja: '予約サポートグループ · デモ' }[lang()];
     if (root.querySelector('.bh')) return;
     const chat = root.querySelector('.cd-chat'); if (!chat) return;
     root.classList.add('bh-only');
@@ -295,6 +344,12 @@
   addEventListener('storage', e => { if (e.key === KEY || e.key === null) changed(); });
   new MutationObserver(decorate).observe(root, { childList: true });
   decorate();
+  /* 连着服务器时：每 6 秒查一次群码（页面在后台时暂停），回到页面时马上查 */
+  if (window.CaseAPI) window.CaseAPI.ready.then(on => {
+    if (!on) return;
+    const cur = load(); if (cur && !cur.server) localStorage.removeItem(KEY);   // 本地演示留下的数据不要混进真实咨询
+    poll(); setInterval(poll, 6000); document.addEventListener('visibilitychange', poll); fab.sync();
+  });
   const wrap = document.getElementById('contactWrap');
   if (wrap) new MutationObserver(() => fab.sync()).observe(wrap, { attributes: true, attributeFilter: ['hidden'] });
   fab.sync();
