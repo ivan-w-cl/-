@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><title>Map renderer preview</title>
+<!-- 开发用：在浏览器里跑小程序的地图渲染器（同一份 map/render.js），和网页版对比。不打包进小程序。 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&family=Nunito:wght@400;600;700;800&family=ZCOOL+KuaiLe&display=swap">
+<style>html,body{margin:0;height:100%;background:#e6d3a8}canvas{display:block}</style></head>
+<body><canvas id="c"></canvas>
+<script>var module = { exports: {} };</script><script src="../data/scene.js"></script><script>window.SCENE = module.exports; module = { exports: {} };</script>
+<script src="../map/render.js"></script><script>window.R = module.exports;</script>
+<script>
+  const q = new URLSearchParams(location.search), dpr = devicePixelRatio || 1, cv = document.getElementById('c');
+  const W = innerWidth, H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px';
+  const r = R.createRenderer(SCENE, { dpr, makeCanvas: (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; } });
+  r.setLang(q.get('lang') || 'zh');
+  window.view = q.has('k') ? { k: +q.get('k'), tx: +q.get('tx'), ty: +q.get('ty'), w: W, h: H } : (() => { const k = Math.min(W / SCENE.W, H / SCENE.H) * 0.97; return { k, tx: (W - SCENE.W * k) / 2, ty: (H - SCENE.H * k) / 2, w: W, h: H }; })();
+  window.redraw = st => { const t = performance.now(); r.draw(cv.getContext('2d'), view, st || {}); return performance.now() - t; };
+  document.fonts.ready.then(() => { r.relayout(); window.ms = redraw(); document.title = 'ready'; });
+</script></body></html>

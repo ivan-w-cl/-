@@ -1,22 +1,10 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/quiz-life/quiz-life",
-    "pages/quiz-home/quiz-home",
-    "pages/result/result",
-    "pages/compare/compare",
-    "pages/home-detail/home-detail",
-    "pages/consult/consult"
-  ],
+  "pages": ["pages/index/index"],
   "window": {
-    "navigationBarTitleText": "利物浦学生生活地图",
-    "navigationBarBackgroundColor": "#f6efe1",
+    "navigationStyle": "custom",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#f6efe1",
+    "backgroundColor": "#d9c9a3",
     "backgroundTextStyle": "dark"
-  },
-  "permission": {
-    "scope.userLocation": { "desc": "仅用于在地图上显示你相对公寓的位置（可拒绝，不影响使用）" }
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

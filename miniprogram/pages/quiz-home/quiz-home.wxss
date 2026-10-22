@@ -1,7 +1,0 @@
-.intro { margin-top: 40rpx; padding-top: 48rpx; }
-.lede { margin: 20rpx 0 12rpx; font-size: 28rpx; }
-.center { text-align: center; }
-.qtitle { margin: 16rpx 0 12rpx; }
-.hint { margin-bottom: 20rpx; }
-.nav button { margin-right: 16rpx; }
-.nav button:last-child { margin-right: 0; }

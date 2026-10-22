@@ -1,24 +1,15 @@
-/* 全局状态：语言、测验答案、上次推荐结果、收藏、对比。全部只存本机（wx Storage）。 */
-const KEY = 'lsm-mp-state-v1';
+const fonts = require('./utils/fonts.js');
+const store = (k, v) => { try { if (v === undefined) return wx.getStorageSync(k); wx.setStorageSync(k, v); } catch (e) { return undefined; } };
 App({
-  globalData: { lang: 'zh', homeAnswers: {}, lifeAnswers: [], lifeExtra: {}, lastResult: null, favorites: [], compare: [] },
   onLaunch() {
-    try {
-      const saved = wx.getStorageSync(KEY);
-      if (saved && typeof saved === 'object') Object.assign(this.globalData, saved);
-    } catch (e) { /* 存储不可用时照常使用 */ }
+    fonts.load();
+    let lang = store('lsm-lang');
+    if (lang !== 'zh' && lang !== 'en') {   // 第一次打开：跟微信的语言
+      let sys = 'zh'; try { sys = (wx.getAppBaseInfo ? wx.getAppBaseInfo() : wx.getSystemInfoSync()).language || 'zh'; } catch (e) { /* 忽略 */ }
+      lang = /^zh/i.test(sys) ? 'zh' : 'en';
+    }
+    this.globalData.lang = lang;
   },
-  save() {
-    try { wx.setStorageSync(KEY, this.globalData); } catch (e) {}
-  },
-  setLang(lang) {
-    this.globalData.lang = lang === 'en' ? 'en' : 'zh'; this.save();
-    wx.setNavigationBarTitle({ title: lang === 'en' ? 'Liverpool Student Life Map' : '利物浦学生生活地图' });
-  },
-  favSet() { return new Set(this.globalData.favorites); },
-  toggleFav(id) {
-    const f = this.globalData.favorites, i = f.indexOf(id);
-    if (i >= 0) f.splice(i, 1); else f.push(id);
-    this.save(); return i < 0;
-  }
+  globalData: { lang: 'zh' },
+  store
 });

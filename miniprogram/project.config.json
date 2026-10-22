@@ -1,19 +1,10 @@
 {
-  "description": "利物浦学生生活地图 · 微信小程序版。appid 目前是占位符 touristappid（游客模式，无法真机预览/使用客服消息），请在微信开发者工具中替换为你自己的小程序 AppID。",
+  "description": "利物浦学生住宿地图 · 微信小程序（中 / 英）",
   "appid": "touristappid",
-  "projectname": "liverpool-student-life-map",
+  "projectname": "liverpool-student-map",
   "compileType": "miniprogram",
-  "libVersion": "3.0.0",
-  "packOptions": { "ignore": [ { "type": "folder", "value": "scripts" }, { "type": "folder", "value": "tests" }, { "type": "file", "value": "README.md" } ], "include": [] },
-  "setting": {
-    "es6": true,
-    "enhance": true,
-    "postcss": true,
-    "minified": true,
-    "urlCheck": true,
-    "checkSiteMap": false,
-    "ignoreUploadUnusedFiles": true
-  },
-  "condition": {},
-  "editorSetting": { "tabIndent": "insertSpaces", "tabSize": 2 }
+  "libVersion": "3.4.0",
+  "packOptions": { "ignore": [ { "type": "folder", "value": "scripts" }, { "type": "folder", "value": "tools" }, { "type": "folder", "value": "tests" }, { "type": "folder", "value": "server-fonts" } ] },
+  "setting": { "es6": true, "enhance": true, "postcss": true, "minified": true, "urlCheck": false, "showShadowRootInWxmlPanel": true },
+  "condition": {}
 }

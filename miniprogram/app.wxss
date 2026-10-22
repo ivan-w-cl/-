@@ -1,40 +1,13 @@
-/* 与网页版一致的纸张风格：米色底、手绘描边卡片、珊瑚色选中 */
-page { background: #f6efe1; color: #3b2a1a; font-size: 28rpx; line-height: 1.5;
-  font-family: -apple-system, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif; }
-.wrap { padding: 24rpx; box-sizing: border-box; }
-.card { background: #fffaf0; border: 3rpx solid #3b2a1a; border-radius: 24rpx; padding: 28rpx; margin-bottom: 24rpx;
-  box-shadow: 6rpx 8rpx 0 rgba(59,42,26,.18); position: relative; }
-.tape { position: absolute; top: -18rpx; left: 50%; margin-left: -70rpx; width: 140rpx; height: 36rpx; background: rgba(242,193,78,.75); transform: rotate(-3deg); }
-.h1 { font-size: 44rpx; font-weight: 700; line-height: 1.3; }
-.h2 { font-size: 34rpx; font-weight: 700; margin: 8rpx 0; }
-.muted { color: #7a6a58; font-size: 24rpx; }
-.fine { color: #8a7a68; font-size: 22rpx; line-height: 1.5; }
-.row { display: flex; flex-direction: row; align-items: center; }
-.between { justify-content: space-between; }
-.wrapflex { flex-wrap: wrap; }
-.grow { flex: 1; min-width: 0; }
-.chip { display: inline-block; padding: 6rpx 18rpx; border: 2rpx solid #3b2a1a; border-radius: 999rpx; font-size: 22rpx; margin: 0 10rpx 10rpx 0; background: #fff; }
-.chip.on { background: #e8735a; color: #fff; border-color: #b5462f; }
-.num { display: inline-flex; align-items: center; justify-content: center; min-width: 48rpx; height: 48rpx; padding: 0 8rpx; border-radius: 24rpx;
-  background: #2c5c8a; color: #fff; font-weight: 700; font-size: 24rpx; margin-right: 14rpx; box-sizing: border-box; }
-.num.top { background: #e8735a; }
-.btn { display: flex; align-items: center; justify-content: center; height: 88rpx; border-radius: 44rpx; border: 3rpx solid #3b2a1a;
-  background: #fff; color: #3b2a1a; font-size: 30rpx; font-weight: 600; margin: 16rpx 0; padding: 0 32rpx; line-height: 88rpx; }
-.btn::after { border: none; }
-.btn.main { background: #e8735a; color: #fff; border-color: #b5462f; }
-.btn.small { height: 64rpx; line-height: 64rpx; font-size: 26rpx; margin: 8rpx 12rpx 8rpx 0; padding: 0 24rpx; }
-.btn[disabled] { opacity: .45; }
-.dots { display: flex; flex-direction: row; justify-content: center; margin: 12rpx 0 24rpx; }
-.dots .d { width: 18rpx; height: 18rpx; border-radius: 9rpx; border: 2rpx solid #3b2a1a; margin: 0 8rpx; background: #fff; }
-.dots .d.on { background: #e8735a; border-color: #b5462f; }
-.opt { display: flex; flex-direction: row; align-items: center; background: #fffaf0; border: 3rpx solid #3b2a1a; border-radius: 20rpx;
-  padding: 24rpx; margin-bottom: 20rpx; box-shadow: 4rpx 6rpx 0 rgba(59,42,26,.15); }
-.opt.on { background: #fde3db; border-color: #e8735a; box-shadow: 4rpx 6rpx 0 rgba(232,115,90,.45); }
-.opt .emoji { font-size: 48rpx; width: 80rpx; text-align: center; margin-right: 16rpx; }
-.opt .label { font-size: 30rpx; font-weight: 600; }
-.opt .tick { width: 44rpx; height: 44rpx; border-radius: 22rpx; border: 3rpx solid #3b2a1a; margin-left: 12rpx; text-align: center; line-height: 40rpx; color: #fff; font-size: 26rpx; }
-.opt.on .tick { background: #e8735a; border-color: #b5462f; }
-.divider { height: 2rpx; background: rgba(59,42,26,.15); margin: 20rpx 0; }
-.reason { font-size: 26rpx; margin: 6rpx 0; }
-.trade { font-size: 24rpx; color: #9a4a2a; margin-top: 6rpx; }
-.badge { font-size: 20rpx; padding: 2rpx 12rpx; border-radius: 8rpx; background: #efe2c6; color: #6a5030; margin-left: 10rpx; }
+/* 全局：和网页版 :root 的颜色、字体一样 */
+page {
+  --paper: #e9dcbc; --desk: #d9c9a3; --panel: #fffaf0; --panel-2: #f8efd9; --ink: #3b2a1a; --ink-soft: #6e5538;
+  --line: #dcc8a0; --accent: #b5462f; --accent-ink: #ffffff; --home: #2c5c8a;
+  --lift: 0 14px 34px rgba(40, 28, 16, .24), 4px 5px 0 rgba(59, 42, 26, .22);
+  --lift-hi: 0 34px 70px rgba(31, 22, 12, .38), 0 10px 22px rgba(31, 22, 12, .26), 6px 8px 0 rgba(59, 42, 26, .25);
+  --display: 'Gochi Hand', 'ZCOOL KuaiLe', cursive; --hand: 'Patrick Hand', 'ZCOOL KuaiLe', cursive;
+  --body: 'Nunito', -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  height: 100%; background: var(--desk); color: var(--ink); font-family: var(--body); font-size: 14.5px; line-height: 1.45;
+}
+view, text, button, input { box-sizing: border-box; }
+button { margin: 0; padding: 0; line-height: inherit; font: inherit; color: inherit; background: none; border-radius: 0; }
+button::after { border: none; }

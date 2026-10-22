@@ -100,7 +100,7 @@
     } catch (_) { return []; }
   }
 
-  const validLanguage = value => typeof value === 'string' && ['en', 'zh'].includes(value.toLowerCase()) ? value.toLowerCase() : null;
+  const validLanguage = value => typeof value === 'string' && ['en', 'zh', 'ja'].includes(value.toLowerCase()) ? value.toLowerCase() : null;
   const validHome = value => typeof value === 'string' && value.length <= 120 && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value) ? value : null;
   function readRoute(hash) {
     const raw = typeof hash === 'string' ? hash.replace(/^#/, '') : '';

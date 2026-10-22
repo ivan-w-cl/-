@@ -10,7 +10,7 @@
 | `web-demo/` | 早前自行设计的手机 App 风格 Demo（学生 App + 顾问后台 + 数据看板），见 [web-demo/README.md](web-demo/README.md) |
 | `web-original/liverpool-life-map-en/` | 网页原版：手绘地图、两个测试、在线咨询、PWA |
 | `web-original/consult-server/` | 客服后台：网页聊天、小程序客服渠道、顾问工作台 |
-| `miniprogram/` | 微信小程序版 |
+| `miniprogram/` | 微信小程序版（中 / 英，按网页版 1:1 还原，见 [miniprogram/README.md](miniprogram/README.md)） |
 | `design/room-photos/` | 房型照片设计稿（iQ Great Newton House） |
 | `data/` | 房源数据表：`homes.csv`（47 处公寓）、`room-types.csv`、`homes.json` |
 | `docs/screenshots/` | 各页面截图（英文界面） |

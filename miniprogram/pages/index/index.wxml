@@ -1,51 +1,122 @@
-<view class="page">
-  <map id="map" class="map" latitude="{{lat}}" longitude="{{lng}}" scale="{{scale}}" markers="{{markers}}"
-       include-points="{{points}}" show-location show-scale enable-zoom enable-scroll
-       bindmarkertap="onMarkerTap" bindcallouttap="onCalloutTap"></map>
-  <view class="lang" bindtap="toggleLang">{{T.lang}}</view>
+<!-- 首页：布局照搬网页版手机布局（标题栏、地图、底部三个按钮、卡片、两个抽屉） -->
+<view class="app">
+  <canvas type="2d" id="map" class="map" disable-scroll="true"
+    bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd" bindtouchcancel="onTouchEnd"></canvas>
 
-  <view class="wrap">
-    <view wx:if="{{top.length}}" class="card topcard">
-      <view class="row between">
-        <view class="h2">{{T.yourTop3}}</view>
-        <view class="chip {{onlyTop ? 'on' : ''}}" bindtap="toggleOnlyTop">{{onlyTop ? T.showAll : 'Top 3'}}</view>
-      </view>
-      <view wx:if="{{topLabel}}" class="muted">{{topLabel}}</view>
-      <view class="row wrapflex" style="margin-top:12rpx">
-        <view wx:for="{{top}}" wx:key="n" class="chip on">★{{item.rank}} · {{item.n}} {{item.name}}</view>
-      </view>
-      <button class="btn small main" bindtap="goResult">{{T.viewResult}}</button>
+  <!-- 标题栏（放在微信胶囊按钮左边） -->
+  <view class="float panel brandbar" style="top:{{nav.top}}px;right:{{nav.right}}px;min-height:{{nav.h}}px">
+    <text class="h1">{{T.title}}</text>
+    <view class="langs">
+      <view class="lb {{lang === 'en' ? 'on' : ''}}" data-l="en" bindtap="setLang">EN</view>
+      <view class="lb {{lang === 'zh' ? 'on' : ''}}" data-l="zh" bindtap="setLang">中文</view>
     </view>
+    <view class="infobtn" bindtap="toggleInfo">i</view>
+  </view>
+  <view wx:if="{{info}}" class="float panel infopop" style="top:{{nav.top + nav.h + 8}}px"><text>{{T.info}}</text></view>
 
-    <view class="row quizrow">
-      <view class="card quiz grow" bindtap="goLife"><view class="h2">🎭 {{T.lifeQuiz}}</view><view class="muted">{{T.lifeQuizSub}}</view></view>
-      <view class="card quiz grow" bindtap="goHome"><view class="h2">🏠 {{T.homeQuiz}}</view><view class="muted">{{T.homeQuizSub}}</view></view>
-    </view>
+  <!-- 缩放 -->
+  <view class="float zoom">
+    <view class="zb {{canZoomIn ? '' : 'off'}}" bindtap="zoomIn">+</view>
+    <view class="zb {{canZoomOut ? '' : 'off'}}" bindtap="zoomOut">−</view>
+    <view class="zb fit {{canZoomOut ? '' : 'off'}}" bindtap="zoomFit">{{T.zfit}}</view>
+  </view>
 
-    <view class="card">
-      <input class="search" placeholder="{{T.search}}" value="{{q}}" bindinput="onSearch" confirm-type="search" />
-      <view class="row wrapflex filters">
-        <picker range="{{budgetLabels}}" value="{{budgetIdx}}" bindchange="onBudget"><view class="chip {{budgetIdx ? 'on' : ''}}">{{T.budget}}：{{budgetLabels[budgetIdx]}} ▾</view></picker>
-        <picker range="{{roomLabels}}" value="{{roomIdx}}" bindchange="onRoom"><view class="chip {{roomIdx ? 'on' : ''}}">{{T.room}}：{{roomLabels[roomIdx]}} ▾</view></picker>
-        <picker range="{{walkLabels}}" value="{{walkIdx}}" bindchange="onWalk"><view class="chip {{walkIdx ? 'on' : ''}}">{{T.walk}}：{{walkLabels[walkIdx]}} ▾</view></picker>
-        <view class="chip {{favOnly ? 'on' : ''}}" bindtap="toggleFavOnly">♥ {{T.favOnly}}</view>
-      </view>
-      <view class="row between"><text class="muted">{{countText}}</text><text class="muted link" bindtap="resetFilters">{{T.reset}}</text></view>
-    </view>
+  <!-- 底部三个按钮 -->
+  <view class="mbar">
+    <view class="mb match" bindtap="openMatch">{{T.matchBtn}}</view>
+    <view class="mb" data-s="controls" bindtap="openSheet">{{T.filters}}</view>
+    <view class="mb" data-s="homes" bindtap="openSheet">{{homesCount}}</view>
+  </view>
 
-    <view wx:if="{{!homes.length}}" class="card muted">{{T.empty}}</view>
-    <view wx:for="{{homes}}" wx:key="id" class="card home" data-id="{{item.id}}" bindtap="openHome">
-      <view class="row">
-        <view class="num {{item.rank ? 'top' : ''}}">{{item.n}}</view>
-        <view class="grow">
-          <view class="name">{{item.name}}<text wx:if="{{item.rank}}" class="badge">★{{item.rank}}</text></view>
-          <view class="muted">{{item.area}} · {{item.walk}}</view>
-          <view class="price">{{item.price}}<text wx:if="{{item.soldOut}}" class="badge">{{T.soldOut}}</text></view>
+  <!-- 公寓 / 地点卡片 -->
+  <view wx:if="{{card}}" class="card {{expanded ? 'sheet' : 'compact'}}" catchtouchmove="noop">
+    <view class="x" bindtap="closeCard">×</view>
+    <view class="tag" style="background:{{card.place ? card.tagColor : '#2c5c8a'}}">{{card.tag}}</view>
+    <view class="h3">{{card.name}}</view>
+    <block wx:if="{{card.place}}"><view class="txt">{{card.text}}</view></block>
+    <block wx:else>
+      <block wx:if="{{!expanded}}">
+        <view class="compact-facts"><text class="strong">{{card.price}}</text><text>{{card.walk}}</text></view>
+        <view class="compact-note">{{T.compactNote || ''}}</view>
+      </block>
+      <block wx:else>
+        <view class="addr">{{card.addr}}</view>
+        <view class="txt">{{card.text}}</view>
+        <view class="walks"><text wx:for="{{card.walks}}" wx:key="index" class="wk">{{item}}</text></view>
+        <view class="facts"><view wx:for="{{card.facts}}" wx:key="index" wx:for-item="f" class="fact"><text wx:for="{{f}}" wx:key="index" wx:for-item="p" class="{{p.b ? 'b' : ''}}">{{p.t}}</text></view></view>
+        <view class="actions2">
+          <view class="ha {{card.fav ? 'on' : ''}}" bindtap="toggleFav">{{card.fav ? '★ ' + T.saved : '☆ ' + T.save}}</view>
+          <button class="ha" open-type="share">{{T.share}}</button>
         </view>
-        <view class="fav" catchtap="toggleFav" data-id="{{item.id}}">{{item.fav ? '♥' : '♡'}}</view>
+        <view class="src">{{card.src}}</view>
+      </block>
+      <view class="acts">
+        <view class="cta" bindtap="ask">{{expanded ? T.ask : T.compactAsk}}</view>
+        <view class="detail-toggle" bindtap="toggleExpand">{{expanded ? T.collapseDetails : T.expandDetails}}</view>
+        <view wx:if="{{expanded}}" class="cmpb {{card.cmp ? 'on' : ''}}" bindtap="toggleCompare">{{card.cmp ? T.cmpAdded : T.cmpAdd}}</view>
       </view>
-    </view>
-    <view class="fine">{{T.mapNote}} {{T.priceNote}}</view>
-    <button class="btn" bindtap="goConsult">💬 {{T.consult}}</button>
+    </block>
+  </view>
+
+  <!-- 抽屉：公寓列表 -->
+  <view class="sheet-mask" wx:if="{{sheet}}" bindtap="closeSheets"></view>
+  <view class="panel drawer homes {{sheet === 'homes' ? 'open' : ''}}" catchtouchmove="noop">
+    <view class="phead"><text class="h2">{{T.homesBtn}}</text><view class="pbtn" bindtap="closeSheets">{{T.close}}</view></view>
+    <scroll-view scroll-y="true" class="pbody" enhanced="true" show-scrollbar="false">
+      <view class="home-search">
+        <text class="lbl">{{T.h_search}}</text>
+        <input class="search" type="text" placeholder="{{T.h_placeholder}}" value="{{filters.query}}" bindinput="onSearch" confirm-type="search"></input>
+        <view class="home-search-row"><text>{{countText}}</text><view class="sbtn {{filters.favoritesOnly ? 'on' : ''}}" bindtap="toggleFavOnly">{{T.h_favorites}}</view></view>
+        <text class="local-note">{{T.h_local}}</text>
+      </view>
+      <view class="pc-sort">
+        <text class="flbl">{{T.rankBy}}</text>
+        <view class="fsel {{isRanked ? 'ranked' : ''}}" data-k="rank" bindtap="openSelect"><text>{{options.rank.current}}</text><text class="caret">⌄</text></view>
+        <view wx:if="{{open === 'rank'}}" class="fs-list">
+          <view wx:for="{{options.rank}}" wx:key="v" class="fs-opt {{item.on ? 'on' : ''}}" data-k="rank" data-v="{{item.v}}" bindtap="pick">{{item.label}}</view>
+        </view>
+        <text wx:if="{{sortNote}}" class="pc-sortnote">{{sortNote}}</text>
+      </view>
+      <text class="stable-note">{{T.h_stable}}</text>
+      <view wx:if="{{!count}}" class="empty-homes"><text>{{T.h_empty}}</text><view class="pbtn" bindtap="resetFilters">{{T.h_reset}}</view></view>
+      <block wx:for="{{groups}}" wx:key="title" wx:for-item="g">
+        <view class="gh">{{g.title}}</view>
+        <view wx:for="{{g.items}}" wx:key="id" class="hrow">
+          <view class="hbtn" data-id="{{item.id}}" bindtap="openHome"><text class="n">{{item.n}}</text><text class="nm">{{item.name}}</text></view>
+          <view class="fav-mini" data-id="{{item.id}}" bindtap="toggleFav">{{item.fav ? '★' : '☆'}}</view>
+          <view class="cbtn {{item.cmp ? 'on' : ''}}" data-id="{{item.id}}" bindtap="toggleCompare">{{item.cmp ? '✓' : '+'}}</view>
+        </view>
+      </block>
+      <view wx:for="{{ranked}}" wx:key="id" class="hrow {{isRanked ? 'r' : ''}}">
+        <text wx:if="{{isRanked}}" class="rk {{item.rank <= 3 ? 'top' : ''}}">{{item.rank}}</text>
+        <view class="hbtn" data-id="{{item.id}}" bindtap="openHome"><text class="n">{{item.n}}</text><text class="nm">{{item.name}}</text><text class="w">{{item.w}}</text></view>
+        <view class="fav-mini" data-id="{{item.id}}" bindtap="toggleFav">{{item.fav ? '★' : '☆'}}</view>
+        <view class="cbtn {{item.cmp ? 'on' : ''}}" data-id="{{item.id}}" bindtap="toggleCompare">{{item.cmp ? '✓' : '+'}}</view>
+      </view>
+      <view class="pad-bottom"></view>
+    </scroll-view>
+  </view>
+
+  <!-- 抽屉：找公寓（筛选） -->
+  <view class="panel drawer controls {{sheet === 'controls' ? 'open' : ''}}" catchtouchmove="noop">
+    <view class="phead"><text class="h2">{{T.findHome}}</text><view class="pbtn" bindtap="closeSheets">{{T.close}}</view></view>
+    <scroll-view scroll-y="true" class="pbody" enhanced="true" show-scrollbar="false">
+      <view class="filter-grid">
+        <view class="field" wx:for="{{['budget', 'room', 'destination', 'walk']}}" wx:key="*this" wx:for-item="k">
+          <text class="flbl small">{{T['h_' + k]}}</text>
+          <view class="fsel" data-k="{{k}}" bindtap="openSelect"><text>{{options[k].current}}</text><text class="caret">⌄</text></view>
+          <view wx:if="{{open === k}}" class="fs-list">
+            <view wx:for="{{options[k]}}" wx:key="v" wx:for-item="o" class="fs-opt {{o.on ? 'on' : ''}}" data-k="{{k}}" data-v="{{o.v}}" bindtap="pick">{{o.label}}</view>
+          </view>
+        </view>
+      </view>
+      <text class="filter-note">{{T.h_note}}</text>
+      <view class="filter-footer"><view class="fbtn" bindtap="resetFilters">{{T.h_reset}}</view><view class="fbtn main" bindtap="viewResults">{{viewText}}</view></view>
+      <view class="toggles">
+        <view wx:for="{{layers}}" wx:key="k" class="chip {{item.on ? '' : 'off'}}" data-k="{{item.k}}" bindtap="toggleLayer"><text class="sw" style="background:{{item.color}}"></text><text>{{item.label}}</text></view>
+      </view>
+      <view class="zonekey"><view wx:for="{{zones}}" wx:key="k"><text class="zi" style="background:{{item.color}}"></text>{{item.label}}</view></view>
+      <view class="pad-bottom"></view>
+    </scroll-view>
   </view>
 </view>
