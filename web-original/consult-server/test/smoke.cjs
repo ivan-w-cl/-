@@ -2,10 +2,12 @@
 const assert = require('assert'), http = require('http'), os = require('os'), fs = require('fs'), path = require('path');
 (async () => {
   const hooks = [];
-  const fake = http.createServer((q, r) => { let b = ''; q.on('data', c => b += c); q.on('end', () => { hooks.push(JSON.parse(b)); r.end('{"errcode":0}'); }); }).listen(0);
+  const mails = [];
+  const fake = http.createServer((q, r) => { let b = ''; q.on('data', c => b += c); q.on('end', () => { (q.url === '/mail' ? mails : hooks).push(Object.assign(JSON.parse(b), q.url === '/mail' ? { auth: q.headers.authorization } : {})); r.end('{"errcode":0}'); }); }).listen(0);
   await new Promise(r => fake.once('listening', r));
   process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'consult-'));
   process.env.WECOM_WEBHOOK_URL = `http://127.0.0.1:${fake.address().port}/hook`;
+  process.env.EMAIL_API_URL = `http://127.0.0.1:${fake.address().port}/mail`; process.env.EMAIL_API_KEY = 'key123'; process.env.NOTIFY_EMAIL_TO = 'a@example.com, b@example.com';
   process.env.WX_APPID = 'wxtestappid000001'; process.env.WX_APPSECRET = 'x'; process.env.WX_TOKEN = 'tok123';
   process.env.WX_ENCODING_AES_KEY = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFG';
   const { server } = require('../server.js'); server.listen(0); await new Promise(r => server.once('listening', r));
@@ -17,6 +19,7 @@ const assert = require('assert'), http = require('http'), os = require('os'), fs
   assert.strictEqual((await j(`/api/consult/sessions/${id}?token=bad`)).s, 404);
   await new Promise(r => setTimeout(r, 200));
   assert(hooks[0] && hooks[0].msgtype === 'markdown' && /The Lantern/.test(hooks[0].markdown.content) && /小王/.test(hooks[0].markdown.content), 'wecom markdown');
+  assert(mails[0] && mails[0].auth === 'Bearer key123' && mails[0].to.length === 2 && /小王/.test(mails[0].subject) && /The Lantern/.test(mails[0].html) && /admin\.html#/.test(mails[0].html), 'email notification');
   // admin
   assert.strictEqual((await j('/api/admin/sessions')).s, 401);
   assert.strictEqual((await j('/api/admin/login', { method: 'POST', body: '{"password":"nope"}' })).s, 401);
@@ -42,6 +45,6 @@ const assert = require('assert'), http = require('http'), os = require('os'), fs
   const p = await fetch(`${base}/api/wx/callback?msg_signature=${msig}&timestamp=${ts}&nonce=${nonce}`, { method: 'POST', body: JSON.stringify({ Encrypt: enc }) });
   assert.strictEqual(await p.text(), 'success'); await new Promise(r => setTimeout(r, 100));
   r = await j('/api/admin/sessions', { headers: { cookie } }); assert(r.b.sessions.some(s => s.channel === 'miniprogram' && s.replyWindowEndsAt));
-  console.log('PASS consult-server smoke: student→webhook→admin reply→student, auth, image validation, WeChat signature/AES/callback (offline)');
+  console.log('PASS consult-server smoke: student→webhook+email→admin reply→student, auth, image validation, WeChat signature/AES/callback (offline)');
   server.close(); fake.close(); process.exit(0);
 })().catch(e => { console.error(e); process.exit(1); });

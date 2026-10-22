@@ -1,6 +1,6 @@
 # 住宿咨询原型后端（consult-server）
 
-一条命令同时提供：**静态地图站点** + **学生咨询接口** + **客服工作台** + **通知**（日志 / 企业微信群机器人）+ **渠道适配层**（网页 `web` 已可用；微信小程序 `miniprogram` 已写好代码，待配置后联调）。
+一条命令同时提供：**静态地图站点** + **学生咨询接口** + **客服工作台** + **通知**（日志 / 企业微信群机器人 / 邮件）+ **渠道适配层**（网页 `web` 已可用；微信小程序 `miniprogram` 已写好代码，待配置后联调）。
 无任何第三方依赖，只需 Node.js 18 及以上版本。
 
 ## 一、如何运行
@@ -21,6 +21,8 @@ node consult-server/server.js
 | `PORT` / `HOST` | 端口 / 绑定地址 | `8765` / `0.0.0.0` |
 | `ADMIN_PASSWORD` | 工作台密码 | `123456`（上线前务必修改）|
 | `WECOM_WEBHOOK_URL` | 企业微信群机器人 Webhook 地址；不填则只在控制台打印 | 空 |
+| `EMAIL_API_KEY` `NOTIFY_EMAIL_TO` | 邮件提醒：邮件服务密钥、收件人（多个用逗号分隔）。两个都填才启用 | 空 |
+| `NOTIFY_EMAIL_FROM` `EMAIL_API_URL` | 发件人（需在邮件服务验证过的域名）、邮件接口地址 | `notify@example.com` / Resend 接口 |
 | `PUBLIC_URL` | 对外访问地址，用于通知里的“打开工作台”链接，例如 `https://consult.example.com` | 按请求 Host 推断 |
 | `DATA_DIR` | 会话 JSON 与上传图片的保存目录 | `consult-server/data` |
 | `SITE_DIR` | 静态站点目录 | `../liverpool-life-map-en` |

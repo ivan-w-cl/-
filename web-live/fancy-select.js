@@ -15,9 +15,11 @@
     button.type = 'button'; button.setAttribute('aria-haspopup', 'listbox'); button.setAttribute('aria-expanded', 'false'); button.setAttribute('aria-controls', list.id);
     button.append(text, caret); wrap.append(button, list);
     select.classList.add('fs-native'); select.tabIndex = -1; select.setAttribute('aria-hidden', 'true');
-    select.after(wrap);
     const label = select.id && document.querySelector(`label[for="${select.id}"]`);
-    if (label) { label.addEventListener('click', e => { if (e.target.closest('.fs')) return; e.preventDefault(); button.focus(); }); const span = label.querySelector('span'); if (span) { span.id = span.id || id + '-label'; button.setAttribute('aria-labelledby', span.id + ' ' + id + '-text'); text.id = id + '-text'; list.setAttribute('aria-labelledby', span.id); } }
+    // Keep the new control outside the <label>: a tap on anything inside a label "activates" the hidden native
+    // select, which on iPhone opens the system wheel picker on top of this list.
+    if (label && label.contains(select)) { label.after(wrap); label.classList.add('fs-label'); } else select.after(wrap);
+    if (label) { label.addEventListener('click', e => { e.preventDefault(); button.focus(); }); const span = label.querySelector('span'); if (span) { span.id = span.id || id + '-label'; button.setAttribute('aria-labelledby', span.id + ' ' + id + '-text'); text.id = id + '-text'; list.setAttribute('aria-labelledby', span.id); } }
 
     let items = [], active = -1;
     function build() {
@@ -32,7 +34,7 @@
       const item = el('div', 'fs-opt', opt.textContent); item.setAttribute('role', 'option'); item.id = id + '-o' + items.length;
       item.dataset.value = opt.value; if (opt.disabled) item.setAttribute('aria-disabled', 'true');
       if (opt.value === '') item.classList.add('fs-placeholder');
-      item.addEventListener('click', e => { e.stopPropagation(); if (!opt.disabled) choose(opt.value); });
+      item.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); if (!opt.disabled) choose(opt.value); });
       item.addEventListener('pointermove', () => mark(items.indexOf(item)));
       list.append(item); items.push(item);
     }
@@ -60,7 +62,7 @@
       sync(); close(true);
     }
     function step(d) { let i = active; do { i += d; } while (i >= 0 && i < items.length && items[i].getAttribute('aria-disabled') === 'true'); mark(Math.max(0, Math.min(items.length - 1, i))); }
-    button.addEventListener('click', e => { e.stopPropagation(); if (list.hidden) open(); else close(true); });
+    button.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); if (list.hidden) open(); else close(true); });
     button.addEventListener('keydown', e => { if (['ArrowDown', 'ArrowUp', 'Enter', ' '].includes(e.key)) { e.preventDefault(); open(); } });
     list.addEventListener('keydown', e => {
       if (e.key === 'ArrowDown') { e.preventDefault(); step(1); }

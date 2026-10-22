@@ -70,6 +70,8 @@
       me.messages.push({ from: 'agent', type: 'qr', at: now + 1, auto: true });
     }
     save(me);
+    const homes = h ? [{ n: h.n, name: h.name }] : [];
+    if (window.MailOutbox) window.MailOutbox.add(me.group ? 'auto' : 'request', me, homes);
   }
   /* 已经有群时，再咨询别的公寓：转给同一个群 */
   function forward(me, h) {
@@ -78,6 +80,7 @@
     me.viewed = [h.id].concat(me.viewed || []).filter((x, i, a) => a.indexOf(x) === i).slice(0, 6);
     me.unread = (me.unread || 0) + 1; me.updated = Date.now();
     save(me);
+    if (window.MailOutbox) window.MailOutbox.add('forward', me, [{ n: h.n, name: h.name }]);
   }
 
   function render(box) {

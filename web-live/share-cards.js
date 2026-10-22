@@ -83,9 +83,9 @@
   function footer(ctx, d, k, y, dark) {
     const size = 170, x = W - 90 - size;
     ctx.save(); ctx.fillStyle = '#fff'; ctx.strokeStyle = INK; ctx.lineWidth = 5; rr(ctx, x - 14, y - 14, size + 28, size + 28, 18); ctx.fill(); ctx.stroke(); ctx.restore();
-    qr(ctx, shareUrl(), x, y, size);
+    qr(ctx, d.link || shareUrl(), x, y, size);
     ctx.fillStyle = dark ? PANEL : INK; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
-    ctx.font = `44px ${DISPLAY}`; textBlock(ctx, k.scan, 90, y + 52, x - 140, 54, 2);
+    ctx.font = `44px ${DISPLAY}`; textBlock(ctx, d.scan || k.scan, 90, y + 52, x - 140, 54, 2);
     ctx.font = `600 26px ${BODY}`; ctx.fillStyle = dark ? '#e9dcbc' : SOFT;
     ctx.fillText(`${k.ref} ${refCode()}`, 90, y + 162);
     ctx.font = `22px ${BODY}`; ctx.fillText(k.footer, 90, H - 52);
@@ -117,7 +117,7 @@
   /* ---------- 4 种样式 ---------- */
   async function drawMap(ctx, d, k) {
     paper(ctx);
-    ctx.fillStyle = INK; ctx.textAlign = 'left'; ctx.font = `30px ${HAND}`; ctx.fillText(k.kicker.toUpperCase(), 90, 120);
+    ctx.fillStyle = INK; ctx.textAlign = 'left'; ctx.font = `30px ${HAND}`; ctx.fillText((d.kicker || k.kicker).toUpperCase(), 90, 120);
     ctx.font = `70px ${DISPLAY}`; let y = textBlock(ctx, `${d.stamp} ${d.title}`, 90, 205, W - 180, 80, 2);
     const mx = 90, my = y + 10, mw = W - 180, mh = 400;
     card(ctx, mx, my, mw, mh, PANEL, 22);
@@ -145,7 +145,7 @@
     ctx.strokeStyle = INK; ctx.lineWidth = 3; ctx.strokeRect(ix, iy, iw, ih);
     ctx.fillStyle = INK; ctx.textAlign = 'left'; ctx.font = `54px ${DISPLAY}`; textBlock(ctx, `${d.stamp} ${d.title}`, ix, iy + ih + 80, iw, 60, 2);
     ctx.restore(); tape(ctx, W / 2 - 250, 150, 200, -0.3); tape(ctx, W / 2 + 270, 160, 200, 0.35);
-    ctx.textAlign = 'left'; ctx.fillStyle = INK; ctx.font = `30px ${HAND}`; ctx.fillText(k.kicker, 110, 70);
+    ctx.textAlign = 'left'; ctx.fillStyle = INK; ctx.font = `30px ${HAND}`; ctx.fillText((d.kicker || k.kicker), 110, 70);
     let y = 955;
     d.picks.forEach((p, i) => { ctx.font = `36px ${DISPLAY}`; ctx.fillStyle = INK; ctx.fillText(`${['①', '②', '③'][i]} ${p.name}`, 110, y); ctx.font = `600 22px ${BODY}`; ctx.fillStyle = SOFT; ctx.textAlign = 'right'; ctx.fillText(p.price, W - 110, y); ctx.textAlign = 'left'; y += 44; });
     footer(ctx, d, k, H - 240);
@@ -157,7 +157,7 @@
     ctx.save(); ctx.setLineDash([16, 14]); ctx.strokeStyle = SOFT; ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(x + 30, y + h - stub); ctx.lineTo(x + w - 30, y + h - stub); ctx.stroke(); ctx.restore();
     ['#2f4f5a'].forEach(c => { ctx.fillStyle = c; ctx.beginPath(); ctx.arc(x, y + h - stub, 34, 0, Math.PI * 2); ctx.arc(x + w, y + h - stub, 34, 0, Math.PI * 2); ctx.fill(); });
     ctx.fillStyle = CORAL; rr(ctx, x, y, w, 130, 30); ctx.fill(); ctx.fillRect(x, y + 60, w, 70);
-    ctx.fillStyle = '#fff'; ctx.textAlign = 'left'; ctx.font = `30px ${HAND}`; ctx.fillText('LIVERPOOL STUDENT MAP · ' + k.kicker, x + 50, y + 80);
+    ctx.fillStyle = '#fff'; ctx.textAlign = 'left'; ctx.font = `30px ${HAND}`; ctx.fillText('LIVERPOOL STUDENT MAP · ' + (d.kicker || k.kicker), x + 50, y + 80);
     ctx.fillStyle = SOFT; ctx.font = `600 24px ${BODY}`; ctx.fillText(k.from.toUpperCase(), x + 50, y + 200); ctx.fillText(k.to.toUpperCase(), x + w / 2 + 40, y + 200);
     ctx.fillStyle = INK; ctx.font = `64px ${DISPLAY}`; ctx.fillText('LIME ST', x + 50, y + 270); ctx.fillText(d.picks[0] ? `No.${d.picks[0].n}` : k.home, x + w / 2 + 40, y + 270);
     ctx.font = `40px ${HAND}`; ctx.fillStyle = CORAL; ctx.fillText('— — ✈ — —', x + w / 2 - 110, y + 262);
@@ -168,14 +168,14 @@
     yy += 60;
     d.picks.forEach((p, i) => { yy += 58; ctx.fillStyle = i ? MERSEY : CORAL; ctx.beginPath(); ctx.arc(x + 70, yy - 12, 14, 0, Math.PI * 2); ctx.fill(); if (i < d.picks.length - 1) { ctx.fillRect(x + 66, yy, 8, 44); }
       ctx.fillStyle = INK; ctx.font = `38px ${DISPLAY}`; ctx.fillText(p.name, x + 110, yy); ctx.font = `600 22px ${BODY}`; ctx.fillStyle = SOFT; ctx.textAlign = 'right'; ctx.fillText(p.price, x + w - 50, yy); ctx.textAlign = 'left'; });
-    const size = 200, qx = x + w - 50 - size, qy = y + h - stub + 50; qr(ctx, shareUrl(), qx, qy, size);
-    ctx.fillStyle = INK; ctx.font = `44px ${DISPLAY}`; textBlock(ctx, k.scan, x + 50, qy + 60, qx - x - 100, 54, 2);
+    const size = 200, qx = x + w - 50 - size, qy = y + h - stub + 50; qr(ctx, d.link || shareUrl(), qx, qy, size);
+    ctx.fillStyle = INK; ctx.font = `44px ${DISPLAY}`; textBlock(ctx, d.scan || k.scan, x + 50, qy + 60, qx - x - 100, 54, 2);
     ctx.fillStyle = SOFT; ctx.font = `600 24px ${BODY}`; ctx.fillText(`${k.boarding} 2027 · ${k.ref} ${refCode()}`, x + 50, qy + 190);
     ctx.fillStyle = '#c9d6d9'; ctx.font = `22px ${BODY}`; ctx.fillText(k.footer, x, H - 26);
   }
   async function drawNotes(ctx, d, k) {
     paper(ctx, '#e9dcbc');
-    ctx.fillStyle = INK; ctx.textAlign = 'left'; ctx.font = `30px ${HAND}`; ctx.fillText(k.kicker, 90, 110);
+    ctx.fillStyle = INK; ctx.textAlign = 'left'; ctx.font = `30px ${HAND}`; ctx.fillText((d.kicker || k.kicker), 90, 110);
     ctx.save(); ctx.translate(90, 150); ctx.rotate(-0.02); card(ctx, 0, 0, W - 180, 300, YELLOW, 8);
     ctx.fillStyle = INK; ctx.font = `100px ${DISPLAY}`; ctx.fillText(d.stamp, 40, 130); ctx.font = `62px ${DISPLAY}`; textBlock(ctx, d.title, 170, 110, W - 180 - 210, 72, 2);
     ctx.font = `26px ${BODY}`; ctx.fillStyle = SOFT; textBlock(ctx, d.desc, 40, 230, W - 260, 36, 2); ctx.restore();
@@ -201,8 +201,9 @@
   wrapEl.addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopPropagation(); close(); } });
   let style = 'map', lastFocus = null, blob = null;
   function close() { wrapEl.hidden = true; wrapEl.replaceChildren(); if (lastFocus) lastFocus.focus({ preventScroll: true }); }
-  async function open() {
-    const d = readCard(); if (!d) return;
+  /* data: { kicker, stamp, title, desc, picks: [{ name, n, id, price, walk }], link, scan, shareText } — 不传时读生活选房卡 */
+  async function open(data) {
+    const d = data && data.title ? data : readCard(); if (!d) return;
     lastFocus = document.activeElement;
     const k = t(), box = el('div', 'sc-box'), head = el('div', 'sc-head');
     const x = btn('x', '×'); x.setAttribute('aria-label', k.close); x.addEventListener('click', close);
@@ -214,8 +215,8 @@
     const acts = el('div', 'sc-acts'), save = el('a', 'sc-btn main', k.save), share = btn('sc-btn', k.share), copy = btn('sc-btn', k.copy);
     save.download = 'liverpool-home-match.png';
     share.hidden = !(navigator.share && navigator.canShare);
-    share.addEventListener('click', async () => { try { const file = new File([blob], 'liverpool-home-match.png', { type: 'image/png' }); if (navigator.canShare({ files: [file] })) await navigator.share({ files: [file], text: k.shareText + shareUrl() }); else await navigator.share({ text: k.shareText, url: shareUrl() }); } catch (_) { /* cancelled */ } });
-    copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(k.shareText + shareUrl()); status.textContent = k.copied; } catch (_) { status.textContent = shareUrl(); } });
+    share.addEventListener('click', async () => { try { const file = new File([blob], 'liverpool-home-match.png', { type: 'image/png' }); if (navigator.canShare({ files: [file] })) await navigator.share({ files: [file], text: (d.shareText || k.shareText) + (d.link || shareUrl()) }); else await navigator.share({ text: d.shareText || k.shareText, url: d.link || shareUrl() }); } catch (_) { /* cancelled */ } });
+    copy.addEventListener('click', async () => { const url = d.link || shareUrl(); try { await navigator.clipboard.writeText((d.shareText || k.shareText) + url); status.textContent = k.copied; } catch (_) { status.textContent = url; } });
     acts.append(save, share, copy);
     box.append(head, tabs, el('div', 'sc-stage'), el('p', 'sc-hold', k.hold), acts, status);
     box.querySelector('.sc-stage').append(img);
@@ -238,10 +239,10 @@
   function decorate() {
     const tools = [...body.querySelectorAll('.tools')].pop();
     if (!tools || tools.querySelector('.sc-make') || !body.querySelector('.mcard')) return;
-    const b = btn('sc-make', t().make); b.addEventListener('click', e => { e.stopPropagation(); open(); });
+    const b = btn('sc-make', t().make); b.addEventListener('click', e => { e.stopPropagation(); open(null); });
     const copy = tools.querySelector('[data-hmr="copy"]'); if (copy) copy.after(b); else tools.prepend(b);
   }
   new MutationObserver(decorate).observe(body, { childList: true });
   decorate();
-  window.ShareCards = { open };
+  window.ShareCards = { open, refCode, shareUrl };
 })();

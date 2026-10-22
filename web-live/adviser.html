@@ -21,6 +21,24 @@
   body.embed .demobar { display: none; }
   body.embed .wrapA { padding: 0; }
   body.embed .wrapA .adminframe { border: 0; border-radius: 0; box-shadow: none; }
+  .mp-wrap { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 16px; background: rgba(59, 42, 26, .45); }
+  .mp-wrap[hidden] { display: none; }
+  .mp { width: min(980px, 100%); max-height: 100%; display: flex; flex-direction: column; background: var(--panel); border: 2.5px solid var(--ink); border-radius: 18px; box-shadow: var(--lift); overflow: hidden; }
+  .mp-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 2px dashed var(--line); }
+  .mp-x { border: 0; background: none; font-size: 26px; line-height: 1; cursor: pointer; color: var(--ink); }
+  .mp-body { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 18px; padding: 14px 16px 18px; overflow-y: auto; }
+  .mp-cfg { display: flex; flex-direction: column; gap: 12px; }
+  .mp-check { display: flex; gap: 8px; align-items: flex-start; font-size: 13.5px; line-height: 1.4; margin-top: 6px; }
+  .mp-check.off { color: var(--ink-soft); }
+  .mp-check input { width: auto; flex: none; margin: 3px 0 0; }
+  .mp-log { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .mp-log ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; max-height: 180px; overflow-y: auto; }
+  .mp-item { width: 100%; text-align: left; display: flex; flex-direction: column; gap: 1px; border: 1.5px solid var(--line); border-radius: 10px; background: #fff; padding: 6px 10px; cursor: pointer; font-size: 13px; }
+  .mp-item.on { border-color: var(--ink); background: #fff3c4; }
+  .mp-preview { border: 2px solid var(--ink); border-radius: 12px; overflow: hidden; background: #fff; }
+  .mp-subject { padding: 8px 12px; font-weight: 700; font-size: 13.5px; border-bottom: 1.5px solid var(--line); background: var(--panel-2); }
+  .mp-preview iframe { display: block; width: 100%; height: 440px; border: 0; }
+  @media (max-width: 760px) { .mp-body { grid-template-columns: 1fr; } }
   @media (max-width: 899px) { body { height: auto; } .wrapA .adminframe { min-height: 85vh; } }
 </style>
 </head>
@@ -32,8 +50,11 @@
 <script src="./adviser/data.js"></script>
 <script src="./adviser/ui.js"></script>
 <script src="./group-pool.js"></script>
+<script src="./mail-outbox.js"></script>
+<script src="./adviser/email-template.js"></script>
 <script src="./adviser/store-live.js"></script>
 <script src="./adviser/admin.js"></script>
+<script src="./adviser/mail-panel.js"></script>
 <script>
 (function () {
   'use strict';
@@ -51,20 +72,21 @@
     bar.innerHTML = `<span class="brand">${k.brand} <small>${k.tag}</small></span>
       <div class="pool"><b>${k.pool}</b><label><input type="checkbox" id="poolAuto" ${P.auto ? 'checked' : ''}> ${k.auto}</label>
         <span>${k.left.replace('{a}', window.GroupPool.count('whatsapp')).replace('{b}', window.GroupPool.count('wechat'))}</span><button data-act="refill">${k.refill}</button></div>
-      <div class="tools"><a href="./index.html" target="_blank" rel="noopener">${k.site}</a><a href="./handoff-demo.html">${k.flow}</a>
+      <div class="tools"><button data-act="mail">${window.MailPanel.label()}</button><a href="./index.html" target="_blank" rel="noopener">${k.site}</a><a href="./handoff-demo.html">${k.flow}</a>
       <button data-act="lang">${k.lang}</button><button data-act="reset" class="${armed ? 'warn' : ''}">${armed ? k.confirm : k.reset}</button></div>`;
   }
   bar.addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
     if (b.dataset.act === 'lang') { Store.s.demoLang = Store.s.demoLang === 'en' ? 'zh' : 'en'; Store.save(); renderBar(); window.Admin.render(); }
+    if (b.dataset.act === 'mail') { window.MailPanel.open(); return; }
     if (b.dataset.act === 'refill') { window.GroupPool.refill(5); renderBar(); U.toast(c().refilled); return; }
     if (b.dataset.act === 'reset') {
       if (!armed) { armed = true; renderBar(); setTimeout(() => { armed = false; renderBar(); }, 3500); return; }
-      armed = false; window.GroupPool.reset(); Store.reset(); window.Admin.reset(); window.Admin.render(); renderBar(); U.toast(c().done);
+      armed = false; window.GroupPool.reset(); window.MailOutbox.clear(); Store.reset(); window.Admin.reset(); window.Admin.render(); renderBar(); U.toast(c().done);
     }
   });
   bar.addEventListener('change', e => { if (e.target.id === 'poolAuto') { window.GroupPool.setAuto(e.target.checked); renderBar(); } });
-  addEventListener('storage', e => { if (e.key === window.GroupPool.KEY) renderBar(); });
+  addEventListener('storage', e => { if (e.key === window.GroupPool.KEY || e.key === window.MailOutbox.KEY) renderBar(); });
   function badge() { const n = Store.s.notices.filter(x => !x.seen).length; document.title = (n ? '(' + n + ') ' : '') + (Store.s.demoLang === 'en' ? 'Adviser console' : '顾问后台') + ' · Liverpool Student Map'; }
   window.Admin.mount(document.getElementById('admin'));
   Store.on(() => { window.Admin.refresh(); badge(); renderBar(); });

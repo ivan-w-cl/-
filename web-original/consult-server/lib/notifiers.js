@@ -1,5 +1,6 @@
 'use strict';
 // Pluggable notifiers. Each has notify(event) -> Promise. Add more (email, 飞书, 钉钉…) by pushing to the list.
+const { emailContent } = require('./email-template');
 const log = { name: 'console', async notify(e) { console.log(`[notify] ${e.title} | 会话 ${e.session.id} | ${e.session.nickname || '匿名同学'} | ${e.text}`); } };
 
 function wecomMarkdown(e) {
@@ -26,9 +27,22 @@ function wecom(url) {
     if (j.errcode) throw new Error(`企业微信机器人返回 ${j.errcode} ${j.errmsg}`);
   } };
 }
+/* 邮件提醒：通过邮件服务的 HTTP 接口发送（默认 Resend 的格式：POST {from, to, subject, html, text}，Bearer 密钥）。
+   换成其他服务（SendGrid、Mailgun、阿里云邮件推送等）时，改 EMAIL_API_URL 和下面的请求体即可。 */
+function email(env) {
+  const url = env.EMAIL_API_URL || 'https://api.resend.com/emails';
+  const to = env.NOTIFY_EMAIL_TO.split(',').map(x => x.trim()).filter(Boolean);
+  return { name: 'email', async notify(e) {
+    const { subject, html, text } = emailContent(e);
+    const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${env.EMAIL_API_KEY}` },
+      body: JSON.stringify({ from: env.NOTIFY_EMAIL_FROM || 'Liverpool Student Map <notify@example.com>', to, subject, html, text }) });
+    if (!r.ok) throw new Error(`邮件接口返回 ${r.status} ${(await r.text().catch(() => '')).slice(0, 200)}`);
+  } };
+}
 function createNotifiers(env) {
   const list = [log];
   if (env.WECOM_WEBHOOK_URL) list.push(wecom(env.WECOM_WEBHOOK_URL));
+  if (env.EMAIL_API_KEY && env.NOTIFY_EMAIL_TO) list.push(email(env));
   return {
     names: list.map(n => n.name),
     async notify(e) { await Promise.all(list.map(n => n.notify(e).catch(err => console.error(`[notify:${n.name}] 失败：`, err.message)))); }
