@@ -21,6 +21,10 @@
       qrTitle: '你的预定专家群', qrWa: '用手机扫码，或点下方按钮加入 WhatsApp 群。', qrWx: '用微信扫码或长按二维码加入群聊。',
       openWa: '在 WhatsApp 中打开', openNote: '演示：正式版会在这里打开 WhatsApp。', team: '你的团队', demo: '演示二维码，扫码不会进入真实群。',
       forwarded: '已把「{home}」发给你的专家群，进群后专家会接着跟你聊。', adviser: '顾问',
+      askH: '先问一个小问题', askPh: '比如：还有房吗？', ask: '问', ai: 'AI 助手（演示）', you: '你',
+      chips: ['还有房吗？', '每周多少钱？', '离学校多远？', '包水电网吗？', '可以两个人住吗？'],
+      nudge: '这类问题需要专家查实时房态和合同，进群直接问最快：', nudge2: '看起来你在认真考虑「{home}」，要不要直接进群和专家确认？',
+      validTill: '群二维码有效期至 {d}（微信群码 7 天有效）', expired: '这个群二维码已过期。', renew: '申请新群码', renewed: '已通知专家，新的群码会发到这里。',
       fab: '我的专家群', fabWait: '等待群码', fabReady: '群码已到', fabNew: '新消息', toastQr: '顾问发来了你的专家群二维码', toastMsg: '顾问发来一条消息', open: '打开', show: '显示消息提醒' },
     en: { title: 'Chat with booking experts in your own group', lead: 'One group per student. Ask about prices, dates, rooms and contracts right in the group. No forms here.',
       join: 'Join my group now', via: 'You will join on {app}', switchTo: 'Use {app} instead', whatsapp: 'WhatsApp', wechat: 'WeChat',
@@ -28,6 +32,10 @@
       qrTitle: 'Your booking expert group', qrWa: 'Scan with your phone, or tap the button to join the WhatsApp group.', qrWx: 'Scan or long-press the QR code in WeChat to join.',
       openWa: 'Open in WhatsApp', openNote: 'Demo: the real app opens WhatsApp here.', team: 'Your team', demo: 'Demo QR code. It does not open a real group.',
       forwarded: 'We sent "{home}" to your expert group. The experts will pick it up with you there.', adviser: 'Adviser',
+      askH: 'Ask a quick question first', askPh: 'e.g. Is a room still available?', ask: 'Ask', ai: 'AI assistant (demo)', you: 'You',
+      chips: ['Any rooms left?', 'How much per week?', 'How far from campus?', 'Are bills included?', 'Can two people share?'],
+      nudge: 'Live availability and contracts need an expert. The quickest way is to ask in your group:', nudge2: 'Looks like you are serious about "{home}". Confirm it with an expert in your group?',
+      validTill: 'QR code valid until {d} (WeChat group codes last 7 days)', expired: 'This group QR code has expired.', renew: 'Ask for a new code', renewed: 'The experts have been notified. A new code will appear here.',
       fab: 'My expert group', fabWait: 'Waiting for code', fabReady: 'Group code ready', fabNew: 'New message', toastQr: 'Your expert group QR code has arrived', toastMsg: 'New message from your adviser', open: 'Open', show: 'Show message reminder' },
     ja: { title: '専用グループで予約サポートと話す', lead: '学生ごとに専用グループを用意します。料金・空室・部屋・契約はグループで直接質問できます。入力は不要です。',
       join: '今すぐグループに参加', via: '{app} で参加します', switchTo: '{app} に変更', whatsapp: 'WhatsApp', wechat: 'WeChat',
@@ -35,6 +43,10 @@
       qrTitle: 'あなたの予約サポートグループ', qrWa: 'スマホで読み取るか、ボタンから WhatsApp グループに参加できます。', qrWx: 'WeChat で読み取ってグループに参加してください。',
       openWa: 'WhatsApp で開く', openNote: 'デモ：正式版ではここで WhatsApp が開きます。', team: '担当チーム', demo: 'デモ用 QR コードです。実際のグループには参加しません。',
       forwarded: '「{home}」をあなたのグループに共有しました。グループで続きを相談できます。', adviser: '担当者',
+      askH: 'まずは気軽に質問', askPh: '例：まだ空いていますか？', ask: '質問', ai: 'AI アシスタント（デモ）', you: 'あなた',
+      chips: ['まだ空いていますか？', '週いくらですか？', '大学まで遠いですか？', '光熱費込みですか？', '2人で住めますか？'],
+      nudge: '最新の空室や契約は担当者の確認が必要です。グループで聞くのが一番早いです：', nudge2: '「{home}」を本気で検討中のようです。グループで担当者に確認しませんか？',
+      validTill: 'QR コードの有効期限：{d}（WeChat グループのコードは 7 日間）', expired: 'このグループ QR コードは期限切れです。', renew: '新しいコードを依頼', renewed: '担当者に通知しました。新しいコードはここに届きます。',
       fab: '専用グループ', fabWait: 'QR 待ち', fabReady: 'QR が届きました', fabNew: '新着', toastQr: 'グループの QR コードが届きました', toastMsg: '担当者からメッセージ', open: '開く', show: 'メッセージ通知を表示' }
   };
   const lang = () => { try { return W[LANG] ? LANG : 'zh'; } catch (_) { return 'zh'; } };
@@ -53,6 +65,27 @@
   function favorites() { try { const v = JSON.parse(localStorage.getItem('lsm-favorites-v1')); return Array.isArray(v) ? v.filter(x => typeof x === 'string').slice(0, 10) : []; } catch (_) { return []; } }
   function qrSvg(text) { try { const q = window.qrcode(0, 'M'); q.addData(text); q.make(); return q.createSvgTag({ cellSize: 4, margin: 2, scalable: true }); } catch (_) { return ''; } }
 
+  /* ---------- 进群前的小问题：AI 助手先回答，再引导进群 ----------
+     演示用规则回答，只用页面里已有的数据（价格、步行时间）。正式版可换成 AI（例如 Claude），规则不变：
+     只根据房源资料回答，不承诺空房和价格；问到房态、预定、合同，或聊了两轮，就请学生进群找专家确认。 */
+  const qa = [];   // 这次对话的问答，进群时一起交给专家
+  function answer(q, h) {
+    const t = q.toLowerCase(), lg = lang(), name = h ? h.name : '';
+    const price = h ? [h.pe && (lg === 'en' ? `en-suite from £${h.pe}` : `独卫 £${h.pe} 起`), h.ps && (lg === 'en' ? `studio from £${h.ps}` : `Studio £${h.ps} 起`), !h.pe && !h.ps && h.plo && `£${h.plo}`].filter(Boolean).join(lg === 'en' ? ', ' : '，') : '';
+    const L3 = (zh, en, ja) => ({ zh, en, ja }[lg] || en);
+    if (/有房|空房|还有|满了|available|any rooms|vacan|空き|空いて|book|预定|预订|订|合同|contract|契約/.test(t))
+      return { text: L3(`${name} 的房态每天都在变，我这里只有 2026-10-17 的历史记录${h && h.pso ? '（当时显示无房）' : ''}，没法确认现在有没有房。`, `Availability at ${name} changes daily. I only have a record from 17 Oct 2026${h && h.pso ? ' (no rooms listed then)' : ''}, so I can't confirm what's free now.`, `${name} の空室は毎日変わります。手元には 2026/10/17 の記録しかなく、現在の空室は確認できません。`), push: true };
+    if (/多少钱|价格|租金|贵|便宜|price|cost|rent|how much|per week|いくら|料金|家賃/.test(t))
+      return { text: price ? L3(`${name} 的历史参考价：${price}／周。账单、合同长度和房型会影响总价。`, `Recorded prices at ${name}: ${price} per week. Bills, contract length and room type change the total.`, `${name} の参考価格：${price}／週。光熱費や契約期間で総額が変わります。`) : L3(`${name} 暂时没有记录参考价。`, `No recorded price for ${name} yet.`, `${name} の参考価格は未記録です。`), push: false };
+    if (/远|多久|步行|学校|大学|far|walk|campus|distance|uni|遠い|徒歩|大学/.test(t))
+      return { text: h ? L3(`步行到利物浦大学约 ${h.uol} 分钟，到 LJMU 约 ${h.ljmu} 分钟，到莱姆街火车站约 ${h.lime} 分钟（按距离估算）。`, `About ${h.uol} min walk to the University of Liverpool, ${h.ljmu} min to LJMU and ${h.lime} min to Lime Street (distance estimates).`, `リバプール大学まで徒歩約 ${h.uol} 分、LJMU まで約 ${h.ljmu} 分（距離からの推定）。`) : '', push: false };
+    if (/水电|网|账单|bill|wifi|utilit|光熱|ネット/.test(t))
+      return { text: L3('利物浦的学生公寓大多包水电网，但每家合同不一样，需要按这一套的合同确认。', 'Most Liverpool student homes include bills and Wi-Fi, but each contract differs, so it needs checking for this one.', 'リバプールの学生寮は多くが光熱費込みですが、契約ごとに異なるため確認が必要です。'), push: true };
+    if (/两个人|情侣|伴侣|couple|two people|share|2人|カップル/.test(t))
+      return { text: L3('部分公寓的一居室或 Studio 可以两人入住，要看具体房型和公寓规定。', 'Some one-bed flats and studios allow two people, depending on the room type and building rules.', '一部の 1ベッドやスタジオは 2 人入居可能です。部屋タイプと規約によります。'), push: true };
+    return { text: L3('这个问题专家在群里回答会更准确。', 'An expert in your group can answer that more accurately.', 'この質問はグループで担当者が答える方が正確です。'), push: true };
+  }
+
   /* ---------- 一键进群 ---------- */
   let chosen = null;   // channel picked in this panel; null = default for the language
   function join(h) {
@@ -62,16 +95,26 @@
       viewed, favorites: favorites(), quiz: '', group: null, unread: 1, studentUnread: 0, updated: now,
       request: { name: { en: 'Website student', zh: '网站学生', ja: 'サイトの学生' }[lang()], region: regionOf(), channel, intake: '', budget: 0, uni: 'uol', room: 'any',
         homeId: h && h.id, homeName: h && h.name, at: now, oneTap: true },
-      messages: (h ? [{ from: 'student', type: 'home', homeId: h.id, at: now - 1 }] : []).concat([{ from: 'student', type: 'request', at: now }]) };
+      messages: (h ? [{ from: 'student', type: 'home', homeId: h.id, at: now - 1 - qa.length * 2 }] : []).concat(qa.flatMap((x, i) => [{ from: 'student', text: x.q, at: now - (qa.length - i) * 2 }, { from: 'agent', text: x.a, ai: true, at: now - (qa.length - i) * 2 + 1 }]), [{ from: 'student', type: 'request', at: now }]) };
     const g = window.GroupPool && window.GroupPool.take(channel);
     if (g) {
-      me.group = { team: g.team, channel: g.channel, name: g.name, link: g.link, at: now, auto: true };
+      me.group = { team: g.team, channel: g.channel, name: g.name, link: g.link, at: now, auto: true, expiresAt: g.channel === 'wechat' ? now + 7 * 864e5 : null };
       me.status = 'qr_sent';
       me.messages.push({ from: 'agent', type: 'qr', at: now + 1, auto: true });
     }
     save(me);
     const homes = h ? [{ n: h.n, name: h.name }] : [];
     if (window.MailOutbox) window.MailOutbox.add(me.group ? 'auto' : 'request', me, homes);
+  }
+  /* 微信群码过期：学生一键申请新群码，专家收到提醒后重新发 */
+  function renew() {
+    const me = load(); if (!me) return;
+    const now = Date.now();
+    me.status = 'requested'; me.request = Object.assign({}, me.request, { at: now, renew: true }); me.unread = (me.unread || 0) + 1; me.updated = now;
+    me.messages.push({ from: 'student', type: 'request', at: now, renew: true });
+    me.group = null;
+    save(me);
+    if (window.MailOutbox) window.MailOutbox.add('request', me, me.request.homeName ? [{ n: '', name: me.request.homeName }] : []);
   }
   /* 已经有群时，再咨询别的公寓：转给同一个群 */
   function forward(me, h) {
@@ -94,7 +137,7 @@
       const sw = btn('bh-switch', fmt(k.switchTo, { app: k[other] }));
       sw.addEventListener('click', () => { chosen = other; render(box); box.querySelector('.bh-join').focus(); });
       const via = el('p', 'bh-via', fmt(k.via, { app: k[channel] + ' ' })); via.append(' · ', sw);
-      box.append(go, via);
+      box.append(go, via, askBlock(box, h));
       return;
     }
     if (me.group && h && h.id !== me.request.homeId) forward(me, h);
@@ -102,11 +145,39 @@
     if (me.group) log.append(qrCard(me.group, k));
     else { log.append(el('p', 'bh-wait', k.waiting), el('p', 'bh-small', k.waitingNote)); }
     if (me.group && h && me.messages.some(m => m.forwarded && m.homeId === h.id)) log.append(el('p', 'bh-sys', fmt(k.forwarded, { home: h.name })));
-    me.messages.filter(m => m.from === 'agent' && m.text).forEach(m => {
+    me.messages.filter(m => m.from === 'agent' && m.text && !m.ai).forEach(m => {
       const b = el('div', 'bh-msg'); b.append(el('span', 'bh-who', `${k.adviser} · ${clock(m.at)}`), el('p', '', m.text)); log.append(b);
     });
     box.append(log);
     if (me.studentUnread) { me.studentUnread = 0; save(me); }
+  }
+  function askBlock(box, h) {
+    const k = w(), sec = el('div', 'bh-ask');
+    sec.append(el('p', 'bh-askh', k.askH));
+    const log = el('div', 'bh-qa');
+    qa.filter(x => !h || x.home === h.id).forEach(x => {
+      const me = el('div', 'bh-q'); me.append(el('span', 'bh-who', k.you), el('p', '', x.q));
+      const ai = el('div', 'bh-a'); ai.append(el('span', 'bh-who', k.ai), el('p', '', x.a));
+      log.append(me, ai);
+      if (x.push) { const n = el('div', 'bh-nudge'); n.append(el('p', '', k.nudge)); const g = btn('bh-join small ' + (chosen || defaultChannel()), k.join); g.addEventListener('click', () => join(h)); n.append(g); log.append(n); }
+    });
+    const asked = qa.filter(x => !h || x.home === h.id);
+    if (asked.length >= 2 && !asked.some(x => x.push) && h) { const n = el('div', 'bh-nudge'); n.append(el('p', '', fmt(k.nudge2, { home: h.name }))); const g = btn('bh-join small ' + (chosen || defaultChannel()), k.join); g.addEventListener('click', () => join(h)); n.append(g); log.append(n); }
+    if (log.childNodes.length) sec.append(log);
+    const chips = el('div', 'bh-chips');
+    k.chips.forEach(c => { const b = btn('bh-chip', c); b.addEventListener('click', () => ask(c)); chips.append(b); });
+    const f = el('form', 'bh-askf'), inp = el('input'); inp.id = 'bhAsk'; inp.placeholder = k.askPh; inp.maxLength = 120; inp.autocomplete = 'off';
+    inp.setAttribute('aria-label', k.askH);
+    const s2 = el('button', 'bh-askb', k.ask); s2.type = 'submit'; f.append(inp, s2);
+    f.addEventListener('submit', e => { e.preventDefault(); ask(inp.value); });
+    function ask(q) {
+      q = String(q || '').trim().slice(0, 120); if (!q) return;
+      const r = answer(q, h); qa.push({ q, a: r.text, push: r.push, home: h && h.id });
+      render(box);
+      const last = box.querySelector('.bh-qa'); if (last) last.lastElementChild.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+    sec.append(chips, f);
+    return sec;
   }
   function qrCard(g, k) {
     const team = TEAMS[g.team] || TEAMS.A, wa = g.channel === 'whatsapp';
@@ -114,6 +185,11 @@
     c.append(el('span', 'bh-tape'), el('b', 'bh-qrtitle', k.qrTitle), el('span', 'bh-chan', wa ? 'WhatsApp' : '微信 WeChat'));
     const q = el('div', 'bh-code'); q.innerHTML = qrSvg(g.link); c.append(q);
     c.append(el('b', '', g.name), el('p', 'bh-small', wa ? k.qrWa : k.qrWx), el('p', 'bh-small', `${k.team}: ${team[lang()] || team.en} · ${team.members.join(' · ')}`));
+    if (g.expiresAt) {
+      const expired = Date.now() > g.expiresAt, d = new Date(g.expiresAt).toLocaleDateString(lang() === 'en' ? 'en-GB' : lang() === 'ja' ? 'ja-JP' : 'zh-CN', { month: 'short', day: 'numeric' });
+      if (expired) { c.classList.add('expired'); const r = btn('bh-open', k.renew); r.addEventListener('click', renew); c.append(el('p', 'bh-small bh-warn', k.expired), r); }
+      else c.append(el('p', 'bh-small', fmt(k.validTill, { d })));
+    }
     if (wa) {
       const b = btn('bh-open', k.openWa), note = el('p', 'bh-small', ''); note.setAttribute('role', 'status');
       b.addEventListener('click', () => { note.textContent = k.openNote; });

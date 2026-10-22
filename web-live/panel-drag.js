@@ -158,5 +158,5 @@
     sides(); wide.addEventListener('change', sides);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
-  window.PanelDrag = { init };
+  window.PanelDrag = { init, setup };
 })();

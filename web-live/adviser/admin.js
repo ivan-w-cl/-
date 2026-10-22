@@ -55,16 +55,21 @@
         body = `<div class="ctxcard">${cover ? `<img src="${cover}" alt="">` : `<span class="hc-num">${h.n}</span>`}<span><span class="fine">${esc(A.viewed)}</span><b>${h.n} · ${esc(h.name)}</b><span>${r ? esc(r.name + ' · ' + r.price + '/wk') : esc(U.fromPrice(h, lg))}</span></span></div>`; }
       else if (m.type === 'request') body = `<div class="bubble req"><b>🙋 ${esc(A.newReq)}</b>${reqLines(c)}</div>`;
       else if (m.type === 'qr') body = c.group ? `<div class="bubble qrmini"><div class="qr">${U.qrSvg(c.group.link, 2)}</div><span><b>${esc(c.group.name)}</b><br><span class="fine">${esc(U.L(D.CHANNELS[c.group.channel], lg))} · ${esc(U.L(D.TEAMS.find(x => x.id === c.group.team).name, lg))}${c.group.auto ? (lg === 'en' ? ' · sent from the pre-built pool' : ' · 预建群池自动派发') : ''}</span></span></div>` : '';
-      else body = `<div class="bubble">${esc(m.text)}</div>`;
+      else body = `<div class="bubble${m.ai ? ' ai' : ''}">${m.ai ? `<span class="fine">🤖 ${esc(lg === 'en' ? 'AI assistant, before the group' : 'AI 助手 · 进群前')}</span><br>` : ''}${esc(m.text)}</div>`;
       return `<div class="msg ${side}">${body}<time>${U.clock(m.at)} · ${esc(U.ago(m.at, lg))}</time></div>`;
     }).join('');
     const stale = c.status === 'qr_sent' && c.group && Date.now() - c.group.at > 864e5;
+    const exp = c.group && c.group.expiresAt, expSoon = exp && Date.now() > exp - 864e5;
+    const expLine = exp ? (Date.now() > exp ? (lg === 'en' ? 'This WeChat group QR code has expired. Send a fresh code if the student still needs it.' : '这个微信群二维码已过期，如学生还没进群，请重新发送群码。')
+      : (lg === 'en' ? `WeChat group QR code valid until ${new Date(exp).toLocaleDateString('en-GB')}` : `微信群二维码有效期至 ${new Date(exp).toLocaleDateString('zh-CN')}（7 天）`)) : '';
     return `<div class="thread">
       <div class="thead"><div class="grow"><b class="h3">${esc(nameOf(c))}</b><div class="row gap">${regionTag(c)}${statusPill(c.status)}</div></div>
         ${c.status === 'requested' ? `<button class="btn main small" data-act="build">▦ ${esc(A.buildGroup)}</button>` : ''}
+        ${c.status !== 'requested' && expSoon ? `<button class="btn main small" data-act="build">▦ ${esc(lg === 'en' ? 'Send a new code' : '重新发送群码')}</button>` : ''}
         ${c.status === 'qr_sent' ? `<button class="btn small" data-status="joined">✓ ${esc(A.markJoined)}</button>` : ''}
         ${c.status === 'joined' ? `<button class="btn small" data-status="booked">✓ ${esc(A.markBooked)}</button>` : ''}</div>
       ${stale ? `<p class="warnline">⏰ ${esc(A.remind)}</p>` : ''}
+      ${expLine ? `<p class="warnline ${expSoon ? '' : 'calm'}">${expSoon ? '⚠️' : '🕒'} ${esc(expLine)}</p>` : ''}
       <div class="amsgs" id="amsgs">${msgs}</div>
       <div class="suggest"><button class="chip" data-act="ai">✨ ${esc(A.aiSuggest)}</button></div>
       <form class="composer" id="acomposer"><label class="sr" for="aIn">${esc(A.reply)}</label><input id="aIn" autocomplete="off" placeholder="${esc(A.reply)}" value="${esc(reply)}"><button class="btn small main" type="submit">${esc(U.T(lg).send)}</button></form>
@@ -116,7 +121,7 @@
   }
   function openModal() {
     const c = Store.conv(current), ch = (c.request && c.request.channel) || D.REGIONS[c.region].channel;
-    modal = { team: c.region === 'JP' ? 'C' : 'A', channel: ch, name: 'LSM · ' + (c.request ? c.request.name : c.name) + ' · ' + (c.request ? c.request.intake : ''), link: D.demoLink(ch, c.id + Date.now().toString(36).slice(-4)) };
+    modal = { team: c.region === 'JP' ? 'C' : 'A', channel: ch, name: ['LSM', c.request ? c.request.name : c.name, c.request && (c.request.homeName || c.request.intake)].filter(Boolean).join(' · '), link: D.demoLink(ch, c.id + Date.now().toString(36).slice(-4)) };
     render();
   }
 
@@ -217,5 +222,5 @@
     render();
     if (focused) { const f = el.querySelector('#' + focused); if (f) { f.focus(); if (f.setSelectionRange && f.value) f.setSelectionRange(f.value.length, f.value.length); } }
   }
-  root.Admin = { mount, refresh, render, reset() { tab = 'inbox'; current = 'me'; filter = 'all'; query = ''; modal = null; reply = ''; } };
+  root.Admin = { mount, refresh, render, select(id) { if (Store.conv(id)) { tab = 'inbox'; filter = 'all'; select(id); } }, reset() { tab = 'inbox'; current = 'me'; filter = 'all'; query = ''; modal = null; reply = ''; } };
 })(typeof globalThis !== 'undefined' ? globalThis : this);

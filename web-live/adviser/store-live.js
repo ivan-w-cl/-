@@ -54,7 +54,9 @@
     },
     sendGroup(id, group) {
       const c = Store.conv(id);
-      c.group = Object.assign({ at: Date.now() }, group); c.status = 'qr_sent';
+      const now = Date.now();
+      // 微信群二维码 7 天后失效；WhatsApp 邀请链接不过期（除非在群设置里重置）
+      c.group = Object.assign({ at: now, expiresAt: group.channel === 'wechat' ? now + 7 * 864e5 : null }, group); c.status = 'qr_sent';
       state.notices.forEach(n => { if (n.conv === id) n.seen = true; });
       Store.agentSend(id, { type: 'qr' });
     },

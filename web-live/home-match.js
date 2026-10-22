@@ -25,13 +25,13 @@
     { id: 'shop', q: '你习惯怎样采购食物？', opts: [
       ['topup', '🧺', '少量多次，随用随买', '附近有食品店就很方便'], ['weekly', '🛒', '每周集中采购一次', '希望离超市近一点'],
       ['special', '🌶️', '喜欢找熟悉的食材', '亚洲或国际食品店很加分'], ['rarely', '🙃', '其实不太买菜', '大多数时候在外面吃'] ] },
-    { id: 'flavour', multi: true, max: 3, q: '你希望附近有哪些口味？', hint: '可多选；选择「都可以」会取消其他口味。', opts: [
+    { id: 'flavour', multi: true, max: 3, q: '你希望附近有哪些口味？', hint: '选一个最想要的，点选后自动进入下一题。', opts: [
       ['east', '🍜', '东亚与东南亚风味', '中餐、日料、韩餐、泰餐等'], ['south', '🍛', '南亚与中东风味', '咖喱、烤肉、黎巴嫩菜等'],
       ['veg', '🥗', '植物性饮食', '参考资料中有相关标记的店'], ['any', '😋', '都可以', '没有特别偏好'] ] },
     { id: 'study', q: '你在哪里最容易进入学习状态？', opts: [
       ['library', '📚', '图书馆', '喜欢专门的学习空间'], ['cafe', '☕', '咖啡馆', '一台电脑，一杯咖啡'],
       ['desk', '🪑', '自己的书桌', '更喜欢在家专注'], ['any', '🎒', '在哪里都可以', '不太挑学习场所'] ] },
-    { id: 'free', multi: true, max: 2, q: '空闲的周六下午，你更想……', hint: '最多选两项。', opts: [
+    { id: 'free', multi: true, max: 2, q: '空闲的周六下午，你更想……', hint: '选一个最想做的，点选后自动进入下一题。', opts: [
       ['shops', '🛍️', '逛逛街', '衣服、书店、小玩意'], ['park', '🌳', '去公园散步或跑步', '换换空气'],
       ['gym', '🏋️', '健身或运动', '保持活力'], ['culture', '🎨', '看展、看电影或演出', '给生活添点灵感'], ['home', '🛋️', '舒服地待在家', '给自己充充电'] ] },
     { id: 'night', q: '到了晚上，你的生活节奏是？', hint: '这里只比较收录的夜间场所数量，不代表街道噪声或安全评价。', opts: [
@@ -254,7 +254,9 @@
     hide(); closeSheets(); welcome.hidden = true;
     wrap.hidden = false; setModalBackground(true); drawQuiz();
   }
+  let autoNext=0;
   function drawQuiz() {
+    clearTimeout(autoNext);
     if (state.step < 0) {
       body.innerHTML = `<div class="hm-intro"><div class="hm-step">利物浦 · 我的选房指南</div><h2 id="hmTitle">住进适合你日常的利物浦</h2><p class="lede">从怎么吃、在哪学，到周末怎么过，回答 8 个小问题，看看哪些公寓值得放进你的备选清单。</p><div class="hm-doodles"><span>🛒 周边生活配套</span><span>📚 图书馆与咖啡馆</span><span>🌳 公园与运动</span><span>🎓 专业教学楼</span></div><p class="hm-note">已有预算、房型和收藏筛选会继续生效。答案只保存在当前浏览器，不需要姓名或联系方式。这是生活偏好小测试，不是科学人格测试，也不保证空房或实际居住体验。</p><div class="hm-foot"><button class="hm-link" type="button" data-hm="browse">先逛逛地图</button><span style="display:flex;gap:8px;flex-wrap:wrap"><button class="hm-btn alt" type="button" data-hm="subject">按专业找房</button>${complete()?'<button class="hm-btn alt" type="button" data-hm="results">查看上次结果</button>':''}<button class="hm-btn" type="button" data-hm="start">开始生活选房</button></span></div></div>`;
     } else {
@@ -281,21 +283,15 @@
     } else if (action==='opt') {
       const q=QUESTIONS[state.step], choice=button.dataset.v;
       if (!q?.opts.some(option=>option[0]===choice)) return;
-      if (q.multi) {
-        let selected=[...(state.answers[q.id] || [])];
-        if (choice==='any') selected=selected.includes('any')?[]:['any'];
-        else if (selected.includes(choice)) selected=selected.filter(item=>item!==choice);
-        else {
-          selected=selected.filter(item=>item!=='any');
-          if (selected.length>=q.max) {toast(`这题最多选 ${q.max} 项，请先取消一项。`);return;}
-          selected.push(choice);
-        }
-        state.answers[q.id]=selected;
-      } else state.answers[q.id]=choice;
+      // Every card is a single tap that moves on, including the two former multi-select questions:
+      // they keep their array answer (one item) so the scoring is unchanged.
+      state.answers[q.id]=q.multi?[choice]:choice;
       saveAnswers();
-      // Update in place so keyboard and multi-select users keep their focus.
-      body.querySelectorAll('[data-hm="opt"]').forEach(option=>option.setAttribute('aria-pressed',String(q.multi?state.answers[q.id].includes(option.dataset.v):state.answers[q.id]===option.dataset.v)));
-      body.querySelector('[data-hm="next"]').disabled=!answered(q);
+      body.querySelectorAll('[data-hm="opt"]').forEach(option=>option.setAttribute('aria-pressed',String(option.dataset.v===choice)));
+      body.querySelector('[data-hm="next"]').disabled=false;
+      clearTimeout(autoNext);
+      const step=state.step;
+      autoNext=setTimeout(()=>{if(state.step!==step || wrap.hidden)return;if(state.step<QUESTIONS.length-1){state.step++;drawQuiz();}else showResults();},280);
     }
   });
   document.getElementById('hmX').addEventListener('click', event=>{event.stopPropagation();closeQuiz();});

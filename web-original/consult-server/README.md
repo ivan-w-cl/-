@@ -21,8 +21,10 @@ node consult-server/server.js
 | `PORT` / `HOST` | 端口 / 绑定地址 | `8765` / `0.0.0.0` |
 | `ADMIN_PASSWORD` | 工作台密码 | `123456`（上线前务必修改）|
 | `WECOM_WEBHOOK_URL` | 企业微信群机器人 Webhook 地址；不填则只在控制台打印 | 空 |
-| `EMAIL_API_KEY` `NOTIFY_EMAIL_TO` | 邮件提醒：邮件服务密钥、收件人（多个用逗号分隔）。两个都填才启用 | 空 |
-| `NOTIFY_EMAIL_FROM` `EMAIL_API_URL` | 发件人（需在邮件服务验证过的域名）、邮件接口地址 | `notify@example.com` / Resend 接口 |
+| `NOTIFY_EMAIL_TO` | 邮件提醒的收件人（多个用逗号分隔），配合下面任一种发信方式 | 空 |
+| `SMTP_HOST` `SMTP_PORT` `SMTP_USER` `SMTP_PASS` | **Google 邮箱（推荐）**：`smtp.gmail.com`、`465`、你的 Gmail / Workspace 邮箱、应用专用密码（账号需开启两步验证，在 Google 账号「安全性 → 应用专用密码」生成）。其他邮箱同理 | 空 |
+| `EMAIL_API_KEY` `EMAIL_API_URL` | 或者用邮件服务的 HTTP 接口发信（默认 Resend 格式）。设置了 `SMTP_HOST` 时优先用 SMTP | 空 |
+| `NOTIFY_EMAIL_FROM` | 发件人，如 `Liverpool Student Map <bookings@你的域名>`；用 Gmail 时须是该账号或其已验证的别名 | `SMTP_USER` |
 | `PUBLIC_URL` | 对外访问地址，用于通知里的“打开工作台”链接，例如 `https://consult.example.com` | 按请求 Host 推断 |
 | `DATA_DIR` | 会话 JSON 与上传图片的保存目录 | `consult-server/data` |
 | `SITE_DIR` | 静态站点目录 | `../liverpool-life-map-en` |
@@ -34,7 +36,13 @@ node consult-server/server.js
 ADMIN_PASSWORD=换成你的密码 WECOM_WEBHOOK_URL='https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxx' PUBLIC_URL=https://你的域名 node consult-server/server.js
 ```
 
-自检：`node consult-server/test/smoke.cjs`（不访问微信服务器，用临时目录和假的 Webhook）。
+自检：`node consult-server/test/smoke.cjs`（不访问微信服务器，用临时目录和假的 Webhook / 邮件接口）、`node consult-server/test/smtp.cjs`（假的 SMTP 服务器）。
+
+Google 邮箱示例：
+```bash
+SMTP_HOST=smtp.gmail.com SMTP_PORT=465 SMTP_USER=bookings@你的域名 SMTP_PASS=应用专用密码 NOTIFY_EMAIL_TO=专家A@你的域名,专家B@你的域名 \
+  PUBLIC_URL=https://你的域名 ADMIN_PASSWORD=换成你的密码 node consult-server/server.js
+```
 
 ## 二、流程
 

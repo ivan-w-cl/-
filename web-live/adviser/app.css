@@ -290,6 +290,7 @@ table { border-collapse: collapse; width: 100%; font-size: 13px; }
 .thread.empty { display: grid; place-items: center; }
 .thead { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 2px dashed var(--line); flex-wrap: wrap; }
 .warnline { padding: 6px 14px; background: #f7e7b0; font-size: 13px; }
+.warnline.calm { background: var(--panel-2); color: var(--ink-soft); }
 .amsgs .msg.in .bubble { background: var(--panel); }
 .amsgs .msg.out .bubble { background: #dcefe9; }
 .qrmini { display: flex; gap: 10px; align-items: center; }
@@ -375,3 +376,4 @@ table { border-collapse: collapse; width: 100%; font-size: 13px; }
   .two { grid-template-columns: 1fr; }
 }
 .field .row { flex-wrap: wrap; }
+.amsgs .msg.out .bubble.ai { background: #efe6fb; }

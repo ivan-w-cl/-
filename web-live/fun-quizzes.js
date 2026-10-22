@@ -1,4 +1,4 @@
-/* 留学人格测试：和「生活选房」放在同一个模块里的 4 套趋势话题小测试，每套 5–6 题，测出类型后推荐 3 处公寓，
+/* 留学人格测试：和「生活选房」放在同一个模块里、交互也完全一样（同款答题卡、点选项自动下一题、侧边结果卡 + 地图标出推荐公寓）的 4 套趋势话题小测试，每套 5–6 题，测出类型后推荐 3 处公寓，
    可以生成分享卡片（share-cards.js）。「留学搭子」支持双人合拍度：分享链接带上自己的类型，朋友测完看两人合拍度和适合一起合租的公寓。
    入口：生活选房的开场页「更多好玩的测试」、生活选房卡底部「再测一个」、链接 ?quiz=ie|soft|buddy|booking（&duo=类型）。
    公寓推荐只用页面里已有的数据（步行时间、周边设施数量、历史参考价），是趣味参考，不代表实时空房。 */
@@ -185,73 +185,97 @@
       }
     }
   };
+  /* 每个选项的小图标（与生活选房的答题卡一样：图标 + 选项） */
+  const EMO = {
+    ie: [['🍲', '📺', '🍻', '🎧'], ['🙋', '🙂', '🥟', '🕰️'], ['🛍️', '🌳', '🎭', '😴'], ['📊', '🛬', '🏠', '📱'], ['📝', '🍟', '💳', '🥢'], ['✅', '🌙', '🗓️', '🚶']],
+    soft: [['😴', '🕯️', '📸', '🪪'], ['🍵', '☕', '⚽', '📚'], ['🪴', '🛁', '🚉', '🪑'], ['🌇', '🥐', '🗺️', '🌃'], ['🌈', '💐', '✈️', '💼']],
+    buddy: [['🍲', '📖', '🏃', '🖼️', '🎸'], ['🍜', '📝', '💪', '🏛️', '🌃'], ['🍽️', '📚', '⏰', '📍', '🕺'], ['🍚', '🎧', '👟', '🎫', '🔊'], ['👩‍🍳', '☕', '🏀', '🎭', '🎶']],
+    booking: [['⭐', '📊', '💷', '🧮'], ['🤷', '📏', '💎', '🪙'], ['👀', '🖊️', '🔒', '🔍'], ['🔄', '🕵️', '⚡', '🏷️'], ['📅', '🗓️', '🚀', '🐦']]
+  };
+  Object.keys(EMO).forEach(id => QUIZZES[id].questions.forEach((q, i) => q.opts.forEach((o, j) => { o.e = (EMO[id][i] || [])[j] || '•'; })));
+
   const UI = {
-    zh: { more: '更多好玩的测试', hubTitle: '利物浦留学人格测试', hubLead: '和「生活选房」一样，测完会推荐 3 处公寓，还能生成分享卡片。', home: '生活选房', homeBlurb: '8 题，按日常生活推荐公寓',
-      start: '开始测试', back: '上一题', question: '第 {i} 题 / 共 {n} 题', picks: '适合你的 3 处公寓', map: '地图看看', ask: '进群咨询', share: '🎴 生成分享卡片', invite: '🤝 邀请朋友测合拍度',
-      copyLink: '复制测试链接', copied: '链接已复制，发给朋友吧', again: '再测一个', close: '关闭', tip: '专家建议', duoIntro: '你的朋友是「{name}」，测测你们有多合拍？',
-      duoTitle: '你和朋友的合拍度', duoHomes: '适合你们一起合租的 3 处公寓', note: '趣味测试，按地图数据推荐，不代表实时空房。', scan: '扫码测测你是哪种类型',
+    zh: { more: '更多好玩的测试', hubKicker: '利物浦 · 留学人格测试', hubTitle: '测测你是哪种利物浦留学生', hubLead: '和「生活选房」一样：点选项自动进入下一题，测完在地图上标出适合你的 3 处公寓，还能生成分享卡片。', home: '生活选房', homeBlurb: '8 题，按日常生活推荐公寓',
+      start: '开始测试', last: '查看上次结果', all: '← 全部测试', back: '上一步', next: '下一题', finish: '生成我的结果卡', question: '第 {i} / {n} 题', picks: '适合你的 3 处公寓', map: '地图看看', card: '公寓详情', ask: '进群咨询',
+      first: '优先看看这一处', also: '也值得放进备选', no: '地图编号', fits: '根据你的类型，优先参考这些配套', share: '生成分享卡片', invite: '邀请朋友测合拍度', copyLink: '复制测试链接', copied: '链接已复制，发给朋友吧',
+      again: '再测一个', mini: '收起看地图', expand: '展开结果卡', close: '关闭', tip: '专家建议', duoIntro: '你的朋友是「{name}」，测测你们有多合拍？', duoTitle: '你和朋友的合拍度', duoHomes: '适合你们一起合租的 3 处公寓',
+      note: '趣味测试，不是科学人格测试。公寓按地图上的步行时间和周边设施推荐，价格为历史参考，不代表实时空房。', intro: '点选项会自动进入下一题，答案只保存在当前浏览器。', scan: '扫码测测你是哪种类型',
       shareText: '我测出来是「{name}」，你也来测测：', inviteText: '我是「{name}」，来测测我们有多合拍：' },
-    en: { more: 'More fun quizzes', hubTitle: 'Liverpool student personality quizzes', hubLead: 'Like Home Match, each quiz suggests 3 homes and makes a share card.', home: 'Home Match', homeBlurb: '8 questions, homes that fit your days',
-      start: 'Start', back: 'Back', question: 'Question {i} of {n}', picks: '3 homes for you', map: 'View on map', ask: 'Join my group', share: '🎴 Make a share card', invite: '🤝 Check your match with a friend',
-      copyLink: 'Copy quiz link', copied: 'Link copied. Send it to a friend', again: 'Try another', close: 'Close', tip: 'Expert tip', duoIntro: 'Your friend is "{name}". How well do you match?',
-      duoTitle: 'Your match with your friend', duoHomes: '3 homes you could share', note: 'Just for fun. Suggestions use map data, not live availability.', scan: 'Scan to find your own type',
+    en: { more: 'More fun quizzes', hubKicker: 'Liverpool · Student personality quizzes', hubTitle: 'What kind of Liverpool student are you?', hubLead: 'Just like Home Match: tap an answer to move on, then see 3 homes for you on the map and make a share card.', home: 'Home Match', homeBlurb: '8 questions, homes that fit your days',
+      start: 'Start', last: 'See last result', all: '← All quizzes', back: 'Back', next: 'Next', finish: 'Make my result card', question: 'Question {i} of {n}', picks: '3 homes for you', map: 'On the map', card: 'Home details', ask: 'Join my group',
+      first: 'Start with this one', also: 'Also worth a look', no: 'Map no.', fits: 'Picked for your type', share: 'Make a share card', invite: 'Check your match with a friend', copyLink: 'Copy quiz link', copied: 'Link copied. Send it to a friend',
+      again: 'Try another', mini: 'Fold to see the map', expand: 'Open result card', close: 'Close', tip: 'Expert tip', duoIntro: 'Your friend is "{name}". How well do you match?', duoTitle: 'Your match with your friend', duoHomes: '3 homes you could share',
+      note: 'Just for fun, not a scientific personality test. Homes are suggested from walking times and nearby places on the map; prices are recorded, not live availability.', intro: 'Tap an answer to move on. Answers stay in this browser.', scan: 'Scan to find your own type',
       shareText: 'I got "{name}". Find yours: ', inviteText: 'I\'m "{name}". See how well we match: ' }
   };
   const u = () => UI[L()];
+  const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const LAST = 'lsm-fun-quiz-v1';
+  const saved = () => { try { return JSON.parse(localStorage.getItem(LAST)) || {}; } catch (_) { return {}; } };
+  const remember = (id, answers) => { try { const v = saved(); v[id] = answers; localStorage.setItem(LAST, JSON.stringify(v)); } catch (_) { /* ignore */ } };
 
-  /* ---------- 弹窗 ---------- */
-  const wrap = el('div', 'fq-wrap'); wrap.hidden = true; wrap.setAttribute('role', 'dialog'); wrap.setAttribute('aria-modal', 'true'); wrap.setAttribute('aria-labelledby', 'fqTitle');
-  const box = el('div', 'fq'); wrap.append(box); document.body.append(wrap);
-  wrap.addEventListener('click', e => { e.stopPropagation(); if (e.target === wrap) close(); });
-  wrap.addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopPropagation(); close(); } });
-  let lastFocus = null, run = null, duo = null;
-  function close() { wrap.hidden = true; box.replaceChildren(); if (lastFocus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true }); }
-  function frame(title, kicker) {
-    box.replaceChildren();
-    const head = el('div', 'fq-head'), x = btn('fq-x', '×'); x.setAttribute('aria-label', u().close); x.addEventListener('click', close);
-    const tt = el('div', 'fq-tt'); if (kicker) tt.append(el('span', 'fq-kicker', kicker)); const h = el('h2', '', title); h.id = 'fqTitle'; tt.append(h);
-    head.append(tt, x); box.append(el('span', 'fq-tape'), head);
-    const body = el('div', 'fq-body'); box.append(body); return body;
-  }
-  function reveal() { if (wrap.hidden) { lastFocus = document.activeElement; wrap.hidden = false; } box.scrollTop = 0; const f = box.querySelector('.fq-opt, .fq-card, .fq-start, .fq-x'); if (f) f.focus({ preventScroll: true }); }
+  /* ---------- 答题弹窗：与生活选房同一套结构和样式（.hm-wrap / .hm / .hm-opt） ---------- */
+  const wrap = el('div', 'hm-wrap fq-wrap'); wrap.id = 'fqWrap'; wrap.hidden = true;
+  wrap.innerHTML = '<div class="hm" id="fqDialog" role="dialog" aria-modal="true" aria-labelledby="fqTitle"><button class="x" id="fqX" type="button">×</button><div id="fqBody"></div></div>';
+  document.body.append(wrap);
+  const dialog = wrap.querySelector('.hm'), body = wrap.querySelector('#fqBody');
+  let lastFocus = null, run = null, duo = null, advance = null;
+  function openModal() { if (wrap.hidden) { lastFocus = document.activeElement; wrap.hidden = false; } wrap.querySelector('#fqX').setAttribute('aria-label', u().close); dialog.setAttribute('lang', L() === 'en' ? 'en' : 'zh-Hans'); }
+  function closeModal() { clearTimeout(advance); wrap.hidden = true; body.innerHTML = ''; if (lastFocus && document.contains(lastFocus)) lastFocus.focus({ preventScroll: true }); }
+  function focusTitle() { const h = body.querySelector('h2'); if (h) { h.tabIndex = -1; h.focus({ preventScroll: true }); } dialog.scrollTop = 0; }
 
   function hub() {
-    const k = u(), body = frame(k.hubTitle);
-    body.append(el('p', 'fq-lead', k.hubLead));
-    const grid = el('div', 'fq-grid');
-    const home = btn('fq-card'); home.append(el('span', 'fq-emoji', '🏠'), el('b', '', k.home), el('span', '', k.homeBlurb));
-    home.addEventListener('click', () => { close(); try { window.HomeMatch.open(0); } catch (_) { /* not ready */ } });
-    grid.append(home);
-    Object.keys(QUIZZES).forEach(id => { const q = QUIZZES[id], c = btn('fq-card'); c.append(el('span', 'fq-emoji', q.emoji), el('b', '', tx(q.title)), el('span', '', tx(q.blurb))); c.addEventListener('click', () => intro(id)); grid.append(c); });
-    body.append(grid); reveal();
+    const k = u(); openModal();
+    body.innerHTML = `<div class="hm-intro"><div class="hm-step">${esc(k.hubKicker)}</div><h2 id="fqTitle">${esc(k.hubTitle)}</h2><p class="lede">${esc(k.hubLead)}</p>
+      <div class="hm-opts fq-hub"><button type="button" class="hm-opt" data-fq="home"><span class="e" aria-hidden="true">🏠</span><b>${esc(k.home)}</b><span class="s">${esc(k.homeBlurb)}</span></button>
+      ${Object.keys(QUIZZES).map(id => { const q = QUIZZES[id]; return `<button type="button" class="hm-opt" data-fq="quiz" data-id="${id}"><span class="e" aria-hidden="true">${q.emoji}</span><b>${esc(tx(q.title))}</b><span class="s">${esc(tx(q.blurb))}</span></button>`; }).join('')}</div></div>`;
+    focusTitle();
   }
   function intro(id) {
-    const q = QUIZZES[id], k = u(), body = frame(tx(q.title), q.emoji + ' ' + tx(q.kicker));
-    run = { id, step: 0, answers: [] };
-    if (duo && duo.quiz === id && q.types[duo.type]) body.append(el('p', 'fq-duo', fmt(k.duoIntro, { name: tx(q.types[duo.type].name) })));
-    body.append(el('p', 'fq-lead', tx(q.blurb)));
-    const types = el('div', 'fq-types'); Object.values(q.types).forEach(t => types.append(el('span', 'fq-chip', `${t.stamp} ${tx(t.name)}`))); body.append(types);
-    const go = btn('fq-start', k.start + ' →'); go.addEventListener('click', () => question()); body.append(go);
-    reveal();
+    const q = QUIZZES[id], k = u(); openModal();
+    run = { id, step: -1, answers: [] };
+    const has = Array.isArray(saved()[id]) && saved()[id].length === q.questions.length;
+    const duoLine = duo && duo.quiz === id && q.types[duo.type] ? `<p class="fq-duo">${esc(fmt(k.duoIntro, { name: tx(q.types[duo.type].name) }))}</p>` : '';
+    body.innerHTML = `<div class="hm-intro"><div class="hm-step">${esc(tx(q.kicker))}</div><h2 id="fqTitle">${esc(tx(q.title))}</h2>${duoLine}<p class="lede">${esc(tx(q.blurb))}</p>
+      <div class="hm-doodles">${Object.values(q.types).map(t => `<span>${t.stamp} ${esc(tx(t.name))}</span>`).join('')}</div><p class="hm-note">${esc(k.intro)} ${esc(k.note)}</p>
+      <div class="hm-foot"><button class="hm-link" type="button" data-fq="hub">${esc(k.all)}</button><span style="display:flex;gap:8px;flex-wrap:wrap">${has ? `<button class="hm-btn alt" type="button" data-fq="last">${esc(k.last)}</button>` : ''}<button class="hm-btn" type="button" data-fq="start">${esc(k.start)}</button></span></div></div>`;
+    focusTitle();
   }
   function question() {
-    const q = QUIZZES[run.id], k = u(), cur = q.questions[run.step], body = frame(tx(q.title), q.emoji + ' ' + fmt(k.question, { i: run.step + 1, n: q.questions.length }));
-    const dots = el('div', 'fq-dots'); q.questions.forEach((_, i) => dots.append(el('span', i <= run.step ? 'on' : ''))); body.append(dots);
-    body.append(el('h3', 'fq-q', tx(cur.q)));
-    const list = el('div', 'fq-opts'); list.setAttribute('role', 'radiogroup');
-    cur.opts.forEach((o, i) => {
-      const b = btn('fq-opt', tx(o.t)); b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', String(run.answers[run.step] === i));
-      b.addEventListener('click', () => { run.answers[run.step] = i; b.setAttribute('aria-checked', 'true'); setTimeout(() => { if (run.step < q.questions.length - 1) { run.step++; question(); } else result(); }, 220); });
-      list.append(b);
-    });
-    body.append(list);
-    if (run.step > 0) { const back = btn('fq-back', '← ' + k.back); back.addEventListener('click', () => { run.step--; question(); }); body.append(back); }
-    reveal();
+    const q = QUIZZES[run.id], k = u(), cur = q.questions[run.step], n = q.questions.length, v = run.answers[run.step];
+    body.innerHTML = `<div class="hm-intro"><div class="hm-top"><span class="hm-dots" aria-hidden="true">${q.questions.map((_, i) => `<i class="${i <= run.step ? 'on' : ''}"></i>`).join('')}</span><span class="hm-step">${esc(fmt(k.question, { i: run.step + 1, n }))}</span></div>
+      <h2 id="fqTitle">${esc(tx(cur.q))}</h2><div class="hm-opts">${cur.opts.map((o, i) => `<button type="button" class="hm-opt" data-fq="opt" data-i="${i}" aria-pressed="${v === i}"><span class="e" aria-hidden="true">${o.e}</span><b>${esc(tx(o.t))}</b><span class="s"></span></button>`).join('')}</div>
+      <div class="hm-foot"><button class="hm-btn alt" type="button" data-fq="back">${esc(k.back)}</button><button class="hm-btn" type="button" data-fq="next" ${v == null ? 'disabled' : ''}>${esc(run.step === n - 1 ? k.finish : k.next)}</button></div></div>`;
+    focusTitle();
+  }
+  wrap.addEventListener('click', e => {
+    e.stopPropagation();
+    if (e.target === wrap || e.target.closest('#fqX')) { closeModal(); return; }
+    const b = e.target.closest('[data-fq]'); if (!b) return;
+    const act = b.dataset.fq;
+    if (act === 'home') { closeModal(); try { window.HomeMatch.open(0); } catch (_) { /* not ready */ } }
+    else if (act === 'quiz') intro(b.dataset.id);
+    else if (act === 'hub') hub();
+    else if (act === 'start') { run.step = 0; question(); }
+    else if (act === 'last') { run.answers = saved()[run.id].slice(); closeModal(); result(); }
+    else if (act === 'back') { clearTimeout(advance); if (run.step > 0) { run.step--; question(); } else intro(run.id); }
+    else if (act === 'next') { clearTimeout(advance); next(); }
+    else if (act === 'opt') {
+      run.answers[run.step] = Number(b.dataset.i);
+      body.querySelectorAll('[data-fq="opt"]').forEach(o => o.setAttribute('aria-pressed', String(o === b)));
+      body.querySelector('[data-fq="next"]').disabled = false;
+      clearTimeout(advance); advance = setTimeout(next, 280);   // 点选项自动进入下一题
+    }
+  });
+  wrap.addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopPropagation(); closeModal(); } });
+  function next() {
+    const q = QUIZZES[run.id]; if (run.answers[run.step] == null) return;
+    if (run.step < q.questions.length - 1) { run.step++; question(); } else { remember(run.id, run.answers); closeModal(); result(); }
   }
   function typeOf(q, answers) {
-    const s = {}; answers.forEach((a, i) => { const v = q.questions[i].opts[a].v; s[v] = (s[v] || 0) + 1; });
-    if (q.result) return q.result(s);
-    return Object.keys(q.types).sort((a, b) => (s[b] || 0) - (s[a] || 0))[0];
+    const sc = {}; answers.forEach((a, i) => { const v = q.questions[i].opts[a].v; sc[v] = (sc[v] || 0) + 1; });
+    if (q.result) return q.result(sc);
+    return Object.keys(q.types).sort((a, b) => (sc[b] || 0) - (sc[a] || 0))[0];
   }
   function link(id, type, withDuo) {
     const url = new URL(location.href); url.hash = 'lang=' + L(); url.search = '';
@@ -259,72 +283,106 @@
     try { url.searchParams.set('ref', window.ShareCards.refCode()); } catch (_) { /* optional */ }
     return url.href;
   }
+
+  /* ---------- 结果卡：与「我的生活选房卡」同一个面板样式，地图上标出推荐的公寓 ---------- */
+  const panel = el('section', 'float panel hm-res fq-res'); panel.id = 'fqRes'; panel.hidden = true; panel.setAttribute('aria-labelledby', 'fqResH');
+  panel.innerHTML = '<div class="phead"><h2 id="fqResH"></h2><button class="pbtn" type="button" id="fqMini"></button><button class="pbtn" type="button" id="fqClose"></button></div><div class="pbody" id="fqResBody"></div>';
+  document.body.append(panel);
+  const resBody = panel.querySelector('#fqResBody'), mapbox = document.getElementById('mapbox');
+  let active = null;   // { id, typeId, picks, homesHidden }
+  function clearMap() { document.querySelectorAll('#homes .m.hmpick, #homes .m.hmtop').forEach(n => n.classList.remove('hmpick', 'hmtop')); mapbox && mapbox.classList.remove('hm-on'); }
+  function exit() {
+    if (!active) return; clearMap(); panel.hidden = true;
+    const hp = document.getElementById('homesPanel'); if (hp) hp.hidden = active.homesHidden;
+    active = null;
+  }
+  function setMini(on) { panel.classList.toggle('mini', on); const b = panel.querySelector('#fqMini'); b.textContent = on ? u().expand : u().mini; b.setAttribute('aria-expanded', String(!on)); }
+  panel.querySelector('#fqMini').addEventListener('click', e => { e.stopPropagation(); setMini(!panel.classList.contains('mini')); });
+  panel.querySelector('#fqClose').addEventListener('click', e => { e.stopPropagation(); exit(); });
+  panel.addEventListener('click', e => e.stopPropagation());
+  panel.addEventListener('keydown', e => { if (e.key === 'Escape') { e.stopPropagation(); exit(); } });
+  function homeEl(id) { try { return els.get(id) || null; } catch (_) { return null; } }
+
   function result() {
     const id = run.id, q = QUIZZES[id], k = u(), typeId = typeOf(q, run.answers), t = q.types[typeId];
-    const body = frame(tx(t.name), tx(q.kicker));
-    const hero = el('div', 'fq-hero'); hero.append(el('span', 'fq-stamp', t.stamp));
-    const ht = el('div'); ht.append(el('p', 'fq-tag', tx(t.tag)), el('p', 'fq-desc', tx(t.desc))); hero.append(ht); body.append(hero);
-    const chips = el('div', 'fq-types'); tx(t.traits).forEach(x => chips.append(el('span', 'fq-chip', x))); body.append(chips);
-    if (t.tip) { const tip = el('div', 'fq-tip'); tip.append(el('b', '', '💡 ' + k.tip), el('p', '', tx(t.tip))); body.append(tip); }
-    let picks = recommend(t.w), duoBlock = null;
+    try { window.HomeMatch.exit(); } catch (_) { /* not running */ }
+    if (active) exit();
+    let picks = recommend(t.w), duoHtml = '', f = null;
     if (q.duo && duo && duo.quiz === id && q.types[duo.type]) {
-      const f = q.types[duo.type], score = q.match[[typeId, duo.type].sort().join('-')] || q.match[[duo.type, typeId].join('-')] || 75;
-      duoBlock = el('div', 'fq-duomatch');
-      duoBlock.append(el('b', '', k.duoTitle), el('span', 'fq-score', score + '%'), el('p', '', `${t.stamp} ${tx(t.name)} × ${f.stamp} ${tx(f.name)}`));
-      body.append(duoBlock);
+      f = q.types[duo.type];
+      const score = q.match[[typeId, duo.type].sort().join('-')] || 75;
+      duoHtml = `<div class="fq-duomatch"><b>${esc(k.duoTitle)}</b><span class="fq-score">${score}%</span><p>${t.stamp} ${esc(tx(t.name))} × ${f.stamp} ${esc(tx(f.name))}</p></div>`;
       picks = recommend(blend(t.w, f.w));
     }
-    body.append(el('h3', 'fq-sub', duoBlock ? k.duoHomes : k.picks));
-    const list = el('div', 'fq-picks');
-    picks.forEach(({ h, why }, i) => {
-      const c = el('article', 'fq-pick'), head = el('div', 'fq-phead');
-      head.append(el('span', 'fq-num', String(i + 1)), el('b', '', h.name));
-      const p = minPrice(h); c.append(head, el('p', 'fq-meta', [p ? (L() === 'en' ? `From £${p}/wk` : `£${p}/周起`) : '', L() === 'en' ? `UoL ~${h.uol} min` : `步行到利大约 ${h.uol} 分钟`].filter(Boolean).join(' · ')));
-      const ul = el('ul'); why.forEach(w => ul.append(el('li', '', w))); c.append(ul);
-      const acts = el('div', 'fq-pacts'), m = btn('fq-small', k.map), a = btn('fq-small main', k.ask);
-      m.addEventListener('click', () => { close(); try { showOnMap(h); } catch (_) { /* ignore */ } });
-      a.addEventListener('click', () => { close(); try { openContact(h); } catch (_) { /* ignore */ } });
-      acts.append(m, a); c.append(acts); list.append(c);
-    });
-    body.append(list);
-    const tools = el('div', 'fq-tools'), status = el('p', 'fq-status'); status.setAttribute('role', 'status');
-    const shareData = { kicker: tx(q.kicker), stamp: t.stamp, title: tx(t.name), desc: tx(t.tag) + (L() === 'en' ? '. ' : '。') + tx(t.desc),
+    const hp = document.getElementById('homesPanel');
+    active = { id, typeId, picks, homesHidden: hp ? hp.hidden : false };
+    if (hp) hp.hidden = true;
+    clearMap(); mapbox && mapbox.classList.add('hm-on');
+    picks.forEach(({ h }, i) => { const n = homeEl(h.id); if (n) { n.classList.add('hmpick'); n.classList.toggle('hmtop', i === 0); } });
+    panel.querySelector('#fqResH').textContent = tx(q.kicker);
+    panel.querySelector('#fqClose').textContent = k.close;
+    const price = h => { const p = minPrice(h); return p ? (L() === 'en' ? `From £${p}/week (recorded)` : `£${p}/周起（历史参考价）`) : ''; };
+    resBody.innerHTML = `<div class="persona"><span class="stamp" aria-hidden="true">${t.stamp}</span><span class="k">${esc(tx(t.tag))}</span><b>${esc(tx(t.name))}</b><p>${esc(tx(t.desc))}</p></div>
+      <div class="hm-doodles fq-traits">${tx(t.traits).map(x => `<span>${esc(x)}</span>`).join('')}</div>
+      ${t.tip ? `<div class="fq-tip"><b>💡 ${esc(k.tip)}</b><p>${esc(tx(t.tip))}</p></div>` : ''}${duoHtml}
+      <p class="srcnote2"><b>${esc(f ? k.duoHomes : k.picks)}</b></p>
+      ${picks.map(({ h, why }, i) => `<article class="mcard ${i === 0 ? 'top' : ''}" data-i="${i}"><div class="mhead"><span class="mnum">${i + 1}</span><div><span class="mkicker">${esc(i === 0 ? k.first : k.also)} · ${esc(k.no)} ${h.n}</span><h3>${esc(h.name)}</h3><div class="mmeta">${esc(h.addr || '')}</div></div></div>
+        <div class="fits">${esc(k.fits)}</div><ul class="why2">${why.map(w => `<li><span aria-hidden="true">✔︎</span><span>${esc(w)}</span></li>`).join('')}</ul><div class="mprice">${esc(price(h))}</div>
+        <div class="macts"><button type="button" data-fr="view" data-i="${i}">${esc(k.map)}</button><button type="button" data-fr="card" data-i="${i}">${esc(k.card)}</button><button type="button" class="cta2" data-fr="ask" data-i="${i}">${esc(k.ask)}</button></div></article>`).join('')}
+      <div class="tools"><button type="button" class="sc-make" data-fr="share">🎴 ${esc(k.share)}</button><button type="button" data-fr="copy">${q.duo ? '🤝 ' + esc(k.invite) : esc(k.copyLink)}</button><button type="button" data-fr="again">${esc(k.again)}</button><button type="button" data-fr="hub">🎲 ${esc(k.more)}</button></div>
+      <p class="fq-status" role="status"></p><p class="srcnote2">${esc(k.note)}</p>`;
+    active.share = { kicker: tx(q.kicker), stamp: t.stamp, title: tx(t.name), desc: tx(t.tag) + (L() === 'en' ? '. ' : '。') + tx(t.desc),
       picks: picks.map(({ h }) => ({ name: h.name, n: h.n, id: h.id, price: minPrice(h) ? (L() === 'en' ? `£${minPrice(h)}/wk` : `£${minPrice(h)}/周起`) : '', walk: L() === 'en' ? `UoL ~${h.uol} min` : `步行到利大约 ${h.uol} 分钟` })),
       link: link(id, typeId, !!q.duo), scan: k.scan, shareText: fmt(q.duo ? k.inviteText : k.shareText, { name: tx(t.name) }) };
-    const share = btn('fq-btn main', k.share); share.addEventListener('click', () => { try { window.ShareCards.open(shareData); } catch (_) { /* optional */ } });
-    const copy = btn('fq-btn', q.duo ? k.invite : k.copyLink);
-    copy.addEventListener('click', async () => { const text = shareData.shareText + shareData.link; try { await navigator.clipboard.writeText(text); status.textContent = k.copied; } catch (_) { status.textContent = text; } });
-    const again = btn('fq-btn', k.again); again.addEventListener('click', hub);
-    tools.append(share, copy, again); body.append(tools, status, el('p', 'fq-note', k.note));
-    reveal();
+    panel.hidden = false; setMini(false); select(0);
+    const hh = panel.querySelector('#fqResH'); hh.tabIndex = -1; hh.focus({ preventScroll: true });
   }
-  /* 地图上打开这处公寓：和在公寓列表里点它一样 */
+  function select(i) {
+    if (!active) return;
+    resBody.querySelectorAll('.mcard').forEach(n => n.classList.toggle('on', Number(n.dataset.i) === i));
+  }
   function showOnMap(h) { const b = document.querySelector(`.hbtn[data-id="${h.id}"]`); if (b) b.click(); else if (typeof window.show === 'function') window.show(h, true); }
+  resBody.addEventListener('click', async e => {
+    const b = e.target.closest('[data-fr]'), card = e.target.closest('.mcard');
+    if (!b) { if (card) select(Number(card.dataset.i)); return; }
+    const act = b.dataset.fr, entry = active && active.picks[Number(b.dataset.i)];
+    if (act === 'view' && entry) { select(Number(b.dataset.i)); setMini(true); showOnMap(entry.h); }
+    else if (act === 'card' && entry) { setMini(true); showOnMap(entry.h); }
+    else if (act === 'ask' && entry) { try { openContact(entry.h, b); } catch (_) { /* ignore */ } }
+    else if (act === 'share') { try { window.ShareCards.open(active.share); } catch (_) { /* optional */ } }
+    else if (act === 'copy') { const text = active.share.shareText + active.share.link, st = resBody.querySelector('.fq-status'); try { await navigator.clipboard.writeText(text); st.textContent = u().copied; } catch (_) { st.textContent = text; } }
+    else if (act === 'again') { const qid = active.id; exit(); intro(qid); }
+    else if (act === 'hub') { exit(); hub(); }
+  });
+  if (window.PanelDrag && typeof window.PanelDrag.setup === 'function') window.PanelDrag.setup(panel, '.phead');
 
   /* ---------- 入口 ---------- */
   const hmBody = document.getElementById('hmBody');
   function addEntry() {
     const introEl = hmBody && hmBody.querySelector('.hm-intro');
-    if (!introEl || introEl.querySelector('.fq-entry')) return;
-    const k = u(), box2 = el('div', 'fq-entry');
-    box2.append(el('span', 'fq-entry-h', k.more));
+    if (!introEl || introEl.querySelector('.hm-top') || introEl.querySelector('.fq-entry')) return;   // only on the start screen
+    const k = u(), box = el('div', 'fq-entry');
+    box.append(el('span', 'fq-entry-h', k.more));
     const row = el('div', 'fq-entry-row');
-    Object.keys(QUIZZES).forEach(id => { const q = QUIZZES[id], b = btn('fq-entry-b', `${q.emoji} ${tx(q.kicker)}`); b.addEventListener('click', e => { e.stopPropagation(); lastFocus = document.activeElement; try { window.HomeMatch.exit(); } catch (_) { /* ignore */ } setTimeout(() => intro(id), 60); }); row.append(b); });
-    box2.append(row); introEl.append(box2);
+    Object.keys(QUIZZES).forEach(id => { const q = QUIZZES[id], b = btn('fq-entry-b', `${q.emoji} ${tx(q.kicker)}`); b.addEventListener('click', e => { e.stopPropagation(); try { window.HomeMatch.exit(); } catch (_) { /* ignore */ } setTimeout(() => intro(id), 60); }); row.append(b); });
+    box.append(row); introEl.append(box);
   }
   if (hmBody) { new MutationObserver(addEntry).observe(hmBody, { childList: true }); addEntry(); }
-  const resBody = document.getElementById('hmResBody');
+  const hmResBody = document.getElementById('hmResBody');
   function addAgain() {
-    const tools = resBody && [...resBody.querySelectorAll('.tools')].pop();
+    const tools = hmResBody && [...hmResBody.querySelectorAll('.tools')].pop();
     if (!tools || tools.querySelector('.fq-more')) return;
     const b = btn('fq-more', '🎲 ' + u().more); b.addEventListener('click', e => { e.stopPropagation(); hub(); }); tools.append(b);
   }
-  if (resBody) { new MutationObserver(addAgain).observe(resBody, { childList: true }); addAgain(); }
+  if (hmResBody) { new MutationObserver(addAgain).observe(hmResBody, { childList: true }); addAgain(); }
+  /* 生活选房的结果打开时，收起这里的结果卡，两张卡不同时出现 */
+  const hmRes = document.getElementById('hmRes');
+  if (hmRes) new MutationObserver(() => { if (!hmRes.hidden && active) exit(); }).observe(hmRes, { attributes: true, attributeFilter: ['hidden'] });
   /* 链接直达：?quiz=buddy&duo=food */
   const sp = new URLSearchParams(location.search), qid = sp.get('quiz');
   if (qid && QUIZZES[qid]) {
     const d = sp.get('duo'); if (d && QUIZZES[qid].types[d]) duo = { quiz: qid, type: d };
     setTimeout(() => { try { window.HomeMatch.exit(); } catch (_) { /* ignore */ } intro(qid); }, 400);
   }
-  window.FunQuizzes = { hub, open: intro, QUIZZES };
+  window.FunQuizzes = { hub, open: intro, exit, QUIZZES, activeIds: () => (active ? active.picks.map(p => p.h.id) : []) };
 })();

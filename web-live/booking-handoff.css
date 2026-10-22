@@ -50,3 +50,21 @@
 .bh-tip[hidden] { display: none; }
 .bh-tip-open { flex: none; border: 2px solid #fffaf0; background: #b5462f; color: #fff; border-radius: 8px; padding: 3px 10px; font-family: var(--hand, cursive); font-size: 15px; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) { .bh-wait::after { animation: none; content: "…"; } }
+.bh-qr.expired .bh-code { opacity: .3; filter: grayscale(1); }
+.bh-warn { color: #9b3420; font-weight: 700; }
+/* 进群前的小问题 */
+.bh-ask { margin-top: 6px; padding-top: 12px; border-top: 2px dashed #dcc8a0; display: flex; flex-direction: column; gap: 8px; }
+.bh-askh { margin: 0; font: 15px var(--hand, cursive); color: #6e5538; }
+.bh-qa { display: flex; flex-direction: column; gap: 8px; }
+.bh-q, .bh-a { max-width: 88%; border-radius: 12px; padding: 7px 11px; }
+.bh-q { align-self: flex-end; background: #dcefe2; border-bottom-right-radius: 3px; }
+.bh-a { align-self: flex-start; background: #f2ead8; border-bottom-left-radius: 3px; }
+.bh-q p, .bh-a p { margin: 0; font-size: 13px; line-height: 1.6; }
+.bh-nudge { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; border: 2px dashed #b5462f; border-radius: 12px; background: #fbe3da; padding: 8px 10px; }
+.bh-nudge p { margin: 0; font-size: 13px; line-height: 1.5; }
+.contact-demo .bh-join.small { align-self: flex-start; min-height: 38px; font-size: 17px; padding: 4px 14px; box-shadow: 2px 3px 0 #3b2a1a; }
+.bh-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.contact-demo .bh-chip { min-height: 32px; padding: 3px 10px; border: 1.2px solid #c6b38e; border-radius: 20px; background: #fffaf0; color: #6e5538; font-size: 12.5px; }
+.bh-askf { display: flex; gap: 6px; }
+.bh-askf input { flex: 1; min-width: 0; border: 1.5px solid #b7a17d; border-radius: 9px; padding: 6px 10px; font: 13.5px var(--body, sans-serif); background: #fff; color: #3b2a1a; }
+.contact-demo .bh-askb { border: 1.5px solid #3b2a1a; border-radius: 9px; background: #f8efd9; padding: 4px 14px; font-weight: 700; }

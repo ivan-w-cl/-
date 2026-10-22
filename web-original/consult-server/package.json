@@ -5,5 +5,5 @@
   "description": "咨询原型后端：静态站点 + 会话存储 + 通知 + 客服工作台 + 渠道适配层（web / 小程序）。无第三方依赖。",
   "main": "server.js",
   "engines": { "node": ">=18" },
-  "scripts": { "start": "node server.js", "test": "node test/smoke.cjs" }
+  "scripts": { "start": "node server.js", "test": "node test/smoke.cjs && node test/smtp.cjs" }
 }
