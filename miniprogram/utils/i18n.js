@@ -12,13 +12,18 @@ const EXTRA = {
         layers: 'Show on the map', zoneKey: 'University of Liverpool campus', info: 'Map data © OpenStreetMap contributors. Prices and reviews are Amber listings recorded on 17 Oct 2026, not live availability.',
         pcH: 'Your {n} picks at a glance', pcGo: 'Compare these {n} side by side', pcFrom: 'From £{p}/wk', pcNoPrice: 'No price yet', pcUol: 'UoL {m} min' }
 };
+/* 网页文案里说「浏览器」的地方，小程序里改成「这台手机 / 微信」 */
+const HOME_EXTRA = {
+  zh: { local: '收藏和对比只保存在这台手机的微信里，不会同步到其他手机。', storageFail: '这台手机暂时无法保存，退出小程序后选择可能丢失。' },
+  en: { local: 'Saved homes and comparisons stay in WeChat on this phone only.', storageFail: 'This phone could not save your choices. They will last only until you close the mini program.' }
+};
 const fill = (s, vars) => { if (vars) for (const k in vars) s = String(s).split('{' + k + '}').join(vars[k]); return s; };
 function t(lang, key, vars) {
   const L = WEB[lang] || WEB.en;
   const s = (EXTRA[lang] && EXTRA[lang][key] != null) ? EXTRA[lang][key] : L.str[key] != null ? L.str[key] : WEB.en.str[key] != null ? WEB.en.str[key] : key;
   return Array.isArray(s) ? s : fill(s, vars);
 }
-function ht(lang, key, vars) { const L = WEB[lang] || WEB.en; return fill(L.home[key] != null ? L.home[key] : WEB.en.home[key], vars); }
+function ht(lang, key, vars) { const L = WEB[lang] || WEB.en, X = HOME_EXTRA[lang] || HOME_EXTRA.en; return fill(X[key] != null ? X[key] : L.home[key] != null ? L.home[key] : WEB.en.home[key], vars); }
 /* 网页文案里有 <b>…</b>：拆成片段给 WXML 用 [{ t, b }] */
 function rich(s) { return String(s).split(/(<b>.*?<\/b>)/).filter(Boolean).map(p => /^<b>/.test(p) ? { t: p.slice(3, -4), b: true } : { t: p, b: false }); }
 const pl = (lang, n) => (lang === 'en' && n !== 1 ? 's' : '');

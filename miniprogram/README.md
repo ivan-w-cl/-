@@ -12,6 +12,8 @@
 
 ## 在微信开发者工具里打开
 
+给测试团队的完整步骤和测试清单：[TESTING.md](TESTING.md)（网页版：仓库根目录的 `MINIPROGRAM-TESTING.html`）。手机真机预览前，用 `node miniprogram/scripts/set-server.cjs` 把服务器地址换成电脑的局域网 IP。
+
 1. 导入本目录（含 `project.config.json` 的这一层）。`appid` 现在是游客模式占位 `touristappid`，换成你们的小程序 AppID 才能真机预览和上传。
 2. 右上角「详情 → 本地设置」勾选 **不校验合法域名**（开发阶段连本机服务器）。
 3. 另开终端运行服务器：`SITE_DIR=web-live node web-original/consult-server/server.js`（字体和以后的进群接口都从这里来，地址在 `config.js`）。

@@ -32,6 +32,7 @@ node consult-server/server.js
 | `WX_APPID` `WX_APPSECRET` `WX_TOKEN` `WX_ENCODING_AES_KEY` | 小程序渠道（见第四节）| 空 = 不启用 |
 | `WX_SUB_TEMPLATE_ID` `WX_SUB_TEMPLATE_DATA` | 新版小程序：专家发出群码时给学生推送订阅消息（需要 `WX_APPID` `WX_APPSECRET`），字段见 miniprogram/README.md | 空 = 不推送 |
 | `WEATHER_URL` | `/api/weather` 代取的天气地址（默认 Open-Meteo 利物浦） | Open-Meteo |
+| `WECHAT_QR_DAYS` | 微信群二维码有效天数（测试「过期 → 申请新码」时可设 `0.003`，约 4 分钟） | `7` |
 | `WX_MINIPROGRAM_STATE` | 小程序码打开哪个版本：`formal`（正式版，默认）/ `trial`（体验版）/ `developer`（开发版）。`/api/wxacode` 给分享卡片生成小程序码，需要 `WX_APPID` `WX_APPSECRET`，没配时小程序自动改用普通二维码 | `formal` |
 
 示例：

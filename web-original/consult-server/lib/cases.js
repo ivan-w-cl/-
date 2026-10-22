@@ -9,7 +9,8 @@ const fs = require('fs'), path = require('path'), crypto = require('crypto');
 const STATUSES = ['requested', 'qr_sent', 'joined', 'booked', 'closed'];
 const CHANNELS = ['whatsapp', 'wechat'];
 const WA_LINK = /^https:\/\/chat\.whatsapp\.com\/[A-Za-z0-9]{10,40}$/;
-const WECHAT_DAYS = 7;   // 微信群二维码 7 天后失效；WhatsApp 邀请链接不过期（除非在群里重置）
+// 微信群二维码 7 天后失效；WhatsApp 邀请链接不过期（除非在群里重置）。测试时可以用 WECHAT_QR_DAYS 改短，比如 0.003（约 4 分钟）
+const WECHAT_DAYS = Number(process.env.WECHAT_QR_DAYS) > 0 ? Number(process.env.WECHAT_QR_DAYS) : 7;
 
 /* 只按浏览器时区和界面语言猜地区，不收集其他信息 */
 function regionOf(tz, lang) {
