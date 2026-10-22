@@ -5,4 +5,4 @@
 const { execFileSync } = require('child_process'), fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 fs.copyFileSync(path.resolve(ROOT, '..', 'web-live', 'home-tools.js'), path.join(ROOT, 'utils', 'home-tools.js'));
-for (const s of ['export-scene.cjs', 'export-data.cjs', 'export-handoff.cjs', 'export-addons.cjs', 'export-match.cjs', 'build-fonts.cjs']) execFileSync('node', [path.join(__dirname, s)], { stdio: 'inherit', env: process.env });
+for (const s of ['export-scene.cjs', 'export-data.cjs', 'export-handoff.cjs', 'export-addons.cjs', 'export-match.cjs', 'export-fun.cjs', 'export-share.cjs', 'build-fonts.cjs']) execFileSync('node', [path.join(__dirname, s)], { stdio: 'inherit', env: process.env });

@@ -6,6 +6,8 @@ const createCore = require('../../utils/home-match-core.js');
 const scene = require('../../data/scene.js');
 const proj = require('../../map/proj.js');
 const { t } = require('../../utils/i18n.js');
+const createFun = require('../../utils/fun-quizzes-core.js');
+const createShare = require('../../utils/share-cards-core.js');
 const KEY = 'lsm-home-match-answers-v1';
 const markerOf = id => scene.markers.find(m => m.id === id);
 
@@ -17,13 +19,29 @@ Component({
       this.core = createCore(H.HOMES, { filter: h => !this.data.filterIds || !!this.data.filterIds[h.id], areaOf: a => H.D.areaNames.zh[a] || a });
       let saved = {}; try { saved = wx.getStorageSync(KEY) || {}; } catch (e) { /* 忽略 */ }
       this.core.state.answers = this.core.cleanAnswers(saved);
+      this.fun = createFun(H.HOMES, () => this.data.lang); this.paintFq();
     }
   },
   observers: {
+    lang() { if (this.fun) this.paintFq(); },
     'filterIds, subject'() { if (!this.core) return; this.core.setSubject(this.data.subject ? { name: this.data.subject.name } : null); if (this.data.active) this.showResults(true); }
   },
   methods: {
     /* ---------- 题目 ---------- */
+    /* 「更多好玩的测试」入口和「生成分享卡片」按钮的文字（网页 fun-quizzes.js / share-cards.js） */
+    paintFq() {
+      const F = this.fun, k = F.UI[F.L()], T = createShare({}).T[F.L()];
+      this.setData({ fq: { more: k.more, make: T.make, list: Object.keys(F.QUIZZES).map(id => ({ id, label: `${F.QUIZZES[id].emoji} ${F.tx(F.QUIZZES[id].kicker)}` })) } });
+    },
+    openFun(e) { this.closeQuiz(); this.triggerEvent('fun', { id: e.currentTarget.dataset.id }); },
+    funHub() { this.triggerEvent('fun', { id: '' }); },
+    /* 网页 share-cards.js readCard()：分享卡片的内容取自选房卡 */
+    makeShare() {
+      const r = this.result, p = this.core.persona(), en = this.data.lang === 'en'; if (!r || !r.picks.length) return;
+      const picks = r.picks.slice(0, 3).map(({ h }) => { const v = [h.pe, h.ps, h.plo].map(Number).filter(x => Number.isFinite(x) && x > 0);
+        return { name: h.name, n: h.n, id: h.id, price: v.length ? '£' + Math.min(...v) + (en ? '/wk' : '/周起') : '', walk: en ? `UoL ~${h.uol} min` : `步行到利大约 ${h.uol} 分钟` }; });
+      this.triggerEvent('share', { stamp: p.stamp || '🏠', title: p.title, desc: p.desc, picks });
+    },
     openQuiz(step) {
       const st = Number.isInteger(step) ? step : -1;
       this.setData({ open: true, step: st, hasLast: this.core.complete() }); this.draw();

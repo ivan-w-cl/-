@@ -72,6 +72,7 @@ function decodeImage(dataUrl) {
 }
 
 /* ---------- API ---------- */
+const wxacodes = new Map();
 async function api(req, res, url) {
   const p = url.pathname, method = req.method;
   /* 利物浦天气：服务器代取 Open-Meteo，缓存 15 分钟（小程序不用把国外域名加进白名单，国内也更快） */
@@ -83,6 +84,19 @@ async function api(req, res, url) {
       weather = { at: Date.now(), data: await r.json() };
       return send(res, 200, weather.data);
     } catch (e) { return weather.data ? send(res, 200, weather.data) : send(res, 502, { error: 'weather_unavailable' }); }
+  }
+  /* 分享卡片上的小程序码：配置了 WX_APPID / WX_APPSECRET 才有；没有时小程序退回普通二维码 */
+  if (p === '/api/wxacode' && method === 'GET') {
+    const scene = url.searchParams.get('scene') || '', page = 'pages/index/index';
+    if (!channels.miniprogram.canLogin()) return send(res, 404, { error: 'not_configured' });
+    if (!/^[A-Za-z0-9!#$&'()*+,/:;=?@\-._~]{1,32}$/.test(scene)) return send(res, 400, { error: 'bad_scene' });
+    let buf = wxacodes.get(scene);
+    if (!buf) {
+      try { buf = await channels.miniprogram.wxacode(scene, page); } catch (e) { console.error(e.message); return send(res, 502, { error: 'wxacode_failed' }); }
+      if (wxacodes.size > 300) wxacodes.delete(wxacodes.keys().next().value);
+      wxacodes.set(scene, buf);
+    }
+    res.writeHead(200, { 'Content-Type': buf[0] === 0x89 ? 'image/png' : 'image/jpeg', 'Cache-Control': 'public, max-age=86400' }); return res.end(buf);
   }
   if (p === '/api/health') return send(res, 200, { ok: true, service: 'consult', cases: true, channels: Object.values(channels).filter(c => c.enabled).map(c => c.name), notifiers: notifier.names });
   if (!casesApi) casesApi = createCasesApi({ store, notifier, send, readBody, json, clean, limited, decodeImage, uploadDir: UPLOAD_DIR, wx: channels.miniprogram,

@@ -135,7 +135,9 @@
   </view>
   <group show="{{groupShow}}" home="{{groupHome}}" lang="{{lang}}" bind:close="closeGroup"></group>
   <match id="match" lang="{{lang}}" filter-ids="{{filterIds}}" subject="{{subjectObj}}" pad-top="{{nav.top + nav.h + 4}}"
-    bind:map="onMatchMap" bind:card="onMatchCard" bind:ask="onMatchAsk" bind:compare="onMatchCompare" bind:subject="onMatchSubject" bind:resetfilters="onMatchResetFilters"></match>
+    bind:map="onMatchMap" bind:card="onMatchCard" bind:ask="onMatchAsk" bind:compare="onMatchCompare" bind:subject="onMatchSubject" bind:resetfilters="onMatchResetFilters" bind:fun="onMatchFun" bind:share="onShareCard"></match>
+  <fun id="fun" lang="{{lang}}" pad-top="{{nav.top + nav.h + 4}}" bind:map="onFunMap" bind:card="onMatchCard" bind:ask="onMatchAsk" bind:share="onShareCard" bind:home="onFunHome" bind:result="onFunResult"></fun>
+  <share id="share" lang="{{lang}}" pad-top="{{nav.top + nav.h + 4}}"></share>
 
   <!-- 对比栏（网页 .tray） -->
   <view wx:if="{{tray.length && !cmp && !sheet && !subj.open}}" class="float panel tray">

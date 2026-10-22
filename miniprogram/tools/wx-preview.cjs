@@ -70,8 +70,15 @@ const runtime = function () {
     request: o => { fetch(devUrl(o.url), { method: o.method || 'GET', headers: Object.assign({ 'Content-Type': 'application/json' }, o.header || {}), body: o.data && o.method && o.method !== 'GET' ? JSON.stringify(o.data) : undefined })
       .then(async r => { const data = await r.json().catch(() => null); o.success && o.success({ statusCode: r.status, data }); }).catch(e => o.fail && o.fail({ errMsg: String(e) })).finally(() => o.complete && o.complete()); },
     login: o => o.success && o.success({ code: 'preview-code' }), requestSubscribeMessage: o => o.success && o.success({}), removeStorageSync: k => localStorage.removeItem('wx:' + k),
-    previewImage() {}, navigateTo: o => { window.__nav = o.url; }, setClipboardData: o => o.success && o.success()
+    previewImage() {}, navigateTo: o => { window.__nav = o.url; }, setClipboardData: o => { window.__clip = o.data; o.success && o.success(); },
+    downloadFile: o => { fetch(devUrl(o.url)).then(async r => { const b = await r.blob(); o.success && o.success({ statusCode: r.status, tempFilePath: URL.createObjectURL(b) }); }).catch(e => o.fail && o.fail({ errMsg: String(e) })); },
+    canvasToTempFilePath: o => setTimeout(() => { try { o.success && o.success({ tempFilePath: o.canvas.toDataURL('image/png') }); } catch (e) { o.fail && o.fail({ errMsg: String(e) }); } }),
+    saveImageToPhotosAlbum: o => { window.__saved = o.filePath; o.success && o.success(); }, showShareImageMenu: o => { window.__shareImg = o.path; },
+    showModal: o => o.success && o.success({ confirm: false }), openSetting() {}
   };
+  /* 小程序 canvas 的 createImage（预览里就是普通的 Image，地址换成同源代理） */
+  HTMLCanvasElement.prototype.createImage = function () { const img = new Image(); img.crossOrigin = 'anonymous'; const d = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, 'src');
+    Object.defineProperty(img, 'src', { set(v) { d.set.call(img, devUrl(v)); }, get() { return d.get.call(img); } }); return img; };
   /* ---------- WXML ---------- */
   const parse = (WXML) => {
     const fixed = WXML.replace(/\s(wx:else|disable-scroll|scroll-y|enhanced)(?=[\s>/])/g, ' $1="true"').replace(/\{\{([\s\S]*?)\}\}/g, m => m.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));

@@ -8,6 +8,7 @@ const assert = require('assert'), http = require('http'), os = require('os'), fs
     if (q.url.startsWith('/sns/jscode2session')) return r.end(JSON.stringify(/js_code=good/.test(q.url) ? { openid: 'o_test_openid', session_key: 'k' } : { errcode: 40029, errmsg: 'invalid code' }));
     if (q.url.startsWith('/cgi-bin/stable_token')) return r.end('{"access_token":"T","expires_in":7200}');
     if (q.url.startsWith('/cgi-bin/message/subscribe/send')) return r.end('{"errcode":0,"errmsg":"ok"}');
+    if (q.url.startsWith('/wxa/getwxacodeunlimit')) { r.setHeader('Content-Type', 'image/jpeg'); return r.end(Buffer.from([0xff, 0xd8, 0xff, 0xe0, 1, 2, 3])); }
     if (q.url.startsWith('/weather')) return r.end('{"current":{"temperature_2m":11.2,"weather_code":61},"daily":{}}');
     r.end('{}'); }); }).listen(0);
   await new Promise(r => fake.once('listening', r));
@@ -43,6 +44,12 @@ const assert = require('assert'), http = require('http'), os = require('os'), fs
   const w1 = await j('/api/weather'), w2 = await j('/api/weather');
   assert.strictEqual(w1.s, 200); assert.strictEqual(w1.b.current.temperature_2m, 11.2); assert.deepStrictEqual(w2.b, w1.b);
   assert.strictEqual(calls.filter(c => c.url.startsWith('/weather')).length, 1, 'weather cached');
-  console.log('PASS miniprogram: login code → openid (kept server-side), subscribe reminder when the group code is sent, renew re-subscribe, weather proxy + cache');
+  // 分享卡片的小程序码：生成一次后走缓存；scene 不合法直接拒绝
+  const c1 = await fetch(base + '/api/wxacode?scene=' + encodeURIComponent('q=buddy&d=food&r=AB12CD')), c2 = await fetch(base + '/api/wxacode?scene=' + encodeURIComponent('q=buddy&d=food&r=AB12CD'));
+  assert.strictEqual(c1.status, 200); assert.strictEqual(c1.headers.get('content-type'), 'image/jpeg'); assert.strictEqual((await c2.arrayBuffer()).byteLength, 7);
+  assert.strictEqual(calls.filter(c => c.url.startsWith('/wxa/getwxacodeunlimit')).length, 1, 'wxacode cached');
+  assert.strictEqual(calls.find(c => c.url.startsWith('/wxa/')).body.scene, 'q=buddy&d=food&r=AB12CD');
+  assert.strictEqual((await fetch(base + '/api/wxacode?scene=' + 'x'.repeat(40))).status, 400);
+  console.log('PASS miniprogram: mini program code for share cards (cached); login code → openid (kept server-side), subscribe reminder when the group code is sent, renew re-subscribe, weather proxy + cache');
   server.close(); fake.close(); process.exit(0);
 })().catch(e => { console.error(e); process.exit(1); });

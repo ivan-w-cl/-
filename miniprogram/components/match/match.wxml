@@ -18,6 +18,10 @@
             <view class="hm-btn" bindtap="start">开始生活选房</view>
           </view>
         </view>
+        <!-- 网页 fun-quizzes.js 加在开场页底部的入口 -->
+        <view class="fq-entry"><text class="fq-entry-h">{{fq.more}}</text>
+          <view class="fq-entry-row"><view wx:for="{{fq.list}}" wx:key="id" class="fq-entry-b" data-id="{{item.id}}" bindtap="openFun">{{item.label}}</view></view>
+        </view>
       </view>
       <view wx:else class="hm-intro">
         <view class="hm-top"><view class="hm-dots"><text wx:for="{{dots}}" wx:key="index" class="dot {{item ? 'on' : ''}}"></text></view><text class="hm-step">{{q.stepText}}</text></view>
@@ -81,8 +85,10 @@
       <view class="tb" bindtap="edit">修改答案</view>
       <view wx:if="{{res.picks.length > 1}}" class="tb" bindtap="compareAll">并排对比</view>
       <view wx:if="{{res.picks.length}}" class="tb" bindtap="copy">复制我的选房卡</view>
+      <view wx:if="{{res.picks.length}}" class="tb sc-make" bindtap="makeShare">{{fq.make}}</view>
       <view class="tb" bindtap="subjectAgain">按专业再看看</view>
       <view class="tb" bindtap="again">重新开始</view>
+      <view class="tb fq-more" bindtap="funHub">🎲 {{fq.more}}</view>
     </view>
     <view class="srcnote2">推荐方法：按你选择的生活习惯，对这 {{res.total}} 处公寓的距离与周边收录地点数量加权排序；不是人格测评或居住质量评级。地点来自提供的地图资料（标注来源 OpenStreetMap，© OpenStreetMap contributors），尚未独立核实，可能缺漏或已停业。图中圆圈是约 10 分钟距离示意，连线不是实际步行路线。专业通勤取最近教学楼，绿地距离取边界，不代表入口。租金为 2026 年 10 月 17 日的历史记录；已有预算筛选会生效，价格不参与生活偏好排序，空房、路线与营业状态请另行确认。</view>
     <view class="pad-bottom"></view>

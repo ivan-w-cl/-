@@ -1,0 +1,20 @@
+/* 网页 fun-quizzes.css：答题弹窗和结果卡直接用生活选房的样式，这里只补测试特有的几块 */
+@import '../match/match.wxss';
+/* 英文版：网页的英文手写字体（生活选房只有中文，所以 match.wxss 固定用中文字体） */
+.hm-wrap.en, .hm-res.en { --display: 'Gochi Hand', 'ZCOOL KuaiLe', cursive; --hand: 'Patrick Hand', 'ZCOOL KuaiLe', cursive; --body: 'Nunito', -apple-system, 'PingFang SC', sans-serif; }
+.fq-hub .hm-opt .b { font-size: 16px; }
+.fq-duo { margin: 0; padding: 10px 12px; border: 2px dashed #b5462f; border-radius: 12px; background: #fbe3da; font-family: var(--hand); font-size: 15px; line-height: 1.5; }
+.fq-traits { margin: 0 0 8px; }
+.fq-tip { border: 2px solid #3b2a1a; border-radius: 12px; background: #fff3b8; padding: 10px 12px; margin: 0 0 10px; transform: rotate(-.4deg); }
+.fq-tip .tb2 { font-family: var(--hand); font-size: 15px; }
+.fq-tip .tp { margin-top: 2px; font-size: 13px; line-height: 1.6; }
+.fq-duomatch { display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 2.5px solid #3b2a1a; border-radius: 14px; background: #dcefe2; padding: 10px 14px; margin: 0 0 10px; }
+.fq-duomatch .dl { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.fq-duomatch .db { font-family: var(--hand); font-size: 16px; }
+.fq-duomatch .dp { font-size: 13px; }
+.fq-score { font-family: var(--display); font-size: 40px; color: #1f7a4d; flex: none; }
+.srcnote2.bold { font-weight: 700; color: var(--ink); }
+.fq-res .tools .sc-make { background: #f2c14e; border-color: #3b2a1a; }
+/* 「邀请朋友」用微信的分享按钮（button open-type="share"），去掉按钮自带的样式 */
+.tbtn { margin: 0; line-height: 1.4; font-family: inherit; }
+.tbtn::after { border: 0; }

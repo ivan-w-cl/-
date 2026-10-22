@@ -1,13 +1,14 @@
 /* 地图视角：和网页版一样的「全图」大小、手机上先对准公寓区、平移不出纸面、缩放上下限。
    屏幕像素 = 地图坐标 * k + (tx, ty)，k = fitK * z。 */
 function createView(W, H) {
-  let w = 0, h = 0, fitK = 1, z = 1, tx = 0, ty = 0;
+  let w = 0, h = 0, fitK = 1, z = 1, tx = 0, ty = 0, inset = 0;   // inset：底部被结果卡挡住的高度，地图排在它上面
   const zmin = () => 1, zmax = () => Math.max(4, 2.4 / fitK);
   function resize(nw, nh) { w = nw; h = nh; fitK = Math.min(w / W, h / H) * 0.97; }
   function clamp() {
     const sw = W * fitK * z, sh = H * fitK * z;
     tx = sw <= w ? (w - sw) / 2 : Math.min(0, Math.max(w - sw, tx));
-    ty = sh <= h ? (h - sh) / 2 : Math.min(0, Math.max(h - sh, ty));
+    const hv = h - inset;
+    ty = sh <= hv ? (hv - sh) / 2 : Math.min(0, Math.max(hv - sh, ty));
   }
   function fit() { z = 1; tx = 0; ty = 0; clamp(); }
   /* 网页版 viewStudents()：手机上一打开先看清公寓集中的区域（底部 130px 留给按钮） */
@@ -26,7 +27,7 @@ function createView(W, H) {
   /* 把某个地图点移到屏幕上 (sx, sy)，必要时放大到 zTarget */
   function focus(x, y, sx, sy, zTarget) { if (zTarget && z < zTarget) z = Math.min(zmax(), zTarget); tx = sx - x * fitK * z; ty = sy - y * fitK * z; clamp(); }
   return {
-    resize, clamp, fit, viewPoints, zoomAt, pan, focus,
+    resize, clamp, fit, viewPoints, zoomAt, pan, focus, setInset(b) { inset = Math.max(0, b || 0); clamp(); },
     get: () => ({ k: fitK * z, tx, ty, w, h }),
     get z() { return z; }, get fitK() { return fitK; }, zmax, zmin,
     set(s) { z = s.z; tx = s.tx; ty = s.ty; clamp(); }, state: () => ({ z, tx, ty })

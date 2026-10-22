@@ -9,6 +9,7 @@ const cases = require('../../utils/case-api.js');
 const core = require('../../utils/handoff-core.js');
 const RP = require('../../utils/rooms-core.js');
 const WX = require('../../utils/weather.js');
+const shareLink = require('../../utils/share-link.js');
 const { API_BASE } = require('../../config.js');
 const photo = p => `${API_BASE}/photos/${p}.jpg`;
 const fmtw = (s, v) => String(s).replace(/\{(\w+)\}/g, (_, k) => (v[k] != null ? v[k] : ''));
@@ -58,6 +59,9 @@ Page({
     this.setLang(app.globalData.lang, true);
     this.pendingHome = q && q.home;
     this.pendingGroup = q && q.group;   // 订阅消息「群码到了」点进来：直接打开专家群
+    // 测试链接（朋友分享的 ?quiz=buddy&duo=food）或分享卡片上的小程序码（scene=q=buddy&d=food&r=推广码）
+    const sc = q && q.scene ? shareLink.parseScene(q.scene) : null;
+    this.pendingQuiz = q && q.quiz ? { quiz: q.quiz, duo: q.duo || '' } : sc && sc.quiz ? { quiz: sc.quiz, duo: sc.duo } : null;
     this.offCase = cases.on(c => this.updateFab(c));
     if (cases.stored()) this.updateFab(null);
   },
@@ -85,10 +89,16 @@ Page({
       fonts.ready(() => { renderer.relayout(); this.redraw(); });
       if (this.pendingHome && H.byId(this.pendingHome)) this.openHome(this.pendingHome, true);
       if (this.pendingGroup && cases.stored()) this.openGroup();
+      else if (this.pendingQuiz) { const f = this.selectComponent('#fun'); f.setDuo(this.pendingQuiz.quiz, this.pendingQuiz.duo); f.intro(this.pendingQuiz.quiz); }
       else if (!this.pendingHome) this.selectComponent('#match').openQuiz();   // 和网页一样：一打开先看到生活选房的开场
     });
   },
-  onShareAppMessage() {
+  onShareAppMessage(res) {
+    // 「留学搭子」结果卡上的「邀请朋友测合拍度」：朋友点开直接进这套测试，看两人合拍度
+    if (res && res.from === 'button' && res.target && res.target.dataset && res.target.dataset.fq === 'invite') {
+      const f = this.selectComponent('#fun').share;
+      if (f) return { title: f.shareText, path: `/pages/index/index?quiz=${f.quiz}&duo=${f.duo}&ref=${shareLink.refCode()}` };
+    }
     const c = this.data.card;
     return c ? { title: `${c.n}. ${c.name} · ${t(this.data.lang, 'shareTitle')}`, path: `/pages/index/index?home=${c.id}` } : { title: t(this.data.lang, 'title'), path: '/pages/index/index' };
   },
@@ -258,9 +268,20 @@ Page({
   /* ---------- 生活选房（components/match） ---------- */
   openMatch() { this.setData({ card: null, sheet: '' }); this.selectComponent('#match').openQuiz(); },
   onMatchMap(e) {
-    const d = e.detail; this.hm = d && d.picks ? { picks: d.picks, layer: d.layer } : null;
+    if (e.detail && e.detail.picks) { const f = this.selectComponent('#fun'); if (f && f.data.active) f.exit(); }   // 两张结果卡不同时出现
+    this.applyHm(e.detail);
+  },
+  applyHm(d) {
+    this.hm = d && d.picks ? { picks: d.picks, layer: d.layer } : null;
+    if (view) view.setInset(this.hm ? Math.round(view.get().h * 0.48) + 74 : 0);   // 结果卡开着时，地图可以往上移到卡片上面
     if (d && d.fit && view) this.fitPoints(d.fit); else this.redraw();
   },
+  /* ---------- 留学人格测试（components/fun）和分享卡片（components/share） ---------- */
+  onMatchFun(e) { const f = this.selectComponent('#fun'); if (e.detail.id) f.intro(e.detail.id); else f.hub(); },
+  onFunMap(e) { this.applyHm(e.detail); },
+  onFunResult() { const m = this.selectComponent('#match'); if (m && m.data.active) m.exit(); this.setData({ card: null, sheet: '' }); },
+  onFunHome() { this.selectComponent('#match').openQuiz(0); },
+  onShareCard(e) { this.selectComponent('#share').open(e.detail); },
   onMatchCard(e) { this.openHome(e.detail.id); },
   onMatchAsk(e) { this.openGroup(H.byId(e.detail.id)); },
   onMatchCompare(e) { compare.clear(); e.detail.ids.forEach(id => compare.add(id)); app.store('lsm-compare-v1', [...compare]); this.refreshList(); this.openCompare(); },
@@ -298,7 +319,8 @@ Page({
   fitPoints(pts) {
     const v = view.get(), xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
     const x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs), y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
-    const top = this.data.nav.top + this.data.nav.h + 70, bottom = v.h * 0.48, left = 24, right = v.w - 60;
+    // 结果卡在底部（.hm-res：底部按钮上方，最高 48vh），推荐的公寓要落在卡片上面那一块
+    const top = this.data.nav.top + this.data.nav.h + 12, bottom = v.h * 0.52 - 74, left = 24, right = v.w - 60;
     const z = Math.max(1, Math.min(view.zmax(), Math.min((right - left) / ((x1 - x0) * view.fitK), (bottom - top) / ((y1 - y0) * view.fitK))));
     view.set({ z, tx: (left + right) / 2 - (x0 + x1) / 2 * view.fitK * z, ty: (top + bottom) / 2 - (y0 + y1) / 2 * view.fitK * z });
     this.redraw();

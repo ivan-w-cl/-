@@ -136,8 +136,18 @@ async function sendSubscribe(openid, templateId, page, data) {
   return j;
 }
 
+/* 小程序码（分享卡片上扫码直接打开小程序）：getwxacodeunlimit，scene 最多 32 个字符 (TODO: 真实环境验证) */
+async function wxacode(scene, page) {
+  const token = await getAccessToken();
+  const r = await fetch(`${WXAPI()}/wxa/getwxacodeunlimit?access_token=${token}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(8000),
+    body: JSON.stringify({ scene, page, check_path: false, env_version: env.WX_MINIPROGRAM_STATE === 'trial' ? 'trial' : env.WX_MINIPROGRAM_STATE === 'developer' ? 'develop' : 'release', width: 430 }) });
+  const buf = Buffer.from(await r.arrayBuffer());
+  if (/json/.test(r.headers.get('content-type') || '')) { const j = JSON.parse(buf.toString()); throw new Error(`小程序码生成失败：${j.errcode} ${j.errmsg}`); }
+  return buf;
+}
+
 module.exports = {
-  canLogin, code2Session, sendSubscribe,
+  canLogin, code2Session, sendSubscribe, wxacode,
   name: 'miniprogram',
   enabled,
   // 与 web 渠道相同的接口：工作台点“发送”后调用。48 小时窗口外微信会返回 45015。

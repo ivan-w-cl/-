@@ -7,5 +7,7 @@ module.exports = {
   FONT_BASE: 'http://localhost:8765/fonts/',
   /* 订阅消息模板 ID（小程序后台「订阅消息」里选一个进度提醒类模板）。留空就不请求订阅，学生照样能在页面里看到群码。
      服务器上要配同一个模板：WX_SUB_TEMPLATE_ID 和字段 WX_SUB_TEMPLATE_DATA，见 consult-server/README.md。 */
-  SUB_TEMPLATE_ID: ''
+  SUB_TEMPLATE_ID: '',
+  /* 网页版地址：分享卡片在拿不到小程序码时退回普通二维码，指向这里。留空就用 API_BASE（服务器同时提供网页）。 */
+  SITE_URL: ''
 };

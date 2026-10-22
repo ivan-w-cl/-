@@ -1,0 +1,16 @@
+<!-- 分享卡片弹窗（网页 .sc-wrap / .sc-box） -->
+<view wx:if="{{open}}" class="sc-wrap" style="padding-top:{{padTop}}px" catchtouchmove="noop" bindtap="close">
+  <view class="sc-box {{busy ? 'busy' : ''}} {{lang}}" catchtap="noop">
+    <view class="sc-head"><text class="h3">{{k.title}}</text><view class="x" bindtap="close">×</view></view>
+    <view class="sc-tabs"><view wx:for="{{tabs}}" wx:key="key" class="sc-tab {{style === item.key ? 'on' : ''}}" data-s="{{item.key}}" bindtap="pickStyle">{{item.label}}</view></view>
+    <view class="sc-stage"><image wx:if="{{img}}" class="sc-img" src="{{img}}" mode="widthFix" show-menu-by-longpress="true" bindtap="preview"></image><view wx:else class="sc-img"></view></view>
+    <view class="sc-hold">{{k.hold}}</view>
+    <view class="sc-acts">
+      <view class="sc-btn main" bindtap="save">{{k.save}}</view>
+      <view class="sc-btn" bindtap="shareImg">{{k.share}}</view>
+      <view class="sc-btn" bindtap="copy">{{k.copy}}</view>
+    </view>
+  </view>
+</view>
+<!-- 画卡片用的画布，放在屏幕外 -->
+<canvas type="2d" id="sc" class="sc-canvas"></canvas>

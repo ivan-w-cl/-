@@ -84,3 +84,11 @@
 .pc-v { color: #6e5538; }
 .pc-go { min-height: 44px; display: flex; align-items: center; justify-content: center; border: 2.5px solid var(--ink); border-radius: 12px; background: #b5462f; color: #fff; font-family: var(--hand); font-size: 18px; box-shadow: 2px 3px 0 #3b2a1a; }
 .pad-bottom { height: 16px; }
+
+/* 网页 fun-quizzes.css / share-cards.css 加在生活选房上的入口 */
+.fq-entry { margin-top: 14px; padding-top: 12px; border-top: 2px dashed #dcc8a0; display: flex; flex-direction: column; gap: 8px; }
+.fq-entry-h { font-family: var(--hand); font-size: 15px; color: #b5462f; }
+.fq-entry-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.fq-entry-b { border: 1.5px solid #3b2a1a; border-radius: 999px; background: #fff; padding: 4px 12px; font-family: var(--hand); font-size: 14px; color: #3b2a1a; min-height: 32px; display: flex; align-items: center; }
+.hm-res .tools .sc-make { background: #f2c14e; border-color: #3b2a1a; font-weight: 700; }
+.hm-res .tools .fq-more { background: #fff3b8; }

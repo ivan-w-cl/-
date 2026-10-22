@@ -1,0 +1,75 @@
+<!-- 留学人格测试：答题弹窗（网页 .hm-wrap.fq-wrap）和结果卡（网页 .hm-res.fq-res），样式与生活选房相同 -->
+<view wx:if="{{open}}" class="hm-wrap fq-wrap {{lang}}" style="padding-top:{{padTop}}px" catchtouchmove="noop" bindtap="close">
+  <view class="hm" catchtap="noop">
+    <view class="hm-tape"></view>
+    <view class="x" bindtap="close">×</view>
+    <scroll-view scroll-y="true" class="hm-scroll" enhanced="true" show-scrollbar="false">
+      <view wx:if="{{mode === 'hub'}}" class="hm-intro">
+        <view class="hm-step">{{k.hubKicker}}</view>
+        <view class="h2">{{k.hubTitle}}</view>
+        <view class="lede">{{k.hubLead}}</view>
+        <view class="hm-opts fq-hub">
+          <view class="hm-opt" data-id="home" bindtap="pickQuiz"><text class="e">🏠</text><view class="ot"><text class="b">{{k.home}}</text><text class="s">{{k.homeBlurb}}</text></view></view>
+          <view wx:for="{{quizzes}}" wx:key="id" class="hm-opt" data-id="{{item.id}}" bindtap="pickQuiz"><text class="e">{{item.e}}</text><view class="ot"><text class="b">{{item.title}}</text><text class="s">{{item.blurb}}</text></view></view>
+        </view>
+      </view>
+      <view wx:elif="{{mode === 'intro'}}" class="hm-intro">
+        <view class="hm-step">{{intro.kicker}}</view>
+        <view class="h2">{{intro.title}}</view>
+        <view wx:if="{{intro.duo}}" class="fq-duo">{{intro.duo}}</view>
+        <view class="lede">{{intro.blurb}}</view>
+        <view class="hm-doodles"><text wx:for="{{intro.types}}" wx:key="index">{{item}}</text></view>
+        <view class="hm-note">{{intro.note}}</view>
+        <view class="hm-foot">
+          <text class="hm-link" bindtap="hub">{{k.all}}</text>
+          <view class="hm-btns"><view wx:if="{{intro.has}}" class="hm-btn alt" bindtap="last">{{k.last}}</view><view class="hm-btn" bindtap="start">{{k.start}}</view></view>
+        </view>
+      </view>
+      <view wx:else class="hm-intro">
+        <view class="hm-top"><view class="hm-dots"><text wx:for="{{dots}}" wx:key="index" class="dot {{item ? 'on' : ''}}"></text></view><text class="hm-step">{{q.step}}</text></view>
+        <view class="h2">{{q.text}}</view>
+        <view class="hm-opts">
+          <view wx:for="{{q.opts}}" wx:key="i" class="hm-opt {{item.on ? 'on' : ''}}" data-i="{{item.i}}" bindtap="pickOpt"><text class="e">{{item.e}}</text><view class="ot"><text class="b">{{item.t}}</text></view></view>
+        </view>
+        <view class="hm-foot">
+          <view class="hm-btn alt" bindtap="back">{{k.back}}</view>
+          <view class="hm-btn {{canNext ? '' : 'off'}}" bindtap="next">{{q.next}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view wx:if="{{active}}" class="panel hm-res fq-res {{lang}} {{mini ? 'mini' : ''}}" catchtouchmove="noop">
+  <view class="phead">
+    <text class="h2">{{res.head}}</text>
+    <view class="hb"><view class="pbtn" bindtap="toggleMini">{{mini ? k.expand : k.mini}}</view><view class="pbtn" bindtap="exit">{{k.close}}</view></view>
+  </view>
+  <scroll-view wx:if="{{!mini}}" scroll-y="true" class="pbody" enhanced="true" show-scrollbar="false">
+    <view class="persona"><text class="stamp">{{res.stamp}}</text><text class="k">{{res.tag}}</text><text class="b">{{res.name}}</text><view class="p">{{res.desc}}</view></view>
+    <view class="hm-doodles fq-traits"><text wx:for="{{res.traits}}" wx:key="index">{{item}}</text></view>
+    <view wx:if="{{res.tip}}" class="fq-tip"><view class="tb2">💡 {{k.tip}}</view><view class="tp">{{res.tip}}</view></view>
+    <view wx:if="{{res.duo}}" class="fq-duomatch"><view class="dl"><text class="db">{{res.duo.title}}</text><text class="dp">{{res.duo.pair}}</text></view><text class="fq-score">{{res.duo.score}}%</text></view>
+    <view class="srcnote2 bold">{{res.picksH}}</view>
+    <view wx:for="{{res.picks}}" wx:key="id" class="mcard {{item.top ? 'top' : ''}} {{selected === item.i ? 'on' : ''}}" data-i="{{item.i}}" bindtap="tapCard">
+      <view class="mhead"><text class="mnum">{{item.i + 1}}</text><view class="mh"><text class="mkicker">{{item.kicker}}</text><view class="h3">{{item.name}}</view><view class="mmeta">{{item.addr}}</view></view></view>
+      <view class="fits">{{k.fits}}</view>
+      <view class="why2"><view wx:for="{{item.why}}" wx:key="index" wx:for-item="w" class="li"><text class="ico">✔︎</text><text>{{w}}</text></view></view>
+      <view class="mprice">{{item.price}}</view>
+      <view class="macts">
+        <view class="mb2" data-i="{{item.i}}" catchtap="view">{{k.map}}</view>
+        <view class="mb2" data-i="{{item.i}}" catchtap="card">{{k.card}}</view>
+        <view class="mb2 cta2" data-i="{{item.i}}" catchtap="ask">{{k.ask}}</view>
+      </view>
+    </view>
+    <view class="tools">
+      <view class="tb sc-make" bindtap="makeShare">🎴 {{k.share}}</view>
+      <button wx:if="{{res.isDuo}}" class="tb tbtn" open-type="share" data-fq="invite" data-title="{{res.shareTitle}}">{{res.invite}}</button>
+      <view wx:else class="tb" bindtap="copy">{{res.invite}}</view>
+      <view class="tb" bindtap="again">{{k.again}}</view>
+      <view class="tb" bindtap="more">🎲 {{k.more}}</view>
+    </view>
+    <view class="srcnote2">{{k.note}}</view>
+    <view class="pad-bottom"></view>
+  </scroll-view>
+</view>
