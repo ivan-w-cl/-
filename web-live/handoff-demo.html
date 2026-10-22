@@ -39,18 +39,18 @@
 </head>
 <body>
 <header>
-  <h1>人工建群 → 群码回传</h1>
+  <h1 data-t="h">新建群 → 群码回传</h1>
   <ol>
-    <li>学生在公寓对话框点「我要建群咨询」</li>
-    <li>顾问后台收到提醒</li>
-    <li>顾问人工建群，发送群二维码</li>
-    <li>学生在原对话框里扫码进群</li>
+    <li data-t="s1">学生在公寓对话框点「立即进群」，拿到咨询编号</li>
+    <li data-t="s2">专家收到邮件提醒</li>
+    <li data-t="s3">专家新建一个群，把群码发回来</li>
+    <li data-t="s4">学生在原对话框里扫码进群</li>
   </ol>
-  <a href="./index.html">← 返回地图</a>
+  <a href="./index.html" data-t="back">← 返回地图</a>
 </header>
 <main>
-  <div class="col student"><span class="cap">学生 · 网站</span><iframe id="student" title="学生网站"></iframe></div>
-  <div class="col adviser"><span class="cap">顾问 · 后台</span><iframe id="adviser" title="顾问后台" src="./adviser.html?embed=1"></iframe></div>
+  <div class="col student"><span class="cap" data-t="cs">学生 · 网站</span><iframe id="student" title="学生网站"></iframe></div>
+  <div class="col adviser"><span class="cap" data-t="ca">顾问 · 后台</span><iframe id="adviser" title="顾问后台" src="./adviser.html?embed=1"></iframe></div>
 </main>
 <script src="./home-tools.js"></script>
 <script>
@@ -61,6 +61,11 @@
     const id = (ids[name] || ids['iQ Great Newton House'] || {}).id || '';
     let lang = 'zh';
     try { lang = localStorage.getItem('lsm-lang') || 'zh'; } catch (e) { /* 忽略 */ }
+    /* 英文和日文界面用英文说明 */
+    const EN = { h: 'New group → QR code back to the student', s1: 'The student taps “Join my group now” and gets a request code', s2: 'The experts get an email alert',
+      s3: 'An expert creates a new group and sends its code back', s4: 'The student scans it in the same chat window', back: '← Back to the map', cs: 'Student · website', ca: 'Expert · console' };
+    if (lang !== 'zh') { document.documentElement.lang = 'en'; document.title = 'Two-sided walkthrough · Liverpool Student Map';
+      document.querySelectorAll('[data-t]').forEach(n => { n.textContent = EN[n.dataset.t]; }); }
     document.getElementById('student').src = './index.html#' + new URLSearchParams(id ? { lang, home: id } : { lang }).toString();
   })();
 </script>

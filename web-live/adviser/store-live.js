@@ -8,7 +8,9 @@
   const read = k => { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } };
   const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* 存储不可用时只在内存里演示 */ } };
 
-  function fresh() { return { demoLang: 'zh', conversations: root.DemoData.seedConversations(Date.now()), notices: [] }; }
+  /* 后台语言默认跟学生网站上选的语言（没选过就跟浏览器） */
+  const startLang = () => { let l = ''; try { l = localStorage.getItem('lsm-lang') || ''; } catch (e) { /* 忽略 */ } return /^zh/i.test(l || navigator.language || 'zh') ? 'zh' : 'en'; };
+  function fresh() { return { demoLang: startLang(), conversations: root.DemoData.seedConversations(Date.now()), notices: [] }; }
   let state = read(KEY);
   if (!state || !Array.isArray(state.conversations)) state = fresh();
   state.conversations = state.conversations.filter(c => c.id !== 'me');

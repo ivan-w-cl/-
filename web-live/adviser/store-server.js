@@ -8,7 +8,7 @@
   const listeners = new Set();
   const base = new URL('./', location.href), url = p => new URL(p, base).href;
   const readL = () => { try { return JSON.parse(localStorage.getItem(LOCAL)) || {}; } catch (e) { return {}; } };
-  const local = Object.assign({ demoLang: 'zh', seen: {}, read: {} }, readL());
+  const local = Object.assign({ demoLang: /^zh/i.test(navigator.language || '') ? 'zh' : 'en', seen: {}, read: {} }, readL());
   const writeL = () => { try { localStorage.setItem(LOCAL, JSON.stringify(local)); } catch (e) { /* 只在内存里记 */ } };
   const state = { get demoLang() { return local.demoLang; }, set demoLang(v) { local.demoLang = v; }, conversations: [], notices: [] };
   const emit = how => listeners.forEach(fn => fn(how));

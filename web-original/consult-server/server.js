@@ -184,7 +184,7 @@ const server = http.createServer(async (req, res) => {
 });
 if (require.main === module) {
   server.listen(PORT, HOST, () => {
-    console.log(`咨询原型已启动：http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}/   工作台：/admin.html`);
+    console.log(`咨询原型已启动：http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}/   ${fs.existsSync(path.join(SITE_DIR, ADVISER_PATH.replace(/^\//, ''))) ? '订房专家后台 Expert console：' + ADVISER_PATH : '工作台：/admin.html'}`);
     console.log(`静态站点目录：${SITE_DIR}`);
     console.log(`通知：${notifier.names.join(' + ')}${env.WECOM_WEBHOOK_URL ? '' : '（未设置 WECOM_WEBHOOK_URL，仅写日志）'}`);
     console.log(`小程序渠道：${channels.miniprogram.enabled ? '已启用' : '未启用（缺少 WX_APPID / WX_APPSECRET / WX_TOKEN）'}`);

@@ -10,6 +10,7 @@
 .wx-l2 i { font-style: normal; font-size: 13px; color: #b5462f; }
 .wx-pop { z-index: 12; width: min(300px, calc(100vw - 20px)); display: flex; flex-direction: column; gap: 8px; padding: 12px 14px 14px; border: 2.5px solid var(--ink); border-radius: 16px;
   background: var(--panel); color: var(--ink); box-shadow: var(--lift); font: 13.5px/1.5 var(--body); }
+.wx-pop[hidden] { display: none; }
 .wx-ph { display: flex; align-items: center; gap: 8px; }
 .wx-ph b { flex: 1; font: normal 19px/1.15 var(--hand); }
 .wx-x { border: 0; background: none; color: var(--ink); font-size: 24px; line-height: 1; cursor: pointer; padding: 0 2px; }
