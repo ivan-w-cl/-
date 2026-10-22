@@ -365,13 +365,13 @@ Page({
     const rankLabel = rank === 'subject' && this.subject ? R.label[L].replace('{s}', this.subject.name[L]) : R.label[L];
     this.setData({ groups, ranked: rank === 'area' ? [] : list.map(row), isRanked: ranked, count: list.length,
       countText: ht(L, 'count', { n: list.length }), viewText: ht(L, 'view', { n: list.length }), homesCount: t(L, 'homesCount', { n: list.length }),
-      rankLabel, sortNote: ranked ? `${t(L, 'sortedBy', { k: rankLabel })} · ${t(L, 'topNote')}` : '', options: this.options(),
+      rankLabel, sortNote: ranked ? `${t(L, 'sortedBy', { k: rankLabel })} · ${t(L, 'topNote')}` : '', options: this.menuOptions(),
       favCount: favorites.size, cmpCount: compare.size, filterIds: this.only || null,
       tray: [...compare].map(id => H.byId(id)).filter(Boolean).map(h => ({ id: h.id, n: h.n, name: h.name })),
       trayT: { lbl: t(L, 'cmpLbl'), go: t(L, 'cmpGo'), clr: t(L, 'cmpClear') } });
     if (renderer) { renderer.relayout(); this.redraw(); }
   },
-  options() {
+  menuOptions() {   // 不能叫 options：小程序页面的 this.options 是启动参数
     const L = this.data.lang, f = this.data.filters;
     const groupOf = r => r.group[L] || '';
     const ranks = H.D.ranks.filter(r => r.key !== 'subject' || this.subject).map(r => ({ v: r.key, label: r.key === 'subject' && this.subject ? r.label[L].replace('{s}', this.subject.name[L]) : r.label[L], group: groupOf(r) }));

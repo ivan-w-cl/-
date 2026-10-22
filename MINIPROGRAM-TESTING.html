@@ -103,7 +103,7 @@ Booking expert console: http://localhost:8765/adviser.html  (password: 123456)
 <li>Mac：<code>WECHAT_QR_DAYS=0.003 sh start-demo.sh</code></li>
 </ul>
 <h2>六、测试清单</h2>
-<p>请按顺序走一遍，在「结果」一栏记下 ✅ 通过 / ❌ 有问题（有问题的按第九节的格式反馈）。中文、英文各测一遍（顶部 <code>EN / 中文</code> 切换）。</p>
+<p>请按顺序走一遍，在「结果」一栏记下 ✅ 通过 / ❌ 有问题（有问题的按第十节的格式反馈）。中文、英文各测一遍（顶部 <code>EN / 中文</code> 切换）。</p>
 <table>
 <thead>
 <tr>
@@ -258,7 +258,38 @@ Booking expert console: http://localhost:8765/adviser.html  (password: 123456)
 <li><strong>价格和评价</strong>是 2026 年 10 月 17 日的历史记录，不代表实时空房。</li>
 <li>测试数据（咨询请求、群码）保存在运行服务器的电脑上：<code>web-original/consult-server/data/</code>。</li>
 </ul>
-<h2>九、反馈格式</h2>
+<h2>九、常见问题</h2>
+<table>
+<thead>
+<tr>
+<th>看到的提示</th>
+<th>原因和处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET http://localhost:8765/api/weather net::ERR_CONNECTION_REFUSED</code>，下面还有一行「连不上服务器…」</td>
+<td>小程序连不上服务器。先确认 <code>start-demo</code> 的窗口开着、里面有 <code>Student website: http://localhost:8765/</code>；电脑浏览器打开 <a href="http://localhost:8765/" target="_blank" rel="noopener">http://localhost:8765/</a> 能看到网页版就说明服务器正常。<strong>真机预览</strong>时 <code>localhost</code> 指的是手机自己，要先运行 <code>node miniprogram/scripts/set-server.cjs</code> 换成电脑的局域网 IP 再预览。连不上时天气显示「示例天气」，进群等功能用不了</td>
+</tr>
+<tr>
+<td><code>this.options is not a function</code></td>
+<td>2026-10-22 第一版测试包的问题，已修复。请换用新的测试包</td>
+</tr>
+<tr>
+<td>服务器窗口一闪就关了 / <code>node: command not found</code></td>
+<td>没装 Node.js，或版本太旧（需要 18 以上）。装好后重新打开终端 / 命令提示符再运行</td>
+</tr>
+<tr>
+<td><code>Error: listen EADDRINUSE :::8765</code></td>
+<td>8765 端口被占用，通常是服务器已经开了一个。关掉旧窗口，或者用别的端口：<code>PORT=8766 sh start-demo.sh</code>（Windows：<code>set PORT=8766</code> 再运行 <code>start-demo.cmd</code>），然后 <code>node miniprogram/scripts/set-server.cjs http://localhost:8766</code></td>
+</tr>
+<tr>
+<td>字体是系统字体，不是手写体</td>
+<td>字体从服务器下载，服务器没连上或还在下载。连上服务器后重新编译</td>
+</tr>
+</tbody>
+</table>
+<h2>十、反馈格式</h2>
 <p>每个问题请写：</p>
 <pre><code>编号：（测试清单里的 #，或「其他」）
 手机型号 / 系统版本 / 微信版本：

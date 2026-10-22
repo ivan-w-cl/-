@@ -151,6 +151,8 @@ const runtime = function () {
     const def = COMP_DEFS[tag];
     if (!inst) {
       inst = insts[key] = { data: {}, __props: {}, __el: null, __owner: owner, __binds: {} };
+      // 微信组件自带的只读属性（同名赋值不生效）
+      ['renderer', 'is', 'id', 'dataset', 'router', 'pageRouter'].forEach(k => Object.defineProperty(inst, k, { value: k === 'renderer' ? 'webview' : k === 'is' ? 'components/' + tag : '', writable: false, enumerable: false }));
       Object.entries(def.properties || {}).forEach(([k, v]) => { inst.data[k] = v && typeof v === 'object' && 'value' in v ? v.value : null; });
       Object.assign(inst.data, JSON.parse(JSON.stringify(def.data || {})));
       Object.entries(def.methods || {}).forEach(([k, f]) => { inst[k] = f; });
@@ -216,6 +218,8 @@ const runtime = function () {
   load(APP); appInst.onLaunch && appInst.onLaunch();
   for (const k in COMPS) { loadingComp = k; load(COMPS[k].mod); }
   load(PAGE);
+  // 和微信一样：this.options 是启动参数、this.route 是页面路径（同名方法会被覆盖）
+  page.options = PREVIEW.query || {}; page.route = PAGE_PATH;
   paint(); page.onLoad && page.onLoad(PREVIEW.query || {}); page.onShow && page.onShow(); setTimeout(() => { page.onReady && page.onReady(); }, 30);
 };
 
@@ -239,7 +243,7 @@ ${css}
 <script>
 const MODS = ${JSON.stringify(mods)};
 const WXML = ${JSON.stringify(wxml)};
-const APP = ${JSON.stringify(appMod)}, PAGE = ${JSON.stringify(pageMod)}, COMPS = ${JSON.stringify(comps)};
+const APP = ${JSON.stringify(appMod)}, PAGE = ${JSON.stringify(pageMod)}, COMPS = ${JSON.stringify(comps)}, PAGE_PATH = ${JSON.stringify(pagePath)};
 const PREVIEW = (() => { const q = new URLSearchParams(location.search); return { api: q.get('api') || '', lang: q.get('lang') || 'zh', query: Object.fromEntries([...q].filter(([k]) => k.startsWith('q_')).map(([k, v]) => [k.slice(2), v])) }; })();
 (() => { const W = innerWidth, c = document.getElementById('wx-capsule'); Object.assign(c.style, { width: '87px', height: '32px', top: '48px', left: (W - 94) + 'px' }); })();
 (${runtime.toString()})();

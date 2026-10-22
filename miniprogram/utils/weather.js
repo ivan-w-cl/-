@@ -31,8 +31,15 @@ function load() {
     try { const v = wx.getStorageSync(KEY); if (v && Date.now() - v.at < EVERY) return ok(v.w); } catch (e) { /* 忽略 */ }
     wx.request({ url: API_BASE + '/api/weather', timeout: 8000,
       success: r => { if (r.statusCode === 200 && r.data && r.data.current) { const w = fromApi(r.data); try { wx.setStorageSync(KEY, { at: Date.now(), w }); } catch (e) { /* 忽略 */ } ok(w); } else ok(sample()); },
-      fail: () => ok(sample()) });
+      fail: () => { hint(); ok(sample()); } });
   });
+}
+/* 连不上服务器时在调试面板里说清楚原因（开发者工具会另外打出一行 ERR_CONNECTION_REFUSED） */
+let hinted = false;
+function hint() {
+  if (hinted) return; hinted = true;
+  console.warn(`连不上服务器 ${API_BASE}：请先运行 start-demo（Windows 双击 start-demo.cmd，Mac 运行 sh start-demo.sh），窗口保持打开。` +
+    '真机预览时 localhost 指的是手机自己，要先运行 node miniprogram/scripts/set-server.cjs 换成电脑的局域网 IP。现在先显示示例天气，进群等功能要等服务器连上才能用。');
 }
 
 /* 页面要显示的内容 + 地图效果的 class */

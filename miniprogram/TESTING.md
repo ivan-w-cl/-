@@ -70,7 +70,7 @@ Booking expert console: http://localhost:8765/adviser.html  (password: 123456)
 
 ## 六、测试清单
 
-请按顺序走一遍，在「结果」一栏记下 ✅ 通过 / ❌ 有问题（有问题的按第九节的格式反馈）。中文、英文各测一遍（顶部 `EN / 中文` 切换）。
+请按顺序走一遍，在「结果」一栏记下 ✅ 通过 / ❌ 有问题（有问题的按第十节的格式反馈）。中文、英文各测一遍（顶部 `EN / 中文` 切换）。
 
 | # | 功能 | 怎么测 | 期望 | 结果 |
 |---|---|---|---|---|
@@ -109,7 +109,17 @@ Booking expert console: http://localhost:8765/adviser.html  (password: 123456)
 - **价格和评价**是 2026 年 10 月 17 日的历史记录，不代表实时空房。
 - 测试数据（咨询请求、群码）保存在运行服务器的电脑上：`web-original/consult-server/data/`。
 
-## 九、反馈格式
+## 九、常见问题
+
+| 看到的提示 | 原因和处理 |
+|---|---|
+| `GET http://localhost:8765/api/weather net::ERR_CONNECTION_REFUSED`，下面还有一行「连不上服务器…」 | 小程序连不上服务器。先确认 `start-demo` 的窗口开着、里面有 `Student website: http://localhost:8765/`；电脑浏览器打开 <http://localhost:8765/> 能看到网页版就说明服务器正常。**真机预览**时 `localhost` 指的是手机自己，要先运行 `node miniprogram/scripts/set-server.cjs` 换成电脑的局域网 IP 再预览。连不上时天气显示「示例天气」，进群等功能用不了 |
+| `this.options is not a function` | 2026-10-22 第一版测试包的问题，已修复。请换用新的测试包 |
+| 服务器窗口一闪就关了 / `node: command not found` | 没装 Node.js，或版本太旧（需要 18 以上）。装好后重新打开终端 / 命令提示符再运行 |
+| `Error: listen EADDRINUSE :::8765` | 8765 端口被占用，通常是服务器已经开了一个。关掉旧窗口，或者用别的端口：`PORT=8766 sh start-demo.sh`（Windows：`set PORT=8766` 再运行 `start-demo.cmd`），然后 `node miniprogram/scripts/set-server.cjs http://localhost:8766` |
+| 字体是系统字体，不是手写体 | 字体从服务器下载，服务器没连上或还在下载。连上服务器后重新编译 |
+
+## 十、反馈格式
 
 每个问题请写：
 

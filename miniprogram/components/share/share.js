@@ -59,9 +59,9 @@ Component({
       try {
         const make = (cw, ch) => wx.createOffscreenCanvas({ type: '2d', width: cw, height: ch });
         const img = make(PW, PH), c = img.getContext('2d');
-        if (!this.renderer) this.renderer = createRenderer(scene, { dpr: 1, makeCanvas: make, font: fonts.pick });
-        this.renderer.setLang(this.data.lang); this.renderer.relayout();
-        this.renderer.draw(c, { k, tx: -vb[0] * k, ty: -vb[1] * k, w: PW, h: PH }, { hidden: HIDE, relayout: true });
+        if (!this.mapRenderer) this.mapRenderer = createRenderer(scene, { dpr: 1, makeCanvas: make, font: fonts.pick });   // 不能叫 renderer：组件自带这个属性
+        this.mapRenderer.setLang(this.data.lang); this.mapRenderer.relayout();
+        this.mapRenderer.draw(c, { k, tx: -vb[0] * k, ty: -vb[1] * k, w: PW, h: PH }, { hidden: HIDE, relayout: true });
         return Promise.resolve({ img, vb, pts });
       } catch (e) { return Promise.resolve(null); }
     },
