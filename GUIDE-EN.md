@@ -92,6 +92,7 @@ The layout is exactly the live site's. New features were added in separate files
 | Highlight focus | After a quiz, tapping a home that is not recommended un-dims the map | `pick-focus.js` |
 | **Join the booking group** | See section 5 | `booking-handoff.js`, `case-api.js` |
 | Chat bubble | A floating bubble shows a red dot when the expert sends the QR code or a message. It can be dragged and docks to the screen edge | `booking-handoff.js` |
+| Phones, tablets, foldables | Computers with a mouse get the side panels. Phones, iPad in portrait and the iPhone Duo inner screen (touch screens up to 1024 wide) get the bottom bar and pull-up drawers; on wider ones the drawers stay centred at 560 wide. iPad in landscape keeps the side panels with **Find your home** folded at first. The iPhone Duo outer screen and Split View (about 330 wide) work like a phone | `devices.css`, `tablet.js` |
 | Install as an app | Can be added to the home screen and works offline for browsing | `pwa.js`, `sw.js`, `manifest.webmanifest` |
 | Languages | English, Chinese and Japanese buttons. Everything is in English and Chinese **except Home Match (生活选房), which is Chinese only for now**; the other personality quizzes are in English. The Japan team will translate the Japanese content | all files |
 

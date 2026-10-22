@@ -324,7 +324,7 @@
   .contact :focus-visible, .cmp :focus-visible { outline: 3px dashed #b5462f; outline-offset: 2px; }
 
   /* ---------- phones and narrow windows ---------- */
-  @media (max-width: 760px), (max-height: 500px), (max-width: 1024px) and (orientation: portrait) and (hover: none) {
+  @media (max-width: 760px), (max-height: 500px), (max-width: 1024px) and (hover: none) {
     .grain { display: none; }
     .cloud { filter: none; }
     .stage { box-shadow: none; }
@@ -367,6 +367,7 @@
 <link rel="stylesheet" href="./booking-handoff.css">
 <link rel="stylesheet" href="./weather.css">
 <link rel="stylesheet" href="./rank-compare.css">
+<link rel="stylesheet" href="./devices.css">
 <link rel="stylesheet" href="./panel-drag.css">
 <link rel="stylesheet" href="./fancy-select.css">
 <link rel="stylesheet" href="./share-cards.css">
@@ -1926,7 +1927,7 @@ const zmax = () => Math.max(4, 2.4 / fitK);
 // Only the result-map bridge supplies this inset viewport. A quiz background
 // iframe and the standalone map keep the original full-map zoom bounds.
 const zmin = () => window.LifeMapViewport ? 0.1 : 1;
-const isNarrow = () => innerWidth <= 760 || innerHeight <= 500 || matchMedia('(max-width: 1024px) and (orientation: portrait) and (hover: none)').matches;   // iPad 竖屏也用手机版布局
+const isNarrow = () => innerWidth <= 760 || innerHeight <= 500 || matchMedia('(max-width: 1024px) and (hover: none)').matches;   // iPad 竖屏、iPhone Duo 内屏（触屏且不超过 1024 宽）也用手机版布局
 function sizeStage() {
   stage.style.width = (OUTW * fitK * layoutZoom) + 'px';
   stage.style.height = (OUTH * fitK * layoutZoom) + 'px';

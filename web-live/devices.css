@@ -1,0 +1,13 @@
+/* 不同设备的小调整（iPad、iPhone Duo）。不改原有布局，只在手机版布局用到大屏触屏时补几条规则。 */
+
+/* iPhone Duo 内屏 / iPad 竖屏用的是手机版布局，但屏幕更宽：底部抽屉居中，最宽 560，不铺满整屏 */
+@media (min-width: 761px) and (max-width: 1024px) and (hover: none) {
+  .controls, .homes { left: max(0px, calc(50% - 280px)); right: max(0px, calc(50% - 280px)); border-radius: 20px 20px 0 0; }
+}
+
+/* iPhone Duo 分屏（两个 App 并排，每边约 330 宽）：标题让位给语言按钮 */
+@media (max-width: 380px) {
+  .brandbar { gap: 6px; }
+  .brandbar h1 { flex: 1 1 0; min-width: 0; font-size: 16px; }
+  .langs button { padding: 3px 6px; font-size: 11px; }
+}

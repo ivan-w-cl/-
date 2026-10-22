@@ -21,7 +21,7 @@
 .subject-hint::before {content:'';position:absolute;left:-6px;top:24px;width:10px;height:10px;background:var(--panel);border-left:1.5px solid var(--line);border-bottom:1.5px solid var(--line);transform:rotate(45deg);}
 .subject-hint button {flex:0 0 36px;min-height:40px;border:0;background:none;color:var(--ink-soft);font-size:20px;cursor:pointer;}
 .subject-panel[hidden],.subject-hint[hidden],.subject-tab-state[hidden] {display:none;}
-@media(min-width:761px) and (min-height:501px) and (hover:hover),(min-width:761px) and (min-height:501px) and (orientation:landscape),(min-width:1025px) and (min-height:501px) {
+@media(min-width:761px) and (min-height:501px) and (hover:hover),(min-width:1025px) and (min-height:501px) {
   .app:has(.homes:not(.collapsed):not([hidden])) .subject-dock {--dock-left:calc(334px + env(safe-area-inset-left,0px));}
   body:has(#hmRes:not([hidden]):not(.mini)) .subject-dock {--dock-left:calc(382px + env(safe-area-inset-left,0px));}
   .subject-panel {width:min(340px,calc(100vw - var(--dock-left) - 76px));}

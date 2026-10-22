@@ -21,7 +21,7 @@
     const persist = () => { if (st) saved[id] = st; else delete saved[id]; try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (_) {} };
 
     const clampY = (y, h) => Math.max(8, Math.min(y, Math.max(8, Math.min(vh(), barTop()) - 8 - h)));
-    const narrowNow = () => vw() <= 760 || matchMedia('(max-width: 1024px) and (orientation: portrait) and (hover: none)').matches;   // iPad 竖屏按手机版处理
+    const narrowNow = () => vw() <= 760 || matchMedia('(max-width: 1024px) and (hover: none)').matches;   // 触屏且不超过 1024 宽（iPad 竖屏、iPhone Duo 内屏）按手机版处理
     const capH = () => Math.max(120, narrowNow() ? Math.min(470, vh() * 0.54) : Math.min(vh(), barTop()) - 16);
     const shown = () => !panel.hidden && getComputedStyle(panel).display !== 'none';
     // Never trust a width measured while the card is display:none (e.g. while a home card replaces it on
