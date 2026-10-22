@@ -31,4 +31,6 @@
 
 演示数据只存在浏览器本地（`lsm-live-me-v1` 学生会话、`lsm-live-admin-v1` 顾问后台、`lsm-live-pool-v1` 预建群池、`lsm-live-mail-v1` 提醒邮件记录），同一浏览器里的学生网站和顾问后台通过 storage 事件实时同步；二维码是演示链接，扫码不会进入真实群。其余 46 套公寓的房型按历史参考价列出，照片显示「照片整理中」，补照片时在 `room-photos.js` 的 `ROOMS` 里添加。
 
+在线演示直达：链接末尾加 `#adviser` 打开订房专家后台，加 `#flow` 打开两端流程演示。
+
 打开方式：在本目录运行 `python3 -m http.server`，访问 `http://localhost:8000/`（学生网站）、`/adviser.html`（顾问后台）、`/handoff-demo.html`（两端流程演示）。
