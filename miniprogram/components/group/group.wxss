@@ -1,0 +1,54 @@
+/* 网页版 index.html 的 .contact 对话框 + booking-handoff.css，颜色字体一致 */
+.wrap { position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 50; background: rgba(31, 24, 16, .5); display: flex; align-items: center; justify-content: center;
+  padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom)); }
+.contact { position: relative; width: 100%; max-width: 640px; max-height: 100%; display: flex; flex-direction: column; background: #fffaf0; color: #3b2a1a;
+  border: 3px solid #3b2a1a; border-radius: 18px; box-shadow: var(--lift-hi); overflow: hidden; font-size: 14px; line-height: 1.5; }
+.head { position: relative; flex: none; padding: 18px 22px 10px; border-bottom: 1px solid #e6d8bf; background: #fffaf0; }
+.eyebrow { display: block; margin-right: 34px; font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: #b5462f; }
+.h3 { margin: 4px 36px 6px 0; font-family: var(--display); font-size: 27px; line-height: 1.05; }
+.x { position: absolute; top: 12px; right: 10px; width: 34px; height: 34px; font-size: 28px; line-height: 34px; text-align: center; border-radius: 50%; }
+.body { flex: 1; min-height: 0; max-height: calc(100vh - 230px); }
+.bh { margin: 14px 22px 18px; border: 1.5px solid #d9c7a1; border-radius: 14px; background: #fffdf7; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.bh-title { font-family: var(--display); font-size: 24px; line-height: 1.1; }
+.bh-lead { font-size: 13px; color: #6e5538; line-height: 1.6; }
+.bh-join { min-height: 52px; border: 2.5px solid #3b2a1a; border-radius: 14px; padding: 8px 16px; font-family: var(--hand); font-size: 21px; color: #fff; box-shadow: 3px 4px 0 #3b2a1a;
+  display: flex; align-items: center; justify-content: center; text-align: center; }
+.bh-join.whatsapp { background: #1f7a4d; }
+.bh-join.wechat { background: #2a8a3e; }
+.bh-join.off { opacity: .6; }
+.bh-join.small { align-self: flex-start; min-height: 38px; font-size: 17px; padding: 4px 14px; box-shadow: 2px 3px 0 #3b2a1a; }
+.bh-via { font-size: 12px; color: #6e5538; text-align: center; }
+.bh-switch { color: #974128; text-decoration: underline; }
+.bh-log { display: flex; flex-direction: column; gap: 8px; }
+.bh-sys { text-align: center; font-size: 12px; color: #6e5538; border: 1.5px dashed #b7a17d; border-radius: 10px; padding: 6px 10px; }
+.bh-wait { font-family: var(--hand); font-size: 18px; text-align: center; }
+.bh-msg { align-self: flex-start; max-width: 90%; background: #f2ead8; border-radius: 12px 12px 12px 3px; padding: 7px 11px; font-size: 13px; line-height: 1.6; }
+.bh-who { display: block; font-size: 10px; font-weight: 700; color: #826b4b; margin-bottom: 2px; }
+.bh-qr { position: relative; align-self: center; display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; background: #fff; border: 2.5px solid #3b2a1a;
+  border-radius: 6px; padding: 16px 14px 12px; margin: 6px 0; max-width: 290px; transform: rotate(-.6deg); box-shadow: 0 10px 24px rgba(40, 28, 16, .2), 3px 4px 0 rgba(59, 42, 26, .2); }
+.bh-tape { position: absolute; width: 70px; height: 18px; background: rgba(242, 193, 78, .78); top: -9px; left: 50%; transform: translateX(-50%) rotate(-3deg); }
+.bh-qrtitle { font-family: var(--display); font-size: 21px; }
+.bh-chan { font-family: var(--hand); font-size: 14px; padding: 0 10px; border-radius: 999px; border: 2px solid currentColor; }
+.bh-qr.wa .bh-chan { color: #1f7a4d; background: #dcefe2; }
+.bh-qr.wx .bh-chan { color: #2a8a3e; background: #e1f3e4; }
+.qrimg { display: block; width: 176px; height: 176px; }
+.bh-qr.expired .bh-code { opacity: .3; filter: grayscale(1); }
+.bh-name { font-weight: 700; }
+.bh-small { font-size: 11.5px; color: #6e5538; line-height: 1.45; text-align: center; }
+.bh-warn { color: #9b3420; font-weight: 700; }
+.bh-open { background: #1f7a4d; color: #fff; border: 2px solid #3b2a1a; border-radius: 10px; padding: 5px 14px; font-family: var(--hand); font-size: 16px; }
+.bh-codebox { display: flex; flex-direction: column; gap: 2px; align-items: center; text-align: center; border: 1.5px dashed #b7a17d; border-radius: 10px; padding: 6px 10px; }
+.bh-codebox .b { font-family: var(--hand); font-size: 17px; letter-spacing: .04em; font-weight: 700; }
+.bh-codebox .s { font-size: 11.5px; color: #6e5538; }
+.bh-ask { margin-top: 6px; padding-top: 12px; border-top: 2px dashed #dcc8a0; display: flex; flex-direction: column; gap: 8px; }
+.bh-askh { font-family: var(--hand); font-size: 15px; color: #6e5538; }
+.bh-qa { display: flex; flex-direction: column; gap: 8px; }
+.bh-q, .bh-a { max-width: 88%; border-radius: 12px; padding: 7px 11px; font-size: 13px; line-height: 1.6; }
+.bh-q { align-self: flex-end; background: #dcefe2; border-bottom-right-radius: 3px; }
+.bh-a { align-self: flex-start; background: #f2ead8; border-bottom-left-radius: 3px; }
+.bh-nudge { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; border: 2px dashed #b5462f; border-radius: 12px; background: #fbe3da; padding: 8px 10px; font-size: 13px; line-height: 1.5; }
+.bh-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.bh-chip { min-height: 32px; display: flex; align-items: center; padding: 3px 10px; border: 1.2px solid #c6b38e; border-radius: 20px; background: #fffaf0; color: #6e5538; font-size: 12.5px; }
+.bh-askf { display: flex; gap: 6px; }
+.bh-in { flex: 1; min-width: 0; height: 38px; border: 1.5px solid #b7a17d; border-radius: 9px; padding: 0 10px; font-size: 13.5px; background: #fff; color: #3b2a1a; }
+.bh-askb { border: 1.5px solid #3b2a1a; border-radius: 9px; background: #f8efd9; padding: 0 14px; font-weight: 700; display: flex; align-items: center; }

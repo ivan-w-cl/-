@@ -13,6 +13,7 @@
 const crypto = require('crypto');
 
 const env = process.env;
+const WXAPI = () => env.WX_API_BASE || 'https://api.weixin.qq.com';   // 测试时可以指向假的微信服务器
 const enabled = !!(env.WX_APPID && env.WX_APPSECRET && env.WX_TOKEN);
 
 /* ---------- 1. 签名校验 (TODO: 用真实推送验证) ---------- */
@@ -57,7 +58,7 @@ async function getAccessToken() {
   if (tokenCache.value && Date.now() < tokenCache.exp) return tokenCache.value;
   if (tokenCache.pending) return tokenCache.pending;
   tokenCache.pending = (async () => {
-    const r = await fetch('https://api.weixin.qq.com/cgi-bin/stable_token', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    const r = await fetch(WXAPI() + '/cgi-bin/stable_token', { method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ grant_type: 'client_credential', appid: env.WX_APPID, secret: env.WX_APPSECRET }) });
     const j = await r.json();
     if (!j.access_token) throw new Error(`获取 access_token 失败：${j.errcode} ${j.errmsg}`);
@@ -71,13 +72,13 @@ async function getAccessToken() {
 async function uploadTempImage(buffer, filename = 'qr.png', mime = 'image/png') {
   const token = await getAccessToken(), form = new FormData();
   form.append('media', new Blob([buffer], { type: mime }), filename);
-  const r = await fetch(`https://api.weixin.qq.com/cgi-bin/media/upload?access_token=${token}&type=image`, { method: 'POST', body: form });
+  const r = await fetch(`${WXAPI()}/cgi-bin/media/upload?access_token=${token}&type=image`, { method: 'POST', body: form });
   const j = await r.json(); if (!j.media_id) throw new Error(`上传临时素材失败：${j.errcode} ${j.errmsg}`);
   return j.media_id;   // 临时素材 3 天有效
 }
 async function sendCustomerMessage(payload) {
   const token = await getAccessToken();
-  const r = await fetch(`https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=${token}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+  const r = await fetch(`${WXAPI()}/cgi-bin/message/custom/send?access_token=${token}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
   const j = await r.json(); if (j.errcode) throw new Error(`发送客服消息失败：${j.errcode} ${j.errmsg}`);   // 45015 = 超过 48 小时回复时限
   return j;
 }
@@ -117,7 +118,26 @@ function createCallbackHandler(core) {
   };
 }
 
+/* ---------- 5. 小程序登录 code → openid；订阅消息（群码到了提醒学生）(TODO: 真实环境验证) ---------- */
+const canLogin = () => !!(env.WX_APPID && env.WX_APPSECRET);
+async function code2Session(code) {
+  const q = new URLSearchParams({ appid: env.WX_APPID, secret: env.WX_APPSECRET, js_code: code, grant_type: 'authorization_code' });
+  const r = await fetch(WXAPI() + '/sns/jscode2session?' + q, { signal: AbortSignal.timeout(5000) });
+  const j = await r.json();
+  if (!j.openid) throw new Error(`code2session 失败：${j.errcode} ${j.errmsg}`);
+  return j.openid;
+}
+async function sendSubscribe(openid, templateId, page, data) {
+  const token = await getAccessToken();
+  const r = await fetch(`${WXAPI()}/cgi-bin/message/subscribe/send?access_token=${token}`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ touser: openid, template_id: templateId, page, data, miniprogram_state: env.WX_MINIPROGRAM_STATE || 'formal', lang: 'zh_CN' }) });
+  const j = await r.json();
+  if (j.errcode) throw new Error(`订阅消息发送失败：${j.errcode} ${j.errmsg}`);
+  return j;
+}
+
 module.exports = {
+  canLogin, code2Session, sendSubscribe,
   name: 'miniprogram',
   enabled,
   // 与 web 渠道相同的接口：工作台点“发送”后调用。48 小时窗口外微信会返回 45015。

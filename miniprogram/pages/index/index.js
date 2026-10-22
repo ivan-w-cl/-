@@ -5,6 +5,25 @@ const { createView } = require('../../map/view.js');
 const H = require('../../utils/homes.js');
 const { t, ht } = require('../../utils/i18n.js');
 const fonts = require('../../utils/fonts.js');
+const cases = require('../../utils/case-api.js');
+const core = require('../../utils/handoff-core.js');
+const RP = require('../../utils/rooms-core.js');
+const WX = require('../../utils/weather.js');
+const { API_BASE } = require('../../config.js');
+const photo = p => `${API_BASE}/photos/${p}.jpg`;
+const fmtw = (s, v) => String(s).replace(/\{(\w+)\}/g, (_, k) => (v[k] != null ? v[k] : ''));
+/* 房型与照片（网页版 room-photos.js 的 section()） */
+function roomsView(L, h) {
+  const k = RP.W[L] || RP.W.zh, r = RP.roomsFor(h), Lx = o => o[L] || o.en;
+  return {
+    title: k.roomTypes, note: r.pending ? k.pendingNote : k.pick, perWeek: k.perWeek, sub: k.building,
+    types: r.types.map((t, i) => ({ i, name: Lx(t.name), price: t.price, status: Lx(t.status), ok: t.ok, count: t.photos.length ? fmtw(k.photos, { n: t.photos.length }) : '',
+      stack: t.photos.slice(0, 3).reverse().map(p => photo(p[0])), pending: '📷 ' + k.pending })),
+    building: r.building.map(([p, key]) => ({ url: photo(p), label: k[key] })),
+    src: r.pending ? '' : fmtw(k.source, { n: r.totalTypes, m: r.types.length }),
+    hint: r.pending ? '' : fmtw(k.hint, { n: RP.photoCount(r) })
+  };
+}
 const app = getApp();
 
 const LAYERS = ['home', 'uni', 'rail', 'bus', 'food', 'sight'];
@@ -18,7 +37,8 @@ const readSet = (k, max) => { const v = app.store(k); return new Set(Array.isArr
 Page({
   data: { lang: 'zh', T: {}, nav: { top: 48, right: 104, h: 40 }, sheet: '', info: false, card: null, expanded: false,
     filters: H.defaultFilters(), rank: 'area', rankLabel: '', count: 0, groups: [], ranked: [], sortNote: '', open: '', options: {},
-    layers: LAYERS.map(k => ({ k, on: true, color: LAYER_COLORS[k], label: '' })), zones: [], favCount: 0, cmpCount: 0, canZoomIn: true, canZoomOut: false },
+    layers: LAYERS.map(k => ({ k, on: true, color: LAYER_COLORS[k], label: '' })), zones: [], favCount: 0, cmpCount: 0, canZoomIn: true, canZoomOut: false,
+    groupShow: false, groupHome: null, fab: null, album: null, albumTo: '', wx: null, wxOpen: false, fx: '' },
 
   onLoad(q) {
     favorites = readSet('lsm-favorites-v1', 47); compare = readSet('lsm-compare-v1', 3);
@@ -32,7 +52,18 @@ Page({
     this.setData({ nav });
     this.setLang(app.globalData.lang, true);
     this.pendingHome = q && q.home;
+    this.pendingGroup = q && q.group;   // 订阅消息「群码到了」点进来：直接打开专家群
+    this.offCase = cases.on(c => this.updateFab(c));
+    if (cases.stored()) this.updateFab(null);
   },
+  onShow() { if (cases.stored()) cases.start(); this.loadWeather(); this.wxTimer = this.wxTimer || setInterval(() => this.paintWeather(), 60e3); },
+  /* ---------- 利物浦天气 ---------- */
+  loadWeather() { WX.load().then(w => { this.weather = w; this.paintWeather(); }); },
+  paintWeather() { if (!this.weather) return; const v = WX.view(this.weather, this.data.lang); this.setData({ wx: v, fx: v.fx }); },
+  toggleWeather() { this.setData({ wxOpen: !this.data.wxOpen, sheet: '', info: false }); },
+  nextWeather() { this.weather = WX.next(); this.paintWeather(); },
+  onHide() { cases.stop(); },
+  onUnload() { this.offCase && this.offCase(); },
   onReady() {
     wx.createSelectorQuery().in(this).select('#map').fields({ node: true, size: true }).exec(res => {
       const r = res && res[0]; if (!r || !r.node) return;
@@ -48,6 +79,7 @@ Page({
       this.redraw();
       fonts.ready(() => { renderer.relayout(); this.redraw(); });
       if (this.pendingHome && H.byId(this.pendingHome)) this.openHome(this.pendingHome, true);
+      if (this.pendingGroup && cases.stored()) this.openGroup();
     });
   },
   onShareAppMessage() {
@@ -130,6 +162,7 @@ Page({
     if (renderer) { renderer.setLang(lang); this.redraw(); }
     this.refreshList();
     if (this.data.card) this.openHome(this.data.card.id, false, true);
+    this.updateFab(cases.current); this.paintWeather();
     if (!quiet) wx.vibrateShort && wx.vibrateShort({ type: 'light' });
   },
   toggleInfo() { this.setData({ info: !this.data.info }); },
@@ -144,7 +177,7 @@ Page({
     if (id && id.currentTarget) id = id.currentTarget.dataset.id;
     const h = H.byId(id); if (!h) return;
     const c = H.card(this.data.lang, h, this.subject);
-    c.fav = favorites.has(id); c.cmp = compare.has(id);
+    c.fav = favorites.has(id); c.cmp = compare.has(id); c.rooms = roomsView(this.data.lang, h);
     this.setData({ card: c, expanded: keepExpanded ? this.data.expanded : false, sheet: '', info: false });
     if (center && view) { const m = scene.markers.find(x => x.id === id), v = view.get(); view.focus(m.x, m.y, v.w / 2, v.h * 0.38, 2); }
     this.redraw();
@@ -162,8 +195,38 @@ Page({
     this.setData({ card, expanded: false, sheet: '' }); this.redraw();
   },
   closeCard() { this.setData({ card: null, expanded: false }); this.redraw(); },
+  /* 房型相册（网页版 openAlbum()）：按卧室 / 浴室 / 厨房分组，底部「咨询这个房型」 */
+  openAlbum(e) {
+    const L = this.data.lang, k = RP.W[L] || RP.W.zh, h = H.byId(this.data.card.id), t = RP.roomsFor(h).types[e.currentTarget.dataset.i], Lx = o => o[L] || o.en;
+    const groups = [];
+    t.photos.forEach(p => { let g = groups.find(x => x.key === p[1]); if (!g) groups.push(g = { key: p[1], label: k[p[1]], photos: [] }); g.photos.push({ url: photo(p[0]) }); });
+    groups.forEach((g, j) => { g.id = 'rpg' + j; g.chip = `${g.label} · ${g.photos.length}`; g.photos.forEach((ph, n) => { ph.cap = `${n + 1}/${g.photos.length}`; }); });
+    const facts = [{ t: Lx(t.status), cls: t.ok ? 'ok' : 'full' }].concat(t.facts.map(f => ({ t: k[f === 'sharedKitchen' ? 'sharedKitchenF' : f === 'living' ? 'livingF' : f], cls: '' })));
+    this.setData({ album: { title: Lx(t.name), sub: `${h.n} · ${h.name}`, groups, facts, price: t.price, perWeek: k.perWeek, ask: '💬 ' + k.ask, close: k.close, empty: t.photos.length ? '' : '📷 ' + k.pendingNote }, albumTo: '' });
+  },
+  closeAlbum() { this.setData({ album: null }); },
+  albumJump(e) { this.setData({ albumTo: e.currentTarget.dataset.id }); },
+  albumPreview(e) { const urls = [].concat.apply([], this.data.album.groups.map(g => g.photos.map(p => p.url))); wx.previewImage({ urls, current: e.currentTarget.dataset.url }); },
+  albumAsk() { this.setData({ album: null }); this.ask(); },
   toggleExpand() { this.setData({ expanded: !this.data.expanded }); },
-  ask() { wx.showToast({ title: this.data.T.soon, icon: 'none' }); },   // 第二步：一键进群
+  /* ---------- 咨询 = 进群 ---------- */
+  ask() { const h = this.data.card && H.byId(this.data.card.id); this.openGroup(h); },
+  openGroup(h) {
+    if (!h || !h.id) { const c = cases.current, first = c && c.homes && c.homes[0]; h = first ? H.byId(first.id) : (this.data.card && H.byId(this.data.card.id)) || null; }
+    const home = h ? { id: h.id, n: h.n, name: h.name, pe: h.pe, ps: h.ps, plo: h.plo, pso: h.pso, uol: h.uol, ljmu: h.ljmu, lime: h.lime } : null;
+    this.setData({ groupShow: true, groupHome: home, sheet: '' });
+    this.markSeen();
+  },
+  closeGroup() { this.setData({ groupShow: false }); this.markSeen(); },
+  /* 右下角气泡：等群码 / 群码到了 / 新消息（网页版 .bh-fab） */
+  updateFab(c) {
+    const k = core.W[this.data.lang] || core.W.zh, stored = cases.stored();
+    if (!stored) return this.setData({ fab: null });
+    const n = c ? (c.group ? 1 : 0) + (c.messages || []).length : 0, seen = app.store('lsm-case-seen-v1') || 0;
+    const fresh = this.data.groupShow ? 0 : Math.max(0, n - seen);
+    this.setData({ fab: { label: !c || !c.group ? k.fabWait : fresh ? k.fabNew : k.fab, waiting: !c || !c.group, dot: fresh, title: k.fab } });
+  },
+  markSeen() { const c = cases.current; if (c) { app.store('lsm-case-seen-v1', (c.group ? 1 : 0) + (c.messages || []).length); this.updateFab(c); } },
   toggleFav(e) {
     const id = (e && e.currentTarget.dataset.id) || this.data.card.id;
     favorites.has(id) ? favorites.delete(id) : favorites.add(id); app.store('lsm-favorites-v1', [...favorites]);

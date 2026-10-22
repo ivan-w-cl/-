@@ -24,6 +24,17 @@ function regionOf(tz, lang) {
 
 function createCasesApi(ctx) {
   const { store, notifier, send, readBody, json, clean, limited, decodeImage, uploadDir, adviserUrl } = ctx;
+  const wx = ctx.wx || null;   // channels/miniprogram.js：小程序登录和订阅消息
+  /* 订阅消息：模板和字段名在小程序后台选定，用环境变量配置。占位符 {code} {home} {channel} {time}。 */
+  function remindStudent(c) {
+    const tid = process.env.WX_SUB_TEMPLATE_ID;
+    if (!wx || !c.openid || !tid || !c.subscribed) return;
+    let tpl; try { tpl = JSON.parse(process.env.WX_SUB_TEMPLATE_DATA || '{}'); } catch (e) { tpl = {}; }
+    const vals = { code: c.code, home: (c.homes[0] && c.homes[0].name) || '', channel: c.group && c.group.channel === 'wechat' ? '微信群' : 'WhatsApp 群',
+      time: new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }).replace(/\//g, '-').slice(0, 16) };
+    const data = {}; for (const k in tpl) data[k] = { value: String(tpl[k]).replace(/\{(\w+)\}/g, (_, x) => vals[x] || '').slice(0, 20) };
+    wx.sendSubscribe(c.openid, tid, `pages/index/index?group=1`, data).catch(e => console.warn('[subscribe]', e.message));
+  }
   const cleanHome = h => (h && typeof h === 'object' ? { id: clean(h.id, 60), n: Number(h.n) || null, name: clean(h.name, 80) } : null);
   const publicCase = c => ({
     id: c.id, code: c.code, status: c.status, channel: c.channel, lang: c.lang, region: c.region, createdAt: c.createdAt, requestedAt: c.requestedAt,
@@ -31,7 +42,7 @@ function createCasesApi(ctx) {
       image: c.group.image ? '/api/consult/media/' + c.group.image : '', at: c.group.at, expiresAt: c.group.expiresAt } : null,
     messages: c.messages.filter(m => m.from === 'staff' && m.text).map(m => ({ id: m.id, at: m.at, text: m.text }))
   });
-  const adminCase = c => ({ ...publicCase(c), tz: c.tz, source: c.source, quiz: c.quiz, qa: c.qa, renewals: c.renewals || 0, updatedAt: c.updatedAt, log: c.messages });
+  const adminCase = c => ({ ...publicCase(c), app: c.app || 'web', reminder: !!(c.openid && c.subscribed), tz: c.tz, source: c.source, quiz: c.quiz, qa: c.qa, renewals: c.renewals || 0, updatedAt: c.updatedAt, log: c.messages });
   function notify(c, req, title, text) {
     return notifier.notify({ title, text, at: Date.now(), adminUrl: adviserUrl(req),
       session: { id: c.id, nickname: `${c.code}${c.region ? ' · ' + c.region : ''}`, channel: 'web', context: { homes: c.homes, lifeCharacter: c.quiz || '' } } });
@@ -50,7 +61,11 @@ function createCasesApi(ctx) {
       const channel = CHANNELS.includes(b.channel) ? b.channel : (lang === 'zh' ? 'wechat' : 'whatsapp');
       const homes = (Array.isArray(b.homes) ? b.homes : []).slice(0, 6).map(cleanHome).filter(h => h && h.name);
       const qa = (Array.isArray(b.qa) ? b.qa : []).slice(0, 6).map(x => ({ q: clean(x && x.q, 200), a: clean(x && x.a, 400) })).filter(x => x.q);
-      const c = store.createCase({ channel, lang, tz, region: regionOf(tz, lang), homes, qa, quiz: clean(b.quiz, 80), source: clean(b.source, 60) });
+      // 小程序：用登录 code 换 openid（只存在服务器上，用来发「群码到了」的订阅消息，不返回、也不显示给专家）
+      let openid = '';
+      if (wx && wx.canLogin() && typeof b.wxcode === 'string' && b.wxcode) { try { openid = await wx.code2Session(b.wxcode); } catch (e) { console.warn('[code2session]', e.message); } }
+      const app = b.app === 'miniprogram' ? 'miniprogram' : 'web';
+      const c = store.createCase({ channel, lang, tz, region: regionOf(tz, lang), homes, qa, quiz: clean(b.quiz, 80), source: clean(b.source, 60), app, openid, subscribed: !!b.subscribed });
       notify(c, req, '新的建群请求：学生在等群码', `一键进群 · ${channel === 'wechat' ? '微信群' : 'WhatsApp 群'}${qa.length ? ' · 进群前问过：' + qa.map(x => x.q).join(' / ') : ''}`);
       return send(res, 201, { id: c.id, token: c.token, code: c.code, case: publicCase(c) });
     }
@@ -67,7 +82,8 @@ function createCasesApi(ctx) {
       }
       if (m[2] === 'renew' && method === 'POST') {   // 微信群码过期，学生申请新的
         if (limited(req, 'renew:', 5, 10 * 60e3)) return send(res, 429, { error: 'rate_limited' });
-        store.updateCase(c.id, x => { x.status = 'requested'; x.requestedAt = new Date().toISOString(); x.renewals = (x.renewals || 0) + 1; x.group = null; });
+        const rb = json(await readBody(req, 2e3)) || {};   // 小程序：学生这次也同意了订阅提醒
+        store.updateCase(c.id, x => { x.status = 'requested'; x.requestedAt = new Date().toISOString(); x.renewals = (x.renewals || 0) + 1; x.group = null; if (rb.subscribed) x.subscribed = true; });
         notify(c, req, '学生申请新的群二维码', '之前的微信群二维码已过期');
         return send(res, 200, publicCase(c));
       }
@@ -106,6 +122,7 @@ function createCasesApi(ctx) {
           expiresAt: channel === 'wechat' ? new Date(Date.now() + WECHAT_DAYS * 864e5).toISOString() : null };
         x.messages.push({ id: 'm_' + crypto.randomBytes(5).toString('hex'), at, from: 'staff', type: 'group' });
       });
+      remindStudent(store.getCase(c.id));
       return send(res, 201, adminCase(c));
     }
     return false;

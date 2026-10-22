@@ -1,0 +1,65 @@
+<!-- 网页版的「咨询公寓」对话框（.contact + booking-handoff 的 .bh），手机上铺满屏幕 -->
+<view wx:if="{{show}}" class="wrap" style="padding-top:{{padTop}}px" catchtouchmove="noop" bindtap="close">
+  <view class="contact" catchtap="noop">
+    <view class="head">
+      <text class="eyebrow">{{lang === 'en' ? 'Booking expert group' : '预定专家群'}}</text>
+      <view class="h3">{{home ? home.name : ''}}</view>
+      <view class="x" bindtap="close">×</view>
+    </view>
+    <scroll-view scroll-y="true" class="body" enhanced="true" show-scrollbar="false">
+      <view class="bh">
+        <!-- 进群前 -->
+        <block wx:if="{{stage === 'ask'}}">
+          <view class="bh-title">{{k.title}}</view>
+          <view class="bh-lead">{{k.lead}}</view>
+          <view class="bh-join {{channel}} {{busy === 'sending' ? 'off' : ''}}" bindtap="join">{{k.join}}</view>
+          <view wx:if="{{busy}}" class="bh-small {{busy === 'failed' ? 'bh-warn' : ''}}">{{busy === 'failed' ? k.failed : k.sending}}</view>
+          <view class="bh-via">{{via}}· <text class="bh-switch" bindtap="switchChannel">{{switchTo}}</text></view>
+          <view class="bh-ask">
+            <view class="bh-askh">{{k.askH}}</view>
+            <view wx:if="{{qa.length}}" class="bh-qa">
+              <block wx:for="{{qa}}" wx:key="index">
+                <view class="bh-q"><text class="bh-who">{{k.you}}</text><view>{{item.q}}</view></view>
+                <view class="bh-a"><text class="bh-who">{{k.ai}}</text><view>{{item.a}}</view></view>
+                <view wx:if="{{item.push}}" class="bh-nudge"><view>{{k.nudge}}</view><view class="bh-join small {{channel}}" bindtap="join">{{k.join}}</view></view>
+              </block>
+              <view wx:if="{{nudge2}}" class="bh-nudge"><view>{{nudge2}}</view><view class="bh-join small {{channel}}" bindtap="join">{{k.join}}</view></view>
+            </view>
+            <view class="bh-chips"><view wx:for="{{k.chips}}" wx:key="*this" class="bh-chip" data-q="{{item}}" bindtap="askChip">{{item}}</view></view>
+            <view class="bh-askf">
+              <input class="bh-in" value="{{input}}" placeholder="{{k.askPh}}" maxlength="120" bindinput="onInput" bindconfirm="askInput" confirm-type="send"></input>
+              <view class="bh-askb" bindtap="askInput">{{k.ask}}</view>
+            </view>
+          </view>
+        </block>
+        <!-- 进群后 -->
+        <block wx:else>
+          <view class="bh-log">
+            <view wx:if="{{stage === 'waiting'}}">
+              <view class="bh-wait">{{k.waiting}}</view>
+              <view class="bh-small">{{k.waitingNote}}</view>
+            </view>
+            <view wx:else class="bh-qr {{c.wa ? 'wa' : 'wx'}} {{c.expired ? 'expired' : ''}}">
+              <view class="bh-tape"></view>
+              <view class="bh-qrtitle">{{k.qrTitle}}</view>
+              <view class="bh-chan">{{c.wa ? 'WhatsApp' : '微信 WeChat'}}</view>
+              <view class="bh-code">
+                <image wx:if="{{c.image}}" src="{{c.image}}" mode="aspectFit" class="qrimg" show-menu-by-longpress="true" bindtap="preview"></image>
+                <canvas wx:else type="2d" id="qr" class="qrimg"></canvas>
+              </view>
+              <view class="bh-name">{{c.name}}</view>
+              <view class="bh-small">{{c.hint}}</view>
+              <view class="bh-small">{{c.team}}</view>
+              <block wx:if="{{c.expired}}"><view class="bh-small bh-warn">{{k.expired}}</view><view class="bh-open" bindtap="renew">{{k.renew}}</view></block>
+              <view wx:elif="{{c.valid}}" class="bh-small">{{c.valid}}</view>
+              <view wx:if="{{c.wa && c.link}}" class="bh-open" bindtap="copyLink">{{lang === 'en' ? 'Copy the WhatsApp link' : '复制 WhatsApp 群链接'}}</view>
+            </view>
+            <view class="bh-codebox"><view class="b">{{c.code}}</view><view class="s">{{k.codeNote}}</view></view>
+            <view wx:if="{{c.forwarded}}" class="bh-sys">{{c.forwarded}}</view>
+            <view wx:for="{{c.msgs}}" wx:key="index" class="bh-msg"><text class="bh-who">{{item.who}}</text><view>{{item.text}}</view></view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>

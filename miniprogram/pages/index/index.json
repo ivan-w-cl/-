@@ -1,1 +1,1 @@
-{ "usingComponents": {}, "disableScroll": true }
+{ "usingComponents": { "group": "/components/group/group" }, "disableScroll": true }

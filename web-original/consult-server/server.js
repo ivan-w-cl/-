@@ -18,6 +18,8 @@ const SITE_DIR = path.resolve(env.SITE_DIR || path.join(__dirname, '..', 'liverp
 const DATA_DIR = path.resolve(env.DATA_DIR || path.join(__dirname, 'data'));
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
 const PUBLIC_URL = (env.PUBLIC_URL || '').replace(/\/$/, '');
+const WEATHER_URL = 'https://api.open-meteo.com/v1/forecast?latitude=53.4084&longitude=-2.9916&current=temperature_2m,apparent_temperature,weather_code,is_day,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunset&timezone=Europe%2FLondon&forecast_days=1';
+let weather = { at: 0, data: null };
 const ADVISER_PATH = env.ADVISER_PATH || '/adviser.html';   // 订房专家后台（web-live/adviser.html）
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 
@@ -72,8 +74,18 @@ function decodeImage(dataUrl) {
 /* ---------- API ---------- */
 async function api(req, res, url) {
   const p = url.pathname, method = req.method;
+  /* 利物浦天气：服务器代取 Open-Meteo，缓存 15 分钟（小程序不用把国外域名加进白名单，国内也更快） */
+  if (p === '/api/weather' && method === 'GET') {
+    if (weather.data && Date.now() - weather.at < 15 * 60e3) return send(res, 200, weather.data);
+    try {
+      const r = await fetch(env.WEATHER_URL || WEATHER_URL, { signal: AbortSignal.timeout(6000) });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      weather = { at: Date.now(), data: await r.json() };
+      return send(res, 200, weather.data);
+    } catch (e) { return weather.data ? send(res, 200, weather.data) : send(res, 502, { error: 'weather_unavailable' }); }
+  }
   if (p === '/api/health') return send(res, 200, { ok: true, service: 'consult', cases: true, channels: Object.values(channels).filter(c => c.enabled).map(c => c.name), notifiers: notifier.names });
-  if (!casesApi) casesApi = createCasesApi({ store, notifier, send, readBody, json, clean, limited, decodeImage, uploadDir: UPLOAD_DIR,
+  if (!casesApi) casesApi = createCasesApi({ store, notifier, send, readBody, json, clean, limited, decodeImage, uploadDir: UPLOAD_DIR, wx: channels.miniprogram,
     adviserUrl: r => (PUBLIC_URL || (r ? `http://${r.headers.host || 'localhost:' + PORT}` : '')) + ADVISER_PATH });
   if (p === '/api/cases' || p.startsWith('/api/cases/')) return casesApi(req, res, url, false);
 

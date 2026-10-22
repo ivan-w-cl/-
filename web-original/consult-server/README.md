@@ -30,6 +30,8 @@ node consult-server/server.js
 | `SITE_DIR` | 静态站点目录 | `../liverpool-life-map-en` |
 | `SESSION_SECRET` | 工作台登录 Cookie 签名密钥 | 由密码派生 |
 | `WX_APPID` `WX_APPSECRET` `WX_TOKEN` `WX_ENCODING_AES_KEY` | 小程序渠道（见第四节）| 空 = 不启用 |
+| `WX_SUB_TEMPLATE_ID` `WX_SUB_TEMPLATE_DATA` | 新版小程序：专家发出群码时给学生推送订阅消息（需要 `WX_APPID` `WX_APPSECRET`），字段见 miniprogram/README.md | 空 = 不推送 |
+| `WEATHER_URL` | `/api/weather` 代取的天气地址（默认 Open-Meteo 利物浦） | Open-Meteo |
 
 示例：
 ```bash

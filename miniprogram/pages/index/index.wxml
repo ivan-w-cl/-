@@ -3,6 +3,10 @@
   <canvas type="2d" id="map" class="map" disable-scroll="true"
     bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd" bindtouchcancel="onTouchEnd"></canvas>
 
+  <!-- 天气画在地图上：雨、雪、雾、夜晚；两朵云（网页 .clouds / weather.css 的 .wx-fx） -->
+  <view class="clouds {{fx}}"><view class="cloud c1"></view><view class="cloud c2"></view></view>
+  <view class="wx-fx {{fx}}"></view>
+
   <!-- 标题栏（放在微信胶囊按钮左边） -->
   <view class="float panel brandbar" style="top:{{nav.top}}px;right:{{nav.right}}px;min-height:{{nav.h}}px">
     <text class="h1">{{T.title}}</text>
@@ -11,6 +15,18 @@
       <view class="lb {{lang === 'zh' ? 'on' : ''}}" data-l="zh" bindtap="setLang">中文</view>
     </view>
     <view class="infobtn" bindtap="toggleInfo">i</view>
+  </view>
+  <!-- 利物浦天气（标题栏下面靠右，和网页手机版一样） -->
+  <view wx:if="{{wx}}" class="float wx-chip" style="top:{{nav.top + nav.h + 8}}px" bindtap="toggleWeather">
+    <image src="{{wx.icon}}" class="wx-ico"></image>
+    <view class="wx-txt"><view class="wx-l1">{{wx.l1}}</view><view class="wx-l2"><text class="b">{{wx.temp}}</text><text> {{wx.label}}</text><text wx:if="{{wx.sample}}" class="i"> · {{wx.sample}}</text></view></view>
+  </view>
+  <view wx:if="{{wx && wxOpen}}" class="float wx-pop" style="top:{{nav.top + nav.h + 74}}px">
+    <view class="wx-ph"><image src="{{wx.icon}}" class="wx-ico"></image><text class="b">{{wx.title}}</text><view class="wx-x" bindtap="toggleWeather">×</view></view>
+    <view class="wx-tip">{{wx.tip}}</view>
+    <view class="wx-dl"><block wx:for="{{wx.rows}}" wx:key="index"><text class="dt">{{item[0]}}</text><text class="dd">{{item[1]}} <text class="soft">{{item[2] || ''}}</text></text></block></view>
+    <view class="wx-src">{{wx.src}}</view>
+    <view wx:if="{{wx.another}}" class="wx-next" bindtap="nextWeather">{{wx.another}}</view>
   </view>
   <view wx:if="{{info}}" class="float panel infopop" style="top:{{nav.top + nav.h + 8}}px"><text>{{T.info}}</text></view>
 
@@ -38,10 +54,33 @@
       <block wx:if="{{!expanded}}">
         <view class="compact-facts"><text class="strong">{{card.price}}</text><text>{{card.walk}}</text></view>
         <view class="compact-note">{{T.compactNote || ''}}</view>
+        <view wx:if="{{card.rooms.hint}}" class="rp-hint">{{card.rooms.hint}}</view>
       </block>
       <block wx:else>
         <view class="addr">{{card.addr}}</view>
         <view class="txt">{{card.text}}</view>
+        <view class="rp">
+          <view class="rp-title">{{card.rooms.title}}</view>
+          <view class="rp-note">{{card.rooms.note}}</view>
+          <scroll-view scroll-x="true" class="rp-strip" enhanced="true" show-scrollbar="false">
+            <view wx:for="{{card.rooms.types}}" wx:key="i" class="rp-card" data-i="{{item.i}}" bindtap="openAlbum">
+              <view class="rp-stack">
+                <block wx:if="{{item.stack.length}}">
+                  <text class="rp-count">{{item.count}}</text>
+                  <image wx:for="{{item.stack}}" wx:key="*this" wx:for-item="u" wx:for-index="j" src="{{u}}" mode="aspectFill" class="rp-img n{{j}}" lazy-load="true"></image>
+                </block>
+                <view wx:else class="rp-empty">{{item.pending}}</view>
+              </view>
+              <view class="rp-name">{{item.name}}</view>
+              <view class="rp-meta"><text class="rp-price">{{item.price}}<text class="small">{{card.rooms.perWeek}}</text></text><text class="rp-chip {{item.ok ? 'ok' : 'full'}}">{{item.status}}</text></view>
+            </view>
+          </scroll-view>
+          <block wx:if="{{card.rooms.building.length}}">
+            <view class="rp-sub">{{card.rooms.sub}}</view>
+            <view class="rp-bldg"><view wx:for="{{card.rooms.building}}" wx:key="url" class="rp-fig"><image src="{{item.url}}" mode="aspectFill" class="rp-bimg" lazy-load="true"></image><view class="rp-cap">{{item.label}}</view></view></view>
+          </block>
+          <view wx:if="{{card.rooms.src}}" class="rp-src">{{card.rooms.src}}</view>
+        </view>
         <view class="walks"><text wx:for="{{card.walks}}" wx:key="index" class="wk">{{item}}</text></view>
         <view class="facts"><view wx:for="{{card.facts}}" wx:key="index" wx:for-item="f" class="fact"><text wx:for="{{f}}" wx:key="index" wx:for-item="p" class="{{p.b ? 'b' : ''}}">{{p.t}}</text></view></view>
         <view class="actions2">
@@ -57,6 +96,30 @@
       </view>
     </block>
   </view>
+
+  <!-- 房型相册 -->
+  <view wx:if="{{album}}" class="rp-wrap" style="padding-top:{{nav.top + nav.h + 8}}px" catchtouchmove="noop" bindtap="closeAlbum">
+    <view class="rp-album" catchtap="noop">
+      <view class="rp-ahead"><view class="rp-atitles"><view class="h3">{{album.title}}</view><view class="rp-note">{{album.sub}}</view></view><view class="x" bindtap="closeAlbum">×</view></view>
+      <scroll-view wx:if="{{album.groups.length}}" scroll-x="true" class="rp-jump" enhanced="true" show-scrollbar="false"><view wx:for="{{album.groups}}" wx:key="id" class="rp-jchip" data-id="{{item.id}}" bindtap="albumJump">{{item.chip}}</view></scroll-view>
+      <scroll-view scroll-y="true" class="rp-abody" scroll-into-view="{{albumTo}}" scroll-with-animation="true" enhanced="true" show-scrollbar="false">
+        <block wx:for="{{album.groups}}" wx:key="id" wx:for-item="g">
+          <view class="rp-gh" id="{{g.id}}">{{g.label}}</view>
+          <view wx:for="{{g.photos}}" wx:key="url" class="rp-pol" data-url="{{item.url}}" bindtap="albumPreview"><image src="{{item.url}}" mode="widthFix" class="rp-pimg"></image><view class="rp-pcap"><text>{{g.label}}</text><text>{{item.cap}}</text></view></view>
+        </block>
+        <view wx:if="{{album.empty}}" class="rp-empty big">{{album.empty}}</view>
+        <view class="rp-facts"><text wx:for="{{album.facts}}" wx:key="index" class="rp-chip {{item.cls}}">{{item.t}}</text></view>
+        <view class="pad-bottom"></view>
+      </scroll-view>
+      <view class="rp-afoot"><text class="rp-price big">{{album.price}}<text class="small">{{album.perWeek}}</text></text><view class="rp-ask" bindtap="albumAsk">{{album.ask}}</view></view>
+    </view>
+  </view>
+
+  <!-- 我的专家群：右下角气泡 -->
+  <view wx:if="{{fab && !groupShow}}" class="bh-fab {{fab.waiting ? 'waiting' : ''}}" bindtap="openGroup">
+    <text class="bh-fab-ico">💬</text><text class="bh-fab-label">{{fab.label}}</text><text wx:if="{{fab.dot}}" class="bh-dot">{{fab.dot}}</text>
+  </view>
+  <group show="{{groupShow}}" home="{{groupHome}}" lang="{{lang}}" bind:close="closeGroup"></group>
 
   <!-- 抽屉：公寓列表 -->
   <view class="sheet-mask" wx:if="{{sheet}}" bindtap="closeSheets"></view>
