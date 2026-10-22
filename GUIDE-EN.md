@@ -1,6 +1,6 @@
 # Liverpool Student Map: Product and Demo Guide
 
-Version: 22 October 2026 · Branch `claude/serene-faraday-1ktbef`
+Version: 22 October 2026 (updated: compare, sorting, iPad and iPhone Duo) · Branch `claude/serene-faraday-1ktbef`
 
 Liverpool Student Map helps students from Singapore, China and Japan choose student housing in Liverpool before they arrive. The website shows 47 student homes on a hand-drawn map. When a student wants help, one tap puts them in touch with a booking expert team through a WhatsApp group (Singapore and English speakers) or a WeChat group (China).
 
@@ -265,5 +265,8 @@ Sources: listings and photos from our partner AmberStudent (collected 21 October
 | `14-weather.png` | Live Liverpool weather (sample in screenshots) |
 | `15-personality-quiz.png` | Study-buddy personality quiz |
 | `16-two-sided-walkthrough.png` | Student site and expert console side by side |
+| `17-sorted-by-price.png` | Home list sorted by price, with gold top-3 tags on the map |
+| `18-ipad-landscape.png`, `19-ipad-portrait.png` | iPad in landscape (filters folded) and portrait (drawers) |
+| `20-iphone-duo-inner.png`, `21-iphone-duo-split-view.png` | iPhone Duo inner screen and Split View |
 
 The screenshots in sections 5 and 7 come from real-mode runs, with the student on a phone and the expert on a laptop.
