@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>客服工作台 · 利物浦学生住宿咨询</title><meta name="robots" content="noindex"><link rel="icon" href="data:,">
+<style>
+:root{--ink:#3b2a1a;--soft:#6e5538;--paper:#fffaf0;--paper2:#f8efd9;--line:#dcc8a0;--coral:#b5462f;--sun:#f2c14e;--green:#d7e8c4}
+[hidden]{display:none!important}*{box-sizing:border-box}body{margin:0;font:15px/1.5 'Nunito','PingFang SC','Microsoft YaHei',sans-serif;color:var(--ink);background:#efe3c4}
+header{position:sticky;top:0;z-index:2;display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:10px 16px;background:var(--paper);border-bottom:3px solid var(--ink)}
+h1{margin:0;font-size:20px;flex:1}button,select,input,textarea{font:inherit;color:inherit}
+.btn{border:2px solid var(--ink);border-radius:11px;background:var(--paper);padding:6px 14px;cursor:pointer;box-shadow:2px 2px 0 rgba(59,42,26,.2)}
+.btn.main{background:var(--coral);color:#fff}.btn:disabled{opacity:.45;cursor:default}
+.seg{display:inline-flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden}.seg button{border:0;background:none;padding:5px 12px;cursor:pointer}.seg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+main{max-width:980px;margin:0 auto;padding:16px;display:grid;gap:14px}
+.warn{background:#fbe3cf;border:1.5px dashed var(--coral);border-radius:10px;padding:8px 12px;font-size:13px}
+.card{background:var(--paper);border:2.5px solid var(--ink);border-radius:16px 12px 17px 13px;box-shadow:4px 5px 0 rgba(59,42,26,.18);padding:14px;display:grid;gap:10px}
+.card.hl{outline:3px dashed var(--coral);outline-offset:3px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.who{font-weight:800;font-size:17px}.muted{color:var(--soft);font-size:12.5px}
+.tag{font-size:12px;border:1.5px solid var(--ink);border-radius:999px;padding:1px 8px;background:var(--paper2)}.tag.pending{background:var(--sun)}.tag.replied{background:var(--green)}.tag.done{opacity:.6}
+.ctx{background:var(--paper2);border:1.5px dashed var(--line);border-radius:10px;padding:8px 10px;font-size:13.5px}.ctx ul{margin:2px 0 0;padding-left:18px}
+.msgs{display:grid;gap:6px;max-height:260px;overflow:auto}.msg{max-width:85%;padding:6px 10px;border-radius:12px;border:1.5px solid var(--ink);background:#fff}
+.msg.staff{justify-self:end;background:#fbe3cf}.msg img{display:block;max-width:160px;border-radius:6px;margin-top:4px}.msg time{display:block;font-size:11px;color:var(--soft)}
+form.reply{display:grid;gap:8px;border-top:2px dashed var(--line);padding-top:10px}
+.drop{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.drop img{width:84px;height:84px;object-fit:contain;border:1.5px solid var(--ink);border-radius:8px;background:#fff}
+textarea{width:100%;min-height:54px;border:2px solid var(--ink);border-radius:10px;padding:8px;background:#fff}
+#login{max-width:360px;margin:12vh auto;display:grid;gap:10px}#login input{border:2px solid var(--ink);border-radius:10px;padding:9px;background:#fff}
+.empty{text-align:center;color:var(--soft);padding:40px 0}.err{color:var(--coral);font-size:13px}
+</style></head><body>
+<form id="login" class="card" hidden><h1>客服工作台</h1><p class="muted">请输入工作台密码（默认 123456，上线前请用环境变量 ADMIN_PASSWORD 修改）。</p>
+<input id="pw" type="password" autocomplete="current-password" placeholder="密码" required><button class="btn main" type="submit">登录</button><p class="err" id="loginErr"></p></form>
+<div id="app" hidden>
+<header><h1>客服工作台 · 住宿咨询</h1>
+<div class="seg" role="group" aria-label="筛选"><button data-f="open" aria-pressed="true">待处理</button><button data-f="done" aria-pressed="false">已完成</button><button data-f="all" aria-pressed="false">全部</button></div>
+<span class="muted" id="stamp"></span><button class="btn" id="logout" type="button">退出</button></header>
+<main id="list"></main></div>
+<script>
+(() => {
+  const $ = id => document.getElementById(id), esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmt = t => new Date(t).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false });
+  let filter = 'open', data = [], drafts = {}, timer = 0;
+  async function api(path, opts = {}) {
+    const r = await fetch(path, { credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, ...opts });
+    if (r.status === 401 && !path.endsWith('/login')) { showLogin(); throw new Error('login'); }
+    const j = await r.json().catch(() => ({})); if (!r.ok) throw Object.assign(new Error(j.error || r.status), { detail: j.detail }); return j;
+  }
+  function showLogin() { clearInterval(timer); $('app').hidden = true; $('login').hidden = false; $('pw').focus(); }
+  $('login').addEventListener('submit', async e => { e.preventDefault(); $('loginErr').textContent = '';
+    try { await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ password: $('pw').value }) }); start(); } catch (err) { $('loginErr').textContent = err.message === 'wrong_password' ? '密码不正确' : '登录失败：' + err.message; } });
+  $('logout').onclick = async () => { await api('/api/admin/logout', { method: 'POST' }).catch(() => {}); showLogin(); };
+  document.querySelectorAll('[data-f]').forEach(b => b.onclick = () => { filter = b.dataset.f; document.querySelectorAll('[data-f]').forEach(x => x.setAttribute('aria-pressed', String(x === b))); render(); });
+  async function load() { try { const j = await api('/api/admin/sessions'); data = j.sessions; $('stamp').textContent = '更新于 ' + fmt(Date.now()) + (j.usingDefaultPassword ? ' · ⚠ 默认密码' : ''); render(); } catch (_) {} }
+  function start() { $('login').hidden = true; $('app').hidden = false; load(); clearInterval(timer); timer = setInterval(() => { if (!document.querySelector('form.reply :focus') && !Object.values(drafts).some(d => d.image)) load(); }, 5000); }
+  function render() {
+    const list = data.filter(s => filter === 'all' || (filter === 'done' ? s.status === 'done' : s.status !== 'done'));
+    const L = $('list');
+    if (!list.length) { L.innerHTML = '<p class="empty">暂时没有' + (filter === 'done' ? '已完成的' : '待处理的') + '咨询。</p>'; return; }
+    L.innerHTML = list.map(s => { const c = s.context || {}, d = drafts[s.id] || {};
+      const win = s.replyWindowEndsAt ? `<span class="tag">48 小时回复窗口至 ${fmt(s.replyWindowEndsAt)}</span>` : '';
+      return `<article class="card ${location.hash === '#' + s.id ? 'hl' : ''}" id="${s.id}" data-id="${s.id}">
+        <div class="row"><span class="who">${esc(s.nickname || '匿名同学')}</span><span class="tag ${s.status}">${{ pending: '待回复', replied: '已回复', done: '已完成' }[s.status]}</span><span class="tag">${s.channel === 'miniprogram' ? '小程序' : '网页'}</span>${win}<span class="muted">${fmt(s.createdAt)} · ${s.id}</span></div>
+        <div class="ctx"><b>房源：</b>${(c.homes || []).length ? '<ul>' + c.homes.map(h => `<li>${h.n ? h.n + '. ' : ''}${esc(h.name)}${h.price ? ' · ' + esc(h.price) : ''}</li>`).join('') + '</ul>' : '（未指定）'}
+          <div><b>测验：</b>${[c.lifeCharacter && '生活测验 · ' + esc(c.lifeCharacter), c.homeMatch && '找房测验 · ' + esc(c.homeMatch)].filter(Boolean).join('；') || '（未做测验）'}${c.source ? ` <span class="muted">来源：${esc(c.source)}</span>` : ''}</div></div>
+        <div class="msgs">${s.messages.map(m => `<div class="msg ${m.from}"><time>${m.from === 'staff' ? '客服' : '学生'} · ${fmt(m.at)}</time>${esc(m.text)}${m.image ? `<img src="${m.image.replace('/api/consult/media/', '/api/consult/media/')}" alt="已发送的群二维码">` : ''}</div>`).join('')}</div>
+        <form class="reply"><div class="drop"><label class="btn">选择群二维码（png/jpg）<input type="file" accept="image/png,image/jpeg" hidden data-file></label>${d.image ? `<img src="${d.image}" alt="预览"><button class="btn" type="button" data-clear>移除图片</button>` : '<span class="muted">未选择图片</span>'}</div>
+          <textarea data-note placeholder="可选：附一句说明，例如“这是 The Lantern 咨询群，进群后发房号给我们～”">${esc(d.text || '')}</textarea>
+          <div class="row"><button class="btn main" type="submit">发送给学生</button><button class="btn" type="button" data-done>${s.status === 'done' ? '重新打开' : '标记完成'}</button><span class="err" data-err></span></div></form></article>`; }).join('');
+    document.querySelector('.card.hl')?.scrollIntoView({ block: 'center' });
+  }
+  $('list').addEventListener('change', e => {
+    const card = e.target.closest('[data-id]'); if (!card || !e.target.matches('[data-file]')) return;
+    const f = e.target.files[0]; if (!f) return;
+    if (!/^image\/(png|jpeg)$/.test(f.type)) { card.querySelector('[data-err]').textContent = '只支持 png / jpg'; return; }
+    if (f.size > 4 * 1024 * 1024) { card.querySelector('[data-err]').textContent = '图片请小于 4MB'; return; }
+    const r = new FileReader(); r.onload = () => { const id = card.dataset.id; drafts[id] = { ...(drafts[id] || {}), image: r.result, text: card.querySelector('[data-note]').value }; render(); }; r.readAsDataURL(f);
+  });
+  $('list').addEventListener('input', e => { const card = e.target.closest('[data-id]'); if (card && e.target.matches('[data-note]')) drafts[card.dataset.id] = { ...(drafts[card.dataset.id] || {}), text: e.target.value }; });
+  $('list').addEventListener('click', async e => {
+    const card = e.target.closest('[data-id]'); if (!card) return; const id = card.dataset.id, s = data.find(x => x.id === id);
+    if (e.target.matches('[data-clear]')) { drafts[id] = { ...(drafts[id] || {}), image: '' }; render(); }
+    if (e.target.matches('[data-done]')) { await api(`/api/admin/sessions/${id}/status`, { method: 'POST', body: JSON.stringify({ status: s.status === 'done' ? 'pending' : 'done' }) }); load(); }
+  });
+  $('list').addEventListener('submit', async e => {
+    e.preventDefault(); const card = e.target.closest('[data-id]'), id = card.dataset.id, d = drafts[id] || {}, err = card.querySelector('[data-err]'), btn = e.target.querySelector('[type=submit]');
+    const text = card.querySelector('[data-note]').value.trim(); if (!d.image && !text) { err.textContent = '请先选择二维码图片或填写说明'; return; }
+    btn.disabled = true; err.textContent = '发送中…';
+    try { await api(`/api/admin/sessions/${id}/reply`, { method: 'POST', body: JSON.stringify({ image: d.image || '', text }) }); delete drafts[id]; await load(); }
+    catch (x) { err.textContent = '发送失败：' + (x.detail || x.message); btn.disabled = false; }
+  });
+  api('/api/admin/sessions').then(start, () => {});
+})();
+</script></body></html>

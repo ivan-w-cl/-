@@ -115,12 +115,10 @@ body[data-mode="admin"] .admincol { max-width: 1400px; }
 .tabbar .badge-dot { position: absolute; top: 3px; right: 26%; }
 
 /* map */
-.mapwrap { flex: 0 0 43%; position: relative; background: var(--paper); border-bottom: 2.5px solid var(--ink); }
+.mapwrap { flex: 0 0 43%; position: relative; background: #f1e4c3; border-bottom: 2.5px solid var(--ink); }
 .mapbox { position: absolute; inset: 0; }
 .mapsvg { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; user-select: none; }
 .mapsvg:active { cursor: grabbing; }
-.mapsvg .pin.home { cursor: pointer; }
-.mapsvg .pin.home:focus-visible circle { stroke: var(--coral); stroke-width: 3; }
 .mapctl { position: absolute; right: 8px; top: 8px; display: flex; flex-direction: column; gap: 4px; }
 .mapctl button { width: 30px; height: 30px; border-radius: 9px; border: 2px solid var(--ink); background: var(--panel); font-size: 17px; line-height: 1; padding: 0; }
 #peek { position: absolute; left: 8px; right: 8px; bottom: 8px; }
@@ -329,6 +327,23 @@ table { border-collapse: collapse; width: 100%; font-size: 13px; }
 .dt th, .dt td { padding: 6px 10px; border-bottom: 1.5px dashed var(--line); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .dt th:first-child, .dt tbody th { text-align: left; }
 .dt thead th { font-size: 12px; color: var(--ink-soft); }
+
+/* 地图文字与标记：与网页原版相同 */
+.mapsvg text { font-family: var(--hand); fill: #3b2a1a; }
+.mapsvg .lbl { paint-order: stroke; stroke: #fffaf0; stroke-width: 5px; stroke-linejoin: round; text-anchor: middle; }
+.mapsvg .lbl.star { fill: #b5462f; font-weight: 700; }
+.mapsvg .area { font-family: var(--display); fill: #6e5538; opacity: .85; letter-spacing: 2px; text-anchor: middle; }
+.mapsvg .parkl { fill: #3f6b22; text-anchor: middle; paint-order: stroke; stroke: #e3eecb; stroke-width: 4px; }
+.mapsvg .waterl { font-family: var(--display); fill: #2f6d78; letter-spacing: 10px; text-anchor: middle; }
+.mapsvg .map-label-muted { visibility: hidden; }
+.mapsvg .num { font-family: var(--body); font-weight: 700; font-size: 13px; fill: #fff; text-anchor: middle; pointer-events: none; }
+.mapsvg .pin.home { cursor: pointer; outline: none; }
+.mapsvg .pin .in { transform-box: fill-box; transform-origin: 50% 100%; transition: transform .18s cubic-bezier(.3,1.6,.5,1); }
+.mapsvg .pin.home:hover .in, .mapsvg .pin.home:focus-visible .in, .mapsvg .pin.home.on .in { transform: translateY(-5px) scale(1.2); }
+.mapsvg .pin.home:focus-visible .ring { stroke: #b5462f; stroke-width: 3; stroke-dasharray: 5 4; }
+.mapsvg.far .pin.place .lbl { display: none; }
+.mapsvg.far .pin.place[data-type="rail"], .mapsvg.far .pin.place[data-type="bus"], .mapsvg.far .pin.place[data-type="food"] { display: none; }
+@media (prefers-reduced-motion: reduce) { .mapsvg .pin .in { transition: none; } }
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 1100px) {

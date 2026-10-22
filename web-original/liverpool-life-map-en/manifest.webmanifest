@@ -1,0 +1,15 @@
+{
+  "name": "利物浦学生生活地图",
+  "short_name": "利物浦地图",
+  "description": "利物浦学生住宿与生活地图：测验找房、手绘地图、在线咨询。",
+  "start_url": "./index.html#explore=1",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f3e7",
+  "theme_color": "#f7f3e7",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "./icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "./icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

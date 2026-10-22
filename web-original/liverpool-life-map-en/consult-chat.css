@@ -1,0 +1,37 @@
+/* 在线咨询 dialog content (inside the existing .contact paper card) */
+.cc { display: grid; gap: 10px; font-family: 'Nunito', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+.cc-ctx { background: #f8efd9; border: 1.5px dashed #b89b72; border-radius: 12px; padding: 9px 11px; display: grid; gap: 3px; }
+.cc-k { margin: 0; font: 15px/1.2 'Patrick Hand', cursive; color: #b5462f; }
+.cc-home { margin: 0; display: flex; gap: 8px; align-items: center; font-size: 17px; }
+.cc-n { width: 26px; height: 26px; flex: none; border-radius: 50%; display: grid; place-items: center; background: #b5462f; color: #fff; font-size: 12px; font-weight: 800; border: 2px solid #3b2a1a; }
+.cc-n:empty { display: none; }
+.cc-sub { margin: 0; font-size: 13px; color: #6e5538; }
+.cc-prompt { margin: 0; font: 17px/1.4 'Patrick Hand', 'PingFang SC', cursive; }
+.cc-prompt[hidden], .cc-nick[hidden] { display: none; }
+.cc-log { display: grid; gap: 8px; padding: 2px; }
+.cc-log:empty { display: none; }
+.cc-msg { max-width: 88%; padding: 7px 11px; border: 2px solid #3b2a1a; border-radius: 14px 14px 14px 4px; background: #fff; }
+.cc-msg p { margin: 2px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.cc-student { justify-self: end; border-radius: 14px 14px 4px 14px; background: #fbe3cf; }
+.cc-who { display: block; font-size: 11.5px; color: #6e5538; }
+.cc-qr { margin: 4px 0 0; display: grid; gap: 4px; justify-items: center; }
+.cc-qr img { width: min(220px, 62vw); height: auto; border: 2px solid #3b2a1a; border-radius: 8px; background: #fff; -webkit-touch-callout: default; }
+.cc-qr-tip { font: 16px/1.2 'Patrick Hand', 'PingFang SC', cursive; color: #b5462f; text-align: center; }
+.cc-qr-alt { margin: 0; font-size: 12px; color: #6e5538; text-align: center; }
+.cc-save { font-size: 13px; font-weight: 700; color: #3b2a1a; border: 2px solid #3b2a1a; border-radius: 999px; padding: 3px 12px; background: #f2c14e; text-decoration: none; }
+.cc-wait { margin: 0; font-size: 12.5px; color: #8a7458; text-align: right; }
+.cc-new { justify-self: center; background: none; border: 0; text-decoration: underline; color: #6e5538; font-size: 12.5px; cursor: pointer; }
+.cc-status { font-size: 13px; color: #6e5538; min-height: 1em; }
+.cc-status:empty { display: none; }
+.cc-offline, .cc-error { background: #fbe3cf; border: 1.5px dashed #b5462f; border-radius: 10px; padding: 8px 10px; color: #3b2a1a; }
+.cc-retry { margin-left: 8px; font-weight: 700; background: none; border: 0; color: #b5462f; text-decoration: underline; cursor: pointer; }
+.cc-quick { display: flex; flex-wrap: wrap; gap: 6px; }
+.cc-chip { font: 15px/1.1 'Patrick Hand', 'PingFang SC', cursive; padding: 7px 12px; min-height: 36px; border-radius: 999px; border: 2px solid #3b2a1a; background: #fffaf0; color: #3b2a1a; cursor: pointer; box-shadow: 2px 2px 0 rgba(59,42,26,.18); }
+.cc-chip:disabled, .cc-send:disabled { opacity: .45; cursor: default; }
+.cc-nick { display: grid; gap: 4px; font-size: 13px; color: #6e5538; }
+.cc-nick input { font: inherit; font-size: 15px; color: #3b2a1a; border: 2px solid #3b2a1a; border-radius: 10px; padding: 8px 10px; background: #fff; }
+.cc-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: end; }
+.cc-form textarea { font: inherit; font-size: 16px; color: #3b2a1a; border: 2px solid #3b2a1a; border-radius: 12px; padding: 9px 10px; background: #fff; resize: vertical; min-height: 48px; }
+.cc-send { font: 19px/1 'Patrick Hand', 'PingFang SC', cursive; min-height: 48px; padding: 0 18px; border-radius: 12px; border: 2.5px solid #3b2a1a; background: #b5462f; color: #fff; cursor: pointer; box-shadow: 3px 3px 0 rgba(59,42,26,.25); }
+.cc-fine { margin: 0; font-size: 11.5px; color: #8a7458; }
+@media (max-width: 760px) { .contact-wrap { padding: 8px; } }

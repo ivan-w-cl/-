@@ -5,5 +5,8 @@
 | 目录 | 内容 |
 |---|---|
 | `web-demo/` | 完整流程的 Web Demo（学生 App + 顾问后台 + 数据看板），见 [web-demo/README.md](web-demo/README.md) |
-| `miniprogram/` | 微信小程序版（原有代码） |
+| `web-original/liverpool-life-map-en/` | 网页原版：手绘地图、两个测试、在线咨询、PWA |
+| `web-original/consult-server/` | 客服后台：网页聊天、小程序客服渠道、顾问工作台 |
+| `miniprogram/` | 微信小程序版 |
 | `design/room-photos/` | 房型照片设计稿（iQ Great Newton House） |
+| `design/demo-package/` | 单文件演示包（`Liverpool Student Map.html`、地图预览图、打开说明） |

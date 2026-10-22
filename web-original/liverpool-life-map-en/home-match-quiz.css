@@ -1,0 +1,108 @@
+/* Home Match, rebuilt on the Life Quiz components (lc-wrap / lc-mc / lc-opt / lc-panel).
+   Loaded after life-c-map.css. Only Home Match specific glue lives here. */
+
+/* ---------- question overlay ---------- */
+.hm-lc-wrap { z-index: 46; background: rgba(47, 35, 17, .32); }
+.hm-lc.lc-mc { padding: 22px 22px 18px; max-height: 100%; color: var(--lc-ink); font-family: var(--lc-body); }
+.hm-lc > .x { display: none; }                         /* the × now lives in the question header, like the Life Quiz */
+.hm-lc #hmBody { display: flex; flex-direction: column; gap: 14px; }
+.hm-lc #hmBody > * { flex: none; }
+.hm-lc .lc-q { margin: 0; }
+.hm-lc .hm-hint { margin-top: -6px; }
+.hm-lc .hm-multi { margin-top: -4px; }
+.hm-lc .lc-opt { color: var(--lc-ink); }
+.hm-lc .lc-opt:hover { transform: translateY(-1px); }
+.hm-lc .hm-doodles li { font-size: 14px; }
+/* language row: same look as the Life Quiz EN / 中文 segmented control */
+.hm-languages { display: flex; align-items: center; gap: 0; }
+.hm-languages .lc-link { margin-right: auto; }
+.hm-languages .hm-lang-btn { font: 16px/1 'Nunito','PingFang SC','Microsoft YaHei',sans-serif; min-height: 36px; padding: 7px 13px; border: 2px solid var(--lc-ink); background: var(--lc-paper-2); color: var(--lc-ink); cursor: pointer; }
+.hm-languages .hm-lang-btn[data-hm-lang="en"] { border-radius: 999px 0 0 999px; border-right-width: 1px; }
+.hm-languages .hm-lang-btn[data-hm-lang="zh"] { border-radius: 0 999px 999px 0; border-left-width: 1px; }
+.hm-languages .hm-lang-btn[aria-pressed="true"] { background: var(--lc-ink); color: var(--lc-paper); }
+
+/* ---------- result card: same panel as the Life Card ---------- */
+#hmRes.hm-lc-panel { position: absolute; z-index: 15; left: calc(12px + env(safe-area-inset-left, 0px)); top: calc(78px + env(safe-area-inset-top, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); width: 380px; max-height: none;
+  display: flex; flex-direction: column; background: var(--lc-paper); color: var(--lc-ink); border: 3px solid var(--lc-ink); border-radius: 18px 14px 20px 14px; box-shadow: var(--lc-lift); padding: 0; font-family: var(--lc-body); }
+#hmRes.hm-lc-panel[hidden] { display: none; }
+#hmRes.hm-lc-panel .phead { flex: none; display: flex; align-items: center; gap: 8px; padding: 10px 12px 8px 14px; border-bottom: 2px dashed var(--lc-line); min-height: 52px; }
+#hmRes.hm-lc-panel .phead h2 { flex: 1; min-width: 0; font: 20px/1.15 var(--lc-display); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#hmRes.hm-lc-panel .phead .pbtn { flex: none; font: 15px/1 var(--lc-hand); min-height: 36px; padding: 6px 11px; border-radius: 999px; border: 1.5px solid var(--lc-ink); background: var(--lc-paper-2); color: var(--lc-ink); box-shadow: none; }
+#hmRes.hm-lc-panel .pbody { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 12px; scrollbar-width: thin; scrollbar-color: #c6b38e transparent; }
+#hmRes.hm-lc-panel .pbody > * { flex: none; }
+#hmRes.hm-lc-panel.mini { bottom: auto; max-height: none; }
+#hmRes.hm-lc-panel.mini .pbody { display: none; }
+#hmRes.hm-lc-panel.mini .phead { border-bottom: 0; }
+.hm-polaroid span { display: grid; place-items: center; aspect-ratio: 1; font-size: 54px; background: #f1dcc8; }
+#hmRes .lc-hero { grid-template-columns: 112px minmax(0, 1fr); }
+#hmRes .lc-name { font-size: 25px; }
+#hmRes .lc-line { font-size: 17px; }
+#hmRes .lc-sub, #hmRes .srcnote2 { font-size: 12.5px; line-height: 1.55; color: var(--lc-soft); }
+#hmRes .lc-homes > .srcnote2 { font-size: 11.5px; color: #8a7458; }
+#hmRes .lc-home-list li:first-child .lc-num { background: var(--lc-coral); color: #fff; }
+#hmRes .mcard { border-radius: 14px 10px 15px 11px; background: var(--lc-paper-2); outline: none; }
+#hmRes .mcard.on { outline: none; border-color: var(--lc-coral); box-shadow: 3px 3px 0 var(--lc-coral); }
+#hmRes .mcard h3 { font: 22px/1.15 var(--lc-display); }
+#hmRes .mkicker { font: 14px/1.3 var(--lc-hand); color: var(--lc-coral); }
+#hmRes .fits { font: 15px/1.3 var(--lc-hand); color: var(--lc-soft); }
+#hmRes .macts button { font: 15px/1.2 var(--lc-hand); min-height: 36px; border-radius: 11px; }
+#hmRes .hm-empty h3 { font: 22px/1.2 var(--lc-display); margin: 0 0 4px; }
+#hmRes .hm-empty p { margin: 0 0 6px; }
+@media (min-width: 761px) and (min-height: 501px) {
+  body:has(#hmRes.hm-lc-panel:not([hidden]):not(.mini)) .subject-dock { --dock-left: calc(394px + env(safe-area-inset-left, 0px)) !important; }
+}
+@media (max-width: 760px), (max-height: 500px) {
+  .hm-lc.lc-mc { padding: 18px 14px 14px; border-radius: 18px; transform: none; }
+  /* bottom sheet resting on the map's button bar, exactly like the Life Card */
+  #hmRes.hm-lc-panel { position: fixed; left: max(8px, env(safe-area-inset-left, 0px)); right: max(8px, env(safe-area-inset-right, 0px)); top: auto; bottom: calc(64px + env(safe-area-inset-bottom, 0px)); width: auto;
+    max-height: min(54dvh, 470px); border-radius: 18px; border-bottom: 3px solid var(--lc-ink); z-index: 19; }
+  #hmRes.hm-lc-panel.mini { bottom: calc(64px + env(safe-area-inset-bottom, 0px)); right: calc(68px + env(safe-area-inset-right, 0px)); max-height: none; }
+  #hmRes.hm-lc-panel .phead { min-height: 48px; padding: 6px 8px 6px 12px; }
+  #hmRes.hm-lc-panel .phead h2 { font-size: 18px; }
+  #hmRes .lc-hero { grid-template-columns: 96px minmax(0, 1fr); }
+  #hmRes .lc-name { font-size: 22px; }
+  body:has(#hmRes.hm-lc-panel:not([hidden]):not(.mini)) .zoom, body:has(#hmRes.hm-lc-panel:not([hidden]):not(.mini)) .pause { display: none; }
+  .hm-languages .hm-lang-btn { font-size: 14px; padding: 6px 11px; }
+}
+@media (prefers-reduced-motion: reduce) { .hm-lc.lc-mc, .hm-lc .lc-opt { transform: none; transition: none; } }
+
+/* ---------- draggable result cards (panel-drag.js) ---------- */
+#lcPanel .lc-ph, #hmRes .phead { cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+#lcPanel .lc-ph button, #hmRes .phead button { cursor: pointer; touch-action: manipulation; }
+.pd-dragging { cursor: grabbing; box-shadow: 8px 10px 0 rgba(59,42,26,.22), 0 24px 50px rgba(31,22,12,.3) !important; }
+.pd-dragging .lc-ph, .pd-dragging .phead { cursor: grabbing; }
+.pd-anim { transition: left .22s ease, top .22s ease, transform .22s ease; }
+.pd-tab { position: fixed; z-index: 30; width: 30px; height: 64px; display: grid; place-items: center; padding: 0;
+  font: 16px/1 'Nunito', sans-serif; color: #3b2a1a; background: #f2c14e; border: 2.5px solid #3b2a1a; box-shadow: 3px 3px 0 rgba(59,42,26,.25); cursor: pointer; touch-action: none; }
+.pd-tab[hidden] { display: none; }
+.pd-tab.is-left { left: 0; border-left: 0; border-radius: 0 14px 14px 0; }
+.pd-tab.is-right { right: 0; border-right: 0; border-radius: 14px 0 0 14px; }
+@media (prefers-reduced-motion: reduce) { .pd-anim { transition: none; } }
+
+/* ---------- map while showing matches: picks solid, others only gently quieter ---------- */
+.mapbox.hm-on .m[data-type="home"]:not(.hmpick) { opacity: .7; filter: saturate(.55); }
+.mapbox.hm-on .m[data-type="home"]:not(.hmpick) .badge { display: inline; opacity: .8; }
+.mapbox.hm-on [data-home-leader] { opacity: .5; }
+.mapbox.hm-on .m.hmpick { opacity: 1 !important; filter: drop-shadow(0 0 3px #fffaf0) drop-shadow(0 2px 2px rgba(59,42,26,.35)); }
+.hmring { fill: rgba(181, 70, 47, .035); }
+
+/* ---------- "Compare these 3" (reuses the map's #cmpWrap dialog) ---------- */
+.lc-root .lc-btn[hidden] { display: none; }
+.hm-cmp3, #lcPanel [data-lc="compare-homes"] { font-size: 18px; }
+.cmp-wrap.cmp3 { z-index: 47; }
+.cmp3 .cmp-grid .hd .k3 { font: 14px/1.2 'Patrick Hand', cursive; color: #b5462f; }
+.cmp3 .cmp-grid .hd:nth-child(2) .n { background: #b5462f; }
+.cmp3 .cmp-grid .v small { color: #6e5538; font-size: 12px; }
+.cmp3 .cmp-grid .why3 ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.cmp3 .cmp-grid .trade3 { color: #8a4b16; }
+.cmp3 .cmp-grid .best { display: inline-block; margin-left: 4px; padding: 1px 6px; border-radius: 999px; background: #d7e8c4; border: 1px solid #3b2a1a; font-size: 11px; }
+@media (max-width: 760px) {
+  .cmp-wrap.cmp3 { padding: 0; place-items: stretch; }
+  .cmp3 .cmp { width: 100%; max-height: 100dvh; border-radius: 0; }
+  .cmp3 .cmp-grid { grid-template-columns: 86px repeat(var(--n), minmax(148px, 1fr)); overflow-x: auto; }
+  .cmp3 .cmp-grid > div { padding: 8px 8px; font-size: 12.5px; }
+  .cmp3 .cmp-grid .rl { font-size: 10.5px; letter-spacing: .02em; }
+  .cmp3 .cmp-grid .hd b { font-size: 18px; }
+}
+.cmp3 .cmp-grid .rl.act { background: #f8efd9; z-index: 2; }
+.cmp3 .cmp-grid .act { position: relative; z-index: 0; }

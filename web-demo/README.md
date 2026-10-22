@@ -41,7 +41,7 @@
 | 1 号公寓的 3 个房型、14 张照片、价格档期 | AmberStudent，2026-10-21 采集（设计稿 `design/room-photos/`） |
 | 其他 46 套公寓的房型 | 按历史参考价生成「独卫单间 / Studio」，照片显示「照片整理中」 |
 | 后台会话、专家团队、看板数字 | **虚构的演示数据**，页面上已标明 |
-| 手绘地图 | 按设计稿风格重画的示意图：经纬度用网页版同一套投影，河岸、道路、公园为粗略描摹 |
+| 手绘地图 | 网页原版 `web-original/liverpool-life-map-en` 渲染出的底图、地标插画和公寓位置（游客地图变形投影 + 防重叠排布），由 `scripts/build-basemap.cjs` 导出到 `js/vendor/basemap.js`。Map data © OpenStreetMap contributors |
 
 演示里的二维码是假的群链接，扫码不会进入真实群。
 
@@ -54,24 +54,26 @@ js/vendor/core.js   【自动生成】小程序的数据与打分逻辑
 js/vendor/qrcode.js qrcode-generator 1.4.4（MIT）
 js/data.js          房型照片、地图地理、专家团队、文案、模拟会话
 js/store.js         学生端与后台共用的状态（localStorage，跨标签页同步）
-js/map.js           手绘 SVG 地图（拖动、缩放）
+js/vendor/basemap.js 【自动生成】原版手绘底图
+js/map.js           地图交互（拖动、缩放、公寓标记）
 js/student.js       学生端 App
 js/admin.js         顾问后台与数据看板
 js/ui.js main.js    共用工具、视图切换
-scripts/build-core.cjs  小程序数据更新后重新生成 core.js
+scripts/build-core.cjs     小程序数据更新后重新生成 core.js
+scripts/build-basemap.cjs  原版地图更新后重新导出 basemap.js（需要 Playwright）
 ```
 
-小程序数据更新后运行：
+源数据更新后运行：
 
 ```bash
-node web-demo/scripts/build-core.cjs
+node web-demo/scripts/build-core.cjs      # 小程序 utils/ 有改动时
+node web-demo/scripts/build-basemap.cjs   # 原版 index.html 的地图有改动时
 ```
 
 ## 还没做 / 下一步
 
 - **更多房源照片**：当前环境的网络策略不允许访问 amberstudent.com，所以只有 1 号公寓有照片。放行这个域名后，可以批量抓取其余公寓的房型和照片，填进 `js/data.js` 的 `ROOMS`。
-- **原版手绘地图**：网页原版 `ui-project/liverpool-life-map-en/index.html` 里的 `GEO` 数据不在这次的代码里。拿到后可以替换 `js/map.js` 的底图。
-- **真实后端**：会话、提醒、二维码目前都只在浏览器本地。正式版需要服务端会话、顾问账号、推送提醒（可以沿用 consult-server 的工作台思路）。
+- **真实后端**：会话、提醒、二维码目前都只在浏览器本地。正式版可以在 `web-original/consult-server` 的基础上扩展：它已有网页聊天、小程序客服渠道和顾问工作台，需要加上「建群请求」和「发送群二维码」两种消息。
 - **AI 回复**：后台「AI 建议回复」现在是按上下文拼出的占位文案，以后接入模型。
 - **进群状态**：WhatsApp 和微信都不会通知谁扫码进群，目前由顾问手动标记；QR 发出 24 小时未进群会提示跟进。
 - **日语版**：文案已集中在 `js/data.js` 和小程序 `i18n.js`，以后加一份 `ja` 即可。

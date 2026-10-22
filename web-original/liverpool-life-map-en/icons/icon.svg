@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Liverpool Life Club">
+  <rect width="64" height="64" rx="14" fill="#f7f3e7"/>
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#243e35" stroke-width="3"/>
+  <path d="M9 32h46M32 9v46" stroke="#243e35" stroke-width="2" stroke-opacity=".35"/>
+  <path d="M20 38c4-9 9-13 15-13s8 4 7 8-5 6-8 5-1-5 3-6" fill="none" stroke="#ce6047" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="41" cy="25" r="4" fill="#edbf61" stroke="#243e35" stroke-width="2"/>
+</svg>
