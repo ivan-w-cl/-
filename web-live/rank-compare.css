@@ -1,0 +1,26 @@
+/* 推荐结果的对比速览、公寓列表顶部的排序、地图上的名次标签。颜色沿用地图的纸张、墨水和红色按钮。 */
+.pc-box { display: flex; flex-direction: column; gap: 10px; margin: 4px 0 12px; padding: 12px; border: 2.5px solid var(--ink, #3b2a1a); border-radius: 14px; background: #fff3c4; box-shadow: 3px 4px 0 rgba(59, 42, 26, .2); }
+.pc-h { font: normal 19px/1.15 var(--hand, cursive); }
+.pc-cols { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 6px; }
+.pc-col { display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: 7px 8px; border: 1.5px solid #dcc8a0; border-radius: 10px; background: #fffaf0; font-size: 12px; line-height: 1.35; }
+.pc-col.top { border-color: #b5462f; }
+.pc-col b { font-size: 13px; overflow-wrap: anywhere; }
+.pc-rank { width: 20px; height: 20px; border-radius: 50%; background: #b5462f; color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 11.5px; }
+.pc-v { color: #6e5538; font-variant-numeric: tabular-nums; }
+.pc-go { align-self: stretch; min-height: 44px; border: 2.5px solid var(--ink, #3b2a1a); border-radius: 12px; background: #b5462f; color: #fff; font: 18px var(--hand, cursive); cursor: pointer; box-shadow: 2px 3px 0 #3b2a1a; }
+.pc-go:active { transform: translate(1px, 2px); box-shadow: 1px 1px 0 #3b2a1a; }
+.pc-go:focus-visible { outline: 3px dashed #b5462f; outline-offset: 3px; }
+
+/* 公寓列表顶部的排序 */
+.pc-sort { display: flex; flex-direction: column; gap: 4px; padding: 0 16px 8px; }
+.pc-sort .pc-sortfield { margin: 0; }
+.pc-sortnote { margin: 0; font-size: 11.5px; line-height: 1.45; color: #6e5538; }
+.pc-sortnote:empty { display: none; }
+.homes.pc-ranked .pc-sortfield select { border-color: #b5462f; background-color: #fff3c4; }
+.homes .rlist > li[data-rank]:not([data-rank=""]) { grid-template-columns: 24px minmax(0, 1fr) 30px 30px; }
+.homes .rlist > li[data-rank]:not([data-rank=""])::before { content: attr(data-rank); flex: none; min-width: 22px; text-align: right; font: 800 12px var(--body, sans-serif); color: #a08b6a; font-variant-numeric: tabular-nums; }
+.homes.pc-ranked .rlist > li[data-rank="1"]::before, .homes.pc-ranked .rlist > li[data-rank="2"]::before, .homes.pc-ranked .rlist > li[data-rank="3"]::before { color: #9a6a00; }
+
+/* 地图上的名次标签（金色，和蓝色的固定编号区分开） */
+.pc-tag rect { fill: #f2c14e; stroke: #3b2a1a; stroke-width: 2; }
+.pc-tag text { font: 800 14.5px var(--body, sans-serif); fill: #3b2a1a; text-anchor: middle; pointer-events: none; }
