@@ -25,13 +25,13 @@
     { id: 'shop', q: '你习惯怎样采购食物？', opts: [
       ['topup', '🧺', '少量多次，随用随买', '附近有食品店就很方便'], ['weekly', '🛒', '每周集中采购一次', '希望离超市近一点'],
       ['special', '🌶️', '喜欢找熟悉的食材', '亚洲或国际食品店很加分'], ['rarely', '🙃', '其实不太买菜', '大多数时候在外面吃'] ] },
-    { id: 'flavour', multi: true, max: 3, q: '你希望附近有哪些口味？', hint: '选一个最想要的，点选后自动进入下一题。', opts: [
+    { id: 'flavour', multi: true, max: 3, q: '你希望附近有哪些口味？', hint: '最多选 3 项，选满自动进入下一题；选「都可以」直接下一题，少选可以点「下一题」。', opts: [
       ['east', '🍜', '东亚与东南亚风味', '中餐、日料、韩餐、泰餐等'], ['south', '🍛', '南亚与中东风味', '咖喱、烤肉、黎巴嫩菜等'],
       ['veg', '🥗', '植物性饮食', '参考资料中有相关标记的店'], ['any', '😋', '都可以', '没有特别偏好'] ] },
     { id: 'study', q: '你在哪里最容易进入学习状态？', opts: [
       ['library', '📚', '图书馆', '喜欢专门的学习空间'], ['cafe', '☕', '咖啡馆', '一台电脑，一杯咖啡'],
       ['desk', '🪑', '自己的书桌', '更喜欢在家专注'], ['any', '🎒', '在哪里都可以', '不太挑学习场所'] ] },
-    { id: 'free', multi: true, max: 2, q: '空闲的周六下午，你更想……', hint: '选一个最想做的，点选后自动进入下一题。', opts: [
+    { id: 'free', multi: true, max: 2, q: '空闲的周六下午，你更想……', hint: '最多选 2 项，选满自动进入下一题；只想选一项就点「下一题」。', opts: [
       ['shops', '🛍️', '逛逛街', '衣服、书店、小玩意'], ['park', '🌳', '去公园散步或跑步', '换换空气'],
       ['gym', '🏋️', '健身或运动', '保持活力'], ['culture', '🎨', '看展、看电影或演出', '给生活添点灵感'], ['home', '🛋️', '舒服地待在家', '给自己充充电'] ] },
     { id: 'night', q: '到了晚上，你的生活节奏是？', hint: '这里只比较收录的夜间场所数量，不代表街道噪声或安全评价。', opts: [
@@ -283,15 +283,25 @@
     } else if (action==='opt') {
       const q=QUESTIONS[state.step], choice=button.dataset.v;
       if (!q?.opts.some(option=>option[0]===choice)) return;
-      // Every card is a single tap that moves on, including the two former multi-select questions:
-      // they keep their array answer (one item) so the scoring is unchanged.
-      state.answers[q.id]=q.multi?[choice]:choice;
+      // Single-choice cards move on at once. Multi-select cards move on when the question is full
+      // (its maximum is reached, or "any" is picked); with fewer picks the student taps "Next".
+      let full=true;
+      if (q.multi) {
+        let selected=[...(state.answers[q.id] || [])];
+        if (choice==='any') selected=selected.includes('any')?[]:['any'];
+        else if (selected.includes(choice)) selected=selected.filter(item=>item!==choice);
+        else {selected=selected.filter(item=>item!=='any');if (selected.length<q.max) selected.push(choice);}
+        state.answers[q.id]=selected;
+        full=selected.includes('any') || selected.length>=q.max;
+      } else state.answers[q.id]=choice;
       saveAnswers();
-      body.querySelectorAll('[data-hm="opt"]').forEach(option=>option.setAttribute('aria-pressed',String(option.dataset.v===choice)));
-      body.querySelector('[data-hm="next"]').disabled=false;
+      // Update in place so keyboard and multi-select users keep their focus.
+      body.querySelectorAll('[data-hm="opt"]').forEach(option=>option.setAttribute('aria-pressed',String(q.multi?state.answers[q.id].includes(option.dataset.v):state.answers[q.id]===option.dataset.v)));
+      body.querySelector('[data-hm="next"]').disabled=!answered(q);
       clearTimeout(autoNext);
+      if (!full) return;
       const step=state.step;
-      autoNext=setTimeout(()=>{if(state.step!==step || wrap.hidden)return;if(state.step<QUESTIONS.length-1){state.step++;drawQuiz();}else showResults();},280);
+      autoNext=setTimeout(()=>{if(state.step!==step || wrap.hidden)return;if(state.step<QUESTIONS.length-1){state.step++;drawQuiz();}else showResults();},q.multi?450:280);
     }
   });
   document.getElementById('hmX').addEventListener('click', event=>{event.stopPropagation();closeQuiz();});
