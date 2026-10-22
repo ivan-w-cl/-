@@ -1,0 +1,67 @@
+/* Scoped contact prototype styles: preserve the map's warm hand-drawn palette. */
+.contact-head{position:sticky;top:-20px;z-index:3;background:#fffaf0;padding:18px 22px 10px;margin:-20px -22px 0;border-bottom:1px solid #e6d8bf}
+.contact-head .x{top:12px;right:10px;background:#fffaf0;border-radius:50%}
+.contact-head .ct-eyebrow{margin-right:34px;font-size:11px}
+.contact-head h3{font-size:27px}
+.contact-demo{font-family:var(--body,system-ui,sans-serif);font-size:14px;line-height:1.5;color:#3b2a1a}
+.contact-demo *{box-sizing:border-box}
+.contact-demo button,.contact-demo textarea,.contact-demo a{font:inherit}
+.contact-demo button{cursor:pointer;min-height:36px}
+.contact-demo button:disabled{cursor:default;opacity:.5}
+.contact-demo p{margin:0}
+.contact-demo h4{margin:0;font-size:16px;line-height:1.4}
+.contact-demo [hidden]{display:none!important}
+.cd-notice{padding:11px 13px;border:1.5px solid #d9b788;border-radius:12px;background:#f8efd9;margin:12px 0}
+.cd-demo-badge{display:block;color:#974128;font-size:13px;margin-bottom:3px}
+.cd-notice p{font-size:12px;color:#6e5538;line-height:1.5}
+.cd-chat{border:1.5px solid #d9c7a1;border-radius:14px;overflow:hidden;background:#fffdf7}
+.cd-chat-toolbar{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid #e6d8bf;padding:7px 11px;background:#f8f2e5}
+.cd-chat-caption{font-size:12px;font-weight:700;color:#6e5538}
+.contact-demo .cd-quiet{min-height:32px;background:transparent;border:1px solid #b7a17d;border-radius:8px;padding:4px 8px;color:#6e5538;font-size:11px}
+.cd-log{height:194px;overflow-y:auto;overscroll-behavior:contain;padding:12px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;scrollbar-width:thin;scrollbar-color:#c6b38e transparent}
+.cd-bubble{flex:none;max-width:90%;padding:8px 11px;border-radius:12px;overflow-wrap:anywhere}
+.cd-speaker{display:block;font-size:10px;font-weight:700;letter-spacing:.03em;margin-bottom:3px;color:#826b4b}
+.cd-bubble p{font-size:13px;line-height:1.65;white-space:pre-wrap}
+.cd-reply{background:#f2ead8;border-bottom-left-radius:3px}
+.cd-user{align-self:flex-end;background:#dcefe2;border-bottom-right-radius:3px}
+.cd-user .cd-speaker{color:#336445}
+.cd-chips{display:flex;flex-wrap:wrap;gap:6px;padding:2px 12px 10px}
+.contact-demo .cd-chip{min-height:32px;padding:4px 10px;border:1.2px solid #c6b38e;border-radius:20px;background:#fffaf0;color:#6e5538;font-size:12px}
+.contact-demo .cd-chip:hover{background:#f3e6c8}
+.cd-composer{border-top:1px solid #e6d8bf;padding:10px 12px}
+.cd-input-label{display:block;font-size:12px;font-weight:700;margin-bottom:5px}
+.contact-demo .cd-input{display:block;resize:vertical;min-height:62px;max-height:160px;width:100%;border:1.5px solid #b7a17d;border-radius:9px;padding:8px 10px;background:#fff;color:#3b2a1a;font-size:16px;line-height:1.5}
+.cd-input::placeholder{color:#9a876e;font-size:13px}
+.cd-input-hint{display:block;margin-top:5px;color:#8a7458;font-size:10px}
+.cd-composer-controls{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:5px}
+.cd-count{font-size:10px;color:#8a7458;font-variant-numeric:tabular-nums}
+.contact-demo .cd-send{background:#3f6c50;color:#fffaf0;border:1.5px solid #294c36;border-radius:9px;padding:6px 16px;font-size:13px;font-weight:700}
+.cd-channels{margin-top:16px}
+.contact-demo .cd-section-title{font-size:13px;color:#6e5538;margin-bottom:8px}
+.cd-channel-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:10px}
+.cd-channel{border:1.5px solid #abc4ab;border-radius:13px;padding:12px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;background:#edf5eb}
+.cd-channel h4::before{content:'';display:inline-block;width:10px;height:10px;background:#07c160;border:1px solid #437c52;border-radius:50%;margin-right:7px}
+.cd-whatsapp{background:#f2f5e9;border-color:#bec7a9}
+.cd-whatsapp h4::before{background:#25d366}
+.cd-channel-note,.cd-unconfigured,.cd-group-privacy{font-size:11px;line-height:1.6;color:#67725d}
+.cd-unconfigured{color:#7a715c}
+.cd-id-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;max-width:100%}
+.cd-id-row code{font-size:13px;overflow-wrap:anywhere;user-select:text}
+.cd-real-qr{width:140px;max-width:100%;aspect-ratio:1;object-fit:contain;background:white;border:1px solid #b6c8af;border-radius:8px}
+.cd-group-privacy{padding-top:8px;border-top:1px solid #cbdac7}
+.contact-demo .cd-flow-link{display:block;margin-top:8px;border:1.5px solid #59865e;background:#f7fff4;color:#355d39;border-radius:9px;padding:9px 11px;font-size:12px;font-weight:700;line-height:1.6;text-decoration:none}
+.contact-demo .cd-flow-link:hover{background:#e3f1df}
+.contact-demo .cd-wa-link{display:inline-block;padding:7px 11px;border:1.5px solid #59865e;border-radius:9px;text-decoration:none;background:#e3f7dc;color:#355d39;font-size:12px;font-weight:700}
+.cd-phone{font-variant-numeric:tabular-nums;font-size:13px}
+.cd-status{font-size:11px;min-height:1.5em;margin-top:8px!important;color:#3f6c50}
+@media(max-width:480px){
+  .contact{padding:16px 14px 12px}
+  .contact-head{top:-16px;margin:-16px -14px 0;padding:14px 14px 9px}
+  .cd-log{height:180px;padding:10px}
+  .cd-bubble{max-width:94%}
+  .cd-channel-grid{grid-template-columns:1fr}
+  .cd-channel{gap:6px}
+  .cd-channel-note,.cd-unconfigured,.cd-group-privacy{font-size:12px}
+  .contact-demo .cd-flow-link{font-size:13px}
+  .cd-chat-toolbar{gap:4px}
+}

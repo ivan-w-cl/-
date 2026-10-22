@@ -1,0 +1,38 @@
+/* Activated only inside the full-screen test result. Normal map is unchanged. */
+body.life-map-embedded .brandbar,
+body.life-map-embedded #controls,
+body.life-map-embedded #homesPanel,
+body.life-map-embedded #hmRes,
+body.life-map-embedded #hmWrap,
+body.life-map-embedded .mbar,
+body.life-map-embedded #welcome,
+body.life-map-embedded #pause,
+body.life-map-embedded #tray,
+body.life-map-embedded .subject-hint {display:none!important;}
+body.life-map-embedded .app {background:#e9d8af;}
+body.life-map-embedded .stage {border-radius:0;box-shadow:none;}
+body.life-map-embedded .subject-dock {--dock-left:0px!important;top:clamp(360px,62%,calc(100% - 125px));}
+body.life-map-embedded .subject-panel {left:56px;top:130px;max-height:calc(100dvh - 270px);}
+body.life-map-embedded .zoom {right:12px;bottom:240px;}
+body.life-map-embedded .zoom #zfit {display:none;}
+body.life-map-embedded #tray {bottom:130px;}
+body.life-map-embedded .life-map-pin {cursor:pointer;outline:none;}
+body.life-map-embedded .life-map-pin text {font-family:var(--body);}
+body.life-map-embedded .life-map-pin:focus-visible rect {stroke:#1c6480;stroke-width:4;}
+/* Explicit browse-all mode only: do not erase the saved filtering or ranking
+   classes. Returning to recommendations restores their normal CSS immediately. */
+body.life-map-embedded.life-map-all-homes #over .m[data-type="home"] {display:inline!important;opacity:1!important;visibility:visible!important;pointer-events:auto;}
+body.life-map-embedded.life-map-all-homes #over .m[data-type="home"] .badge {display:inline!important;visibility:visible!important;opacity:1!important;}
+body.life-map-embedded.life-map-all-homes #over [data-home-leader] {display:inline!important;visibility:visible!important;}
+body.life-map-embedded.life-map-all-homes #lifeMapLabels,
+body.life-map-embedded.life-map-all-homes #hmLayer {display:none;}
+body.life-map-embedded .card.sheet {top:185px!important;bottom:auto;max-height:calc(100dvh - 300px);}
+body.life-map-embedded .card.compact {max-width:330px;}
+@media(max-width:760px),(max-height:500px){
+  body.life-map-embedded .zoom {right:9px;bottom:240px;gap:5px;}
+  body.life-map-embedded .zoom button {width:38px;height:38px;}
+  body.life-map-embedded .subject-dock {top:190px;}
+  body.life-map-embedded .subject-tab {width:38px;min-height:96px;padding:8px 4px;font-size:13px;}
+  body.life-map-embedded .subject-panel {left:44px;width:calc(100vw - 58px);}
+  body.life-map-embedded .card.compact {max-width:none;}
+}
