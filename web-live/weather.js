@@ -92,14 +92,15 @@
   let w = null;
 
   /* 位置：电脑上放在标题栏右边（放不下就放到地图底部中间）；手机上放在标题栏下面靠右 */
-  const narrow = matchMedia('(max-width: 760px), (max-height: 500px)');
+  const narrow = matchMedia('(max-width: 760px), (max-height: 500px), (max-width: 1024px) and (orientation: portrait) and (hover: none)');
   function place() {
     const A = app.getBoundingClientRect(), B = brand.getBoundingClientRect(), ctl = document.querySelector('.controls');
     chip.style.cssText = ''; pop.style.cssText = '';
     let top;
     if (narrow.matches) { top = B.bottom - A.top + 8; chip.style.top = top + 'px'; chip.style.right = 'calc(10px + env(safe-area-inset-right, 0px))'; pop.style.right = chip.style.right; }
     else {
-      const room = (ctl && !ctl.classList.contains('collapsed') ? ctl.getBoundingClientRect().left : A.right) - B.right - 24;
+      const cr = ctl && ctl.offsetParent ? ctl.getBoundingClientRect() : null;
+      const room = (cr && cr.top < B.bottom ? cr.left : A.right) - B.right - 24;   // 「找公寓」面板收起时也还在右上角
       if (room >= chip.offsetWidth) { top = B.top - A.top; chip.style.top = top + 'px'; chip.style.left = (B.right - A.left + 12) + 'px'; pop.style.left = chip.style.left; }
       else { chip.style.bottom = 'calc(14px + env(safe-area-inset-bottom, 0px))'; chip.style.left = '50%'; chip.style.transform = 'translateX(-50%)'; pop.style.left = '50%'; pop.style.transform = 'translateX(-50%)'; }
     }
@@ -107,6 +108,7 @@
     else pop.style.bottom = `calc(${chip.offsetHeight + 24}px + env(safe-area-inset-bottom, 0px))`;
   }
   addEventListener('resize', place);
+  document.addEventListener('click', e => { if (e.target.closest('.pbtn')) setTimeout(place, 350); });   // 面板展开 / 收起后重新摆
   new ResizeObserver(place).observe(brand);
 
   function paint() {
