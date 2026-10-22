@@ -1,0 +1,5 @@
+{
+  "description": "本地私有配置（不影响上传）。开发阶段如尚未配置 request 合法域名，可在开发者工具「详情 → 本地设置」勾选“不校验合法域名”。",
+  "projectname": "liverpool-student-life-map",
+  "setting": { "urlCheck": false }
+}

@@ -1,0 +1,35 @@
+<view wx:if="{{h}}">
+  <map class="minimap" latitude="{{h.lat}}" longitude="{{h.lng}}" scale="16" markers="{{markers}}" enable-zoom enable-scroll></map>
+  <view class="wrap">
+    <view class="card">
+      <view class="row"><view class="num {{rank ? 'top' : ''}}">{{h.n}}</view><view class="h1 grow">{{h.name}}</view></view>
+      <view class="muted addr" bindlongpress="copyAddr">📍 {{h.addr}} · {{area}}</view>
+      <view wx:if="{{rank}}" class="chip on">★ {{T.yourTop3}} #{{rank}}</view>
+      <view class="text">{{text}}</view>
+      <view class="row wrapflex">
+        <button class="btn small {{fav ? 'main' : ''}}" bindtap="toggleFav">{{fav ? '♥ ' + T.faved : '♡ ' + T.fav}}</button>
+        <button class="btn small" bindtap="toggleCompare">{{inCompare ? '✓ ' + T.inCompare : '+ ' + T.addCompare}}</button>
+        <button class="btn small" bindtap="openCompare">⚖️ {{T.compare}}</button>
+        <button class="btn small" bindtap="navigate">🧭 {{T.navigate}}</button>
+      </view>
+    </view>
+    <view class="card">
+      <view class="h2">{{T.prices}}</view>
+      <view class="price">{{price}}<text wx:if="{{h.pso}}" class="badge">{{T.soldOut}}</text></view>
+      <view wx:if="{{rating}}" class="muted">{{T.rating}}：{{rating}}</view>
+      <view class="fine">{{T.priceNote}}</view>
+    </view>
+    <view class="card">
+      <view class="h2">{{T.walks}}</view>
+      <view wx:for="{{walks}}" wx:key="k" class="row between kv"><text>{{item.label}}</text><text>{{item.value}}</text></view>
+    </view>
+    <view class="card">
+      <view class="h2">{{T.nearby}}</view>
+      <view wx:for="{{nearby}}" wx:key="k" class="kv">{{item.ico}} <text class="muted">{{item.label}}</text>　{{item.value}}</view>
+      <view class="divider"></view>
+      <view wx:for="{{counts}}" wx:key="k" class="row between kv"><text>{{item.ico}} {{item.label}}</text><text>{{item.value}}</text></view>
+      <view class="fine">{{T.walkNote}}</view>
+    </view>
+    <button class="btn main" bindtap="consult">💬 {{T.consult}}</button>
+  </view>
+</view>

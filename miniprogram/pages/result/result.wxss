@@ -1,0 +1,10 @@
+.rc { margin-top: 30rpx; padding-top: 44rpx; }
+.stamp { font-size: 64rpx; margin-right: 16rpx; }
+.quote { font-style: italic; margin: 12rpx 0; font-size: 28rpx; }
+.desc { margin: 12rpx 0; }
+.dayrow { font-size: 24rpx; margin-top: 6rpx; }
+.time { font-weight: 700; color: #b5462f; }
+.sec { margin: 12rpx 4rpx 16rpx; }
+.name { font-size: 30rpx; font-weight: 700; }
+.price { color: #b5462f; margin-top: 10rpx; font-size: 26rpx; }
+.gap { margin-right: 16rpx; }

@@ -1,0 +1,13 @@
+.page { position: relative; }
+.map { width: 100%; height: 56vh; border-bottom: 3rpx solid #3b2a1a; }
+.lang { position: absolute; top: 20rpx; right: 20rpx; z-index: 5; background: #fffaf0; border: 2rpx solid #3b2a1a; border-radius: 999rpx; padding: 6rpx 22rpx; font-size: 24rpx; }
+.quizrow .quiz { margin-right: 16rpx; padding: 22rpx; }
+.quizrow .quiz:last-child { margin-right: 0; }
+.search { background: #fff; border: 2rpx solid #3b2a1a; border-radius: 16rpx; padding: 14rpx 20rpx; height: 72rpx; box-sizing: border-box; margin-bottom: 16rpx; }
+.filters { margin-bottom: 4rpx; }
+.home { padding: 22rpx; margin-bottom: 16rpx; }
+.name { font-size: 30rpx; font-weight: 700; }
+.price { font-size: 26rpx; color: #b5462f; margin-top: 4rpx; }
+.fav { font-size: 44rpx; color: #e8735a; padding: 0 8rpx 0 20rpx; }
+.link { text-decoration: underline; }
+.topcard { border-color: #e8735a; }

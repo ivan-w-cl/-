@@ -1,0 +1,19 @@
+<view class="wrap">
+  <view class="h2">{{T.cmpTitle}}</view>
+  <scroll-view scroll-x class="sv">
+    <view class="table">
+      <view class="tr head">
+        <view class="th"></view>
+        <view wx:for="{{homes}}" wx:key="id" class="td hd" data-id="{{item.id}}" bindtap="openHome">
+          <view class="num top">{{item.n}}</view><view class="hname">{{item.name}}</view>
+        </view>
+      </view>
+      <view wx:for="{{rows}}" wx:key="key" class="tr {{index % 2 ? 'alt' : ''}}">
+        <view class="th">{{item.label}}</view>
+        <view wx:for="{{item.cells}}" wx:for-item="c" wx:for-index="ci" wx:key="ci" class="td">{{c}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <button class="btn main" bindtap="consult">💬 {{T.consult}}</button>
+  <view class="fine">{{T.priceNote}} {{T.walkNote}}</view>
+</view>

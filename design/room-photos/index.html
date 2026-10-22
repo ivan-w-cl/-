@@ -1,0 +1,313 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Room Photos Mockup</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: two mockups of the live map, stacked. A = desktop home panel, B = phone bottom sheet + photo album.
+   Single look on purpose: the map's paper world, same tokens as the site. */
+:root {
+  --paper: #e9dcbc; --desk: #d9c9a3; --panel: #fffaf0; --panel-2: #f8efd9;
+  --ink: #3b2a1a; --ink-soft: #6e5538; --line: #dcc8a0;
+  --coral: #b5462f; --yellow: #f2c14e; --mersey: #4f8f98; --park: #b9cf9a; --home: #2c5c8a;
+  --display: 'Gochi Hand', 'Comic Sans MS', cursive;
+  --hand: 'Patrick Hand', 'Comic Sans MS', cursive;
+  --body: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  --lift: 0 14px 34px rgba(40, 28, 16, .24), 4px 5px 0 rgba(59, 42, 26, .22);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--desk); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px; }
+.wrap { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, a:focus-visible { outline: 3px dashed var(--coral); outline-offset: 3px; }
+
+/* intro */
+.intro { display: flex; flex-direction: column; gap: 8px; max-width: 760px; }
+.eyebrow { font-family: var(--hand); font-size: 18px; letter-spacing: .14em; color: var(--coral); text-transform: uppercase; margin: 0; }
+h1 { font-family: var(--display); font-weight: normal; font-size: clamp(32px, 5vw, 46px); line-height: 1.05; margin: 0; text-wrap: balance; }
+.intro p { margin: 0; color: var(--ink-soft); max-width: 65ch; }
+.src { font-size: 13px; }
+.src a { color: var(--coral); }
+
+.mock-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 14px; }
+.mock-head h2 { font-family: var(--display); font-weight: normal; font-size: 30px; margin: 0; }
+.mock-head p { margin: 0; color: var(--ink-soft); font-family: var(--hand); font-size: 18px; }
+
+/* ---------- shared bits ---------- */
+.tape { position: absolute; width: 74px; height: 22px; background: rgba(242, 193, 78, .78); top: -10px; left: 50%; transform: translateX(-50%) rotate(-3deg); }
+.polaroid { margin: 0; position: relative; background: #fff; padding: 9px 9px 0; border: 2px solid var(--ink); border-radius: 4px; box-shadow: 3px 4px 0 rgba(59, 42, 26, .2); }
+.polaroid img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 2px; background: var(--panel-2); }
+.polaroid figcaption { font-family: var(--hand); font-size: 17px; padding: 6px 2px 8px; display: flex; justify-content: space-between; gap: 8px; color: var(--ink); }
+.polaroid figcaption span:last-child { color: var(--ink-soft); }
+.chip { display: inline-flex; align-items: center; gap: 5px; border: 2px solid var(--ink); border-radius: 999px; padding: 1px 10px; font-family: var(--hand); font-size: 15px; background: var(--panel-2); white-space: nowrap; }
+.chip.full { background: #ead8d2; color: #7a2f20; border-color: #7a2f20; }
+.chip.ok { background: #dfe9cc; }
+.facts { display: flex; flex-wrap: wrap; gap: 6px; }
+.price { font-family: var(--display); font-size: 26px; line-height: 1; }
+.price small { font-family: var(--hand); font-size: 16px; color: var(--ink-soft); }
+.btn { border: 2px solid var(--ink); border-radius: 999px; padding: 7px 16px; background: var(--panel); font-family: var(--hand); font-size: 18px; }
+.btn-main { background: var(--coral); color: #fff; box-shadow: 2px 3px 0 var(--ink); }
+
+/* hand-drawn map backdrop (both mockups) */
+.map { position: absolute; inset: 0; background: var(--paper); overflow: hidden; }
+.map svg { width: 100%; height: 100%; display: block; }
+
+/* ---------- Mockup A: desktop ---------- */
+.desk { position: relative; height: 680px; border: 3px solid var(--ink); border-radius: 18px; overflow: hidden; box-shadow: var(--lift); }
+.topbar { position: absolute; top: 12px; left: 12px; z-index: 3; display: flex; align-items: center; gap: 10px; background: var(--panel); border: 2px solid var(--ink); border-radius: 16px; padding: 6px 14px 6px 10px; box-shadow: 0 4px 12px rgba(40, 28, 16, .16); }
+.topbar span { font-family: var(--display); font-size: 22px; }
+.panel { position: absolute; z-index: 3; left: 12px; top: 72px; bottom: 12px; width: 410px; background: var(--panel); border: 2.5px solid var(--ink); border-radius: 18px 14px 20px 16px; box-shadow: var(--lift); display: flex; flex-direction: column; overflow: hidden; }
+.ph { padding: 14px 16px 10px; border-bottom: 2px dashed var(--line); display: flex; flex-direction: column; gap: 4px; }
+.ph-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.ph h3 { font-family: var(--display); font-weight: normal; font-size: 26px; line-height: 1.05; margin: 0; }
+.ph p { margin: 0; font-size: 13px; color: var(--ink-soft); }
+.pin-no { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--home); color: #fff; font-weight: 800; display: grid; place-items: center; border: 2px solid var(--ink); }
+.pbody { overflow-y: auto; padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+.label { font-family: var(--hand); font-size: 15px; letter-spacing: .12em; text-transform: uppercase; color: var(--coral); margin: 0; }
+.rtabs { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 6px; scrollbar-width: thin; }
+.rtab { flex: none; text-align: left; border: 2px solid var(--ink); border-radius: 12px; background: var(--panel-2); padding: 6px 10px; display: flex; flex-direction: column; gap: 1px; min-width: 118px; }
+.rtab b { font-family: var(--hand); font-weight: normal; font-size: 17px; line-height: 1.1; }
+.rtab small { font-size: 12px; color: var(--ink-soft); }
+.rtab[aria-pressed="true"] { background: var(--yellow); box-shadow: 2px 3px 0 var(--ink); }
+.stage { position: relative; transform: rotate(-.8deg); margin-top: 6px; }
+.nav { position: absolute; top: 42%; width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--ink); background: var(--panel); display: grid; place-items: center; font-size: 18px; line-height: 1; }
+.nav.prev { left: -6px; } .nav.next { right: -6px; }
+.thumbs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
+.thumb { position: relative; padding: 0; border: 2px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--panel-2); }
+.thumb img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.thumb span { position: absolute; left: 3px; bottom: 3px; font-family: var(--hand); font-size: 12px; background: rgba(255, 250, 240, .92); border-radius: 6px; padding: 0 5px; }
+.thumb[aria-current="true"] { border-color: var(--ink); box-shadow: 0 0 0 2px var(--yellow); }
+.roomline { display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; flex-wrap: wrap; }
+.bldg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.bldg figure { margin: 0; }
+.bldg img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; border: 2px solid var(--ink); }
+.bldg figcaption { font-family: var(--hand); font-size: 14px; text-align: center; color: var(--ink-soft); }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* pin with a photo peeking out, on the map */
+.mpin { position: absolute; z-index: 2; left: 63%; top: 46%; display: flex; flex-direction: column; align-items: center; }
+.mpin .peek { width: 150px; transform: rotate(4deg); padding: 6px 6px 0; }
+.mpin .peek figcaption { font-size: 14px; padding: 3px 1px 5px; }
+.mpin .dot { margin-top: 6px; width: 34px; height: 34px; border-radius: 50%; background: var(--home); color: #fff; font-weight: 800; display: grid; place-items: center; border: 2.5px solid var(--ink); box-shadow: 0 0 0 6px rgba(242, 193, 78, .55); }
+.note { position: absolute; z-index: 2; right: 20px; bottom: 18px; max-width: 290px; background: #fff3b8; border: 2px solid var(--ink); padding: 10px 14px; font-family: var(--hand); font-size: 17px; transform: rotate(1.5deg); box-shadow: 3px 4px 0 rgba(59, 42, 26, .2); }
+
+/* ---------- Mockup B: phone ---------- */
+.phone-row { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+.phone { position: relative; flex: none; width: 380px; max-width: 100%; height: 780px; border: 10px solid var(--ink); border-radius: 44px; overflow: hidden; box-shadow: var(--lift); background: var(--paper); }
+.phone .topbar { top: 14px; left: 12px; right: 12px; padding: 4px 12px 4px 8px; }
+.phone .topbar span { font-size: 19px; }
+.phone .mpin { left: 58%; top: 25%; }
+.phone .mpin .peek { width: 112px; }
+.sheet { position: absolute; z-index: 4; left: 0; right: 0; bottom: 0; height: 64%; background: var(--panel); border-top: 2.5px solid var(--ink); border-radius: 22px 22px 0 0; box-shadow: 0 -10px 30px rgba(40, 28, 16, .2); display: flex; flex-direction: column; }
+.grab { width: 46px; height: 5px; border-radius: 9px; background: var(--line); margin: 8px auto 2px; flex: none; }
+.sbody { overflow-y: auto; padding: 4px 14px 18px; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+.cards { display: flex; gap: 12px; overflow-x: auto; padding: 14px 4px 10px; scroll-snap-type: x mandatory; }
+.rcard { flex: none; width: 214px; scroll-snap-align: start; text-align: left; border: 0; background: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.stack { position: relative; height: 140px; }
+.stack img { position: absolute; inset: 0; width: 100%; height: 124px; object-fit: cover; border: 6px solid #fff; outline: 2px solid var(--ink); border-radius: 3px; box-shadow: 2px 3px 0 rgba(59, 42, 26, .2); }
+.stack img:nth-child(1) { transform: rotate(4deg) translate(8px, 6px); }
+.stack img:nth-child(2) { transform: rotate(-3deg) translate(-4px, 4px); }
+.stack img:nth-child(3) { transform: rotate(.5deg); }
+.count { position: absolute; z-index: 1; right: 4px; top: 2px; background: var(--ink); color: var(--panel); font-size: 12px; font-weight: 800; border-radius: 999px; padding: 1px 8px; }
+.rcard[aria-pressed="true"] .stack img:nth-child(3) { outline-width: 3px; outline-color: var(--coral); }
+.rcard b { font-family: var(--hand); font-weight: normal; font-size: 19px; line-height: 1.1; }
+.rcard .meta { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.rcard .price { font-size: 20px; white-space: nowrap; }
+.rcard .meta { flex-wrap: wrap; }
+
+/* album: full-screen inside the phone */
+.album { position: absolute; inset: 0; z-index: 6; background: var(--panel); display: flex; flex-direction: column; }
+.ahead { flex: none; display: flex; align-items: center; gap: 10px; padding: 14px 14px 10px; border-bottom: 2px dashed var(--line); }
+.ahead h3 { margin: 0; font-family: var(--display); font-weight: normal; font-size: 22px; line-height: 1.05; flex: 1; min-width: 0; }
+.ahead .x { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--ink); background: var(--panel-2); font-size: 18px; }
+.ajump { flex: none; display: flex; gap: 6px; padding: 10px 14px 6px; overflow-x: auto; }
+.ajump button { flex: none; }
+.abody { overflow-y: auto; padding: 6px 18px 90px; display: flex; flex-direction: column; gap: 18px; min-height: 0; scroll-behavior: smooth; }
+.abody h4 { margin: 8px 0 -6px; font-family: var(--display); font-weight: normal; font-size: 22px; }
+.abody .polaroid:nth-of-type(even) { transform: rotate(1deg); }
+.abody .polaroid:nth-of-type(odd) { transform: rotate(-1deg); }
+.afoot { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 14px 16px; background: linear-gradient(transparent, var(--panel) 30%); display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+
+.why { flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 14px; max-width: 520px; }
+.why h3 { font-family: var(--display); font-weight: normal; font-size: 24px; margin: 0; }
+.why ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+.why li::marker { color: var(--coral); }
+
+@media (max-width: 860px) {
+  .desk { height: auto; }
+  .desk .map, .desk .mpin, .desk .note { display: none; }
+  .desk .topbar { position: static; margin: 12px; display: inline-flex; }
+  .panel { position: static; width: auto; margin: 0 12px 12px; max-height: none; }
+  .phone { height: 720px; }
+}
+@media (prefers-reduced-motion: reduce) { .abody { scroll-behavior: auto; } }
+</style>
+
+<div class="wrap">
+  <header class="intro">
+    <p class="eyebrow">Mockup · room photos</p>
+    <h1>Every room type gets its own photos, right on the map</h1>
+    <p>Two ways to show AmberStudent photos in the map's hand-drawn style, using one real property: iQ Great Newton House. Click the room types and photos; both mockups work.</p>
+    <p class="src">Photos, prices and availability from <a href="https://amberstudent.com/places/iq-great-newton-house-liverpool-1608304787060" target="_blank" rel="noopener">AmberStudent</a>, taken 21 Oct 2026. Three of the nine room types are shown.</p>
+  </header>
+
+  <!-- ===== Mockup A ===== -->
+  <section aria-labelledby="mA">
+    <div class="mock-head"><h2 id="mA">A · Desktop: home panel with photos</h2><p>Room types are tabs; each one swaps the whole photo set.</p></div>
+    <div class="desk">
+      <div class="map" aria-hidden="true"><svg viewBox="0 0 1180 680" preserveAspectRatio="xMidYMid slice"></svg></div>
+      <div class="topbar"><svg width="30" height="30" viewBox="12 12 96 96" aria-hidden="true"><defs><clipPath id="lg1"><circle cx="46" cy="60" r="30"/></clipPath></defs><circle cx="46" cy="60" r="30" fill="#b5462f"/><circle cx="74" cy="60" r="30" fill="#f2c14e"/><circle cx="74" cy="60" r="30" fill="#3b2a1a" clip-path="url(#lg1)"/></svg><span>Liverpool Student Map</span></div>
+
+      <aside class="panel" aria-label="iQ Great Newton House">
+        <div class="ph">
+          <div class="ph-row"><h3>iQ Great Newton House</h3><span class="pin-no">1</span></div>
+          <p>Lower Gill St, L3 · Knowledge Quarter · 9 room types on Amber</p>
+        </div>
+        <div class="pbody">
+          <div><p class="label">Room types</p><div class="rtabs" id="aTabs" role="group" aria-label="Room types"></div></div>
+          <figure class="polaroid stage" id="aMain"><span class="tape"></span><img alt=""><figcaption><span></span><span></span></figcaption>
+            <button class="nav prev" type="button" data-step="-1" aria-label="Previous photo">‹</button><button class="nav next" type="button" data-step="1" aria-label="Next photo">›</button></figure>
+          <div class="thumbs" id="aThumbs"></div>
+          <div class="roomline" id="aLine"></div>
+          <div class="facts" id="aFacts"></div>
+          <div><p class="label">The building</p>
+            <div class="bldg">
+              <figure><img src="photos/bldg-exterior.jpg" alt="Courtyard with wooden study cabin"><figcaption>Courtyard</figcaption></figure>
+              <figure><img src="photos/bldg-common.jpg" alt="Common room"><figcaption>Common room</figcaption></figure>
+              <figure><img src="photos/bldg-amenities.jpg" alt="Amenities"><figcaption>Amenities</figcaption></figure>
+            </div>
+          </div>
+          <div class="actions"><button class="btn btn-main" type="button">Ask about this room</button><button class="btn" type="button">+ Compare</button></div>
+        </div>
+      </aside>
+
+      <div class="mpin" aria-hidden="true"><figure class="polaroid peek" id="aPeek"><img alt=""><figcaption><span>Gold En Suite</span><span></span></figcaption></figure><span class="dot">1</span></div>
+      <p class="note">The pin shows the photo of the room type you're looking at, so the map and the panel stay in step.</p>
+    </div>
+  </section>
+
+  <!-- ===== Mockup B ===== -->
+  <section aria-labelledby="mB">
+    <div class="mock-head"><h2 id="mB">B · Phone: swipe room cards, tap for the album</h2><p>Left: the sheet over the map. Right: what opens when you tap a card.</p></div>
+    <div class="phone-row">
+      <div class="phone" id="phone">
+        <div class="map" aria-hidden="true"><svg viewBox="0 0 380 780" preserveAspectRatio="xMidYMid slice"></svg></div>
+        <div class="topbar"><svg width="26" height="26" viewBox="12 12 96 96" aria-hidden="true"><defs><clipPath id="lg2"><circle cx="46" cy="60" r="30"/></clipPath></defs><circle cx="46" cy="60" r="30" fill="#b5462f"/><circle cx="74" cy="60" r="30" fill="#f2c14e"/><circle cx="74" cy="60" r="30" fill="#3b2a1a" clip-path="url(#lg2)"/></svg><span>Liverpool Student Map</span></div>
+        <div class="mpin" aria-hidden="true"><figure class="polaroid peek"><img src="photos/ensuite-bedroom.jpg" alt=""><figcaption><span>3 room types</span></figcaption></figure><span class="dot">1</span></div>
+        <div class="sheet">
+          <span class="grab" aria-hidden="true"></span>
+          <div class="sbody">
+            <div class="ph" style="padding:0 2px 8px">
+              <div class="ph-row"><h3>iQ Great Newton House</h3><span class="pin-no">1</span></div>
+              <p>Lower Gill St, L3 · Knowledge Quarter</p>
+            </div>
+            <div><p class="label">Pick a room type</p><div class="cards" id="bCards"></div></div>
+            <p class="src" style="margin:0;color:var(--ink-soft)">Swipe for more room types. Tap one to see its photos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="phone" aria-label="After tapping a room card">
+        <div class="album" id="album">
+          <div class="ahead"><h3 id="alTitle"></h3><span class="x" aria-hidden="true" style="display:grid;place-items:center">×</span></div>
+          <div class="ajump" id="alJump"></div>
+          <div class="abody" id="alBody"></div>
+          <div class="afoot"><span class="price" id="alPrice"></span><button class="btn btn-main" type="button">Ask about this room</button></div>
+        </div>
+      </div>
+
+      <div class="why">
+        <h3>What changes in the data</h3>
+        <ul>
+          <li>Each home gets a list of <b>room types</b> (name, weekly price, availability, private or shared kitchen and bathroom).</li>
+          <li>Each room type gets its own <b>photos</b>, tagged as bedroom, kitchen, bathroom or living area. Amber already tags them this way.</li>
+          <li>Building photos (courtyard, common room, gym) sit once on the home, below the room photos.</li>
+          <li>Fully booked room types stay visible but are marked, so students can still see what the place is like.</li>
+        </ul>
+        <h3>Which one?</h3>
+        <ul>
+          <li><b>A</b> suits desktop: room type tabs and a big photo sit in the existing home panel, so nothing new opens over the map.</li>
+          <li><b>B</b> suits phones: the sheet stays short, and the full album only opens when someone taps a room. On the real site, phones would get B and desktops A.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  const ROOMS = [
+    { id: 'ensuite', name: 'Gold En Suite', price: '£160–185', unit: '/week', status: 'From 9 Jan 2027', ok: true,
+      facts: ['Private bathroom', 'Shared kitchen', 'Deposit £125'],
+      photos: [['ensuite-bedroom', 'Bedroom'], ['ensuite-bedroom2', 'Bedroom'], ['ensuite-bathroom', 'Bathroom'], ['ensuite-kitchen', 'Shared kitchen']] },
+    { id: '1bed', name: 'Gold 1 Bed Apartment', price: '£243', unit: '/week', status: 'Fully booked 26/27', ok: false,
+      facts: ['Private kitchen', 'Private bathroom', 'Living room', 'Couples welcome', 'Deposit £125'],
+      photos: [['1bed-bedroom', 'Bedroom'], ['1bed-living', 'Living room'], ['1bed-kitchen', 'Kitchen'], ['1bed-bathroom', 'Bathroom']] },
+    { id: '2bed', name: 'Silver 2 Bed Apartment', price: '£222', unit: '/week', status: 'Fully booked 26/27', ok: false,
+      facts: ['Private bathroom', 'Shared kitchen', 'Deposit £125'],
+      photos: [['2bed-bedroom', 'Bedroom'], ['2bed-kitchen', 'Kitchen'], ['2bed-bathroom', 'Bathroom']] }
+  ];
+  const src = p => 'photos/' + p + '.jpg';
+  const $ = id => document.getElementById(id);
+  const chipStatus = r => `<span class="chip ${r.ok ? 'ok' : 'full'}">${r.status}</span>`;
+
+  /* --- hand-drawn map backdrop --- */
+  function drawMap(svg, w, h, river) {
+    const roads = [];
+    for (let i = 0; i < 9; i++) { const y = h * (i + .5) / 9 + (i % 2 ? 12 : -8); roads.push(`M${river + 30} ${y} C ${w * .35} ${y - 30}, ${w * .65} ${y + 26}, ${w} ${y - 10}`); }
+    for (let i = 0; i < 7; i++) { const x = river + (w - river) * (i + .5) / 7; roads.push(`M${x} 0 C ${x + 24} ${h * .3}, ${x - 30} ${h * .7}, ${x + 10} ${h}`); }
+    svg.innerHTML = `
+      <rect width="${w}" height="${h}" fill="#e9dcbc"/>
+      <path d="M0 0 H${river - 20} C ${river + 18} ${h * .3}, ${river - 30} ${h * .65}, ${river - 6} ${h} H0Z" fill="#9fc6c9" stroke="#3b2a1a" stroke-width="2.5"/>
+      <path d="M${river * .3} ${h * .2} q 14 -8 28 0 t 28 0 M${river * .25} ${h * .55} q 14 -8 28 0 t 28 0" fill="none" stroke="#4f8f98" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="${w * .82}" cy="${h * .78}" rx="${w * .1}" ry="${h * .09}" fill="#b9cf9a" stroke="#3b2a1a" stroke-width="2"/>
+      <ellipse cx="${w * .9}" cy="${h * .16}" rx="${w * .07}" ry="${h * .07}" fill="#b9cf9a" stroke="#3b2a1a" stroke-width="2"/>
+      ${roads.map(d => `<path d="${d}" fill="none" stroke="#fffaf0" stroke-width="9" stroke-linecap="round"/><path d="${d}" fill="none" stroke="#c9b48d" stroke-width="1.5" stroke-dasharray="1 0"/>`).join('')}`;
+  }
+  drawMap(document.querySelector('.desk .map svg'), 1180, 680, 520);
+  drawMap(document.querySelector('.phone .map svg'), 380, 780, 70);
+
+  /* --- Mockup A --- */
+  let aRoom = 0, aPhoto = 0;
+  function renderA() {
+    const r = ROOMS[aRoom], p = r.photos[aPhoto];
+    $('aTabs').innerHTML = ROOMS.map((x, i) => `<button class="rtab" type="button" data-room="${i}" aria-pressed="${i === aRoom}"><b>${x.name}</b><small>${x.price}${x.unit} · ${x.photos.length} photos</small></button>`).join('');
+    const m = $('aMain'); m.querySelector('img').src = src(p[0]); m.querySelector('img').alt = `${r.name}: ${p[1]}`;
+    m.querySelector('figcaption').innerHTML = `<span>${p[1]}</span><span>${aPhoto + 1} / ${r.photos.length}</span>`;
+    $('aThumbs').innerHTML = r.photos.map((x, i) => `<button class="thumb" type="button" data-photo="${i}" aria-current="${i === aPhoto}" aria-label="${x[1]}"><img src="${src(x[0])}" alt=""><span>${x[1]}</span></button>`).join('');
+    $('aLine').innerHTML = `<span class="price">${r.price}<small>${r.unit}</small></span>${chipStatus(r)}`;
+    $('aFacts').innerHTML = r.facts.map(f => `<span class="chip">${f}</span>`).join('');
+    const pk = $('aPeek'); pk.querySelector('img').src = src(r.photos[0][0]); pk.querySelector('figcaption').innerHTML = `<span>${r.name.replace(' Apartment', ' Apt')}</span>`;
+  }
+  document.querySelector('.desk').addEventListener('click', e => {
+    const t = e.target.closest('[data-room],[data-photo],[data-step]'); if (!t) return;
+    if (t.dataset.room) { aRoom = +t.dataset.room; aPhoto = 0; }
+    else if (t.dataset.photo) aPhoto = +t.dataset.photo;
+    else { const n = ROOMS[aRoom].photos.length; aPhoto = (aPhoto + +t.dataset.step + n) % n; }
+    renderA();
+  });
+  renderA();
+
+  /* --- Mockup B --- */
+  $('bCards').innerHTML = ROOMS.map((r, i) => `<button class="rcard" type="button" data-open="${i}" aria-label="${r.name}, ${r.photos.length} photos">
+      <span class="stack"><span class="count">${r.photos.length} photos</span>${r.photos.slice(0, 3).reverse().map(p => `<img src="${src(p[0])}" alt="">`).join('')}</span>
+      <b>${r.name}</b><span class="meta"><span class="price">${r.price}<small>${r.unit}</small></span>${chipStatus(r)}</span></button>`).join('');
+  const album = $('album');
+  function openAlbum(i) {
+    const r = ROOMS[i], groups = {};
+    r.photos.forEach(p => { (groups[p[1]] = groups[p[1]] || []).push(p); });
+    $('alTitle').textContent = r.name;
+    const keys = Object.keys(groups);
+    $('alJump').innerHTML = keys.map((k, j) => `<button class="chip" type="button" data-jump="g${j}">${k} · ${groups[k].length}</button>`).join('');
+    $('alBody').innerHTML = keys.map((k, j) => `<h4 id="g${j}">${k}</h4>` + groups[k].map((p, n) => `<figure class="polaroid"><img src="${src(p[0])}" alt="${r.name}: ${k}"><figcaption><span>${k}</span><span>${n + 1}/${groups[k].length}</span></figcaption></figure>`).join('')).join('')
+      + `<div class="facts">${r.facts.map(f => `<span class="chip">${f}</span>`).join('')}</div>`;
+    $('alPrice').innerHTML = `${r.price}<small>${r.unit}</small>`;
+    $('alBody').scrollTop = 0; document.querySelectorAll('.rcard').forEach((c, j) => c.setAttribute('aria-pressed', j === i));
+  }
+  $('bCards').addEventListener('click', e => { const t = e.target.closest('[data-open]'); if (t) openAlbum(+t.dataset.open); });
+  $('alJump').addEventListener('click', e => { const t = e.target.closest('[data-jump]'); if (t) { const g = $(t.dataset.jump); $('alBody').scrollTop = g.offsetTop - $('alBody').offsetTop - 4; } });
+  openAlbum(0);
+})();
+</script>
+
+</body></html>

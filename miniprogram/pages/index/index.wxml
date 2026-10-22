@@ -1,0 +1,51 @@
+<view class="page">
+  <map id="map" class="map" latitude="{{lat}}" longitude="{{lng}}" scale="{{scale}}" markers="{{markers}}"
+       include-points="{{points}}" show-location show-scale enable-zoom enable-scroll
+       bindmarkertap="onMarkerTap" bindcallouttap="onCalloutTap"></map>
+  <view class="lang" bindtap="toggleLang">{{T.lang}}</view>
+
+  <view class="wrap">
+    <view wx:if="{{top.length}}" class="card topcard">
+      <view class="row between">
+        <view class="h2">{{T.yourTop3}}</view>
+        <view class="chip {{onlyTop ? 'on' : ''}}" bindtap="toggleOnlyTop">{{onlyTop ? T.showAll : 'Top 3'}}</view>
+      </view>
+      <view wx:if="{{topLabel}}" class="muted">{{topLabel}}</view>
+      <view class="row wrapflex" style="margin-top:12rpx">
+        <view wx:for="{{top}}" wx:key="n" class="chip on">★{{item.rank}} · {{item.n}} {{item.name}}</view>
+      </view>
+      <button class="btn small main" bindtap="goResult">{{T.viewResult}}</button>
+    </view>
+
+    <view class="row quizrow">
+      <view class="card quiz grow" bindtap="goLife"><view class="h2">🎭 {{T.lifeQuiz}}</view><view class="muted">{{T.lifeQuizSub}}</view></view>
+      <view class="card quiz grow" bindtap="goHome"><view class="h2">🏠 {{T.homeQuiz}}</view><view class="muted">{{T.homeQuizSub}}</view></view>
+    </view>
+
+    <view class="card">
+      <input class="search" placeholder="{{T.search}}" value="{{q}}" bindinput="onSearch" confirm-type="search" />
+      <view class="row wrapflex filters">
+        <picker range="{{budgetLabels}}" value="{{budgetIdx}}" bindchange="onBudget"><view class="chip {{budgetIdx ? 'on' : ''}}">{{T.budget}}：{{budgetLabels[budgetIdx]}} ▾</view></picker>
+        <picker range="{{roomLabels}}" value="{{roomIdx}}" bindchange="onRoom"><view class="chip {{roomIdx ? 'on' : ''}}">{{T.room}}：{{roomLabels[roomIdx]}} ▾</view></picker>
+        <picker range="{{walkLabels}}" value="{{walkIdx}}" bindchange="onWalk"><view class="chip {{walkIdx ? 'on' : ''}}">{{T.walk}}：{{walkLabels[walkIdx]}} ▾</view></picker>
+        <view class="chip {{favOnly ? 'on' : ''}}" bindtap="toggleFavOnly">♥ {{T.favOnly}}</view>
+      </view>
+      <view class="row between"><text class="muted">{{countText}}</text><text class="muted link" bindtap="resetFilters">{{T.reset}}</text></view>
+    </view>
+
+    <view wx:if="{{!homes.length}}" class="card muted">{{T.empty}}</view>
+    <view wx:for="{{homes}}" wx:key="id" class="card home" data-id="{{item.id}}" bindtap="openHome">
+      <view class="row">
+        <view class="num {{item.rank ? 'top' : ''}}">{{item.n}}</view>
+        <view class="grow">
+          <view class="name">{{item.name}}<text wx:if="{{item.rank}}" class="badge">★{{item.rank}}</text></view>
+          <view class="muted">{{item.area}} · {{item.walk}}</view>
+          <view class="price">{{item.price}}<text wx:if="{{item.soldOut}}" class="badge">{{T.soldOut}}</text></view>
+        </view>
+        <view class="fav" catchtap="toggleFav" data-id="{{item.id}}">{{item.fav ? '♥' : '♡'}}</view>
+      </view>
+    </view>
+    <view class="fine">{{T.mapNote}} {{T.priceNote}}</view>
+    <button class="btn" bindtap="goConsult">💬 {{T.consult}}</button>
+  </view>
+</view>
