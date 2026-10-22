@@ -1,0 +1,21 @@
+/* Share-card dialog, styled like the map's contact panel. */
+#hmRes .tools .sc-make { background: #f2c14e; border-color: #3b2a1a; font-weight: 700; }
+.sc-wrap { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: rgba(31, 24, 16, .55); padding: 16px; }
+.sc-wrap[hidden] { display: none; }
+.sc-box { position: relative; width: min(560px, 100%); max-height: 100%; overflow-y: auto; background: #fffaf0; color: #3b2a1a; border: 3px solid #3b2a1a; border-radius: 18px; padding: 14px 18px 18px; box-shadow: 0 14px 34px rgba(40, 28, 16, .3), 4px 5px 0 rgba(59, 42, 26, .22); display: flex; flex-direction: column; gap: 12px; }
+.sc-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.sc-head h3 { margin: 0; font-family: var(--display, cursive); font-weight: normal; font-size: 26px; line-height: 1.1; }
+.sc-head .x { width: 40px; height: 40px; border: 0; background: none; font-size: 28px; line-height: 1; color: #3b2a1a; cursor: pointer; flex: none; }
+.sc-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.sc-tab { border: 2px solid #3b2a1a; border-radius: 999px; padding: 3px 12px; background: #f8efd9; color: #3b2a1a; font-family: var(--hand, cursive); font-size: 16px; cursor: pointer; }
+.sc-tab[aria-pressed="true"] { background: #f2c14e; box-shadow: 2px 3px 0 #3b2a1a; }
+.sc-stage { position: relative; background: #e9dcbc; border: 2px dashed #b89b72; border-radius: 12px; padding: 10px; display: grid; place-items: center; }
+.sc-img { display: block; width: 100%; max-width: 380px; aspect-ratio: 4 / 5; object-fit: contain; border-radius: 6px; box-shadow: 0 8px 20px rgba(40, 28, 16, .25); background: #f1e4c3; }
+.sc-box.busy .sc-img { opacity: .5; }
+.sc-hold { margin: 0; font-size: 12px; color: #6e5538; text-align: center; }
+.sc-acts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.sc-btn { display: inline-flex; align-items: center; min-height: 40px; border: 2px solid #3b2a1a; border-radius: 10px; padding: 4px 14px; background: #fffaf0; color: #3b2a1a; font-family: var(--hand, cursive); font-size: 17px; text-decoration: none; cursor: pointer; }
+.sc-btn.main { background: #b5462f; color: #fff; box-shadow: 2px 3px 0 #3b2a1a; }
+.sc-btn[hidden] { display: none; }
+.sc-status { margin: 0; min-height: 1em; font-size: 12px; color: #1f7a4d; text-align: center; overflow-wrap: anywhere; }
+@media (max-width: 640px) { .sc-wrap { padding: 0; } .sc-box { height: 100%; border-radius: 0; border: 0; } }

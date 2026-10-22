@@ -1,0 +1,12 @@
+/* From web-original home-match-quiz.css: drag handles and the edge tab; extended to the side panels. */
+#lcPanel .lc-ph, #hmRes .phead, #controls[data-drag] .phead, #homesPanel[data-drag] .phead { cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+#lcPanel .lc-ph button, #hmRes .phead button, #controls[data-drag] .phead button, #homesPanel[data-drag] .phead button { cursor: pointer; touch-action: manipulation; }
+.pd-dragging { cursor: grabbing; box-shadow: 8px 10px 0 rgba(59,42,26,.22), 0 24px 50px rgba(31,22,12,.3) !important; }
+.pd-dragging .lc-ph, .pd-dragging .phead { cursor: grabbing; }
+.pd-anim { transition: left .22s ease, top .22s ease, transform .22s ease; }
+.pd-tab { position: fixed; z-index: 30; width: 30px; height: 64px; display: grid; place-items: center; padding: 0;
+  font: 16px/1 'Nunito', sans-serif; color: #3b2a1a; background: #f2c14e; border: 2.5px solid #3b2a1a; box-shadow: 3px 3px 0 rgba(59,42,26,.25); cursor: pointer; touch-action: none; }
+.pd-tab[hidden] { display: none; }
+.pd-tab.is-left { left: 0; border-left: 0; border-radius: 0 14px 14px 0; }
+.pd-tab.is-right { right: 0; border-right: 0; border-radius: 14px 0 0 14px; }
+@media (prefers-reduced-motion: reduce) { .pd-anim { transition: none; } }

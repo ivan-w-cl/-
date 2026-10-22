@@ -1,29 +1,52 @@
-/* "我要建群咨询" section in the contact panel; follows contact-demo.css colours. */
-.bh { margin-top: 16px; border: 1.5px solid #d9c7a1; border-radius: 14px; background: #fffdf7; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
-.bh .cd-section-title { margin: 0; }
-.bh-lead { font-size: 12.5px; color: #6e5538; line-height: 1.55; }
-.contact-demo .bh-want { align-self: flex-start; background: #b5462f; color: #fff; border: 2px solid #3b2a1a; border-radius: 10px; padding: 6px 14px; font-family: var(--hand, cursive); font-size: 17px; box-shadow: 2px 3px 0 #3b2a1a; }
-.bh-form { display: flex; flex-direction: column; gap: 10px; }
-.bh-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 10px; }
-.bh-field { display: flex; flex-direction: column; gap: 3px; font-size: 12px; font-weight: 700; color: #6e5538; min-width: 0; }
-.bh-field input, .bh-field select { font: inherit; font-weight: 400; font-size: 13.5px; color: #3b2a1a; border: 1.5px solid #b7a17d; border-radius: 9px; padding: 6px 8px; background: #fff; min-height: 36px; width: 100%; }
-.bh-row { display: flex; gap: 8px; justify-content: flex-end; align-items: center; }
-.bh-log { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-.bh-sys { align-self: stretch; text-align: center; font-size: 12px; color: #6e5538; border: 1.5px dashed #b7a17d; border-radius: 10px; padding: 6px 10px; }
-.bh-req { align-self: flex-end; max-width: 92%; display: flex; flex-direction: column; gap: 2px; background: #fbe3da; border: 1.5px solid #b5462f; border-radius: 12px 12px 3px 12px; padding: 7px 11px; font-size: 12.5px; }
-.bh-req b { font-family: var(--hand, cursive); font-weight: normal; font-size: 16px; }
-.bh-msg { max-width: 90%; background: #f2ead8; border-radius: 12px 12px 12px 3px; padding: 7px 11px; }
+/* 咨询 = 进群：对话框只保留进群；右下角的消息气泡。颜色沿用 contact-demo.css 和地图。 */
+.contact-demo.bh-only .cd-notice, .contact-demo.bh-only .cd-chat, .contact-demo.bh-only .cd-channels, .contact-demo.bh-only .cd-status { display: none !important; }
+.bh { margin-top: 14px; border: 1.5px solid #d9c7a1; border-radius: 14px; background: #fffdf7; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.bh-title { margin: 0; font-family: var(--display, cursive); font-weight: normal; font-size: 24px; line-height: 1.1; }
+.bh-lead { font-size: 13px; color: #6e5538; line-height: 1.6; }
+.contact-demo .bh-join { align-self: stretch; min-height: 52px; border: 2.5px solid #3b2a1a; border-radius: 14px; padding: 8px 16px; font-family: var(--hand, cursive); font-size: 21px; color: #fff; box-shadow: 3px 4px 0 #3b2a1a; }
+.contact-demo .bh-join.whatsapp { background: #1f7a4d; }
+.contact-demo .bh-join.wechat { background: #2a8a3e; }
+.contact-demo .bh-join:active { transform: translate(2px, 2px); box-shadow: 1px 2px 0 #3b2a1a; }
+.bh-via { font-size: 12px; color: #6e5538; text-align: center; }
+.contact-demo .bh-switch { min-height: 0; border: 0; background: none; padding: 0; color: #974128; text-decoration: underline; font-size: 12px; }
+.bh-log { display: flex; flex-direction: column; gap: 8px; align-items: stretch; }
+.bh-sys { text-align: center; font-size: 12px; color: #6e5538; border: 1.5px dashed #b7a17d; border-radius: 10px; padding: 6px 10px; }
+.bh-wait { font-family: var(--hand, cursive); font-size: 18px; text-align: center; }
+.bh-wait::after { content: ""; display: inline-block; width: 1.2em; text-align: left; animation: bh-dots 1.4s steps(4) infinite; }
+@keyframes bh-dots { 0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75% { content: "..."; } }
+.bh-msg { align-self: flex-start; max-width: 90%; background: #f2ead8; border-radius: 12px 12px 12px 3px; padding: 7px 11px; }
 .bh-msg p { font-size: 13px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
 .bh-who { display: block; font-size: 10px; font-weight: 700; color: #826b4b; margin-bottom: 2px; }
-.bh-wait { font-size: 12px; color: #826b4b; font-style: italic; }
-.bh-qr { position: relative; align-self: center; display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; background: #fff; border: 2.5px solid #3b2a1a; border-radius: 6px; padding: 16px 14px 12px; margin: 6px 0; max-width: 280px; transform: rotate(-.6deg); box-shadow: 0 10px 24px rgba(40, 28, 16, .2), 3px 4px 0 rgba(59, 42, 26, .2); }
+.bh-qr { position: relative; align-self: center; display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; background: #fff; border: 2.5px solid #3b2a1a; border-radius: 6px; padding: 16px 14px 12px; margin: 6px 0; max-width: 290px; transform: rotate(-.6deg); box-shadow: 0 10px 24px rgba(40, 28, 16, .2), 3px 4px 0 rgba(59, 42, 26, .2); }
 .bh-tape { position: absolute; width: 70px; height: 18px; background: rgba(242, 193, 78, .78); top: -9px; left: 50%; transform: translateX(-50%) rotate(-3deg); }
 .bh-qrtitle { font-family: var(--display, cursive); font-weight: normal; font-size: 21px; }
 .bh-chan { font-family: var(--hand, cursive); font-size: 14px; padding: 0 10px; border-radius: 999px; border: 2px solid currentColor; }
 .bh-qr.wa .bh-chan { color: #1f7a4d; background: #dcefe2; }
 .bh-qr.wx .bh-chan { color: #2a8a3e; background: #e1f3e4; }
 .bh-code { line-height: 0; }
-.bh-code svg { width: 168px; height: 168px; display: block; }
-.bh-small { font-size: 11.5px; color: #6e5538; line-height: 1.45; }
+.bh-code svg { width: 176px; height: 176px; display: block; }
+.bh-small { font-size: 11.5px; color: #6e5538; line-height: 1.45; text-align: center; }
 .contact-demo .bh-open { background: #1f7a4d; color: #fff; border: 2px solid #3b2a1a; border-radius: 10px; padding: 5px 14px; font-family: var(--hand, cursive); font-size: 16px; }
-@media (max-width: 520px) { .bh-grid { grid-template-columns: 1fr; } }
+
+/* floating reminder: drag anywhere; near a side edge it tucks into a tab */
+.bh-fab { position: fixed; z-index: 45; right: 18px; bottom: calc(96px + env(safe-area-inset-bottom, 0px)); display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px 8px 10px; border: 2.5px solid #3b2a1a; border-radius: 999px; background: #fffaf0; color: #3b2a1a; font-family: var(--hand, cursive); font-size: 16px; box-shadow: 3px 4px 0 rgba(59, 42, 26, .3), 0 10px 24px rgba(40, 28, 16, .2); cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+.bh-fab[hidden] { display: none; }
+.bh-fab.dragging { cursor: grabbing; box-shadow: 6px 8px 0 rgba(59, 42, 26, .25), 0 20px 40px rgba(31, 22, 12, .3); }
+.bh-fab:focus-visible { outline: 3px dashed #b5462f; outline-offset: 3px; }
+.bh-fab-ico { font-size: 18px; line-height: 1; }
+.bh-fab.waiting .bh-fab-label::after { content: "…"; }
+.bh-dot { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 10px; background: #b5462f; color: #fff; font: 800 12px/20px var(--body, sans-serif); text-align: center; border: 2px solid #fffaf0; }
+.bh-dot[hidden] { display: none; }
+.bh-fab:not(.docked) .bh-dot { position: absolute; top: -9px; right: -6px; }
+.bh-fab.docked { width: 30px; height: 64px; padding: 0; gap: 0; justify-content: center; flex-direction: column; background: #f2c14e; box-shadow: 3px 3px 0 rgba(59, 42, 26, .25); font: 16px/1 var(--body, sans-serif); }
+.bh-fab.docked.left { left: 0; border-left: 0; border-radius: 0 14px 14px 0; }
+.bh-fab.docked.right { right: 0; border-right: 0; border-radius: 14px 0 0 14px; }
+.bh-fab.docked .bh-fab-label { display: none; }
+.bh-fab.docked .bh-fab-ico { font-size: 15px; }
+.bh-fab.docked .bh-dot { position: absolute; top: -8px; min-width: 18px; height: 18px; line-height: 18px; padding: 0 4px; font-size: 11px; }
+.bh-fab.docked.left .bh-dot { right: -10px; }
+.bh-fab.docked.right .bh-dot { left: -10px; }
+.bh-tip { position: fixed; z-index: 46; display: flex; align-items: center; gap: 8px; max-width: min(320px, calc(100vw - 16px)); background: #3b2a1a; color: #fffaf0; border-radius: 12px; padding: 8px 8px 8px 12px; font-size: 13px; box-shadow: 0 10px 24px rgba(40, 28, 16, .3); }
+.bh-tip[hidden] { display: none; }
+.bh-tip-open { flex: none; border: 2px solid #fffaf0; background: #b5462f; color: #fff; border-radius: 8px; padding: 3px 10px; font-family: var(--hand, cursive); font-size: 15px; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { .bh-wait::after { animation: none; content: "…"; } }

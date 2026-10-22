@@ -1,0 +1,21 @@
+/* The list opens inline (inside the scrolling subject panel) so it is never clipped.
+   Hand-drawn dropdown for "我的专业" (same ink, paper and coral as the map's panels). */
+.fs-native { position: absolute !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important; overflow: hidden; clip: rect(0 0 0 0); }
+.fs { position: relative; width: 100%; }
+.fs-btn { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; min-height: 48px; padding: 8px 12px 8px 14px; border: 2px solid var(--ink, #3b2a1a); border-radius: 12px; background: #fff; color: var(--ink, #3b2a1a); font: 600 15px var(--body, sans-serif); text-align: left; cursor: pointer; box-shadow: 2px 3px 0 rgba(59, 42, 26, .15); }
+.fs-btn:focus-visible { outline: 3px dashed #b5462f; outline-offset: 2px; }
+.fs-btn.fs-empty .fs-text { color: #8a7458; font-weight: 400; }
+.fs-text { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fs-caret { flex: none; font-size: 14px; transition: transform .15s; }
+.fs.open .fs-caret { transform: rotate(180deg); }
+.fs-list { position: relative; z-index: 2; margin-top: 6px; max-height: 320px; overflow-y: auto; overscroll-behavior: contain; padding: 6px; background: #fffaf0; border: 2px solid var(--ink, #3b2a1a); border-radius: 14px; box-shadow: 0 14px 34px rgba(40, 28, 16, .24), 3px 4px 0 rgba(59, 42, 26, .2); outline: none; scrollbar-width: thin; }
+.fs-list[hidden] { display: none; }
+.fs-group { margin: 8px 6px 4px; padding-top: 6px; border-top: 1.5px dashed #dcc8a0; font-family: var(--hand, cursive); font-size: 14px; letter-spacing: .04em; color: #b5462f; }
+.fs-group:first-child { margin-top: 2px; border-top: 0; padding-top: 0; }
+.fs-opt { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 7px 10px; border-radius: 10px; font-size: 14.5px; line-height: 1.35; cursor: pointer; }
+.fs-opt.fs-placeholder { color: #8a7458; }
+.fs-opt.active { background: #f8efd9; }
+.fs-opt[aria-selected="true"] { background: #f2c14e; font-weight: 700; }
+.fs-opt[aria-selected="true"]::after { content: "✓"; margin-left: auto; }
+.fs-opt[aria-disabled="true"] { opacity: .45; cursor: default; }
+@media (prefers-reduced-motion: reduce) { .fs-caret { transition: none; } }

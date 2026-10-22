@@ -54,7 +54,7 @@
       else if (m.type === 'home') { const h = HM.byId(m.homeId), r = m.room != null ? D.roomsFor(h).types[m.room] : null, cover = D.coverPhoto(h);
         body = `<div class="ctxcard">${cover ? `<img src="${cover}" alt="">` : `<span class="hc-num">${h.n}</span>`}<span><span class="fine">${esc(A.viewed)}</span><b>${h.n} · ${esc(h.name)}</b><span>${r ? esc(r.name + ' · ' + r.price + '/wk') : esc(U.fromPrice(h, lg))}</span></span></div>`; }
       else if (m.type === 'request') body = `<div class="bubble req"><b>🙋 ${esc(A.newReq)}</b>${reqLines(c)}</div>`;
-      else if (m.type === 'qr') body = c.group ? `<div class="bubble qrmini"><div class="qr">${U.qrSvg(c.group.link, 2)}</div><span><b>${esc(c.group.name)}</b><br><span class="fine">${esc(U.L(D.CHANNELS[c.group.channel], lg))} · ${esc(U.L(D.TEAMS.find(x => x.id === c.group.team).name, lg))}</span></span></div>` : '';
+      else if (m.type === 'qr') body = c.group ? `<div class="bubble qrmini"><div class="qr">${U.qrSvg(c.group.link, 2)}</div><span><b>${esc(c.group.name)}</b><br><span class="fine">${esc(U.L(D.CHANNELS[c.group.channel], lg))} · ${esc(U.L(D.TEAMS.find(x => x.id === c.group.team).name, lg))}${c.group.auto ? (lg === 'en' ? ' · sent from the pre-built pool' : ' · 预建群池自动派发') : ''}</span></span></div>` : '';
       else body = `<div class="bubble">${esc(m.text)}</div>`;
       return `<div class="msg ${side}">${body}<time>${U.clock(m.at)} · ${esc(U.ago(m.at, lg))}</time></div>`;
     }).join('');
@@ -73,6 +73,7 @@
   function reqLines(c) {
     const q = c.request; if (!q) return '';
     const lg = lang(), T = U.T(lg);
+    if (q.oneTap) return `<span>${esc(lg === 'en' ? 'One tap, no details asked' : '一键进群，未填资料')} · ${esc(U.L(D.CHANNELS[q.channel], lg))}</span>${q.homeName ? `<span>${esc(lg === 'en' ? 'From: ' : '来自：')}${esc(q.homeName)}</span>` : ''}`;
     return `<span>${esc(q.name)} · ${esc(q.intake)} · ${esc(U.campusName(q.uni, lg))}</span><span>${q.budget ? '≤ £' + q.budget + esc(T.perWeek) : esc(T.any)} · ${esc(T[q.room] || '')} · ${esc(U.L(D.CHANNELS[q.channel], lg))}</span>`;
   }
   function context() {

@@ -13,6 +13,10 @@
   body { display: flex; flex-direction: column; height: 100%; }
   .wrapA { flex: 1; min-height: 0; display: flex; padding-block: 12px 16px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
   .wrapA .adminframe { flex: 1; height: auto; max-height: none; min-height: 0; }
+  .pool { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px; background: rgba(255,250,240,.12); border: 1.5px dashed var(--panel); border-radius: 12px; padding: 3px 10px; }
+  .pool b { font-family: var(--hand); font-weight: normal; font-size: 16px; }
+  .pool label { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
+  .pool button { border: 2px solid var(--panel); background: transparent; color: var(--panel); border-radius: 999px; padding: 2px 10px; font-family: var(--hand); font-size: 14px; cursor: pointer; }
   .demobar a { color: var(--panel); font-family: var(--hand); font-size: 15px; border: 2px solid var(--panel); border-radius: 999px; padding: 3px 12px; text-decoration: none; }
   body.embed .demobar { display: none; }
   body.embed .wrapA { padding: 0; }
@@ -27,6 +31,7 @@
 <script src="./adviser/core.js"></script>
 <script src="./adviser/data.js"></script>
 <script src="./adviser/ui.js"></script>
+<script src="./group-pool.js"></script>
 <script src="./adviser/store-live.js"></script>
 <script src="./adviser/admin.js"></script>
 <script>
@@ -35,26 +40,34 @@
   const Store = window.Store, U = window.UI, bar = document.getElementById('bar');
   if (/[?&]embed=1/.test(location.search)) document.body.classList.add('embed');
   let armed = false;
-  const C = { zh: { brand: 'Liverpool Student Map', tag: '顾问后台', site: '打开学生网站', flow: '两端流程演示', lang: 'EN', reset: '重置演示数据', confirm: '确定重置？', done: '演示数据已重置' },
-              en: { brand: 'Liverpool Student Map', tag: 'Adviser console', site: 'Open student site', flow: 'Two-sided walkthrough', lang: '中文', reset: 'Reset demo', confirm: 'Really reset?', done: 'Demo data reset' } };
+  const C = { zh: { brand: 'Liverpool Student Map', tag: '顾问后台', site: '打开学生网站', flow: '两端流程演示', lang: 'EN', reset: '重置演示数据', confirm: '确定重置？', done: '演示数据已重置',
+                     pool: '预建群池', auto: '学生点击后自动派发', left: 'WhatsApp {a} 个 · 微信 {b} 个', refill: '补充 5 组', refilled: '已补充 5 个 WhatsApp 群和 5 个微信群' },
+              en: { brand: 'Liverpool Student Map', tag: 'Adviser console', site: 'Open student site', flow: 'Two-sided walkthrough', lang: '中文', reset: 'Reset demo', confirm: 'Really reset?', done: 'Demo data reset',
+                     pool: 'Pre-built groups', auto: 'Send automatically on tap', left: 'WhatsApp {a} · WeChat {b}', refill: 'Add 5 of each', refilled: 'Added 5 WhatsApp and 5 WeChat groups' } };
   const c = () => C[Store.s.demoLang === 'en' ? 'en' : 'zh'];
   function renderBar() {
     const k = c();
+    const P = window.GroupPool.load();
     bar.innerHTML = `<span class="brand">${k.brand} <small>${k.tag}</small></span>
+      <div class="pool"><b>${k.pool}</b><label><input type="checkbox" id="poolAuto" ${P.auto ? 'checked' : ''}> ${k.auto}</label>
+        <span>${k.left.replace('{a}', window.GroupPool.count('whatsapp')).replace('{b}', window.GroupPool.count('wechat'))}</span><button data-act="refill">${k.refill}</button></div>
       <div class="tools"><a href="./index.html" target="_blank" rel="noopener">${k.site}</a><a href="./handoff-demo.html">${k.flow}</a>
       <button data-act="lang">${k.lang}</button><button data-act="reset" class="${armed ? 'warn' : ''}">${armed ? k.confirm : k.reset}</button></div>`;
   }
   bar.addEventListener('click', e => {
     const b = e.target.closest('button'); if (!b) return;
     if (b.dataset.act === 'lang') { Store.s.demoLang = Store.s.demoLang === 'en' ? 'zh' : 'en'; Store.save(); renderBar(); window.Admin.render(); }
+    if (b.dataset.act === 'refill') { window.GroupPool.refill(5); renderBar(); U.toast(c().refilled); return; }
     if (b.dataset.act === 'reset') {
       if (!armed) { armed = true; renderBar(); setTimeout(() => { armed = false; renderBar(); }, 3500); return; }
-      armed = false; Store.reset(); window.Admin.reset(); window.Admin.render(); renderBar(); U.toast(c().done);
+      armed = false; window.GroupPool.reset(); Store.reset(); window.Admin.reset(); window.Admin.render(); renderBar(); U.toast(c().done);
     }
   });
+  bar.addEventListener('change', e => { if (e.target.id === 'poolAuto') { window.GroupPool.setAuto(e.target.checked); renderBar(); } });
+  addEventListener('storage', e => { if (e.key === window.GroupPool.KEY) renderBar(); });
   function badge() { const n = Store.s.notices.filter(x => !x.seen).length; document.title = (n ? '(' + n + ') ' : '') + (Store.s.demoLang === 'en' ? 'Adviser console' : '顾问后台') + ' · Liverpool Student Map'; }
   window.Admin.mount(document.getElementById('admin'));
-  Store.on(() => { window.Admin.refresh(); badge(); });
+  Store.on(() => { window.Admin.refresh(); badge(); renderBar(); });
   renderBar(); badge();
 })();
 </script>
