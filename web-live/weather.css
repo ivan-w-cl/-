@@ -1,0 +1,44 @@
+/* 利物浦实时天气：标签、详情卡和地图上的天气效果。颜色沿用地图的纸张和墨水色。 */
+.wx-chip { z-index: 11; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 9px; border: 2.5px solid var(--ink); border-radius: 16px;
+  background: var(--panel); color: var(--ink); box-shadow: var(--lift); cursor: pointer; font: 14px/1.2 var(--body); text-align: left; max-width: calc(100vw - 20px); }
+.wx-chip:focus-visible, .wx-pop button:focus-visible { outline: 3px dashed #b5462f; outline-offset: 3px; }
+.wx-chip svg { flex: none; }
+.wx-txt { display: flex; flex-direction: column; min-width: 0; }
+.wx-l1 { font-size: 11.5px; color: var(--ink-soft, #6e5538); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.wx-l2 { font-family: var(--hand); font-size: 17px; white-space: nowrap; }
+.wx-l2 b { font: 800 18px var(--body); }
+.wx-l2 i { font-style: normal; font-size: 13px; color: #b5462f; }
+.wx-pop { z-index: 12; width: min(300px, calc(100vw - 20px)); display: flex; flex-direction: column; gap: 8px; padding: 12px 14px 14px; border: 2.5px solid var(--ink); border-radius: 16px;
+  background: var(--panel); color: var(--ink); box-shadow: var(--lift); font: 13.5px/1.5 var(--body); }
+.wx-ph { display: flex; align-items: center; gap: 8px; }
+.wx-ph b { flex: 1; font: normal 19px/1.15 var(--hand); }
+.wx-x { border: 0; background: none; color: var(--ink); font-size: 24px; line-height: 1; cursor: pointer; padding: 0 2px; }
+.wx-tip { margin: 0; font-family: var(--hand); font-size: 16px; background: rgba(242, 193, 78, .25); border-radius: 10px; padding: 5px 9px; }
+.wx-pop dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; font-variant-numeric: tabular-nums; }
+.wx-pop dt { color: var(--ink-soft, #6e5538); }
+.wx-pop dd { margin: 0; font-weight: 700; }
+.wx-pop dd span { font-weight: 400; color: var(--ink-soft, #6e5538); }
+.wx-src { margin: 0; font-size: 11.5px; color: var(--ink-soft, #6e5538); }
+.wx-next { align-self: flex-start; border: 2px solid var(--ink); background: transparent; color: var(--ink); border-radius: 999px; padding: 2px 12px; font: 15px var(--hand); cursor: pointer; }
+
+/* 地图上的效果层：不挡点击，在面板下面 */
+.wx-fx { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; transition: background-color 1.2s; }
+.wx-fx::before, .wx-fx::after { content: ""; position: absolute; inset: -40px; opacity: 0; transition: opacity 1.2s; }
+.app.wx-night .wx-fx { background-color: rgba(28, 36, 72, .16); }
+.app.wx-cloudy .cloud { opacity: .72; filter: grayscale(.35) brightness(.94) drop-shadow(16px 26px 0 rgba(59,42,26,.08)); }
+.app.wx-windy .cloud { animation-duration: 55s !important; }
+.app.wx-fog .wx-fx::before { opacity: 1; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255,.18) 45%, rgba(255,255,255,.45)); }
+.app.wx-rain .wx-fx::before, .app.wx-storm .wx-fx::before, .app.wx-drizzle .wx-fx::before {
+  opacity: .5; background-image: repeating-linear-gradient(105deg, transparent 0 22px, rgba(61, 127, 166, .55) 22px 23.5px, transparent 23.5px 47px),
+    repeating-linear-gradient(100deg, transparent 0 37px, rgba(61, 127, 166, .4) 37px 38px, transparent 38px 71px);
+  background-size: 140px 70px, 190px 95px; animation: wx-rain .55s linear infinite; }
+.app.wx-drizzle .wx-fx::before { opacity: .28; animation-duration: .9s; }
+.app.wx-storm .wx-fx::after { opacity: 0; background: #fffbe6; animation: wx-flash 9s infinite; }
+.app.wx-snow .wx-fx::before { opacity: .9; background-image: radial-gradient(circle, #fff 0 2px, transparent 2.6px), radial-gradient(circle, rgba(255,255,255,.85) 0 1.4px, transparent 2px);
+  background-size: 90px 90px, 55px 55px; background-position: 0 0, 25px 30px; animation: wx-snow 9s linear infinite; }
+@keyframes wx-rain { to { background-position: -30px 70px, -25px 95px; } }
+@keyframes wx-snow { to { background-position: 30px 90px, 0 140px; } }
+@keyframes wx-flash { 0%, 91%, 94%, 100% { opacity: 0; } 92%, 93.5% { opacity: .35; } }
+/* 暂停动画、拖动地图时、系统要求减少动态时都停下 */
+.app.still .wx-fx::before, .app.still .wx-fx::after, .app.interacting .wx-fx::before { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .wx-fx::before, .wx-fx::after { animation: none !important; } .app.wx-storm .wx-fx::after { opacity: 0; } }

@@ -365,6 +365,7 @@
 <link rel="stylesheet" href="./life-map-embed.css">
 <link rel="stylesheet" href="./room-photos.css">
 <link rel="stylesheet" href="./booking-handoff.css">
+<link rel="stylesheet" href="./weather.css">
 <link rel="stylesheet" href="./panel-drag.css">
 <link rel="stylesheet" href="./fancy-select.css">
 <link rel="stylesheet" href="./share-cards.css">
@@ -2127,7 +2128,7 @@ const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 layoutStage();
 if (isNarrow()) viewStudents(false); else render(false);
 if (reduced) { ferry.setAttribute('transform', `translate(${FA[0]} ${FA[1]})`); setRunning(false); }
-else setRunning(!isNarrow() && !touchOnly.matches);
+else setRunning(true);   // 手机上也播放：车、渡轮和海鸥（拖动地图时会自动暂停）
 
 /* ---------- language switching ---------- */
 function renderZoneKey() {
@@ -2206,4 +2207,6 @@ initHomeUI();
 <script src="./pick-focus.js" defer=""></script>
 <script src="./fun-quizzes.js" defer=""></script>
 <script src="./demo-links.js" defer=""></script>
+<script src="./map-life.js" defer=""></script>
+<script src="./weather.js" defer=""></script>
 </body></html>
