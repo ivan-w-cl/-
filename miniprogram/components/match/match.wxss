@@ -1,0 +1,86 @@
+/* 网页 home-match.css（手机布局 + 中文版字体）+ rank-compare.css 的一眼对比 */
+.hm-wrap, .hm-res { --display: 'ZCOOL KuaiLe', 'PingFang SC', sans-serif; --hand: 'ZCOOL KuaiLe', 'PingFang SC', sans-serif; --body: 'PingFang SC', -apple-system, sans-serif; font-family: var(--body); }
+.hm-wrap { position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 45; display: flex; align-items: flex-start; justify-content: center; background: rgba(31, 22, 12, .34);
+  padding: 14px 14px max(14px, env(safe-area-inset-bottom)); }
+.hm { position: relative; width: 100%; max-width: 640px; max-height: 100%; background: #fffaf0; color: #3b2a1a; border: 3px solid #3b2a1a; border-radius: 18px; box-shadow: var(--lift-hi);
+  display: flex; flex-direction: column; margin-top: 12px; animation: lift .26s cubic-bezier(.2, .9, .3, 1.2) both; }
+@keyframes lift { from { transform: translateY(18px) scale(.97); opacity: 0; } to { transform: none; opacity: 1; } }
+.hm-tape { position: absolute; top: -12px; left: 50%; width: 110px; height: 24px; transform: translateX(-50%) rotate(2deg); background: rgba(242, 193, 78, .75); border: 1px solid rgba(122, 90, 18, .3); }
+.hm .x { position: absolute; z-index: 2; top: 4px; right: 4px; width: 44px; height: 44px; font-size: 28px; line-height: 44px; text-align: center; }
+.hm-scroll { max-height: calc(100vh - 140px); }
+.hm-intro { display: flex; flex-direction: column; gap: 10px; padding: 18px 14px 14px; }
+.hm-top { display: flex; align-items: center; gap: 10px; padding-right: 36px; }
+.hm-dots { display: flex; gap: 5px; flex-wrap: wrap; }
+.hm-dots .dot { width: 16px; height: 8px; border-radius: 6px; border: 1.5px solid #3b2a1a; background: #fffaf0; }
+.hm-dots .dot.on { background: #b5462f; }
+.hm-step { font-family: var(--hand); font-size: 16px; color: #6e5538; }
+.h2 { font-family: var(--display); font-size: 24px; line-height: 1.35; padding-right: 20px; }
+.lede { font-size: 14px; line-height: 1.8; color: #6e5538; }
+.hint2 { font-size: 13px; line-height: 1.6; color: #6e5538; }
+.hm-opts { display: flex; flex-direction: column; gap: 8px; }
+.hm-opt { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 16px; border: 2px solid #3b2a1a; background: #fffaf0; box-shadow: 3px 3px 0 rgba(59, 42, 26, .18); }
+.hm-opt .e { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 2px solid #3b2a1a; display: flex; align-items: center; justify-content: center; font-size: 21px; background: #f8efd9; }
+.hm-opt .ot { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hm-opt .b { font-family: var(--hand); font-size: 18px; line-height: 1.45; }
+.hm-opt .s { font-size: 12.5px; line-height: 1.5; color: #6e5538; }
+.hm-opt.on { background: #fbe3cf; border-color: #b5462f; box-shadow: 3px 3px 0 #b5462f; }
+.hm-opt.on .e { background: #b5462f; border-color: #3b2a1a; }
+.hm-foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.hm-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.hm-btn { font-family: var(--hand); font-size: 19px; min-height: 44px; display: flex; align-items: center; padding: 6px 18px; border-radius: 12px; border: 2px solid #3b2a1a; background: #b5462f; color: #fff; box-shadow: 3px 3px 0 rgba(59, 42, 26, .25); }
+.hm-btn.alt { background: #fffaf0; color: #3b2a1a; }
+.hm-btn.off { opacity: .45; }
+.hm-link { padding: 4px 2px; font-size: 13.5px; text-decoration: underline; color: #6e5538; min-height: 44px; display: flex; align-items: center; }
+.hm-doodles { display: flex; gap: 8px; flex-wrap: wrap; }
+.hm-doodles text { font-size: 12px; line-height: 1.7; padding: 3px 10px; border-radius: 999px; border: 1.5px dashed #b89b72; background: #f8efd9; }
+.hm-note { font-size: 12px; line-height: 1.65; color: #8a7458; }
+
+/* 选房卡：手机上在底部按钮上面 */
+.hm-res { position: fixed; left: 8px; right: 8px; bottom: calc(66px + env(safe-area-inset-bottom)); z-index: 19; max-height: 48vh; border: 2px solid var(--ink); border-radius: 18px;
+  display: flex; flex-direction: column; }
+.hm-res.mini { max-height: 68px; }
+.hm-res .phead { padding: 6px 8px; gap: 5px; display: flex; align-items: center; justify-content: space-between; }
+.hm-res .phead .h2 { font-size: 17px; line-height: 1.4; padding-right: 0; }
+.hm-res .hb { display: flex; gap: 5px; }
+.hm-res .pbtn { padding: 3px 8px; font-size: 12px; min-height: 30px; display: flex; align-items: center; }
+.hm-res .pbody { flex: 1; min-height: 0; height: 40vh; padding: 0 12px; box-sizing: border-box; }
+.persona { position: relative; padding: 10px 12px 10px 64px; border: 2px dashed #b89b72; border-radius: 14px; background: #f8efd9; min-height: 64px; margin-bottom: 10px; }
+.persona .stamp { position: absolute; left: 8px; top: 8px; width: 46px; height: 46px; border-radius: 50%; border: 2.5px solid #b5462f; color: #b5462f; display: flex; align-items: center; justify-content: center;
+  font-size: 22px; transform: rotate(-8deg); background: #fffaf0; }
+.persona .k { display: block; font-size: 11px; font-weight: 700; letter-spacing: .07em; color: #6e5538; }
+.persona .b { display: block; font-family: var(--display); font-size: 23px; line-height: 1.4; color: #3b2a1a; }
+.persona .p { margin-top: 3px; font-size: 12.5px; color: #6e5538; line-height: 1.65; }
+.srcnote2 { font-size: 11.5px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 10px; }
+.mcard { border: 2px solid #3b2a1a; border-radius: 16px; background: #fffaf0; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; box-shadow: 3px 3px 0 rgba(59, 42, 26, .16); margin-bottom: 10px; }
+.mcard.top { border-width: 3px; box-shadow: 4px 4px 0 #b5462f; }
+.mcard.on { outline: 3px dashed #b5462f; outline-offset: 3px; }
+.mhead { display: flex; gap: 8px; align-items: flex-start; }
+.mnum { flex: none; width: 32px; height: 32px; border-radius: 50%; border: 2px solid #3b2a1a; background: #b5462f; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; }
+.mcard:not(.top) .mnum { background: #f2c14e; color: #3b2a1a; }
+.mh { min-width: 0; }
+.mkicker { font-family: var(--hand); font-size: 15px; color: #b5462f; line-height: 1.6; }
+.mcard .h3 { font-family: 'Nunito', 'PingFang SC', sans-serif; font-size: 21px; line-height: 1.25; }
+.mmeta { font-size: 12.5px; color: #6e5538; line-height: 1.65; }
+.fits { font-size: 12px; line-height: 1.6; font-weight: 600; color: #2f7a33; }
+.why2 { display: flex; flex-direction: column; gap: 4px; font-size: 13.5px; line-height: 1.65; }
+.why2 .li { display: flex; gap: 4px; }
+.why2 .ico { flex: none; width: 22px; }
+.why2 .trade { color: #8a4b16; }
+.mprice { font-size: 13px; }
+.macts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.mb2 { font-size: 12px; font-weight: 600; line-height: 1.4; min-height: 36px; display: flex; align-items: center; padding: 3px 11px; border-radius: 10px; border: 2px solid #3b2a1a; background: #fffaf0; color: #3b2a1a; }
+.mb2.cta2 { background: #b5462f; color: #fff; }
+.tools { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+.tb { font-size: 12px; font-weight: 600; line-height: 1.4; min-height: 36px; display: flex; align-items: center; padding: 4px 12px; border-radius: 999px; border: 2px solid var(--ink); background: var(--panel-2); color: var(--ink); }
+.hm-empty { padding: 14px 0; line-height: 1.7; }
+.hm-empty .h3 { font-size: 17px; font-weight: 700; }
+.pc-box { display: flex; flex-direction: column; gap: 10px; margin: 4px 0 12px; padding: 12px; border: 2.5px solid var(--ink); border-radius: 14px; background: #fff3c4; box-shadow: 3px 4px 0 rgba(59, 42, 26, .2); }
+.pc-h { font-family: var(--hand); font-size: 19px; line-height: 1.15; }
+.pc-cols { display: flex; gap: 6px; }
+.pc-col { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: 7px 8px; border: 1.5px solid #dcc8a0; border-radius: 10px; background: #fffaf0; font-size: 12px; line-height: 1.35; }
+.pc-col.top { border-color: #b5462f; }
+.pc-name { font-size: 13px; font-weight: 700; word-break: break-word; }
+.pc-rank { width: 20px; height: 20px; border-radius: 50%; background: #b5462f; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 11.5px; }
+.pc-v { color: #6e5538; }
+.pc-go { min-height: 44px; display: flex; align-items: center; justify-content: center; border: 2.5px solid var(--ink); border-radius: 12px; background: #b5462f; color: #fff; font-family: var(--hand); font-size: 18px; box-shadow: 2px 3px 0 #3b2a1a; }
+.pad-bottom { height: 16px; }

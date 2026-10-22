@@ -82,9 +82,9 @@ const runtime = function () {
   const tpl = parse(WXML);
   const compTpl = {}; for (const k in COMPS) compTpl[k] = parse(COMPS[k].wxml);
   const fnCache = {};
-  const ev = (expr, scope) => { const f = fnCache[expr] || (fnCache[expr] = new Function('__s', 'with(__s){return (' + expr + ')}')); try { return f(scope); } catch (e) { return undefined; } };
+  const ev = (expr, scope) => { let f = fnCache[expr]; if (!f) { try { f = new Function('__s', 'with(__s){return (' + expr + ')}'); } catch (e) { console.error('WXML expr: ' + expr); f = () => undefined; } fnCache[expr] = f; } try { return f(scope); } catch (e) { return undefined; } };
   const interp = (str, scope) => {
-    const m = str.match(/^\s*\{\{([\s\S]*?)\}\}\s*$/); if (m) return ev(m[1], scope);
+    const m = str.match(/^\s*\{\{([\s\S]*?)\}\}\s*$/); if (m && !m[1].includes('}}')) return ev(m[1], scope);
     return str.replace(/\{\{([\s\S]*?)\}\}/g, (_, e) => { const v = ev(e, scope); return v == null ? '' : v; });
   };
   const TAG = { view: 'div', text: 'span', image: 'img', 'scroll-view': 'div', canvas: 'canvas', input: 'input', button: 'button' };
@@ -136,7 +136,7 @@ const runtime = function () {
     out.push(el);
   }
   /* 自定义组件：每个组件一个持久实例，属性变了就跑 observers */
-  const insts = {};
+  const insts = {}, byId = {}; let rendering = false;
   let compSeq = 0;
   function renderComp(tag, n, scope, owner) {
     const key = tag + '#' + (compSeq++);
@@ -147,18 +147,21 @@ const runtime = function () {
       Object.entries(def.properties || {}).forEach(([k, v]) => { inst.data[k] = v && typeof v === 'object' && 'value' in v ? v.value : null; });
       Object.assign(inst.data, JSON.parse(JSON.stringify(def.data || {})));
       Object.entries(def.methods || {}).forEach(([k, f]) => { inst[k] = f; });
-      inst.setData = (obj, cb) => { for (const k in obj) setPath(inst.data, k, obj[k]); paint(); cb && setTimeout(cb); };
+      inst.setData = (obj, cb) => { for (const k in obj) setPath(inst.data, k, obj[k]); if (rendering) { if (!queued) { queued = true; setTimeout(paint); } } else paint(); cb && setTimeout(cb); };
       inst.triggerEvent = (name, detail) => { const h = inst.__binds[name]; const o = inst.__owner; if (h && o[h]) o[h].call(o, { detail: detail || {} }); };
       inst.createSelectorQuery = () => { const q = { select: sel => ({ fields: () => ({ exec: cb => setTimeout(() => { const el = inst.__el && inst.__el.querySelector(sel); if (!el) return cb([null]); const r = el.getBoundingClientRect(); el.requestAnimationFrame = f => requestAnimationFrame(f); cb([{ node: el, width: r.width, height: r.height }]); }) }) }) }; return q; };
-      setTimeout(() => { def.lifetimes && def.lifetimes.attached && def.lifetimes.attached.call(inst); });
+      inst.__attach = true;
     }
+    const cid = n.getAttribute('id'); if (cid) byId['#' + cid] = inst;
     const changed = [];
     for (const a of n.attributes) {
+      if (a.name === 'id') continue;
       const m = a.name.match(/^bind:?(\w+)$/); if (m) { inst.__binds[m[1]] = a.value; continue; }
       if (/^wx:|^class$|^style$/.test(a.name)) continue;
       const prop = a.name.replace(/-(\w)/g, (_, c) => c.toUpperCase()), v = interp(a.value, scope);
       if (JSON.stringify(inst.__props[prop]) !== JSON.stringify(v)) { inst.__props[prop] = v; inst.data[prop] = v; changed.push(prop); }
     }
+    if (inst.__attach) { inst.__attach = false; def.lifetimes && def.lifetimes.attached && def.lifetimes.attached.call(inst); }
     if (changed.length && def.observers) Object.entries(def.observers).forEach(([keys, f]) => { const ks = keys.split(',').map(x => x.trim()); if (ks.some(x => changed.includes(x))) setTimeout(() => f.apply(inst, ks.map(x => inst.data[x]))); });
     const root = document.createElement('div'); root.className = 'wx-comp wx-' + tag;
     const kids = []; renderList(compTpl[tag].childNodes, inst.data, kids, inst); kids.forEach(k => root.appendChild(k));
@@ -188,7 +191,7 @@ const runtime = function () {
   let queued = false;
   function paint() {
     queued = false; const root = document.getElementById('wx-root'); const out = [];
-    compSeq = 0; renderList(tpl.childNodes, page.data, out, page); root.replaceChildren(...out);
+    compSeq = 0; rendering = true; try { renderList(tpl.childNodes, page.data, out, page); } finally { rendering = false; } root.replaceChildren(...out);
   }
   /* ---------- App / Page ---------- */
   let appInst;
@@ -199,6 +202,7 @@ const runtime = function () {
   const setPath = (obj, key, val) => { const parts = key.replace(/\[(\d+)\]/g, '.$1').split('.'); let o = obj; parts.slice(0, -1).forEach(p => { if (o[p] == null || typeof o[p] !== 'object') o[p] = {}; o = o[p]; }); o[parts[parts.length - 1]] = val; };
   window.Page = def => {
     page = Object.assign({}, def); page.data = JSON.parse(JSON.stringify(def.data || {}));
+    page.selectComponent = sel => byId[sel] || null;
     page.setData = (obj, cb) => { for (const k in obj) setPath(page.data, k, obj[k]); paint(); cb && cb(); };
     window.__page = page;
   };

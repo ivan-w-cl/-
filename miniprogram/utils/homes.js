@@ -8,7 +8,7 @@ const LON0 = -3.015, LAT0 = 53.448, KX = 6638.0, KY = 11132.0;
 const raw = (lat, lon) => [(lon - LON0) * KX, (LAT0 - lat) * KY];
 const walkMin = (a, b) => Math.round(Math.hypot(a[0] - b[0], a[1] - b[1]) * 10 * 1.3 / 80);
 
-const HOMES = D.homes.map(h => Object.assign({ t: 'home', r: raw(h.lat, h.lng) }, h));
+const HOMES = D.homes.map(h => Object.assign({ t: 'home' }, h, { r: raw(h.lat, h.lng) }));
 const byId = id => HOMES.find(h => h.id === id);
 
 /* 选了专业：到最近一栋相关教学楼的步行时间（网页版 setSubject） */

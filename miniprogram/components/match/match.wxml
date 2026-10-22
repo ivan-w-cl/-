@@ -1,0 +1,90 @@
+<!-- 生活选房：开场和题目（网页 .hm-wrap / .hm），选房卡（网页 .hm-res，手机上在底部） -->
+<view wx:if="{{open}}" class="hm-wrap" style="padding-top:{{padTop}}px" catchtouchmove="noop" bindtap="closeQuiz">
+  <view class="hm" catchtap="noop">
+    <view class="hm-tape"></view>
+    <view class="x" bindtap="closeQuiz">×</view>
+    <scroll-view scroll-y="true" class="hm-scroll" enhanced="true" show-scrollbar="false">
+      <view wx:if="{{!q}}" class="hm-intro">
+        <view class="hm-step">利物浦 · 我的选房指南</view>
+        <view class="h2">住进适合你日常的利物浦</view>
+        <view class="lede">从怎么吃、在哪学，到周末怎么过，回答 8 个小问题，看看哪些公寓值得放进你的备选清单。</view>
+        <view class="hm-doodles"><text>🛒 周边生活配套</text><text>📚 图书馆与咖啡馆</text><text>🌳 公园与运动</text><text>🎓 专业教学楼</text></view>
+        <view class="hm-note">已有预算、房型和收藏筛选会继续生效。答案只保存在这台手机上，不需要姓名或联系方式。这是生活偏好小测试，不是科学人格测试，也不保证空房或实际居住体验。</view>
+        <view class="hm-foot">
+          <text class="hm-link" bindtap="browse">先逛逛地图</text>
+          <view class="hm-btns">
+            <view class="hm-btn alt" bindtap="bySubject">按专业找房</view>
+            <view wx:if="{{hasLast}}" class="hm-btn alt" bindtap="lastResults">查看上次结果</view>
+            <view class="hm-btn" bindtap="start">开始生活选房</view>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="hm-intro">
+        <view class="hm-top"><view class="hm-dots"><text wx:for="{{dots}}" wx:key="index" class="dot {{item ? 'on' : ''}}"></text></view><text class="hm-step">{{q.stepText}}</text></view>
+        <view class="h2">{{q.text}}</view>
+        <view wx:if="{{q.hint}}" class="hint2">{{q.hint}}</view>
+        <view class="hm-opts">
+          <view wx:for="{{q.opts}}" wx:key="c" class="hm-opt {{item.on ? 'on' : ''}}" data-c="{{item.c}}" bindtap="pickOpt">
+            <text class="e">{{item.e}}</text><view class="ot"><text class="b">{{item.label}}</text><text class="s">{{item.note}}</text></view>
+          </view>
+        </view>
+        <view class="hm-foot">
+          <view class="hm-btn alt" bindtap="back">上一步</view>
+          <view class="hm-btn {{canNext ? '' : 'off'}}" bindtap="next">{{q.nextText}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view wx:if="{{active}}" class="panel hm-res {{mini ? 'mini' : ''}}" catchtouchmove="noop">
+  <view class="phead">
+    <text class="h2">我的生活选房卡</text>
+    <view class="hb">
+      <view class="pbtn" bindtap="toggleMini">{{mini ? '展开选房卡' : '收起看地图'}}</view>
+      <view class="pbtn" bindtap="exit">{{lang === 'en' ? 'Close' : '关闭'}}</view>
+    </view>
+  </view>
+  <scroll-view wx:if="{{!mini}}" scroll-y="true" class="pbody" enhanced="true" show-scrollbar="false">
+    <view class="persona"><text class="stamp">{{res.stamp}}</text><text class="k">你的日常生活风格</text><text class="b">{{res.title}}</text><view class="p">{{res.desc}}</view></view>
+    <view class="srcnote2">{{res.scope}}</view>
+    <view wx:if="{{!res.picks.length}}" class="hm-empty">
+      <view class="h3">暂时没有同时符合条件的公寓</view>
+      <view>地图筛选{{res.walkMid ? '与 15 分钟通勤上限' : ''}}没有共同结果。我们不会自动放宽你的条件。</view>
+      <view class="tools"><view class="tb" bindtap="resetFilters">清空地图筛选再试</view><view class="tb" bindtap="edit">修改问答条件</view></view>
+    </view>
+    <!-- 一眼对比（网页 rank-compare.js） -->
+    <view wx:if="{{res.cols.length > 1}}" class="pc-box">
+      <text class="pc-h">{{res.cmpH}}</text>
+      <view class="pc-cols">
+        <view wx:for="{{res.cols}}" wx:key="i" class="pc-col {{item.top ? 'top' : ''}}"><text class="pc-rank">{{item.i}}</text><text class="pc-name">{{item.name}}</text>
+          <text class="pc-v">{{item.price}}</text><text class="pc-v">{{item.uol}}</text><text wx:if="{{item.rate}}" class="pc-v">{{item.rate}}</text></view>
+      </view>
+      <view class="pc-go" bindtap="compareAll">{{res.cmpGo}}</view>
+    </view>
+    <view wx:for="{{res.picks}}" wx:key="id" class="mcard {{item.top ? 'top' : ''}} {{selected === item.i ? 'on' : ''}}" data-i="{{item.i}}" bindtap="tapCard">
+      <view class="mhead"><text class="mnum">{{item.i + 1}}</text><view class="mh"><text class="mkicker">{{item.kicker}}</text><view class="h3">{{item.name}}</view><view class="mmeta">{{item.meta}}</view></view></view>
+      <view class="fits">根据你的偏好，优先参考这些配套</view>
+      <view class="why2">
+        <view wx:for="{{item.good}}" wx:key="index" wx:for-item="g" class="li"><text class="ico">{{g.ico}}</text><text>{{g.text}}</text></view>
+        <view wx:if="{{item.trade}}" class="li trade"><text class="ico">⚖️</text><text>{{item.trade}}</text></view>
+      </view>
+      <view class="mprice">{{item.price}}</view>
+      <view wx:if="{{item.sold}}" class="srcnote2">历史记录曾未列出可租房型，当前空房需要重新确认。</view>
+      <view class="macts">
+        <view class="mb2" data-i="{{item.i}}" catchtap="view">地图看看</view>
+        <view class="mb2" data-i="{{item.i}}" catchtap="card">公寓详情</view>
+        <view class="mb2 cta2" data-i="{{item.i}}" catchtap="ask">咨询这处公寓</view>
+      </view>
+    </view>
+    <view class="tools">
+      <view class="tb" bindtap="edit">修改答案</view>
+      <view wx:if="{{res.picks.length > 1}}" class="tb" bindtap="compareAll">并排对比</view>
+      <view wx:if="{{res.picks.length}}" class="tb" bindtap="copy">复制我的选房卡</view>
+      <view class="tb" bindtap="subjectAgain">按专业再看看</view>
+      <view class="tb" bindtap="again">重新开始</view>
+    </view>
+    <view class="srcnote2">推荐方法：按你选择的生活习惯，对这 {{res.total}} 处公寓的距离与周边收录地点数量加权排序；不是人格测评或居住质量评级。地点来自提供的地图资料（标注来源 OpenStreetMap，© OpenStreetMap contributors），尚未独立核实，可能缺漏或已停业。图中圆圈是约 10 分钟距离示意，连线不是实际步行路线。专业通勤取最近教学楼，绿地距离取边界，不代表入口。租金为 2026 年 10 月 17 日的历史记录；已有预算筛选会生效，价格不参与生活偏好排序，空房、路线与营业状态请另行确认。</view>
+    <view class="pad-bottom"></view>
+  </scroll-view>
+</view>

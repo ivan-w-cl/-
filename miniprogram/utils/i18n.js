@@ -5,10 +5,12 @@ const WEB = require('../data/web-strings.js');
 const EXTRA = {
   zh: { matchBtn: '生活选房', sortedBy: '已按「{k}」排序', topNote: '地图上的金色标签是前 3 名。', rank: ['第1', '第2', '第3'],
         homesCount: '公寓列表 ({n})', shareTitle: '利物浦学生住宿地图', soon: '下一版接上', save: '收藏', saved: '已收藏', share: '分享这处公寓',
-        layers: '地图上显示', zoneKey: '利物浦大学校区', info: '地图数据 © OpenStreetMap 贡献者。价格和评价来自 Amber 2026-10-17 的记录，不代表实时房态。' },
+        layers: '地图上显示', zoneKey: '利物浦大学校区', info: '地图数据 © OpenStreetMap 贡献者。价格和评价来自 Amber 2026-10-17 的记录，不代表实时房态。',
+        pcH: '推荐的 {n} 处，一眼对比', pcGo: '并排对比这 {n} 处', pcFrom: '£{p}/周起', pcNoPrice: '暂无价格', pcUol: '到利大 {m} 分钟' },
   en: { matchBtn: 'Home Match', sortedBy: 'Sorted by “{k}”', topNote: 'Gold tags on the map mark the top 3.', rank: ['1st', '2nd', '3rd'],
         homesCount: 'Homes ({n})', shareTitle: 'Liverpool Student Map', soon: 'Coming in the next build', save: 'Save', saved: 'Saved', share: 'Share home',
-        layers: 'Show on the map', zoneKey: 'University of Liverpool campus', info: 'Map data © OpenStreetMap contributors. Prices and reviews are Amber listings recorded on 17 Oct 2026, not live availability.' }
+        layers: 'Show on the map', zoneKey: 'University of Liverpool campus', info: 'Map data © OpenStreetMap contributors. Prices and reviews are Amber listings recorded on 17 Oct 2026, not live availability.',
+        pcH: 'Your {n} picks at a glance', pcGo: 'Compare these {n} side by side', pcFrom: 'From £{p}/wk', pcNoPrice: 'No price yet', pcUol: 'UoL {m} min' }
 };
 const fill = (s, vars) => { if (vars) for (const k in vars) s = String(s).split('{' + k + '}').join(vars[k]); return s; };
 function t(lang, key, vars) {

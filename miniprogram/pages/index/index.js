@@ -26,6 +26,10 @@ function roomsView(L, h) {
 }
 const app = getApp();
 
+const SUBJ_T = {   // 网页 subject-dock.js 的文案
+  zh: { title: '我的专业', label: '利物浦大学专业', intro: '选择专业，查看教学楼与附近公寓。', foot: '选好自动收起；点击侧边标签可随时更换。', close: '收起 ‹', selected: '已选', none: '不选专业' },
+  en: { title: 'My subject', label: 'University of Liverpool subject', intro: 'Find your teaching buildings and nearby homes.', foot: 'Closes after choosing. Use the side tab to change it anytime.', close: 'Hide ‹', selected: 'Set', none: 'No subject' }
+};
 const LAYERS = ['home', 'uni', 'rail', 'bus', 'food', 'sight'];
 const LAYER_COLORS = { home: '#7fb3e0', uni: '#e07a5f', rail: '#9b7fc4', bus: '#7cc47f', food: '#f4a259', sight: '#f2c14e' };
 const TAP_MOVE = 8, TAP_MS = 350;
@@ -38,7 +42,8 @@ Page({
   data: { lang: 'zh', T: {}, nav: { top: 48, right: 104, h: 40 }, sheet: '', info: false, card: null, expanded: false,
     filters: H.defaultFilters(), rank: 'area', rankLabel: '', count: 0, groups: [], ranked: [], sortNote: '', open: '', options: {},
     layers: LAYERS.map(k => ({ k, on: true, color: LAYER_COLORS[k], label: '' })), zones: [], favCount: 0, cmpCount: 0, canZoomIn: true, canZoomOut: false,
-    groupShow: false, groupHome: null, fab: null, album: null, albumTo: '', wx: null, wxOpen: false, fx: '' },
+    groupShow: false, groupHome: null, fab: null, album: null, albumTo: '', wx: null, wxOpen: false, fx: '',
+    cmp: null, tray: [], filterIds: null, subjectObj: null, subj: null },
 
   onLoad(q) {
     favorites = readSet('lsm-favorites-v1', 47); compare = readSet('lsm-compare-v1', 3);
@@ -80,6 +85,7 @@ Page({
       fonts.ready(() => { renderer.relayout(); this.redraw(); });
       if (this.pendingHome && H.byId(this.pendingHome)) this.openHome(this.pendingHome, true);
       if (this.pendingGroup && cases.stored()) this.openGroup();
+      else if (!this.pendingHome) this.selectComponent('#match').openQuiz();   // 和网页一样：一打开先看到生活选房的开场
     });
   },
   onShareAppMessage() {
@@ -90,7 +96,7 @@ Page({
   /* ---------- 画地图 ---------- */
   mapState(gestureOn) {
     const tags = this.data.rank !== 'area' && this.data.rank !== 'az' ? this.top3.map((id, i) => ({ id, text: t(this.data.lang, 'rank')[i] })) : null;
-    return { selected: this.data.card && this.data.card.id, hidden: this.hidden, tags, only: this.only || null, gesture: gestureOn, bodyFont: fonts.pick('Nunito', 'a') };
+    return { selected: this.data.card && this.data.card.id, hidden: this.hidden, tags, only: this.only || null, hm: this.hm || null, hit: this.hit || null, gesture: gestureOn, bodyFont: fonts.pick('Nunito', 'a') };
   },
   redraw() {
     if (!renderer) return;
@@ -143,6 +149,7 @@ Page({
   },
   tapMap(x, y) {
     const m = renderer.hit(view.get(), x, y, { hidden: this.hidden, only: this.only || null });
+    if (this.data.subj && this.data.subj.open) { this.closeSubject(); return; }
     if (!m) { if (this.data.card) this.closeCard(); else this.closeSheets(); return; }
     if (m.t === 'home') this.openHome(m.id);
     else this.openPlace(m);
@@ -162,7 +169,7 @@ Page({
     if (renderer) { renderer.setLang(lang); this.redraw(); }
     this.refreshList();
     if (this.data.card) this.openHome(this.data.card.id, false, true);
-    this.updateFab(cases.current); this.paintWeather();
+    this.updateFab(cases.current); this.paintWeather(); this.setData({ subj: this.subjView(!!(this.data.subj && this.data.subj.open)) });
     if (!quiet) wx.vibrateShort && wx.vibrateShort({ type: 'light' });
   },
   toggleInfo() { this.setData({ info: !this.data.info }); },
@@ -248,7 +255,81 @@ Page({
   noop() {},
   /* 测试用：某个标记现在在屏幕上的位置 */
   _where(id) { const m = scene.markers.find(x => x.id === id), v = view.get(); return { x: m.x * v.k + v.tx, y: m.y * v.k + v.ty, k: v.k }; },
-  openMatch() { wx.showToast({ title: this.data.T.soon, icon: 'none' }); },   // 第三步：生活选房
+  /* ---------- 生活选房（components/match） ---------- */
+  openMatch() { this.setData({ card: null, sheet: '' }); this.selectComponent('#match').openQuiz(); },
+  onMatchMap(e) {
+    const d = e.detail; this.hm = d && d.picks ? { picks: d.picks, layer: d.layer } : null;
+    if (d && d.fit && view) this.fitPoints(d.fit); else this.redraw();
+  },
+  onMatchCard(e) { this.openHome(e.detail.id); },
+  onMatchAsk(e) { this.openGroup(H.byId(e.detail.id)); },
+  onMatchCompare(e) { compare.clear(); e.detail.ids.forEach(id => compare.add(id)); app.store('lsm-compare-v1', [...compare]); this.refreshList(); this.openCompare(); },
+  onMatchSubject() { this.openSubject(); },
+  /* ---------- 我的专业（网页 subject-dock.js）：选了专业，教学楼在地图上高亮，公寓按到教学楼的步行时间排序 ---------- */
+  subjView(open, listOpen) {
+    const L = this.data.lang, k = SUBJ_T[L] || SUBJ_T.zh, s = this.subject;
+    const info = s ? t(L, 'subjInfo', { name: s.name[L], note: s.note[L], zone: H.D.zones[s.zone].name[L], faculty: H.D.zones[s.zone].faculty[L] }) : '';
+    return { open, k, set: !!s, current: s ? s.name[L] : t(L, 'studyPh'), info, show: t(L, 'showMe'),
+      list: [{ id: '', name: k.none }].concat(H.D.subjects.map(x => ({ id: x.id, name: x.name[L], on: s && s.id === x.id }))), listOpen: !!listOpen };
+  },
+  openSubject() { this.setData({ subj: this.subjView(true), sheet: '', card: null }); },
+  toggleSubject() { this.setData({ subj: this.subjView(!(this.data.subj && this.data.subj.open)) }); },
+  closeSubject() { this.setData({ subj: this.subjView(false) }); },
+  toggleSubjList() { this.setData({ subj: this.subjView(true, !(this.data.subj && this.data.subj.listOpen)) }); },
+  pickSubject(e) {
+    const id = e.currentTarget.dataset.id; this.subject = H.applySubject(id);
+    this.hit = this.subject ? {} : null; if (this.subject) H.D.buildings.filter(b => this.subject.keys.includes(b.key)).forEach(b => { this.hit[b.id] = 1; });
+    const rank = this.subject ? 'subject' : (this.data.rank === 'subject' ? 'area' : this.data.rank);
+    const f = this.data.filters; if (!this.subject && f.destination === 'subject') this.setData({ 'filters.destination': 'uol' });
+    this.setData({ rank, subjectObj: this.subject ? { name: this.subject.name.zh } : null });
+    const v = this.subjView(false); v.open = !this.subject; this.setData({ subj: v });
+    renderer && renderer.relayout(); this.refreshList();
+    if (this.subject) this.showBuildings();
+  },
+  /* 「在地图上查看」：把这些教学楼放到屏幕中间 */
+  showBuildings() {
+    if (!this.subject || !view) return;
+    const pts = scene.markers.filter(m => this.hit && this.hit[m.id]).map(m => [m.x, m.y]); if (!pts.length) return;
+    const pad = 120; this.fitPoints(pts.map(p => [p[0] - pad, p[1] - pad]).concat(pts.map(p => [p[0] + pad, p[1] + pad])));
+    this.setData({ subj: this.subjView(false) });
+  },
+  onMatchResetFilters() { this.resetFilters(); },
+  /* 让推荐和 10 分钟圈都在屏幕上，避开顶部标题栏和底部的选房卡（网页 fitPoints） */
+  fitPoints(pts) {
+    const v = view.get(), xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+    const x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs), y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
+    const top = this.data.nav.top + this.data.nav.h + 70, bottom = v.h * 0.48, left = 24, right = v.w - 60;
+    const z = Math.max(1, Math.min(view.zmax(), Math.min((right - left) / ((x1 - x0) * view.fitK), (bottom - top) / ((y1 - y0) * view.fitK))));
+    view.set({ z, tx: (left + right) / 2 - (x0 + x1) / 2 * view.fitK * z, ty: (top + bottom) / 2 - (y0 + y1) / 2 * view.fitK * z });
+    this.redraw();
+  },
+
+  /* ---------- 对比（网页 renderCompare）+ 底部对比栏 ---------- */
+  openCompare() {
+    const L = this.data.lang, list = [...compare].map(id => H.byId(id)).filter(Boolean);
+    if (list.length < 2) return;
+    const money = v => `£${v}`, rows = [];
+    if (this.subject) rows.push([t(L, 'rSubj', { s: this.subject.name[L] }), h => h.subj, v => t(L, 'fMin', { n: v }), 'low']);
+    rows.push([t(L, 'rUol'), h => h.uol, v => t(L, 'fMin', { n: v }), 'low'], [t(L, 'rLjmu'), h => h.ljmu, v => t(L, 'fMin', { n: v }), 'low'],
+      [t(L, 'rEn'), h => h.pe, money, 'low', true], [t(L, 'rSt'), h => h.ps, money, 'low', true], [t(L, 'rAny'), h => h.plo, money, 'low', true],
+      [t(L, 'rRate'), h => (h.rn ? h.rr : null), (v, h) => `${Number(v).toFixed(1)}★ · ${t(L, 'fRev', { n: h.rn, pl: L === 'en' && h.rn !== 1 ? 's' : '' })}`, 'high']);
+    const out = rows.map(([label, get, fmt, dir, price]) => {
+      const vals = list.map(get), have = vals.filter(v => v != null);
+      const best = have.length >= 2 && new Set(have).size > 1 ? (dir === 'low' ? Math.min.apply(null, have) : Math.max.apply(null, have)) : null;
+      return { label, cells: list.map((h, i) => { const v = vals[i];
+        if (v == null) return { na: true, t: price && h.pso ? t(L, 'soldShort') : t(L, 'notListed') };
+        return { t: fmt(v, h), unit: price ? t(L, 'perWk') : '', best: v === best }; }) };
+    });
+    this.setData({ cmp: { title: t(L, 'cmpTitle'), heads: list.map(h => ({ id: h.id, n: h.n, name: h.name, area: h.areaName[L], addr: h.addr })), rows: out,
+      desc: { label: t(L, 'rDesc'), cells: list.map(h => h.text[L]) }, best: t(L, 'best'), ask: t(L, 'ask'), map: t(L, 'showOnMap'), rm: t(L, 'cmpRemove'),
+      note: t(L, 'source') + (L === 'en' ? ' ' : '') + t(L, 'cmpWalkNote') }, sheet: '', card: null });
+  },
+  closeCompare() { this.setData({ cmp: null }); },
+  cmpAsk(e) { const h = H.byId(e.currentTarget.dataset.id); this.setData({ cmp: null }); this.openGroup(h); },
+  cmpMap(e) { this.setData({ cmp: null }); this.openHome(e.currentTarget.dataset.id, true); },
+  cmpRemove(e) { compare.delete(e.currentTarget.dataset.id); app.store('lsm-compare-v1', [...compare]); this.refreshList(); if (compare.size < 2) this.closeCompare(); else this.openCompare(); },
+  trayRemove(e) { compare.delete(e.currentTarget.dataset.id); app.store('lsm-compare-v1', [...compare]); this.refreshList(); },
+  trayClear() { compare.clear(); app.store('lsm-compare-v1', []); this.refreshList(); },
 
   /* ---------- 公寓列表：搜索、收藏、排序 ---------- */
   refreshList() {
@@ -263,7 +344,9 @@ Page({
     this.setData({ groups, ranked: rank === 'area' ? [] : list.map(row), isRanked: ranked, count: list.length,
       countText: ht(L, 'count', { n: list.length }), viewText: ht(L, 'view', { n: list.length }), homesCount: t(L, 'homesCount', { n: list.length }),
       rankLabel, sortNote: ranked ? `${t(L, 'sortedBy', { k: rankLabel })} · ${t(L, 'topNote')}` : '', options: this.options(),
-      favCount: favorites.size, cmpCount: compare.size });
+      favCount: favorites.size, cmpCount: compare.size, filterIds: this.only || null,
+      tray: [...compare].map(id => H.byId(id)).filter(Boolean).map(h => ({ id: h.id, n: h.n, name: h.name })),
+      trayT: { lbl: t(L, 'cmpLbl'), go: t(L, 'cmpGo'), clr: t(L, 'cmpClear') } });
     if (renderer) { renderer.relayout(); this.redraw(); }
   },
   options() {

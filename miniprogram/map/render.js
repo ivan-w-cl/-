@@ -77,9 +77,10 @@ function createRenderer(scene, env) {
     if (!st.po && st.s && st.w) { ctx.globalAlpha = o; ctx.strokeStyle = st.s; ctx.lineWidth = st.w; textRun(ctx, str, 0, 0, st, 's'); }
     ctx.restore(); ctx.globalAlpha = 1;
   }
-  function runOps(ctx, list, inherit, alpha) {
+  function runOps(ctx, list, inherit, alpha, mod) {
     for (const op of list) {
-      const st = S[op[1]];
+      let st = S[op[1]];
+      if (mod) { st = mod(op, st); if (!st) continue; }
       switch (op[0]) {
         case 'p': paint(ctx, st, inherit, alpha, () => trace(ctx, op[2])); break;
         case 'c': paint(ctx, st, inherit, alpha, () => { ctx.beginPath(); ctx.arc(op[2], op[3], op[4], 0, Math.PI * 2); }); break;
@@ -93,7 +94,7 @@ function createRenderer(scene, env) {
         case 'u': {
           const sym = scene.symbols[op[4]]; if (!sym) break;
           ctx.save(); ctx.translate(op[2], op[3]); if (op[5] !== 1) ctx.scale(op[5], op[5]);
-          runOps(ctx, sym, st.f || inherit, alpha); ctx.restore(); break;
+          runOps(ctx, sym, st.f || inherit, alpha, mod); ctx.restore(); break;
         }
       }
     }
@@ -116,8 +117,8 @@ function createRenderer(scene, env) {
       if (inter(box, vp)) obstacles.push({ id: m.id, box: pad(box, 3) });
       const L = scene.markerLabels[lang][m.id];
       if (!L) return;
-      if (m.t === 'bldg' && !(k >= 1.8 || state.selected === m.id)) return;
-      items.push({ m, L, s, x, y, pri: state.selected === m.id ? 100 : m.t === 'bldg' ? 40 : 60 });
+      if (m.t === 'bldg' && !(k >= 1.8 || state.selected === m.id || (state.hit && state.hit[m.id]))) return;
+      items.push({ m, L, s, x, y, pri: state.selected === m.id ? 100 : state.hit && state.hit[m.id] ? 80 : m.t === 'bldg' ? 40 : 60 });
     });
     const labels = [];
     scene.labels[lang].forEach((op, i) => {
@@ -140,7 +141,7 @@ function createRenderer(scene, env) {
           if (!best || score < best.score) best = { dx: dx / k, dy: dy / k, box, score };
           if (score < 0.5) break;
         }
-        if (best && (best.score < 0.5 || it.pri === 100)) { placed[it.m.id] = best; accepted.push(best.box); }
+        if (best && (best.score < 0.5 || it.pri >= 80)) { placed[it.m.id] = best; accepted.push(best.box); }
       } else {
         const op = it.op, st = it.st, sc = it.scale * (op[5] || 1) * k, [x, y] = scr(op[2], op[3]), w = measure(ctx, op[4], st, sc), h = st.fs * sc;
         const ax = st.a === 'middle' ? x - w / 2 : st.a === 'end' ? x - w : x;
@@ -184,19 +185,33 @@ function createRenderer(scene, env) {
     runOps(ctx, scene.frame, null, 1);
     // 标记：校区楼 → 地点 → 公寓（公寓按从上到下，和网页一样后画的在上面）
     const dim = state.dim, list = scene.markers.filter(m => !hid[layerOf(m)] && !(state.only && m.t === 'home' && !state.only[m.id])).sort((a, b) => (ORDER[a.t] - ORDER[b.t]) || (a.t === 'home' && b.t === 'home' ? a.y - b.y : 0));
+    const hm = state.hm, BADGE = '#2c5c8a';
+    /* 生活选房结果（网页 home-match.css）：其他公寓变淡、不显示编号；推荐的编号变金色，第一名变红色 */
+    const badgeMod = kind => (op, st) => {
+      const isBadge = op[0] === 'c' && st.f === BADGE, isNum = op[0] === 't' && /num/.test(op[7] || '');
+      if (!isBadge && !isNum) return st;
+      if (kind === 'off') return null;
+      if (isBadge) return Object.assign({}, st, kind === 'top' ? { f: '#b5462f', s: '#fffaf0' } : { f: '#f2c14e', s: '#3b2a1a' });
+      return Object.assign({}, st, { f: kind === 'top' ? '#ffffff' : '#3b2a1a' });
+    };
+    let hmDrawn = false;
     for (const m of list) {
+      if (hm && !hmDrawn && m.t === 'home') { drawHmLayer(ctx, hm.layer, k); hmDrawn = true; }
       const s = capScale(k, m.t === 'bldg' ? 1.5 : 1.1), on = state.selected === m.id, faded = dim && !dim[m.id] && !on;
-      const alpha = faded ? 0.28 : 1;
+      const pick = hm && m.t === 'home' ? (hm.picks[m.id] || 'off') : null;
+      const alpha = faded ? 0.28 : pick === 'off' ? 0.32 : (state.hit && m.t === 'bldg' && !state.hit[m.id]) ? 0.35 : 1;
       ctx.save(); ctx.translate(m.x, m.y); ctx.scale(s, s);
       if (on) { ctx.translate(0, -5); ctx.scale(1.25, 1.25); }
       if (state.ring && state.ring[m.id]) { ctx.beginPath(); ctx.arc(0, 0, 22, 0, Math.PI * 2); ctx.strokeStyle = '#f2c14e'; ctx.lineWidth = 4; ctx.globalAlpha = alpha; ctx.stroke(); ctx.globalAlpha = 1; }
-      runOps(ctx, m.ops, null, alpha);
+      const hitB = m.t === 'bldg' && state.hit && state.hit[m.id];
+      if (hitB) { ctx.beginPath(); ctx.arc(0, 0, 13, 0, Math.PI * 2); ctx.globalAlpha = 0.55; ctx.strokeStyle = '#b5462f'; ctx.lineWidth = 2.5; ctx.stroke(); ctx.globalAlpha = 1; }   // 网页 .bring 是扩散动画，这里画成静止的圈
+      runOps(ctx, m.ops, null, alpha, pick ? badgeMod(pick) : hitB ? (op, st) => (op[0] === 'r' ? Object.assign({}, st, { s: '#b5462f', w: 2.6 }) : st) : null);
       ctx.restore();
     }
     // 标记文字
     for (const m of list) {
       const pl = layout.placed[m.id], L = scene.markerLabels[lang][m.id]; if (!pl || !L) continue;
-      const s = capScale(k, m.t === 'bldg' ? 1.5 : 1.1), faded = dim && !dim[m.id] && state.selected !== m.id;
+      const s = capScale(k, m.t === 'bldg' ? 1.5 : 1.1), faded = (dim && !dim[m.id] && state.selected !== m.id) || (hm && m.t === 'home' && !hm.picks[m.id]);
       drawText(ctx, ['t', L[1], m.x + pl.dx, m.y + pl.dy, L[0], 1, 0], S[L[1]], faded ? 0.28 : 1, s);
     }
     // 排序后前 3 名的金色标签
@@ -209,6 +224,27 @@ function createRenderer(scene, env) {
       ctx.fillStyle = '#f2c14e'; ctx.fill(); ctx.strokeStyle = '#3b2a1a'; ctx.lineWidth = 2; ctx.stroke();
       ctx.fillStyle = '#3b2a1a'; ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic'; ctx.fillText(tag.text, -4, -40.5); ctx.restore();
     });
+    ctx.restore();
+  }
+
+  /* 生活选房：10 分钟范围圈、到周边地点的虚线、地点小标记、选中公寓的金色光圈（网页 .hmring / .hmlink / .hmspot / .hmglow） */
+  function drawHmLayer(ctx, L, k) {
+    if (!L) return;
+    ctx.save();
+    if (L.ring && L.ring.length) {
+      ctx.beginPath(); L.ring.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]))); ctx.closePath();
+      ctx.fillStyle = 'rgba(181, 70, 47, .07)'; ctx.fill();
+      ctx.strokeStyle = '#b5462f'; ctx.lineWidth = 2.6; ctx.setLineDash && ctx.setLineDash([9, 6]); ctx.stroke(); ctx.setLineDash && ctx.setLineDash([]);
+    }
+    (L.links || []).forEach(l => { ctx.beginPath(); ctx.moveTo(l[0], l[1]); ctx.lineTo(l[2], l[3]); ctx.strokeStyle = '#b5462f'; ctx.lineWidth = 1.6; ctx.setLineDash && ctx.setLineDash([3, 4]); ctx.stroke(); ctx.setLineDash && ctx.setLineDash([]); });
+    (L.spots || []).forEach(sp => {
+      ctx.save(); ctx.translate(sp.x, sp.y);
+      ctx.beginPath(); ctx.arc(0, 0, 13, 0, Math.PI * 2); ctx.fillStyle = '#fffaf0'; ctx.fill(); ctx.strokeStyle = '#b5462f'; ctx.lineWidth = 2.4; ctx.stroke();
+      ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic'; ctx.font = `14px ${env && env.font ? env.font('sans-serif', sp.emoji) : 'sans-serif'}`; ctx.fillStyle = '#3b2a1a'; ctx.fillText(sp.emoji, 0, 5);
+      if (sp.label) { const st = { fs: 14, ff: '"Patrick Hand", "ZCOOL KuaiLe", cursive', fw: 400, f: '#3b2a1a', s: '#fffaf0', w: 5, po: 1, a: 'middle', j: 'round' }; drawText(ctx, ['t', -1, 0, 29, sp.label, 1, 0], st, 1); }
+      ctx.restore();
+    });
+    if (L.glow) { ctx.beginPath(); ctx.arc(L.glow[0], L.glow[1], 27, 0, Math.PI * 2); ctx.strokeStyle = '#f2c14e'; ctx.lineWidth = 5; ctx.stroke(); }
     ctx.restore();
   }
 
