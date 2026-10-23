@@ -43,6 +43,9 @@ function K(t, v) {
 
 const S = window.S = {
   actions: [], titles: [], taps: [], tracks: {}, done: 0, ready: false,
+  /* 音效：录制时记下每个音效的时间，录完由 music/mix.py 按时间混进配乐（tick 点按、pop、whoosh、ding、hit…） */
+  sfxLog: [], tapSfx: null,
+  sfx(t, name, gain) { this.at(t, () => this.sfxLog.push({ t, name, gain: gain == null ? 1 : gain })); },
   at(t, fn) { this.actions.push({ t, fn }); this.actions.sort((a, b) => a.t - b.t); },
   /* 点按：t-lead 出现点按圈（默认 0.32 秒），t 时真的点。每个点按记住自己找到的按钮，快速连点时互不干扰 */
   tap(t, sel, opts) {
@@ -59,7 +62,7 @@ const S = window.S = {
         el = find();
         if (el) ring(t - Math.min(0.12, lead), el); else console.warn('tap: still no element', sel);
       }
-      if (el) { if (opts.fn) opts.fn(el); else el.click(); }
+      if (el) { if (opts.fn) opts.fn(el); else el.click(); if (this.tapSfx && opts.sfx !== false) this.sfxLog.push({ t, name: opts.sfx || this.tapSfx, gain: opts.gain == null ? 1 : opts.gain }); }
     });
   },
   title(tin, tout, o) { this.titles.push(Object.assign({ tin, tout }, o)); },

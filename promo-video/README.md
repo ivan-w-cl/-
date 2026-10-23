@@ -28,6 +28,15 @@ TL=timeline-30 NODE_PATH=$(npm root -g) node promo-video/record.cjs promo-video/
 
 合成：`FRAMES=frames/f30 MUSIC=music/music30.wav NAME=30s sh promo-video/encode.sh`
 
+## 30 秒版 · 新配乐（带音效）
+
+```
+sh promo-video/music/prepare30b.sh             # 新音乐放到 music/track2.mp3：拟合节拍、拼出 30 秒配乐、核对重拍位置
+TL=timeline-30b SFX_LOG=promo-video/music/sfx30b.json NODE_PATH=$(npm root -g) node promo-video/record.cjs promo-video/frames/f30b 30 0 29.6 2
+sh promo-video/music/prepare30b.sh mix promo-video/music/sfx30b.json    # 合成音效、混音、-14 LUFS → music/mix30b.wav
+FRAMES=frames/f30b MUSIC=music/mix30b.wav NAME=30s-b sh promo-video/encode.sh
+```
+
 ## 按配乐剪辑
 
 `stage/timeline.js` 开头的 `BEATS` 是 `music/analyze.py` 测出的每一拍的时间，镜头切换写成 `bar(n)`（第 n 小节第一拍）、点按写成 `beat(n)`，所以都卡在拍子上。答题的两段用 `S.speed(…, 1.5)` 让网页翻页快 1.5 倍，再加上每拍答一题。

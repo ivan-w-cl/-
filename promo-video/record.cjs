@@ -31,6 +31,7 @@ const RAIN = { current: { temperature_2m: 12.4, apparent_temperature: 10.1, weat
     if (t + 1e-6 >= +from) { await p.screenshot({ path: path.join(out, String(i).padStart(5, '0') + '.jpg'), type: 'jpeg', quality: 93 }); shots++; }
     else await p.screenshot({ clip: { x: 0, y: 0, width: 8, height: 8 }, type: 'jpeg', quality: 10 });   // 不保存也要截：逼浏览器真的渲染一帧，跳过的片段和完整录制走得一模一样
   }
+  if (process.env.SFX_LOG) { fs.writeFileSync(process.env.SFX_LOG, JSON.stringify(await p.evaluate(() => S.sfxLog), null, 1)); console.log('sfx events written to', process.env.SFX_LOG); }   // 音效时间表
   console.log(`frames ${shots}, ${((Date.now() - t0) / Math.max(1, shots)).toFixed(0)} ms/frame`);
   console.log('iframe perf.now', await p.evaluate(() => Math.round(S.win().performance.now())));
   await b.close();
