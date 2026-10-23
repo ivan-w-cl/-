@@ -1,4 +1,4 @@
-# 宣传片（约 60 秒，16:9，中文）
+# 宣传片（62.6 秒，16:9，中文，按配乐剪辑）
 
 画面全部是网页（`web-live/`）的真实操作录屏：舞台页 `stage/index.html` 里放一台手机（片尾加平板和折叠屏），网页在 iframe 里运行；
 `stage/timeline.js` 写好每个镜头的点按、镜头推拉和标题，`record.cjs` 逐帧推进时间、截图，`encode.sh` 合成 MP4。
@@ -11,12 +11,17 @@
 ```
 sh promo-video/fetch-fonts.sh                 # 第一次：下载字体（开源授权）
 node promo-video/server.cjs &                  # 本地服务器 :8780（网页 + 舞台 + 字体）
-NODE_PATH=$(npm root -g) node promo-video/record.cjs promo-video/frames/draft 10 0 60 1   # 草稿：10 帧/秒、1 倍分辨率，约 2 分钟
-NODE_PATH=$(npm root -g) node promo-video/record.cjs promo-video/frames/final 30 0 60 2   # 成片：30 帧/秒、2 倍分辨率，约 15 分钟
-sh promo-video/encode.sh                       # 输出 out/…-1080p.mp4 和 …-4k.mp4
+NODE_PATH=$(npm root -g) node promo-video/record.cjs promo-video/frames/draft 10 0 62.6 1   # 草稿：10 帧/秒、1 倍分辨率，约 2 分钟
+NODE_PATH=$(npm root -g) node promo-video/record.cjs promo-video/frames/final 30 0 62.6 2   # 成片：30 帧/秒、2 倍分辨率，约 15 分钟
+sh promo-video/music/prepare.sh                # 配乐：先把音乐放到 music/track.mp3；测节拍、剪到片长、淡出、统一响度
+sh promo-video/encode.sh                       # 输出 out/…-1080p-music.mp4 和 …-4k-music.mp4（没有配乐时是静音版）
 ```
 
 参数：`record.cjs <输出目录> <帧率> <从第几秒开始保存> <到第几秒> <分辨率倍数>`。只改了某一段时，可以只重渲那几秒（前面的时间照样推进、不保存），覆盖到同一个目录再合成。
+
+## 按配乐剪辑
+
+`stage/timeline.js` 开头的 `BEATS` 是 `music/analyze.py` 测出的每一拍的时间，镜头切换写成 `bar(n)`（第 n 小节第一拍）、点按写成 `beat(n)`，所以都卡在拍子上。答题的两段用 `S.speed(…, 1.5)` 让网页翻页快 1.5 倍，再加上每拍答一题。
 
 ## 为什么每次录出来都一样、而且很顺
 

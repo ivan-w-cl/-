@@ -1,3 +1,6 @@
 fonts/
 frames/
 out/
+music/*.mp3
+music/*.wav
+music/*.json
