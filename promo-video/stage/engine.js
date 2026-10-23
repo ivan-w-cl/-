@@ -41,7 +41,12 @@ function K(t, v) {
   return api;
 }
 
+/* 竖版（?p=1）：画面 1080×1920。舞台上的设备坐标不变，整体映射到竖屏：标题在上方一条，手机占下面；
+   镜头推近时以目标点为中心放大（放大幅度收一些，避免盖住标题）；片尾三台设备改成前后叠放。 */
+const PORTRAIT = new URLSearchParams(location.search).get('p') === '1';
+const PK = 1.42, PAY = 1185, PZ = 0.45;   // 竖版：基础缩放、手机中心的高度、镜头放大幅度的折算
 const S = window.S = {
+  portrait: PORTRAIT,
   actions: [], titles: [], taps: [], tracks: {}, done: 0, ready: false,
   /* 音效：录制时记下每个音效的时间，录完由 music/mix.py 按时间混进配乐（tick 点按、pop、whoosh、ding、hit…） */
   sfxLog: [], tapSfx: null,
@@ -139,10 +144,14 @@ const S = window.S = {
     }
     const T = this.tracks;
     const cam = T.cam ? T.cam(t) : { x: 960, y: 540, s: 1 };
-    document.getElementById('cam').style.transform = `translate(960px,540px) scale(${cam.s}) translate(${-cam.x}px,${-cam.y}px)`;
+    if (PORTRAIT) {   // 横向的镜头偏移是给侧边标题让位置的，竖版不需要；只保留推近的高度和幅度
+      const k = PK * (1 + (cam.s - 1) * PZ), ay = PAY + (cam.y - 540) * PK;
+      document.getElementById('cam').style.transform = `translate(${540 - 960 * k}px,${ay - cam.y * k}px) scale(${k})`;
+    } else document.getElementById('cam').style.transform = `translate(960px,540px) scale(${cam.s}) translate(${-cam.x}px,${-cam.y}px)`;
     for (const id of ['phone', 'tablet', 'fold']) {
       if (!T[id]) continue;
-      const d = T[id](t), el = document.getElementById(id);
+      let d = T[id](t); const el = document.getElementById(id);
+      if (PORTRAIT) d = this.portraitDevice(id, d);
       el.style.opacity = d.o == null ? 1 : d.o;
       el.style.transform = `translate(${d.x || 0}px,${d.y || 0}px) perspective(2400px) rotateY(${d.ry || 0}deg) rotateX(${d.rx || 0}deg) rotate(${d.r || 0}deg) scale(${d.s == null ? 1 : d.s})`;
     }
@@ -151,6 +160,15 @@ const S = window.S = {
     this.paintTap(t);
     if (dt > 0) for (const id of ['app', 'appT', 'appF']) { try { this.stepAnims(this.doc(id), dt); } catch (e) { /* 还没载入 */ } }
   },
+  /* 竖版片尾：平板在上方，手机在左前，折叠屏在右下（手机片尾的 y 0→30 当作进度） */
+  portraitDevice(id, d) {
+    const o = d.o == null ? 1 : d.o;
+    if (id === 'tablet') return { o, x: 0, y: -384 - (1 - o) * 50, s: 0.52 * (0.94 + 0.06 * o) };
+    if (id === 'fold') return { o, x: 144 + (1 - o) * 60, y: 187, s: 0.52 * (0.94 + 0.06 * o) };
+    if ((d.y || 0) > 200) return Object.assign({}, d, { x: 0, s: d.s == null ? 1 : 1 - (1 - d.s) * 1.45 });   // 升起
+    const e = clamp01((d.y || 0) / 30);
+    return Object.assign({}, d, { x: -148 * e, y: 116 * e, s: 1 - 0.25 * e });
+  },
   paintTitles(t) {
     const box = document.getElementById('titles');
     this.titles.forEach((o, i) => {
@@ -158,7 +176,11 @@ const S = window.S = {
       if (!el) {
         el = o.el = document.createElement('div'); el.className = 'tt ' + (o.cls || '');
         el.innerHTML = (o.k ? `<div class="k">${o.k}</div>` : '') + `<div class="h">${o.h}</div>` + (o.s ? `<div class="s">${o.s}</div>` : '');
-        Object.assign(el.style, { left: (o.x || 0) + 'px', top: (o.y || 0) + 'px', width: (o.w || 760) + 'px' });
+        if (PORTRAIT) {   // 竖版：标题都居中，放在手机上方；开场大标题在画面中间
+          const big = /big/.test(o.cls || ''), end = /end/.test(o.cls || '');
+          el.classList.add('c');
+          Object.assign(el.style, { left: '60px', width: '960px', top: (big ? 720 : end ? 150 : 175) + 'px' });
+        } else Object.assign(el.style, { left: (o.x || 0) + 'px', top: (o.y || 0) + 'px', width: (o.w || 760) + 'px' });
         box.appendChild(el);
       }
       const fi = o.fade || 0.7, pin = clamp01((t - o.tin) / fi), pout = clamp01((t - (o.tout - fi * 0.8)) / (fi * 0.8));

@@ -37,6 +37,18 @@ sh promo-video/music/prepare30b.sh mix promo-video/music/sfx30b.json    # 合成
 FRAMES=frames/f30b MUSIC=music/mix30b.wav NAME=30s-b sh promo-video/encode.sh
 ```
 
+## 竖版 9:16（1080×1920）
+
+两个 30 秒版都有竖版，时间线、配乐、音效完全一样，只是舞台换成竖的（`PORTRAIT=1`，页面参数 `?p=1`）：
+手机放大居中，标题都居中放在手机上方，镜头只保留推近的幅度；片尾平板在上、手机在左前、折叠屏在右下。
+
+```
+PORTRAIT=1 TL=timeline-30b NODE_PATH=$(npm root -g) node promo-video/record.cjs promo-video/frames/p30b 30 0 29.626 2
+PORTRAIT=1 FRAMES=frames/p30b MUSIC=music/mix30b.wav NAME=30s-b-vertical sh promo-video/encode.sh
+PORTRAIT=1 TL=timeline-30 NODE_PATH=$(npm root -g) node promo-video/record.cjs promo-video/frames/p30 30 0 29.4 2
+PORTRAIT=1 FRAMES=frames/p30 MUSIC=music/music30.wav NAME=30s-vertical sh promo-video/encode.sh
+```
+
 ## 按配乐剪辑
 
 `stage/timeline.js` 开头的 `BEATS` 是 `music/analyze.py` 测出的每一拍的时间，镜头切换写成 `bar(n)`（第 n 小节第一拍）、点按写成 `beat(n)`，所以都卡在拍子上。答题的两段用 `S.speed(…, 1.5)` 让网页翻页快 1.5 倍，再加上每拍答一题。

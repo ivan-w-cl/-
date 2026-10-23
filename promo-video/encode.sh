@@ -2,14 +2,16 @@
 # 帧序列 + 配乐 → MP4：1080p（主版本）和 4K。
 #   默认（62.6 秒版）：sh encode.sh
 #   30 秒版：FRAMES=frames/f30 MUSIC=music/music30.wav NAME=30s sh encode.sh
+#   竖版加 PORTRAIT=1（输出 1080×1920 和 2160×3840）
 # 没有配乐文件时用静音音轨。
 set -e
 cd "$(dirname "$0")"
 FRAMES=${FRAMES:-frames/final}; MUSIC=${MUSIC:-music/music-62.wav}; NAME=${NAME:-full}
 mkdir -p out
 if [ -f "$MUSIC" ]; then A="-i $MUSIC"; AN=music; else A="-f lavfi -i anullsrc=r=48000:cl=stereo"; AN=silent; fi
-for v in 1080p 4k; do
-  if [ $v = 1080p ]; then VF="scale=1920:1080:flags=lanczos,format=yuv420p"; CRF=16; else VF="format=yuv420p"; CRF=18; fi
+if [ -n "$PORTRAIT" ]; then SIZES="1080x1920 2160x3840"; SMALL=1080:1920; else SIZES="1080p 4k"; SMALL=1920:1080; fi
+for v in $SIZES; do
+  if [ $v = 1080p ] || [ $v = 1080x1920 ]; then VF="scale=$SMALL:flags=lanczos,format=yuv420p"; CRF=16; else VF="format=yuv420p"; CRF=18; fi
   ffmpeg -y -loglevel error -framerate 30 -i "$FRAMES/%05d.jpg" $A -shortest -vf "$VF" -c:v libx264 -preset slow -crf $CRF -profile:v high -tune film \
     -color_primaries bt709 -color_trc bt709 -colorspace bt709 -movflags +faststart -c:a aac -b:a 256k "out/liverpool-student-map-promo-$NAME-$v-$AN.mp4"
 done

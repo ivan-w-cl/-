@@ -5,7 +5,7 @@ const RAIN = { current: { temperature_2m: 12.4, apparent_temperature: 10.1, weat
 (async () => {
   fs.mkdirSync(out, { recursive: true });
   const b = await chromium.launch({ args: ['--disable-gpu-vsync', '--force-color-profile=srgb', '--font-render-hinting=none'] });
-  const ctx = await b.newContext({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: +dpr, locale: 'zh-CN', timezoneId: 'Europe/London' });
+  const ctx = await b.newContext({ viewport: process.env.PORTRAIT ? { width: 1080, height: 1920 } : { width: 1920, height: 1080 }, deviceScaleFactor: +dpr, locale: 'zh-CN', timezoneId: 'Europe/London' });
   await ctx.route('https://api.open-meteo.com/**', r => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(process.env.WEATHER ? JSON.parse(process.env.WEATHER) : RAIN) }));
   await ctx.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());
   const p = await ctx.newPage();
@@ -15,7 +15,7 @@ const RAIN = { current: { temperature_2m: 12.4, apparent_temperature: 10.1, weat
   // 假时钟必须暂停：不然真实时间也在走，截图越慢网页里的计时器越快，每次录出来都不一样
   await p.clock.install({ time: new Date('2026-10-23T15:41:00Z') });
   await p.clock.pauseAt(new Date('2026-10-23T15:41:00.200Z'));
-  await p.goto('http://localhost:8780/stage/index.html' + (process.env.TL ? '?tl=' + process.env.TL : ''));
+  await p.goto('http://localhost:8780/stage/index.html?' + (process.env.TL ? 'tl=' + process.env.TL : '') + (process.env.PORTRAIT ? '&p=1' : ''));   // PORTRAIT=1 → 竖版
   await p.evaluate(() => document.fonts.ready);
   await p.evaluate(() => S.load({ app: '/web/index.html#lang=zh', appT: '/web/index.html#lang=zh', appF: '/web/index.html#lang=zh' }));
   await p.clock.runFor(3000);                       // 网页启动：字体、开场弹窗
