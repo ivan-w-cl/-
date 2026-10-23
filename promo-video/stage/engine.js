@@ -56,6 +56,7 @@ const S = window.S = {
     });
     this.at(t, () => {
       let el = this.pending;
+      if (el && !el.isConnected) el = null;   // 找到的是上一题的按钮，页面已经翻过去了
       if (!el) {   // 点按圈出现时按钮还没渲染出来（上一题还在翻页）：现在再找一次，点按圈从这一刻开始
         const w = this.win(opts.frame); el = typeof sel === 'function' ? sel(w) : w.document.querySelector(sel);
         if (el) { const r = el.getBoundingClientRect(); this.taps.push({ t: t - 0.12, x: r.left + r.width * (opts.ax == null ? 0.5 : opts.ax), y: r.top + r.height * (opts.ay == null ? 0.5 : opts.ay), frame: opts.frame || 'app' }); }

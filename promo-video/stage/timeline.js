@@ -89,7 +89,7 @@ S.title(31.4, 37.6, { k: '我的专业', h: '离课堂，<br>更近一步。', s
 S.at(37.9, () => { try { W().setSubject(''); } catch (e) {} try { W().SubjectDock.close(); } catch (e) {} });
 S.at(38.3, () => { W().FunQuizzes.open('buddy'); });
 S.tap(39.2, '#fqWrap [data-fq="start"]');
-for (let i = 0; i < 5; i++) S.tap(39.95 + i * 0.6, `#fqWrap [data-fq="opt"][data-i="${i % 2}"]`);
+for (let i = 0; i < 5; i++) S.tap(39.9 + i * 0.7, `#fqWrap [data-fq="opt"][data-i="${i % 2}"]`);
 S.tap(43.7, '#fqRes [data-fr="share"]');
 ['polaroid', 'ticket', 'notes'].forEach((k, i) => S.tap(44.9 + i * 0.75, byText('.sc-tab', ['拍立得', '车票', '便利贴'][i])));
 S.title(38.4, 46.4, { k: '留学人格测试', h: '分享<br>你的利物浦。', s: '测出你的类型，<br>生成 4 种分享卡片。', x: 130, y: 330, w: 640 });
