@@ -19,6 +19,15 @@ sh promo-video/encode.sh                       # 输出 out/…-1080p-music.mp4 
 
 参数：`record.cjs <输出目录> <帧率> <从第几秒开始保存> <到第几秒> <分辨率倍数>`。只改了某一段时，可以只重渲那几秒（前面的时间照样推进、不保存），覆盖到同一个目录再合成。
 
+## 30 秒版
+
+```
+sh promo-video/music/prepare30.sh             # 剪出 30 秒配乐（music30.wav）并测出节拍（beats30.json）
+TL=timeline-30 NODE_PATH=$(npm root -g) node promo-video/record.cjs promo-video/frames/f30 30 0 29.39 2
+```
+
+合成：`FRAMES=frames/f30 MUSIC=music/music30.wav NAME=30s sh promo-video/encode.sh`
+
 ## 按配乐剪辑
 
 `stage/timeline.js` 开头的 `BEATS` 是 `music/analyze.py` 测出的每一拍的时间，镜头切换写成 `bar(n)`（第 n 小节第一拍）、点按写成 `beat(n)`，所以都卡在拍子上。答题的两段用 `S.speed(…, 1.5)` 让网页翻页快 1.5 倍，再加上每拍答一题。

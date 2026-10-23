@@ -72,5 +72,5 @@ html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--
 <div id="titles"></div>
 <div id="veil"></div>
 <script src="engine.js"></script>
-<script src="timeline.js"></script>
+<script>document.write('<script src="' + (new URLSearchParams(location.search).get('tl') || 'timeline') + '.js"><\/script>');</script>   <!-- ?tl=timeline-30 选 30 秒版 -->
 </body></html>

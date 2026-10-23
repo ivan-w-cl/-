@@ -44,26 +44,22 @@ function K(t, v) {
 const S = window.S = {
   actions: [], titles: [], taps: [], tracks: {}, done: 0, ready: false,
   at(t, fn) { this.actions.push({ t, fn }); this.actions.sort((a, b) => a.t - b.t); },
-  /* 点按：t-0.32 出现点按圈，t 时真的点 */
+  /* 点按：t-lead 出现点按圈（默认 0.32 秒），t 时真的点。每个点按记住自己找到的按钮，快速连点时互不干扰 */
   tap(t, sel, opts) {
     opts = opts || {};
-    this.at(t - 0.32, () => {
-      const w = this.win(opts.frame), el = typeof sel === 'function' ? sel(w) : w.document.querySelector(sel);
-      if (!el) return;
-      const r = el.getBoundingClientRect();
-      this.taps.push({ t: t - 0.32, x: r.left + r.width * (opts.ax == null ? 0.5 : opts.ax), y: r.top + r.height * (opts.ay == null ? 0.5 : opts.ay), frame: opts.frame || 'app' });
-      this.pending = el;
-    });
+    const lead = opts.lead == null ? 0.32 : opts.lead, dur = Math.max(0.4, lead * 2.35);
+    const find = () => { const w = this.win(opts.frame); return typeof sel === 'function' ? sel(w) : w.document.querySelector(sel); };
+    const ring = (t0, el) => { const r = el.getBoundingClientRect(); this.taps.push({ t: t0, dur, x: r.left + r.width * (opts.ax == null ? 0.5 : opts.ax), y: r.top + r.height * (opts.ay == null ? 0.5 : opts.ay), frame: opts.frame || 'app' }); };
+    let found = null;
+    this.at(t - lead, () => { found = find(); if (found) ring(t - lead, found); });
     this.at(t, () => {
-      let el = this.pending;
+      let el = found;
       if (el && !el.isConnected) el = null;   // 找到的是上一题的按钮，页面已经翻过去了
-      if (!el) {   // 点按圈出现时按钮还没渲染出来（上一题还在翻页）：现在再找一次，点按圈从这一刻开始
-        const w = this.win(opts.frame); el = typeof sel === 'function' ? sel(w) : w.document.querySelector(sel);
-        if (el) { const r = el.getBoundingClientRect(); this.taps.push({ t: t - 0.12, x: r.left + r.width * (opts.ax == null ? 0.5 : opts.ax), y: r.top + r.height * (opts.ay == null ? 0.5 : opts.ay), frame: opts.frame || 'app' }); }
-        else console.warn('tap: still no element', sel);
+      if (!el) {   // 点按圈出现时按钮还没渲染出来：现在再找一次，点按圈从这一刻开始
+        el = find();
+        if (el) ring(t - Math.min(0.12, lead), el); else console.warn('tap: still no element', sel);
       }
       if (el) { if (opts.fn) opts.fn(el); else el.click(); }
-      this.pending = null;
     });
   },
   title(tin, tout, o) { this.titles.push(Object.assign({ tin, tout }, o)); },
@@ -174,7 +170,7 @@ const S = window.S = {
     const el = document.getElementById('tap'); let shown = false;
     for (const p of this.taps) {
       if (p.frame !== 'app') continue;
-      const u = (t - p.t) / 0.75; if (u < 0 || u > 1) continue;
+      const u = (t - p.t) / (p.dur || 0.75); if (u < 0 || u > 1) continue;
       // 0–0.4：落下（缩小 + 变实）；0.4–1：抬起淡出
       const down = clamp01(u / 0.42), up = clamp01((u - 0.42) / 0.58);
       el.style.left = p.x + 'px'; el.style.top = p.y + 'px';
