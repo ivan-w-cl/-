@@ -20,13 +20,14 @@ const RAIN = { current: { temperature_2m: 12.4, apparent_temperature: 10.1, weat
   await p.evaluate(() => S.load({ app: '/web/index.html#lang=zh', appT: '/web/index.html#lang=zh', appF: '/web/index.html#lang=zh' }));
   await p.clock.runFor(3000);                       // 网页启动：字体、开场弹窗
   await p.evaluate(() => document.fonts.ready);
-  const t0 = Date.now(); let shots = 0;
+  const t0 = Date.now(); let shots = 0, warmed = +from <= 0;
   const n = Math.round(+to * FPS);
   for (let i = 0; i <= n; i++) {
     const t = i / FPS;
     const speed = await p.evaluate(t => S.speedAt(t), t);   // 有的镜头让网页时间快进（渡轮、海鸥）
     await p.clock.runFor(Math.round(1000 / FPS * speed));
     await p.evaluate(([t, dt]) => { S.frame(t, dt); return S.fontsReady(); }, [t, DT]);
+    if (t + 1e-6 >= +from && !warmed) { warmed = true; await p.screenshot({ type: 'jpeg', quality: 10 }); }   // 跳过一段后的第一张整屏截图可能没画完：先截一张丢掉
     if (t + 1e-6 >= +from) { await p.screenshot({ path: path.join(out, String(i).padStart(5, '0') + '.jpg'), type: 'jpeg', quality: 93 }); shots++; }
     else await p.screenshot({ clip: { x: 0, y: 0, width: 8, height: 8 }, type: 'jpeg', quality: 10 });   // 不保存也要截：逼浏览器真的渲染一帧，跳过的片段和完整录制走得一模一样
   }
