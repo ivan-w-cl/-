@@ -37,6 +37,16 @@ sh promo-video/music/prepare30b.sh mix promo-video/music/sfx30b.json    # 合成
 FRAMES=frames/f30b MUSIC=music/mix30b.wav NAME=30s-b sh promo-video/encode.sh
 ```
 
+## 30 秒亮点版（给上级汇报，timeline-30c）
+
+同一首新配乐、同样的小节，按团队整理的九个亮点重新剪：动态天气与清晰地图、按专业 / 按生活选房、公寓列表筛选、多房对比、报价拆解（正着拆 + 按总预算反着算）、二维码进群、顺利入住，片尾一台手机变形成折叠屏再变成平板（`engine.js` 的 `S.morph`）。
+
+```
+TL=timeline-30c SFX_LOG=promo-video/music/sfx30c.json NODE_PATH=$(npm root -g) node promo-video/record.cjs promo-video/frames/c30 30 0 29.626 2
+sh promo-video/music/prepare30b.sh mix promo-video/music/sfx30c.json mix30c.wav
+FRAMES=frames/c30 MUSIC=music/mix30c.wav NAME=30s-highlights sh promo-video/encode.sh
+```
+
 ## 竖版 9:16（1080×1920）
 
 两个 30 秒版都有竖版，时间线、配乐、音效完全一样，只是舞台换成竖的（`PORTRAIT=1`，页面参数 `?p=1`）：

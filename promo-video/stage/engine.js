@@ -155,10 +155,39 @@ const S = window.S = {
       el.style.opacity = d.o == null ? 1 : d.o;
       el.style.transform = `translate(${d.x || 0}px,${d.y || 0}px) perspective(2400px) rotateY(${d.ry || 0}deg) rotateX(${d.rx || 0}deg) rotate(${d.r || 0}deg) scale(${d.s == null ? 1 : d.s})`;
     }
+    if (this.morph && !PORTRAIT) this.paintMorph(t);
     if (T.veil) document.getElementById('veil').style.opacity = T.veil(t).o;
     this.paintTitles(t);
     this.paintTap(t);
     if (dt > 0) for (const id of ['app', 'appT', 'appF']) { try { this.stepAnims(this.doc(id), dt); } catch (e) { /* 还没载入 */ } }
+  },
+  /* 设备变形：手机 → 折叠屏 → 平板（S.morph = { t0, t1, t2, t3, G }，t0–t1 手机变折叠屏，t2–t3 折叠屏变平板）。
+     三台设备叠在同一处，外框尺寸、边框、圆角、位置、缩放一起插值；上层设备的屏幕内容渐隐，露出下层更宽的界面。
+     深色外框和阴影只画在最下面的平板上，上面两台只留屏幕内容，所以看起来是同一台设备在变形。
+     G = { phone, fold, tablet }：每台的屏幕宽高 sw/sh、边框 pad、屏幕圆角 r、外框圆角 R、中心 cx/cy、缩放 sc */
+  morph: null,
+  paintMorph(t) {
+    const m = this.morph; if (t < m.t0) return;
+    const seg = (a, b) => E.apple(clamp01((t - a) / (b - a)));
+    const p = seg(m.t0, m.t1) + seg(m.t2, m.t3);   // 0 手机 · 1 折叠屏 · 2 平板
+    const A = p < 1 ? m.G.phone : m.G.fold, Z = p < 1 ? m.G.fold : m.G.tablet, f = p < 1 ? p : p - 1;
+    const g = {}; for (const k in A) g[k] = A[k] + (Z[k] - A[k]) * f;
+    const W = g.sw + 2 * g.pad, H = g.sh + 2 * g.pad;
+    const fade = (a, b) => E.io(clamp01((p - a) / (b - a)));
+    const op = { phone: 1 - fade(0.4, 0.8), fold: 1 - fade(1.4, 1.8), tablet: 1 };
+    const native = { phone: [390, 844], fold: [746, 676], tablet: [1174, 834] }, zi = { phone: 5, fold: 4, tablet: 3 };
+    for (const id of ['phone', 'fold', 'tablet']) {
+      const el = document.getElementById(id), body = el.querySelector('.body'), screen = el.querySelector('.screen'), fr = screen.querySelector('iframe');
+      const framed = id === 'tablet';
+      Object.assign(el.style, { left: (g.cx - W / 2) + 'px', top: (g.cy - H / 2) + 'px', width: W + 'px', height: H + 'px', opacity: op[id], zIndex: zi[id], transform: `scale(${g.sc})` });
+      Object.assign(body.style, { padding: g.pad + 'px', borderRadius: g.R + 'px', background: framed ? '' : 'none',
+        boxShadow: framed ? '0 50px 90px -30px rgba(60,40,20,.45), 0 20px 40px -20px rgba(60,40,20,.35), inset 0 0 0 1.5px rgba(255,255,255,.12)' : 'none' });
+      Object.assign(screen.style, { width: g.sw + 'px', height: g.sh + 'px', borderRadius: g.r + 'px', background: framed ? '' : 'transparent' });
+      const [nw, nh] = native[id];
+      Object.assign(fr.style, { left: (g.sw - nw) / 2 + 'px', top: (g.sh - nh) / 2 + 'px' });   // 界面保持原尺寸居中，外框变大时露出更宽的布局
+    }
+    document.querySelectorAll('#phone .btn').forEach(b => { b.style.opacity = 1 - fade(0, 0.25); });
+    const crease = document.querySelector('#fold .crease'); if (crease) crease.style.opacity = clamp01(1 - Math.abs(p - 1) / 0.45);
   },
   /* 竖版片尾：平板在上方，手机在左前，折叠屏在右下（手机片尾的 y 0→30 当作进度） */
   portraitDevice(id, d) {
