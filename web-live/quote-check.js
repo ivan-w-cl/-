@@ -1,13 +1,15 @@
-/* 报价核算器：学生把拿到的报价（平台、公寓官网、群里谈的都可以）填进来，统一算成「整个合同实际要付多少」和「真实每周价」。
-   不公布任何平台的价格，也不排「谁最便宜」：只帮学生看懂一次性返现、免租周、立减被平摊到每周以后的真实差别，
-   差别很小时提醒先订房，别为了几镑一直比价。报价只存在当前浏览器（lsm-quote-v1）。 */
+/* 报价核算器，两页：
+   - 拆解一个报价：学生只填平台报给他的价格，用公寓的官方周租和官方优惠一减，剩下的就是平台自己补的部分（大多是私下给的返现），
+     并提醒这部分通常要入住后才到账。官方价和官方优惠由订房专家维护在 OFFICIAL 里，没录入的公寓用历史参考价 + 示例优惠。
+   - 比较几个报价：平台、官网、群里谈的报价统一算成「整个合同实际要付多少」和「真实每周价」，差别很小时提醒先订房。
+   不公布、不汇总任何平台的价格，只给学生自己看。报价只存在当前浏览器（lsm-quote-v1）。 */
 (() => {
   'use strict';
   const BT = window.BookingTools; if (!BT) return;
   const { el, btn, fmt, money, pick } = BT;
   const W = {
     zh: {
-      title: '🧮 报价核算器', desc: '把几个报价算成真实总价', mini: '🧮 算真实价格', intro: '🧮 报价核算器',
+      title: '🧮 报价核算器', desc: '拆开平台报价，看清谁补了多少', mini: '🧮 拆解报价', intro: '🧮 报价核算器',
       eyebrow: '订房小工具', heading: '报价核算器',
       lede: '把你拿到的报价填进来：平台、公寓官网、群里谈的都可以。这里统一算成「整个合同实际要付多少」和「真实每周价」，看清楚每家的优惠到底差多少。',
       privacy: '报价只保存在这台设备上，不会发给任何平台。算出来的是按你填的条件估算，以合同为准。',
@@ -35,10 +37,25 @@
       expert: '💬 请专家帮我核对', copied: '核算结果已复制。进群以后粘贴给专家，专家会帮你核对每个报价的条件。',
       pickHome: '在地图上打开一处公寓，就能把核算结果交给这处公寓的专家。',
       sumHead: '【报价核算】{home}', sumLine: '{name}：周租 {rent} × {w} 周，合同总价 {total}，真实每周 {wk}{extra}', sumCond: '（含返现 {cash}，{cond}）',
+      tabDec: '🔍 拆解一个报价', tabCmp: '⚖️ 比较几个报价',
+      decLede: '把平台报给你的价格填进来。我们用公寓的官方周租和官方优惠一减，剩下的就是平台自己补的部分，大多是它私下给的返现。',
+      decNoHome: '在地图上打开一处公寓，就能自动填入它的官方价；也可以自己填官方周租和官方优惠。',
+      room: '房型', offRent: '官方周租', offOff: '官方优惠（整个合同）', offTag: '官方价', demoTag: '示例数据', demoOffer: '示例优惠：{name}',
+      platform: '平台给你的报价', kind: '平台报的是', kindWk: '每周价', kindTotal: '合同总价', price: '平台报价', extra: '平台另外说的返现（选填）', decWhen: '平台补的钱什么时候到账',
+      rGross: '官方原价', rGrossN: '{rent} × {w} 周', rOff: '公寓官方优惠', rSub: '平台自己补的', rOver: '比官方价多出', rSubIn: '其中 {a} 已经算进报价，{e} 是另外的返现', rPay: '你最后实际付', rWk: '真实每周 {wk}',
+      hSub: '平台自己补了约 {y}', hSubP: '约每周 {yw}。这部分不是公寓降价：你每周付给公寓的还是 {rent}，差价一般是平台事后返给你的，{cond}。没到账的话，你实际要付 {worst}。',
+      hZero: '平台没有额外补贴', hZeroP: '这个报价就是官方价加官方优惠，和直接在公寓官网订差不多。',
+      hOver: '这个报价比官方价还高 {y}', hOverP: '可能含了服务费，或者房型、合同周数、入住日期不一样，先核对一下再决定。',
+      condSign: '签约后就到账',
+      toCompare: '＋ 加入比较', decName: '拆解的报价', decFill: '填好官方周租、合同周数和平台报价就能拆解',
+      decNote: '拆解只在这台设备上计算，我们不收集、也不公开任何平台的报价。官方价和官方优惠由订房专家整理（演示里是示例数据），以公寓官网为准；房型、合同周数或入住日期不一样，结果会不准。',
+      sumDec: '【报价拆解】{home} · {room}\n官方周租 {rent} × {w} 周 = {g}，官方优惠 {off}\n平台报价 {p}{ex}\n平台自己补了约 {y}，我最后实际付 {f}（真实每周 {wk}）',
+      sumEx: '，另外返现 {e}', offerNames: ['早鸟立减', '新生优惠', '限时立减'],
+      ensuite: '独卫单间', studio: 'Studio 套间', roomAny: '房间',
       exNames: ['平台 A', '平台 B', '公寓官网'], anyHome: '还没选公寓'
     },
     en: {
-      title: '🧮 Quote check', desc: 'Turn quotes into the real total', mini: '🧮 Real price', intro: '🧮 Quote check',
+      title: '🧮 Quote check', desc: 'See who pays for each discount', mini: '🧮 Break down a quote', intro: '🧮 Quote check',
       eyebrow: 'Booking tools', heading: 'Quote check',
       lede: 'Add the quotes you have been given: from a platform, the building’s own site or a group chat. They are turned into what the whole contract really costs and the real price per week, so you can see how far apart the offers actually are.',
       privacy: 'Quotes stay on this device and are not sent to any platform. Figures are estimates from what you enter; the contract is what counts.',
@@ -66,6 +83,21 @@
       expert: '💬 Ask an expert to check', copied: 'Your quote check is copied. Paste it in your group and an expert will check the terms of each quote.',
       pickHome: 'Open a home on the map to send your quote check to its expert.',
       sumHead: '[Quote check] {home}', sumLine: '{name}: {rent}/wk × {w} weeks, total {total}, real {wk}/wk{extra}', sumCond: ' (includes {cash} cashback that {cond})',
+      tabDec: '🔍 Break down a quote', tabCmp: '⚖️ Compare quotes',
+      decLede: 'Enter the price a platform quoted you. We take off the building’s official weekly rent and official discount; what is left is what the platform adds itself, usually its own cashback.',
+      decNoHome: 'Open a home on the map to fill in its official price automatically, or enter the official rent and discount yourself.',
+      room: 'Room type', offRent: 'Official weekly rent', offOff: 'Official discount (whole contract)', offTag: 'Official price', demoTag: 'Sample data', demoOffer: 'Sample offer: {name}',
+      platform: 'The platform’s quote', kind: 'The quote is', kindWk: 'Per week', kindTotal: 'Contract total', price: 'Quoted price', extra: 'Extra cashback they mention (optional)', decWhen: 'When the platform pays its part',
+      rGross: 'Official price', rGrossN: '{rent} × {w} weeks', rOff: 'Official building discount', rSub: 'Added by the platform', rOver: 'Above the official price', rSubIn: '{a} is already in the quote, {e} is extra cashback', rPay: 'You actually pay', rWk: 'Real {wk}/wk',
+      hSub: 'The platform adds about {y} itself', hSubP: 'About {yw} a week. The building is not cutting the rent: you still pay it {rent} a week, and the platform usually pays the difference back later; it {cond}. If it never arrives you pay {worst}.',
+      hZero: 'The platform adds nothing extra', hZeroP: 'This quote is the official price with the official discount, about the same as booking on the building’s site.',
+      hOver: 'This quote is {y} above the official price', hOverP: 'It may include a service fee, or a different room type, contract length or move-in date. Check before you decide.',
+      condSign: 'is paid once you sign',
+      toCompare: '＋ Add to comparison', decName: 'Broken-down quote', decFill: 'Add the official rent, contract weeks and the quoted price',
+      decNote: 'The breakdown is worked out on this device only; we do not collect or publish any platform’s quotes. Official prices and discounts are kept by our booking experts (sample data in this demo); the building’s site is what counts. A different room type, contract length or move-in date makes the result inaccurate.',
+      sumDec: '[Quote breakdown] {home} · {room}\nOfficial rent {rent} × {w} weeks = {g}, official discount {off}\nPlatform quote {p}{ex}\nThe platform adds about {y}; I actually pay {f} (real {wk}/wk)',
+      sumEx: ', plus {e} cashback', offerNames: ['Early-bird discount', 'New-student offer', 'Limited-time discount'],
+      ensuite: 'En-suite', studio: 'Studio', roomAny: 'Room',
       exNames: ['Platform A', 'Platform B', 'Building site'], anyHome: 'No home picked yet'
     }
   };
@@ -75,8 +107,37 @@
   const num = v => { const n = parseFloat(v); return Number.isFinite(n) && n > 0 ? n : 0; };
   const guide = h => (h ? Number(h.pe || h.plo || h.ps) || '' : '');
   const blank = (h, i) => ({ name: '', rent: i === 0 ? guide(h) : '', weeks: 51, free: '', off: '', cash: '', when: 'move', fees: '', ad: '', upfront: false });
-  const load = h => { const all = data.get() || {}, list = all[h ? h.id : '_']; return Array.isArray(list) && list.length ? list : [blank(h, 0), blank(h, 1)]; };
-  const save = (h, list) => { const all = data.get() || {}; all[h ? h.id : '_'] = list; data.set(all); };
+  const rec = h => { const r = (data.get() || {})[h ? h.id : '_']; return Array.isArray(r) ? { list: r } : (r || {}); };   // 旧版只存了比较列表
+  const put = (h, patch) => { const all = data.get() || {}; all[h ? h.id : '_'] = Object.assign(rec(h), patch); data.set(all); };
+  const load = h => { const l = rec(h).list; return Array.isArray(l) && l.length ? l : [blank(h, 0), blank(h, 1)]; };
+  const save = (h, list) => put(h, { list });
+
+  /* 官方价和官方优惠：正式版由订房专家维护，例如
+     'iq-great-newton-house': { weeks: 51, ensuite: 160, studio: 0, offer: { amount: 150, zh: '早鸟立减', en: 'Early-bird discount' } }
+     没录入的公寓用页面里的历史参考价，优惠按公寓编号生成示例（标「示例数据」）。 */
+  const OFFICIAL = {};
+  const hash = s => [...s].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7);
+  function roomsOf(h) {
+    const k = w(), out = [];
+    if (h.pe) out.push(['ensuite', k.ensuite, h.pe]);
+    if (h.ps) out.push(['studio', k.studio, h.ps]);
+    if (!out.length) out.push(['room', k.roomAny, h.plo || '']);
+    return out;
+  }
+  function official(h, room) {
+    const k = w(), o = OFFICIAL[h.id], x = hash(h.id), r = roomsOf(h).find(e => e[0] === room) || roomsOf(h)[0];
+    if (o) return { room: r[0], rent: o[r[0]] || r[2], weeks: o.weeks || 51, off: o.offer ? o.offer.amount : 0, offerName: o.offer ? pick(o.offer) : '', demo: false };
+    const amount = [0, 100, 150, 200][x % 4];
+    return { room: r[0], rent: r[2], weeks: 51, off: amount, offerName: amount ? k.offerNames[(x >>> 3) % 3] : '', demo: true };
+  }
+  /* 拆解：官方原价 − 官方优惠 − 平台报价 = 平台自己补的（报价里已经算进去的部分 + 另外的返现） */
+  function decompose(d) {
+    const rent = num(d.rent), weeks = Math.round(num(d.weeks)), price = num(d.price);
+    if (!rent || !weeks || !price) return null;
+    const gross = rent * weeks, off = num(d.off), quoted = d.kind === 'total' ? price : price * weeks, extra = num(d.extra);
+    const inQuote = gross - off - quoted, sub = inQuote + extra, pay = quoted - extra;
+    return { rent, weeks, gross, off, quoted, extra, inQuote, sub, pay, wk: pay / weeks, worst: gross - off };
+  }
   function example(h) {
     const k = w(), base = Math.round(Number(h && (h.pe || h.plo || h.ps))) || 185;
     return [
@@ -108,9 +169,8 @@
     return out;
   }
 
-  function open(h) {
-    const k = w(); let list = load(h);
-    const m = BT.modal({ eyebrow: k.eyebrow + (h ? ' · ' + h.name : ''), title: k.heading });
+  function drawCompare(h, m, k) {
+    let list = load(h);
     const lede = el('p', 'bt-lede', k.lede), verdict = el('div', 'qc-verdict'), sum = el('div', 'qc-sum'), eds = el('div', 'qc-sum');
     const acts = el('div', 'qc-actions');
     const addB = btn('bt-btn alt', k.add), exB = btn('bt-link', k.example), clrB = btn('bt-link', k.clear);
@@ -200,11 +260,122 @@
     drawEditors(); drawResults();
   }
 
+  function drawDecompose(h, m, k, go) {
+    const r0 = rec(h), base = h ? official(h, r0.dec && r0.dec.room) : null;
+    const d = Object.assign({ room: base ? base.room : '', rent: base ? base.rent : '', weeks: base ? base.weeks : 51, off: base ? base.off : '', kind: 'wk', price: '', extra: '', when: 'move' }, r0.dec || {});
+    m.body.append(el('p', 'bt-lede', k.decLede));
+    if (!h) m.body.append(el('p', 'bt-note', k.decNoHome));
+    const offBox = el('div', 'qc-ed'), pBox = el('div', 'qc-ed'), out = el('div', 'qc-sum');
+    const mk = (label, key, type) => {
+      const f = el('label', 'qc-f'), inp = el('input'); f.append(el('span', '', label));
+      inp.type = 'number'; inp.inputMode = 'decimal'; inp.min = '0'; inp.step = key === 'weeks' ? '1' : '0.01'; inp.value = d[key];
+      inp.addEventListener('input', () => { d[key] = inp.value; changed(); });
+      if (type === 'money') { const u = el('span', 'qc-unit'); u.append(inp); f.append(u); } else f.append(inp);
+      return f;
+    };
+    const tagRow = el('div', 'br-facts');
+    function drawOfficial() {
+      offBox.replaceChildren();
+      const top = el('div', 'qc-edtop'); top.append(el('b', 'qc-name', k.offTag)); offBox.append(top);
+      const g = el('div', 'qc-grid');
+      if (h) {
+        const f = el('label', 'qc-f'), sel = el('select'); f.append(el('span', '', k.room));
+        roomsOf(h).forEach(([id, label, price]) => { const o = el('option', '', price ? `${label} · ${money(price)}` : label); o.value = id; sel.append(o); });
+        sel.value = d.room || roomsOf(h)[0][0];
+        sel.addEventListener('change', () => { const b = official(h, sel.value); Object.assign(d, { room: b.room, rent: b.rent, weeks: b.weeks, off: b.off }); drawOfficial(); changed(); });
+        f.append(sel); g.append(f);
+      }
+      g.append(mk(k.weeks, 'weeks'), mk(k.offRent, 'rent', 'money'), mk(k.offOff, 'off', 'money'));
+      offBox.append(g);
+      tagRow.replaceChildren();
+      if (base && base.demo) { tagRow.append(el('span', 'bt-tag demo', k.demoTag)); const b = official(h, d.room); if (b.offerName) tagRow.append(el('span', 'bt-tag', fmt(k.demoOffer, { name: b.offerName }))); }
+      if (tagRow.childNodes.length) offBox.append(tagRow);
+    }
+    function drawPlatform() {
+      const top = el('div', 'qc-edtop'); top.append(el('b', 'qc-name', k.platform)); pBox.append(top);
+      const seg = el('div', 'br-chips'); seg.setAttribute('role', 'group'); seg.setAttribute('aria-label', k.kind);
+      [['wk', k.kindWk], ['total', k.kindTotal]].forEach(([v, t]) => {
+        const b = btn('bt-chipbtn' + (d.kind === v ? ' on' : ''), t); b.setAttribute('aria-pressed', String(d.kind === v));
+        b.addEventListener('click', () => { d.kind = v; seg.querySelectorAll('.bt-chipbtn').forEach(x => { const on = x === b; x.classList.toggle('on', on); x.setAttribute('aria-pressed', String(on)); }); changed(); });
+        seg.append(b);
+      });
+      const g = el('div', 'qc-grid'), wf = el('label', 'qc-f'), ws = el('select');
+      wf.append(el('span', '', k.decWhen));
+      [['sign', k.whenSign], ['move', k.whenMove], ['review', k.whenReview], ['unsure', k.whenUnsure]].forEach(([v, t]) => { const o = el('option', '', t); o.value = v; ws.append(o); });
+      ws.value = d.when; ws.addEventListener('change', () => { d.when = ws.value; changed(); }); wf.append(ws);
+      g.append(mk(k.price, 'price', 'money'), mk(k.extra, 'extra', 'money'), wf);
+      pBox.append(el('span', 'qc-f', k.kind), seg, g);
+    }
+    const roomName = () => { if (!h) return ''; const r = roomsOf(h).find(e => e[0] === d.room) || roomsOf(h)[0]; return r[1]; };
+    const condOf = () => (d.when === 'sign' ? k.condSign : condText(k, d));
+    function drawOut() {
+      out.replaceChildren();
+      const r = decompose(d);
+      if (!r) { const v = el('div', 'qc-verdict empty'); v.append(el('b', '', k.decFill)); out.append(v); return null; }
+      const v = el('div', 'qc-verdict' + (r.sub > 20 ? ' big' : r.sub < -20 ? ' warn' : ''));
+      const vals = { y: money(Math.abs(r.sub)), yw: money(Math.abs(r.sub) / r.weeks, 2), rent: money(r.rent, 2), cond: condOf(), worst: money(r.worst) };
+      if (r.sub > 20) v.append(el('b', '', fmt(k.hSub, vals)), el('p', '', fmt(k.hSubP, vals)));
+      else if (r.sub < -20) v.append(el('b', '', fmt(k.hOver, vals)), el('p', '', k.hOverP));
+      else v.append(el('b', '', k.hZero), el('p', '', k.hZeroP));
+      const line = el('div', 'qc-line'), rows = el('div', 'qc-break');
+      const row = (a, b, cls, note) => { const x = el('div', 'qc-brow' + (cls ? ' ' + cls : '')), t = el('span', '', a); if (note) t.append(el('small', '', note)); x.append(t, el('b', '', b)); rows.append(x); };
+      row(k.rGross, money(r.gross), '', fmt(k.rGrossN, { rent: money(r.rent, 2), w: r.weeks }));
+      if (r.off) row(k.rOff, '− ' + money(r.off), 'minus');
+      if (Math.abs(r.sub) >= 1) row(r.sub > 0 ? k.rSub : k.rOver, (r.sub > 0 ? '− ' : '+ ') + money(Math.abs(r.sub)), r.sub > 0 ? 'minus hi' : 'plus', r.extra ? fmt(k.rSubIn, { a: money(r.inQuote), e: money(r.extra) }) : '');
+      row(k.rPay, money(r.pay), 'total', fmt(k.rWk, { wk: money(r.wk, 2) }));
+      line.append(rows); out.append(v, line);
+      return r;
+    }
+    let last = null;
+    function changed() { put(h, { dec: d }); last = drawOut(); toCmp.disabled = !last; }
+    drawOfficial(); drawPlatform();
+    m.body.append(offBox, pBox, out, el('p', 'bt-note', k.decNote));
+    const status = el('span', 'bt-status'), toCmp = btn('bt-btn alt', k.toCompare), expert = btn('bt-btn', k.expert);
+    toCmp.addEventListener('click', () => {
+      if (!last) return;
+      // 留下学生自己填过的报价（没动过的空白报价不要），再放上这次拆解的；不够两个就加一个「公寓官网直订」作对照
+      const touched = q => calc(q) && ((q.name || '').trim() || num(q.off) || num(q.cash) || num(q.free) || num(q.fees));
+      const list = load(h).filter(touched), name = k.decName + (roomName() ? ' · ' + roomName() : '');
+      list.unshift({ name, rent: last.rent, weeks: last.weeks, free: '', off: last.off, cash: last.sub > 0 ? Math.round(last.sub * 100) / 100 : '', when: d.when, fees: last.sub < 0 ? Math.round(-last.sub * 100) / 100 : '', ad: d.kind === 'wk' ? d.price : '', upfront: false });
+      if (list.length < 2) list.push({ name: k.exNames[2], rent: last.rent, weeks: last.weeks, free: '', off: last.off, cash: '', when: 'sign', fees: '', ad: '', upfront: false });
+      save(h, list.slice(0, 3));
+      go('cmp');
+    });
+    expert.addEventListener('click', async () => {
+      if (!h) { status.textContent = k.pickHome; return; }
+      if (last) await BT.copy(fmt(k.sumDec, { home: h.name, room: roomName(), rent: money(last.rent, 2), w: last.weeks, g: money(last.gross), off: money(last.off),
+        p: d.kind === 'wk' ? money(num(d.price), 2) + (k === W.zh ? '/周' : '/wk') : money(last.quoted), ex: last.extra ? fmt(k.sumEx, { e: money(last.extra) }) : '',
+        y: money(last.sub), f: money(last.pay), wk: money(last.wk, 2) }));
+      BT.close();
+      try { openContact(h); } catch (_) { return; }
+      if (last) BT.say(k.copied);
+    });
+    m.foot.append(status, toCmp, expert);
+    last = drawOut(); toCmp.disabled = !last;
+  }
+
+  let mode = 'dec';
+  function open(h, which) {
+    const k = w(); if (which) mode = which;
+    const m = BT.modal({ eyebrow: k.eyebrow + (h ? ' · ' + h.name : ''), title: k.heading });
+    const tabs = el('div', 'br-tabs'); tabs.setAttribute('role', 'tablist');
+    const go = id => {
+      mode = id; tabs.querySelectorAll('.br-tab').forEach(x => x.setAttribute('aria-selected', String(x.dataset.id === id)));
+      m.body.replaceChildren(); m.foot.replaceChildren(); m.body.scrollTop = 0;
+      if (id === 'dec') drawDecompose(h, m, k, go); else drawCompare(h, m, k);
+    };
+    [['dec', k.tabDec], ['cmp', k.tabCmp]].forEach(([id, label]) => {
+      const b = btn('br-tab', label); b.dataset.id = id; b.setAttribute('role', 'tab'); b.addEventListener('click', () => go(id)); tabs.append(b);
+    });
+    m.box.insertBefore(tabs, m.body);
+    go(mode);
+  }
+
   BT.add({
     id: 'quote', order: 1,
     card: () => ({ title: w().title, desc: w().desc, mini: w().mini }),
     intro: () => w().intro,
     open
   });
-  window.QuoteCheck = { open, calc };
+  window.QuoteCheck = { open, calc, decompose, OFFICIAL };
 })();

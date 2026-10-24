@@ -46,6 +46,7 @@
 .qc-verdict { border: 2.5px solid #3b2a1a; border-radius: 14px; background: #dcefe2; padding: 10px 14px; display: flex; flex-direction: column; gap: 4px; }
 .qc-verdict.big { background: #fff3b8; }
 .qc-verdict.empty { background: #f8efd9; }
+.qc-verdict.warn { background: #ead8d2; }
 .qc-verdict b { font: 18px/1.25 var(--hand, cursive); }
 .qc-verdict p { margin: 0; font-size: 13px; line-height: 1.5; }
 .qc-sum { display: flex; flex-direction: column; gap: 6px; }
@@ -127,3 +128,15 @@
 }
 @media (max-width: 380px) { .qc-grid, .br-fields { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .br-toast { transition: none; } .br-bar i { transition: none; } }
+/* 报价拆解：官方原价 → 官方优惠 → 平台自己补的 → 你最后实际付 */
+.qc-break { grid-column: 1 / -1; display: flex; flex-direction: column; }
+.qc-brow { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 6px 0; border-bottom: 1.5px dashed #dcc8a0; }
+.qc-brow span { font-size: 13.5px; display: flex; flex-direction: column; }
+.qc-brow small { font-size: 11.5px; color: #6e5538; }
+.qc-brow b { font: 19px var(--display, cursive); font-weight: normal; white-space: nowrap; }
+.qc-brow.minus b { color: #1f7a4d; }
+.qc-brow.plus b { color: #7a2f20; }
+.qc-brow.hi { background: #fff3b8; margin: 0 -12px; padding: 6px 12px; }
+.qc-brow.total { border-bottom: 0; padding-top: 8px; }
+.qc-brow.total span { font: 16px var(--hand, cursive); }
+.qc-brow.total b { font-size: 24px; }
