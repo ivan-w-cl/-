@@ -1,58 +1,65 @@
-/* 报价拆解：平台常说「每周只要 £79.9」，可这里面大部分优惠往往是公寓官方的返现，在哪个平台订都有。
-   例：£125/周 × 51 周 = £6,375，公寓官方返现 £2,000，平台自己补 £300 → 学生付 £4,075，平台说成「每周 £79.9」。
-   学生只填平台说的每周价，这里用公寓的官方周租、合同周数和官方返现（订房专家维护在 OFFICIAL 里）拆成「官方返现 + 平台自己补的」，
-   多拆几个平台，就看得出每家自己到底补了多少。不收集、不公开任何平台的报价，数字只存在当前浏览器（lsm-quote-v2）。
-   入口：公寓卡片「房型与照片」里每个房型下面一个「✂️ 拆开这个价」价签、房型相册底部、收起状态的卡片、生活选房开场页。 */
+/* 报价拆解 + 按预算看房（同一个弹窗里两页）：
+   - 拆解报价：学生只填平台报的每周租金和周数，系统用这个房型的官方周租和官方返现（订房专家维护在 OFFICIAL 里）直接算出：
+     平台自己补了多少、多少是官方返现（哪个平台都有）。例：£125 × 51 周 = £6,375，官方返现 £2,000，平台说每周 £79.90 → 平台自己补 £300。
+   - 按预算看房：学生填全年预算、房型和周数，看预算相当于每周多少、这类房型的租金区间，以及预算内有哪些公寓。
+   不收集、不公开任何平台的报价，数字只存在当前浏览器（lsm-quote-v3）。
+   入口：公寓卡片「房型与照片」里每个房型下面的「✂️ 拆开这个价」价签、房型相册底部、收起状态的卡片、生活选房开场页。 */
 (() => {
   'use strict';
   const BT = window.BookingTools; if (!BT) return;
   const { el, btn, fmt, money, pick } = BT;
   const W = {
     zh: {
-      title: '✂️ 报价拆解', desc: '平台说的低价里，多少是官方返现', mini: '✂️ 平台更便宜？拆开看看', tagRoom: '✂️ 拆开这个价', tagAlbum: '✂️ 拆价', intro: '✂️ 报价拆解',
-      updated: '官方价 {d} 更新', site: '去官网核对 ↗',
-      eyebrow: '订房小工具', heading: '报价拆解',
-      lede: '平台说「每周只要 £79.9」，其中大部分优惠往往是公寓官方的返现，在哪个平台订都有。把平台报的每周价填进来，看看它自己到底补了多少。',
-      offH: '公寓官方价（每个平台都一样）', rent: '官方周租', weeks: '合同周数', cash: '官方返现（整个合同）', edit: '修改', done: '完成', demo: '示例数据',
-      gross: '原价', grossN: '{rent}/周 × {w} 周', offCash: '官方返现', net: '扣掉官方返现', netN: '相当于每周 {wk}',
-      platH: '平台报给你的价格', namePh: '平台 {x}', wk: '平台说每周只要', perWk: '/周',
-      add: '＋ 再拆一个平台', remove: '删除', example: '看例子', fill: '填上平台说的每周价，就能拆开',
+      title: '✂️ 报价拆解', desc: '平台说的低价里，多少是官方返现', mini: '✂️ 平台更便宜？拆开看看', tagRoom: '✂️ 拆开这个价', tagAlbum: '✂️ 拆价', intro: '✂️ 报价拆解 · 按预算看房',
+      eyebrow: '订房小工具', heading: '报价拆解', tabSplit: '✂️ 拆解报价', tabBudget: '💷 按预算看房',
+      splitLede: '填上平台报给你的每周租金和周数，马上告诉你：这个价格里多少是公寓官方返现（哪个平台都有），平台自己又补了多少。',
+      home: '公寓', homePick: '选一处公寓', room: '房型', wk: '每周租金', weeks: '周数', perWk: '/周',
+      demo: '示例数据', updated: '官方价 {d} 更新', site: '去官网核对 ↗',
+      official: '官方价 {rent}/周 × {w} 周 = {g}，官方返现 {cash}', officialNone: '官方价 {rent}/周 × {w} 周 = {g}，目前没有官方返现',
       bOff: '官方返现', bSub: '平台补', bPay: '你实际付',
-      rSub: '{name} 自己补了 {y}', rSubP: '每周 {wk} 里，有 {offw} 是官方返现折下来的，哪个平台都有；{name} 自己只补了每周 {yw}。',
-      rZero: '{name} 没有自己补贴', rZeroP: '每周 {wk} 就是官方价扣掉官方返现，直接在公寓官网订也是这个价。',
-      rOver: '{name} 比「官方价扣返现」还贵 {y}', rOverP: '可能没把官方返现 {off} 全部给你，或者含了服务费。下单前问清楚：官方返现我能拿到吗？',
-      vOne: '你看到的优惠里，{off} 是公寓官方给的', vOneP: '官方返现在哪个平台订都有。{name} 自己补的是 {y}，每周约 {yw}。',
-      vMulti: '几个平台自己补的：{list}', vMultiP: '最多和最少只差 {d}，每周约 {dw}。官方返现 {off} 哪个平台都有，真正的差别就只有这一点。',
-      note: '官方返现和平台补贴通常要入住以后才到账，下单前问清楚什么时候、怎么到账。数字只在这台设备上计算，我们不收集、也不公开任何平台的报价；官方价和官方返现由订房专家整理，以公寓官网为准。',
-      expert: '💬 请专家帮我核对', copied: '拆解结果已复制。进群以后粘贴给专家，专家会帮你核对。', pickHome: '在地图上打开一处公寓，就能自动填入它的官方价。',
-      sumHead: '【报价拆解】{home} · {room}', sumOff: '官方：{rent}/周 × {w} 周 = {g}，官方返现 {off}，扣完 {net}（每周 {netw}）', sumRow: '{name}：每周 {wk}，平台自己补 {y}',
-      offerless: '这处公寓目前没有官方返现', ensuite: '独卫单间', studio: 'Studio 套间', roomAny: '房间', sep: '、'
+      rSub: '平台自己补了 {y}', rSubP: '你实际付 {pay}（每周 {wk}）。其中 {cash} 是公寓官方返现，在哪个平台订都有；平台自己只补了 {y}，每周约 {yw}。',
+      rZero: '平台没有自己补贴', rZeroP: '你实际付 {pay}（每周 {wk}），就是官方价扣掉官方返现，直接在公寓官网订也是这个价。',
+      rOver: '比「官方价扣返现」还贵 {y}', rOverP: '你要付 {pay}（每周 {wk}）。可能没把官方返现 {cash} 全部给你，或者含了服务费。下单前问清楚：官方返现我能拿到吗？',
+      fill: '填上每周租金和周数，就能看到结果', noHome: '先选一处公寓',
+      note: '官方返现和平台补贴通常要入住以后才到账。数字只在这台设备上计算，我们不收集、也不公开任何平台的报价；官方价和官方返现由订房专家整理，以公寓官网为准。',
+      expert: '💬 请专家帮我核对', copied: '结果已复制。进群以后粘贴给专家，专家会帮你核对。',
+      sum: '【报价拆解】{home} · {room}\n官方价 {rent}/周 × {w} 周 = {g}，官方返现 {cash}\n平台报价 {wk}/周 × {w} 周 = {pay}，平台自己补 {y}',
+      budgetLede: '填上全年预算和想住的房型，看看预算相当于每周多少、这类房型一般什么价，预算内有哪些公寓。',
+      budget: '全年预算', roomType: '房型', any: '都可以', ensuite: '独卫单间', studio: 'Studio 套间', roomAny: '房间',
+      perWeekIs: '相当于每周 {v}', range: '{room}的租金区间：{lo} – {hi}/周', rangeN: '共 {n} 处公寓有记录',
+      within: '预算内有 {n} 处', withinNone: '预算内暂时没有', cheapest: '最便宜的是 {name}，{p}/周，比你的预算每周多 {d}。',
+      walk: '步行到利大约 {n} 分钟', show: '在地图上看', budgetFill: '填上全年预算，就能看到区间和预算内的公寓',
+      budgetNote: '按页面里记录的历史参考价计算，不代表实时房价；有官方返现的公寓，实际花费会更低。',
+      sep: '、'
     },
     en: {
-      title: '✂️ Quote breakdown', desc: 'How much of a low price is official cashback', mini: '✂️ Cheaper elsewhere? Break it down', tagRoom: '✂️ Break down this price', tagAlbum: '✂️ Break down', intro: '✂️ Quote breakdown',
-      updated: 'Official price updated {d}', site: 'Check the official site ↗',
-      eyebrow: 'Booking tools', heading: 'Quote breakdown',
-      lede: 'A platform says “only £79.90 a week”, but most of that saving is often the building’s official cashback, which you get on any platform. Enter the weekly price the platform quoted to see how much it really adds itself.',
-      offH: 'Official price (the same on every platform)', rent: 'Official weekly rent', weeks: 'Contract weeks', cash: 'Official cashback (whole contract)', edit: 'Edit', done: 'Done', demo: 'Sample data',
-      gross: 'Full price', grossN: '{rent}/wk × {w} weeks', offCash: 'Official cashback', net: 'After official cashback', netN: '{wk} a week',
-      platH: 'What platforms quoted you', namePh: 'Platform {x}', wk: 'Platform says per week', perWk: '/wk',
-      add: '＋ Break down another platform', remove: 'Remove', example: 'Example', fill: 'Enter the weekly price the platform quoted',
+      title: '✂️ Quote breakdown', desc: 'How much of a low price is official cashback', mini: '✂️ Cheaper elsewhere? Break it down', tagRoom: '✂️ Break down this price', tagAlbum: '✂️ Break down', intro: '✂️ Quote breakdown · Budget',
+      eyebrow: 'Booking tools', heading: 'Quote breakdown', tabSplit: '✂️ Break down a quote', tabBudget: '💷 Search by budget',
+      splitLede: 'Enter the weekly rent a platform quoted and the number of weeks. You will see how much of that price is the building’s official cashback, which you get on any platform, and how much the platform adds itself.',
+      home: 'Home', homePick: 'Pick a home', room: 'Room type', wk: 'Weekly rent', weeks: 'Weeks', perWk: '/wk',
+      demo: 'Sample data', updated: 'Official price updated {d}', site: 'Check the official site ↗',
+      official: 'Official price {rent}/wk × {w} weeks = {g}, official cashback {cash}', officialNone: 'Official price {rent}/wk × {w} weeks = {g}, no official cashback right now',
       bOff: 'Official', bSub: 'Platform', bPay: 'You pay',
-      rSub: '{name} adds {y} itself', rSubP: 'Of the {wk} a week, {offw} comes from the official cashback, which you get anywhere; {name} itself only adds {yw} a week.',
-      rZero: '{name} adds nothing itself', rZeroP: '{wk} a week is just the official price after the official cashback, the same as booking on the building’s site.',
-      rOver: '{name} is {y} above the official price after cashback', rOverP: 'It may not be passing on all of the {off} official cashback, or it includes a fee. Ask before booking: do I get the official cashback?',
-      vOne: '{off} of the saving you see comes from the building', vOneP: 'You get the official cashback on any platform. {name} itself adds {y}, about {yw} a week.',
-      vMulti: 'What each platform adds itself: {list}', vMultiP: 'The most and least are only {d} apart, about {dw} a week. The {off} official cashback comes with every platform; this is the only real difference.',
-      note: 'Official cashback and platform extras are usually paid after you move in, so ask when and how before booking. Figures are worked out on this device only; we do not collect or publish any platform’s quotes. Official prices and cashback are kept by our booking experts; the building’s site is what counts.',
-      expert: '💬 Ask an expert to check', copied: 'Your breakdown is copied. Paste it in your group and an expert will check it.', pickHome: 'Open a home on the map to fill in its official price automatically.',
-      sumHead: '[Quote breakdown] {home} · {room}', sumOff: 'Official: {rent}/wk × {w} weeks = {g}, official cashback {off}, leaving {net} ({netw}/wk)', sumRow: '{name}: {wk}/wk, platform adds {y}',
-      offerless: 'No official cashback at this home right now', ensuite: 'En-suite', studio: 'Studio', roomAny: 'Room', sep: ', '
+      rSub: 'The platform adds {y} itself', rSubP: 'You pay {pay} ({wk} a week). {cash} of the saving is the building’s official cashback, which you get on any platform; the platform itself only adds {y}, about {yw} a week.',
+      rZero: 'The platform adds nothing itself', rZeroP: 'You pay {pay} ({wk} a week): the official price after the official cashback, the same as booking on the building’s site.',
+      rOver: '{y} above the official price after cashback', rOverP: 'You pay {pay} ({wk} a week). It may not pass on all of the {cash} official cashback, or it includes a fee. Ask before booking: do I get the official cashback?',
+      fill: 'Enter the weekly rent and weeks to see the result', noHome: 'Pick a home first',
+      note: 'Official cashback and platform extras are usually paid after you move in. Figures are worked out on this device only; we do not collect or publish any platform’s quotes. Official prices and cashback are kept by our booking experts; the building’s site is what counts.',
+      expert: '💬 Ask an expert to check', copied: 'Your result is copied. Paste it in your group and an expert will check it.',
+      sum: '[Quote breakdown] {home} · {room}\nOfficial {rent}/wk × {w} weeks = {g}, official cashback {cash}\nQuote {wk}/wk × {w} weeks = {pay}, platform adds {y}',
+      budgetLede: 'Enter your budget for the year and the room type you want. You will see what that is per week, the usual price range for that room type and the homes within budget.',
+      budget: 'Budget for the year', roomType: 'Room type', any: 'Any', ensuite: 'En-suite', studio: 'Studio', roomAny: 'Room',
+      perWeekIs: '{v} a week', range: '{room}: {lo} – {hi} a week', rangeN: '{n} homes with recorded prices',
+      within: '{n} homes within budget', withinNone: 'No homes within budget yet', cheapest: 'The cheapest is {name} at {p}/wk, {d} a week over your budget.',
+      walk: 'About {n} min walk to Uni of Liverpool', show: 'Show on map', budgetFill: 'Enter your budget for the year to see the range and homes',
+      budgetNote: 'Based on the recorded guide prices on this map, not live prices. Homes with official cashback will cost less in practice.',
+      sep: ', '
     }
   };
   const w = () => pick(W);
-  const ABC = 'ABC';
-  const data = BT.store('lsm-quote-v2');
+  const data = BT.store('lsm-quote-v3');
   const num = v => { const n = parseFloat(v); return Number.isFinite(n) && n > 0 ? n : 0; };
+  const homes = () => { try { return HOMES; } catch (_) { return []; } };
 
   /* 官方价和官方返现：正式版由订房专家维护，按公寓编号一行，房型用英文名（和「房型与照片」里的一样：En-suite / Studio / Room，或 Gold En Suite 这类）：
      'iq-great-newton-house': { weeks: 51, cashback: 2000, rent: { 'Gold En Suite': 160 }, url: 'https://公寓官网', updated: '2026-10-24' }
@@ -72,155 +79,172 @@
   }
   function official(h, room) {
     const r = roomsOf(h).find(e => e[0] === room) || roomsOf(h)[0], o = OFFICIAL[h.id];
-    if (o) return { room: r[0], rent: (o.rent && o.rent[r[0]]) || r[2], weeks: o.weeks || 51, cash: o.cashback || 0, url: o.url || '', updated: o.updated || '', demo: false };
-    const weeks = 51, share = [0.1, 0.15, 0.2, 0.3][hash(h.id) % 4];
-    return { room: r[0], rent: r[2], weeks, cash: r[2] ? Math.round(r[2] * weeks * share / 50) * 50 : 0, demo: true };
+    if (o) return { room: r[0], name: r[1], rent: (o.rent && o.rent[r[0]]) || r[2], cash: o.cashback || 0, url: o.url || '', updated: o.updated || '', demo: false };
+    const share = [0.1, 0.15, 0.2, 0.3][hash(h.id) % 4];
+    return { room: r[0], name: r[1], rent: r[2], cash: r[2] ? Math.round(r[2] * 51 * share / 50) * 50 : 0, demo: true };
   }
-  /* 平台说每周 wk → 学生实际付 wk × 周数；平台自己补的 = 官方价扣掉官方返现 − 学生实际付 */
-  function split(o, wk) {
-    const rent = num(o.rent), weeks = Math.round(num(o.weeks)), cash = num(o.cash), p = num(wk);
-    if (!rent || !weeks || !p) return null;
-    const gross = rent * weeks, net = gross - cash, pay = p * weeks, sub = net - pay;
-    return { rent, weeks, cash, gross, net, pay, sub, wk: p };
+  /* 官方价 × 学生填的周数 − 官方返现 − 学生实际付 = 平台自己补的 */
+  function split(o, wk, weeks) {
+    const rent = num(o.rent), n = Math.round(num(weeks)), p = num(wk), cash = num(o.cash);
+    if (!rent || !n || !p) return null;
+    const gross = rent * n, pay = p * n, sub = gross - cash - pay;
+    return { rent, weeks: n, cash, gross, pay, sub, wk: p };
   }
   const SMALL = 15;   // 平台补贴在 £15 以内，算「没有自己补贴」（每周价四舍五入的零头）
 
-  function open(h, room) {
-    const k = w(), saved = (data.get() || {})[h ? h.id : '_'] || {};
-    if (h && room && room !== saved.room) Object.assign(saved, { room, edited: false });   // 从某个房型的价签点进来，就拆这个房型
-    const base = h ? official(h, saved.room) : { room: '', rent: '', weeks: 51, cash: '', demo: false };
-    const st = Object.assign({ room: base.room, rent: base.rent, weeks: base.weeks, cash: base.cash, rows: [{ name: '', wk: '' }], edit: !h }, saved);
-    if (h && !roomsOf(h).some(e => e[0] === st.room)) st.room = base.room;
-    if (h && !st.edited) Object.assign(st, { rent: base.rent, weeks: base.weeks, cash: base.cash });   // 没改过就跟着专家维护的官方价走
-    const save = () => { const all = data.get() || {}; all[h ? h.id : '_'] = st; data.set(all); };
-    const roomName = () => { if (!h) return ''; const r = roomsOf(h).find(e => e[0] === st.room) || roomsOf(h)[0]; return r[1]; };
-
+  let tab = 'split';
+  function open(h, room, which) {
+    const k = w(), saved = data.get() || {};
+    if (which) tab = which;
     const m = BT.modal({ eyebrow: k.eyebrow + (h ? ' · ' + h.name : ''), title: k.heading });
-    const offBox = el('div', 'qc-ed'), sumRows = el('div', 'qc-break'), verdict = el('div', 'qc-verdict'), rowsBox = el('div', 'qc-sum');
-    m.body.append(el('p', 'bt-lede', k.lede), offBox, verdict, rowsBox);
-    const acts = el('div', 'qc-actions'), addB = btn('bt-btn alt', k.add), exB = btn('bt-link', k.example);
-    acts.append(addB, exB);
-    m.body.append(acts, el('p', 'bt-note', k.note));
-    const status = el('span', 'bt-status'), expert = btn('bt-btn', k.expert);
-    m.foot.append(status, expert);
-
-    const input = (label, key, isMoney) => {
+    const tabs = el('div', 'br-tabs'); tabs.setAttribute('role', 'tablist');
+    const go = id => {
+      tab = id; tabs.querySelectorAll('.br-tab').forEach(x => x.setAttribute('aria-selected', String(x.dataset.id === id)));
+      m.body.replaceChildren(); m.foot.replaceChildren(); m.body.scrollTop = 0;
+      if (id === 'split') drawSplit(); else drawBudget();
+    };
+    [['split', k.tabSplit], ['budget', k.tabBudget]].forEach(([id, label]) => {
+      const b = btn('br-tab', label); b.dataset.id = id; b.setAttribute('role', 'tab'); b.addEventListener('click', () => go(id)); tabs.append(b);
+    });
+    m.box.insertBefore(tabs, m.body);
+    const save = patch => { const all = data.get() || {}; Object.assign(all, patch); data.set(all); };
+    const numInput = (id, label, value, onInput, isMoney, step) => {
       const f = el('label', 'qc-f'), inp = el('input'); f.append(el('span', '', label));
-      inp.type = 'number'; inp.inputMode = 'decimal'; inp.min = '0'; inp.step = key === 'weeks' ? '1' : '0.01'; inp.value = st[key];
-      inp.addEventListener('input', () => { st[key] = inp.value; st.edited = true; changed(); });
+      inp.id = id; inp.type = 'number'; inp.inputMode = 'decimal'; inp.min = '0'; inp.step = step || '0.01'; inp.value = value || '';
+      inp.addEventListener('input', () => onInput(inp.value));
       if (isMoney) { const u = el('span', 'qc-unit'); u.append(inp); f.append(u); } else f.append(inp);
+      return { f, inp };
+    };
+    const select = (id, label, opts, value, onChange) => {
+      const f = el('label', 'qc-f'), s = el('select'); f.append(el('span', '', label)); s.id = id;
+      opts.forEach(([v, t]) => { const o = el('option', '', t); o.value = v; s.append(o); }); s.value = value;
+      s.addEventListener('change', () => onChange(s.value)); f.append(s);
       return f;
     };
-    /* 官方价：平时只显示算式，点「修改」才出现输入框 */
-    function drawOfficial() {
-      offBox.replaceChildren();
-      const top = el('div', 'qc-edtop'); top.append(el('b', 'qc-name', k.offH));
-      if (base.demo && !st.edited) top.append(el('span', 'bt-tag demo', k.demo));
-      const eb = btn('bt-link', st.edit ? k.done : k.edit); eb.addEventListener('click', () => { st.edit = !st.edit; save(); drawOfficial(); });
-      top.append(eb); offBox.append(top);
-      if (h && roomsOf(h).length > 1) {
-        const chips = el('div', 'br-chips');
-        roomsOf(h).forEach(([id, label]) => {
-          const b = btn('bt-chipbtn' + (st.room === id ? ' on' : ''), label); b.setAttribute('aria-pressed', String(st.room === id));
-          b.addEventListener('click', () => { const o = official(h, id); Object.assign(st, { room: id, rent: o.rent, weeks: o.weeks, cash: o.cash, edited: false }); save(); drawOfficial(); changed(); });
-          chips.append(b);
-        });
-        offBox.append(chips);
+    const weekChips = (inp, onPick) => {
+      const c = el('div', 'br-chips qc-weekchips');
+      [44, 51].forEach(n => { const b = btn('bt-chipbtn', fmt('{n} ' + (k === W.zh ? '周' : 'wks'), { n })); b.addEventListener('click', () => { inp.value = n; onPick(String(n)); }); c.append(b); });
+      return c;
+    };
+
+    /* ---------- 拆解报价：每周租金 + 周数 ---------- */
+    function drawSplit() {
+      let home = h || homes().find(x => x.id === saved.home) || null;
+      const st = { room: room || saved.room, wk: saved.wk || '', weeks: saved.weeks || 51 };
+      m.body.append(el('p', 'bt-lede', k.splitLede));
+      const form = el('div', 'qc-ed'), grid = el('div', 'qc-grid'), out = el('div', 'qc-out');
+      if (!h) {
+        const list = homes().slice().sort((a, b) => a.name.localeCompare(b.name));
+        grid.append(select('qcHome', k.home, [['', k.homePick]].concat(list.map(x => [x.id, x.name])), home ? home.id : '', v => { home = homes().find(x => x.id === v) || null; st.room = ''; save({ home: v }); drawRoom(); calc(); }));
       }
-      if (st.edit) { const g = el('div', 'qc-grid'); g.append(input(k.rent, 'rent', true), input(k.weeks, 'weeks'), input(k.cash, 'cash', true)); offBox.append(g); }
-      offBox.append(sumRows); drawOfficialSum();
-      if (h && (base.updated || base.url)) {   // 专家录入的官方价：显示更新日期和官网链接，学生可以自己核对
-        const src = el('p', 'bt-note qc-src');
-        if (base.updated) src.append(fmt(k.updated, { d: base.updated }));
-        if (base.url) { const a = el('a', '', k.site); a.href = base.url; a.target = '_blank'; a.rel = 'noopener'; if (base.updated) src.append(' · '); src.append(a); }
-        offBox.append(src);
+      const roomSlot = el('div', 'qc-roomslot');
+      grid.append(roomSlot);
+      const wkF = numInput('qcWk', k.wk, st.wk, v => { st.wk = v; save({ wk: v }); calc(); }, true);
+      const wsF = numInput('qcWeeks', k.weeks, st.weeks, v => { st.weeks = v; save({ weeks: v }); calc(); }, false, '1');
+      grid.append(wkF.f, wsF.f);
+      form.append(grid, weekChips(wsF.inp, v => { st.weeks = v; save({ weeks: v }); calc(); }));
+      m.body.append(form, out, el('p', 'bt-note', k.note));
+      function drawRoom() {
+        roomSlot.replaceChildren();
+        if (!home) return;
+        const rs = roomsOf(home);
+        if (!rs.some(r => r[0] === st.room)) st.room = rs[0][0];
+        if (rs.length > 1) roomSlot.append(select('qcRoom', k.room, rs.map(r => [r[0], r[2] ? `${r[1]} · ${money(r[2])}` : r[1]]), st.room, v => { st.room = v; save({ room: v }); calc(); }));
+        else { const f = el('div', 'qc-f'); f.append(el('span', '', k.room), el('b', 'qc-fixed', rs[0][1])); roomSlot.append(f); }
       }
-    }
-    function drawOfficialSum() {
-      sumRows.replaceChildren();
-      const rent = num(st.rent), weeks = Math.round(num(st.weeks)), cash = num(st.cash);
-      if (!rent || !weeks) return;
-      const row = (a, b, cls, note) => { const x = el('div', 'qc-brow' + (cls ? ' ' + cls : '')), t = el('span', '', a); if (note) t.append(el('small', '', note)); x.append(t, el('b', '', b)); sumRows.append(x); };
-      row(k.gross, money(rent * weeks), '', fmt(k.grossN, { rent: money(rent, 2), w: weeks }));
-      if (cash) row(k.offCash, '− ' + money(cash), 'minus'); else sumRows.append(el('p', 'bt-note', k.offerless));
-      row(k.net, money(rent * weeks - cash), 'total', fmt(k.netN, { wk: money((rent * weeks - cash) / weeks, 2) }));
-    }
-    /* 每个平台一张卡：名字 + 每周价 → 一条拆开的色条 + 一句话 */
-    function drawRows() {
-      rowsBox.replaceChildren(el('p', 'br-sub', k.platH));
-      st.rows.forEach((r, i) => {
-        const box = el('div', 'qc-line qc-plat'), head = el('div', 'qc-edtop'), nm = el('input');
-        nm.value = r.name; nm.placeholder = fmt(k.namePh, { x: ABC[i] }); nm.maxLength = 24; nm.setAttribute('aria-label', fmt(k.namePh, { x: ABC[i] }));
-        nm.addEventListener('input', () => { r.name = nm.value; changed(); });
-        head.append(nm);
-        if (st.rows.length > 1) { const rm = btn('bt-link', k.remove); rm.addEventListener('click', () => { st.rows.splice(i, 1); save(); drawRows(); }); head.append(rm); }
-        const f = el('label', 'qc-f qc-wkf'), u = el('span', 'qc-unit'), inp = el('input');
-        inp.type = 'number'; inp.inputMode = 'decimal'; inp.min = '0'; inp.step = '0.01'; inp.value = r.wk;
-        inp.addEventListener('input', () => { r.wk = inp.value; changed(); });
-        u.append(inp); f.append(el('span', '', k.wk), u, el('small', '', k.perWk));
-        const res = el('div', 'qc-res'); res.dataset.i = i;
-        box.append(head, f, res); rowsBox.append(box);
-      });
-      addB.disabled = st.rows.length >= 3;
-      drawResults();
-    }
-    const nameOf = (r, i) => (r.name || '').trim() || fmt(k.namePh, { x: ABC[i] });
-    function drawResults() {
-      const done = [];
-      st.rows.forEach((r, i) => {
-        const res = rowsBox.querySelector(`.qc-res[data-i="${i}"]`); if (!res) return;
-        res.replaceChildren();
-        const s = split(st, r.wk);
-        if (!s) { res.append(el('p', 'bt-note', k.fill)); return; }
-        done.push({ s, name: nameOf(r, i) });
-        const v = { name: nameOf(r, i), y: money(Math.abs(s.sub)), yw: money(Math.abs(s.sub) / s.weeks, 2), wk: money(s.wk, 2), offw: money(s.cash / s.weeks, 2), off: money(s.cash) };
-        // 色条：原价 = 官方返现 + 平台自己补 + 你实际付
+      let last = null;
+      function calc() {
+        out.replaceChildren(); last = null;
+        if (!home) { out.append(el('p', 'bt-note', k.noHome)); return; }
+        const o = official(home, st.room), s = split(o, st.wk, st.weeks);
+        const card = el('div', 'qc-line');
+        const off = el('p', 'qc-offline');
+        if (o.rent && num(st.weeks)) off.append(fmt(o.cash ? k.official : k.officialNone, { rent: money(o.rent, 2), w: Math.round(num(st.weeks)), g: money(o.rent * Math.round(num(st.weeks))), cash: money(o.cash) }));
+        if (o.demo) { off.append(' '); off.append(el('span', 'bt-tag demo', k.demo)); }
+        if (o.updated || o.url) {
+          const src = el('span', 'qc-src');
+          if (o.updated) src.append(fmt(k.updated, { d: o.updated }));
+          if (o.url) { const a = el('a', '', k.site); a.href = o.url; a.target = '_blank'; a.rel = 'noopener'; if (o.updated) src.append(' · '); src.append(a); }
+          off.append(' '); off.append(src);
+        }
+        if (!s) { card.append(off, el('p', 'bt-note', k.fill)); out.append(card); return; }
+        last = { s, o };
+        const v = { y: money(Math.abs(s.sub)), yw: money(Math.abs(s.sub) / s.weeks, 2), wk: money(s.wk, 2), pay: money(s.pay), cash: money(s.cash) };
+        const head = el('b', 'qc-head'), p = el('p', 'qc-explain');
+        if (s.sub > SMALL) { head.textContent = fmt(k.rSub, v); p.textContent = fmt(k.rSubP, v); }
+        else if (s.sub < -SMALL) { head.textContent = fmt(k.rOver, v); p.textContent = fmt(k.rOverP, v); card.classList.add('qc-warn'); }
+        else { head.textContent = k.rZero; p.textContent = fmt(k.rZeroP, v); }
+        // 色条：官方原价 = 官方返现 + 平台自己补 + 你实际付
         const bar = el('div', 'qc-bar' + (s.sub < -SMALL ? ' over' : ''));
         const part = (cls, val, label) => { if (val <= 0) return; const x = el('span', cls); x.style.flexGrow = String(val); x.title = `${label} ${money(val)}`; x.append(el('i', '', label), el('b', '', money(val))); bar.append(x); };
-        part('off', s.cash, k.bOff);
-        if (s.sub > SMALL) part('sub', s.sub, k.bSub);
-        part('pay', s.pay, k.bPay);
-        const say = el('div', 'qc-say');
-        if (s.sub > SMALL) say.append(el('b', '', fmt(k.rSub, v)), el('p', '', fmt(k.rSubP, v)));
-        else if (s.sub < -SMALL) say.append(el('b', '', fmt(k.rOver, v)), el('p', '', fmt(k.rOverP, v)));
-        else say.append(el('b', '', fmt(k.rZero, v)), el('p', '', fmt(k.rZeroP, v)));
-        res.append(bar, say);
-      });
-      verdict.replaceChildren(); verdict.hidden = !done.length || !num(st.cash) || (done.length === 1 && done[0].s.sub < -SMALL);   // 只有一个报价且比官方价还贵时，卡片里那句话就够了
-      if (verdict.hidden) return;
-      const off = money(num(st.cash));
-      if (done.length === 1) {
-        const d = done[0], y = Math.max(0, d.s.sub);
-        verdict.append(el('b', '', fmt(k.vOne, { off })), el('p', '', fmt(k.vOneP, { off, name: d.name, y: money(y), yw: money(y / d.s.weeks, 2) })));
-      } else {
-        const subs = done.map(d => Math.max(0, d.s.sub)), hi = Math.max(...subs), lo = Math.min(...subs);
-        verdict.append(el('b', '', fmt(k.vMulti, { list: done.map((d, i) => `${d.name} ${money(subs[i])}`).join(k.sep) })),
-          el('p', '', fmt(k.vMultiP, { off, d: money(hi - lo), dw: money((hi - lo) / done[0].s.weeks, 2) })));
+        part('off', s.cash, k.bOff); if (s.sub > SMALL) part('sub', s.sub, k.bSub); part('pay', s.pay, k.bPay);
+        card.append(head, bar, p, off); out.append(card);
       }
+      const status = el('span', 'bt-status'), expert = btn('bt-btn', k.expert);
+      expert.addEventListener('click', async () => {
+        if (!home) { status.textContent = k.noHome; return; }
+        if (last) await BT.copy(fmt(k.sum, { home: home.name, room: last.o.name, rent: money(last.s.rent, 2), w: last.s.weeks, g: money(last.s.gross), cash: money(last.s.cash), wk: money(last.s.wk, 2), pay: money(last.s.pay), y: money(last.s.sub) }));
+        BT.close();
+        try { openContact(home); } catch (_) { return; }
+        if (last) BT.say(k.copied);
+      });
+      m.foot.append(status, expert);
+      drawRoom(); calc();
+      if (!st.wk) setTimeout(() => wkF.inp.focus({ preventScroll: true }), 50);
     }
-    function changed() { save(); drawOfficialSum(); drawResults(); }
-    addB.addEventListener('click', () => {
-      if (st.rows.length >= 3) return;
-      st.rows.push({ name: '', wk: '' }); save(); drawRows();
-      const ins = rowsBox.querySelectorAll('.qc-wkf input'); ins[ins.length - 1].focus();
-    });
-    // 例子：£125 × 51 周 = £6,375，官方返现 £2,000；平台 A 说每周 £79.90（自己补 £300），平台 B 说每周 £70.10（自己补 £800）
-    exB.addEventListener('click', () => {
-      Object.assign(st, { rent: 125, weeks: 51, cash: 2000, edited: true, rows: [{ name: fmt(k.namePh, { x: 'A' }), wk: '79.90' }, { name: fmt(k.namePh, { x: 'B' }), wk: '70.10' }] });
-      save(); drawOfficial(); drawRows(); m.body.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    expert.addEventListener('click', async () => {
-      if (!h) { status.textContent = k.pickHome; return; }
-      const rent = num(st.rent), weeks = Math.round(num(st.weeks)), cash = num(st.cash);
-      const lines = [fmt(k.sumHead, { home: h.name, room: roomName() })];
-      if (rent && weeks) lines.push(fmt(k.sumOff, { rent: money(rent, 2), w: weeks, g: money(rent * weeks), off: money(cash), net: money(rent * weeks - cash), netw: money((rent * weeks - cash) / weeks, 2) }));
-      st.rows.forEach((r, i) => { const s = split(st, r.wk); if (s) lines.push(fmt(k.sumRow, { name: nameOf(r, i), wk: money(s.wk, 2), y: money(s.sub) })); });
-      await BT.copy(lines.join('\n'));
-      BT.close();
-      try { openContact(h); } catch (_) { return; }
-      BT.say(k.copied);
-    });
-    drawOfficial(); drawRows();
+
+    /* ---------- 按预算看房：全年预算 + 房型 + 周数 ---------- */
+    function drawBudget() {
+      const st = { budget: saved.budget || '', type: saved.type || 'e', weeks: saved.weeks || 51 };
+      m.body.append(el('p', 'bt-lede', k.budgetLede));
+      const form = el('div', 'qc-ed'), grid = el('div', 'qc-grid'), out = el('div', 'qc-out');
+      const bF = numInput('qcBudget', k.budget, st.budget, v => { st.budget = v; save({ budget: v }); calc(); }, true, '100');
+      const wsF = numInput('qcBWeeks', k.weeks, st.weeks, v => { st.weeks = v; save({ weeks: v }); calc(); }, false, '1');
+      grid.append(bF.f, select('qcType', k.roomType, [['e', k.ensuite], ['s', k.studio], ['any', k.any]], st.type, v => { st.type = v; save({ type: v }); calc(); }), wsF.f);
+      form.append(grid, weekChips(wsF.inp, v => { st.weeks = v; save({ weeks: v }); calc(); }));
+      m.body.append(form, out, el('p', 'bt-note', k.budgetNote));
+      const priceOf = x => (st.type === 'e' ? x.pe : st.type === 's' ? x.ps : Math.min(...[x.pe, x.ps, x.plo].map(Number).filter(v => v > 0)));
+      function calc() {
+        out.replaceChildren();
+        const list = homes().map(x => ({ x, p: Number(priceOf(x)) })).filter(e => Number.isFinite(e.p) && e.p > 0 && !e.x.pso).sort((a, b) => a.p - b.p);
+        const budget = num(st.budget), n = Math.round(num(st.weeks));
+        if (!list.length) return;
+        const lo = list[0].p, hi = list[list.length - 1].p, roomLabel = st.type === 'e' ? k.ensuite : st.type === 's' ? k.studio : k.any;
+        const card = el('div', 'qc-line');
+        if (!budget || !n) {
+          card.append(el('b', 'qc-head', fmt(k.range, { room: roomLabel, lo: money(lo), hi: money(hi) })), el('p', 'bt-note', k.budgetFill));
+          out.append(card); return;
+        }
+        const per = budget / n, inBudget = list.filter(e => e.p <= per);
+        card.append(el('b', 'qc-head', fmt(k.perWeekIs, { v: money(per, 2) })));
+        // 区间条：最便宜到最贵，标出预算的位置
+        const rng = el('div', 'qc-range'), track = el('div', 'qc-track'), fill = el('i'), mark = el('span', 'qc-mark');
+        const pos = Math.max(0, Math.min(1, (per - lo) / Math.max(1, hi - lo)));
+        fill.style.width = (pos * 100) + '%'; mark.style.left = (pos * 100) + '%'; mark.textContent = money(per);
+        track.append(fill, mark);
+        const ends = el('div', 'qc-ends'); ends.append(el('span', '', money(lo)), el('span', '', money(hi)));
+        rng.append(el('p', 'qc-explain', fmt(k.range, { room: roomLabel, lo: money(lo), hi: money(hi) }) + ' · ' + fmt(k.rangeN, { n: list.length })), track, ends);
+        card.append(rng);
+        if (inBudget.length) {
+          card.append(el('p', 'qc-sub', fmt(k.within, { n: inBudget.length })));
+          const ul = el('div', 'qc-homes');
+          inBudget.slice().reverse().slice(0, 8).forEach(({ x, p }) => {   // 预算内最贵的几处在前：同样的钱能住到的最好选择
+            const row = btn('qc-home');
+            const t = el('span'); t.append(el('b', '', x.name), el('small', '', fmt(k.walk, { n: x.uol })));
+            row.append(t, el('span', 'qc-p', money(p) + k.perWk));
+            row.addEventListener('click', () => { BT.close(); try { show(x, true); } catch (_) { /* 页面还没准备好 */ } });
+            ul.append(row);
+          });
+          card.append(ul);
+        } else {
+          card.append(el('p', 'qc-sub', k.withinNone), el('p', 'qc-explain', fmt(k.cheapest, { name: list[0].x.name, p: money(lo), d: money(lo - per, 2) })));
+        }
+        out.append(card);
+      }
+      calc();
+      if (!st.budget) setTimeout(() => bF.inp.focus({ preventScroll: true }), 50);
+    }
+    go(tab);
   }
 
   BT.add({
@@ -239,7 +263,7 @@
     [...strip.children].forEach((card, i) => {
       if (!card.classList.contains('rp-card')) return;
       const item = el('div', 'rp-item'), tag = btn('qt-tag small', w().tagRoom), key = types[i] && types[i][0];
-      tag.addEventListener('click', e => { e.stopPropagation(); open(h, key); });
+      tag.addEventListener('click', e => { e.stopPropagation(); open(h, key, 'split'); });
       card.before(item); item.append(card, tag);
     });
   }
@@ -251,8 +275,9 @@
     if (!foot || !h || foot.querySelector('.qt-tag')) return;
     const title = album.querySelector('.rp-atitles h3'), r = roomsOf(h).find(e => title && e[1] === title.textContent);
     const tag = btn('qt-tag small', w().tagAlbum);
-    tag.addEventListener('click', () => { const x = album.querySelector('.x'); if (x) x.click(); open(h, r && r[0]); });
+    tag.addEventListener('click', () => { const x = album.querySelector('.x'); if (x) x.click(); open(h, r && r[0], 'split'); });
     foot.insertBefore(tag, foot.lastElementChild);
   }).observe(album, { childList: true });
+
   window.QuoteCheck = { open, split, official, OFFICIAL };
 })();

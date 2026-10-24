@@ -42,39 +42,27 @@
 .bt-tag.good { background: #dfe9cc; }
 .bt-tag.warn { background: #ead8d2; color: #7a2f20; border-color: #7a2f20; }
 
-/* 报价拆解 */
-.qc-verdict { border: 2.5px solid #3b2a1a; border-radius: 14px; background: #fff3b8; padding: 10px 14px; display: flex; flex-direction: column; gap: 4px; }
-.qc-verdict[hidden] { display: none; }
-.qc-verdict b { font: 18px/1.25 var(--hand, cursive); }
-.qc-verdict p { margin: 0; font-size: 13px; line-height: 1.5; }
-.qc-sum { display: flex; flex-direction: column; gap: 8px; }
-.qc-line { border: 2px solid #3b2a1a; border-radius: 12px; background: #fff; padding: 8px 12px; display: flex; flex-direction: column; gap: 8px; }
-.qc-name { font: 16px var(--hand, cursive); font-weight: normal; }
+/* 报价拆解 + 按预算看房 */
 .qc-ed { border: 2px solid #3b2a1a; border-radius: 14px; background: #f8efd9; padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
-.qc-edtop { display: flex; gap: 8px; align-items: center; }
-.qc-edtop > :first-child { flex: 1; min-width: 0; }
-.qc-edtop input { font: 17px var(--hand, cursive); border: 0; border-bottom: 2px dashed #b89b72; background: transparent; color: #3b2a1a; padding: 2px 0; }
-.qc-edtop .bt-link { font-size: 14px; }
-.qc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; }
+.qc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px 10px; }
 .qc-f { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: #6e5538; min-width: 0; }
-.qc-f input { font: 15px system-ui, sans-serif; color: #3b2a1a; border: 2px solid #3b2a1a; border-radius: 8px; background: #fffaf0; padding: 5px 8px; width: 100%; min-width: 0; }
+.qc-f input, .qc-f select { font: 16px system-ui, sans-serif; color: #3b2a1a; border: 2px solid #3b2a1a; border-radius: 8px; background: #fffaf0; padding: 6px 8px; width: 100%; min-width: 0; }
 .qc-f .qc-unit { position: relative; display: block; }
 .qc-f .qc-unit input { padding-left: 22px; }
-.qc-f .qc-unit::before { content: '£'; position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 14px; color: #6e5538; }
-.qc-wkf { display: grid; grid-template-columns: auto minmax(90px, 140px) auto; align-items: center; gap: 8px; font-size: 14px; color: #3b2a1a; }
-.qc-wkf input { font-size: 18px; }
-.qc-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-/* 官方价的算式：原价 → 官方返现 → 扣掉官方返现 */
-.qc-break { display: flex; flex-direction: column; }
-.qc-brow { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 5px 0; border-bottom: 1.5px dashed #dcc8a0; }
-.qc-brow span { font-size: 13.5px; display: flex; flex-direction: column; }
-.qc-brow small { font-size: 11.5px; color: #6e5538; }
-.qc-brow b { font: 19px var(--display, cursive); font-weight: normal; white-space: nowrap; }
-.qc-brow.minus b { color: #1f7a4d; }
-.qc-brow.total { border-bottom: 0; padding-top: 7px; }
-.qc-brow.total span { font: 16px var(--hand, cursive); }
-.qc-brow.total b { font-size: 23px; }
-/* 一个平台的报价拆开成一条色条：官方返现（绿）+ 平台自己补（黄）+ 你实际付（纸色） */
+.qc-f .qc-unit::before { content: '£'; position: absolute; left: 9px; top: 50%; transform: translateY(-50%); font-size: 15px; color: #6e5538; }
+.qc-fixed { font: 17px var(--hand, cursive); font-weight: normal; color: #3b2a1a; padding: 6px 0; }
+.qc-roomslot:empty { display: none; }
+.qc-weekchips .bt-chipbtn { font-size: 13px; }
+.qc-out { display: flex; flex-direction: column; gap: 8px; }
+.qc-line { border: 2.5px solid #3b2a1a; border-radius: 14px; background: #fff; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+.qc-line.qc-warn { background: #fbefea; }
+.qc-head { font: 21px/1.2 var(--hand, cursive); font-weight: normal; }
+.qc-explain { margin: 0; font-size: 13.5px; line-height: 1.55; }
+.qc-offline { margin: 0; font-size: 12px; line-height: 1.5; color: #6e5538; }
+.qc-offline .bt-tag { font-size: 12px; }
+.qc-src a { color: #974128; }
+.qc-sub { margin: 4px 0 0; font: 16px var(--hand, cursive); color: #b5462f; }
+/* 一个报价拆开成一条色条：官方返现（绿）+ 平台自己补（黄）+ 你实际付（纸色） */
 .qc-bar { display: flex; height: 46px; border: 2px solid #3b2a1a; border-radius: 10px; overflow: hidden; }
 .qc-bar span { flex-basis: 0; min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 6px; border-left: 2px solid #3b2a1a; overflow: hidden; white-space: nowrap; }
 .qc-bar span:first-child { border-left: 0; }
@@ -85,8 +73,20 @@
 .qc-bar .pay { background: #f8efd9; }
 .qc-bar.over { border-color: #7a2f20; }
 .qc-bar.over .pay { background: #ead8d2; }
-.qc-say b { display: block; font: 17px/1.25 var(--hand, cursive); font-weight: normal; }
-.qc-say p { margin: 2px 0 0; font-size: 13px; line-height: 1.5; }
+/* 预算：租金区间条，标出每周预算的位置 */
+.qc-range { display: flex; flex-direction: column; gap: 6px; }
+.qc-track { position: relative; height: 12px; border: 2px solid #3b2a1a; border-radius: 999px; background: #f8efd9; margin: 22px 0 0; }
+.qc-track i { position: absolute; left: 0; top: 0; bottom: 0; background: #cfe3c4; border-radius: 999px; }
+.qc-mark { position: absolute; top: -26px; transform: translateX(-50%); background: #3b2a1a; color: #fffaf0; font: 13px var(--display, cursive); border-radius: 999px; padding: 1px 8px; white-space: nowrap; }
+.qc-mark::after { content: ''; position: absolute; left: 50%; bottom: -5px; margin-left: -5px; border: 5px solid transparent; border-bottom: 0; border-top-color: #3b2a1a; }
+.qc-ends { display: flex; justify-content: space-between; font-size: 12px; color: #6e5538; font-variant-numeric: tabular-nums; }
+.qc-homes { display: flex; flex-direction: column; }
+.qc-home { display: flex; justify-content: space-between; align-items: center; gap: 10px; text-align: left; border: 0; border-top: 1.5px dashed #dcc8a0; background: none; padding: 7px 2px; cursor: pointer; color: #3b2a1a; }
+.qc-home:hover { background: #fff3b8; }
+.qc-home span:first-child { display: flex; flex-direction: column; min-width: 0; }
+.qc-home b { font: 16px var(--hand, cursive); font-weight: normal; }
+.qc-home small { font-size: 11.5px; color: #6e5538; }
+.qc-p { font: 17px var(--display, cursive); white-space: nowrap; }
 
 /* 开订提醒与资料卡 */
 .br-tabs { display: flex; gap: 6px; padding: 10px 16px 0; flex: none; overflow-x: auto; }
@@ -143,7 +143,7 @@
   .bt-head { padding-top: calc(14px + env(safe-area-inset-top, 0px)); }
   .bt-foot { padding-bottom: calc(14px + env(safe-area-inset-bottom, 0px)); }
 }
-@media (max-width: 380px) { .qc-grid, .br-fields { grid-template-columns: 1fr; } .qc-wkf { grid-template-columns: 1fr auto; } .qc-wkf > span:first-child { grid-column: 1 / -1; } }
+@media (max-width: 380px) { .br-fields { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .br-toast { transition: none; } .br-bar i { transition: none; } }
 /* 报价拆解：官方原价 → 官方优惠 → 平台自己补的 → 你最后实际付 */
 .qc-break { grid-column: 1 / -1; display: flex; flex-direction: column; }
@@ -165,8 +165,6 @@
 .qt-tag.small { font-size: 13.5px; padding: 2px 10px 2px 19px; align-self: flex-start; }
 .rp-item { flex: none; width: 156px; display: flex; flex-direction: column; gap: 8px; scroll-snap-align: start; padding-bottom: 3px; }
 .rp-item .rp-card { width: 100%; }
-.qc-src { display: flex; flex-wrap: wrap; gap: 0 4px; }
-.qc-src a { color: #974128; }
 @media (prefers-reduced-motion: reduce) { .qt-tag { transition: none; } }
 .rp-afoot .qt-tag { align-self: center; margin-left: auto; }
 .rp-afoot .rp-ask { white-space: nowrap; }
