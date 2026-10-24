@@ -1,14 +1,16 @@
 /* 报价拆解：平台常说「每周只要 £79.9」，可这里面大部分优惠往往是公寓官方的返现，在哪个平台订都有。
    例：£125/周 × 51 周 = £6,375，公寓官方返现 £2,000，平台自己补 £300 → 学生付 £4,075，平台说成「每周 £79.9」。
    学生只填平台说的每周价，这里用公寓的官方周租、合同周数和官方返现（订房专家维护在 OFFICIAL 里）拆成「官方返现 + 平台自己补的」，
-   多拆几个平台，就看得出每家自己到底补了多少。不收集、不公开任何平台的报价，数字只存在当前浏览器（lsm-quote-v2）。 */
+   多拆几个平台，就看得出每家自己到底补了多少。不收集、不公开任何平台的报价，数字只存在当前浏览器（lsm-quote-v2）。
+   入口：公寓卡片「房型与照片」里每个房型下面一个「✂️ 拆开这个价」价签、房型相册底部、收起状态的卡片、生活选房开场页。 */
 (() => {
   'use strict';
   const BT = window.BookingTools; if (!BT) return;
   const { el, btn, fmt, money, pick } = BT;
   const W = {
     zh: {
-      title: '🧮 报价拆解', desc: '平台说的低价里，多少是官方返现', mini: '🧮 拆解报价', intro: '🧮 报价拆解',
+      title: '✂️ 报价拆解', desc: '平台说的低价里，多少是官方返现', mini: '✂️ 平台更便宜？拆开看看', tagRoom: '✂️ 拆开这个价', tagAlbum: '✂️ 拆价', intro: '✂️ 报价拆解',
+      updated: '官方价 {d} 更新', site: '去官网核对 ↗',
       eyebrow: '订房小工具', heading: '报价拆解',
       lede: '平台说「每周只要 £79.9」，其中大部分优惠往往是公寓官方的返现，在哪个平台订都有。把平台报的每周价填进来，看看它自己到底补了多少。',
       offH: '公寓官方价（每个平台都一样）', rent: '官方周租', weeks: '合同周数', cash: '官方返现（整个合同）', edit: '修改', done: '完成', demo: '示例数据',
@@ -27,7 +29,8 @@
       offerless: '这处公寓目前没有官方返现', ensuite: '独卫单间', studio: 'Studio 套间', roomAny: '房间', sep: '、'
     },
     en: {
-      title: '🧮 Quote breakdown', desc: 'How much of a low price is official cashback', mini: '🧮 Break down a quote', intro: '🧮 Quote breakdown',
+      title: '✂️ Quote breakdown', desc: 'How much of a low price is official cashback', mini: '✂️ Cheaper elsewhere? Break it down', tagRoom: '✂️ Break down this price', tagAlbum: '✂️ Break down', intro: '✂️ Quote breakdown',
+      updated: 'Official price updated {d}', site: 'Check the official site ↗',
       eyebrow: 'Booking tools', heading: 'Quote breakdown',
       lede: 'A platform says “only £79.90 a week”, but most of that saving is often the building’s official cashback, which you get on any platform. Enter the weekly price the platform quoted to see how much it really adds itself.',
       offH: 'Official price (the same on every platform)', rent: 'Official weekly rent', weeks: 'Contract weeks', cash: 'Official cashback (whole contract)', edit: 'Edit', done: 'Done', demo: 'Sample data',
@@ -51,21 +54,25 @@
   const data = BT.store('lsm-quote-v2');
   const num = v => { const n = parseFloat(v); return Number.isFinite(n) && n > 0 ? n : 0; };
 
-  /* 官方价和官方返现：正式版由订房专家维护，例如
-     'iq-great-newton-house': { weeks: 51, ensuite: 160, studio: 0, cashback: 2000 }
+  /* 官方价和官方返现：正式版由订房专家维护，按公寓编号一行，房型用英文名（和「房型与照片」里的一样：En-suite / Studio / Room，或 Gold En Suite 这类）：
+     'iq-great-newton-house': { weeks: 51, cashback: 2000, rent: { 'Gold En Suite': 160 }, url: 'https://公寓官网', updated: '2026-10-24' }
      没录入的公寓用页面里的历史参考价，官方返现按公寓编号生成示例（标「示例数据」）。 */
   const OFFICIAL = {};
   const hash = s => [...s].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7);
+  const firstNum = v => parseFloat(String(v).replace(/[^\d.]+/g, ' ').trim()) || '';   // '£160–185' → 160
+  /* 房型：和卡片上「房型与照片」一样的列表 [英文名, 显示名, 参考周租] */
   function roomsOf(h) {
-    const k = w(), out = [];
-    if (h.pe) out.push(['ensuite', k.ensuite, h.pe]);
-    if (h.ps) out.push(['studio', k.studio, h.ps]);
-    if (!out.length) out.push(['room', k.roomAny, h.plo || '']);
+    const k = w();
+    if (window.RoomPhotos) { const t = window.RoomPhotos.types(h); if (t.length) return t.map(x => [x.key, x.name, firstNum(x.price)]); }
+    const out = [];
+    if (h.pe) out.push(['En-suite', k.ensuite, h.pe]);
+    if (h.ps) out.push(['Studio', k.studio, h.ps]);
+    if (!out.length) out.push(['Room', k.roomAny, h.plo || '']);
     return out;
   }
   function official(h, room) {
     const r = roomsOf(h).find(e => e[0] === room) || roomsOf(h)[0], o = OFFICIAL[h.id];
-    if (o) return { room: r[0], rent: o[r[0]] || r[2], weeks: o.weeks || 51, cash: o.cashback || 0, demo: false };
+    if (o) return { room: r[0], rent: (o.rent && o.rent[r[0]]) || r[2], weeks: o.weeks || 51, cash: o.cashback || 0, url: o.url || '', updated: o.updated || '', demo: false };
     const weeks = 51, share = [0.1, 0.15, 0.2, 0.3][hash(h.id) % 4];
     return { room: r[0], rent: r[2], weeks, cash: r[2] ? Math.round(r[2] * weeks * share / 50) * 50 : 0, demo: true };
   }
@@ -78,10 +85,12 @@
   }
   const SMALL = 15;   // 平台补贴在 £15 以内，算「没有自己补贴」（每周价四舍五入的零头）
 
-  function open(h) {
+  function open(h, room) {
     const k = w(), saved = (data.get() || {})[h ? h.id : '_'] || {};
+    if (h && room && room !== saved.room) Object.assign(saved, { room, edited: false });   // 从某个房型的价签点进来，就拆这个房型
     const base = h ? official(h, saved.room) : { room: '', rent: '', weeks: 51, cash: '', demo: false };
     const st = Object.assign({ room: base.room, rent: base.rent, weeks: base.weeks, cash: base.cash, rows: [{ name: '', wk: '' }], edit: !h }, saved);
+    if (h && !roomsOf(h).some(e => e[0] === st.room)) st.room = base.room;
     if (h && !st.edited) Object.assign(st, { rent: base.rent, weeks: base.weeks, cash: base.cash });   // 没改过就跟着专家维护的官方价走
     const save = () => { const all = data.get() || {}; all[h ? h.id : '_'] = st; data.set(all); };
     const roomName = () => { if (!h) return ''; const r = roomsOf(h).find(e => e[0] === st.room) || roomsOf(h)[0]; return r[1]; };
@@ -113,13 +122,19 @@
         const chips = el('div', 'br-chips');
         roomsOf(h).forEach(([id, label]) => {
           const b = btn('bt-chipbtn' + (st.room === id ? ' on' : ''), label); b.setAttribute('aria-pressed', String(st.room === id));
-          b.addEventListener('click', () => { const o = official(h, id); Object.assign(st, { room: id, rent: o.rent, weeks: o.weeks, cash: o.cash, edited: false }); drawOfficial(); changed(); });
+          b.addEventListener('click', () => { const o = official(h, id); Object.assign(st, { room: id, rent: o.rent, weeks: o.weeks, cash: o.cash, edited: false }); save(); drawOfficial(); changed(); });
           chips.append(b);
         });
         offBox.append(chips);
       }
       if (st.edit) { const g = el('div', 'qc-grid'); g.append(input(k.rent, 'rent', true), input(k.weeks, 'weeks'), input(k.cash, 'cash', true)); offBox.append(g); }
       offBox.append(sumRows); drawOfficialSum();
+      if (h && (base.updated || base.url)) {   // 专家录入的官方价：显示更新日期和官网链接，学生可以自己核对
+        const src = el('p', 'bt-note qc-src');
+        if (base.updated) src.append(fmt(k.updated, { d: base.updated }));
+        if (base.url) { const a = el('a', '', k.site); a.href = base.url; a.target = '_blank'; a.rel = 'noopener'; if (base.updated) src.append(' · '); src.append(a); }
+        offBox.append(src);
+      }
     }
     function drawOfficialSum() {
       sumRows.replaceChildren();
@@ -209,10 +224,35 @@
   }
 
   BT.add({
-    id: 'quote', order: 1,
-    card: () => ({ title: w().title, desc: w().desc, mini: w().mini }),
+    id: 'quote', order: 1, details: false,   // 「展开详情」里不另放一块，价签直接挂在每个房型下面
+    card: () => ({ title: w().title, desc: w().desc, mini: w().mini, cls: 'qt-tag' }),
     intro: () => w().intro,
-    open
+    open: h => open(h)
   });
+
+  /* 每个房型卡片下面挂一个价签：把卡片包进 .rp-item，价签放在卡片下面（按钮里不能再套按钮） */
+  const cardBody = document.getElementById('cardBody');
+  function tagRooms() {
+    const h = BT.homeNow(), strip = cardBody && cardBody.querySelector('.rp-strip');
+    if (!h || !strip) return;
+    const types = roomsOf(h);
+    [...strip.children].forEach((card, i) => {
+      if (!card.classList.contains('rp-card')) return;
+      const item = el('div', 'rp-item'), tag = btn('qt-tag small', w().tagRoom), key = types[i] && types[i][0];
+      tag.addEventListener('click', e => { e.stopPropagation(); open(h, key); });
+      card.before(item); item.append(card, tag);
+    });
+  }
+  if (cardBody) new MutationObserver(tagRooms).observe(cardBody, { childList: true, subtree: true });
+  /* 房型相册底部，「咨询这个房型」旁边 */
+  const album = document.querySelector('.rp-wrap');
+  if (album) new MutationObserver(() => {
+    const foot = album.querySelector('.rp-afoot'), h = BT.homeNow();
+    if (!foot || !h || foot.querySelector('.qt-tag')) return;
+    const title = album.querySelector('.rp-atitles h3'), r = roomsOf(h).find(e => title && e[1] === title.textContent);
+    const tag = btn('qt-tag small', w().tagAlbum);
+    tag.addEventListener('click', () => { const x = album.querySelector('.x'); if (x) x.click(); open(h, r && r[0]); });
+    foot.insertBefore(tag, foot.lastElementChild);
+  }).observe(album, { childList: true });
   window.QuoteCheck = { open, split, official, OFFICIAL };
 })();

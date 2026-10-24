@@ -1,6 +1,6 @@
 /* 订房小工具的公共部分：弹窗、入口、本机存储、复制。
    报价核算器（quote-check.js）和开订提醒与订房资料卡（booking-ready.js）各自用 BookingTools.add() 注册一个工具，
-   这里把入口放进公寓卡片（「展开详情」里一块「订房小工具」、收起状态下一行小按钮）和生活选房的开场页。
+   这里把入口放进公寓卡片（「展开详情」里一块「订房小工具」、收起状态下一行小按钮；工具设 details: false 就不进「展开详情」）和生活选房的开场页。
    只是加在页面上，不改原有布局；数据只存在当前浏览器。 */
 (() => {
   'use strict';
@@ -67,10 +67,11 @@
   function decorate() {
     const h = homeNow(); if (!h || !cardBody || !tools.length) return;
     const details = cardBody.querySelector('#propertyDetails');
-    if (details && !details.querySelector('.bt-tools')) {
+    const inDetails = tools.filter(t => t.details !== false);
+    if (details && inDetails.length && !details.querySelector('.bt-tools')) {
       const sec = el('section', 'bt-tools'), row = el('div', 'bt-row');
       sec.append(el('h4', '', pick(T).tools));
-      tools.forEach(t => {
+      inDetails.forEach(t => {
         const c = t.card(h), b = btn('bt-tool' + (c.on ? ' on' : ''));
         b.append(el('b', '', c.title), el('span', '', c.desc));
         b.addEventListener('click', e => { e.stopPropagation(); t.open(h); });
@@ -84,7 +85,7 @@
     if (compact && !compact.querySelector('.bt-mini')) {
       const row = el('div', 'bt-mini');
       tools.forEach(t => {
-        const c = t.card(h), b = btn('bt-chipbtn' + (c.on ? ' on' : ''), c.mini);
+        const c = t.card(h), b = btn((c.cls || 'bt-chipbtn') + (c.on ? ' on' : ''), c.mini);
         b.addEventListener('click', e => { e.stopPropagation(); t.open(h); });
         row.append(b);
       });

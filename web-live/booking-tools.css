@@ -157,3 +157,16 @@
 .qc-brow.total { border-bottom: 0; padding-top: 8px; }
 .qc-brow.total span { font: 16px var(--hand, cursive); }
 .qc-brow.total b { font-size: 24px; }
+/* 报价拆解的入口：一张手绘价签（左边打孔），挂在每个房型下面、房型相册底部和收起状态的卡片上 */
+.qt-tag { position: relative; display: inline-flex; align-items: center; gap: 4px; border: 2px solid #3b2a1a; border-radius: 4px 12px 12px 4px; background: #f2c14e; color: #3b2a1a; font: 15px/1.2 var(--hand, cursive); padding: 3px 12px 3px 21px; cursor: pointer; box-shadow: 2px 2px 0 #3b2a1a; transform: rotate(-1.5deg); transition: transform .15s, background .15s; white-space: nowrap; }
+.qt-tag::before { content: ''; position: absolute; left: 7px; top: 50%; width: 7px; height: 7px; margin-top: -4px; border-radius: 50%; background: #fffaf0; border: 1.5px solid #3b2a1a; }
+.qt-tag:hover { background: #ffd866; transform: rotate(0); }
+.qt-tag:focus-visible { outline: 3px dashed #b5462f; outline-offset: 3px; }
+.qt-tag.small { font-size: 13.5px; padding: 2px 10px 2px 19px; align-self: flex-start; }
+.rp-item { flex: none; width: 156px; display: flex; flex-direction: column; gap: 8px; scroll-snap-align: start; padding-bottom: 3px; }
+.rp-item .rp-card { width: 100%; }
+.qc-src { display: flex; flex-wrap: wrap; gap: 0 4px; }
+.qc-src a { color: #974128; }
+@media (prefers-reduced-motion: reduce) { .qt-tag { transition: none; } }
+.rp-afoot .qt-tag { align-self: center; margin-left: auto; }
+.rp-afoot .rp-ask { white-space: nowrap; }

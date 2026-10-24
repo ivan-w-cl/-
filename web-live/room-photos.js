@@ -157,4 +157,6 @@
   }
   new MutationObserver(decorate).observe(cardBody, { childList: true });
   decorate(); // the card may already be open from the link (#home=…) before this script ran
+  /* for other add-ons (quote-check.js): the room types shown on the cards, in card order */
+  window.RoomPhotos = { types: h => roomsFor(h).types.map(t => ({ key: t.name.en, name: L(t.name), price: t.price })) };
 })();
