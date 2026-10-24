@@ -155,7 +155,7 @@ const S = window.S = {
       el.style.opacity = d.o == null ? 1 : d.o;
       el.style.transform = `translate(${d.x || 0}px,${d.y || 0}px) perspective(2400px) rotateY(${d.ry || 0}deg) rotateX(${d.rx || 0}deg) rotate(${d.r || 0}deg) scale(${d.s == null ? 1 : d.s})`;
     }
-    if (this.morph && !PORTRAIT) this.paintMorph(t);
+    if (this.morph) this.paintMorph(t);
     if (T.veil) document.getElementById('veil').style.opacity = T.veil(t).o;
     this.paintTitles(t);
     this.paintTap(t);
@@ -164,13 +164,15 @@ const S = window.S = {
   /* 设备变形：手机 → 折叠屏 → 平板（S.morph = { t0, t1, t2, t3, G }，t0–t1 手机变折叠屏，t2–t3 折叠屏变平板）。
      三台设备叠在同一处，外框尺寸、边框、圆角、位置、缩放一起插值；上层设备的屏幕内容渐隐，露出下层更宽的界面。
      深色外框和阴影只画在最下面的平板上，上面两台只留屏幕内容，所以看起来是同一台设备在变形。
-     G = { phone, fold, tablet }：每台的屏幕宽高 sw/sh、边框 pad、屏幕圆角 r、外框圆角 R、中心 cx/cy、缩放 sc */
+     G = { phone, fold, tablet }：每台的屏幕宽高 sw/sh、边框 pad、屏幕圆角 r、外框圆角 R、中心 cx/cy、缩放 sc（舞台坐标）；
+     竖版用 GP（平板要缩小才放得下，位置也另排），没有 GP 就用 G */
   morph: null,
   paintMorph(t) {
     const m = this.morph; if (t < m.t0) return;
     const seg = (a, b) => E.apple(clamp01((t - a) / (b - a)));
     const p = seg(m.t0, m.t1) + seg(m.t2, m.t3);   // 0 手机 · 1 折叠屏 · 2 平板
-    const A = p < 1 ? m.G.phone : m.G.fold, Z = p < 1 ? m.G.fold : m.G.tablet, f = p < 1 ? p : p - 1;
+    const G = PORTRAIT && m.GP ? m.GP : m.G;
+    const A = p < 1 ? G.phone : G.fold, Z = p < 1 ? G.fold : G.tablet, f = p < 1 ? p : p - 1;
     const g = {}; for (const k in A) g[k] = A[k] + (Z[k] - A[k]) * f;
     const W = g.sw + 2 * g.pad, H = g.sh + 2 * g.pad;
     const fade = (a, b) => E.io(clamp01((p - a) / (b - a)));
@@ -195,6 +197,7 @@ const S = window.S = {
     if (id === 'tablet') return { o, x: 0, y: -384 - (1 - o) * 50, s: 0.52 * (0.94 + 0.06 * o) };
     if (id === 'fold') return { o, x: 144 + (1 - o) * 60, y: 187, s: 0.52 * (0.94 + 0.06 * o) };
     if ((d.y || 0) > 200) return Object.assign({}, d, { x: 0, s: d.s == null ? 1 : 1 - (1 - d.s) * 1.45 });   // 升起
+    if (this.morph) return Object.assign({}, d, { x: 0 });   // 有设备变形的片尾（亮点版）：手机留在中间，交给 paintMorph
     const e = clamp01((d.y || 0) / 30);
     return Object.assign({}, d, { x: -148 * e, y: 116 * e, s: 1 - 0.25 * e });
   },

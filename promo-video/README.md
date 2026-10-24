@@ -47,6 +47,8 @@ sh promo-video/music/prepare30b.sh mix promo-video/music/sfx30c.json mix30c.wav
 FRAMES=frames/c30 MUSIC=music/mix30c.wav NAME=30s-highlights sh promo-video/encode.sh
 ```
 
+竖版：录制加 `PORTRAIT=1`（frames/cp30），编码 `PORTRAIT=1 FRAMES=frames/cp30 MUSIC=music/mix30c.wav NAME=30s-highlights-vertical sh promo-video/encode.sh`；时间线不变，音效沿用同一个混音。竖版的变形用 `S.morph.GP`（平板缩小放得下），推近的几个镜头用 `P(横版, 竖版)` 收一点，手机顶部不碰到标题。
+
 ## 竖版 9:16（1080×1920）
 
 两个 30 秒版都有竖版，时间线、配乐、音效完全一样，只是舞台换成竖的（`PORTRAIT=1`，页面参数 `?p=1`）：
