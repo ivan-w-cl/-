@@ -17,7 +17,7 @@
       demo: '示例数据', updated: '官方价 {d} 更新', site: '去官网核对 ↗',
       official: '官方价 {rent}/周 × {w} 周 = {g}，官方返现 {cash}', officialNone: '官方价 {rent}/周 × {w} 周 = {g}，目前没有官方返现',
       bOff: '官方返现', bSub: '平台补', bPay: '你实际付',
-      rSub: '平台自己补了 {y}', rSubP: '你实际付 {pay}（每周 {wk}）。其中 {cash} 是公寓官方返现，在哪个平台订都有；平台自己只补了 {y}，每周约 {yw}。',
+      rSub: '平台自己补了 {y}', rSubP: '你实际付 {pay}（每周 {wk}）。其中 {cash} 是公寓官方返现，在哪个平台订都有；平台自己补了 {y}，每周约 {yw}。',
       rZero: '平台没有自己补贴', rZeroP: '你实际付 {pay}（每周 {wk}），就是官方价扣掉官方返现，直接在公寓官网订也是这个价。',
       rOver: '比「官方价扣返现」还贵 {y}', rOverP: '你要付 {pay}（每周 {wk}）。可能没把官方返现 {cash} 全部给你，或者含了服务费。下单前问清楚：官方返现我能拿到吗？',
       fill: '填上每周租金和周数，就能看到结果', noHome: '先选一处公寓',
@@ -25,7 +25,8 @@
       expert: '💬 请专家帮我核对', copied: '结果已复制。进群以后粘贴给专家，专家会帮你核对。',
       sum: '【报价拆解】{home} · {room}\n官方价 {rent}/周 × {w} 周 = {g}，官方返现 {cash}\n平台报价 {wk}/周 × {w} 周 = {pay}，平台自己补 {y}',
       budgetLede: '填上全年预算和想住的房型，看看预算相当于每周多少、这类房型一般什么价，预算内有哪些公寓。',
-      budget: '全年预算', roomType: '房型', any: '都可以', ensuite: '独卫单间', studio: 'Studio 套间', roomAny: '房间',
+      budget: '全年预算', roomType: '房型', any: '都可以', ensuite: '独卫单间', studio: 'Studio 套间', roomAny: '房间', nonEnsuite: '非独卫单间', oneBed: '一居室',
+      noRec: '待录入', offRent: '官方周租（按官网填）', noRecNote: '这个房型的官方价还没录入，按公寓官网的价格填上就能算。',
       perWeekIs: '相当于每周 {v}', range: '{room}的租金区间：{lo} – {hi}/周', rangeN: '共 {n} 处公寓有记录',
       within: '预算内有 {n} 处', withinNone: '预算内暂时没有', cheapest: '最便宜的是 {name}，{p}/周，比你的预算每周多 {d}。',
       walk: '步行到利大约 {n} 分钟', show: '在地图上看', budgetFill: '填上全年预算，就能看到区间和预算内的公寓',
@@ -40,7 +41,7 @@
       demo: 'Sample data', updated: 'Official price updated {d}', site: 'Check the official site ↗',
       official: 'Official price {rent}/wk × {w} weeks = {g}, official cashback {cash}', officialNone: 'Official price {rent}/wk × {w} weeks = {g}, no official cashback right now',
       bOff: 'Official', bSub: 'Platform', bPay: 'You pay',
-      rSub: 'The platform adds {y} itself', rSubP: 'You pay {pay} ({wk} a week). {cash} of the saving is the building’s official cashback, which you get on any platform; the platform itself only adds {y}, about {yw} a week.',
+      rSub: 'The platform adds {y} itself', rSubP: 'You pay {pay} ({wk} a week). {cash} of the saving is the building’s official cashback, which you get on any platform; the platform itself adds {y}, about {yw} a week.',
       rZero: 'The platform adds nothing itself', rZeroP: 'You pay {pay} ({wk} a week): the official price after the official cashback, the same as booking on the building’s site.',
       rOver: '{y} above the official price after cashback', rOverP: 'You pay {pay} ({wk} a week). It may not pass on all of the {cash} official cashback, or it includes a fee. Ask before booking: do I get the official cashback?',
       fill: 'Enter the weekly rent and weeks to see the result', noHome: 'Pick a home first',
@@ -48,7 +49,8 @@
       expert: '💬 Ask an expert to check', copied: 'Your result is copied. Paste it in your group and an expert will check it.',
       sum: '[Quote breakdown] {home} · {room}\nOfficial {rent}/wk × {w} weeks = {g}, official cashback {cash}\nQuote {wk}/wk × {w} weeks = {pay}, platform adds {y}',
       budgetLede: 'Enter your budget for the year and the room type you want. You will see what that is per week, the usual price range for that room type and the homes within budget.',
-      budget: 'Budget for the year', roomType: 'Room type', any: 'Any', ensuite: 'En-suite', studio: 'Studio', roomAny: 'Room',
+      budget: 'Budget for the year', roomType: 'Room type', any: 'Any', ensuite: 'En-suite', studio: 'Studio', roomAny: 'Room', nonEnsuite: 'Non en-suite', oneBed: '1-bed flat',
+      noRec: 'not recorded', offRent: 'Official weekly rent (from the building site)', noRecNote: 'The official price for this room type is not recorded yet. Enter the price from the building’s site to work it out.',
       perWeekIs: '{v} a week', range: '{room}: {lo} – {hi} a week', rangeN: '{n} homes with recorded prices',
       within: '{n} homes within budget', withinNone: 'No homes within budget yet', cheapest: 'The cheapest is {name} at {p}/wk, {d} a week over your budget.',
       walk: 'About {n} min walk to Uni of Liverpool', show: 'Show on map', budgetFill: 'Enter your budget for the year to see the range and homes',
@@ -77,11 +79,20 @@
     if (!out.length) out.push(['Room', k.roomAny, h.plo || '']);
     return out;
   }
-  function official(h, room) {
-    const r = roomsOf(h).find(e => e[0] === room) || roomsOf(h)[0], o = OFFICIAL[h.id];
-    if (o) return { room: r[0], name: r[1], rent: (o.rent && o.rent[r[0]]) || r[2], cash: o.cashback || 0, url: o.url || '', updated: o.updated || '', demo: false };
+  /* 拆解时可选的房型：这处公寓有记录的房型在前，再补上常见房型（没有官方价的，学生按官网价格自己填） */
+  function allRooms(h) {
+    const k = w(), rs = roomsOf(h), norm = x => String(x).toLowerCase().replace(/[^a-z0-9]/g, '');
+    const has = word => rs.some(r => { const n = norm(r[0]); return n.includes(word) && !(word === 'ensuite' && n.includes('nonensuite')); });
+    [['En-suite', k.ensuite, 'ensuite'], ['Studio', k.studio, 'studio'], ['Non en-suite', k.nonEnsuite, 'nonensuite'], ['1 Bed', k.oneBed, '1bed']]
+      .forEach(([key, name, word]) => { if (!has(word)) rs.push([key, name, '']); });
+    return rs;
+  }
+  function official(h, room, ownRent) {
+    const rs = allRooms(h), r = rs.find(e => e[0] === room) || rs[0], o = OFFICIAL[h.id];
+    const rent = (o && o.rent && o.rent[r[0]]) || r[2] || num(ownRent) || '';
+    if (o) return { room: r[0], name: r[1], rent, recorded: !!((o.rent && o.rent[r[0]]) || r[2]), cash: o.cashback || 0, url: o.url || '', updated: o.updated || '', demo: false };
     const share = [0.1, 0.15, 0.2, 0.3][hash(h.id) % 4];
-    return { room: r[0], name: r[1], rent: r[2], cash: r[2] ? Math.round(r[2] * 51 * share / 50) * 50 : 0, demo: true };
+    return { room: r[0], name: r[1], rent, recorded: !!r[2], cash: rent ? Math.round(rent * 51 * share / 50) * 50 : 0, demo: true };
   }
   /* 官方价 × 学生填的周数 − 官方返现 − 学生实际付 = 平台自己补的 */
   function split(o, wk, weeks) {
@@ -130,15 +141,15 @@
     /* ---------- 拆解报价：每周租金 + 周数 ---------- */
     function drawSplit() {
       let home = h || homes().find(x => x.id === saved.home) || null;
-      const st = { room: room || saved.room, wk: saved.wk || '', weeks: saved.weeks || 51 };
+      const st = { room: room || saved.room, wk: saved.wk || '', weeks: saved.weeks || 51, own: saved.own || '' };
       m.body.append(el('p', 'bt-lede', k.splitLede));
       const form = el('div', 'qc-ed'), grid = el('div', 'qc-grid'), out = el('div', 'qc-out');
       if (!h) {
         const list = homes().slice().sort((a, b) => a.name.localeCompare(b.name));
-        grid.append(select('qcHome', k.home, [['', k.homePick]].concat(list.map(x => [x.id, x.name])), home ? home.id : '', v => { home = homes().find(x => x.id === v) || null; st.room = ''; save({ home: v }); drawRoom(); calc(); }));
+        form.append(select('qcHome', k.home, [['', k.homePick]].concat(list.map(x => [x.id, x.name])), home ? home.id : '', v => { home = homes().find(x => x.id === v) || null; st.room = ''; save({ home: v }); drawRoom(); calc(); }));
       }
       const roomSlot = el('div', 'qc-roomslot');
-      grid.append(roomSlot);
+      form.append(roomSlot);
       const wkF = numInput('qcWk', k.wk, st.wk, v => { st.wk = v; save({ wk: v }); calc(); }, true);
       const wsF = numInput('qcWeeks', k.weeks, st.weeks, v => { st.weeks = v; save({ weeks: v }); calc(); }, false, '1');
       grid.append(wkF.f, wsF.f);
@@ -147,16 +158,27 @@
       function drawRoom() {
         roomSlot.replaceChildren();
         if (!home) return;
-        const rs = roomsOf(home);
+        const rs = allRooms(home);
         if (!rs.some(r => r[0] === st.room)) st.room = rs[0][0];
-        if (rs.length > 1) roomSlot.append(select('qcRoom', k.room, rs.map(r => [r[0], r[2] ? `${r[1]} · ${money(r[2])}` : r[1]]), st.room, v => { st.room = v; save({ room: v }); calc(); }));
-        else { const f = el('div', 'qc-f'); f.append(el('span', '', k.room), el('b', 'qc-fixed', rs[0][1])); roomSlot.append(f); }
+        roomSlot.append(el('span', 'qc-f', k.room));
+        const chips = el('div', 'br-chips'); chips.setAttribute('role', 'group'); chips.setAttribute('aria-label', k.room);
+        rs.forEach(([key, name, price]) => {
+          const on = st.room === key, b = btn('bt-chipbtn' + (on ? ' on' : '') + (price ? '' : ' norec'));
+          b.append(name + ' '); b.append(el('small', '', price ? money(price) : k.noRec)); b.setAttribute('aria-pressed', String(on));
+          b.addEventListener('click', () => { st.room = key; save({ room: key }); drawRoom(); calc(); });
+          chips.append(b);
+        });
+        roomSlot.append(chips);
+        if (!official(home, st.room).recorded) {   // 没有官方价的房型：学生按官网价格自己填
+          const own = numInput('qcOwnRent', k.offRent, st.own || '', v => { st.own = v; save({ own: v }); calc(); }, true);
+          roomSlot.append(own.f, el('p', 'bt-note', k.noRecNote));
+        }
       }
       let last = null;
       function calc() {
         out.replaceChildren(); last = null;
         if (!home) { out.append(el('p', 'bt-note', k.noHome)); return; }
-        const o = official(home, st.room), s = split(o, st.wk, st.weeks);
+        const o = official(home, st.room, st.own), s = split(o, st.wk, st.weeks);
         const card = el('div', 'qc-line');
         const off = el('p', 'qc-offline');
         if (o.rent && num(st.weeks)) off.append(fmt(o.cash ? k.official : k.officialNone, { rent: money(o.rent, 2), w: Math.round(num(st.weeks)), g: money(o.rent * Math.round(num(st.weeks))), cash: money(o.cash) }));

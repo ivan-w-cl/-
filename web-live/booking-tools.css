@@ -68,7 +68,7 @@
 .qc-bar span:first-child { border-left: 0; }
 .qc-bar i { font: normal 11px/1.1 system-ui, sans-serif; color: #3b2a1a; overflow: hidden; text-overflow: ellipsis; }
 .qc-bar b { font: 15px/1.15 var(--display, cursive); font-weight: normal; overflow: hidden; text-overflow: ellipsis; }
-.qc-bar .off { background: #cfe3c4; }
+.qc-bar .off { background: #cfe3c4; min-width: 54px; }
 .qc-bar .sub { background: #f2c14e; min-width: 54px; }
 .qc-bar .pay { background: #f8efd9; }
 .qc-bar.over { border-color: #7a2f20; }
@@ -168,3 +168,6 @@
 @media (prefers-reduced-motion: reduce) { .qt-tag { transition: none; } }
 .rp-afoot .qt-tag { align-self: center; margin-left: auto; }
 .rp-afoot .rp-ask { white-space: nowrap; }
+.qc-roomslot { display: flex; flex-direction: column; gap: 6px; }
+.qc-roomslot .bt-chipbtn small { font-size: 12px; color: #6e5538; }
+.qc-roomslot .bt-chipbtn.norec { border-style: dashed; }
