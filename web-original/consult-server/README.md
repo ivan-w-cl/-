@@ -34,6 +34,8 @@ node consult-server/server.js
 | `WEATHER_URL` | `/api/weather` 代取的天气地址（默认 Open-Meteo 利物浦） | Open-Meteo |
 | `WECHAT_QR_DAYS` | 微信群二维码有效天数（测试「过期 → 申请新码」时可设 `0.003`，约 4 分钟） | `7` |
 | `WX_MINIPROGRAM_STATE` | 小程序码打开哪个版本：`formal`（正式版，默认）/ `trial`（体验版）/ `developer`（开发版）。`/api/wxacode` 给分享卡片生成小程序码，需要 `WX_APPID` `WX_APPSECRET`，没配时小程序自动改用普通二维码 | `formal` |
+| `ANTHROPIC_API_KEY` | 「拍一下 · 看懂公寓网页」的真实识别（`/api/snap`，见下面「AI 识别」）。在 Anthropic Console（console.anthropic.com）创建；需要先在本目录运行一次 `npm install`。不填时网页继续用演示数据 | 空 = 演示 |
+| `SNAP_MODEL` | 识别用的模型 | `claude-opus-5-5` |
 
 示例：
 ```bash
@@ -41,6 +43,15 @@ ADMIN_PASSWORD=换成你的密码 WECOM_WEBHOOK_URL='https://qyapi.weixin.qq.com
 ```
 
 自检：`node consult-server/test/smoke.cjs`（不访问微信服务器，用临时目录和假的 Webhook / 邮件接口）、`node consult-server/test/smtp.cjs`（假的 SMTP 服务器）。
+
+AI 识别（拍一下 · 看懂公寓网页）：
+```bash
+cd consult-server && npm install          # 只需一次，安装 Anthropic SDK
+ANTHROPIC_API_KEY=sk-ant-你的密钥 node server.js
+```
+- `GET /api/snap/status` → `{enabled, model}`；网页据此自动切换「已接入 AI 实时识别」或演示版。
+- `POST /api/snap`，`{image: "data:image/jpeg;base64,…"}`（网页已把照片缩到长边 1600 像素）或 `{url}`（服务器只抓这一页的文字）→ 结构化结果：网站类型、公寓名、房型、周租 / 周数 / 返现、最多 12 句重点原文（中文 / 日文翻译、提醒）、可以问顾问的问题。
+- 图片不保存；同一 IP 每 10 分钟最多 12 次；拒答时自动换服务器端的备选模型重试。单次识别的费用大约几美分，以 Anthropic 账单为准。
 
 Google 邮箱示例：
 ```bash

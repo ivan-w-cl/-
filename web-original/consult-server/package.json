@@ -2,8 +2,9 @@
   "name": "liverpool-consult-server",
   "version": "0.1.0",
   "private": true,
-  "description": "咨询原型后端：静态站点 + 会话存储 + 通知 + 客服工作台 + 渠道适配层（web / 小程序）。无第三方依赖。",
+  "description": "咨询原型后端：静态站点 + 会话存储 + 通知 + 客服工作台 + 渠道适配层（web / 小程序）。只有「拍一下」的 AI 识别用到 Anthropic SDK（可选，没装也能运行）。",
   "main": "server.js",
   "engines": { "node": ">=18" },
-  "scripts": { "start": "node server.js", "test": "node test/smoke.cjs && node test/smtp.cjs && node test/cases.cjs && node test/miniprogram.cjs" }
+  "scripts": { "start": "node server.js", "test": "node test/smoke.cjs && node test/smtp.cjs && node test/cases.cjs && node test/miniprogram.cjs" },
+  "dependencies": { "@anthropic-ai/sdk": "^1.3.0", "zod": "^4.6.7" }
 }

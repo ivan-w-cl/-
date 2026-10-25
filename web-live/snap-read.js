@@ -5,7 +5,8 @@
      这一页的重点列在最上面，价格旁边能直接拆开报价，链接点进去下一页也用阅读模式；到预订和付款就停下，请学生去官网完成。
    - 租房平台的截图：不转载平台页面，只用截图里的信息（哪栋楼、什么价格、写了多少返现），按这栋楼的官方价拆开。
    - 还没收录的网站：翻译截图里的文字、标出重点词，记进「待收录」。
-   演示版的识别结果和示例网页都是写好的示例数据（页面上有标注），正式版接入 AI 看图服务识别任意截图。
+   演示版的识别结果和示例网页都是写好的示例数据（页面上有标注）。服务器配好了 AI（consult-server 的 /api/snap，
+   需要 ANTHROPIC_API_KEY）时自动切到真实识别：照片、截图或网址交给 AI 读，结果用同一套界面显示。
    入口：顶部栏的📷按钮、生活选房开场页的「订房小工具」，链接 ?snap=1 直接打开。 */
 (() => {
   'use strict';
@@ -13,7 +14,7 @@
   const { el, btn, fmt, money, pick } = BT;
   const W = {
     zh: {
-      intro: '📷 拍一下 · 看懂公寓网页', pill: '📷 拍一下，看懂网页', aria: '拍一下，看懂公寓网页', eyebrow: '订房小工具 · 演示版', heading: '拍一下，看懂公寓网页',
+      intro: '📷 拍一下 · 看懂公寓网页', pill: '📷 拍一下，看懂网页', aria: '拍一下，看懂公寓网页', eyebrow: '订房小工具 · 演示版', eyebrowAi: '订房小工具 · AI 实时识别', heading: '拍一下，看懂公寓网页',
       lede: '在电脑上看公寓网站？用手机拍一下屏幕。在手机上看？截图或复制网址。我们认出是哪个网站、哪栋公寓，重新排好版，每一句都配翻译，重点帮你标出来。',
       camera: '📷 拍电脑屏幕', cameraSub: '用手机摄像头拍正在看的网页', upload: '🖼 上传截图', uploadSub: '手机上看网页或 App 时截的图',
       link: '🔗 粘贴网址', linkSub: '最准：复制网页地址粘贴进来', linkPh: '粘贴公寓网页的网址', go: '识别',
@@ -34,10 +35,16 @@
       platformSplit: '按这栋楼的官方价拆开', platformSay: '平台说的返现是 {cash}；按官方价算，平台自己补了约 {sub}，两者基本一致。其余 {off} 是公寓的官方返现，在哪个平台订都有。',
       openSplit: '✂️ 打开报价拆解', seeOfficial: '这栋楼在我们这里有完整资料 → 在地图上看',
       unknownLede: '这个网站还没有收录。先把截图里的文字翻译出来，并标出重点：', queued: '已记入「待收录」，订房专家会补上这个网站的资料。',
-      steps: '正式版会怎么识别', how: '网址最准；照片和截图由 AI 看图识别网站标志、网址栏、公寓名和价格，认不准时只问一句「是这栋楼吗？」'
+      steps: '正式版会怎么识别', how: '网址最准；照片和截图由 AI 看图识别网站标志、网址栏、公寓名和价格，认不准时只问一句「是这栋楼吗？」',
+      aiOn: '✅ 已接入 AI 实时识别', aiNote: '真实识别：照片、截图或网页交给 AI 读懂，图片不保存。结果以原网页为准，重要条款请再向顾问确认。',
+      aiTag: 'AI 实时识别 · 以原网页为准', aiReading: 'AI 正在读这一页…', srcAiOfficial: '公寓官网 · AI 识别', srcOther: '其他租房网站',
+      notListing: '这张图看起来不是公寓页面，换一张试试。', uncertainH: '需要确认：', matched: '这栋楼我们收录了：{home}', noMatch: '这栋楼我们还没收录，已记入「待收录」。',
+      recogAi: '认出：{what}', priceAi: '每周 {wk}', weeksAi: '{n} 周', cashAi: '返现 {cash}', toPage: '去原网页继续 ↗', tryDemo: '看演示版效果',
+      errNot: '服务器还没有配置 AI，先看演示版。', errBusy: 'AI 正忙，过一会儿再试。', errFetch: '这个网址打不开，请改用截图或拍照。', errBadUrl: '这个网址不能读取，请检查一下。',
+      errFail: 'AI 这次没读出来，换一张更清楚的图再试。', errBig: '图片太大了，换一张小一点的。', errKey: '服务器上的 AI 密钥不对，请检查 ANTHROPIC_API_KEY。'
     },
     en: {
-      intro: '📷 Snap a listing', pill: '📷 Snap a listing', aria: 'Snap a listing to understand it', eyebrow: 'Booking tools · Demo', heading: 'Snap a listing, understand it',
+      intro: '📷 Snap a listing', pill: '📷 Snap a listing', aria: 'Snap a listing to understand it', eyebrow: 'Booking tools · Demo', eyebrowAi: 'Booking tools · Live AI', heading: 'Snap a listing, understand it',
       lede: 'Looking at a housing site on a computer? Take a photo of the screen with your phone. On your phone? Take a screenshot or copy the link. We recognise the site and the building, lay the page out again, translate every sentence and point out what matters.',
       camera: '📷 Photo of a screen', cameraSub: 'Use your camera on the page you are reading', upload: '🖼 Upload a screenshot', uploadSub: 'From a website or an app on your phone',
       link: '🔗 Paste a link', linkSub: 'Most accurate: paste the page address', linkPh: 'Paste the link of a housing page', go: 'Read it',
@@ -58,7 +65,13 @@
       platformSplit: 'Broken down against the official price', platformSay: 'The platform says {cash} cashback; against the official price it adds about {sub} itself, which matches. The other {off} is the building’s official cashback, available on any platform.',
       openSplit: '✂️ Open the quote breakdown', seeOfficial: 'We have full details for this building → show on map',
       unknownLede: 'We have not added this site yet. Here is the text from your screenshot, translated, with the key words marked:', queued: 'Added to our to-do list; our booking experts will add this site.',
-      steps: 'How the live version recognises pages', how: 'A link is most accurate. For photos and screenshots, AI reads the logo, address bar, building name and price, and asks one question when unsure: “Is it this building?”'
+      steps: 'How the live version recognises pages', how: 'A link is most accurate. For photos and screenshots, AI reads the logo, address bar, building name and price, and asks one question when unsure: “Is it this building?”',
+      aiOn: '✅ Live AI recognition is on', aiNote: 'Live: your photo, screenshot or page goes to AI to read; images are not stored. The original page is what counts; confirm key terms with the adviser.',
+      aiTag: 'Live AI reading · the original page is what counts', aiReading: 'AI is reading the page…', srcAiOfficial: 'Building website · read by AI', srcOther: 'Other housing site',
+      notListing: 'This does not look like an accommodation page. Try another picture.', uncertainH: 'Please confirm: ', matched: 'We have this building: {home}', noMatch: 'We have not added this building yet; it is on our to-do list.',
+      recogAi: 'Recognised: {what}', priceAi: '{wk}/week', weeksAi: '{n} weeks', cashAi: '{cash} cashback', toPage: 'Continue on the original page ↗', tryDemo: 'See the demo',
+      errNot: 'AI is not set up on the server yet, so here is the demo.', errBusy: 'The AI is busy. Try again in a moment.', errFetch: 'That link could not be opened. Use a screenshot or photo instead.', errBadUrl: 'That link cannot be read. Check it and try again.',
+      errFail: 'The AI could not read this one. Try a clearer picture.', errBig: 'That image is too large. Try a smaller one.', errKey: 'The AI key on the server is not valid. Check ANTHROPIC_API_KEY.'
     }
   };
   const w = () => pick(W);
@@ -135,17 +148,17 @@
   /* ---------- 示例截图（SVG 画的，没有任何品牌标志） ---------- */
   const svgUrl = s => 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s);
   const SHOTS = {
-    official: svgUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320"><rect width="480" height="320" fill="#2b2b2e"/><g transform="rotate(-2 240 160)"><rect x="34" y="28" width="412" height="262" rx="10" fill="#1c1c1e"/><rect x="44" y="38" width="392" height="242" fill="#fff"/><rect x="44" y="38" width="392" height="22" fill="#eef0f2"/><rect x="96" y="44" width="230" height="10" rx="5" fill="#fff"/><text x="102" y="52.5" font-family="Arial" font-size="7.5" fill="#666">iqstudentaccommodation.com/liverpool/great-newton-house</text><rect x="44" y="60" width="392" height="70" fill="#d9e6ef"/><text x="60" y="94" font-family="Arial" font-weight="700" font-size="18" fill="#1f2d3a">Great Newton House</text><text x="60" y="114" font-family="Arial" font-size="9" fill="#3b4b58">Liverpool · Knowledge Quarter</text><text x="60" y="152" font-family="Arial" font-weight="700" font-size="12" fill="#1f2d3a">Gold En Suite from £160 / week</text><text x="60" y="168" font-family="Arial" font-size="8.5" fill="#444">51-week tenancy · Book now and get £250 cashback*</text><text x="60" y="186" font-family="Arial" font-size="7.5" fill="#777">A non-refundable booking fee of £99 is payable…</text><rect x="60" y="200" width="70" height="20" rx="4" fill="#1f2d3a"/><text x="72" y="213.5" font-family="Arial" font-size="8.5" fill="#fff">Book now</text><rect x="300" y="140" width="120" height="84" fill="#c9d4dc"/></g><path d="M0 0 L220 0 L80 320 L0 320 Z" fill="#fff" opacity=".06"/></svg>`),
-    platform: svgUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 420"><rect width="240" height="420" rx="18" fill="#f6f6f8"/><text x="18" y="22" font-family="Arial" font-size="10" font-weight="700" fill="#111">9:41</text><rect x="14" y="40" width="212" height="120" rx="10" fill="#cfd8e0"/><text x="18" y="184" font-family="Arial" font-weight="700" font-size="15" fill="#111">Capital Gate</text><text x="18" y="202" font-family="Arial" font-size="9.5" fill="#555">Liverpool · En-suite</text><text x="18" y="232" font-family="Arial" font-weight="700" font-size="20" fill="#111">£111</text><text x="66" y="232" font-family="Arial" font-size="10" fill="#555">/ week</text><text x="18" y="250" font-family="Arial" font-size="9.5" fill="#555">51 weeks · price after cashback</text><rect x="18" y="262" width="96" height="20" rx="10" fill="#ffe7a8"/><text x="28" y="276" font-family="Arial" font-size="9.5" fill="#6b4b00">£300 cashback</text><rect x="14" y="368" width="212" height="34" rx="17" fill="#222"/><text x="96" y="389" font-family="Arial" font-size="11" fill="#fff">Book</text></svg>`),
-    unknown: svgUrl(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 420"><rect width="240" height="420" rx="18" fill="#fff"/><text x="18" y="22" font-family="Arial" font-size="10" font-weight="700" fill="#111">9:41</text><text x="18" y="56" font-family="Georgia" font-size="16" fill="#333">Example Lettings</text><rect x="18" y="68" width="204" height="110" fill="#e4e0d8"/><text x="18" y="202" font-family="Arial" font-size="9.5" fill="#222">Double room in a shared house,</text><text x="18" y="216" font-family="Arial" font-size="9.5" fill="#222">£140 pw, bills extra.</text><text x="18" y="240" font-family="Arial" font-size="9.5" fill="#222">A holding deposit of one week’s rent</text><text x="18" y="254" font-family="Arial" font-size="9.5" fill="#222">is required to reserve the room.</text><text x="18" y="278" font-family="Arial" font-size="9.5" fill="#222">Minimum 6-month tenancy. References</text><text x="18" y="292" font-family="Arial" font-size="9.5" fill="#222">and a UK guarantor are required.</text></svg>`)
+    official: svgUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 480 320"><rect width="480" height="320" fill="#2b2b2e"/><g transform="rotate(-2 240 160)"><rect x="34" y="28" width="412" height="262" rx="10" fill="#1c1c1e"/><rect x="44" y="38" width="392" height="242" fill="#fff"/><rect x="44" y="38" width="392" height="22" fill="#eef0f2"/><rect x="96" y="44" width="230" height="10" rx="5" fill="#fff"/><text x="102" y="52.5" font-family="Arial" font-size="7.5" fill="#666">iqstudentaccommodation.com/liverpool/great-newton-house</text><rect x="44" y="60" width="392" height="70" fill="#d9e6ef"/><text x="60" y="94" font-family="Arial" font-weight="700" font-size="18" fill="#1f2d3a">Great Newton House</text><text x="60" y="114" font-family="Arial" font-size="9" fill="#3b4b58">Liverpool · Knowledge Quarter</text><text x="60" y="152" font-family="Arial" font-weight="700" font-size="12" fill="#1f2d3a">Gold En Suite from £160 / week</text><text x="60" y="168" font-family="Arial" font-size="8.5" fill="#444">51-week tenancy · Book now and get £250 cashback*</text><text x="60" y="186" font-family="Arial" font-size="7.5" fill="#777">A non-refundable booking fee of £99 is payable…</text><rect x="60" y="200" width="70" height="20" rx="4" fill="#1f2d3a"/><text x="72" y="213.5" font-family="Arial" font-size="8.5" fill="#fff">Book now</text><rect x="300" y="140" width="120" height="84" fill="#c9d4dc"/></g><path d="M0 0 L220 0 L80 320 L0 320 Z" fill="#fff" opacity=".06"/></svg>`),
+    platform: svgUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1260" viewBox="0 0 240 420"><rect width="240" height="420" rx="18" fill="#f6f6f8"/><text x="18" y="22" font-family="Arial" font-size="10" font-weight="700" fill="#111">9:41</text><rect x="14" y="40" width="212" height="120" rx="10" fill="#cfd8e0"/><text x="18" y="184" font-family="Arial" font-weight="700" font-size="15" fill="#111">Capital Gate</text><text x="18" y="202" font-family="Arial" font-size="9.5" fill="#555">Liverpool · En-suite</text><text x="18" y="232" font-family="Arial" font-weight="700" font-size="20" fill="#111">£111</text><text x="66" y="232" font-family="Arial" font-size="10" fill="#555">/ week</text><text x="18" y="250" font-family="Arial" font-size="9.5" fill="#555">51 weeks · price after cashback</text><rect x="18" y="262" width="96" height="20" rx="10" fill="#ffe7a8"/><text x="28" y="276" font-family="Arial" font-size="9.5" fill="#6b4b00">£300 cashback</text><rect x="14" y="368" width="212" height="34" rx="17" fill="#222"/><text x="96" y="389" font-family="Arial" font-size="11" fill="#fff">Book</text></svg>`),
+    unknown: svgUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1260" viewBox="0 0 240 420"><rect width="240" height="420" rx="18" fill="#fff"/><text x="18" y="22" font-family="Arial" font-size="10" font-weight="700" fill="#111">9:41</text><text x="18" y="56" font-family="Georgia" font-size="16" fill="#333">Example Lettings</text><rect x="18" y="68" width="204" height="110" fill="#e4e0d8"/><text x="18" y="202" font-family="Arial" font-size="9.5" fill="#222">Double room in a shared house,</text><text x="18" y="216" font-family="Arial" font-size="9.5" fill="#222">£140 pw, bills extra.</text><text x="18" y="240" font-family="Arial" font-size="9.5" fill="#222">A holding deposit of one week’s rent</text><text x="18" y="254" font-family="Arial" font-size="9.5" fill="#222">is required to reserve the room.</text><text x="18" y="278" font-family="Arial" font-size="9.5" fill="#222">Minimum 6-month tenancy. References</text><text x="18" y="292" font-family="Arial" font-size="9.5" fill="#222">and a UK guarantor are required.</text></svg>`)
   };
 
   /* ---------- 弹窗里的几个画面 ---------- */
-  let m = null, stack = [], imgUrl = null;
+  let m = null, stack = [], imgUrl = null, ai = false, seq = 0;
   function open() {
     const k = w();
     if (trans == null) { let l = 'zh'; try { l = LANG; } catch (_) { /* 页面还没准备好 */ } trans = l === 'ja' ? 'ja' : l === 'en' ? 'off' : 'zh'; }   // 默认：日文界面译成日文，中文界面译成中文，英文界面只看原文
-    m = BT.modal({ eyebrow: k.eyebrow, title: k.heading, closed: () => { m = null; stack = []; } });
+    m = BT.modal({ eyebrow: ai ? k.eyebrowAi : k.eyebrow, title: k.heading, closed: () => { m = null; stack = []; } });
     m.box.classList.add('sr-box');
     stack = []; home();
   }
@@ -154,11 +167,12 @@
   /* 第 1 步：三种入口 + 示例 */
   function home() {
     const k = w(); clear();
+    if (ai) m.body.append(el('span', 'bt-tag good sr-sampletag', k.aiOn));
     m.body.append(el('p', 'bt-lede', k.lede));
     const grid = el('div', 'sr-entries');
     const fileEntry = (title, sub, capture) => {
       const lab = el('label', 'sr-entry'), inp = el('input'); inp.type = 'file'; inp.accept = 'image/*'; if (capture) inp.setAttribute('capture', 'environment');
-      inp.addEventListener('change', () => { const f = inp.files && inp.files[0]; if (!f) return; if (imgUrl) URL.revokeObjectURL(imgUrl); imgUrl = URL.createObjectURL(f); scan(imgUrl, 'official', true); });
+      inp.addEventListener('change', () => { const f = inp.files && inp.files[0]; if (!f) return; if (imgUrl) URL.revokeObjectURL(imgUrl); imgUrl = URL.createObjectURL(f); if (ai) aiScan({ src: imgUrl }); else scan(imgUrl, 'official', true); });
       lab.append(inp, el('b', '', title), el('span', '', sub)); return lab;
     };
     grid.append(fileEntry(k.camera, k.cameraSub, true), fileEntry(k.upload, k.uploadSub, false));
@@ -171,6 +185,7 @@
       const v = inp.value.trim(); let u = null; try { u = new URL(/^https?:/i.test(v) ? v : 'https://' + v); } catch (_) { u = null; }
       if (!u || !/\./.test(u.hostname)) { err.textContent = k.badLink; return; }
       const s = u.href;
+      if (ai) return aiScan({ url: s });
       scan(null, /iq|great-?newton/i.test(s) ? 'official' : /amber|uhomes|unilodgers|casita|student\.com|studentcrowd|platform/i.test(s) ? 'platform' : 'unknown');
     });
     linkBox.append(el('b', '', k.link), el('span', '', k.linkSub), row, err);
@@ -179,11 +194,11 @@
     const ex = el('div', 'sr-examples');
     [['official', k.ex1], ['platform', k.ex2], ['unknown', k.ex3]].forEach(([kind, label]) => {
       const b = btn('sr-example'); const img = el('img'); img.src = SHOTS[kind]; img.alt = '';
-      b.append(img, el('span', '', label)); b.addEventListener('click', () => scan(SHOTS[kind], kind)); ex.append(b);
+      b.append(img, el('span', '', label)); b.addEventListener('click', () => (ai ? aiScan({ src: SHOTS[kind] }) : scan(SHOTS[kind], kind))); ex.append(b);
     });
     m.body.append(ex);
     const how = el('details', 'sr-how'); how.append(el('summary', '', k.steps), el('p', '', k.how));
-    m.body.append(how, el('p', 'bt-note', k.demoNote));
+    m.body.append(how, el('p', 'bt-note', ai ? k.aiNote : k.demoNote));
   }
 
   /* 第 2 步：识别动画（演示：约 1.6 秒） */
@@ -203,7 +218,7 @@
 
   /* 一句英文：重点词加下划线；下面一行是翻译；重点句左边有色条 */
   function sentence(s) {
-    const row = el('div', 'sr-s' + (s.flag ? ' ' + s.flag : '')), p = el('p', 'sr-en'), expl = el('div', 'sr-expl'); expl.hidden = true;
+    const row = el('div', 'sr-s' + (s.flag && s.flag !== 'none' ? ' ' + s.flag : '')), p = el('p', 'sr-en'), expl = el('div', 'sr-expl'); expl.hidden = true;
     let rest = s.en;
     while (rest) {
       let best = null;
@@ -216,7 +231,7 @@
     }
     row.append(p);
     if (trans !== 'off' && s[trans]) row.append(el('p', 'sr-tr', s[trans]));
-    if (s.note) row.append(el('p', 'sr-note', (s.flag === 'warn' ? '⚠️ ' : '💡 ') + L3(s.note)));
+    const nt = s.note && L3(s.note); if (nt) row.append(el('p', 'sr-note', (s.flag === 'warn' ? '⚠️ ' : '💡 ') + nt));
     row.append(expl);
     return row;
   }
@@ -228,13 +243,24 @@
     });
     return bar;
   }
-  function header(kind, url) {
+  function header(kind, url, label) {
     const k = w(), top = el('div', 'sr-src');
     const back = btn('bt-link', k.back); back.addEventListener('click', () => { stack.pop(); const prev = stack.pop(); if (prev) reader(prev); else home(); });
-    const chip = el('span', 'bt-tag ' + (kind === 'official' ? 'good' : kind === 'platform' ? '' : 'warn'), kind === 'official' ? k.srcOfficial : kind === 'platform' ? k.srcPlatform : k.srcUnknown);
+    const chip = el('span', 'bt-tag ' + (kind === 'official' ? 'good' : kind === 'platform' ? '' : 'warn'), label || (kind === 'official' ? k.srcOfficial : kind === 'platform' ? k.srcPlatform : k.srcUnknown));
     top.append(back, chip);
     if (url) top.append(el('span', 'sr-url', url));
     return top;
+  }
+  /* 可以问顾问的问题：英文 + 中文，各自可复制 */
+  function askBlock(list) {
+    const k = w(), ask = el('div', 'sr-ask'); ask.append(el('b', '', k.askH));
+    list.forEach(([en, zh]) => {
+      const q = el('div', 'sr-q'); q.append(el('p', 'sr-en', en), el('p', 'sr-tr', zh));
+      const r = el('div', 'sr-qbtns'), c1 = btn('br-copy', k.copy), c2 = btn('br-copy', k.copyBoth);
+      c1.addEventListener('click', () => copyText(c1, en)); c2.addEventListener('click', () => copyText(c2, en + '\n' + zh));
+      r.append(c1, c2); q.append(r); ask.append(q);
+    });
+    return ask;
   }
   async function copyText(b, text) { const k = w(); if (await BT.copy(text)) { const o = b.textContent; b.textContent = k.copied; setTimeout(() => { b.textContent = o; }, 1300); } }
 
@@ -280,14 +306,7 @@
       } else page_.append(sentence(b));
     });
     m.body.append(page_);
-    // 可以问顾问的问题
-    const ask = el('div', 'sr-ask'); ask.append(el('b', '', k.askH));
-    P.ask.forEach(([en, zh]) => {
-      const q = el('div', 'sr-q'); q.append(el('p', 'sr-en', en), el('p', 'sr-tr', zh));
-      const r = el('div', 'sr-qbtns'), c1 = btn('br-copy', k.copy), c2 = btn('br-copy', k.copyBoth);
-      c1.addEventListener('click', () => copyText(c1, en)); c2.addEventListener('click', () => copyText(c2, en + '\n' + zh));
-      r.append(c1, c2); q.append(r); ask.append(q);
-    });
+    const ask = askBlock(P.ask);
     m.body.append(ask, el('p', 'bt-note', k.demoNote));
     footer();
   }
@@ -312,15 +331,7 @@
     const roomName = (() => { try { const t = window.RoomPhotos.types(h).find(x => x.key === PLATFORM.room); return t ? t.name : PLATFORM.room; } catch (_) { return PLATFORM.room; } })();
     info.append(el('b', '', fmt(k.recognized, { home: h ? h.name : 'Capital Gate', room: roomName })), el('p', '', fmt(k.recogPrice, { wk: money(PLATFORM.wk), weeks: PLATFORM.weeks, cash: money(PLATFORM.cash) })));
     row.append(info); m.body.append(row, el('span', 'bt-tag demo sr-sampletag', k.sample));
-    let s = null;
-    try { const o = window.QuoteCheck.official(h, PLATFORM.room); s = window.QuoteCheck.split(o, PLATFORM.wk, PLATFORM.weeks); } catch (_) { s = null; }
-    if (s) {
-      const card = el('div', 'qc-line'); card.append(el('b', 'qc-head', k.platformSplit));
-      const bar = el('div', 'qc-bar'), part = (cls, val, label) => { if (val <= 0) return; const x = el('span', cls); x.style.flexGrow = String(val); x.append(el('i', '', label), el('b', '', money(val))); bar.append(x); };
-      part('off', s.cash, BT.lang() === 'en' ? 'Official' : '官方返现'); part('sub', s.sub, BT.lang() === 'en' ? 'Platform' : '平台补'); part('pay', s.pay, BT.lang() === 'en' ? 'You pay' : '你实际付');
-      card.append(bar, el('p', 'qc-explain', fmt(k.platformSay, { cash: money(PLATFORM.cash), sub: money(s.sub), off: money(s.cash) })));
-      m.body.append(card);
-    }
+    const card = splitCard(h, PLATFORM.room, PLATFORM.wk, PLATFORM.weeks, PLATFORM.cash); if (card) m.body.append(card);
     const acts = el('div', 'qc-actions'), o1 = btn('bt-btn', k.openSplit), o2 = btn('bt-link sr-seeofficial', k.seeOfficial);
     o1.addEventListener('click', () => {
       const store = BT.store('lsm-quote-v3'), all = store.get() || {}; Object.assign(all, { wk: String(PLATFORM.wk), weeks: PLATFORM.weeks, room: PLATFORM.room }); store.set(all);
@@ -329,6 +340,19 @@
     o2.addEventListener('click', () => { BT.close(); try { show(h, true); } catch (_) { /* 页面还没准备好 */ } });
     acts.append(o1); m.body.append(acts, o2, el('p', 'bt-note', k.demoNote));
     footer();
+  }
+
+  /* 按这栋楼的官方价拆开平台价：官方返现 / 平台补 / 你实际付 */
+  function splitCard(h, room, wk, weeks, cash) {
+    const k = w(); let s = null;
+    try { const o = window.QuoteCheck.official(h, room); s = window.QuoteCheck.split(o, wk, weeks); } catch (_) { s = null; }
+    if (!s) return null;
+    const card = el('div', 'qc-line'); card.append(el('b', 'qc-head', k.platformSplit));
+    const bar = el('div', 'qc-bar'), part = (cls, val, label) => { if (val <= 0) return; const x = el('span', cls); x.style.flexGrow = String(val); x.append(el('i', '', label), el('b', '', money(val))); bar.append(x); };
+    part('off', s.cash, BT.lang() === 'en' ? 'Official' : '官方返现'); part('sub', s.sub, BT.lang() === 'en' ? 'Platform' : '平台补'); part('pay', s.pay, BT.lang() === 'en' ? 'You pay' : '你实际付');
+    card.append(bar);
+    if (cash) card.append(el('p', 'qc-explain', fmt(k.platformSay, { cash: money(cash), sub: money(Math.max(0, s.sub)), off: money(s.cash) })));
+    return card;
   }
 
   /* 第 3 步 · 还没收录的网站：翻译 + 标重点 + 记进待收录 */
@@ -347,6 +371,120 @@
     const k = w(), again = btn('bt-btn alt', k.again);
     again.addEventListener('click', () => { stack = []; home(); });
     m.foot.append(again);
+  }
+
+  /* ---------- 真实识别：服务器配好了 AI（consult-server 的 /api/snap）就用 AI，没配就用上面的演示 ---------- */
+  fetch('./api/snap/status', { cache: 'no-store' }).then(r => (r.ok ? r.json() : null)).then(d => { ai = !!(d && d.enabled); if (ai && m && !stack.length) home(); }).catch(() => { /* 静态网页：没有服务器，用演示 */ });
+  const norm = x => String(x || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  /* 照片或截图缩到长边 1600 像素、转成 JPEG 再上传：手机原图动辄几 MB，缩小后又快又够看清文字 */
+  function toJpeg(src) {
+    return new Promise((ok, fail) => {
+      const img = new Image();
+      img.onload = () => {
+        const sc = Math.min(1, 1600 / Math.max(img.naturalWidth || 1, img.naturalHeight || 1)), c = document.createElement('canvas');
+        c.width = Math.max(1, Math.round((img.naturalWidth || 1440) * sc)); c.height = Math.max(1, Math.round((img.naturalHeight || 960) * sc));
+        const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.drawImage(img, 0, 0, c.width, c.height);
+        try { ok(c.toDataURL('image/jpeg', 0.85)); } catch (e) { fail(e); }
+      };
+      img.onerror = () => fail(new Error('image'));
+      img.src = src;
+    });
+  }
+  /* 名字对上我们收录的公寓：「Great Newton House」→ iQ Great Newton House */
+  function matchHome(name) {
+    const n = norm(name); if (n.length < 4) return null;
+    let best = null;
+    homes().forEach(h => { const hn = norm(h.name); if (hn.length >= 4 && (hn.includes(n) || n.includes(hn)) && (!best || hn.length > norm(best.name).length)) best = h; });
+    return best;
+  }
+  /* 房型对上报价拆解里的房型：先找这栋楼记录的房型，再按常见房型归类 */
+  function roomKey(h, type) {
+    const n = norm(type); let keys = [];
+    try { keys = window.RoomPhotos.types(h).map(t => t.key); } catch (_) { keys = []; }
+    const hit = n && keys.find(x => { const kx = norm(x); return kx && (n.includes(kx) || kx.includes(n)); });
+    if (hit) return hit;
+    return /studio/.test(n) ? 'Studio' : /nonensuite|shared|standard/.test(n) ? 'Non en-suite' : /ensuite/.test(n) ? 'En-suite' : /1bed|onebed|apartment|flat/.test(n) ? '1 Bed' : 'En-suite';
+  }
+  const linkOf = u => { try { const x = new URL(/^https?:/i.test(u) ? u : 'https://' + u); return /\./.test(x.hostname) ? x.href : ''; } catch (_) { return ''; } };
+
+  /* 交给 AI：照片 / 截图 { src } 或网址 { url } */
+  async function aiScan({ src, url }) {
+    const k = w(), id = ++seq; clear(); stack = ['ai-wait'];
+    const box = el('div', 'sr-scan'), pic = el('div', 'sr-pic');
+    if (src) { const img = el('img'); img.src = src; img.alt = ''; pic.append(img); } else pic.append(el('span', 'sr-linkpic', '🔗'));
+    pic.append(el('i', 'sr-beam'));
+    const list = el('ul', 'sr-steps');
+    [k.s1, k.s2, k.s3].forEach(s => list.append(el('li', '', s)));
+    box.append(pic, el('p', 'sr-scanning', k.aiReading), list);
+    m.body.append(box);
+    [...list.children].forEach((li, i) => setTimeout(() => li.classList.add('on'), 1200 * (i + 1) + (i ? 2500 * i : 0)));
+    let res = null, code = '';
+    try {
+      const body = src ? { image: await toJpeg(src) } : { url };
+      const r = await fetch('./api/snap', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      res = await r.json().catch(() => null);
+      if (!r.ok || !res || res.error) { code = (res && res.error) || 'ai_failed'; res = null; }
+    } catch (_) { code = 'ai_failed'; }
+    if (!m || id !== seq) return;   // 学生已经关掉或换了一张
+    if (res) renderAI(res, src, url); else aiError(code, src, url);
+  }
+  function aiError(code, src, url) {
+    const k = w(); clear(); stack = [];
+    if (code === 'not_configured') ai = false;
+    const msg = { not_configured: k.errNot, busy: k.errBusy, too_many: k.errBusy, fetch_failed: k.errFetch, bad_url: k.errBadUrl, too_large: k.errBig, bad_key: k.errKey }[code] || k.errFail;
+    m.body.append(el('p', 'sr-err sr-aierr', msg));
+    const acts = el('div', 'qc-actions'), demo = btn('bt-btn', k.tryDemo);
+    const kind = src && src === SHOTS.platform ? 'platform' : src && src === SHOTS.unknown ? 'unknown' : url && !/iq|great-?newton/i.test(url) ? (/amber|uhomes|unilodgers|casita|student\.com|studentcrowd|platform/i.test(url) ? 'platform' : 'unknown') : 'official';
+    demo.addEventListener('click', () => scan(src || null, kind, !!src && !Object.values(SHOTS).includes(src)));
+    acts.append(demo); m.body.append(acts);
+    footer();
+  }
+
+  /* 第 3 步 · AI 读出来的结果：和演示同一套界面 */
+  function renderAI(r, src, url) {
+    const k = w(); clear(); stack = ['ai'];
+    const kind = r.kind === 'official' ? 'official' : r.kind === 'platform' ? 'platform' : 'unknown';
+    const label = r.kind === 'official' ? k.srcAiOfficial : r.kind === 'platform' ? k.srcPlatform : k.srcOther;
+    m.body.append(header(kind, r.site_url || url || '', label), el('span', 'bt-tag good sr-sampletag', k.aiTag));
+    if (r.kind === 'not_listing') { m.body.append(el('p', 'bt-lede', k.notListing)); footer(); return; }
+    // 认出了什么
+    const row = el('div', 'sr-plat');
+    if (src) { const img = el('img', 'sr-thumb'); img.src = src; img.alt = ''; row.append(img); }
+    const info = el('div'), what = [r.building_name, r.room_type].filter(Boolean).join(' · ') || r.site_name;
+    if (what) info.append(el('b', '', fmt(k.recogAi, { what })));
+    const price = [r.weekly_price ? fmt(k.priceAi, { wk: money(r.weekly_price) }) : '', r.weeks ? fmt(k.weeksAi, { n: r.weeks }) : '', r.cashback ? fmt(k.cashAi, { cash: money(r.cashback) }) : ''].filter(Boolean).join(' · ');
+    if (price) info.append(el('p', '', price));
+    if (r.uncertain) info.append(el('p', 'sr-confirm', '❓ ' + k.uncertainH + r.uncertain));
+    row.append(info); m.body.append(row);
+    // 对上我们收录的公寓：平台价按官方价拆开
+    const h = matchHome(r.building_name);
+    if (h) {
+      const room = roomKey(h, r.room_type);
+      if (r.kind !== 'official' && r.weekly_price && r.weeks) { const card = splitCard(h, room, r.weekly_price, r.weeks, r.cashback); if (card) m.body.append(card); }
+      const acts = el('div', 'qc-actions'), o1 = btn('bt-btn', r.kind === 'official' ? k.splitPrice : k.openSplit), o2 = btn('bt-link sr-seeofficial', k.seeOfficial);
+      o1.addEventListener('click', () => {
+        if (r.weekly_price && r.kind !== 'official') { const store = BT.store('lsm-quote-v3'), all = store.get() || {}; Object.assign(all, { wk: String(r.weekly_price), weeks: r.weeks || all.weeks, room }); store.set(all); }
+        BT.close(); try { window.QuoteCheck.open(h, room, 'split'); } catch (_) { /* 没有报价拆解 */ }
+      });
+      o2.addEventListener('click', () => { BT.close(); try { show(h, true); } catch (_) { /* 页面还没准备好 */ } });
+      acts.append(o1); m.body.append(el('p', 'sr-matched', '🏠 ' + fmt(k.matched, { home: h.name })), acts, o2);
+    } else if (r.building_name) m.body.append(el('p', 'sr-queued', '📌 ' + k.noMatch));
+    m.body.append(transBar(() => renderAI(r, src, url)));
+    // 这一页的重点
+    const sents = r.sentences || [], warn = sents.filter(x => x.flag === 'warn' && x.note && L3(x.note));
+    if (warn.length) {
+      const sum = el('div', 'sr-keys'); sum.append(el('b', '', fmt(k.keyH, { n: warn.length })));
+      const ol = el('ol'); warn.forEach(x => ol.append(el('li', '', L3(x.note)))); sum.append(ol); m.body.append(sum);
+    }
+    if (sents.length) {
+      m.body.append(el('p', 'bt-note', k.tapHint));
+      const page_ = el('article', 'sr-page'); sents.forEach(x => page_.append(sentence(x))); m.body.append(page_);
+    }
+    if (r.questions && r.questions.length) m.body.append(askBlock(r.questions.map(q => [q.en, q.zh])));
+    const go = linkOf(r.site_url || url || '');
+    if (go) { const a = el('a', 'bt-btn alt sr-topage', k.toPage); a.href = go; a.target = '_blank'; a.rel = 'noopener'; m.body.append(a); }
+    m.body.append(el('p', 'bt-note', k.aiNote));
+    footer();
   }
 
   /* ---------- 入口：顶部栏📷按钮 + 开场页的订房小工具 + ?snap=1 ---------- */
