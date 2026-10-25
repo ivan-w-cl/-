@@ -67,7 +67,7 @@
   function decorate() {
     const h = homeNow(); if (!h || !cardBody || !tools.length) return;
     const details = cardBody.querySelector('#propertyDetails');
-    const inDetails = tools.filter(t => t.details !== false);
+    const inDetails = tools.filter(t => t.card && t.details !== false);
     if (details && inDetails.length && !details.querySelector('.bt-tools')) {
       const sec = el('section', 'bt-tools'), row = el('div', 'bt-row');
       sec.append(el('h4', '', pick(T).tools));
@@ -84,7 +84,7 @@
     const compact = cardBody.querySelector('.compact-summary');
     if (compact && !compact.querySelector('.bt-mini')) {
       const row = el('div', 'bt-mini');
-      tools.forEach(t => {
+      tools.filter(t => t.card).forEach(t => {   // 没有 card 的工具（如「拍一下」）不进公寓卡片
         const c = t.card(h), b = btn((c.cls || 'bt-chipbtn') + (c.on ? ' on' : ''), c.mini);
         b.addEventListener('click', e => { e.stopPropagation(); t.open(h); });
         row.append(b);
