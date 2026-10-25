@@ -31,6 +31,7 @@ function schema(z) {
     weekly_price: z.number().nullable(),
     weeks: z.number().nullable(),
     cashback: z.number().nullable(),
+    buildings: z.array(z.object({ name: z.string(), price_from: z.number().nullable(), area: z.string() })),
     sentences: z.array(z.object({ en: z.string(), zh: z.string(), ja: z.string(), flag: z.enum(['warn', 'info', 'none']), note })),
     questions: z.array(z.object({ en: z.string(), zh: z.string() })),
     uncertain: z.string()
@@ -43,6 +44,7 @@ Read only what the input shows. Never invent buildings, prices, dates or terms; 
 
 - kind: "official" if the page is the accommodation operator's own website, "platform" if it is a third-party booking platform, marketplace or agent listing, "other" for any other housing page, "not_listing" if it is not about accommodation. A photo of a screen may show glare, angles or browser chrome; read through them.
 - site_name, site_url: as shown (the address bar or logo). building_name and room_type: as shown on the page.
+- buildings: when the page lists several buildings (a city or search results page), each building as shown, with its "from" weekly price in pounds (null if not shown) and the area or distance text shown; leave building_name and room_type empty in that case. Empty array for a single-building page.
 - weekly_price, weeks, cashback: numbers in pounds and weeks for the main room on the page. If a platform shows a weekly price "after cashback", give that figure as weekly_price and the cashback separately.
 - sentences: up to 12 sentences from the page that matter for renting, in reading order, each quoted in its original English (lightly cleaned of layout noise). Prefer prices, fees, deposits, cashback and its conditions, payment and instalments, guarantors, cancellation, cooling-off, visa refusal (No Visa No Pay), replacement tenants, early leaving and check-out. Give each a natural translation in Simplified Chinese (zh) and Japanese (ja).
 - flag: "warn" when the sentence costs the student money or limits cancelling (non-refundable fees, conditions on cashback, deadlines, replacement tenant requirements, paying rent after leaving early, guarantor requirements); "info" for useful facts; "none" otherwise. note: one short plain sentence each in zh, ja and en saying what the student should notice or ask, empty for "none".

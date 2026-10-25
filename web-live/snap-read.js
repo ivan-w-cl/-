@@ -41,6 +41,7 @@
       notListing: '这张图看起来不是公寓页面，换一张试试。', uncertainH: '需要确认：', matched: '这栋楼我们收录了：{home}', noMatch: '这栋楼我们还没收录，已记入「待收录」。',
       recogAi: '认出：{what}', priceAi: '每周 {wk}', weeksAi: '{n} 周', cashAi: '返现 {cash}', toPage: '去原网页继续 ↗', tryDemo: '看演示版效果',
       errNot: '服务器还没有配置 AI，先看演示版。', errBusy: 'AI 正忙，过一会儿再试。', errFetch: '这个网址打不开，请改用截图或拍照。', errBadUrl: '这个网址不能读取，请检查一下。',
+      listH: '这一页列了 {n} 栋楼', listOurs: '我们收录了 {n} 栋，点开看地图、房型照片和拆价', listNew: '未收录', fromWk: '每周 {wk} 起', priceOnSite: '价格以官网为准', onMap: '在地图上看 ›',
       errFail: 'AI 这次没读出来，换一张更清楚的图再试。', errBig: '图片太大了，换一张小一点的。', errKey: '服务器上的 AI 密钥不对，请检查 ANTHROPIC_API_KEY。'
     },
     en: {
@@ -71,6 +72,7 @@
       notListing: 'This does not look like an accommodation page. Try another picture.', uncertainH: 'Please confirm: ', matched: 'We have this building: {home}', noMatch: 'We have not added this building yet; it is on our to-do list.',
       recogAi: 'Recognised: {what}', priceAi: '{wk}/week', weeksAi: '{n} weeks', cashAi: '{cash} cashback', toPage: 'Continue on the original page ↗', tryDemo: 'See the demo',
       errNot: 'AI is not set up on the server yet, so here is the demo.', errBusy: 'The AI is busy. Try again in a moment.', errFetch: 'That link could not be opened. Use a screenshot or photo instead.', errBadUrl: 'That link cannot be read. Check it and try again.',
+      listH: 'This page lists {n} buildings', listOurs: 'We have {n} of them: tap for the map, room photos and price breakdown', listNew: 'Not added yet', fromWk: 'from {wk}/week', priceOnSite: 'see the site for prices', onMap: 'Show on map ›',
       errFail: 'The AI could not read this one. Try a clearer picture.', errBig: 'That image is too large. Try a smaller one.', errKey: 'The AI key on the server is not valid. Check ANTHROPIC_API_KEY.'
     }
   };
@@ -248,7 +250,7 @@
     const back = btn('bt-link', k.back); back.addEventListener('click', () => { stack.pop(); const prev = stack.pop(); if (prev) reader(prev); else home(); });
     const chip = el('span', 'bt-tag ' + (kind === 'official' ? 'good' : kind === 'platform' ? '' : 'warn'), label || (kind === 'official' ? k.srcOfficial : kind === 'platform' ? k.srcPlatform : k.srcUnknown));
     top.append(back, chip);
-    if (url) top.append(el('span', 'sr-url', url));
+    if (url) { let t = url; try { const x = new URL(/^https?:/i.test(url) ? url : 'https://' + url); t = x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/$/, ''); } catch (_) { /* 原样显示 */ } top.append(el('span', 'sr-url', t)); }
     return top;
   }
   /* 可以问顾问的问题：英文 + 中文，各自可复制 */
@@ -452,7 +454,7 @@
     if (src) { const img = el('img', 'sr-thumb'); img.src = src; img.alt = ''; row.append(img); }
     const info = el('div'), what = [r.building_name, r.room_type].filter(Boolean).join(' · ') || r.site_name;
     if (what) info.append(el('b', '', fmt(k.recogAi, { what })));
-    const price = [r.weekly_price ? fmt(k.priceAi, { wk: money(r.weekly_price) }) : '', r.weeks ? fmt(k.weeksAi, { n: r.weeks }) : '', r.cashback ? fmt(k.cashAi, { cash: money(r.cashback) }) : ''].filter(Boolean).join(' · ');
+    const price = [r.weekly_price ? fmt((r.buildings || []).length ? k.fromWk : k.priceAi, { wk: money(r.weekly_price) }) : '', r.weeks ? fmt(k.weeksAi, { n: r.weeks }) : '', r.cashback ? fmt(k.cashAi, { cash: money(r.cashback) }) : ''].filter(Boolean).join(' · ');
     if (price) info.append(el('p', '', price));
     if (r.uncertain) info.append(el('p', 'sr-confirm', '❓ ' + k.uncertainH + r.uncertain));
     row.append(info); m.body.append(row);
@@ -469,6 +471,22 @@
       o2.addEventListener('click', () => { BT.close(); try { show(h, true); } catch (_) { /* 页面还没准备好 */ } });
       acts.append(o1); m.body.append(el('p', 'sr-matched', '🏠 ' + fmt(k.matched, { home: h.name })), acts, o2);
     } else if (r.building_name) m.body.append(el('p', 'sr-queued', '📌 ' + k.noMatch));
+    // 列表页（一个城市的多栋楼）：逐栋对上我们收录的公寓
+    const bl = r.buildings || [];
+    if (bl.length) {
+      const hits = bl.map(b => ({ b, h: matchHome(b.name) })), box = el('div', 'sr-blist');
+      const noPrice = bl.every(b => !b.price_from);
+      box.append(el('b', '', fmt(k.listH, { n: bl.length })), el('p', 'bt-note', fmt(k.listOurs, { n: hits.filter(x => x.h).length }) + (noPrice ? ' · ' + k.priceOnSite : '')));
+      hits.forEach(({ b, h: hh }) => {
+        const row = btn('sr-bitem' + (hh ? '' : ' new'));
+        const t = el('span', 'sr-bname', b.name), sub = el('small', '', [b.area, b.price_from ? fmt(k.fromWk, { wk: money(b.price_from) }) : noPrice ? '' : k.priceOnSite].filter(Boolean).join(' · '));
+        const left = el('span'); left.append(t, sub);
+        row.append(left, el('em', '', hh ? k.onMap : k.listNew));
+        if (hh) row.addEventListener('click', () => { BT.close(); try { show(hh, true); } catch (_) { /* 页面还没准备好 */ } }); else row.disabled = true;
+        box.append(row);
+      });
+      m.body.append(box);
+    }
     m.body.append(transBar(() => renderAI(r, src, url)));
     // 这一页的重点
     const sents = r.sentences || [], warn = sents.filter(x => x.flag === 'warn' && x.note && L3(x.note));

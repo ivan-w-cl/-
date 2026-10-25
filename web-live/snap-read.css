@@ -100,3 +100,12 @@
 .sr-matched { margin: 10px 0 4px; font-size: 13px; color: #1f2d3a; }
 .sr-aierr { margin: 6px 0 12px; font-size: 14px; }
 .sr-topage { display: inline-block; margin: 12px 0 4px; text-decoration: none; }
+.sr-blist { margin: 12px 0; padding: 12px 14px; border: 2px solid var(--ink, #3a2a1c); border-radius: 14px; background: #fff; }
+.sr-blist > b { display: block; font-size: 15px; }
+.sr-blist .bt-note { margin: 2px 0 8px; }
+.sr-bitem { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; border: 0; border-top: 1px dashed #e2d6bd; background: none; text-align: left; cursor: pointer; font: inherit; color: inherit; }
+.sr-bitem span { display: flex; flex-direction: column; }
+.sr-bname { font-weight: 600; font-size: 14px; }
+.sr-bitem small { font-size: 12px; color: #6b5a48; }
+.sr-bitem em { font-style: normal; font-size: 12.5px; color: #b5442a; white-space: nowrap; }
+.sr-bitem.new { cursor: default; } .sr-bitem.new em { color: #8a7c6c; }
