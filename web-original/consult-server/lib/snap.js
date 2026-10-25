@@ -114,4 +114,4 @@ function createSnapApi({ send, readBody, json, limited }) {
     }
   };
 }
-module.exports = { createSnapApi, read, enabled };
+module.exports = { createSnapApi, read, enabled, load, pageText, MODEL };

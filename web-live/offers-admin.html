@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>官网优惠管理 · Liverpool Student Map</title>
+<link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&family=Nunito:wght@400;600;700;800&family=ZCOOL+KuaiLe&display=swap">
+<link rel="stylesheet" href="./booking-tools.css">
+<link rel="stylesheet" href="./offer-card.css">
+<style>
+  :root { --ink: #3b2a1a; --soft: #7a6650; --line: #e2d6bd; --paper: #fffaf0; --panel: #f6efe1; --red: #b5462f; --green: #1f7a4d; --hand: 'Patrick Hand', 'ZCOOL KuaiLe', cursive; --display: 'Gochi Hand', 'ZCOOL KuaiLe', cursive; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--panel); color: var(--ink); font: 14px/1.45 Nunito, 'PingFang SC', 'Noto Sans CJK SC', system-ui, sans-serif; display: flex; flex-direction: column; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  .top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 10px 18px; background: var(--ink); color: var(--paper); }
+  .top b { font: 22px var(--hand); font-weight: normal; }
+  .top .mode { font-size: 12.5px; opacity: .9; }
+  .top .sp { flex: 1; }
+  .top a, .top button { color: var(--paper); background: transparent; border: 2px solid var(--paper); border-radius: 999px; padding: 3px 12px; font: 15px var(--hand); text-decoration: none; cursor: pointer; }
+  .top button.solid { background: var(--paper); color: var(--ink); }
+  .main { flex: 1; min-height: 0; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 14px; padding: 14px 18px 18px; }
+  .side, .ed { background: var(--paper); border: 2.5px solid var(--ink); border-radius: 16px; min-height: 0; overflow-y: auto; }
+  .side { display: flex; flex-direction: column; }
+  .side .head { padding: 10px 12px; border-bottom: 2px dashed var(--line); display: flex; flex-direction: column; gap: 8px; position: sticky; top: 0; background: var(--paper); z-index: 1; }
+  .side input { width: 100%; border: 2px solid var(--ink); border-radius: 10px; padding: 6px 10px; background: #fff; }
+  .filters { display: flex; gap: 6px; flex-wrap: wrap; }
+  .filters button { border: 1.5px solid var(--ink); background: #fff; border-radius: 999px; padding: 1px 10px; font: 14px var(--hand); cursor: pointer; }
+  .filters button.on { background: var(--ink); color: var(--paper); }
+  .hl { list-style: none; margin: 0; padding: 4px 6px 10px; }
+  .hl button { width: 100%; text-align: left; display: flex; align-items: center; gap: 8px; border: 0; background: none; padding: 7px 8px; border-radius: 10px; cursor: pointer; }
+  .hl button:hover { background: #f3ead7; }
+  .hl button.on { background: #fff3c4; outline: 2px solid var(--ink); }
+  .hl .n { font: 12px/1 system-ui; color: #fff; background: #4a6fa5; border-radius: 999px; min-width: 22px; padding: 4px 5px; text-align: center; }
+  .hl .nm { flex: 1; min-width: 0; }
+  .hl .nm small { display: block; color: var(--soft); font-size: 11.5px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; background: #cfc4ae; }
+  .dot.ok { background: var(--green); } .dot.pending { background: var(--red); box-shadow: 0 0 0 3px #f6d3c8; } .dot.failed { background: #d08a1c; }
+  .ed { padding: 16px 18px 24px; display: flex; flex-direction: column; gap: 14px; }
+  .ed h2 { margin: 0; font: 28px/1.1 var(--display); font-weight: normal; }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .card { border: 2px solid var(--ink); border-radius: 14px; background: #fff; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+  .card h3 { margin: 0; font: 20px var(--hand); font-weight: normal; display: flex; align-items: center; gap: 8px; }
+  .card h3 small { font: 12.5px Nunito, sans-serif; color: var(--soft); }
+  .pend { border-color: var(--red); background: #fdf1ec; }
+  .pend ul { margin: 0; padding-left: 20px; }
+  .muted { color: var(--soft); font-size: 12.5px; margin: 0; }
+  .err { color: #9a3b18; font-size: 13px; margin: 0; }
+  label.f { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: var(--soft); }
+  label.f input, label.f select, label.f textarea { border: 1.5px solid #bfae8f; border-radius: 8px; padding: 5px 8px; background: #fff; color: var(--ink); font-size: 13.5px; min-width: 0; }
+  label.f textarea { resize: vertical; min-height: 54px; }
+  label.ck { display: inline-flex; gap: 5px; align-items: center; font-size: 13px; }
+  .grid { display: grid; gap: 8px; }
+  .rooms .r, .fees .r { display: grid; grid-template-columns: 2fr 1.2fr .8fr .9fr auto; gap: 8px; align-items: end; }
+  .fees .r { grid-template-columns: 1.5fr 1.5fr .9fr auto; }
+  .offer { border: 1.5px dashed #bfae8f; border-radius: 12px; padding: 10px; display: grid; gap: 8px; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #fffdf6; }
+  .offer .w2 { grid-column: span 2; } .offer .w4 { grid-column: 1 / -1; }
+  .offer .tools { grid-column: 1 / -1; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .btn { border: 2px solid var(--ink); background: #fff; border-radius: 999px; padding: 4px 14px; font: 15px var(--hand); cursor: pointer; box-shadow: 2px 2px 0 var(--ink); }
+  .btn.red { background: var(--red); color: #fff; } .btn.green { background: var(--green); color: #fff; }
+  .btn.ghost { box-shadow: none; }
+  .btn:disabled { opacity: .5; cursor: default; }
+  .x { border: 0; background: none; color: #9a3b18; cursor: pointer; font-size: 13px; text-decoration: underline; }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; border-bottom: 2px dashed var(--line); padding-bottom: 8px; }
+  .tabs button { border: 2px solid var(--ink); border-radius: 12px 12px 4px 4px; background: #fff; padding: 4px 14px; font: 16px var(--hand); cursor: pointer; }
+  .tabs button.on { background: var(--ink); color: var(--paper); }
+  .tabs .badge { font: 700 11px system-ui; color: #fff; background: #1f6f6b; border-radius: 999px; padding: 2px 6px; margin-left: 4px; }
+  .savebar { position: sticky; bottom: -24px; margin: 0 -18px -24px; padding: 10px 18px; background: var(--paper); border-top: 2px dashed var(--line); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 8px 16px; border-radius: 999px; z-index: 200; font-size: 14px; }
+  .login { margin: 12vh auto; width: min(360px, 92vw); background: var(--paper); border: 3px solid var(--ink); border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+  .empty { margin: auto; text-align: center; color: var(--soft); max-width: 420px; }
+  @media (max-width: 860px) { .main { grid-template-columns: 1fr; } .side { max-height: 40vh; } .offer { grid-template-columns: 1fr 1fr; } .rooms .r { grid-template-columns: 1fr 1fr; } .fees .r { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="top"><b>官网优惠管理</b><span class="mode" id="mode"></span><span class="sp"></span>
+  <button id="settingsBtn">「通过我们订」与 Amber 标签</button><button id="checkAll" class="solid">全部立即检查</button>
+  <a href="./adviser.html">返回顾问后台</a><a href="./index.html" target="_blank" rel="noopener">学生网站 ↗</a></div>
+<div class="main" id="main"></div>
+<script src="./adviser/core.js"></script>
+<script src="./booking-tools.js"></script>
+<script src="./offer-card.js"></script>
+<script>
+/* 官网优惠管理：和 consult-server 一起部署时读写服务器（/api/admin/offers，需要登录）；没有服务器时存在本浏览器（演示，学生网站同一浏览器能看到）。 */
+(() => {
+  'use strict';
+  const HOMES = window.Core.HM.HOMES; window.HOMES = HOMES;
+  const $ = (tag, attrs, ...kids) => { const n = document.createElement(tag); Object.entries(attrs || {}).forEach(([k, v]) => { if (k === 'class') n.className = v; else if (k.startsWith('on')) n.addEventListener(k.slice(2), v); else if (v != null && v !== false) n.setAttribute(k, v === true ? '' : v); }); kids.flat().forEach(c => c != null && n.append(c)); return n; };
+  const money = v => '£' + Number(v || 0).toLocaleString('en-GB');
+  const LOCAL = 'lsm-offers-admin-v1';
+  const TYPES = [['cash', '💷 现金返现'], ['voucher', '🎁 购物卡 / 优惠卡'], ['rent', '🏷️ 减租 / 免周租'], ['fee', '🧾 免费用'], ['perk', '✨ 非现金福利']];
+  const UNITS = [['once', '一次性 £'], ['week', '每周减 £'], ['weeks_free', '免几周房租（填周数）']];
+  const RTYPES = [['ensuite', '独卫单间'], ['studio', 'Studio'], ['nonensuite', '非独卫'], ['apartment', '整套公寓'], ['other', '其他']];
+  const CH = { official: '官网', ours: '通过我们订', amber: 'Amber' };
+  let server = false, D = null, sel = null, tab = 'official', filter = 'all', q = '', draft = null, dirty = false, busy = false;
+  const toast = t => { const n = $('div', { class: 'toast' }, t); document.body.append(n); setTimeout(() => n.remove(), 2200); };
+  const blankHome = () => ({ url: '', rooms: [], fees: [], official: [], ours: [], amber: [], confirmedAt: '', checkedAt: '', checkStatus: '', checkError: '' });
+  const ago = iso => { if (!iso) return ''; const m = (Date.now() - Date.parse(iso)) / 60e3; return m < 60 ? Math.max(1, Math.round(m)) + ' 分钟前' : m < 2880 ? Math.round(m / 60) + ' 小时前' : Math.round(m / 1440) + ' 天前'; };
+
+  /* ---------- 数据：服务器 / 本浏览器 ---------- */
+  async function api(path, method = 'GET', body) {
+    const r = await fetch('./api/admin/offers' + path, { method, headers: { 'Content-Type': 'application/json' }, body: body && JSON.stringify(body) });
+    if (r.status === 401) { login(); throw new Error('login'); }
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw Object.assign(new Error(j.error || r.status), { code: j.error });
+    return j;
+  }
+  const saveLocal = () => { try { localStorage.setItem(LOCAL, JSON.stringify(D)); } catch (_) { toast('本浏览器存不下'); } };
+  async function load() {
+    if (server) { D = await api(''); return; }
+    try { D = JSON.parse(localStorage.getItem(LOCAL) || 'null'); } catch (_) { D = null; }
+    if (!D) { D = JSON.parse(JSON.stringify({ settings: window.OfferCard.DEMO.settings, homes: window.OfferCard.DEMO.homes, pending: [] })); saveLocal(); }
+    D.monitor = { enabled: true, everyHours: 6, demo: true };
+  }
+  const homeData = id => D.homes[id] || blankHome();
+  const pendingOf = id => (D.pending || []).find(p => p.homeId === id);
+  const status = id => { const h = D.homes[id]; if (pendingOf(id)) return 'pending'; if (!h) return 'none'; if (h.checkStatus === 'failed') return 'failed'; return h.confirmedAt || h.rooms.length || h.official.length ? 'ok' : 'none'; };
+
+  /* ---------- 登录 ---------- */
+  function login() {
+    const main = document.getElementById('main'); main.replaceChildren();
+    const pw = $('input', { type: 'password', placeholder: '后台密码', autocomplete: 'current-password' }), err = $('p', { class: 'err' });
+    const go = async () => { const r = await fetch('./api/admin/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: pw.value }) }); if (r.ok) start(); else err.textContent = '密码不对'; };
+    pw.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+    main.append($('div', { class: 'login' }, $('b', { style: 'font:24px var(--hand)' }, '登录顾问后台'), pw, $('button', { class: 'btn red', onclick: go }, '登录'), err));
+    main.style.display = 'block';
+  }
+
+  /* ---------- 左边：公寓列表 ---------- */
+  function renderSide() {
+    const side = $('div', { class: 'side' });
+    const np = (D.pending || []).length, nf = HOMES.filter(h => status(h.id) === 'failed').length;
+    const search = $('input', { type: 'search', placeholder: '搜公寓名', value: q, oninput: e => { q = e.target.value; renderList(); } });
+    const fl = $('div', { class: 'filters' });
+    [['all', '全部 ' + HOMES.length], ['pending', '待核对 ' + np], ['failed', '检查失败 ' + nf], ['ok', '已整理'], ['none', '未整理']].forEach(([k, t]) => fl.append($('button', { class: filter === k ? 'on' : '', onclick: () => { filter = k; render(); } }, t)));
+    side.append($('div', { class: 'head' }, search, fl));
+    const ul = $('ul', { class: 'hl' }); side.append(ul);
+    function renderList() {
+      ul.replaceChildren();
+      HOMES.filter(h => (filter === 'all' || status(h.id) === filter) && (!q || h.name.toLowerCase().includes(q.toLowerCase()))).forEach(h => {
+        const st = status(h.id), d = D.homes[h.id];
+        const sub = st === 'pending' ? '官网有变化，等你核对' : st === 'failed' ? '检查失败：请手动核对' : d && d.confirmedAt ? '核对于 ' + ago(d.confirmedAt) : d && d.url ? '已填官网地址' : '还没整理';
+        ul.append($('li', {}, $('button', { class: sel === h.id ? 'on' : '', onclick: () => pick(h.id) }, $('span', { class: 'n' }, String(h.n)), $('span', { class: 'nm' }, h.name, $('small', {}, sub)), $('i', { class: 'dot ' + st }))));
+      });
+    }
+    renderList();
+    return side;
+  }
+  function pick(id) {
+    if (dirty && !confirm('当前修改还没保存，确定切换？')) return;
+    sel = id; draft = JSON.parse(JSON.stringify(homeData(id))); dirty = false; render();
+  }
+
+  /* ---------- 右边：编辑一栋楼 ---------- */
+  const field = (label, input) => $('label', { class: 'f' }, label, input);
+  const inp = (obj, key, type = 'text', attrs = {}) => {
+    const i = $('input', { type, value: obj[key] ?? '', ...attrs });
+    i.addEventListener('input', () => { obj[key] = type === 'number' ? (i.value === '' ? null : Number(i.value)) : i.value; dirty = true; markDirty(); });
+    return i;
+  };
+  const sel_ = (obj, key, opts, onch) => { const s = $('select', {}); opts.forEach(([v, t]) => s.append($('option', { value: v }, t))); s.value = obj[key]; s.addEventListener('change', () => { obj[key] = s.value; dirty = true; markDirty(); if (onch) onch(); }); return s; };
+  let saveBtn = null;
+  const markDirty = () => { if (saveBtn) { saveBtn.disabled = !dirty; saveBtn.textContent = dirty ? '保存修改' : '已保存'; } };
+
+  function renderEd() {
+    const ed = $('div', { class: 'ed' });
+    if (!sel) {
+      ed.append($('div', { class: 'empty' }, $('h2', {}, '选一栋公寓'), $('p', {}, '填好官网优惠页地址，系统每 ' + (D.monitor.everyHours || 6) + ' 小时自动检查一次；官网有变化会出现在「待核对」，你确认后学生端才更新。'),
+        $('p', {}, '「通过我们订」和 Amber 的优惠在每栋楼里填，标签文字在右上角「「通过我们订」与 Amber 标签」里改。')));
+      return ed;
+    }
+    const h = HOMES.find(x => x.id === sel), d = draft, saved = homeData(sel), pend = pendingOf(sel);
+    ed.append($('div', { class: 'row' }, $('h2', {}, h.name), $('span', { class: 'muted' }, h.addr)));
+    // 官网地址 + 检查
+    const check = $('button', { class: 'btn', onclick: () => checkNow([sel]) }, busy ? '检查中…' : '立即检查官网'); if (busy || !D.monitor.enabled) check.disabled = true;
+    const card = $('div', { class: 'card' }, $('h3', {}, '🔎 官网监测', $('small', {}, D.monitor.enabled ? '每 ' + D.monitor.everyHours + ' 小时自动检查' : '服务器没有配置 AI，自动检查未启用，请手动录入')),
+      $('div', { class: 'row' }, field('官网优惠 / 房型价格页地址', inp(d, 'url', 'url', { placeholder: 'https://…', style: 'min-width:min(520px,70vw)' })), check),
+      $('p', { class: 'muted' }, [saved.checkedAt ? '上次检查：' + ago(saved.checkedAt) + (saved.checkStatus === 'same' ? '，和已确认的一样' : saved.checkStatus === 'changed' ? '，发现变化' : '') : '还没检查过', saved.confirmedAt ? ' · 学生端数据核对于 ' + ago(saved.confirmedAt) : ''].join('')));
+    if (saved.checkStatus === 'failed' && saved.checkError) card.append($('p', { class: 'err' }, '⚠️ ' + saved.checkError));
+    ed.append(card);
+    // 待核对
+    if (pend) {
+      const box = $('div', { class: 'card pend' }, $('h3', {}, '🔔 官网有变化，等你核对', $('small', {}, ago(pend.at) + ' 发现')), $('ul', {}, pend.changes.map(c => $('li', {}, c))));
+      if (pend.notes) box.append($('p', { class: 'muted' }, 'AI 提醒：' + pend.notes));
+      box.append($('div', { class: 'row' }, $('button', { class: 'btn green', onclick: () => decide(pend, 'approve') }, '确认，更新到学生端'), $('button', { class: 'btn ghost', onclick: () => decide(pend, 'reject') }, '忽略这次'), $('a', { href: pend.url, target: '_blank', rel: 'noopener' }, '打开官网核对 ↗')));
+      ed.append(box);
+    }
+    // 三个分页
+    const tabs = $('div', { class: 'tabs' });
+    [['official', '官网：房型、费用、优惠'], ['ours', '通过我们订'], ['amber', 'Amber']].forEach(([k, t]) => tabs.append($('button', { class: tab === k ? 'on' : '', onclick: () => { tab = k; render(); } }, t, k === 'amber' ? $('span', { class: 'badge' }, D.settings.amberLabel || 'Amber') : null)));
+    ed.append(tabs);
+    if (tab === 'official') {
+      // 房型
+      const rooms = $('div', { class: 'card rooms' }, $('h3', {}, '房型与周租', $('small', {}, '每种房型 × 每种租期一行')));
+      d.rooms.forEach((r, i) => rooms.append($('div', { class: 'r' }, field('房型名（和官网一样）', inp(r, 'name')), field('类型', sel_(r, 'type', RTYPES)), field('周数', inp(r, 'weeks', 'number', { min: 1, step: 1 })), field('周租 £', inp(r, 'rent', 'number', { min: 0, step: '0.01' })), $('button', { class: 'x', onclick: () => { d.rooms.splice(i, 1); dirty = true; render(); } }, '删除'))));
+      rooms.append($('div', {}, $('button', { class: 'btn ghost', onclick: () => { d.rooms.push({ name: '', type: 'ensuite', weeks: 51, rent: null }); dirty = true; render(); } }, '＋ 加一个房型')));
+      const fees = $('div', { class: 'card fees' }, $('h3', {}, '必付费用', $('small', {}, '比如不退的预订费；会退的押金不要填')));
+      d.fees.forEach((f, i) => fees.append($('div', { class: 'r' }, field('名称（英文）', inp(f, 'name')), field('中文名', inp(f, 'nameZh')), field('金额 £', inp(f, 'amount', 'number', { min: 0 })), $('button', { class: 'x', onclick: () => { d.fees.splice(i, 1); dirty = true; render(); } }, '删除'))));
+      fees.append($('div', {}, $('button', { class: 'btn ghost', onclick: () => { d.fees.push({ name: '', nameZh: '', amount: null }); dirty = true; render(); } }, '＋ 加一项费用')));
+      ed.append(rooms, fees);
+    }
+    ed.append(offersCard(d, tab));
+    // 保存 + 预览
+    saveBtn = $('button', { class: 'btn red', onclick: save }, '已保存'); markDirty();
+    ed.append($('div', { class: 'savebar' }, saveBtn, $('button', { class: 'btn ghost', onclick: preview }, '👀 预览学生看到的价格卡'), $('span', { class: 'muted' }, server ? '保存后学生端 5 分钟内更新' : '演示模式：数据存在本浏览器，同一浏览器打开学生网站能看到')));
+    return ed;
+  }
+  function offersCard(d, ch) {
+    const list = d[ch];
+    const title = ch === 'official' ? '官网优惠' : ch === 'ours' ? (D.settings.oursLabel || '通过我们订') + '的额外优惠' : (D.settings.amberLabel || 'Amber') + ' 优惠';
+    const hint = ch === 'official' ? '自动检查会更新这里；也可以手动补（比如邮件、电话才知道的优惠）' : ch === 'ours' ? '学生通过我们订时，在官网优惠之外额外拿到的' : '学生通过 Amber 订时额外拿到的；会带上 Amber 标签';
+    const card = $('div', { class: 'card' }, $('h3', {}, title, $('small', {}, hint)));
+    list.forEach((o, i) => {
+      const box = $('div', { class: 'offer' });
+      const amountLabel = () => o.unit === 'weeks_free' ? '免几周' : o.unit === 'week' ? '每周减 £' : '金额 £';
+      const amt = field(amountLabel(), inp(o, 'amount', 'number', { min: 0, step: '0.01' }));
+      box.append(field('类型', sel_(o, 'type', TYPES)), field('怎么算', sel_(o, 'unit', UNITS, () => render())), amt, field('截止日期', inp(o, 'until', 'date')),
+        $('div', { class: 'w2' }, field('名称（英文 / 官网原文）', inp(o, 'title'))), $('div', { class: 'w2' }, field('中文名（学生看到的）', inp(o, 'titleZh'))),
+        $('div', { class: 'w2' }, field('条件 / 到账说明（中文）', inp(o, 'conditionsZh', 'text', { placeholder: '例：入住满 8 周后打款' }))), $('div', { class: 'w2' }, field('只适用于这些房型（逗号分隔，空 = 全部）', (() => { const i = $('input', { value: (o.rooms || []).join(', ') }); i.addEventListener('input', () => { o.rooms = i.value.split(',').map(s => s.trim()).filter(Boolean); dirty = true; markDirty(); }); return i; })())),
+        $('div', { class: 'tools' }, $('label', { class: 'ck' }, (() => { const c = $('input', { type: 'checkbox' }); c.checked = !!o.conditional; c.addEventListener('change', () => { o.conditional = c.checked; dirty = true; markDirty(); }); return c; })(), '有条件（续租、推荐、优惠码…），不算进主价格'),
+          ch === 'official' ? $('label', { class: 'ck' }, (() => { const c = $('input', { type: 'checkbox' }); c.checked = !!o.directOnly; c.addEventListener('change', () => { o.directOnly = c.checked; dirty = true; markDirty(); }); return c; })(), '仅官网直订') : null,
+          $('span', { class: 'sp', style: 'flex:1' }), $('button', { class: 'x', onclick: () => { list.splice(i, 1); dirty = true; render(); } }, '删除这条')));
+      card.append(box);
+    });
+    card.append($('div', {}, $('button', { class: 'btn ghost', onclick: () => { list.push({ type: 'cash', unit: 'once', amount: null, title: '', titleZh: '', conditions: '', conditionsZh: '', paid: '', until: '', rooms: [], conditional: false, directOnly: false }); dirty = true; render(); } }, '＋ 加一条优惠')));
+    return card;
+  }
+
+  /* ---------- 动作 ---------- */
+  async function save() {
+    const d = draft;
+    if (d.rooms.some(r => !r.name || !r.weeks || !r.rent)) { toast('房型名、周数、周租都要填'); return; }
+    if (server) { try { const r = await api('/homes/' + sel, 'PUT', d); D.homes[sel] = r.home; } catch (e) { if (e.message !== 'login') toast('保存失败：' + e.message); return; } }
+    else { d.confirmedAt = new Date().toISOString(); delete d.demo; D.homes[sel] = JSON.parse(JSON.stringify(d)); saveLocal(); }
+    draft = JSON.parse(JSON.stringify(D.homes[sel])); dirty = false; toast('已保存'); render();
+  }
+  async function decide(p, how) {
+    if (server) { try { await api('/pending/' + p.id + '/' + how, 'POST'); await load(); } catch (e) { if (e.message !== 'login') toast('失败：' + e.message); return; } }
+    else { D.pending = D.pending.filter(x => x !== p); if (how === 'approve') { D.homes[p.homeId] = { ...homeData(p.homeId), ...p.found, confirmedAt: new Date().toISOString(), checkStatus: 'same' }; } saveLocal(); }
+    draft = JSON.parse(JSON.stringify(homeData(sel))); dirty = false; toast(how === 'approve' ? '已更新到学生端' : '已忽略'); render();
+  }
+  /* 演示模式的「检查」：模拟官网把第一条现金返现提高 £50，让你看到待核对的样子 */
+  function demoCheck(id) {
+    const h = JSON.parse(JSON.stringify(homeData(id))); h.checkedAt = new Date().toISOString();
+    const o = h.official.find(x => (x.type === 'cash' || x.type === 'voucher') && x.unit === 'once' && x.amount && !x.conditional);
+    if (!o) { h.checkStatus = 'same'; D.homes[id] = h; return; }
+    const before = o.amount; o.amount = (o.amount || 0) + 50;
+    D.pending = (D.pending || []).filter(p => p.homeId !== id);
+    D.pending.push({ id: 'p_demo' + Date.now(), homeId: id, at: h.checkedAt, url: h.url || 'https://example.com', changes: ['优惠变了：' + (o.titleZh || o.title) + ' ' + money(before) + ' → ' + money(o.amount) + '（演示：模拟官网变化）'], notes: '', found: { rooms: h.rooms, fees: h.fees, official: h.official } });
+    D.homes[id] = { ...homeData(id), checkedAt: h.checkedAt, checkStatus: 'changed' };
+  }
+  async function checkNow(ids) {
+    busy = true; render();
+    try {
+      if (!server) { (ids || Object.keys(D.homes)).forEach(demoCheck); saveLocal(); await new Promise(r => setTimeout(r, 900)); toast('检查完成（演示）'); }
+      else if (ids) { const r = await api('/check', 'POST', { homeId: ids[0], wait: true }); const x = r.results[0] || {}; await load(); toast(x.error ? '检查失败' : x.skipped ? '先填官网地址' : x.changed ? '发现变化，请核对' : '和已确认的一样'); }
+      else { await api('/check', 'POST', {}); toast('已开始检查，有变化会出现在「待核对」'); poll(); }
+    } catch (e) { if (e.message !== 'login') toast(e.code === 'not_configured' ? '服务器没有配置 AI，不能自动检查' : '检查失败：' + e.message); }
+    busy = false; if (sel) draft = dirty ? draft : JSON.parse(JSON.stringify(homeData(sel))); render();
+  }
+  function poll() { const t = setInterval(async () => { try { await load(); if (!dirty) { if (sel) draft = JSON.parse(JSON.stringify(homeData(sel))); render(); } if (!D.monitor.running) clearInterval(t); } catch (_) { clearInterval(t); } }, 5000); }
+  function preview() {
+    const h = HOMES.find(x => x.id === sel), copy = JSON.parse(JSON.stringify({ settings: D.settings, homes: { ...D.homes, [sel]: draft } }));
+    window.OfferCard.setData(copy); window.OfferCard.open(h);
+  }
+  function settings() {
+    const s = { ...D.settings }, m = window.BookingTools.modal({ eyebrow: '官网优惠管理', title: '「通过我们订」与 Amber 标签' });
+    const f = (label, key, area) => { const i = $(area ? 'textarea' : 'input', {}); i.value = s[key] || ''; i.addEventListener('input', () => { s[key] = i.value; }); return field(label, i); };
+    m.body.append($('div', { class: 'grid' }, f('「通过我们订」标题（中文）', 'oursLabel'), f('英文', 'oursLabelEn'), f('我们提供的服务（中文，显示在价格卡里）', 'oursService', true), f('英文', 'oursServiceEn', true),
+      f('Amber 标签（中文，例：Amber 专属）', 'amberLabel'), f('英文', 'amberLabelEn'), f('Amber 补充说明（中文，可空）', 'amberNote', true), f('英文', 'amberNoteEn', true)));
+    m.foot.append($('button', { class: 'btn red', onclick: async () => {
+      if (server) { try { const r = await api('/settings', 'PUT', s); D.settings = r.settings; } catch (e) { if (e.message !== 'login') toast('保存失败'); return; } }
+      else { D.settings = s; saveLocal(); }
+      window.BookingTools.close(); toast('已保存'); render();
+    } }, '保存'));
+  }
+
+  function render() {
+    const main = document.getElementById('main'); main.style.display = ''; main.replaceChildren(renderSide(), renderEd());
+    document.getElementById('mode').textContent = server ? (D.monitor.enabled ? '自动监测：每 ' + D.monitor.everyHours + ' 小时' + (D.monitor.running ? ' · 正在检查…' : '') : '自动监测未启用（服务器没有 ANTHROPIC_API_KEY）') : '演示模式：数据存在本浏览器';
+    document.getElementById('checkAll').disabled = busy || !D.monitor.enabled;
+  }
+  document.getElementById('checkAll').addEventListener('click', () => checkNow(null));
+  document.getElementById('settingsBtn').addEventListener('click', settings);
+  addEventListener('beforeunload', e => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
+
+  async function start() {
+    if (/^https?:$/.test(location.protocol)) {
+      try { const r = await fetch('./api/health', { cache: 'no-store' }); server = !!(r.ok && (await r.json()).cases); } catch (_) { server = false; }
+    }
+    try { await load(); } catch (e) { return; }
+    const want = new URLSearchParams(location.search).get('home'); if (want && HOMES.some(h => h.id === want)) { sel = want; draft = JSON.parse(JSON.stringify(homeData(want))); }
+    render();
+  }
+  start();
+})();
+</script>
+</body>
+</html>

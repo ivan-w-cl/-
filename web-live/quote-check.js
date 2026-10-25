@@ -269,6 +269,12 @@
     go(tab);
   }
 
+  /* 有了真实价格卡（offer-card.js）时，拆价放进价格卡里，这里只留「按预算看房」 */
+  if (window.OfferCard) {
+    BT.add({ id: 'budget', order: 2, intro: () => (BT.lang() === 'zh' ? '💷 按预算看房' : '💷 Search by budget'), open: () => open(null, null, 'budget') });
+    window.QuoteCheck = { open, split, official, OFFICIAL };
+    return;
+  }
   BT.add({
     id: 'quote', order: 1, details: false,   // 「展开详情」里不另放一块，价签直接挂在每个房型下面
     card: () => ({ title: w().title, desc: w().desc, mini: w().mini, cls: 'qt-tag' }),

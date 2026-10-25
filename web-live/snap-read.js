@@ -294,7 +294,7 @@
         const box = el('div', 'sr-price'); box.append(el('p', 'sr-en', b.en));
         if (trans !== 'off' && b[trans]) box.append(el('p', 'sr-tr', b[trans]));
         const s = btn('qt-tag small', k.splitPrice);
-        s.addEventListener('click', () => { const hh = h; BT.close(); try { window.QuoteCheck.open(hh, b.room, 'split'); } catch (_) { /* 没有报价拆解 */ } });
+        s.addEventListener('click', () => { BT.close(); openPrice(h, b.room); });
         box.append(s); page_.append(box);
       } else if (b.links) {
         const row = el('div', 'sr-links');
@@ -337,13 +337,18 @@
     const acts = el('div', 'qc-actions'), o1 = btn('bt-btn', k.openSplit), o2 = btn('bt-link sr-seeofficial', k.seeOfficial);
     o1.addEventListener('click', () => {
       const store = BT.store('lsm-quote-v3'), all = store.get() || {}; Object.assign(all, { wk: String(PLATFORM.wk), weeks: PLATFORM.weeks, room: PLATFORM.room }); store.set(all);
-      BT.close(); try { window.QuoteCheck.open(h, PLATFORM.room, 'split'); } catch (_) { /* 没有报价拆解 */ }
+      BT.close(); openPrice(h, PLATFORM.room, PLATFORM.wk, PLATFORM.weeks);
     });
     o2.addEventListener('click', () => { BT.close(); try { show(h, true); } catch (_) { /* 页面还没准备好 */ } });
     acts.append(o1); m.body.append(acts, o2, el('p', 'bt-note', k.demoNote));
     footer();
   }
 
+  /* 打开这栋楼的真实价格卡（offer-card.js）；没有时退回旧的报价拆解。平台报价带进去，直接拆开 */
+  function openPrice(h, room, wk, weeks) {
+    if (window.OfferCard) return window.OfferCard.open(h, room, wk ? { wk: String(wk), weeks: weeks ? String(weeks) : '' } : null);
+    try { window.QuoteCheck.open(h, room, 'split'); } catch (_) { /* 没有报价拆解 */ }
+  }
   /* 按这栋楼的官方价拆开平台价：官方返现 / 平台补 / 你实际付 */
   function splitCard(h, room, wk, weeks, cash) {
     const k = w(); let s = null;
@@ -466,7 +471,7 @@
       const acts = el('div', 'qc-actions'), o1 = btn('bt-btn', r.kind === 'official' ? k.splitPrice : k.openSplit), o2 = btn('bt-link sr-seeofficial', k.seeOfficial);
       o1.addEventListener('click', () => {
         if (r.weekly_price && r.kind !== 'official') { const store = BT.store('lsm-quote-v3'), all = store.get() || {}; Object.assign(all, { wk: String(r.weekly_price), weeks: r.weeks || all.weeks, room }); store.set(all); }
-        BT.close(); try { window.QuoteCheck.open(h, room, 'split'); } catch (_) { /* 没有报价拆解 */ }
+        BT.close(); openPrice(h, room, r.kind !== 'official' && r.weekly_price, r.weeks);
       });
       o2.addEventListener('click', () => { BT.close(); try { show(h, true); } catch (_) { /* 页面还没准备好 */ } });
       acts.append(o1); m.body.append(el('p', 'sr-matched', '🏠 ' + fmt(k.matched, { home: h.name })), acts, o2);

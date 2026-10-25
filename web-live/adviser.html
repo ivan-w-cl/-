@@ -77,9 +77,9 @@ function start(server) {
   const Store = window.Store, U = window.UI, bar = document.getElementById('bar');
   if (/[?&]embed=1/.test(location.search)) document.body.classList.add('embed');
   let armed = false;
-  const C = { zh: { brand: 'Liverpool Student Map', tag: '顾问后台', site: '打开学生网站', flow: '两端流程演示', lang: 'EN', reset: '重置演示数据', confirm: '确定重置？', done: '演示数据已重置',
+  const C = { zh: { brand: 'Liverpool Student Map', tag: '顾问后台', site: '打开学生网站', offers: '官网优惠管理', flow: '两端流程演示', lang: 'EN', reset: '重置演示数据', confirm: '确定重置？', done: '演示数据已重置',
                      pool: '预建群池（备用）', auto: '学生点击后自动派发（微信群码 7 天过期）', left: 'WhatsApp {a} 个 · 微信 {b} 个', refill: '补充 5 组', refilled: '已补充 5 个 WhatsApp 群和 5 个微信群' },
-              en: { brand: 'Liverpool Student Map', tag: 'Adviser console', site: 'Open student site', flow: 'Two-sided walkthrough', lang: '中文', reset: 'Reset demo', confirm: 'Really reset?', done: 'Demo data reset',
+              en: { brand: 'Liverpool Student Map', tag: 'Adviser console', site: 'Open student site', offers: 'Official offers', flow: 'Two-sided walkthrough', lang: '中文', reset: 'Reset demo', confirm: 'Really reset?', done: 'Demo data reset',
                      pool: 'Pre-built groups (backup)', auto: 'Send automatically on tap (WeChat codes expire in 7 days)', left: 'WhatsApp {a} · WeChat {b}', refill: 'Add 5 of each', refilled: 'Added 5 WhatsApp and 5 WeChat groups' } };
   const c = () => C[Store.s.demoLang === 'en' ? 'en' : 'zh'];
   function renderBar() {
@@ -87,13 +87,13 @@ function start(server) {
     const P = window.GroupPool.load();
     if (server) {
       bar.innerHTML = `<span class="brand">${k.brand} <small>${k.tag}</small></span>
-        <div class="tools"><a href="./index.html" target="_blank" rel="noopener">${k.site}</a><button data-act="lang">${k.lang}</button><button data-act="logout">${Store.s.demoLang === 'en' ? 'Sign out' : '退出登录'}</button></div>`;
+        <div class="tools"><a href="./offers-admin.html">${k.offers}</a><a href="./index.html" target="_blank" rel="noopener">${k.site}</a><button data-act="lang">${k.lang}</button><button data-act="logout">${Store.s.demoLang === 'en' ? 'Sign out' : '退出登录'}</button></div>`;
       return;
     }
     bar.innerHTML = `<span class="brand">${k.brand} <small>${k.tag}</small></span>
       <div class="pool"><b>${k.pool}</b><label><input type="checkbox" id="poolAuto" ${P.auto ? 'checked' : ''}> ${k.auto}</label>
         <span>${k.left.replace('{a}', window.GroupPool.count('whatsapp')).replace('{b}', window.GroupPool.count('wechat'))}</span><button data-act="refill">${k.refill}</button></div>
-      <div class="tools"><button data-act="mail">${window.MailPanel.label()}</button><a href="./index.html" target="_blank" rel="noopener">${k.site}</a><a href="./handoff-demo.html">${k.flow}</a>
+      <div class="tools"><button data-act="mail">${window.MailPanel.label()}</button><a href="./offers-admin.html">${k.offers}</a><a href="./index.html" target="_blank" rel="noopener">${k.site}</a><a href="./handoff-demo.html">${k.flow}</a>
       <button data-act="lang">${k.lang}</button><button data-act="reset" class="${armed ? 'warn' : ''}">${armed ? k.confirm : k.reset}</button></div>`;
   }
   bar.addEventListener('click', e => {

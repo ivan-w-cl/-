@@ -11,6 +11,7 @@ const { createNotifiers } = require('./lib/notifiers');
 const { createAuth } = require('./lib/auth');
 const { createCasesApi } = require('./lib/cases');
 const { createSnapApi } = require('./lib/snap');
+const { createOffers } = require('./lib/offers');
 const channels = { web: require('./channels/web'), miniprogram: require('./channels/miniprogram') };
 
 const env = process.env;
@@ -75,6 +76,8 @@ function decodeImage(dataUrl) {
 /* ---------- API ---------- */
 const wxacodes = new Map();
 const snapApi = createSnapApi({ send, readBody, json, limited });
+const offers = createOffers({ dataDir: DATA_DIR });
+const offersApi = offers.createApi({ send, readBody, json });
 async function api(req, res, url) {
   const p = url.pathname, method = req.method;
   /* 利物浦天气：服务器代取 Open-Meteo，缓存 15 分钟（小程序不用把国外域名加进白名单，国内也更快） */
@@ -102,6 +105,8 @@ async function api(req, res, url) {
   }
   /* 拍一下 · 看懂公寓网页：AI 识别学生拍的屏幕、截图或网址（lib/snap.js；没配 ANTHROPIC_API_KEY 时网页用演示数据） */
   if (p === '/api/snap' || p === '/api/snap/status') return snapApi(req, res, url);
+  /* 真实价格卡：官网优惠（自动监测 + 专家核对）、通过我们订、Amber（lib/offers.js） */
+  if (p === '/api/offers') return offersApi(req, res, url, false);
   if (p === '/api/health') return send(res, 200, { ok: true, service: 'consult', cases: true, channels: Object.values(channels).filter(c => c.enabled).map(c => c.name), notifiers: notifier.names });
   if (!casesApi) casesApi = createCasesApi({ store, notifier, send, readBody, json, clean, limited, decodeImage, uploadDir: UPLOAD_DIR, wx: channels.miniprogram,
     adviserUrl: r => (PUBLIC_URL || (r ? `http://${r.headers.host || 'localhost:' + PORT}` : '')) + ADVISER_PATH });
@@ -156,6 +161,7 @@ async function api(req, res, url) {
   if (p === '/api/admin/logout' && method === 'POST') return send(res, 200, { ok: true }, { 'Set-Cookie': 'consult_admin=; Path=/; Max-Age=0' });
   if (p.startsWith('/api/admin/')) {
     if (!auth.verify(req.headers.cookie)) return send(res, 401, { error: 'login_required' });
+    if (p.startsWith('/api/admin/offers')) return offersApi(req, res, url, true);
     if (p.startsWith('/api/admin/cases')) { const done = await casesApi(req, res, url, true); if (done !== false) return; }
     if (p === '/api/admin/sessions' && method === 'GET') {
       return send(res, 200, { usingDefaultPassword: auth.usingDefault, sessions: store.list().map(s => ({ ...publicSession(s), channel: s.channel, updatedAt: s.updatedAt, lastStudentAt: s.lastStudentAt,
@@ -218,7 +224,9 @@ if (require.main === module) {
     console.log(`静态站点目录：${SITE_DIR}`);
     console.log(`通知：${notifier.names.join(' + ')}${env.WECOM_WEBHOOK_URL ? '' : '（未设置 WECOM_WEBHOOK_URL，仅写日志）'}`);
     console.log(`小程序渠道：${channels.miniprogram.enabled ? '已启用' : '未启用（缺少 WX_APPID / WX_APPSECRET / WX_TOKEN）'}`);
+    offers.startMonitor();
+    console.log(`官网优惠监测：${require('./lib/snap').enabled() ? '每 ' + (env.OFFERS_CHECK_HOURS || 6) + ' 小时检查一次' : '未启用（没有 ANTHROPIC_API_KEY，只能在后台手动录入）'}`);
     if (auth.usingDefault) console.log('⚠ 工作台使用默认密码 123456，上线前请设置 ADMIN_PASSWORD。');
   });
 }
-module.exports = { server, store };
+module.exports = { server, store, offers };
