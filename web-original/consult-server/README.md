@@ -59,6 +59,7 @@ ANTHROPIC_API_KEY=sk-ant-你的密钥 node server.js
 - 管理页 `/offers-admin.html`（顾问后台登录后进入）：每栋楼填官网优惠页地址、房型与周租、必付费用、官网优惠；「通过我们订」和 Amber 的优惠由管理员填，Amber 标签文字可改。
 - 自动检查：每 `OFFERS_CHECK_HOURS` 小时依次打开各楼官网（每栋间隔 1.5 秒，不并发），AI 读出房型、费用、优惠，和已确认的数据比对；有变化放进「待核对」（逐条列出变化），专家确认后学生端才更新。官网打不开或拒绝自动访问时标「检查失败」，学生端继续显示上次确认的数据。只读文字版页面：完全靠 JavaScript 加载价格的官网可能读不到，需要手动录入。
 - `GET /api/offers`：学生端读取（只含确认过的数据，过期优惠自动隐藏，缓存 5 分钟）。`/api/admin/offers`（GET 全部）、`PUT /api/admin/offers/homes/:id`、`PUT /api/admin/offers/settings`、`POST /api/admin/offers/check`（`{homeId?, wait?}`）、`POST /api/admin/offers/pending/:id/approve|reject`，都需要登录。
+- 学生邮件提醒：价格卡里「🔔 优惠变了提醒我」之后可以留邮箱（只有配了 `SMTP_HOST` 或 `EMAIL_API_KEY` 发信时才出现，`OFFERS_EMAIL=off` 可关闭）。`POST /api/offers/watch`（`{email, homeId, name, lang}`，同一 IP 每小时 10 次）；专家确认这栋楼的官网变化（或在后台手动改了官网数据）后，给关注的学生发一封邮件，写明哪里变了、查看链接（`PUBLIC_URL/?offer=…`）和退订链接（`GET /api/offers/unwatch?t=…&home=…`）。后台只显示关注人数，不显示邮箱。
 - 数据存 `DATA_DIR/offers.json`。自检：`node test/offers.cjs`（假的读取函数，不访问官网、不调用 AI）。
 
 Google 邮箱示例：

@@ -1,56 +1,53 @@
-/* 真实价格卡：每栋楼每个房型，官网直订 / 通过我们订 / Amber 三种方式各自的合同总价、优惠、实付和折合每周。
+/* 真实价格卡：每栋楼每个房型，官网的合同总价、逐条优惠、实付和「优惠后真实周价」。只放对学生有用的事实，不做推销。
    - 官网的房型、周租、必付费用和优惠：服务器每天自动检查官网，订房专家核对后才显示（consult-server 的 /api/offers）。
-   - 「通过我们订」和 Amber 的优惠由管理员在后台填（offers-admin.html）。
+   - Amber：管理员在后台填了 Amber 的额外优惠、并且算下来比官网直订便宜时，才多出一行对比；一样或更贵就不显示。
    - 优惠按「值不值钱」分档：减租、现金返现、免费用照算；购物卡默认按面值算（可切换「只算现金」）；有条件的单独列、不算进主数字；非现金福利只展示。
-   - 学生手上有别的平台报价，填每周价和周数，按官网价拆开：多少是官网本来就有的优惠，平台自己补了多少，给一句建议。
+   - 关注：学生点「🔔 优惠变了提醒我」，下次打开网页时，关注的楼优惠有变化会在页面上提醒；服务器配了发信时还可以留邮箱，专家确认官网变化后发邮件。
+   - 其他模块可用：OfferCard.bestPerWeek(h)（公寓列表「官网优惠后真实周价最低」排序）、OfferCard.realWeek(h, type)（按预算看房）。
    没有服务器时用浏览器里后台演示存的数据，再没有就用示例数据（页面上标「示例数据」）。
-   入口：公寓卡片「房型与照片」每个房型下面的「💷 真实总价」、收起状态的卡片、房型相册底部、生活选房开场页。 */
+   入口：公寓卡片「房型与照片」每个房型下面的「💷 真实总价」、收起状态的卡片、房型相册底部、生活选房开场页，链接 ?offer=公寓编号。 */
 (() => {
   'use strict';
   const BT = window.BookingTools; if (!BT) return;
   const { el, btn, fmt, money, pick } = BT;
   const W = {
     zh: {
-      intro: '💷 官网优惠 · 真实总价', title: '💷 真实总价', desc: '官网优惠算进去，折合每周多少', tagRoom: '💷 真实总价', tagAlbum: '💷 总价', miniNone: '💷 官网优惠 · 真实总价', miniFrom: '💷 优惠后 {wk}/周起',
-      eyebrow: '官网优惠 · 真实总价', heading: '{home} 真实总价', pickHome: '先选一处公寓', home: '公寓', homesWith: '这些公寓已整理官网优惠：',
+      intro: '💷 官网优惠 · 真实周价', title: '💷 真实总价', desc: '官网优惠算进去，折合每周多少', tagRoom: '💷 真实总价', tagAlbum: '💷 总价', miniNone: '💷 官网优惠 · 真实周价', miniFrom: '💷 官网优惠后 {wk}/周起',
+      eyebrow: '官网优惠 · 真实周价', heading: '{home} 真实总价', homesWith: '这些公寓已整理官网优惠，按优惠后真实周价排序：',
       room: '房型', weeksN: '{n} 周', cashOnly: '只算现金', withVoucher: '购物卡按面值算',
-      official: '官网直订', gross: '合同总价', grossHow: '{rent}/周 × {w} 周', pay: '实付', perWeek: '折合每周', best: '最划算', save: '省 {v}',
-      fees: '必付费用', noOffer: '目前没有优惠', same: '和官网直订一样', amountOnSite: '金额见官网', officialToo: '含官网优惠',
-      conditional: '满足条件还能再省（没算进上面）', perks: '另外还送', directOnly: '仅官网直订', notHere: '不含 {o}（仅官网直订）', until: '截止 {d}', paid: '到账：{p}',
+      perWeek: '官网优惠后 · 折合每周', listWeek: '官网周租 {v}', gross: '合同总价', grossHow: '{rent}/周 × {w} 周', pay: '算上优惠实付', save: '优惠共 {v}',
+      offers: '官网优惠', noOffer: '官网目前没有优惠', amountOnSite: '金额见官网',
+      conditional: '满足条件还能再省（没算进上面）', perks: '另外还送', directOnly: '仅官网直订', until: '截止 {d}', paid: '到账：{p}',
       types: { rent: '减租', cash: '现金返现', voucher: '购物卡', fee: '免费用', perk: '福利' },
       unitWeek: '{v}/周 × {w} 周', unitFree: '免 {n} 周房租',
-      platH: '别的平台报价？拆开看看', platLede: '填上平台报给你的每周价格和周数，按官网价拆开：多少是官网本来就有的优惠，平台自己补了多少。', platWk: '平台每周价', platWeeks: '周数',
-      platTotal: '平台总价 {v}（{wk}/周 × {w} 周）', platSub: '平台在官网优惠之外自己补了 {v}', platSubP: '官网价 {gross}，官网优惠 {off}（在哪订都有），平台自己再补 {v}。下单前问清楚：官网的优惠还能拿到吗？平台的补贴什么时候、以什么形式到账？',
-      platZero: '平台价就是官网价扣掉官网优惠', platZeroP: '平台没有额外补贴。{oursLine}',
-      platOver: '比官网直订还贵 {v}', platOverP: '可能没把官网优惠 {off} 给你，或者含了服务费。下单前问清楚：官网的优惠我能拿到吗？',
-      oursLine: '通过我们订折合每周 {wk}，比这个平台每周{dir} {d}。', cheaper: '便宜', dearer: '贵',
-      bOff: '官网优惠', bSub: '平台补', bPay: '你实际付',
+      amberH: '{label}：折合每周 {wk}', amberP: '比官网直订每周少 {d}，合同期共少 {t}。', amberNo: '不含：{o}（仅官网直订）',
       checked: '官网数据 {d} 核对', checkedAuto: '每天自动检查官网 · 订房专家核对后更新', source: '官网原文 ↗', demo: '示例数据',
-      note: '以公寓官网和合同为准。返现和购物卡通常入住后到账；有条件的优惠要满足条件才有。购物卡按面值计算，可以切换成只算现金。',
+      note: '以公寓官网和合同为准。返现和购物卡通常入住后到账；有条件的优惠要满足条件才有。',
       expert: '💬 找订房专家', copied: '价格已复制，进群粘贴给专家就能直接帮你订。', budget: '💷 按预算看房 ›',
-      sum: '【真实总价】{home} · {room} · {w} 周\n官网直订：总价 {g}，实付 {og}，折合每周 {ow}\n{ours}：实付 {ug}，折合每周 {uw}',
-      ago: { m: '{n} 分钟前', h: '{n} 小时前', d: '{n} 天前' }
+      follow: '🔔 优惠变了提醒我', following: '✓ 已关注，优惠变了会提醒你', unfollow: '取消关注', followNote: '下次打开这个网页时，如果这栋楼的官网优惠有变化，会在页面上提醒你。',
+      emailPh: '你的邮箱（可选）', emailGo: '邮件提醒我', emailOk: '好了，官网优惠有变化、专家核对后会发邮件给你。邮件里可以随时退订。', emailBad: '邮箱格式不对', emailErr: '没提交成功，稍后再试', emailNote: '只用来发这栋楼的优惠变化，不做其他用途。',
+      alertH: '🔔 你关注的公寓优惠变了', alertRow: '{home}：优惠后周价 {a} → {b}', alertRowSame: '{home}：官网优惠有更新', alertOpen: '查看', alertOk: '知道了',
+      sum: '【真实总价】{home} · {room} · {w} 周\n合同总价 {g}，官网优惠 {o}，实付 {n}，折合每周 {pw}',
+      ago: { m: '{n} 分钟前', h: '{n} 小时前', d: '{n} 天前' }, still: '这栋楼的官网价格和优惠还在整理中。可以先关注，整理好、有变化都会提醒你。'
     },
     en: {
-      intro: '💷 Official offers · real total', title: '💷 Real total', desc: 'Official offers included, per week', tagRoom: '💷 Real total', tagAlbum: '💷 Total', miniNone: '💷 Official offers · real total', miniFrom: '💷 From {wk}/wk after offers',
-      eyebrow: 'Official offers · real total', heading: '{home}: real total', pickHome: 'Pick a home', home: 'Home', homesWith: 'Homes with official offers checked:',
+      intro: '💷 Official offers · real weekly price', title: '💷 Real total', desc: 'Official offers included, per week', tagRoom: '💷 Real total', tagAlbum: '💷 Total', miniNone: '💷 Official offers · real weekly price', miniFrom: '💷 From {wk}/wk after official offers',
+      eyebrow: 'Official offers · real weekly price', heading: '{home}: real total', homesWith: 'Homes with official offers checked, by real weekly price:',
       room: 'Room', weeksN: '{n} weeks', cashOnly: 'Cash only', withVoucher: 'Count gift cards',
-      official: 'Book direct', gross: 'Contract total', grossHow: '{rent}/wk × {w} weeks', pay: 'You pay', perWeek: 'Per week', best: 'Best value', save: 'Save {v}',
-      fees: 'Required fees', noOffer: 'No offers right now', same: 'Same as booking direct', amountOnSite: 'see the site for the amount', officialToo: 'Includes official offers',
-      conditional: 'Save more if you qualify (not counted above)', perks: 'Also included', directOnly: 'Direct bookings only', notHere: 'Not included: {o} (direct bookings only)', until: 'Ends {d}', paid: 'Paid: {p}',
+      perWeek: 'After official offers · per week', listWeek: 'Official rent {v}/wk', gross: 'Contract total', grossHow: '{rent}/wk × {w} weeks', pay: 'You pay after offers', save: 'Offers total {v}',
+      offers: 'Official offers', noOffer: 'No official offers right now', amountOnSite: 'see the site for the amount',
+      conditional: 'Save more if you qualify (not counted above)', perks: 'Also included', directOnly: 'Direct bookings only', until: 'Ends {d}', paid: 'Paid: {p}',
       types: { rent: 'Rent off', cash: 'Cashback', voucher: 'Gift card', fee: 'Fee waived', perk: 'Extra' },
       unitWeek: '{v}/wk × {w} weeks', unitFree: '{n} weeks rent-free',
-      platH: 'Quote from another platform? Break it down', platLede: 'Enter the weekly price and weeks a platform quoted. We split it against the official price: how much is the official offer, and how much the platform adds.', platWk: 'Platform weekly price', platWeeks: 'Weeks',
-      platTotal: 'Platform total {v} ({wk}/wk × {w} weeks)', platSub: 'The platform adds {v} on top of the official offers', platSubP: 'Official price {gross}, official offers {off} (available anywhere), and the platform adds {v}. Before booking, ask: do I still get the official offers? When and how is the platform’s extra paid?',
-      platZero: 'The platform price is the official price minus official offers', platZeroP: 'The platform adds nothing itself. {oursLine}',
-      platOver: '{v} more than booking direct', platOverP: 'It may not pass on the {off} of official offers, or it includes a fee. Ask before booking: do I get the official offers?',
-      oursLine: 'Booking with us works out at {wk} a week, {d} a week {dir} this platform.', cheaper: 'less than', dearer: 'more than',
-      bOff: 'Official', bSub: 'Platform', bPay: 'You pay',
+      amberH: '{label}: {wk} a week', amberP: '{d} a week less than booking direct, {t} less over the contract.', amberNo: 'Not included: {o} (direct bookings only)',
       checked: 'Official data checked {d}', checkedAuto: 'Official sites checked daily · updated after a booking expert confirms', source: 'Official page ↗', demo: 'Sample data',
-      note: 'The building’s website and your contract are what count. Cashback and gift cards are usually paid after you move in; conditional offers need you to qualify. Gift cards count at face value; switch to cash only if you prefer.',
+      note: 'The building’s website and your contract are what count. Cashback and gift cards are usually paid after you move in; conditional offers need you to qualify.',
       expert: '💬 Talk to a booking expert', copied: 'Prices copied. Paste them in your group and an expert can book it for you.', budget: '💷 Search by budget ›',
-      sum: '[Real total] {home} · {room} · {w} weeks\nBook direct: total {g}, you pay {og}, {ow} a week\n{ours}: you pay {ug}, {uw} a week',
-      ago: { m: '{n} min ago', h: '{n} h ago', d: '{n} days ago' }
+      follow: '🔔 Tell me when offers change', following: '✓ Following: we will tell you when offers change', unfollow: 'Unfollow', followNote: 'Next time you open this site, you will see a note if this building’s official offers have changed.',
+      emailPh: 'Your email (optional)', emailGo: 'Email me', emailOk: 'Done. We will email you when the official offers change and an expert has checked them. Every email has an unsubscribe link.', emailBad: 'Check the email address', emailErr: 'That did not go through. Try again later.', emailNote: 'Used only for this building’s offer changes.',
+      alertH: '🔔 Offers changed at homes you follow', alertRow: '{home}: real weekly price {a} → {b}', alertRowSame: '{home}: official offers updated', alertOpen: 'View', alertOk: 'Got it',
+      sum: '[Real total] {home} · {room} · {w} weeks\nContract total {g}, official offers {o}, you pay {n}, {pw} a week',
+      ago: { m: '{n} min ago', h: '{n} h ago', d: '{n} days ago' }, still: 'We are still collecting this building’s official prices and offers. Follow it and we will tell you when they are in or change.'
     }
   };
   const w = () => pick(W);
@@ -58,44 +55,44 @@
   const homes = () => { try { return HOMES; } catch (_) { return []; } };
   const homeById = id => homes().find(h => h.id === id);
   const prefs = BT.store('lsm-offer-v1');
+  const watch = BT.store('lsm-offer-watch-v1');   // { 公寓编号: { sig, best } }：关注时的官网优惠
 
   /* ---------- 示例数据（没有服务器、后台也没填时用；页面上标「示例数据」，不是官网原文） ---------- */
   const O = (type, amount, title, titleZh, more) => Object.assign({ id: 'd' + Math.random().toString(36).slice(2, 8), type, unit: 'once', amount, title, titleZh, conditions: '', conditionsZh: '', paid: '', until: '', rooms: [], conditional: false, directOnly: false }, more);
   const R = (name, type, weeks, rent) => ({ name, type, weeks, rent });
-  const OURS = () => [O('cash', 150, 'Book with us: extra cashback', '通过我们订：额外返现', { conditions: 'Paid within 4 weeks of check-in', conditionsZh: '入住后 4 周内转账' })];
   const DEMO = {
-    settings: { oursLabel: '通过我们订', oursLabelEn: 'Book with us', oursService: '订房专家全程跟进：帮你看合同、盯返现到账、签证被拒协助退订。', oursServiceEn: 'A booking expert follows your case: contract check, cashback follow-up and help if your visa is refused.', amberLabel: 'Amber 专属', amberLabelEn: 'Amber exclusive' },
+    settings: { amberLabel: 'Amber 专属', amberLabelEn: 'Amber exclusive' },
     homes: {
       'iq-great-newton-house': { url: 'https://www.iqstudentaccommodation.com/', rooms: [R('Bronze En Suite', 'ensuite', 51, 152), R('Gold En Suite', 'ensuite', 51, 160), R('Studio', 'studio', 51, 199)], fees: [{ name: 'Booking fee', nameZh: '预订费（不退）', amount: 99 }],
         official: [O('cash', 250, 'Book now and get £250 cashback', '现在订返现 £250', { conditions: 'Paid after 8 weeks of tenancy', conditionsZh: '入住满 8 周后打款' }), O('voucher', 100, '£100 Amazon voucher for early bookings', '早鸟 £100 Amazon 购物卡', { until: '2026-12-15' }), O('perk', null, 'Free bedding pack', '送床品包'), O('cash', 100, 'Rebooker reward', '续租奖励 £100', { conditional: true, conditionsZh: '今年已入住、续订明年的同学' })],
-        ours: OURS(), amber: [O('voucher', 120, 'Amber exclusive voucher', 'Amber 专属礼品卡 £120')] },
+        amber: [O('voucher', 120, 'Amber exclusive voucher', 'Amber 专属礼品卡 £120')] },
       'grand-central': { url: '', rooms: [R('En-suite', 'ensuite', 51, 143), R('Studio', 'studio', 51, 208), R('Studio', 'studio', 44, 215)], fees: [],
         official: [O('rent', 2, 'Two weeks rent-free', '免 2 周房租', { unit: 'weeks_free' }), O('voucher', 150, 'Love2Shop card', 'Love2Shop 购物卡 £150', { conditions: 'Given on arrival', conditionsZh: '入住当天领取', directOnly: true })],
-        ours: OURS(), amber: [O('cash', 200, 'Amber cashback', 'Amber 返现 £200')] },
+        amber: [O('cash', 200, 'Amber cashback', 'Amber 返现 £200')] },
       'capital-gate': { url: '', rooms: [R('En-suite', 'ensuite', 51, 167), R('En-suite', 'ensuite', 44, 175)], fees: [{ name: 'Booking fee', nameZh: '预订费', amount: 75 }],
-        official: [O('cash', 300, '£300 cashback', '返现 £300', { conditions: 'Paid in November', conditionsZh: '11 月打款' }), O('fee', 75, 'Booking fee waived', '免预订费 £75')], ours: OURS(), amber: [] },
+        official: [O('cash', 300, '£300 cashback', '返现 £300', { conditions: 'Paid in November', conditionsZh: '11 月打款' }), O('fee', 75, 'Booking fee waived', '免预订费 £75')], amber: [] },
       'atlantic-point': { url: '', rooms: [R('En-suite', 'ensuite', 51, 123)], fees: [],
-        official: [O('voucher', 200, 'Liverpool ONE gift card', 'Liverpool ONE 购物卡 £200', { directOnly: true }), O('cash', 50, 'Refer a friend', '推荐朋友各返 £50', { conditional: true })], ours: OURS(), amber: [O('cash', 100, 'Amber cashback', 'Amber 返现 £100')] },
+        official: [O('voucher', 200, 'Liverpool ONE gift card', 'Liverpool ONE 购物卡 £200', { directOnly: true }), O('cash', 50, 'Refer a friend', '推荐朋友各返 £50', { conditional: true })], amber: [O('cash', 100, 'Amber cashback', 'Amber 返现 £100')] },
       'calico': { url: '', rooms: [R('En-suite', 'ensuite', 51, 165), R('Studio', 'studio', 51, 225)], fees: [],
-        official: [O('rent', 10, '£10 off per week', '每周减 £10', { unit: 'week', rooms: ['Studio'] }), O('cash', 150, '£150 cashback', '返现 £150')], ours: OURS(), amber: [] }
+        official: [O('rent', 10, '£10 off per week', '每周减 £10', { unit: 'week', rooms: ['Studio'] }), O('cash', 150, '£150 cashback', '返现 £150')], amber: [] }
     }
   };
   Object.values(DEMO.homes).forEach(h => { h.demo = true; });
 
   /* ---------- 数据：服务器 → 后台演示存的 → 示例 ---------- */
-  let DATA = null, source = 'demo';
+  let DATA = null, source = 'demo', mailOn = false;
   const LOCAL_KEY = 'lsm-offers-admin-v1';   // offers-admin.html 演示模式存在这里
+  const changed = () => { BT.refresh(); try { if (rankKey === 'offer') applyRanking('offer'); } catch (_) { /* 页面还没准备好 */ } checkWatched(); };
   function load() {
     if (/^https?:$/.test(location.protocol)) {
-      fetch('./api/offers', { cache: 'no-store' }).then(r => (r.ok ? r.json() : null)).then(d => { if (d && d.homes && Object.keys(d.homes).length) { DATA = d; source = 'server'; BT.refresh(); } }).catch(() => { /* 静态网页 */ });
+      fetch('./api/offers', { cache: 'no-store' }).then(r => (r.ok ? r.json() : null)).then(d => { if (d && d.homes && Object.keys(d.homes).length) { DATA = d; source = 'server'; mailOn = !!d.mail; changed(); } }).catch(() => { /* 静态网页 */ });
     }
     try { const l = JSON.parse(localStorage.getItem(LOCAL_KEY) || 'null'); if (l && l.homes && Object.keys(l.homes).length) { DATA = l; source = 'local'; } } catch (_) { /* 没有 */ }
     if (!DATA) DATA = DEMO;
   }
   load();
-  addEventListener('storage', e => { if (e.key === LOCAL_KEY && source !== 'server') { DATA = null; load(); BT.refresh(); } });
-  const S = () => ({ ...DEMO.settings, ...(DATA.settings || {}) });
-  const label = key => { const s = S(); return zh() ? s[key] : s[key + 'En'] || s[key]; };
+  addEventListener('storage', e => { if (e.key === LOCAL_KEY && source !== 'server') { DATA = null; load(); changed(); } });
+  const label = key => { const s = { ...DEMO.settings, ...(DATA.settings || {}) }; return zh() ? s[key] : s[key + 'En'] || s[key]; };
   const dataOf = h => (h && DATA.homes[h.id]) || null;
 
   /* ---------- 计算 ---------- */
@@ -107,7 +104,7 @@
     if (o.unit === 'weeks_free') return o.amount * r.rent;
     return o.amount;
   }
-  /* channel: 'official' | 'ours' | 'amber' */
+  /* channel: 'official'（官网直订）| 'amber'（官网优惠里「仅官网直订」的不算，加上 Amber 的额外优惠） */
   function compute(d, r, channel, cashOnly) {
     const fees = (d.fees || []).reduce((a, f) => a + (f.amount || 0), 0), gross = r.rent * r.weeks + fees;
     const list = (d.official || []).filter(o => applies(o, r) && (channel === 'official' || !o.directOnly)).map(o => ({ o, from: 'official' }))
@@ -124,19 +121,86 @@
     const off = Math.min(gross, counted.reduce((a, x) => a + x.v, 0)), net = gross - off;   // 填错金额时也不会出现负数
     return { channel, gross, fees, off, net, perWeek: net / r.weeks, counted, cond, perks, unknown, excluded: (d.official || []).filter(o => o.directOnly && channel !== 'official' && applies(o, r)) };
   }
-  const channels = d => ['official', 'ours'].concat(d.amber && d.amber.length ? ['amber'] : []);
-  /* 卡片上的「优惠后 £X/周起」：所有房型、所有方式里最低的折合每周 */
+  const cashOnlyNow = () => !!(prefs.get() || {}).cashOnly;
+  /* 「官网优惠后 £X/周起」：所有房型里官网直订最低的折合每周 */
   function bestPerWeek(h) {
     const d = dataOf(h); if (!d || !d.rooms || !d.rooms.length) return null;
-    const cashOnly = !!(prefs.get() || {}).cashOnly;
-    let best = null;
-    d.rooms.forEach(r => channels(d).forEach(c => { const x = compute(d, r, c, cashOnly).perWeek; if (best == null || x < best) best = x; }));
-    return best;
+    return Math.min(...d.rooms.map(r => compute(d, r, 'official', cashOnlyNow()).perWeek));
+  }
+  /* 按预算看房：某类房型（ensuite / studio / 空 = 全部）官网优惠后最低的折合每周，没有数据返回 null */
+  function realWeek(h, type) {
+    const d = dataOf(h); if (!d || !d.rooms) return null;
+    const rs = d.rooms.filter(r => !type || r.type === type); if (!rs.length) return null;
+    return Math.min(...rs.map(r => compute(d, r, 'official', cashOnlyNow()).perWeek));
   }
   const ago = iso => {
     const k = w().ago, s = (Date.now() - Date.parse(iso)) / 60e3; if (!(s >= 0)) return '';
     return s < 60 ? fmt(k.m, { n: Math.max(1, Math.round(s)) }) : s < 48 * 60 ? fmt(k.h, { n: Math.round(s / 60) }) : fmt(k.d, { n: Math.round(s / 1440) });
   };
+
+  /* ---------- 关注：记下关注时的官网数据，下次打开时比对 ---------- */
+  const sigOf = d => (d ? JSON.stringify({ r: (d.rooms || []).map(r => [r.name, r.weeks, r.rent]), f: (d.fees || []).map(f => [f.name, f.amount]), o: (d.official || []).map(o => [o.type, o.unit, o.amount, o.title, o.until, o.conditional, o.directOnly]) }) : '');
+  const watched = () => watch.get() || {};
+  const isWatched = h => !!watched()[h.id];
+  function setWatch(h, on) {
+    const all = watched();
+    if (on) all[h.id] = { sig: sigOf(dataOf(h)), best: bestPerWeek(h) }; else delete all[h.id];
+    watch.set(all);
+  }
+  let alertBox = null;
+  function checkWatched() {
+    const all = watched(), rows = [];
+    Object.entries(all).forEach(([id, v]) => {
+      const h = homeById(id), d = h && dataOf(h); if (!h || sigOf(d) === v.sig) return;
+      rows.push({ h, a: v.best, b: bestPerWeek(h) });
+    });
+    if (alertBox) { alertBox.remove(); alertBox = null; }
+    if (!rows.length) return;
+    const k = w(); alertBox = el('div', 'oc-alert'); alertBox.setAttribute('role', 'status');
+    alertBox.append(el('b', '', k.alertH));
+    rows.forEach(({ h, a, b }) => {
+      const row = el('div', 'oc-arow'), go = btn('bt-link', k.alertOpen);
+      row.append(el('span', '', a != null && b != null && Math.abs(a - b) > 0.005 ? fmt(k.alertRow, { home: h.name, a: money(a, 2), b: money(b, 2) }) : fmt(k.alertRowSame, { home: h.name })), go);
+      go.addEventListener('click', e => { e.stopPropagation(); setWatch(h, true); checkWatched(); open(h); });
+      alertBox.append(row);
+    });
+    const ok = btn('bt-btn alt', k.alertOk);
+    ok.addEventListener('click', e => { e.stopPropagation(); rows.forEach(({ h }) => setWatch(h, true)); checkWatched(); });
+    alertBox.append(ok);
+    alertBox.addEventListener('click', e => e.stopPropagation());
+    document.body.append(alertBox);
+  }
+  function followBox(h) {
+    const k = w(), box = el('div', 'oc-follow');
+    const draw = () => {
+      box.replaceChildren();
+      if (!isWatched(h)) {
+        const b = btn('bt-btn alt', k.follow); b.addEventListener('click', () => { setWatch(h, true); draw(); });
+        box.append(b, el('p', 'bt-note', k.followNote));
+      } else {
+        const u = btn('bt-link', k.unfollow); u.addEventListener('click', () => { setWatch(h, false); draw(); });
+        const top = el('div', 'oc-frow'); top.append(el('b', '', k.following), u); box.append(top);
+        if (mailOn) {   // 服务器配了发信：可以留邮箱
+          const f = el('form', 'oc-mail'), i = el('input'), go = el('button', 'bt-btn', k.emailGo), msg = el('p', 'bt-note');
+          i.type = 'email'; i.placeholder = k.emailPh; i.autocomplete = 'email'; go.type = 'submit';
+          f.append(i, go);
+          f.addEventListener('submit', async e => {
+            e.preventDefault();
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i.value.trim())) { msg.textContent = k.emailBad; return; }
+            go.disabled = true;
+            try {
+              const r = await fetch('./api/offers/watch', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: i.value.trim(), homeId: h.id, name: h.name, lang: BT.lang() }) });
+              msg.textContent = r.ok ? k.emailOk : k.emailErr; if (r.ok) i.value = '';
+            } catch (_) { msg.textContent = k.emailErr; }
+            go.disabled = false;
+          });
+          box.append(f, el('p', 'bt-note', k.emailNote), msg);
+        }
+      }
+    };
+    draw();
+    return box;
+  }
 
   /* ---------- 弹窗 ---------- */
   const ICON = { rent: '🏷️', cash: '💷', voucher: '🎁', fee: '🧾', perk: '✨' };
@@ -150,23 +214,21 @@
     const meta = [k.types[o.type]];
     if (o.unit === 'week' && o.amount) meta.push(fmt(k.unitWeek, { v: money(o.amount), w: r.weeks }));
     if (o.unit === 'weeks_free' && o.amount) meta.push(fmt(k.unitFree, { n: o.amount }));
-    if (x.from === 'ours') meta.push(label('oursLabel')); if (x.from === 'amber') meta.push(label('amberLabel'));
+    if (x.from === 'amber') meta.push(label('amberLabel'));
     if (o.directOnly) meta.push(k.directOnly);
     const cond = zh() ? o.conditionsZh || o.conditions : o.conditions || o.conditionsZh; if (cond) meta.push(cond);
     if (o.paid) meta.push(fmt(k.paid, { p: o.paid })); if (o.until) meta.push(fmt(k.until, { d: o.until }));
     li.append(el('small', 'oc-meta', meta.filter(Boolean).join(' · ')));
     return li;
   }
-  let lastSt = {};
-  function open(h, roomName, opt) {
-    const k = w(); opt = opt || {};
+  function open(h, roomName) {
+    const k = w();
     if (!h) return pickHome();
     const d = dataOf(h);
     const m = BT.modal({ eyebrow: k.eyebrow, title: fmt(k.heading, { home: h.name }) });
     m.box.classList.add('oc-box');
-    if (!d || !d.rooms || !d.rooms.length) { m.body.append(el('p', 'bt-lede', zh() ? '这栋楼的官网价格和优惠还在整理中。订房专家可以马上帮你查。' : 'We are still collecting this building’s official prices and offers. A booking expert can check them for you now.')); footer(m, h, null, null); return; }
-    const pr = prefs.get() || {};
-    const st = { room: 0, cashOnly: !!pr.cashOnly, wk: opt.wk || '', weeks: opt.weeks || '' };
+    if (!d || !d.rooms || !d.rooms.length) { m.body.append(el('p', 'bt-lede', k.still), followBox(h)); footer(m, h, null, null); return; }
+    const st = { room: 0, cashOnly: cashOnlyNow() };
     const want = String(roomName || '').toLowerCase();
     let idx = want ? d.rooms.findIndex(r => r.name.toLowerCase() === want) : -1;
     if (idx < 0 && want) idx = d.rooms.findIndex(r => r.type === typeOf(roomName));
@@ -181,104 +243,57 @@
       [[false, k.withVoucher], [true, k.cashOnly]].forEach(([v, lab]) => { const b = btn('bt-chipbtn' + (st.cashOnly === v ? ' on' : ''), lab); b.setAttribute('aria-pressed', String(st.cashOnly === v)); b.addEventListener('click', () => { st.cashOnly = v; prefs.set({ ...(prefs.get() || {}), cashOnly: v }); draw(); }); tog.append(b); });
       m.body.append(chips, tog);
       if (d.demo) m.body.append(el('span', 'bt-tag demo oc-demo', k.demo));
-      // 三种方式
-      const res = channels(d).map(c => compute(d, r, c, st.cashOnly));
-      const bestNet = Math.min(...res.map(x => x.net));
-      const grid = el('div', 'oc-cols');
-      res.forEach(x => {
-        const col = el('section', 'oc-col oc-c-' + x.channel + (x.net === bestNet && res.some(y => y.net !== bestNet) ? ' oc-top' : ''));
-        const head = el('header');
-        head.append(el('b', 'oc-ch', x.channel === 'official' ? k.official : x.channel === 'ours' ? label('oursLabel') : label('amberLabel')));
-        if (x.channel === 'amber') head.append(el('span', 'oc-badge', 'Amber'));
-        if (col.classList.contains('oc-top')) head.append(el('span', 'oc-best', '★ ' + k.best));
-        col.append(head);
-        const big = el('div', 'oc-big'); big.append(el('small', '', k.perWeek), el('strong', '', money(x.perWeek, 2)));
-        col.append(big);
-        const dl = el('dl', 'oc-sum');
-        const row = (a, b, cls) => { const dt = el('dt', '', a), dd = el('dd', cls || '', b); dl.append(dt, dd); };
-        row(k.gross, money(x.gross)); row(k.pay, money(x.net), 'oc-net');
-        if (x.off) row('', fmt(k.save, { v: money(x.off) }), 'oc-save');
-        col.append(dl);
-        const ul = el('ul', 'oc-list');
-        const own = x.counted.filter(y => y.from === x.channel || x.channel === 'official');
-        if (x.channel !== 'official' && x.counted.some(y => y.from === 'official')) ul.append(el('li', 'oc-o inc', '✓ ' + k.officialToo + ' ' + money(x.counted.filter(y => y.from === 'official').reduce((a, y) => a + y.v, 0))));
-        own.concat(x.unknown.filter(y => y.from === x.channel || x.channel === 'official')).forEach(y => ul.append(offerLine(y, r, k)));
-        x.excluded.forEach(o => ul.append(el('li', 'oc-o none', '✕ ' + fmt(k.notHere, { o: t(o) }))));
-        if (!ul.children.length) ul.append(el('li', 'oc-o none', x.channel === 'official' ? k.noOffer : k.same));
-        col.append(ul);
-        if (x.channel === 'ours' && label('oursService')) col.append(el('p', 'oc-service', '🤝 ' + label('oursService')));
-        if (x.channel === 'amber' && label('amberNote')) col.append(el('p', 'oc-service', label('amberNote')));
-        grid.append(col);
-      });
-      m.body.append(grid);
-      // 合同总价怎么来的
+      // 官网：一张主卡
+      const x = compute(d, r, 'official', st.cashOnly), card = el('section', 'oc-main');
+      const big = el('div', 'oc-big'); big.append(el('small', '', k.perWeek), el('strong', '', money(x.perWeek, 2)), el('span', 'oc-rent', fmt(k.listWeek, { v: money(r.rent) })));
+      const dl = el('dl', 'oc-sum');
+      const row = (a, b, cls) => { dl.append(el('dt', '', a), el('dd', cls || '', b)); };
+      row(k.gross, money(x.gross)); if (x.off) row('', fmt(k.save, { v: '−' + money(x.off) }), 'oc-save'); row(k.pay, money(x.net), 'oc-net');
       const how = el('p', 'oc-how'); how.append(fmt(k.grossHow, { rent: money(r.rent), w: r.weeks }));
       (d.fees || []).forEach(f => how.append(' + ' + (zh() ? f.nameZh || f.name : f.name) + ' ' + money(f.amount)));
-      how.append(' = ' + money(res[0].gross));
-      m.body.append(how);
+      how.append(' = ' + money(x.gross));
+      const top = el('div', 'oc-mtop'); top.append(big, dl);
+      card.append(top, how);
+      const ul = el('ul', 'oc-list'); x.counted.concat(x.unknown).forEach(y => ul.append(offerLine(y, r, k)));
+      card.append(el('b', 'oc-subh', k.offers));
+      if (!ul.children.length) ul.append(el('li', 'oc-o none', k.noOffer));
+      card.append(ul);
+      m.body.append(card);
       // 有条件的、福利
-      const cond = [], seen = new Set();
-      res.forEach(x => x.cond.forEach(y => { if (!seen.has(y.o.id)) { seen.add(y.o.id); cond.push(y); } }));
-      if (cond.length) { const box = el('div', 'oc-extra'); box.append(el('b', '', k.conditional)); const ul = el('ul', 'oc-list'); cond.forEach(y => ul.append(offerLine(y, r, k))); box.append(ul); m.body.append(box); }
-      const perks = []; res.forEach(x => x.perks.forEach(y => { if (!seen.has(y.o.id)) { seen.add(y.o.id); perks.push(y); } }));
-      if (perks.length) m.body.append(el('p', 'oc-perks', '✨ ' + k.perks + '：' + perks.map(y => t(y.o)).join(zh() ? '、' : ', ')));
-      // 别的平台
-      m.body.append(platform(d, r, res, st));
+      if (x.cond.length) { const box = el('div', 'oc-extra'); box.append(el('b', '', k.conditional)); const l = el('ul', 'oc-list'); x.cond.forEach(y => l.append(offerLine(y, r, k))); box.append(l); m.body.append(box); }
+      if (x.perks.length) m.body.append(el('p', 'oc-perks', '✨ ' + k.perks + '：' + x.perks.map(y => t(y.o)).join(zh() ? '、' : ', ')));
+      // Amber：只有比官网直订便宜时才显示
+      if (d.amber && d.amber.length) {
+        const a = compute(d, r, 'amber', st.cashOnly);
+        if (a.net < x.net - 0.5) {
+          const box = el('section', 'oc-amber'), head = el('header');
+          head.append(el('span', 'oc-badge', 'Amber'), el('b', '', fmt(k.amberH, { label: label('amberLabel'), wk: money(a.perWeek, 2) })));
+          box.append(head, el('p', 'oc-amberp', fmt(k.amberP, { d: money(x.perWeek - a.perWeek, 2), t: money(x.net - a.net) })));
+          const l = el('ul', 'oc-list'); a.counted.filter(y => y.from === 'amber').forEach(y => l.append(offerLine(y, r, k)));
+          a.excluded.forEach(o => l.append(el('li', 'oc-o none', '✕ ' + fmt(k.amberNo, { o: t(o) }))));
+          box.append(l);
+          if (label('amberNote')) box.append(el('p', 'oc-service', label('amberNote')));
+          m.body.append(box);
+        }
+      }
+      m.body.append(followBox(h));
       // 来源
       const src = el('p', 'oc-src');
       if (d.confirmedAt) src.append(fmt(k.checked, { d: ago(d.confirmedAt) }) + ' · ');
       src.append(k.checkedAuto);
       if (d.url) { src.append(' · '); const a = el('a', '', k.source); a.href = d.url; a.target = '_blank'; a.rel = 'noopener'; src.append(a); }
       m.body.append(src, el('p', 'bt-note', k.note));
-      lastSt = { h, r, res };
-      footer(m, h, r, res);
+      footer(m, h, r, x);
     };
     draw();
   }
   const typeOf = n => { const s = String(n || '').toLowerCase().replace(/[^a-z0-9]/g, ''); return /studio/.test(s) ? 'studio' : /nonensuite|shared/.test(s) ? 'nonensuite' : /ensuite/.test(s) ? 'ensuite' : /1bed|apartment|flat/.test(s) ? 'apartment' : ''; };
 
-  /* 别的平台报价：按官网价拆开 */
-  function platform(d, r, res, st) {
-    const k = w(), box = el('details', 'oc-plat'); box.open = !!st.wk;
-    box.append(el('summary', '', '✂️ ' + k.platH));
-    box.append(el('p', 'bt-note', k.platLede));
-    const grid = el('div', 'qc-grid'), out = el('div', 'qc-out');
-    const field = (label, val, step, on) => { const f = el('label', 'qc-f'), i = el('input'); f.append(el('span', '', label)); i.type = 'number'; i.inputMode = 'decimal'; i.min = '0'; i.step = step; i.value = val; i.addEventListener('input', () => on(i.value)); f.append(i); return f; };
-    grid.append(field(k.platWk, st.wk, '0.01', v => { st.wk = v; calc(); }), field(k.platWeeks, st.weeks || r.weeks, '1', v => { st.weeks = v; calc(); }));
-    box.append(grid, out);
-    function calc() {
-      out.replaceChildren();
-      const wk = parseFloat(st.wk), weeks = Math.round(parseFloat(st.weeks || r.weeks));
-      if (!(wk > 0) || !(weeks > 0)) return;
-      // 按学生填的周数重算官网价
-      const rr = { ...r, weeks }, off = compute(d, rr, 'ours', st.cashOnly), gross = off.gross, offOfficial = off.counted.filter(y => y.from === 'official').reduce((a, y) => a + y.v, 0);
-      const total = wk * weeks, sub = gross - offOfficial - total, ours = compute(d, rr, 'ours', st.cashOnly);
-      const v = { v: money(Math.abs(sub)), gross: money(gross), off: money(offOfficial), wk: money(wk, 2), w: weeks };
-      const card = el('div', 'qc-line' + (sub < -15 ? ' qc-warn' : ''));
-      const head = el('b', 'qc-head'), p = el('p', 'qc-explain');
-      const dpw = (total - ours.net) / weeks;
-      const oursLine = fmt(k.oursLine, { wk: money(ours.perWeek, 2), d: money(Math.abs(dpw), 2), dir: dpw >= 0 ? k.cheaper : k.dearer });
-      if (sub > 15) { head.textContent = fmt(k.platSub, v); p.textContent = fmt(k.platSubP, v) + ' ' + oursLine; }
-      else if (sub < -15) { head.textContent = fmt(k.platOver, v); p.textContent = fmt(k.platOverP, v) + ' ' + oursLine; }
-      else { head.textContent = k.platZero; p.textContent = fmt(k.platZeroP, { oursLine }); }
-      const bar = el('div', 'qc-bar' + (sub < -15 ? ' over' : ''));
-      const part = (cls, val, lab) => { if (val <= 0) return; const x = el('span', cls); x.style.flexGrow = String(val); x.append(el('i', '', lab), el('b', '', money(val))); bar.append(x); };
-      part('off', offOfficial, k.bOff); if (sub > 15) part('sub', sub, k.bSub); part('pay', total, k.bPay);
-      card.append(head, bar, p, el('p', 'qc-offline', fmt(k.platTotal, { v: money(total), wk: money(wk, 2), w: weeks })));
-      out.append(card);
-    }
-    calc();
-    return box;
-  }
-
-  function footer(m, h, r, res) {
+  function footer(m, h, r, x) {
     const k = w(), budget = btn('bt-link', k.budget), expert = btn('bt-btn', k.expert);
     budget.addEventListener('click', () => { BT.close(); try { window.QuoteCheck.open(null, null, 'budget'); } catch (_) { /* 没有按预算看房 */ } });
     expert.addEventListener('click', async () => {
-      if (r && res) {
-        const of = res[0], ou = res.find(x => x.channel === 'ours') || of;
-        await BT.copy(fmt(k.sum, { home: h.name, room: r.name, w: r.weeks, g: money(of.gross), og: money(of.net), ow: money(of.perWeek, 2), ours: label('oursLabel'), ug: money(ou.net), uw: money(ou.perWeek, 2) }));
-      }
+      if (r && x) await BT.copy(fmt(k.sum, { home: h.name, room: r.name, w: r.weeks, g: money(x.gross), o: money(x.off), n: money(x.net), pw: money(x.perWeek, 2) }));
       BT.close();
       try { openContact(h); } catch (_) { return; }
       if (r) BT.say(k.copied);
@@ -287,14 +302,14 @@
     m.foot.append(expert);
   }
 
-  /* 没选公寓（开场页进来）：列出已整理官网优惠的公寓 */
+  /* 没选公寓（开场页进来）：列出已整理官网优惠的公寓，按优惠后真实周价排序 */
   function pickHome() {
     const k = w(), m = BT.modal({ eyebrow: k.eyebrow, title: k.title });
     m.body.append(el('p', 'bt-lede', k.homesWith));
     const ul = el('div', 'qc-homes');
     Object.keys(DATA.homes).map(homeById).filter(Boolean).map(h => ({ h, p: bestPerWeek(h) })).sort((a, b) => (a.p || 1e9) - (b.p || 1e9)).forEach(({ h, p }) => {
       const row = btn('qc-home'), s = el('span'); s.append(el('b', '', h.name), el('small', '', h.area || ''));
-      row.append(s, el('span', 'qc-p', p ? fmt(k.miniFrom, { wk: money(p, 2) }).replace('💷 ', '') : ''));
+      row.append(s, el('span', 'qc-p', p ? money(p, 2) + (zh() ? '/周' : '/wk') : ''));
       row.addEventListener('click', () => open(h)); ul.append(row);
     });
     m.body.append(ul);
@@ -332,9 +347,13 @@
     foot.insertBefore(tag, foot.lastElementChild);
   }).observe(album, { childList: true });
 
-  /* ?offer=公寓编号 直接打开这栋楼的价格卡（后台「在学生网站上看」用） */
-  const want = new URLSearchParams(location.search).get('offer');
-  if (want) setTimeout(() => { const h = homeById(want); if (h) { try { window.HomeMatch.exit(); } catch (_) { /* 没有 */ } open(h); } }, 600);
+  /* ?offer=公寓编号 直接打开这栋楼的价格卡（后台「在学生网站上看」、提醒邮件里的链接用） */
+  const wantHome = new URLSearchParams(location.search).get('offer');
+  setTimeout(() => {
+    checkWatched();
+    if (wantHome) { const h = homeById(wantHome); if (h) { try { window.HomeMatch.exit(); } catch (_) { /* 没有 */ } open(h); } }
+  }, 600);
+  try { if (typeof buildRankOptions === 'function') buildRankOptions(); } catch (_) { /* 页面还没准备好 */ }
 
-  window.OfferCard = { open, compute, bestPerWeek, data: () => DATA, setData: d => { DATA = d; source = 'preview'; }, DEMO };
+  window.OfferCard = { open, compute, bestPerWeek, realWeek, data: () => DATA, setData: d => { DATA = d; source = 'preview'; }, DEMO };
 })();

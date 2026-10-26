@@ -75,7 +75,7 @@
 </head>
 <body>
 <div class="top"><b>官网优惠管理</b><span class="mode" id="mode"></span><span class="sp"></span>
-  <button id="settingsBtn">「通过我们订」与 Amber 标签</button><button id="checkAll" class="solid">全部立即检查</button>
+  <button id="settingsBtn">Amber 标签与说明</button><button id="checkAll" class="solid">全部立即检查</button>
   <a href="./adviser.html">返回顾问后台</a><a href="./index.html" target="_blank" rel="noopener">学生网站 ↗</a></div>
 <div class="main" id="main"></div>
 <script src="./adviser/core.js"></script>
@@ -167,7 +167,7 @@
     const ed = $('div', { class: 'ed' });
     if (!sel) {
       ed.append($('div', { class: 'empty' }, $('h2', {}, '选一栋公寓'), $('p', {}, '填好官网优惠页地址，系统每 ' + (D.monitor.everyHours || 6) + ' 小时自动检查一次；官网有变化会出现在「待核对」，你确认后学生端才更新。'),
-        $('p', {}, '「通过我们订」和 Amber 的优惠在每栋楼里填，标签文字在右上角「「通过我们订」与 Amber 标签」里改。')));
+        $('p', {}, 'Amber 的额外优惠在每栋楼的「Amber」页填；算下来比官网直订便宜时，学生的价格卡里才会多出 Amber 一行。标签文字在右上角改。')));
       return ed;
     }
     const h = HOMES.find(x => x.id === sel), d = draft, saved = homeData(sel), pend = pendingOf(sel);
@@ -188,7 +188,7 @@
     }
     // 三个分页
     const tabs = $('div', { class: 'tabs' });
-    [['official', '官网：房型、费用、优惠'], ['ours', '通过我们订'], ['amber', 'Amber']].forEach(([k, t]) => tabs.append($('button', { class: tab === k ? 'on' : '', onclick: () => { tab = k; render(); } }, t, k === 'amber' ? $('span', { class: 'badge' }, D.settings.amberLabel || 'Amber') : null)));
+    [['official', '官网：房型、费用、优惠'], ['amber', 'Amber']].forEach(([k, t]) => tabs.append($('button', { class: tab === k ? 'on' : '', onclick: () => { tab = k; render(); } }, t, k === 'amber' ? $('span', { class: 'badge' }, D.settings.amberLabel || 'Amber') : null)));
     ed.append(tabs);
     if (tab === 'official') {
       // 房型
@@ -208,8 +208,8 @@
   }
   function offersCard(d, ch) {
     const list = d[ch];
-    const title = ch === 'official' ? '官网优惠' : ch === 'ours' ? (D.settings.oursLabel || '通过我们订') + '的额外优惠' : (D.settings.amberLabel || 'Amber') + ' 优惠';
-    const hint = ch === 'official' ? '自动检查会更新这里；也可以手动补（比如邮件、电话才知道的优惠）' : ch === 'ours' ? '学生通过我们订时，在官网优惠之外额外拿到的' : '学生通过 Amber 订时额外拿到的；会带上 Amber 标签';
+    const title = ch === 'official' ? '官网优惠' : (D.settings.amberLabel || 'Amber') + ' 优惠';
+    const hint = ch === 'official' ? '自动检查会更新这里；也可以手动补（比如邮件、电话才知道的优惠）' : '学生通过 Amber 订时额外拿到的。官网写明「仅官网直订」的优惠不算进 Amber；只有算下来比官网直订便宜，学生才看得到 Amber 这一行';
     const card = $('div', { class: 'card' }, $('h3', {}, title, $('small', {}, hint)));
     list.forEach((o, i) => {
       const box = $('div', { class: 'offer' });
@@ -265,10 +265,9 @@
     window.OfferCard.setData(copy); window.OfferCard.open(h);
   }
   function settings() {
-    const s = { ...D.settings }, m = window.BookingTools.modal({ eyebrow: '官网优惠管理', title: '「通过我们订」与 Amber 标签' });
+    const s = { ...D.settings }, m = window.BookingTools.modal({ eyebrow: '官网优惠管理', title: 'Amber 标签与说明' });
     const f = (label, key, area) => { const i = $(area ? 'textarea' : 'input', {}); i.value = s[key] || ''; i.addEventListener('input', () => { s[key] = i.value; }); return field(label, i); };
-    m.body.append($('div', { class: 'grid' }, f('「通过我们订」标题（中文）', 'oursLabel'), f('英文', 'oursLabelEn'), f('我们提供的服务（中文，显示在价格卡里）', 'oursService', true), f('英文', 'oursServiceEn', true),
-      f('Amber 标签（中文，例：Amber 专属）', 'amberLabel'), f('英文', 'amberLabelEn'), f('Amber 补充说明（中文，可空）', 'amberNote', true), f('英文', 'amberNoteEn', true)));
+    m.body.append($('div', { class: 'grid' }, f('Amber 标签（中文，例：Amber 专属）', 'amberLabel'), f('英文', 'amberLabelEn'), f('Amber 补充说明（中文，可空）', 'amberNote', true), f('英文', 'amberNoteEn', true)));
     m.foot.append($('button', { class: 'btn red', onclick: async () => {
       if (server) { try { const r = await api('/settings', 'PUT', s); D.settings = r.settings; } catch (e) { if (e.message !== 'login') toast('保存失败'); return; } }
       else { D.settings = s; saveLocal(); }

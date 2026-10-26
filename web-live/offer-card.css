@@ -40,3 +40,27 @@
 .oc-src a { color: #b5462f; }
 .qt-tag.oc-mini { white-space: normal; }
 @media (max-width: 560px) { .oc-big strong { font-size: 28px; } }
+/* v2：官网主卡 + Amber 对比 + 关注提醒 */
+.oc-main { border: 2.5px solid #3b2a1a; border-radius: 14px; background: #fff; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 4px 4px 0 #3b2a1a; }
+.oc-mtop { display: flex; gap: 18px; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; }
+.oc-main .oc-big strong { font-size: 40px; }
+.oc-rent { font-size: 12.5px; color: #7a6650; }
+.oc-main .oc-sum { min-width: 220px; flex: 0 1 300px; }
+.oc-subh { font: 17px var(--hand, cursive); font-weight: normal; margin-top: 2px; }
+.oc-amber { border: 2px solid #1f6f6b; border-radius: 14px; background: #eef7f6; padding: 10px 14px; display: flex; flex-direction: column; gap: 6px; }
+.oc-amber header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.oc-amber header b { font: 18px var(--hand, cursive); font-weight: normal; }
+.oc-amberp { margin: 0; font-size: 13px; color: #1f4d4a; }
+.oc-follow { display: flex; flex-direction: column; gap: 6px; }
+.oc-follow > .bt-btn { align-self: flex-start; }
+.oc-follow .bt-note { margin: 0; }
+.oc-frow { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.oc-frow b { font-size: 14px; color: #1f7a4d; }
+.oc-mail { display: flex; gap: 8px; flex-wrap: wrap; }
+.oc-mail input { flex: 1 1 200px; min-width: 0; border: 2px solid #3b2a1a; border-radius: 10px; padding: 6px 10px; font: inherit; background: #fff; }
+.oc-alert { position: fixed; z-index: 70; right: 16px; bottom: 16px; width: min(380px, calc(100vw - 32px)); background: #fffaf0; color: #3b2a1a; border: 3px solid #3b2a1a; border-radius: 16px; box-shadow: 4px 5px 0 rgba(59, 42, 26, .25); padding: 12px 14px; display: flex; flex-direction: column; gap: 8px; }
+.oc-alert > b { font: 18px var(--hand, cursive); font-weight: normal; }
+.oc-arow { display: flex; justify-content: space-between; gap: 10px; align-items: center; font-size: 13.5px; }
+.oc-alert > .bt-btn { align-self: flex-end; }
+@media (max-width: 560px) { .oc-main .oc-big strong { font-size: 34px; } .oc-alert { right: 8px; left: 8px; width: auto; bottom: 8px; } }
+.qc-p.real { color: #1f7a4d; }

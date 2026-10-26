@@ -30,7 +30,7 @@
       perWeekIs: '相当于每周 {v}', range: '{room}的租金区间：{lo} – {hi}/周', rangeN: '共 {n} 处公寓有记录',
       within: '预算内有 {n} 处', withinNone: '预算内暂时没有', cheapest: '最便宜的是 {name}，{p}/周，比你的预算每周多 {d}。',
       walk: '步行到利大约 {n} 分钟', show: '在地图上看', budgetFill: '填上全年预算，就能看到区间和预算内的公寓',
-      budgetNote: '按页面里记录的历史参考价计算，不代表实时房价；有官方返现的公寓，实际花费会更低。',
+      budgetNote: '已整理官网优惠的公寓按「官网优惠后真实周价」算（每天检查官网、专家核对）；其余公寓按页面记录的历史参考价，实际花费可能更低。', realTag: '官网优惠后', refTag: '参考价',
       sep: '、'
     },
     en: {
@@ -54,7 +54,7 @@
       perWeekIs: '{v} a week', range: '{room}: {lo} – {hi} a week', rangeN: '{n} homes with recorded prices',
       within: '{n} homes within budget', withinNone: 'No homes within budget yet', cheapest: 'The cheapest is {name} at {p}/wk, {d} a week over your budget.',
       walk: 'About {n} min walk to Uni of Liverpool', show: 'Show on map', budgetFill: 'Enter your budget for the year to see the range and homes',
-      budgetNote: 'Based on the recorded guide prices on this map, not live prices. Homes with official cashback will cost less in practice.',
+      budgetNote: 'Homes with checked official offers use the real weekly price after those offers (official sites checked daily, confirmed by an expert); other homes use the recorded guide price and may cost less in practice.', realTag: 'after official offers', refTag: 'guide price',
       sep: ', '
     }
   };
@@ -227,10 +227,13 @@
       grid.append(bF.f, select('qcType', k.roomType, [['e', k.ensuite], ['s', k.studio], ['any', k.any]], st.type, v => { st.type = v; save({ type: v }); calc(); }), wsF.f);
       form.append(grid, weekChips(wsF.inp, v => { st.weeks = v; save({ weeks: v }); calc(); }));
       m.body.append(form, out, el('p', 'bt-note', k.budgetNote));
-      const priceOf = x => (st.type === 'e' ? x.pe : st.type === 's' ? x.ps : Math.min(...[x.pe, x.ps, x.plo].map(Number).filter(v => v > 0)));
+      const ref = x => (st.type === 'e' ? x.pe : st.type === 's' ? x.ps : Math.min(...[x.pe, x.ps, x.plo].map(Number).filter(v => v > 0)));
+      /* 有官网优惠数据的公寓用「官网优惠后真实周价」（offer-card.js），其余用页面记录的参考价 */
+      const real = x => { try { return window.OfferCard ? window.OfferCard.realWeek(x, st.type === 'e' ? 'ensuite' : st.type === 's' ? 'studio' : '') : null; } catch (_) { return null; } };
+      const priceOf = x => { const r = real(x); return r != null ? r : ref(x); };
       function calc() {
         out.replaceChildren();
-        const list = homes().map(x => ({ x, p: Number(priceOf(x)) })).filter(e => Number.isFinite(e.p) && e.p > 0 && !e.x.pso).sort((a, b) => a.p - b.p);
+        const list = homes().map(x => ({ x, p: Number(priceOf(x)), real: real(x) != null })).filter(e => Number.isFinite(e.p) && e.p > 0 && !e.x.pso).sort((a, b) => a.p - b.p);
         const budget = num(st.budget), n = Math.round(num(st.weeks));
         if (!list.length) return;
         const lo = list[0].p, hi = list[list.length - 1].p, roomLabel = st.type === 'e' ? k.ensuite : st.type === 's' ? k.studio : k.any;
@@ -252,10 +255,10 @@
         if (inBudget.length) {
           card.append(el('p', 'qc-sub', fmt(k.within, { n: inBudget.length })));
           const ul = el('div', 'qc-homes');
-          inBudget.slice().reverse().slice(0, 8).forEach(({ x, p }) => {   // 预算内最贵的几处在前：同样的钱能住到的最好选择
+          inBudget.slice().reverse().slice(0, 8).forEach(({ x, p, real: isReal }) => {   // 预算内最贵的几处在前：同样的钱能住到的最好选择
             const row = btn('qc-home');
-            const t = el('span'); t.append(el('b', '', x.name), el('small', '', fmt(k.walk, { n: x.uol })));
-            row.append(t, el('span', 'qc-p', money(p) + k.perWk));
+            const t = el('span'); t.append(el('b', '', x.name), el('small', '', fmt(k.walk, { n: x.uol }) + ' · ' + (isReal ? k.realTag : k.refTag)));
+            row.append(t, el('span', 'qc-p' + (isReal ? ' real' : ''), money(p, isReal ? 2 : 0) + k.perWk));
             row.addEventListener('click', () => { BT.close(); try { show(x, true); } catch (_) { /* 页面还没准备好 */ } });
             ul.append(row);
           });

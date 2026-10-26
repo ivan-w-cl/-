@@ -6,8 +6,8 @@ const { createOffers } = require('../lib/offers');
   const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'offers-'));
   let page = { rooms: [{ name: 'Gold En Suite', type: 'ensuite', weeks: 51, rent: 160 }], fees: [{ name: 'Booking fee', name_zh: '预订费', amount: 99 }],
     official: [{ type: 'cash', unit: 'once', amount: 250, title: 'Book now and get £250 cashback', title_zh: '现在订返现 £250', conditions: '', conditions_zh: '', paid: 'after check-in', until: '2099-01-31', rooms: [], conditional: false, direct_only: false }], notes: '' };
-  let fail = false;
-  const o = createOffers({ dataDir, extract: async () => { if (fail) throw Object.assign(new Error('fetch 403'), { code: 'fetch_failed' }); return JSON.parse(JSON.stringify(page)); }, log: { error() {} } });
+  let fail = false; const mails = [];
+  const o = createOffers({ dataDir, mail: async m => { mails.push(m); }, publicUrl: 'https://map.test', extract: async () => { if (fail) throw Object.assign(new Error('fetch 403'), { code: 'fetch_failed' }); return JSON.parse(JSON.stringify(page)); }, log: { error() {} } });
   const send = (res, code, obj) => { res.writeHead(code, { 'Content-Type': 'application/json' }); res.end(JSON.stringify(obj)); };
   const readBody = req => new Promise(ok => { const c = []; req.on('data', x => c.push(x)); req.on('end', () => ok(Buffer.concat(c))); });
   const json = b => { try { return JSON.parse(b.toString() || '{}'); } catch (_) { return null; } };
@@ -56,8 +56,25 @@ const { createOffers } = require('../lib/offers');
   // 过期的优惠自动隐藏
   await j('/api/admin/offers/homes/iq-great-newton-house', 'PUT', { ours: [{ type: 'cash', amount: 50, title: 'Old', until: '2001-01-01' }] });
   assert.strictEqual((await j('/api/offers')).b.homes['iq-great-newton-house'].ours.length, 0);
+  // 邮件提醒：学生留邮箱关注 → 专家确认官网变化 → 发信（带查看链接和退订链接）→ 退订后不再发
+  assert.strictEqual((await j('/api/offers')).b.mail, true);
+  assert.strictEqual((await j('/api/offers/watch', 'POST', { email: 'not-an-email', homeId: 'iq-great-newton-house' })).s, 400);
+  assert.strictEqual((await j('/api/offers/watch', 'POST', { email: 'Student@Example.com', homeId: 'iq-great-newton-house', name: 'iQ Great Newton House', lang: 'zh' })).s, 201);
+  fail = false; page.official[0].amount = 350;
+  r = await j('/api/admin/offers/check', 'POST', { homeId: 'iq-great-newton-house', wait: true }); assert.strictEqual(r.b.results[0].changed, true);
+  assert.strictEqual(mails.length, 0, 'no mail before an expert approves');
+  all = await j('/api/admin/offers'); assert.strictEqual(all.b.watcherCount, 1); assert(!all.b.watchers, 'admin list does not expose emails');
+  await j(`/api/admin/offers/pending/${all.b.pending[0].id}/approve`, 'POST'); await new Promise(r => setTimeout(r, 20));
+  assert.strictEqual(mails.length, 1); assert.strictEqual(mails[0].to, 'student@example.com');
+  assert(mails[0].subject.includes('iQ Great Newton House')); assert(mails[0].text.includes('£350'), mails[0].text);
+  assert(mails[0].text.includes('https://map.test/?offer=iq-great-newton-house'));
+  const off = /https:\/\/map\.test(\/api\/offers\/unwatch\?[^\s]+)/.exec(mails[0].text)[1];
+  const un = await fetch(base + off); assert.strictEqual(un.status, 200); assert((await un.text()).includes('已退订'));
+  await j('/api/admin/offers/homes/iq-great-newton-house', 'PUT', { official: [{ type: 'cash', amount: 400, title: 'Book now and get £250 cashback' }] }); await new Promise(r => setTimeout(r, 20));
+  assert.strictEqual(mails.length, 1, 'no mail after unsubscribing');
+
   // 写进文件，重启后还在
-  await o.flush(); const again = createOffers({ dataDir, extract: async () => page }); assert.strictEqual(again.data.homes['iq-great-newton-house'].official[0].amount, 250);
+  await o.flush(); const again = createOffers({ dataDir, extract: async () => page }); assert.strictEqual(again.data.homes['iq-great-newton-house'].official[0].amount, 400);
 
   // 真服务器：学生端公开，后台要登录
   process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'offers-srv-'));
@@ -66,5 +83,5 @@ const { createOffers } = require('../lib/offers');
   assert.strictEqual((await fetch(b2 + '/api/offers')).status, 200);
   assert.strictEqual((await fetch(b2 + '/api/admin/offers')).status, 401);
   server.close(); srv.close();
-  console.log('PASS offers: admin entry, Amber label, first check → pending → approve, no-change check, change summary (£250 → £300, rent), reject, fetch failure keeps last confirmed, expired offers hidden, persisted, admin login required');
+  console.log('PASS offers: admin entry, Amber label, first check → pending → approve, no-change check, change summary (£250 → £300, rent), reject, fetch failure keeps last confirmed, expired offers hidden, email alerts after approval with unsubscribe, persisted, admin login required');
 })().catch(e => { console.error('FAIL offers', e); process.exit(1); });

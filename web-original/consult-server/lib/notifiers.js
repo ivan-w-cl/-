@@ -60,4 +60,20 @@ function createNotifiers(env) {
     async notify(e) { await Promise.all(list.map(n => n.notify(e).catch(err => console.error(`[notify:${n.name}] 失败：`, err.message)))); }
   };
 }
-module.exports = { createNotifiers, wecomMarkdown };
+/* 给学生发信（官网优惠变化提醒）：和上面的提醒同一套发信设置，SMTP 优先，其次邮件 HTTP 接口；都没配返回 null */
+function createMailer(env) {
+  const from = env.NOTIFY_EMAIL_FROM || env.SMTP_USER || 'Liverpool Student Map <notify@example.com>';
+  if (env.SMTP_HOST) {
+    const opt = { host: env.SMTP_HOST, port: env.SMTP_PORT || 465, secure: env.SMTP_SECURE == null ? Number(env.SMTP_PORT || 465) === 465 : env.SMTP_SECURE !== 'false', user: env.SMTP_USER, pass: env.SMTP_PASS };
+    return ({ to, subject, text, html }) => sendMail(opt, { from, to: [to], subject, text, html });
+  }
+  if (env.EMAIL_API_KEY) {
+    const url = env.EMAIL_API_URL || 'https://api.resend.com/emails';
+    return async ({ to, subject, text, html }) => {
+      const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${env.EMAIL_API_KEY}` }, body: JSON.stringify({ from, to: [to], subject, html, text }) });
+      if (!r.ok) throw new Error(`邮件接口返回 ${r.status}`);
+    };
+  }
+  return null;
+}
+module.exports = { createNotifiers, createMailer, wecomMarkdown };

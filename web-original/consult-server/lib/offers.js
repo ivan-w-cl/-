@@ -108,10 +108,11 @@ async function aiExtract(url) {
 }
 
 /* ---------- 存储 ---------- */
-function createOffers({ dataDir, extract = aiExtract, everyHours = Number(process.env.OFFERS_CHECK_HOURS || 6), log = console }) {
+function createOffers({ dataDir, extract = aiExtract, everyHours = Number(process.env.OFFERS_CHECK_HOURS || 6), log = console, mail = null, publicUrl = '' }) {
   const file = path.join(dataDir, 'offers.json');
-  let data = { homes: {}, settings: { ...SETTINGS }, pending: [], updatedAt: '' }, queue = Promise.resolve();
+  let data = { homes: {}, settings: { ...SETTINGS }, pending: [], watchers: [], updatedAt: '' }, queue = Promise.resolve();
   try { data = { ...data, ...JSON.parse(fs.readFileSync(file, 'utf8')) }; } catch (_) { /* 第一次运行 */ }
+  if (!Array.isArray(data.watchers)) data.watchers = [];
   const save = () => {
     data.updatedAt = new Date().toISOString();
     const json = JSON.stringify(data, null, 1);
@@ -122,6 +123,30 @@ function createOffers({ dataDir, extract = aiExtract, everyHours = Number(proces
   const validId = id => /^[a-z0-9-]{2,80}$/.test(id || '');
   let running = null;
 
+  /* ---------- 邮件提醒：学生留邮箱关注某栋楼；专家确认官网变化后发一封邮件（每封都有退订链接） ---------- */
+  const esc = v => String(v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  function notifyWatchers(id, changes) {
+    if (!mail) return;
+    data.watchers.filter(x => x.homes.includes(id)).forEach(x => {
+      const zh = x.lang !== 'en', name = (x.names && x.names[id]) || id, base = x.base || publicUrl;
+      const link = base + '/?offer=' + encodeURIComponent(id), off = base + '/api/offers/unwatch?t=' + x.token + '&home=' + encodeURIComponent(id);
+      const subject = zh ? `${name} 的官网优惠有更新` : `Official offers updated at ${name}`;
+      const lines = changes.slice(0, 8);
+      const text = [zh ? `你关注的 ${name} 官网优惠有变化（订房专家已核对）：` : `The official offers at ${name} have changed (checked by a booking expert):`, ...lines.map(c => '- ' + c), '',
+        (zh ? '查看真实总价：' : 'See the real total: ') + link, '', (zh ? '不想再收到这栋楼的提醒：' : 'Stop emails for this building: ') + off].join('\n');
+      const html = `<p>${esc(text.split('\n')[0])}</p><ul>${lines.map(c => `<li>${esc(c)}</li>`).join('')}</ul><p><a href="${esc(link)}">${zh ? '查看真实总价' : 'See the real total'}</a></p><p style="color:#888;font-size:12px"><a href="${esc(off)}">${zh ? '退订这栋楼的提醒' : 'Unsubscribe from this building'}</a></p>`;
+      Promise.resolve().then(() => mail({ to: x.email, subject, text, html })).catch(e => log.error('[offers] 提醒邮件失败', e.message));
+    });
+  }
+  function addWatcher(email, id, name, lang, base) {
+    let x = data.watchers.find(v => v.email === email);
+    if (!x) { x = { id: newId('w'), email, token: crypto.randomBytes(16).toString('base64url'), homes: [], names: {}, lang, base, createdAt: new Date().toISOString() }; data.watchers.push(x); }
+    if (!x.homes.includes(id)) x.homes.push(id);
+    x.names[id] = name; x.lang = lang; x.base = base || x.base;
+    if (x.homes.length > 30) x.homes = x.homes.slice(-30);
+    save(); return x;
+  }
+
   /* 给学生看的：只有确认过的数据，过期的优惠不显示 */
   function publicData() {
     const today = new Date().toISOString().slice(0, 10), live = a => a.filter(o => !o.until || o.until >= today);
@@ -130,7 +155,7 @@ function createOffers({ dataDir, extract = aiExtract, everyHours = Number(proces
       if (!h.rooms.length && !h.official.length && !h.ours.length && !h.amber.length) return;
       homes[id] = { url: h.url, rooms: h.rooms, fees: h.fees, official: live(h.official), ours: live(h.ours), amber: live(h.amber), confirmedAt: h.confirmedAt, checkedAt: h.checkedAt };
     });
-    return { settings: data.settings, homes, updatedAt: data.updatedAt };
+    return { settings: data.settings, homes, updatedAt: data.updatedAt, mail: !!mail };
   }
 
   async function checkOne(id) {
@@ -170,11 +195,31 @@ function createOffers({ dataDir, extract = aiExtract, everyHours = Number(proces
   const monitor = () => ({ enabled: extract !== aiExtract || snap.enabled(), everyHours, running: !!running });
 
   /* 路由：GET /api/offers（学生）；/api/admin/offers/*（需要登录，server.js 已校验） */
-  function createApi({ send, readBody, json }) {
+  function createApi({ send, readBody, json, limited = () => false }) {
     return async function offersApi(req, res, url, admin) {
       const p = url.pathname, method = req.method;
-      if (!admin) return p === '/api/offers' && method === 'GET' ? send(res, 200, publicData(), { 'Cache-Control': 'public, max-age=300' }) : send(res, 404, { error: 'not_found' });
-      if (p === '/api/admin/offers' && method === 'GET') return send(res, 200, { ...data, monitor: monitor() });
+      if (!admin) {
+        if (p === '/api/offers' && method === 'GET') return send(res, 200, publicData(), { 'Cache-Control': 'public, max-age=300' });
+        if (p === '/api/offers/watch' && method === 'POST') {
+          if (!mail) return send(res, 503, { error: 'not_configured' });
+          if (limited(req, 'watch:', 10, 60 * 60e3)) return send(res, 429, { error: 'rate_limited' });
+          const b = json(await readBody(req, 4e3)); if (!b) return send(res, 400, { error: 'bad_json' });
+          const email = str(b.email, 200).toLowerCase(), id = str(b.homeId, 80);
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return send(res, 400, { error: 'bad_email' });
+          if (!validId(id)) return send(res, 400, { error: 'bad_id' });
+          const base = publicUrl || (req.headers.host ? `http://${req.headers.host}` : '');
+          addWatcher(email, id, str(b.name, 80) || id, b.lang === 'en' ? 'en' : 'zh', base);
+          return send(res, 201, { ok: true });
+        }
+        if (p === '/api/offers/unwatch' && method === 'GET') {
+          const x = data.watchers.find(v => v.token === url.searchParams.get('t')), id = url.searchParams.get('home');
+          if (x) { x.homes = id ? x.homes.filter(h => h !== id) : []; if (!x.homes.length) data.watchers = data.watchers.filter(v => v !== x); save(); }
+          res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
+          return res.end('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>已退订</title><body style="font:16px system-ui;max-width:520px;margin:15vh auto;padding:0 16px;text-align:center"><p>已退订，不会再收到这栋楼的优惠提醒。</p><p>You are unsubscribed from this building’s offer alerts.</p></body>');
+        }
+        return send(res, 404, { error: 'not_found' });
+      }
+      if (p === '/api/admin/offers' && method === 'GET') return send(res, 200, { ...data, watchers: undefined, watcherCount: data.watchers.length, monitor: monitor() });
       if (p === '/api/admin/offers/settings' && method === 'PUT') {
         const b = json(await readBody(req, 16e3)); if (!b) return send(res, 400, { error: 'bad_json' });
         data.settings = cleanSettings(b, data.settings); save(); return send(res, 200, { settings: data.settings });
@@ -185,7 +230,10 @@ function createOffers({ dataDir, extract = aiExtract, everyHours = Number(proces
         const b = json(await readBody(req, 128e3)); if (!b) return send(res, 400, { error: 'bad_json' });
         const prev = homeOf(m[1]), next = cleanHome(b, prev);
         if (['rooms', 'fees', 'official'].some(k => k in b)) next.confirmedAt = new Date().toISOString();
-        data.homes[m[1]] = next; save(); return send(res, 200, { home: next });
+        const changes = sig(prev) !== sig(next) && (prev.rooms.length || prev.official.length) ? diff(prev, next) : [];
+        data.homes[m[1]] = next; save();
+        if (changes.length) notifyWatchers(m[1], changes);
+        return send(res, 200, { home: next });
       }
       if (p === '/api/admin/offers/check' && method === 'POST') {
         const b = json(await readBody(req, 4e3)) || {};
@@ -198,7 +246,7 @@ function createOffers({ dataDir, extract = aiExtract, everyHours = Number(proces
       if (m && method === 'POST') {
         const pend = data.pending.find(x => x.id === m[1]); if (!pend) return send(res, 404, { error: 'not_found' });
         data.pending = data.pending.filter(x => x !== pend);
-        if (m[2] === 'approve') { const h = homeOf(pend.homeId); Object.assign(h, pend.found, { confirmedAt: new Date().toISOString(), checkStatus: 'same' }); }
+        if (m[2] === 'approve') { const h = homeOf(pend.homeId); Object.assign(h, pend.found, { confirmedAt: new Date().toISOString(), checkStatus: 'same' }); notifyWatchers(pend.homeId, pend.changes); }
         save(); return send(res, 200, { ok: true, home: data.homes[pend.homeId] });
       }
       return send(res, 404, { error: 'not_found' });

@@ -7,7 +7,7 @@
    无第三方依赖，Node 18+。 */
 const http = require('http'), fs = require('fs'), path = require('path'), crypto = require('crypto');
 const { Store } = require('./lib/store');
-const { createNotifiers } = require('./lib/notifiers');
+const { createNotifiers, createMailer } = require('./lib/notifiers');
 const { createAuth } = require('./lib/auth');
 const { createCasesApi } = require('./lib/cases');
 const { createSnapApi } = require('./lib/snap');
@@ -76,8 +76,8 @@ function decodeImage(dataUrl) {
 /* ---------- API ---------- */
 const wxacodes = new Map();
 const snapApi = createSnapApi({ send, readBody, json, limited });
-const offers = createOffers({ dataDir: DATA_DIR });
-const offersApi = offers.createApi({ send, readBody, json });
+const offers = createOffers({ dataDir: DATA_DIR, mail: env.OFFERS_EMAIL === 'off' ? null : createMailer(env), publicUrl: PUBLIC_URL });
+const offersApi = offers.createApi({ send, readBody, json, limited });
 async function api(req, res, url) {
   const p = url.pathname, method = req.method;
   /* 利物浦天气：服务器代取 Open-Meteo，缓存 15 分钟（小程序不用把国外域名加进白名单，国内也更快） */
@@ -106,7 +106,7 @@ async function api(req, res, url) {
   /* 拍一下 · 看懂公寓网页：AI 识别学生拍的屏幕、截图或网址（lib/snap.js；没配 ANTHROPIC_API_KEY 时网页用演示数据） */
   if (p === '/api/snap' || p === '/api/snap/status') return snapApi(req, res, url);
   /* 真实价格卡：官网优惠（自动监测 + 专家核对）、通过我们订、Amber（lib/offers.js） */
-  if (p === '/api/offers') return offersApi(req, res, url, false);
+  if (p === '/api/offers' || p.startsWith('/api/offers/')) return offersApi(req, res, url, false);
   if (p === '/api/health') return send(res, 200, { ok: true, service: 'consult', cases: true, channels: Object.values(channels).filter(c => c.enabled).map(c => c.name), notifiers: notifier.names });
   if (!casesApi) casesApi = createCasesApi({ store, notifier, send, readBody, json, clean, limited, decodeImage, uploadDir: UPLOAD_DIR, wx: channels.miniprogram,
     adviserUrl: r => (PUBLIC_URL || (r ? `http://${r.headers.host || 'localhost:' + PORT}` : '')) + ADVISER_PATH });
