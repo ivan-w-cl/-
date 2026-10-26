@@ -106,8 +106,10 @@
   let tab = 'split';
   function open(h, room, which) {
     const k = w(), saved = data.get() || {};
+    const only = !!window.OfferCard;   // 有真实价格卡时只留「按预算看房」
     if (which) tab = which;
-    const m = BT.modal({ eyebrow: k.eyebrow + (h ? ' · ' + h.name : ''), title: k.heading });
+    if (only) tab = 'budget';
+    const m = BT.modal({ eyebrow: k.eyebrow + (h ? ' · ' + h.name : ''), title: only ? k.tabBudget.replace(/^\S+\s/, '') : k.heading });
     const tabs = el('div', 'br-tabs'); tabs.setAttribute('role', 'tablist');
     const go = id => {
       tab = id; tabs.querySelectorAll('.br-tab').forEach(x => x.setAttribute('aria-selected', String(x.dataset.id === id)));
@@ -117,7 +119,7 @@
     [['split', k.tabSplit], ['budget', k.tabBudget]].forEach(([id, label]) => {
       const b = btn('br-tab', label); b.dataset.id = id; b.setAttribute('role', 'tab'); b.addEventListener('click', () => go(id)); tabs.append(b);
     });
-    m.box.insertBefore(tabs, m.body);
+    if (!only) m.box.insertBefore(tabs, m.body);
     const save = patch => { const all = data.get() || {}; Object.assign(all, patch); data.set(all); };
     const numInput = (id, label, value, onInput, isMoney, step) => {
       const f = el('label', 'qc-f'), inp = el('input'); f.append(el('span', '', label));
