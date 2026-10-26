@@ -24,8 +24,8 @@
   }
   const say = text => { try { homeNotice(text); } catch (_) { /* 页面还没准备好 */ } };
   const T = {
-    zh: { tools: '订房小工具', close: '关闭' },
-    en: { tools: 'Booking tools', close: 'Close' }
+    zh: { tools: '选房小工具', close: '关闭' },
+    en: { tools: 'Home tools', close: 'Close' }
   };
 
   /* ---------- 弹窗：同一时间只开一个 ---------- */
@@ -84,7 +84,7 @@
     const compact = cardBody.querySelector('.compact-summary');
     if (compact && !compact.querySelector('.bt-mini')) {
       const row = el('div', 'bt-mini');
-      tools.filter(t => t.card).forEach(t => {   // 没有 card 的工具（如「拍一下」）不进公寓卡片
+      tools.filter(t => t.card && t.mini !== false).forEach(t => {   // 没有 card 的工具（如「拍一下」）不进公寓卡片；mini: false 只进「展开详情」
         const c = t.card(h), b = btn((c.cls || 'bt-chipbtn') + (c.on ? ' on' : ''), c.mini);
         b.addEventListener('click', e => { e.stopPropagation(); t.open(h); });
         row.append(b);
