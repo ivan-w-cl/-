@@ -249,32 +249,38 @@
 
   /* 画好图层后把这栋楼移到看得见的地方：手机上放在卡片上方的地图里，电脑上图层放在公寓列表右边、卡片挨着图层 */
   const RING = 115;   // 图层半径（地图单位，含方位字母）
+  /* 地图上没被面板挡住的那块：手机是卡片上方，平板是右侧面板左边，电脑是公寓列表和浮动卡片之间 */
+  function viewRect() {
+    const cardEl = document.getElementById('card'), open = cardEl && !cardEl.hidden, narrow = isNarrow();
+    const hp = document.getElementById('homesPanel'), lx = !narrow && hp && !hp.classList.contains('collapsed') ? hp.getBoundingClientRect().right + 12 : 12;
+    const v = { left: lx, right: viewW - 12, top: 70, bottom: viewH - (narrow ? 76 : 16), mode: 'none' };
+    if (!open) return v;
+    if (document.body.classList.contains('hi-tablet')) { v.right = cardEl.getBoundingClientRect().left - 12; v.mode = 'side'; }
+    else if (cardEl.classList.contains('sheet')) { v.left = 12; v.bottom = cardEl.getBoundingClientRect().top - 8; v.mode = 'sheet'; }
+    else { v.right = Math.max(lx + 200, innerWidth - cardEl.offsetWidth - 40); v.mode = 'float'; }
+    return v;
+  }
   function reveal(h, kind) {
     try {
-      const cardEl = document.getElementById('card'), sheet = cardEl && cardEl.classList.contains('sheet') && !cardEl.hidden;
-      const top = 64, bottom = sheet ? cardEl.getBoundingClientRect().top : viewH - 70, visH = Math.max(140, bottom - top);
+      const v = viewRect(), cardEl = document.getElementById('card'), visW = Math.max(160, v.right - v.left), visH = Math.max(140, v.bottom - v.top);
       /* 不缩小地图：只有日照的圆圈太小时才放大一点；安静度只平移，保持学生自己选的缩放 */
-      if (kind === 'sun') { const want = Math.min(visH / 2 - 12, sheet ? 150 : 110) / RING; z = Math.max(z, Math.min(zmax(), want / fitK)); }
-      tx = viewW / 2 - h.p[0] * fitK * z; ty = top + visH / 2 - h.p[1] * fitK * z;
-      if (!sheet && cardEl) {
-        const hp = document.getElementById('homesPanel'), lx = hp && !hp.classList.contains('collapsed') ? hp.getBoundingClientRect().right : 0;
-        const ring = RING * fitK * z, cx = lx + ring + 36, cw = cardEl.offsetWidth, mb = document.getElementById('mapbox'), ox = mb ? mb.getBoundingClientRect().left : 0;
-        tx = cx - ox - h.p[0] * fitK * z;
+      if (kind === 'sun') { const want = Math.min(Math.min(visW, visH) / 2 - 12, v.mode === 'float' ? 110 : 150) / RING; z = Math.max(z, Math.min(zmax(), want / fitK)); }
+      if (v.mode === 'float') {   // 电脑：图层放在公寓列表右边，卡片紧挨着图层右侧
+        const ring = RING * fitK * z, cx = v.left + ring + 24, cw = cardEl.offsetWidth;
+        tx = cx - h.p[0] * fitK * z; ty = (v.top + v.bottom) / 2 - h.p[1] * fitK * z;
         let left = cx + ring + 14; if (left + cw > innerWidth - 12) left = Math.max(12, innerWidth - 12 - cw);
         render(true); cardEl.style.left = left + 'px'; setTimeout(dodgeCard, 50); return;
       }
+      tx = (v.left + v.right) / 2 - h.p[0] * fitK * z; ty = (v.top + v.bottom) / 2 - h.p[1] * fitK * z;
       render(true);
     } catch (_) { /* 地图接口不可用时不移动 */ }
   }
   function fitRoute(h, d) {
     try {
-      const cardEl = document.getElementById('card'), sheet = cardEl && cardEl.classList.contains('sheet') && !cardEl.hidden;
-      const a = h.p, b = G.W(d.r[0], d.r[1]), top = 70, bottom = sheet ? cardEl.getBoundingClientRect().top - 10 : viewH - 70;
-      const hp = document.getElementById('homesPanel'), lx = !sheet && hp && !hp.classList.contains('collapsed') ? hp.getBoundingClientRect().right + 20 : 16;
-      const rx = !sheet && cardEl ? Math.max(lx + 200, innerWidth - cardEl.offsetWidth - 40) : viewW - 16;
-      const w = Math.abs(a[0] - b[0]) + 90, hh = Math.abs(a[1] - b[1]) + 90, k0 = Math.min((rx - lx) / w, (bottom - top) / hh);
+      const v = viewRect(), a = h.p, b = G.W(d.r[0], d.r[1]);
+      const w = Math.abs(a[0] - b[0]) + 90, hh = Math.abs(a[1] - b[1]) + 90, k0 = Math.min((v.right - v.left) / w, (v.bottom - v.top) / hh);
       z = Math.max(zmin(), Math.min(zmax() * 0.6, k0 / fitK));   // 楼和目的地刚好都看得见
-      tx = (lx + rx) / 2 - (a[0] + b[0]) / 2 * fitK * z; ty = (top + bottom) / 2 - (a[1] + b[1]) / 2 * fitK * z;
+      tx = (v.left + v.right) / 2 - (a[0] + b[0]) / 2 * fitK * z; ty = (v.top + v.bottom) / 2 - (a[1] + b[1]) / 2 * fitK * z;
       render(true);
     } catch (_) { /* 忽略 */ }
   }
@@ -485,6 +491,17 @@
     });
   }
   drawBar(); document.body.append(bar, status); document.body.classList.add('hi-has-bar');
+  /* ---------- 平板（iPad、折叠屏展开）：触屏且屏幕短边 ≥ 700 像素时用平板布局（右侧详情面板） ---------- */
+  const coarse = matchMedia('(hover: none) and (pointer: coarse)');
+  function layoutMode() {
+    let narrow = false; try { narrow = isNarrow(); } catch (_) { /* 忽略 */ }
+    const tab = coarse.matches && Math.min(innerWidth, innerHeight) >= 700;
+    document.body.classList.toggle('hi-tablet', tab); document.body.classList.toggle('hi-narrow', narrow);
+    document.body.classList.toggle('hi-portrait', innerHeight > innerWidth);
+    drawStatus();
+  }
+  layoutMode(); addEventListener('resize', layoutMode); addEventListener('orientationchange', layoutMode);
+  if (card) new MutationObserver(() => document.body.classList.toggle('hi-card-open', !card.hidden)).observe(card, { attributes: true, attributeFilter: ['hidden'] });
   new MutationObserver(() => { drawBar(); applyFilters(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
   window.HomeInsights = { insight, sunPos, sunDay, hoursFacing, clearLayer, loadBuilding, applyFilters, filters: filt };

@@ -120,3 +120,23 @@ body.hi-map-on .card.sheet:not(.compact) { max-height: 46dvh; }   /* 手机：�
 .hi-route { fill: none; stroke: #2a78d6; stroke-width: 3.5px; stroke-dasharray: 8 6; stroke-linecap: round; vector-effect: non-scaling-stroke; }
 .hi-dest { fill: #2a78d6; stroke: #fffaf0; stroke-width: 2.5px; }
 .hi-layer .hi-mins { fill: #1c5cab; }
+
+/* ---------- 平板（iPad、折叠屏展开）：右侧详情面板 + 地图 ---------- */
+body.hi-tablet .card.sheet { left: auto !important; right: calc(14px + env(safe-area-inset-right, 0px)); top: calc(76px + env(safe-area-inset-top, 0px)) !important; bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: clamp(360px, 42vw, 440px); max-width: calc(100vw - 28px); max-height: none !important; border-radius: 18px; border-bottom: 3px solid #3b2a1a;
+  padding: 16px 18px 20px; transform: translateX(calc(100% + 24px)); transition: transform .22s ease; box-shadow: -8px 0 26px rgba(40, 28, 16, .22); }
+body.hi-tablet .card.sheet.show { transform: none; }
+body.hi-tablet.hi-narrow .card.sheet { bottom: calc(78px + env(safe-area-inset-bottom, 0px)); }
+body.hi-tablet .card.sheet .hi-grip { display: none; }
+body.hi-tablet .card .hi-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+/* 工具栏：平板竖屏放在顶部左侧，横屏在公寓列表右边；详情面板打开时不压到面板 */
+body.hi-tablet.hi-narrow .hi-bar { left: calc(12px + env(safe-area-inset-left, 0px)); top: calc(76px + env(safe-area-inset-top, 0px)); bottom: auto; }
+body.hi-tablet.hi-narrow .hi-status { left: calc(12px + env(safe-area-inset-left, 0px)); }
+body.hi-tablet.hi-card-open .hi-bar, body.hi-tablet.hi-card-open .hi-status { max-width: calc(100vw - clamp(360px, 42vw, 440px) - (var(--hi-bar-left, 12px)) - 40px); }
+body.hi-tablet:not(.hi-narrow) { --hi-bar-left: 340px; }
+@media (prefers-reduced-motion: reduce) { body.hi-tablet .card.sheet { transition: none; } }
+body.hi-tablet.hi-narrow .hi-bar { max-width: calc(100vw - 24px); }
+body.hi-tablet:not(.hi-narrow) .hi-bar { max-width: calc(100vw - 480px); }
+/* 详情面板打开时，缩放按钮和「暂停动画」挪到面板左边 */
+body.hi-tablet.hi-card-open .float.zoom, body.hi-tablet.hi-card-open #pause { transform: translateX(calc(-1 * (clamp(360px, 42vw, 440px) + 16px))); transition: transform .22s ease; }
+body.hi-tablet.hi-card-open .hi-bar, body.hi-tablet.hi-card-open .hi-status { max-width: calc(100vw - clamp(360px, 42vw, 440px) - var(--hi-bar-left, 12px) - 40px); }   /* 放在最后：面板打开时优先 */

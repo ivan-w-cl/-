@@ -2034,8 +2034,8 @@ mapbox.addEventListener('wheel', e => {
 
 /* drag to pan while zoomed, two-finger pinch on touch screens */
 const ptrs = new Map(); let drag = null, pinch = null, suppressClickUntil = 0;
-/* 公寓卡片里打开了日照、安静度或通勤图层时，拖动和缩放地图不关卡片（home-insights.js 加的 hi-map-on） */
-const keepCard = () => document.body.classList.contains('hi-map-on');
+/* 公寓卡片里打开了日照、安静度或通勤图层时，或者在平板上，拖动和缩放地图不关卡片（home-insights.js 加的 hi-map-on / hi-tablet） */
+const keepCard = () => document.body.classList.contains('hi-map-on') || document.body.classList.contains('hi-tablet');   // 平板上详情是侧边面板，拖地图也不关
 function capturePointers() {
   for (const id of ptrs.keys()) { try { mapbox.setPointerCapture(id); } catch (err) {} }
 }
