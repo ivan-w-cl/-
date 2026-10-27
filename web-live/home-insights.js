@@ -10,7 +10,7 @@
 (() => {
   'use strict';
   const BT = window.BookingTools; if (!BT) return;
-  let G; try { G = { raw, W, mk, GEO: window.GEO, els, HOMES }; } catch (_) { return; }   // 地图还没准备好
+  let G; try { G = { raw, W, mk, GEO: window.GEO, els, HOMES, PLACES, BUILDINGS, ZONES, nameOf, zoneName, CENTRE }; } catch (_) { return; }   // 地图还没准备好
   if (!G.GEO) return;
   const { el, btn, fmt, pick } = BT;
   const T = {
@@ -22,7 +22,10 @@
       sun: '☀️ 日照', quiet: '🔇 安静度', commute: '⏱️ 通勤',
       sunFace: '临街面朝{f}', sunMain: '主立面朝{f}', sunHours: '冬至约 {w} 小时直射 · 夏至约 {s} 小时', sunUnknown: '朝向未知',
       qLevel: { quiet: '相对安静', mid: '中等', loud: '临街一侧可能较吵' }, qSub: '离主路 {r} · 离铁路 {t}',
-      cWalk: '步行到利物浦大学 {u} 分钟 · LJMU {j} 分钟', cOpen: '画通勤时间圈',
+      cWalk: '步行到利物浦大学 {u} 分钟 · LJMU {j} 分钟', cOpen: '点开看到各处要多久',
+      cH: '从这栋楼出发', cSub: '点一个地方，地图上画出示意路线（虚线）', cGroups: { uni: '大学和校区', station: '附近的车站', city: '市中心' }, cZone: '利物浦大学 · {z}', cCentre: '市中心（Liverpool ONE 一带）',
+      cWalkN: '步行 {n} 分钟', cBusN: '公交约 {n} 分钟', cDist: '约 {d}', cOnMap: '步行约 {n} 分钟', cCircle: '画通勤时间圈 ↗',
+      cNote: '时间是估算：步行按直线距离 × 1.3、每分钟 80 米；公交按步行到站、等车和平均车速估算（早上 9 点到）。虚线只表示方向，不是实际路线。',
       dirs: ['北', '东北', '东', '东南', '南', '西南', '西', '西北'],
       days: { winter: '冬至', equinox: '春分 / 秋分', summer: '夏至', today: '今天' },
       sunH: '一天在这栋楼', sunrise: '日出 {a} · 日落 {b}', play: '▶ 播放', pause: '⏸ 暂停', slider: '拖动看一天里的太阳',
@@ -43,7 +46,10 @@
       sun: '☀️ Sunlight', quiet: '🔇 Quietness', commute: '⏱️ Commute',
       sunFace: 'Street side faces {f}', sunMain: 'Main facade faces {f}', sunHours: 'About {w} h of direct sun at midwinter · {s} h at midsummer', sunUnknown: 'Orientation unknown',
       qLevel: { quiet: 'Relatively quiet', mid: 'Moderate', loud: 'Street side may be noisy' }, qSub: '{r} from a main road · {t} from a railway',
-      cWalk: '{u} min walk to the University of Liverpool · LJMU {j} min', cOpen: 'Draw commute map',
+      cWalk: '{u} min walk to the University of Liverpool · LJMU {j} min', cOpen: 'Tap to see times to each place',
+      cH: 'From this building', cSub: 'Tap a place to draw a rough route (dashed) on the map', cGroups: { uni: 'Universities and campuses', station: 'Nearby stations', city: 'City centre' }, cZone: 'University of Liverpool · {z}', cCentre: 'City centre (around Liverpool ONE)',
+      cWalkN: '{n} min walk', cBusN: 'bus about {n} min', cDist: 'about {d}', cOnMap: 'about {n} min walk', cCircle: 'Draw commute map ↗',
+      cNote: 'Times are estimates: walking uses straight-line distance × 1.3 at 80 m a minute; buses include walking to the stop, waiting and an average speed (arriving at 9am). The dashed line shows direction only, not the actual route.',
       dirs: ['north', 'north-east', 'east', 'south-east', 'south', 'south-west', 'west', 'north-west'],
       days: { winter: 'Midwinter', equinox: 'Equinox', summer: 'Midsummer', today: 'Today' },
       sunH: 'A day at this building', sunrise: 'Sunrise {a} · sunset {b}', play: '▶ Play', pause: '⏸ Pause', slider: 'Drag to follow the sun through the day',
@@ -155,6 +161,24 @@
     cache.set(h.id, r); return r;
   }
 
+  /* ---------- 通勤：到各处的时间（和通勤时间圈同一套估算） ---------- */
+  const tmin = (r, d, mode) => {
+    if (window.Commute && window.Commute.minutes) return window.Commute.minutes(r, d, mode, '09:00');
+    const m = Math.hypot(r[0] - d[0], r[1] - d[1]) * UNIT * 1.3, walk = Math.round(m / 80);
+    if (mode === 'walk') return { t: walk };
+    const bus = Math.round(4 + 5 + 3 + m / 300); return walk <= bus ? { t: walk, walk: true } : { t: bus };
+  };
+  function commuteDests(h) {
+    const K = k(), p0 = insight(h).p, out = [], dist = r => Math.hypot(p0[0] - r[0], p0[1] - r[1]);
+    G.PLACES.filter(p => p.t === 'uni').forEach(p => out.push({ id: 'p:' + p.name, group: 'uni', name: G.nameOf(p), r: G.raw(p.lat, p.lng) }));
+    Object.keys(G.ZONES).forEach(zk => { const bs = G.BUILDINGS.filter(b => b.zone === zk); if (bs.length) out.push({ id: 'z:' + zk, group: 'uni', name: fmt(K.cZone, { z: G.zoneName(zk) }), r: [bs.reduce((a, b) => a + b.r[0], 0) / bs.length, bs.reduce((a, b) => a + b.r[1], 0) / bs.length] }); });
+    G.PLACES.filter(p => p.t === 'rail' || p.t === 'bus').map(p => ({ id: 'p:' + p.name, group: 'station', name: G.nameOf(p), r: G.raw(p.lat, p.lng) })).sort((a, b) => dist(a.r) - dist(b.r)).slice(0, 3).forEach(x => out.push(x));
+    out.push({ id: 'centre', group: 'city', name: K.cCentre, r: G.CENTRE });
+    out.forEach(d => { d.m = Math.round(dist(d.r) * UNIT * 1.3 / 10) * 10; d.walk = tmin(p0, d.r, 'walk').t; const b = tmin(p0, d.r, 'bus'); d.bus = b.walk ? null : b.t; });
+    return out.sort((a, b) => (a.group === b.group ? a.walk - b.walk : 0));
+  }
+  let cDest = null;
+
   /* ---------- 地图图层 ---------- */
   const over = document.getElementById('over');
   let layer = null, dyn = null, layerKind = null, layerHome = null, sunWhich = 'winter', sunMin = 12 * 60, playing = 0;
@@ -179,6 +203,14 @@
       if (pts.length > 1) m('path', { d: 'M' + pts.map(q => q[0].toFixed(1) + ' ' + q[1].toFixed(1)).join('L'), class: 'hi-arc' }, layer);
       day.up.filter(p => p.m % 180 === 0).forEach(p => { const q = at(p.az, R0 * (1 - p.alt / 90)); m('circle', { cx: q[0], cy: q[1], r: 2.5, class: 'hi-dot' }, layer); m('text', { x: q[0], y: q[1] - 6, class: 'hi-tick' }, layer, hhmm(p.t)); });
       dyn = G.mk('g', {}, layer); drawSunNow(h);
+    } else if (kind === 'commute') {
+      const ds = commuteDests(h), d = ds.find(x => x.id === cDest) || ds[0]; if (!d) return; cDest = d.id;
+      const q = G.W(d.r[0], d.r[1]), mx = (c[0] + q[0]) / 2, my = (c[1] + q[1]) / 2, dx = q[0] - c[0], dy = q[1] - c[1];
+      const cx = mx - dy * 0.12, cy = my + dx * 0.12;   // 稍微弯一点的虚线，看得出是示意
+      m('path', { d: `M${c[0]} ${c[1]}Q${cx} ${cy} ${q[0]} ${q[1]}`, class: 'hi-route' }, layer);
+      m('circle', { cx: q[0], cy: q[1], r: 7, class: 'hi-dest' }, layer);
+      m('text', { x: q[0], y: q[1] - 12, class: 'hi-lbl' }, layer, d.name);
+      m('text', { x: (mx + cx) / 2, y: (my + cy) / 2 - 4, class: 'hi-lbl hi-mins' }, layer, fmt(k().cOnMap, { n: d.walk }));
     } else {
       const lines = [[r.road, 'hi-road', zh() ? '主路' : 'main road', r.dRoad], [r.rail, 'hi-rail', zh() ? '铁路' : 'railway', r.dRail]];
       lines.forEach(([n, cls, lab, d]) => {
@@ -230,6 +262,18 @@
       render(true);
     } catch (_) { /* 地图接口不可用时不移动 */ }
   }
+  function fitRoute(h, d) {
+    try {
+      const cardEl = document.getElementById('card'), sheet = cardEl && cardEl.classList.contains('sheet') && !cardEl.hidden;
+      const a = h.p, b = G.W(d.r[0], d.r[1]), top = 70, bottom = sheet ? cardEl.getBoundingClientRect().top - 10 : viewH - 70;
+      const hp = document.getElementById('homesPanel'), lx = !sheet && hp && !hp.classList.contains('collapsed') ? hp.getBoundingClientRect().right + 20 : 16;
+      const rx = !sheet && cardEl ? Math.max(lx + 200, innerWidth - cardEl.offsetWidth - 40) : viewW - 16;
+      const w = Math.abs(a[0] - b[0]) + 90, hh = Math.abs(a[1] - b[1]) + 90, k0 = Math.min((rx - lx) / w, (bottom - top) / hh);
+      z = Math.max(zmin(), Math.min(zmax() * 0.6, k0 / fitK));   // 楼和目的地刚好都看得见
+      tx = (lx + rx) / 2 - (a[0] + b[0]) / 2 * fitK * z; ty = (top + bottom) / 2 - (a[1] + b[1]) / 2 * fitK * z;
+      render(true);
+    } catch (_) { /* 忽略 */ }
+  }
   /* 地图停下来后底图会把卡片放回图标旁边（place）；图层打开时改成放在图层右侧 */
   function dodgeCard() {
     try {
@@ -267,12 +311,12 @@
     row.addEventListener('click', ev => {
       const b = ev.target.closest('.hi-tile'); if (!b) return; ev.stopPropagation();
       const id = b.dataset.id;
-      if (id === 'commute') { if (window.Commute) window.Commute.open(false); return; }
       const on = b.getAttribute('aria-pressed') === 'true';
       row.querySelectorAll('.hi-tile').forEach(x => x.setAttribute('aria-pressed', 'false'));
       if (on) { clearLayer(); more.replaceChildren(); return; }
       if (id === 'sun') sunMin = defaultMin();
-      b.setAttribute('aria-pressed', 'true'); drawLayer(id, h); explain(id, h, more); reveal(h, id);
+      b.setAttribute('aria-pressed', 'true'); drawLayer(id, h); explain(id, h, more);
+      if (id === 'commute') { const d = commuteDests(h).find(x => x.id === cDest); if (d) fitRoute(h, d); } else reveal(h, id);
     });
     sec.append(row, more);
     details.prepend(sec);
@@ -317,6 +361,22 @@
       else box.append(el('p', 'lp-state warn hi-why', K.unknownWhy));
       update();
       const ul = el('ul', 'hi-notes'); K.sunNotes.forEach(n => ul.append(el('li', '', n))); box.append(ul);
+    } else if (id === 'commute') {
+      const ds = commuteDests(h); if (!cDest || !ds.some(x => x.id === cDest)) cDest = ds[0] && ds[0].id;
+      box.append(el('b', 'hi-h', K.cH), el('small', 'bt-note', K.cSub));
+      ['uni', 'station', 'city'].forEach(g => {
+        const rows = ds.filter(x => x.group === g); if (!rows.length) return;
+        const ul = el('ul', 'hi-dests'); box.append(el('small', 'hi-gh', K.cGroups[g]), ul);
+        rows.forEach(d => {
+          const li = el('li'), b2 = btn('hi-dest-b' + (d.id === cDest ? ' on' : ''));
+          b2.setAttribute('aria-pressed', String(d.id === cDest));
+          b2.append(el('span', 'hi-dn', d.name), el('b', '', fmt(K.cWalkN, { n: d.walk })), el('small', '', [d.bus ? fmt(K.cBusN, { n: d.bus }) : '', fmt(K.cDist, { d: mTxt(d.m) })].filter(Boolean).join(' · ')));
+          b2.addEventListener('click', ev => { ev.stopPropagation(); cDest = d.id; drawLayer('commute', h); explain('commute', h, box); fitRoute(h, d); });
+          li.append(b2); ul.append(li);
+        });
+      });
+      const circ = btn('bt-link', K.cCircle); circ.addEventListener('click', ev => { ev.stopPropagation(); if (window.Commute) window.Commute.open(false); });
+      box.append(el('p', 'hi-notes-p bt-note', K.cNote), circ);
     } else {
       const dl = el('dl', 'hi-dl');
       dl.append(el('dt', '', K.qRoad), el('dd', '', r.dRoad != null ? mTxt(r.dRoad) : K.qNone), el('dt', '', K.qRail), el('dd', '', r.dRail != null ? mTxt(r.dRail) : K.qNone));

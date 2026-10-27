@@ -106,3 +106,17 @@ body.hi-map-on .card.sheet:not(.compact) { max-height: 46dvh; }   /* 手机：�
 .hi-layer .hi-compass { font-size: calc(12px * var(--hu, 1)); stroke-width: calc(3px * var(--hu, 1)); }
 .hi-layer .hi-tick { font-size: calc(10px * var(--hu, 1)); stroke-width: calc(3px * var(--hu, 1)); }
 .hi-layer .hi-lbl { font-size: calc(12px * var(--hu, 1)); stroke-width: calc(3.5px * var(--hu, 1)); }
+
+/* 通勤：到各处的时间 + 示意路线 */
+.hi-gh { font-size: 11.5px; color: #b5462f; letter-spacing: .04em; margin-top: 2px; }
+.hi-dests { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.hi-dest-b { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 8px; text-align: left; border: 1.5px solid #dcc8a0; border-radius: 10px; background: #fff; padding: 5px 8px; cursor: pointer; color: #3b2a1a; }
+.hi-dest-b .hi-dn { font-size: 13px; overflow-wrap: anywhere; }
+.hi-dest-b b { font-size: 13px; white-space: nowrap; }
+.hi-dest-b small { grid-column: 1 / -1; font-size: 11px; color: #6e5538; }
+.hi-dest-b.on, .hi-dest-b[aria-pressed="true"] { border-color: #2a78d6; background: #eaf2fc; }
+.hi-dest-b:focus-visible { outline: 3px dashed #b5462f; outline-offset: 2px; }
+.hi-notes-p { margin: 2px 0 0; }
+.hi-route { fill: none; stroke: #2a78d6; stroke-width: 3.5px; stroke-dasharray: 8 6; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.hi-dest { fill: #2a78d6; stroke: #fffaf0; stroke-width: 2.5px; }
+.hi-layer .hi-mins { fill: #1c5cab; }
