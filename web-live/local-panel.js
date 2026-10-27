@@ -35,7 +35,12 @@
       sHelpH: '需要帮助时', sHelp: [['紧急情况', '拨打 999'], ['非紧急报警或咨询', '拨打 101，或在警队网站上报']],
       sLsh: '利物浦学生住房（Liverpool Student Homes）由利物浦大学、LJMU、Hope 和 LIPA 共同运营，提供免费合同检查，以及押金、维修和房东纠纷方面的建议；房源没在 LSH 登记也可以求助。', sLshLink: '了解 Liverpool Student Homes ↗',
       sAsk: '入住前可以向公寓确认', sAskList: ['前台或管理员在岗时间', '门禁和访客登记方式', '报修渠道和一般多久上门'],
-      recH: '警方公开记录（原始数据）', recIntro: '警方按月公开的犯罪及反社会行为登记记录，点开才读取。', recOpen: '查看警方公开记录', recClose: '收起',
+      recH: '警方公开记录 · 近况', recIntro: '警方按月公开的登记记录，公寓参考点周围 1 英里（约 1.6 公里）。', recOpen: '查看各类别条数', recClose: '收起',
+      hTrendDown: '比前 {n} 个月平均少 {p}%', hTrendFlat: '和前 {n} 个月平均差不多', hTrendSub: '{m}共 {v} 条，前 {n} 个月平均 {a} 条',
+      hAction: '{n} 条已有处理结果', hActionSub: '{m}的 {c} 条刑事记录中，警方已起诉、警告、罚款或做了其他处理',
+      hAsb: '{n} 条是反社会行为', hAsbSub: '如噪音、扰民；和刑事犯罪分开统计',
+      cTrend: '近 {n} 个月登记记录', cTrendMiss: '有 {n} 个月没读到，图上没有画，不算成 0', cMix: '{m}的记录构成', cCrime: '刑事犯罪', cAsb: '反社会行为', cOut: '{m}刑事记录的处理情况', cOutNote: '处理情况按警方公布的最新状态，之后还可能更新。',
+      oc: { action: '已处理（起诉、警告、罚款等）', ongoing: '调查中或等待法院', closed: '调查结束，未找到嫌疑人', other: '其他或暂无更新' }, hNote: '上面的亮点只在数据支持时显示；完整数字都在图表和类别条数里。',
       recTotal: '{m}，公寓参考点周围 1 英里（约 1.6 公里）内共登记 {n} 条记录。', recCats: '按类别（条数）',
       recNotes: ['位置已匿名化，只精确到附近的参考点；记录不代表发生在公寓内，数量是事件数，不是受害人数。', '城市中心人流量大，登记记录通常比住宅区多，数字大小不能直接说明一栋楼是否安全。', '本站不用这些数字给公寓打「安全分」或排名。'],
       // 周边配套
@@ -70,7 +75,12 @@
       sHelpH: 'Getting help', sHelp: [['Emergency', 'Call 999'], ['Non-emergency report or advice', 'Call 101 or report on the force website']],
       sLsh: 'Liverpool Student Homes, run jointly by the University of Liverpool, LJMU, Liverpool Hope and LIPA, offers free contract checks and advice on deposits, repairs and landlord disputes, even if a home is not registered with LSH.', sLshLink: 'About Liverpool Student Homes ↗',
       sAsk: 'Questions to ask the property before moving in', sAskList: ['When reception or staff are on site', 'How door entry and visitor sign-in work', 'How to report repairs and how quickly they are usually handled'],
-      recH: 'Police records (raw data)', recIntro: 'Monthly police records of crime and anti-social behaviour, loaded only when opened.', recOpen: 'View police records', recClose: 'Hide',
+      recH: 'Police records · recent picture', recIntro: 'Monthly police records within 1 mile (about 1.6 km) of the property reference point.', recOpen: 'Show counts by category', recClose: 'Hide',
+      hTrendDown: '{p}% below the previous {n}-month average', hTrendFlat: 'About the same as the previous {n}-month average', hTrendSub: '{v} in {m}; the previous {n} months averaged {a}',
+      hAction: '{n} with an outcome', hActionSub: 'Of {c} crimes recorded in {m}, police have charged, cautioned, fined or otherwise dealt with these',
+      hAsb: '{n} were anti-social behaviour', hAsbSub: 'Such as noise and nuisance; counted separately from crime',
+      cTrend: 'Records over the last {n} months', cTrendMiss: '{n} months could not be loaded and are not drawn; they are not counted as 0', cMix: 'What was recorded in {m}', cCrime: 'Crime', cAsb: 'Anti-social behaviour', cOut: 'Outcomes of crimes recorded in {m}', cOutNote: 'Outcomes are the latest status published by the police and may still change.',
+      oc: { action: 'Dealt with (charged, cautioned, fined, etc.)', ongoing: 'Under investigation or awaiting court', closed: 'Investigation complete, no suspect identified', other: 'Other or no update yet' }, hNote: 'Highlights appear only when the data supports them; all figures are in the charts and category counts.',
       recTotal: '{m}: {n} records within 1 mile (about 1.6 km) of the property reference point.', recCats: 'By category (number of records)',
       recNotes: ['Locations are anonymised to nearby reference points; records are not necessarily inside the property, and counts are incidents, not victims.', 'Busy city-centre areas usually have more records than residential streets, so the figure alone does not show whether a building is safe.', 'This site does not use these figures to score or rank properties.'],
       aH: 'Within about a 10-minute walk', aSub: 'Within 800 m in a straight line of the property reference point', aNearest: 'Nearest: {n} · {d} straight-line', aNone: 'None recorded within 800 m', aMore: 'Show nearest {n}', aLess: 'Hide', aUnnamed: '(no name)',
@@ -252,10 +262,9 @@
     if (ctx.home.demo) { b.append(el('div', 'lp-empty', K.demoHome), helpCard()); return; }
     const team = el('div', 'lp-sec'); b.append(team); section(ctx, 'neighbourhood', team, renderTeam);
     b.append(helpCard());
-    const rec = el('section', 'lp-card'), box = el('div', 'lp-sec'), t = btn('bt-btn alt', K.recOpen);
-    rec.append(el('b', 'lp-h', K.recH), el('p', 'bt-note', K.recIntro), t, box); box.hidden = true;
-    t.addEventListener('click', () => { box.hidden = !box.hidden; t.textContent = box.hidden ? K.recOpen : K.recClose; if (!box.hidden && !box.childNodes.length) section(ctx, 'police', box, renderRecords); });
-    b.append(rec);
+    const rec = el('section', 'lp-card'), box = el('div', 'lp-sec');
+    rec.append(el('b', 'lp-h', K.recH), el('p', 'bt-note', K.recIntro), box);
+    b.append(rec); section(ctx, 'police', box, renderRecords);
   }
   function renderTeam(r, box) {
     const K = k(), c = el('section', 'lp-card');
@@ -288,18 +297,68 @@
     c.append(el('small', 'lp-sub', K.sAsk), ul);
     return c;
   }
-  /* 警方原始记录：只写月份、范围、总数和各类条数，不画占比 */
+  /* 警方记录：先放数据支持的亮点（下降、已处理、反社会行为单独统计），再放三张图；各类别条数收起。不打安全分、不排名 */
+  const C = { a: '#2a78d6', b: '#eb6834', c: '#1baf7a', other: '#b9b2a6', soft: '#9ec5f4', ink: '#3b2a1a', muted: '#7a6650' };
+  const monthShort = m => { const [y, mo] = String(m).split('-'); return zh() ? `${Number(mo)}月` : new Date(Date.UTC(+y, +mo - 1, 1)).toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' }); };
   function renderRecords(r, box) {
-    const K = k();
-    box.append(el('p', '', fmt(K.recTotal, { m: monthName(r.month), n: r.total })));
+    const K = k(), tr = r.trend || [], last = tr[tr.length - 1], prev = tr.slice(0, -1), o = r.outcomes;
+    const tiles = el('div', 'lp-hl');
+    if (last && prev.length >= 2) {
+      const avg = prev.reduce((x, t) => x + t.total, 0) / prev.length, d = avg ? (last.total - avg) / avg : 0, sub = fmt(K.hTrendSub, { m: monthName(last.month), v: last.total, n: prev.length, a: Math.round(avg) });
+      if (d <= -0.05) tiles.append(tile('↓', fmt(K.hTrendDown, { n: prev.length, p: Math.round(-d * 100) }), sub));
+      else if (Math.abs(d) < 0.05) tiles.append(tile('≈', fmt(K.hTrendFlat, { n: prev.length }), sub));
+    }
+    if (o && o.action > 0) tiles.append(tile('✓', fmt(K.hAction, { n: o.action }), fmt(K.hActionSub, { m: monthName(o.month), c: o.crimes })));
+    if (r.asb > 0) tiles.append(tile('ℹ', fmt(K.hAsb, { n: r.asb }), K.hAsbSub));
+    if (tiles.childNodes.length) box.append(tiles);
     if (!r.total) box.append(el('p', 'lp-state', K.pZero));
-    else {
-      const dl = el('dl', 'lp-meta lp-cats'); (r.categories || []).forEach(c => dl.append(el('dt', '', zh() ? c.nameZh || c.name : c.name), el('dd', '', String(c.count))));
-      box.append(el('small', 'lp-sub', K.recCats), dl);
+    if (tr.length >= 2) box.append(trendChart(tr, r));
+    if (r.total) box.append(stackChart(fmt(K.cMix, { m: monthName(r.month) }), [[K.cCrime, r.crime ?? (r.total - (r.asb || 0)), C.a], [K.cAsb, r.asb || 0, C.b]]));
+    if (o && o.crimes) { const sc = stackChart(fmt(K.cOut, { m: monthName(o.month) }), [[K.oc.action, o.action, C.a], [K.oc.ongoing, o.ongoing, C.b], [K.oc.closed, o.closed, C.c], [K.oc.other, o.other, C.other]]); sc.append(el('small', 'bt-note', K.cOutNote)); box.append(sc); }
+    if (tiles.childNodes.length) box.append(el('p', 'bt-note', K.hNote));
+    if (r.total) {
+      const t = btn('bt-link', K.recOpen), dl = el('dl', 'lp-meta lp-cats'); dl.hidden = true;
+      (r.categories || []).forEach(c => dl.append(el('dt', '', zh() ? c.nameZh || c.name : c.name), el('dd', '', String(c.count))));
+      t.addEventListener('click', () => { dl.hidden = !dl.hidden; t.textContent = dl.hidden ? K.recOpen : K.recClose; });
+      box.append(t, dl);
     }
     const notes = el('ul', 'lp-notes'); K.recNotes.forEach(n => notes.append(el('li', '', n))); box.append(notes);
     const miss = el('p', 'lp-miss'); miss.append(K.pMissing + ' '); miss.append(a(K.pMissingLink, r.missingDataUrl || 'https://data.police.uk/changelog/')); box.append(miss);
     box.append(footer(r, [[K.source, 'data.police.uk', r.sourceUrl || 'https://data.police.uk/'], [K.licence, (r.licence && r.licence.name) || 'Open Government Licence v3.0', (r.licence && r.licence.url) || OGL_URL]]));
+  }
+  function tile(icon, title, sub) { const t = el('div', 'lp-tile'); t.append(el('span', 'lp-tile-i', icon), el('b', '', title), el('small', '', sub)); return t; }
+  /* 走势：单一系列柱状图，最新一个月深色并直接标数；悬停（或点按）每根柱子看数值 */
+  function trendChart(tr, r) {
+    const K = k(), wrap = el('figure', 'lp-chart'), NS = 'http://www.w3.org/2000/svg', W = 300, H = 132, pad = { l: 6, r: 6, t: 18, b: 22 };
+    wrap.append(el('figcaption', 'lp-sub', fmt(K.cTrend, { n: tr.length })));
+    const svg = document.createElementNS(NS, 'svg'); svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', tr.map(t => `${monthName(t.month)} ${t.total}`).join('，'));
+    const m = (t, at, text) => { const n = document.createElementNS(NS, t); Object.entries(at).forEach(([x, y]) => n.setAttribute(x, y)); if (text != null) n.textContent = text; svg.append(n); return n; };
+    const max = Math.max(1, ...tr.map(t => t.total)), slot = (W - pad.l - pad.r) / tr.length, bw = Math.min(30, slot * 0.56), base = H - pad.b;
+    m('line', { x1: pad.l, x2: W - pad.r, y1: base, y2: base, stroke: '#dcc8a0', 'stroke-width': 1 });
+    const tip = el('div', 'lp-tip'); tip.hidden = true;
+    tr.forEach((t, i) => {
+      const h = Math.max(2, (t.total / max) * (base - pad.t)), x = pad.l + slot * i + (slot - bw) / 2, y = base - h, latest = i === tr.length - 1;
+      const bar = m('path', { d: `M${x},${base}V${y + 4}Q${x},${y} ${x + 4},${y}H${x + bw - 4}Q${x + bw},${y} ${x + bw},${y + 4}V${base}Z`, fill: latest ? C.a : C.soft });
+      m('text', { x: x + bw / 2, y: H - 6, 'text-anchor': 'middle', 'font-size': 10, fill: C.muted }, monthShort(t.month));
+      if (latest) m('text', { x: x + bw / 2, y: y - 5, 'text-anchor': 'middle', 'font-size': 11, fill: C.ink, 'font-weight': 700 }, String(t.total));
+      const hit = m('rect', { x: pad.l + slot * i, y: pad.t - 14, width: slot, height: base - pad.t + 14, fill: 'transparent' });
+      const showTip = () => { tip.textContent = `${monthName(t.month)} · ${t.total}`; tip.hidden = false; tip.style.left = ((pad.l + slot * (i + 0.5)) / W * 100) + '%'; bar.setAttribute('opacity', '.8'); };
+      const hide = () => { tip.hidden = true; bar.removeAttribute('opacity'); };
+      hit.addEventListener('pointerenter', showTip); hit.addEventListener('pointerleave', hide); hit.addEventListener('click', showTip);
+    });
+    const plot = el('div', 'lp-plot'); plot.append(svg, tip); wrap.append(plot);
+    if (r.trendComplete === false) wrap.append(el('small', 'bt-note', fmt(K.cTrendMiss, { n: Math.max(1, 6 - tr.length) })));   // 读不到的月份不画，不当成 0
+    return wrap;
+  }
+  /* 构成：一根横向堆叠条（段间 2px 空隙），下面是带数字的图例 */
+  function stackChart(title, parts) {
+    const wrap = el('figure', 'lp-chart'), total = parts.reduce((x, p) => x + p[1], 0) || 1, bar = el('div', 'lp-stack'), lg = el('ul', 'lp-legend');
+    wrap.append(el('figcaption', 'lp-sub', title));
+    parts.filter(p => p[1] > 0).forEach(([label, n, color]) => { const seg = el('i'); seg.style.flexGrow = n; seg.style.background = color; seg.title = `${label} · ${n}`; bar.append(seg); });
+    parts.forEach(([label, n, color]) => { const li = el('li'), sw = el('i'); sw.style.background = color; li.append(sw, el('span', '', label), el('b', '', String(n))); lg.append(li); });
+    bar.setAttribute('role', 'img'); bar.setAttribute('aria-label', parts.map(p => `${p[0]} ${p[1]}`).join('，'));
+    wrap.append(bar, lg); return wrap;
   }
 
   /* ---------- 周边配套（OpenStreetMap）---------- */

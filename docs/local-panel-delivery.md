@@ -158,3 +158,33 @@ Team feedback: police crime records made every property look risky. The panel no
 Endpoints: `/api/local/neighbourhood` and `/api/local/amenities` (see the consult-server README); the snapshot script captures both. `npm test` passes. Team members, priorities and amenity names in the screenshots are test data (marked "Test").
 
 Not connected yet: the development environment cannot reach data.police.uk or overpass-api.de, so real data needs a connected server or snapshots once the network allows it. The Google embed needs the team to create a key in Google Cloud, restricted to the Maps Embed API and this site's domain. The census "student share" was not built this time: the ONS table IDs need checking online first.
+
+## 2026-10-30 更新：警方公开记录的亮点和图表 / Update: highlights and charts for police records
+
+### 中文
+
+「安全与支持」页里的警方公开记录改成先讲数据里积极的一面，再给完整数字：
+
+- **亮点（只在数据支持时出现）**：
+  - 最新月份比前几个月平均少 5% 以上 →「比前 5 个月平均少 x%」；相差不到 5% →「和前 5 个月平均差不多」；比平均多时不显示这一条（走势图照常显示）。
+  - 已有处理结果 →「x 条已有处理结果」（起诉、警告、罚款等），取走势里最早的月份，因为处理结果要几个月才更新。
+  - 反社会行为 →「x 条是反社会行为」，如噪音、扰民，和刑事犯罪分开统计。
+- **三张图**：近 6 个月走势（柱状图，最新月份深色并标数，悬停或点按看每个月）、当月刑事犯罪和反社会行为构成、刑事记录的处理情况（已处理 / 调查中 / 调查结束未找到嫌疑人 / 其他）。
+- **各类别条数**收起，点「查看各类别条数」展开。不再显示类别占比。
+- 说明照旧：位置匿名化、不代表发生在公寓内、市中心记录通常更多、本站不打安全分也不排名。
+
+这些都是 data.police.uk 的真实字段算出来的，不编造、不挑月份；颜色按数据可视化规则选定并通过色盲校验。截图里的数字是测试数据。
+
+### English
+
+Police records on the Safety & support page now lead with what the data shows on the positive side, followed by the full figures:
+
+- **Highlights (shown only when the data supports them):**
+  - Latest month at least 5% below the previous months' average → "x% below the previous 5-month average"; within 5% → "About the same as the previous 5-month average"; above the average → no highlight (the trend chart still shows it).
+  - Outcomes → "x with an outcome" (charged, cautioned, fined, etc.), taken from the oldest month in the trend because outcomes take months to update.
+  - Anti-social behaviour → "x were anti-social behaviour", such as noise and nuisance, counted separately from crime.
+- **Three charts:** records over the last 6 months (columns, latest month dark and labelled, hover or tap for each month), crime vs anti-social behaviour that month, and outcomes of crimes (dealt with / under investigation / no suspect identified / other).
+- **Counts by category** are collapsed behind "Show counts by category". Category percentages are no longer shown.
+- The notes stay: locations are anonymised, records are not necessarily inside the property, city-centre areas usually have more records, and this site does not score or rank properties.
+
+Everything is calculated from real data.police.uk fields, with no invented figures and no cherry-picked months; the colours follow the data-visualisation rules and pass a colour-blindness check. Figures in the screenshots are test data.

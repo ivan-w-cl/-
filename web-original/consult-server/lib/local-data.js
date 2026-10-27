@@ -35,22 +35,43 @@ async function getJson(fetchImpl, url, headers) {
 }
 
 /* ---------- 读取：警方记录 ---------- */
+/* 最近 6 个月：最新一个月给总数和类别；6 个月给走势；最早那个月（处理结果多半已经更新）给处理情况 */
+const TREND_MONTHS = 6;
+/* 处理结果分组：action 已对嫌疑人采取处理（起诉、警告、罚款、社区处理等）/ ongoing 仍在调查或等待法院 / closed 调查结束、没有找到嫌疑人或无法起诉 / other 其他或没有更新 */
+const outcomeGroup = c => {
+  const t = String(c || '').toLowerCase();
+  if (!t) return 'other';
+  if (/under investigation|awaiting court|further action/.test(t)) return 'ongoing';
+  if (/charged|caution|fined|penalty|prison|sentence|discharge|compensation|local resolution|community resolution|cannabis|drugs possession warning|sent to crown court|court case|found guilty|deprived of property|offender otherwise dealt with/.test(t)) return 'action';
+  if (/no suspect|unable to prosecute|not in the public interest|no further action|evidential difficulties/.test(t)) return 'closed';
+  return 'other';
+};
 async function fetchPolice(fetchImpl, home) {
   const dates = await getJson(fetchImpl, 'https://data.police.uk/api/crimes-street-dates');
-  const month = dates && dates[0] && dates[0].date;
+  const months = (Array.isArray(dates) ? dates : []).map(d => d && d.date).filter(Boolean).sort().reverse().slice(0, TREND_MONTHS);
+  const month = months[0];
   if (!month) throw new Error('no month from data.police.uk');
-  const url = `https://data.police.uk/api/crimes-street/all-crime?lat=${home.lat}&lng=${home.lng}&date=${month}`;
-  const list = await getJson(fetchImpl, url);
+  const url = m => `https://data.police.uk/api/crimes-street/all-crime?lat=${home.lat}&lng=${home.lng}&date=${m}`;
+  const list = await getJson(fetchImpl, url(month));
   if (!Array.isArray(list)) throw new Error('unexpected police response');
   const counts = {};
   list.forEach(c => { counts[c.category] = (counts[c.category] || 0) + 1; });
-  return { month, total: list.length, counts, sourceUrl: 'https://data.police.uk/', queryUrl: url };
+  /* 其余月份：读不到的那个月不画，不当成 0 */
+  const lists = { [month]: list };
+  await Promise.all(months.slice(1).map(async m => { try { const l = await getJson(fetchImpl, url(m)); if (Array.isArray(l)) lists[m] = l; } catch (_) { /* 这个月缺 */ } }));
+  const trend = months.slice().reverse().filter(m => lists[m]).map(m => ({ month: m, total: lists[m].length }));
+  const om = months.slice().reverse().find(m => lists[m] && m !== month) || month, ol = lists[om].filter(c => c.category !== 'anti-social-behaviour');
+  const outcomes = { month: om, crimes: ol.length, action: 0, ongoing: 0, closed: 0, other: 0 };
+  ol.forEach(c => { outcomes[outcomeGroup(c.outcome_status && c.outcome_status.category)]++; });
+  return { month, total: list.length, counts, trend, trendComplete: trend.length === months.length, outcomes, sourceUrl: 'https://data.police.uk/', queryUrl: url(month) };
 }
 function shapePolice(home, raw) {
   const total = raw.total;
   const categories = Object.entries(raw.counts).map(([key, count]) => ({ key, name: (POLICE_CATS[key] || [key])[0], nameZh: (POLICE_CATS[key] || [, key])[1], count, share: total ? count / total : 0 }))
     .sort((a, b) => b.count - a.count);
-  return { month: raw.month, radiusMiles: RADIUS_MI, total, categories, sourceUrl: raw.sourceUrl, licence: OGL, missingDataUrl: 'https://data.police.uk/changelog/' };
+  const asb = raw.counts['anti-social-behaviour'] || 0;
+  return { month: raw.month, radiusMiles: RADIUS_MI, total, asb, crime: total - asb, categories, trend: raw.trend || [], trendComplete: !!raw.trendComplete, outcomes: raw.outcomes || null,
+    sourceUrl: raw.sourceUrl, licence: OGL, missingDataUrl: 'https://data.police.uk/changelog/', outcomesUrl: 'https://www.police.uk/pu/about-police.uk-crime-data/' };
 }
 
 /* ---------- 读取：FSA 食品卫生评级 ---------- */

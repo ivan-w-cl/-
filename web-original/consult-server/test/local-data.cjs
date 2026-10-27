@@ -12,8 +12,14 @@ const json = (o, status = 200) => ({ ok: status < 400, status, json: async () =>
   const fetchImpl = async url => {
     calls++;
     if (mode === 'down') throw new Error('ENOTFOUND');
-    if (url.includes('crimes-street-dates')) return json([{ date: '2026-08' }, { date: '2026-07' }]);
-    if (url.includes('crimes-street/all-crime')) return json(mode === 'zero' ? [] : crimes);
+    if (url.includes('crimes-street-dates')) return json(['2026-08', '2026-07', '2026-06', '2026-05', '2026-04', '2026-03', '2026-02'].map(date => ({ date })));
+    if (url.includes('crimes-street/all-crime')) {
+      if (mode === 'zero') return json([]);
+      if (url.includes('date=2026-08')) return json(crimes);
+      if (url.includes('date=2026-05')) throw new Error('month missing');
+      if (url.includes('date=2026-03')) return json([{ category: 'anti-social-behaviour', outcome_status: null }, { category: 'burglary', outcome_status: { category: 'Suspect charged' } }, { category: 'other-theft', outcome_status: { category: 'Offender given a caution' } }, { category: 'vehicle-crime', outcome_status: { category: 'Investigation complete; no suspect identified' } }, { category: 'drugs', outcome_status: { category: 'Under investigation' } }, { category: 'robbery', outcome_status: null }]);
+      return json(crimes.slice(0, 10));
+    }
     if (url.includes('ratings.food.gov.uk')) {
       if (mode === 'partial' && url.includes('businessTypeId=7843')) return json({}, 500);
       if (url.includes('businessTypeId=1&')) return json({ establishments: [est(101, 'Zero Cafe', '0', 53.4083, -2.9707, 'L3 5BB'), est(102, 'Golden Dragon', '5', 53.409, -2.972, 'L3 8AA'), est(103, 'New Place', 'AwaitingInspection', 53.4085, -2.9705, 'L3 5BB'), est(104, 'Far Away', '4', 53.50, -2.90, 'L9 9ZZ')] });
@@ -44,6 +50,10 @@ const json = (o, status = 200) => ({ ok: status < 400, status, json: async () =>
   assert(Math.abs(p.categories.reduce((a, c) => a + c.share, 0) - 1) < 1e-9);
   assert.strictEqual(p.categories[0].key, 'anti-social-behaviour'); assert.strictEqual(p.categories[0].nameZh, '反社会行为');
   assert(p.fetchedAt && p.sourceUrl && p.licence.name.includes('Open Government')); assert.strictEqual(p.centerBasis, 'building'); assert.strictEqual(p.postcode, 'L3 5BB');
+  // 走势：6 个月，读不到的月份不画（不当成 0）；处理情况用最早那个月，不含反社会行为
+  assert.deepStrictEqual(p.trend.map(t => t.month), ['2026-03', '2026-04', '2026-06', '2026-07', '2026-08']); assert.strictEqual(p.trendComplete, false);
+  assert.strictEqual(p.trend[4].total, 14); assert.strictEqual(p.asb + p.crime, p.total); assert.strictEqual(p.asb, 7);
+  assert.deepStrictEqual(p.outcomes, { month: '2026-03', crimes: 5, action: 2, ongoing: 1, closed: 1, other: 1 });
   // 缓存：第二次不再请求
   const c0 = calls; await L.police(home); assert.strictEqual(calls, c0);
   // 街区房屋：说明用街区参考点
@@ -101,5 +111,5 @@ const json = (o, status = 200) => ({ ok: status < 400, status, json: async () =>
   assert.strictEqual(sent[0][0], 400); assert.strictEqual(sent[1][0], 200); assert.strictEqual(sent[1][1].homeId, 'iq-great-newton-house');
   await api({ method: 'GET' }, {}, new URL('http://x/api/local/amenities?homeId=iq-great-newton-house')); assert.strictEqual(sent[2][0], 200); assert.strictEqual(sent[2][1].radiusMeters, 800);
   await L.flush(); assert(fs.existsSync(path.join(dataDir, 'local-cache.json')));
-  console.log('PASS local data: neighbourhood team (HTML stripped, partial, failed), amenities within 800 m (sorted, out of range dropped, OSM attribution), police sums/shares, cache, street-area basis, failure is not zero, valid zero, stale + background refresh, FSA one-mile/sort/dedupe, zero rating kept, unrated statuses, Chinese match by FHRSID + postcode, search, pagination, partial, unavailable, known homes only');
+  console.log('PASS local data: police 6-month trend (missing month not zero), outcomes grouped from the oldest month, crime/ASB split, neighbourhood team (HTML stripped, partial, failed), amenities within 800 m (sorted, out of range dropped, OSM attribution), police sums/shares, cache, street-area basis, failure is not zero, valid zero, stale + background refresh, FSA one-mile/sort/dedupe, zero rating kept, unrated statuses, Chinese match by FHRSID + postcode, search, pagination, partial, unavailable, known homes only');
 })().catch(e => { console.error('FAIL local data', e); process.exit(1); });
