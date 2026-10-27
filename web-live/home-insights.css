@@ -88,3 +88,21 @@ body.hi-map-on .card.sheet:not(.compact) { max-height: 46dvh; }   /* 手机：�
   .hi-status { left: calc(10px + env(safe-area-inset-left, 0px)); top: auto; bottom: calc(140px + env(safe-area-inset-bottom, 0px)); max-width: calc(100vw - 80px); font-size: 12px; }
 }
 @media (min-width: 761px) { .hi-bar { max-width: calc(100vw - 700px); min-width: 320px; border-radius: 22px; } }   /* 不压到右边的「找公寓」面板，放不下就换行 */
+
+/* 手机卡片：顶部把手，往上推展开 */
+.hi-grip { display: none; }
+.card.sheet .hi-grip { display: block; position: sticky; top: -14px; z-index: 2; height: 22px; margin: -14px -16px 2px; cursor: grab; touch-action: none; background: linear-gradient(#fffaf0 70%, rgba(255, 250, 240, 0)); }
+.card.sheet .hi-grip::before { content: ''; position: absolute; left: 50%; top: 8px; width: 44px; height: 5px; margin-left: -22px; border-radius: 3px; background: #c9b48e; }
+.card.sheet .hi-grip:focus-visible { outline: 3px dashed #b5462f; outline-offset: -3px; }
+.card.sheet:not(.compact) { transition: max-height .22s ease; }
+.card.sheet.hi-drag { transition: none; }
+.card.sheet.hi-full:not(.compact) { max-height: calc(100dvh - 56px) !important; }
+@media (prefers-reduced-motion: reduce) { .card.sheet:not(.compact) { transition: none; } }
+
+/* 图层随地图缩放：线条宽度按屏幕像素，文字大小不变 */
+.hi-layer path, .hi-layer circle { vector-effect: non-scaling-stroke; }
+.hi-layer .hi-road, .hi-layer .hi-rail { stroke-width: 6px; }
+.hi-layer .hi-wall { stroke-width: 5px; } .hi-layer .hi-wall.street { stroke-width: 7px; }
+.hi-layer .hi-compass { font-size: calc(12px * var(--hu, 1)); stroke-width: calc(3px * var(--hu, 1)); }
+.hi-layer .hi-tick { font-size: calc(10px * var(--hu, 1)); stroke-width: calc(3px * var(--hu, 1)); }
+.hi-layer .hi-lbl { font-size: calc(12px * var(--hu, 1)); stroke-width: calc(3.5px * var(--hu, 1)); }

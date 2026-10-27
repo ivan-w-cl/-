@@ -169,7 +169,7 @@
     if (layer) layer.remove();
     layer = G.mk('g', { class: 'hi-layer', 'pointer-events': 'none' }, over);   // 画在公寓图标上面，免得被挡住
     document.body.classList.add('hi-map-on');
-    layerKind = kind; layerHome = h.id;
+    layerKind = kind; layerHome = h.id; scaleLayer();
     const { r, c, at } = geom(h);
     if (kind === 'sun') {
       const day = sunDay(sunWhich);
@@ -213,12 +213,12 @@
 
   /* 画好图层后把这栋楼移到看得见的地方：手机上放在卡片上方的地图里，电脑上图层放在公寓列表右边、卡片挨着图层 */
   const RING = 115;   // 图层半径（地图单位，含方位字母）
-  function reveal(h) {
+  function reveal(h, kind) {
     try {
       const cardEl = document.getElementById('card'), sheet = cardEl && cardEl.classList.contains('sheet') && !cardEl.hidden;
       const top = 64, bottom = sheet ? cardEl.getBoundingClientRect().top : viewH - 70, visH = Math.max(140, bottom - top);
-      const want = Math.min(visH / 2 - 12, sheet ? 150 : 110) / RING;   // 每个地图单位多少屏幕像素
-      z = Math.max(zmin(), Math.min(zmax(), want / fitK));
+      /* 不缩小地图：只有日照的圆圈太小时才放大一点；安静度只平移，保持学生自己选的缩放 */
+      if (kind === 'sun') { const want = Math.min(visH / 2 - 12, sheet ? 150 : 110) / RING; z = Math.max(z, Math.min(zmax(), want / fitK)); }
       tx = viewW / 2 - h.p[0] * fitK * z; ty = top + visH / 2 - h.p[1] * fitK * z;
       if (!sheet && cardEl) {
         const hp = document.getElementById('homesPanel'), lx = hp && !hp.classList.contains('collapsed') ? hp.getBoundingClientRect().right : 0;
@@ -240,7 +240,10 @@
       cardEl.style.left = left + 'px';
     } catch (_) { /* 忽略 */ }
   }
-  if (typeof window.place === 'function') { const place0 = window.place; window.place = function () { place0.apply(this, arguments); dodgeCard(); }; }
+  /* 缩放地图时文字和线条保持同样大小（线条用 non-scaling-stroke，文字按缩放倍数反向调整） */
+  function scaleLayer() { try { if (layer) layer.style.setProperty('--hu', (1 / (fitK * z)).toFixed(4)); } catch (_) { /* 忽略 */ } }
+  if (typeof window.place === 'function') { const place0 = window.place; window.place = function () { place0.apply(this, arguments); dodgeCard(); scaleLayer(); }; }
+  ['render', 'settleView'].forEach(n => { const f0 = window[n]; if (typeof f0 === 'function') window[n] = function () { const out = f0.apply(this, arguments); scaleLayer(); return out; }; });   // 手机上卡片是底部面板，不走 place
 
   /* ---------- 公寓卡片：详情最上面的三格 + 展开的说明 ---------- */
   const cardBody = document.getElementById('cardBody');
@@ -269,7 +272,7 @@
       row.querySelectorAll('.hi-tile').forEach(x => x.setAttribute('aria-pressed', 'false'));
       if (on) { clearLayer(); more.replaceChildren(); return; }
       if (id === 'sun') sunMin = defaultMin();
-      b.setAttribute('aria-pressed', 'true'); drawLayer(id, h); explain(id, h, more); reveal(h);
+      b.setAttribute('aria-pressed', 'true'); drawLayer(id, h); explain(id, h, more); reveal(h, id);
     });
     sec.append(row, more);
     details.prepend(sec);
@@ -335,9 +338,36 @@
     playing = requestAnimationFrame(step);
   }
   function stopPlay() { if (playing) cancelAnimationFrame(playing); playing = 0; }
+  const keepOpen = e => { if (layer && !e.target.closest('.m, .hbtn')) e.stopPropagation(); };
+  [document.getElementById('mapbox'), document.querySelector('.float.zoom')].forEach(n => n && n.addEventListener('click', keepOpen));
   if (cardBody) new MutationObserver(decorate).observe(cardBody, { childList: true });
   const card = document.getElementById('card');
   if (card) new MutationObserver(() => { if (card.hidden) clearLayer(); }).observe(card, { attributes: true, attributeFilter: ['hidden'] });
+
+  /* ---------- 手机卡片：顶部把手往上推变高（几乎全屏），往下拉回原来的高度；内容在最顶端时往上滑也能展开 ---------- */
+  if (card) {
+    const grip = el('div', 'hi-grip'); grip.setAttribute('role', 'button'); grip.setAttribute('tabindex', '0'); grip.setAttribute('aria-label', zh() ? '展开或收起详情' : 'Expand or collapse details');
+    card.prepend(grip);
+    const isSheet = () => card.classList.contains('sheet') && !card.hidden;
+    const setFull = on => { card.classList.toggle('hi-full', on); card.style.maxHeight = ''; if (!on) card.scrollTop = 0; };
+    let y0 = null, h0 = 0, moved = false;
+    let wasFull = false;
+    grip.addEventListener('pointerdown', e => { if (!isSheet()) return; y0 = e.clientY; h0 = card.offsetHeight; moved = false; wasFull = card.classList.contains('hi-full'); grip.setPointerCapture(e.pointerId); card.classList.add('hi-drag'); card.classList.remove('hi-full'); card.style.maxHeight = h0 + 'px'; });
+    grip.addEventListener('pointermove', e => { if (y0 == null) return; const dy = e.clientY - y0; if (Math.abs(dy) > 4) moved = true; card.style.maxHeight = Math.max(160, Math.min(innerHeight - 56, h0 - dy)) + 'px'; });
+    const end = e => { if (y0 == null) return; const dy = e.clientY - y0; y0 = null; card.classList.remove('hi-drag');
+      if (!moved) setFull(!wasFull); else setFull(dy < -30 ? true : dy > 30 ? false : wasFull); };
+    grip.addEventListener('pointerup', end); grip.addEventListener('pointercancel', end);
+    grip.addEventListener('click', e => e.stopPropagation());
+    grip.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFull(!card.classList.contains('hi-full')); } });
+    let ty0 = null;
+    card.addEventListener('touchstart', e => { ty0 = isSheet() && !e.target.closest('.hi-grip, input, select, textarea') ? e.touches[0].clientY : null; }, { passive: true });
+    card.addEventListener('touchmove', e => {
+      if (ty0 == null) return; const dy = e.touches[0].clientY - ty0;
+      if (dy < -24 && !card.classList.contains('hi-full')) { setFull(true); ty0 = null; }
+      else if (dy > 48 && card.classList.contains('hi-full') && card.scrollTop <= 0) { setFull(false); ty0 = null; }
+    }, { passive: true });
+    new MutationObserver(() => { if (card.hidden) setFull(false); }).observe(card, { attributes: true, attributeFilter: ['hidden'] });
+  }
 
   /* ---------- 地图筛选：冬季日照、安静（不符合的楼变淡） ---------- */
   const filt = { sun: false, quiet: false };
