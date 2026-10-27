@@ -16,7 +16,7 @@
   const T = {
     zh: {
       bar: { commute: '⏱️ 通勤时间圈', cost: '🧮 一年总花费', budget: '💷 按预算看房' }, barShort: { commute: '⏱️ 通勤圈', cost: '🧮 总花费', budget: '💷 按预算' }, barLabel: '选房工具',
-      fSun: '☀️ 冬季日照', fQuiet: '🔇 安静', fH: '地图筛选', fSunRule: '冬至主立面约 4 小时以上直射', fQuietRule: '离主路 50 米以上、离铁路 150 米以上',
+      fSun: '☀️ 冬季日照', fQuiet: '🔇 安静', fH: '地图筛选', dragTip: '按住拖动；拖到屏幕边上收成小箭头', tabTip: '点开选房工具', fSunRule: '冬至主立面约 4 小时以上直射', fQuietRule: '离主路 50 米以上、离铁路 150 米以上',
       fStatus: '{rules}：{n} 栋符合', fUnknown: '{n} 栋朝向未知，先变淡', fClear: '清除筛选', fLoading: '正在读取楼体轮廓…',
       secH: '这栋楼在地图上', secNote: '点一格，地图上会画出来',
       sun: '☀️ 日照', quiet: '🔇 安静度', commute: '⏱️ 通勤',
@@ -40,7 +40,7 @@
     },
     en: {
       bar: { commute: '⏱️ Commute map', cost: '🧮 Yearly cost', budget: '💷 Search by budget' }, barShort: { commute: '⏱️ Commute', cost: '🧮 Yearly cost', budget: '💷 Budget' }, barLabel: 'Home tools',
-      fSun: '☀️ Winter sun', fQuiet: '🔇 Quiet', fH: 'Map filters', fSunRule: 'main facade gets about 4+ h of direct sun at midwinter', fQuietRule: '50 m+ from a main road and 150 m+ from a railway',
+      fSun: '☀️ Winter sun', fQuiet: '🔇 Quiet', fH: 'Map filters', dragTip: 'Drag to move; drop at the screen edge to tuck it away', tabTip: 'Show home tools', fSunRule: 'main facade gets about 4+ h of direct sun at midwinter', fQuietRule: '50 m+ from a main road and 150 m+ from a railway',
       fStatus: '{rules}: {n} homes match', fUnknown: '{n} with unknown orientation are dimmed', fClear: 'Clear filters', fLoading: 'Loading building outlines…',
       secH: 'This building on the map', secNote: 'Tap a box to draw it on the map',
       sun: '☀️ Sunlight', quiet: '🔇 Quietness', commute: '⏱️ Commute',
@@ -465,7 +465,7 @@
   const status = el('div', 'hi-status'); status.hidden = true;
   function drawStatus(n, unknown) {
     const K = k(), any = filt.sun || filt.quiet; status.hidden = !any; if (!any) return;
-    if (innerWidth > 760) status.style.top = Math.round(bar.getBoundingClientRect().bottom + 6) + 'px'; else status.style.top = '';   // 电脑：紧贴在工具栏下面（工具栏可能换行）
+    placeStatus();
     const rules = [filt.sun && K.fSunRule, filt.quiet && K.fQuietRule].filter(Boolean).join(zh() ? '；' : '; ');
     status.replaceChildren(el('span', '', fmt(K.fStatus, { rules, n: n ?? '…' })));
     if (filt.sun && unknown) status.append(el('small', '', fmt(K.fUnknown, { n: unknown })));
@@ -481,7 +481,8 @@
     budget: () => window.QuoteCheck && window.QuoteCheck.open(null, null, 'budget')
   };
   function drawBar() {
-    const K = k(); bar.replaceChildren(el('span', 'hi-bar-h', K.barLabel));
+    const K = k(), hd = el('span', 'hi-handle', '⠿'); hd.setAttribute('aria-hidden', 'true'); hd.title = K.dragTip;
+    bar.replaceChildren(hd, el('span', 'hi-bar-h', K.barLabel));
     Object.keys(tools).forEach(id => { const b = btn('hi-bar-b'); b.append(el('span', 'hi-long', K.bar[id]), el('span', 'hi-short', K.barShort[id])); b.addEventListener('click', ev => { ev.stopPropagation(); tools[id](); }); bar.append(b); });
     bar.append(el('i', 'hi-sep'));
     [['sun', K.fSun, K.fSunRule], ['quiet', K.fQuiet, K.fQuietRule]].forEach(([id, lab, rule]) => {
@@ -491,6 +492,80 @@
     });
   }
   drawBar(); document.body.append(bar, status); document.body.classList.add('hi-has-bar');
+
+  /* ---------- 工具栏可以拖动；拖到屏幕左右边上收成小箭头（和「找公寓」「公寓列表」面板一样），点箭头放回来 ---------- */
+  const POS = 'lsm-toolbar-pos-v1', tab = btn('pd-tab hi-tab'); tab.hidden = true; document.body.append(tab);
+  let pos = null; try { pos = JSON.parse(localStorage.getItem(POS) || 'null'); } catch (_) { /* 用默认位置 */ }
+  if (pos && (!Number.isFinite(pos.x) || !Number.isFinite(pos.y))) pos = null;
+  const savePos = () => { try { if (pos) localStorage.setItem(POS, JSON.stringify(pos)); else localStorage.removeItem(POS); } catch (_) { /* 只这次 */ } };
+  const vw = () => document.documentElement.clientWidth;
+  const clampXY = (x, y) => { const r = bar.getBoundingClientRect(); return [Math.max(8, Math.min(x, vw() - r.width - 8)), Math.max(60, Math.min(y, innerHeight - r.height - 8))]; };
+  function applyPos() {
+    if (!pos) { ['left', 'top', 'bottom', 'right', 'transform', 'visibility'].forEach(p => { bar.style[p] = ''; }); tab.hidden = true; bar.classList.remove('hi-moved'); placeStatus(); return; }
+    bar.classList.add('hi-moved');
+    Object.assign(bar.style, { left: pos.x + 'px', top: pos.y + 'px', bottom: 'auto', right: 'auto', transform: 'none' });
+    if (!pos.dock) { const [x, y] = clampXY(pos.x, pos.y); pos.x = x; pos.y = y; bar.style.left = x + 'px'; bar.style.top = y + 'px'; }
+    bar.style.visibility = pos.dock ? 'hidden' : '';
+    tab.hidden = !pos.dock;
+    if (pos.dock) {
+      const left = pos.dock === 'left'; tab.classList.toggle('is-left', left); tab.classList.toggle('is-right', !left);
+      tab.textContent = left ? '▶' : '◀'; tab.title = k().tabTip; tab.setAttribute('aria-label', k().tabTip);
+      tab.style.top = Math.max(70, Math.min(pos.ty ?? pos.y, innerHeight - 140)) + 'px';
+    }
+    placeStatus();
+  }
+  function placeStatus() {
+    if (status.hidden) return;
+    if (pos && !pos.dock) {   // 工具栏挪过：说明跟着工具栏，放在它下面（放不下就放上面）
+      const r = bar.getBoundingClientRect(), below = r.bottom + 66 < innerHeight;
+      status.style.left = Math.round(r.left) + 'px'; status.style.top = below ? Math.round(r.bottom + 6) + 'px' : 'auto'; status.style.bottom = below ? 'auto' : Math.round(innerHeight - r.top + 6) + 'px'; return;
+    }
+    status.style.left = ''; status.style.bottom = '';
+    status.style.top = innerWidth > 760 ? Math.round(bar.getBoundingClientRect().bottom + 6) + 'px' : '';   // 电脑：紧贴在工具栏下面（工具栏可能换行）
+  }
+  let dg = null;
+  bar.addEventListener('pointerdown', e => {
+    if (!e.target.closest('.hi-handle, .hi-bar-h') || e.button > 0) return;
+    const r = bar.getBoundingClientRect(); dg = { id: e.pointerId, sx: e.clientX, sy: e.clientY, ox: r.left, oy: r.top, w: r.width, moved: false };
+    try { bar.setPointerCapture(e.pointerId); } catch (_) { /* 忽略 */ }   // 手指移出工具栏也继续跟着
+    e.stopPropagation(); e.preventDefault();
+  });
+  bar.addEventListener('pointermove', e => {
+    if (!dg || e.pointerId !== dg.id) return;
+    const dx = e.clientX - dg.sx, dy = e.clientY - dg.sy;
+    if (!dg.moved) { if (Math.hypot(dx, dy) < 6) return; dg.moved = true; bar.classList.add('pd-dragging'); }
+    e.preventDefault();
+    const x = Math.max(-dg.w * 0.7, Math.min(dg.ox + dx, vw() - dg.w * 0.3)), y = Math.max(60, Math.min(dg.oy + dy, innerHeight - 50));   // 可以拖出一部分到屏幕外，方便「甩」到边上
+    Object.assign(bar.style, { left: x + 'px', top: y + 'px', bottom: 'auto', right: 'auto', transform: 'none' }); placeStatus();
+  });
+  const dgEnd = e => {
+    if (!dg || e.pointerId !== dg.id) return; const was = dg; dg = null; try { bar.releasePointerCapture(e.pointerId); } catch (_) { /* 忽略 */ } if (!was.moved) return;
+    bar.classList.remove('pd-dragging');
+    const r = bar.getBoundingClientRect(), px = e.clientX;
+    const dock = e.type === 'pointercancel' ? null : (r.left < -r.width * 0.28 || (px < 28 && r.left < 4)) ? 'left' : (r.right > vw() + r.width * 0.28 || (px > vw() - 28 && r.right > vw() - 4)) ? 'right' : null;
+    pos = { x: Math.max(8, Math.min(r.left, vw() - r.width - 8)), y: r.top, dock, ty: r.top };
+    savePos(); bar.classList.add('pd-anim'); applyPos(); setTimeout(() => bar.classList.remove('pd-anim'), 260);
+  };
+  bar.addEventListener('pointerup', dgEnd); bar.addEventListener('pointercancel', dgEnd);
+  bar.addEventListener('click', e => { if (bar.classList.contains('pd-dragging')) { e.stopPropagation(); e.preventDefault(); } }, true);
+  bar.addEventListener('dblclick', e => { if (e.target.closest('.hi-handle, .hi-bar-h')) { pos = null; savePos(); applyPos(); } });   // 双击把手放回默认位置
+  /* 边上的小箭头：点一下放回来；上下拖动换位置；往里拖也会放回来 */
+  let td = null, tapped = 0;
+  const undock = () => { if (!pos) return; pos.dock = null; savePos(); applyPos(); };
+  tab.addEventListener('pointerdown', e => { td = { id: e.pointerId, sx: e.clientX, sy: e.clientY, oy: parseFloat(tab.style.top) || 0, moved: false }; try { tab.setPointerCapture(e.pointerId); } catch (_) { /* 忽略 */ } e.stopPropagation(); e.preventDefault(); });
+  tab.addEventListener('pointermove', e => {
+    if (!td || e.pointerId !== td.id) return; const dx = e.clientX - td.sx, dy = e.clientY - td.sy;
+    if (!td.moved && Math.hypot(dx, dy) < 12) return; td.moved = true; e.preventDefault();
+    const inward = pos.dock === 'left' ? dx : -dx;
+    if (inward > 40) { pos.y = e.clientY - 20; pos.x = pos.dock === 'left' ? 8 : vw(); td = null; tapped = Date.now(); undock(); return; }
+    tab.style.top = Math.max(70, Math.min(td.oy + dy, innerHeight - 140)) + 'px';
+  });
+  tab.addEventListener('pointerup', e => { if (!td || e.pointerId !== td.id) return; const moved = td.moved; td = null; if (moved) { pos.ty = parseFloat(tab.style.top); savePos(); } else { tapped = Date.now(); undock(); } });
+  tab.addEventListener('pointercancel', () => { td = null; });
+  tab.addEventListener('click', e => { e.stopPropagation(); if (Date.now() - tapped < 600) return; undock(); });
+  addEventListener('resize', () => { if (!dg) applyPos(); });
+  applyPos();
+
   /* ---------- 平板（iPad、折叠屏展开）：触屏且屏幕短边 ≥ 700 像素时用平板布局（右侧详情面板） ---------- */
   const coarse = matchMedia('(hover: none) and (pointer: coarse)');
   function layoutMode() {

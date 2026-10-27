@@ -140,3 +140,11 @@ body.hi-tablet:not(.hi-narrow) .hi-bar { max-width: calc(100vw - 480px); }
 /* 详情面板打开时，缩放按钮和「暂停动画」挪到面板左边 */
 body.hi-tablet.hi-card-open .float.zoom, body.hi-tablet.hi-card-open #pause { transform: translateX(calc(-1 * (clamp(360px, 42vw, 440px) + 16px))); transition: transform .22s ease; }
 body.hi-tablet.hi-card-open .hi-bar, body.hi-tablet.hi-card-open .hi-status { max-width: calc(100vw - clamp(360px, 42vw, 440px) - var(--hi-bar-left, 12px) - 40px); }   /* 放在最后：面板打开时优先 */
+
+/* 工具栏拖动：左边的把手 ⠿ 和「选房工具」字样可以按住拖；拖到边上收成小箭头（样式同 panel-drag.css 的 .pd-tab） */
+.hi-handle { font-size: 16px; line-height: 1; color: #7a6650; padding: 4px 2px; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+.hi-bar-h { cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+.hi-bar.pd-dragging, .hi-bar.pd-dragging .hi-handle { cursor: grabbing; }
+.hi-bar.pd-anim { transition: left .22s ease, top .22s ease; }
+.hi-bar.hi-moved { bottom: auto; }
+.hi-tab { z-index: 13; }
