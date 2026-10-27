@@ -103,10 +103,11 @@
   }
   const SMALL = 15;   // 平台补贴在 £15 以内，算「没有自己补贴」（每周价四舍五入的零头）
 
+  const BUDGET_ONLY = true;
   let tab = 'split';
   function open(h, room, which) {
     const k = w(), saved = data.get() || {};
-    const only = !!window.OfferCard;   // 有真实价格卡时只留「按预算看房」
+    const only = BUDGET_ONLY;
     if (which) tab = which;
     if (only) tab = 'budget';
     const m = BT.modal({ eyebrow: k.eyebrow + (h ? ' · ' + h.name : ''), title: only ? k.tabBudget.replace(/^\S+\s/, '') : k.heading });
@@ -274,8 +275,8 @@
     go(tab);
   }
 
-  /* 有了真实价格卡（offer-card.js）时，拆价放进价格卡里，这里只留「按预算看房」 */
-  if (window.OfferCard) {
+  /* 报价拆解已停用，只留「按预算看房」（BUDGET_ONLY 改成 false 可恢复旧的拆解入口） */
+  if (BUDGET_ONLY) {
     BT.add({ id: 'budget', order: 2, intro: () => (BT.lang() === 'zh' ? '💷 按预算看房' : '💷 Search by budget'), open: () => open(null, null, 'budget') });
     window.QuoteCheck = { open, split, official, OFFICIAL };
     return;

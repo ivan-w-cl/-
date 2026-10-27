@@ -373,7 +373,6 @@
 <link rel="stylesheet" href="./share-cards.css">
 <link rel="stylesheet" href="./fun-quizzes.css">
 <link rel="stylesheet" href="./booking-tools.css">
-<link rel="stylesheet" href="./offer-card.css">
 <link rel="stylesheet" href="./student-tools.css">
 <style>.infopop .demo-links { margin-top: 8px; padding-top: 8px; border-top: 1.5px dashed #dcc8a0; } .infopop .demo-links a { color: #b5462f; font-weight: 700; }</style>
 </head>
@@ -1372,7 +1371,6 @@ const RANKS = {
   ensuite:  { tk: 'r_ensuite', group: 'g_price', val: h => h.pe, fmt: gbp, source: true },
   studio:   { tk: 'r_studio', group: 'g_price', val: h => h.ps, fmt: gbp, source: true },
   cheapest: { tk: 'r_cheapest', group: 'g_price', val: h => h.plo, fmt: gbp, source: true },
-  offer:    { tk: 'r_offer', group: 'g_price', val: h => (window.OfferCard ? window.OfferCard.bestPerWeek(h) : undefined), fmt: v => t('fGbp', { v: Number(v).toFixed(2) }) },   // offer-card.js：官网优惠算进去后的折合每周
   reviews:  { tk: 'r_reviews', group: 'g_rev', val: h => h.rn, desc: true, fmt: v => t('fRev', { n: v, pl: pl(v) }), source: true },
   rating:   { tk: 'r_rating', group: 'g_rev', val: h => (h.rn >= 5 ? h.rr : undefined), desc: true, fmt: (v, h) => `${Number(v).toFixed(1)}★ (${h.rn})`, source: true },
   az:       { tk: 'r_az', sort: (a, b) => a.name.localeCompare(b.name) },
@@ -2217,11 +2215,9 @@ initHomeUI();
 <script src="./weather.js" defer=""></script>
 <script src="./rank-compare.js" defer=""></script>
 <script src="./booking-tools.js" defer=""></script>
-<script src="./offer-card.js" defer=""></script>
 <script src="./quote-check.js" defer=""></script>
 <script src="./reviews.js" defer=""></script>
 <script src="./commute.js" defer=""></script>
 <script src="./cost-calc.js" defer=""></script>
-<script src="./roommates.js" defer=""></script>
 <script src="./tablet.js" defer=""></script>
 </body></html>

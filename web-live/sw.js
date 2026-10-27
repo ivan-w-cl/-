@@ -1,7 +1,7 @@
 /* Liverpool Student Map · versioned service worker (shell cache).
    From web-original/liverpool-life-map-en/sw.js, with the file list of this folder (the saved live page did not include sw.js). */
 'use strict';
-const CACHE = 'lsm-v20261027a';
+const CACHE = 'lsm-v20261027b';
 const SHELL = [
   './',
   './index.html',
@@ -38,13 +38,10 @@ const SHELL = [
   './mail-outbox.js',
   './fun-quizzes.css',
   './booking-tools.js',
-  './offer-card.js',
-  './offer-card.css',
   './quote-check.js',
   './reviews.js',
   './commute.js',
   './cost-calc.js',
-  './roommates.js',
   './student-tools.css',
   './booking-tools.css',
   './demo-links.js',

@@ -353,7 +353,8 @@
     checkWatched();
     if (wantHome) { const h = homeById(wantHome); if (h) { try { window.HomeMatch.exit(); } catch (_) { /* 没有 */ } open(h); } }
   }, 600);
-  try { if (typeof buildRankOptions === 'function') buildRankOptions(); } catch (_) { /* 页面还没准备好 */ }
+  /* 公寓列表的排序选项「官网优惠后真实周价最低」：只有加载了这个模块才出现 */
+  try { RANKS.offer = { tk: 'r_offer', group: 'g_price', val: h => bestPerWeek(h), fmt: v => t('fGbp', { v: Number(v).toFixed(2) }) }; buildRankOptions(); } catch (_) { /* 页面还没准备好 */ }
 
   window.OfferCard = { open, compute, bestPerWeek, realWeek, data: () => DATA, setData: d => { DATA = d; source = 'preview'; }, DEMO };
 })();

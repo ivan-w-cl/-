@@ -104,3 +104,15 @@ body.cm-on .cm-pill { display: none; }
 .rm-good, .rm-talk { margin: 0; font-size: 12.5px; }
 .rm-good { color: #1f5a3a; } .rm-talk { color: #8a4a1c; }
 .rm-hi { align-self: flex-start; font-size: 14px; }
+/* 评价：有出处的评分 + 外部链接 */
+.rv-one { grid-template-columns: auto 1fr; }
+.rv-head .rv-src { margin: 0; align-self: end; }
+.rv-out, .rv-recs { display: flex; flex-direction: column; gap: 8px; }
+.rv-h { font: 18px var(--hand, cursive); font-weight: normal; }
+a.rv-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 2px solid #3b2a1a; border-radius: 12px; background: #fff; padding: 10px 14px; color: #3b2a1a; text-decoration: none; box-shadow: 2px 3px 0 rgba(59, 42, 26, .15); }
+a.rv-link:hover { background: #fff3b8; }
+a.rv-link span { display: flex; flex-direction: column; gap: 2px; }
+a.rv-link b { font-size: 15px; }
+a.rv-link small { font-size: 12.5px; color: #6e5538; line-height: 1.4; }
+a.rv-link em { font-style: normal; color: #b5462f; white-space: nowrap; font-size: 14px; }
+.rv-pc { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
