@@ -23,7 +23,7 @@
       sunFace: '临街面朝{f}', sunMain: '主立面朝{f}', sunHours: '冬至约 {w} 小时直射 · 夏至约 {s} 小时', sunUnknown: '朝向未知',
       qLevel: { quiet: '相对安静', mid: '中等', loud: '临街一侧可能较吵' }, qSub: '离主路 {r} · 离铁路 {t}',
       cWalk: '步行到利物浦大学 {u} 分钟', cWalkSubj: '到{s}的楼 {n} 分钟', cOpen: '点开看到各专业楼要多久',
-      cH: '从这栋楼出发', cSub: '点一个地方，地图上画出示意路线（虚线）', cGroups: { station: '附近的车站', city: '市中心' }, cZoneH: '利物浦大学 · {z}（{f}）', cMine: '我的专业', cSubjB: '{s} · {b}', cCentre: '市中心（Liverpool ONE 一带）',
+      cH: '从这栋楼出发', cSub: '选一个地方，地图上画出示意路线（虚线）', cPick: '去哪里', cGroups: { station: '附近的车站', city: '市中心' }, cZoneH: '利物浦大学 · {z}（{f}）', cMine: '我的专业', cSubjB: '{s} · {b}', cCentre: '市中心（Liverpool ONE 一带）',
       cWalkN: '步行 {n} 分钟', cBusN: '公交约 {n} 分钟', cDist: '约 {d}', cOnMap: '步行约 {n} 分钟', cCircle: '画通勤时间圈 ↗',
       cNote: '时间是估算：步行按直线距离 × 1.3、每分钟 80 米；公交按步行到站、等车和平均车速估算（早上 9 点到）。虚线只表示方向，不是实际路线。',
       dirs: ['北', '东北', '东', '东南', '南', '西南', '西', '西北'],
@@ -47,7 +47,7 @@
       sunFace: 'Street side faces {f}', sunMain: 'Main facade faces {f}', sunHours: 'About {w} h of direct sun at midwinter · {s} h at midsummer', sunUnknown: 'Orientation unknown',
       qLevel: { quiet: 'Relatively quiet', mid: 'Moderate', loud: 'Street side may be noisy' }, qSub: '{r} from a main road · {t} from a railway',
       cWalk: '{u} min walk to the University of Liverpool', cWalkSubj: '{n} min to the {s} buildings', cOpen: 'Tap for times to each subject’s buildings',
-      cH: 'From this building', cSub: 'Tap a place to draw a rough route (dashed) on the map', cGroups: { station: 'Nearby stations', city: 'City centre' }, cZoneH: 'University of Liverpool · {z} ({f})', cMine: 'My subject', cSubjB: '{s} · {b}', cCentre: 'City centre (around Liverpool ONE)',
+      cH: 'From this building', cSub: 'Pick a place to draw a rough route (dashed) on the map', cPick: 'Where to', cGroups: { station: 'Nearby stations', city: 'City centre' }, cZoneH: 'University of Liverpool · {z} ({f})', cMine: 'My subject', cSubjB: '{s} · {b}', cCentre: 'City centre (around Liverpool ONE)',
       cWalkN: '{n} min walk', cBusN: 'bus about {n} min', cDist: 'about {d}', cOnMap: 'about {n} min walk', cCircle: 'Draw commute map ↗',
       cNote: 'Times are estimates: walking uses straight-line distance × 1.3 at 80 m a minute; buses include walking to the stop, waiting and an average speed (arriving at 9am). The dashed line shows direction only, not the actual route.',
       dirs: ['north', 'north-east', 'east', 'south-east', 'south', 'south-west', 'west', 'north-west'],
@@ -376,17 +376,24 @@
       const ds = commuteDests(h); if (!cDest || !ds.some(x => x.id === cDest)) cDest = ds[0] && ds[0].id;
       box.append(el('b', 'hi-h', K.cH), el('small', 'bt-note', K.cSub));
       const groups = [['mine', K.cMine, x => x.mine], ...Object.keys(G.ZONES).map(zk => ['zone:' + zk, fmt(K.cZoneH, { z: G.zoneName(zk), f: G.facultyOf(zk) }), x => !x.mine && x.group === 'zone:' + zk]), ['station', K.cGroups.station, x => x.group === 'station'], ['city', K.cGroups.city, x => x.group === 'city']];
+      /* 下拉框选目的地（按「我的专业 / 各校区 / 车站 / 市中心」分组），下面一张结果卡 */
+      const lab = el('label', 'hi-dsel'), sel = el('select');
+      lab.append(el('span', '', K.cPick), sel);
       groups.forEach(([g, title, f]) => {
         const rows = ds.filter(f); if (!rows.length) return;
-        const ul = el('ul', 'hi-dests'); box.append(el('small', 'hi-gh', title), ul);
-        rows.forEach(d => {
-          const li = el('li'), b2 = btn('hi-dest-b' + (d.id === cDest ? ' on' : ''));
-          b2.setAttribute('aria-pressed', String(d.id === cDest));
-          b2.append(el('span', 'hi-dn', d.name), el('b', '', fmt(K.cWalkN, { n: d.walk })), el('small', '', [d.bus ? fmt(K.cBusN, { n: d.bus }) : '', fmt(K.cDist, { d: mTxt(d.m) })].filter(Boolean).join(' · ')));
-          b2.addEventListener('click', ev => { ev.stopPropagation(); cDest = d.id; drawLayer('commute', h); explain('commute', h, box); fitRoute(h, d); });
-          li.append(b2); ul.append(li);
-        });
+        const og = document.createElement('optgroup'); og.label = title;
+        rows.forEach(d => { const o = el('option', '', `${d.name} · ${fmt(K.cWalkN, { n: d.walk })}`); o.value = d.id; og.append(o); });
+        sel.append(og);
       });
+      sel.value = cDest;
+      const res = el('div', 'hi-dres');
+      const drawRes = () => {
+        const d = ds.find(x => x.id === cDest); res.replaceChildren(); if (!d) return;
+        res.append(el('span', 'hi-dn', d.name), el('b', '', fmt(K.cWalkN, { n: d.walk })), el('small', '', [d.bus ? fmt(K.cBusN, { n: d.bus }) : '', fmt(K.cDist, { d: mTxt(d.m) })].filter(Boolean).join(' · ')));
+      };
+      sel.addEventListener('click', ev => ev.stopPropagation());
+      sel.addEventListener('change', ev => { ev.stopPropagation(); cDest = sel.value; drawRes(); drawLayer('commute', h); const d = ds.find(x => x.id === cDest); if (d) fitRoute(h, d); });
+      drawRes(); box.append(lab, res);
       const circ = btn('bt-link', K.cCircle); circ.addEventListener('click', ev => { ev.stopPropagation(); if (window.Commute) window.Commute.open(false); });
       box.append(el('p', 'hi-notes-p bt-note', K.cNote), circ);
     } else {
@@ -483,13 +490,13 @@
   function drawBar() {
     const K = k(), hd = el('span', 'hi-handle', '⠿'); hd.setAttribute('aria-hidden', 'true'); hd.title = K.dragTip;
     bar.replaceChildren(hd, el('span', 'hi-bar-h', K.barLabel));
-    Object.keys(tools).forEach(id => { const b = btn('hi-bar-b'); b.append(el('span', 'hi-long', K.bar[id]), el('span', 'hi-short', K.barShort[id])); b.addEventListener('click', ev => { ev.stopPropagation(); tools[id](); }); bar.append(b); });
-    bar.append(el('i', 'hi-sep'));
-    [['sun', K.fSun, K.fSunRule], ['quiet', K.fQuiet, K.fQuietRule]].forEach(([id, lab, rule]) => {
+    [['sun', K.fSun, K.fSunRule], ['quiet', K.fQuiet, K.fQuietRule]].forEach(([id, lab, rule]) => {   // 地图筛选放在最前面
       const b = btn('hi-bar-f', lab); b.title = rule; b.setAttribute('aria-pressed', String(filt[id]));
       b.addEventListener('click', ev => { ev.stopPropagation(); filt[id] = !filt[id]; b.setAttribute('aria-pressed', String(filt[id])); applyFilters(); if (id === 'sun' && filt.sun) loadAllBuildings(); });
       bar.append(b);
     });
+    bar.append(el('i', 'hi-sep'));
+    Object.keys(tools).forEach(id => { const b = btn('hi-bar-b'); b.append(el('span', 'hi-long', K.bar[id]), el('span', 'hi-short', K.barShort[id])); b.addEventListener('click', ev => { ev.stopPropagation(); tools[id](); }); bar.append(b); });
   }
   drawBar(); document.body.append(bar, status); document.body.classList.add('hi-has-bar');
 
@@ -520,33 +527,37 @@
       const r = bar.getBoundingClientRect(), below = r.bottom + 66 < innerHeight;
       status.style.left = Math.round(r.left) + 'px'; status.style.top = below ? Math.round(r.bottom + 6) + 'px' : 'auto'; status.style.bottom = below ? 'auto' : Math.round(innerHeight - r.top + 6) + 'px'; return;
     }
-    status.style.left = ''; status.style.bottom = '';
-    status.style.top = innerWidth > 760 ? Math.round(bar.getBoundingClientRect().bottom + 6) + 'px' : '';   // 电脑：紧贴在工具栏下面（工具栏可能换行）
+    if (innerWidth <= 760) { status.style.left = status.style.top = status.style.bottom = ''; return; }   // 手机：用 CSS 的位置（工具栏上方）
+    const r = bar.getBoundingClientRect(), up = r.top > innerHeight / 2;   // 工具栏在下半屏（平板竖屏的底部工具栏）时说明放在它上面
+    status.style.left = Math.round(r.left) + 'px'; status.style.top = up ? 'auto' : Math.round(r.bottom + 6) + 'px'; status.style.bottom = up ? Math.round(innerHeight - r.top + 6) + 'px' : 'auto';
   }
   let dg = null;
+  /* 工具栏上任何地方按住都能拖（包括按钮）：按下时先不动，移动超过 8 像素才算拖动，拖完不会触发按钮 */
   bar.addEventListener('pointerdown', e => {
-    if (!e.target.closest('.hi-handle, .hi-bar-h') || e.button > 0) return;
+    if (e.button > 0) return;
     const r = bar.getBoundingClientRect(); dg = { id: e.pointerId, sx: e.clientX, sy: e.clientY, ox: r.left, oy: r.top, w: r.width, moved: false };
-    try { bar.setPointerCapture(e.pointerId); } catch (_) { /* 忽略 */ }   // 手指移出工具栏也继续跟着
-    e.stopPropagation(); e.preventDefault();
+    if (e.target.closest('.hi-handle, .hi-bar-h')) { try { bar.setPointerCapture(e.pointerId); } catch (_) { /* 忽略 */ } e.preventDefault(); }
+    e.stopPropagation();
   });
-  bar.addEventListener('pointermove', e => {
+  const dgMove = e => {
     if (!dg || e.pointerId !== dg.id) return;
     const dx = e.clientX - dg.sx, dy = e.clientY - dg.sy;
-    if (!dg.moved) { if (Math.hypot(dx, dy) < 6) return; dg.moved = true; bar.classList.add('pd-dragging'); }
+    if (!dg.moved) { if (Math.hypot(dx, dy) < 8) return; dg.moved = true; bar.classList.add('pd-dragging'); try { bar.setPointerCapture(e.pointerId); } catch (_) { /* 忽略 */ } }
     e.preventDefault();
     const x = Math.max(-dg.w * 0.7, Math.min(dg.ox + dx, vw() - dg.w * 0.3)), y = Math.max(60, Math.min(dg.oy + dy, innerHeight - 50));   // 可以拖出一部分到屏幕外，方便「甩」到边上
     Object.assign(bar.style, { left: x + 'px', top: y + 'px', bottom: 'auto', right: 'auto', transform: 'none' }); placeStatus();
-  });
+  };
+  bar.addEventListener('pointermove', dgMove); addEventListener('pointermove', dgMove);
   const dgEnd = e => {
     if (!dg || e.pointerId !== dg.id) return; const was = dg; dg = null; try { bar.releasePointerCapture(e.pointerId); } catch (_) { /* 忽略 */ } if (!was.moved) return;
-    bar.classList.remove('pd-dragging');
+    bar.classList.remove('pd-dragging'); bar.dataset.justDragged = '1'; setTimeout(() => { delete bar.dataset.justDragged; }, 350);   // 拖完紧接着的那次点击不算点按钮
     const r = bar.getBoundingClientRect(), px = e.clientX;
     const dock = e.type === 'pointercancel' ? null : (r.left < -r.width * 0.28 || (px < 28 && r.left < 4)) ? 'left' : (r.right > vw() + r.width * 0.28 || (px > vw() - 28 && r.right > vw() - 4)) ? 'right' : null;
     pos = { x: Math.max(8, Math.min(r.left, vw() - r.width - 8)), y: r.top, dock, ty: r.top };
     savePos(); bar.classList.add('pd-anim'); applyPos(); setTimeout(() => bar.classList.remove('pd-anim'), 260);
   };
-  bar.addEventListener('pointerup', dgEnd); bar.addEventListener('pointercancel', dgEnd);
+  bar.addEventListener('pointerup', dgEnd); bar.addEventListener('pointercancel', dgEnd); addEventListener('pointerup', dgEnd); addEventListener('pointercancel', dgEnd);
+  bar.addEventListener('click', e => { if (bar.dataset.justDragged) { e.stopPropagation(); e.preventDefault(); } }, true);
   bar.addEventListener('click', e => { if (bar.classList.contains('pd-dragging')) { e.stopPropagation(); e.preventDefault(); } }, true);
   bar.addEventListener('dblclick', e => { if (e.target.closest('.hi-handle, .hi-bar-h')) { pos = null; savePos(); applyPos(); } });   // 双击把手放回默认位置
   /* 边上的小箭头：点一下放回来；上下拖动换位置；往里拖也会放回来 */

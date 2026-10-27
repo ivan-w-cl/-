@@ -92,7 +92,7 @@
   let w = null;
 
   /* 位置：电脑上放在标题栏右边（放不下就放到地图底部中间）；手机上放在标题栏下面靠右 */
-  const narrow = matchMedia('(max-width: 760px), (max-height: 500px), (max-width: 1024px) and (hover: none)');
+  const narrow = matchMedia('(max-width: 760px), (max-height: 500px), (max-width: 1024px) and (max-height: 699px) and (hover: none)');
   function place() {
     const A = app.getBoundingClientRect(), B = brand.getBoundingClientRect(), ctl = document.querySelector('.controls');
     chip.style.cssText = ''; pop.style.cssText = '';

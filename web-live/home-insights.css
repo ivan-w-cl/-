@@ -170,3 +170,33 @@ body.hi-tablet .card.sheet { width: clamp(340px, 36vw, 420px); }
 body.hi-tablet.hi-card-open .float.zoom, body.hi-tablet.hi-card-open #pause { transform: translateX(calc(-1 * (clamp(340px, 36vw, 420px) + 16px))); }
 body.hi-tablet.hi-card-open .hi-bar, body.hi-tablet.hi-card-open .hi-status { max-width: calc(100vw - clamp(340px, 36vw, 420px) - var(--hi-bar-left, 12px) - 40px); }
 @media (max-width: 760px) { body.hi-touch .hi-bar, body .hi-bar.hi-moved { max-width: calc(100vw - 76px); } }   /* 手机：不压到右边的缩放按钮 */
+
+/* ---------- 平板专门设计（2026-11-05）：iPad 和 iPhone Duo 内屏不再用放大的手机版，改用「地图 + 两侧面板」的平板布局 ----------
+   横屏：左边公寓列表，中间地图，点公寓右边出详情面板，工具栏在地图顶部。
+   竖屏：两个面板默认收成顶部的两个小标签（左「公寓列表」、右「找公寓」），工具栏是底部居中的一排大按钮（dock），详情面板从右边滑出。 */
+body.hi-tablet .hi-long, body.hi-tablet .hi-bar-h { display: inline; }
+body.hi-tablet .hi-short { display: none; }
+body.hi-tablet .hi-bar-b { font-size: 16px; padding: 5px 13px; }
+body.hi-tablet .hi-bar-f { font-size: 15px; padding: 4px 11px; }
+body.hi-tablet.hi-portrait .controls { top: calc(76px + env(safe-area-inset-top, 0px)) !important; }
+body.hi-tablet.hi-portrait .card.sheet { top: calc(132px + env(safe-area-inset-top, 0px)) !important; }
+body.hi-tablet.hi-portrait .hi-bar:not(.hi-moved) { left: 50%; right: auto; top: auto; bottom: calc(22px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); max-width: calc(100vw - 150px); padding: 6px 10px; box-shadow: 0 10px 26px rgba(40, 28, 16, .22), 3px 4px 0 rgba(59, 42, 26, .25); }
+body.hi-tablet.hi-portrait.hi-card-open .hi-bar:not(.hi-moved) { left: calc((100vw - clamp(340px, 36vw, 420px) - 14px) / 2); max-width: calc(100vw - clamp(340px, 36vw, 420px) - 40px); flex-wrap: wrap; justify-content: center; border-radius: 22px; }
+body.hi-tablet.hi-portrait .wx-chip { position: fixed; left: calc(12px + env(safe-area-inset-left, 0px)) !important; right: auto !important; top: auto !important; bottom: calc(86px + env(safe-area-inset-bottom, 0px)) !important; transform: none !important; }   /* 天气标签挪到工具栏上方的左下角 */
+
+/* 通勤下拉框 + 结果卡；工具栏整条都能按住拖 */
+.hi-dsel { display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; color: #6e5538; }
+.hi-dsel select { font: 14px/1.3 inherit; color: #3b2a1a; padding: 7px 8px; border: 2px solid #3b2a1a; border-radius: 10px; background: #fff; max-width: 100%; }
+.hi-dres { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 8px; border: 2px solid #2a78d6; border-radius: 10px; background: #eaf2fc; padding: 6px 10px; }
+.hi-dres .hi-dn { font-size: 13px; overflow-wrap: anywhere; }
+.hi-dres b { font-size: 15px; white-space: nowrap; color: #1c5cab; }
+.hi-dres small { grid-column: 1 / -1; font-size: 11.5px; color: #52514e; }
+.hi-bar { touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; }
+.hi-bar button { cursor: pointer; }
+/* 整条都能拖以后不再横向滚动：放不下就换行（手机：上一行筛选、下一行工具） */
+body .hi-bar, body.hi-touch .hi-bar, .hi-bar.hi-moved { flex-wrap: wrap; overflow: visible; justify-content: flex-start; }
+@media (max-width: 760px) { body .hi-bar .hi-sep { flex-basis: 100%; width: auto; height: 0; background: none; } body .hi-bar, body.hi-touch .hi-bar { border-radius: 18px; } }
+body.hi-tablet .hi-bar { border-radius: 22px; }
+/* 平板竖屏：底部工具栏一排放得下；缩放按钮和「暂停动画」抬到工具栏上方 */
+body.hi-tablet.hi-portrait:not(.hi-card-open) .hi-bar:not(.hi-moved) { max-width: calc(100vw - 32px); flex-wrap: nowrap; }
+body.hi-tablet.hi-portrait .float.zoom, body.hi-tablet.hi-portrait #pause { bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
