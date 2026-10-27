@@ -255,7 +255,7 @@
     const hp = document.getElementById('homesPanel'), lx = !narrow && hp && !hp.classList.contains('collapsed') ? hp.getBoundingClientRect().right + 12 : 12;
     const v = { left: lx, right: viewW - 12, top: 70, bottom: viewH - (narrow ? 76 : 16), mode: 'none' };
     if (!open) return v;
-    if (document.body.classList.contains('hi-tablet') || !cardEl.classList.contains('sheet')) { v.right = cardEl.getBoundingClientRect().left - 12; v.mode = 'side'; }
+    if (innerWidth >= 700 || !cardEl.classList.contains('sheet')) { v.right = cardEl.getBoundingClientRect().left - 12; v.mode = 'side'; }
     else if (cardEl.classList.contains('sheet')) { v.left = 12; v.bottom = cardEl.getBoundingClientRect().top - 8; v.mode = 'sheet'; }
     if (v.mode === 'side') {
       if (!rail.hidden) v.right = Math.min(v.right, rail.getBoundingClientRect().left - 12);
@@ -354,7 +354,8 @@
     placeUI(); pBody.scrollTop = 0;
   }
   function closeTool() { clearLayer(); panel.hidden = true; document.body.classList.remove('hi-panel-on'); rail.querySelectorAll('.hi-rb').forEach(x => x.setAttribute('aria-pressed', 'false')); placeUI(); }
-  const isPhoneSheet = () => { const c = document.getElementById('card'); return !!c && c.classList.contains('sheet') && !document.body.classList.contains('hi-tablet'); };
+  /* 只有窄屏（< 700 宽）才是铺满宽度的底部面板；更宽的屏幕上详情是右下角的小卡片（见 home-insights.css「小卡片」） */
+  const isPhoneSheet = () => { const c = document.getElementById('card'); return !!c && c.classList.contains('sheet') && innerWidth < 700; };
   /* 按卡片的位置摆放按钮和面板 */
   function placeUI() {
     const c = document.getElementById('card'), open = c && !c.hidden && railHome && BT.homeNow() && BT.homeNow().id === railHome;

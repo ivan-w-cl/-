@@ -266,3 +266,17 @@ body.hi-tablet.hi-portrait .float.zoom, body.hi-tablet.hi-portrait #pause { bott
 .hi-pb > * { flex: none; }
 @media (prefers-reduced-motion: no-preference) { .hi-panel:not([hidden]) { animation: hiIn .18s ease; } }
 @keyframes hiIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* ---------- 小卡片（2026-11-08）：屏幕宽度 ≥ 700（iPad、Duo 内屏、横放的手机、各种预览窗口）时，详情不再铺满整个宽度，
+   而是右下角一张小卡片，周围和下面都能看到地图；三个按钮贴在它左边。只有窄屏手机还是底部面板。 ---------- */
+@media (min-width: 700px) {
+  body .card.sheet:not(.compact) { left: auto !important; right: calc(14px + env(safe-area-inset-right, 0px)); top: auto !important; bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    width: clamp(330px, 32vw, 400px); max-width: calc(100vw - 28px); max-height: min(66vh, 600px) !important; border-radius: 18px; border-bottom: 3px solid #3b2a1a;
+    padding: 14px 16px 16px; box-shadow: 0 14px 32px rgba(40, 28, 16, .26), 4px 5px 0 rgba(59, 42, 26, .2); }
+  body .card.sheet .hi-grip { display: none; }
+  body.hi-tablet.hi-portrait .card.sheet:not(.compact) { bottom: calc(84px + env(safe-area-inset-bottom, 0px)); top: auto !important; }
+  body .card.sheet:not(.compact) .acts { bottom: -16px; }
+  /* 缩放按钮挪到小卡片左边 */
+  body.hi-card-open .float.zoom, body.hi-card-open #pause { transform: translateX(calc(-1 * (clamp(330px, 32vw, 400px) + 16px))); }
+  body.hi-card-open .hi-bar:not(.hi-moved), body.hi-card-open .hi-status { max-width: calc(100vw - clamp(330px, 32vw, 400px) - var(--hi-bar-left, 12px) - 40px); }
+}
