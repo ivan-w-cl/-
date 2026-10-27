@@ -148,3 +148,25 @@ body.hi-tablet.hi-card-open .hi-bar, body.hi-tablet.hi-card-open .hi-status { ma
 .hi-bar.pd-anim { transition: left .22s ease, top .22s ease; }
 .hi-bar.hi-moved { bottom: auto; }
 .hi-tab { z-index: 13; }
+
+/* ---------- 少挡地图（2026-11-04）：触屏设备上工具栏一行、只用短名；手机卡片默认矮一点（往上推可展开）；平板面板窄一点 ---------- */
+body.hi-touch .hi-bar, .hi-bar.hi-moved { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; max-width: calc(100vw - 24px); padding: 4px 6px; gap: 4px; border-radius: 999px; min-width: 0; }
+body.hi-touch .hi-bar::-webkit-scrollbar { display: none; }
+body.hi-touch .hi-bar-h, body.hi-touch .hi-long { display: none; }
+body.hi-touch .hi-short { display: inline; }
+body.hi-touch .hi-bar-b { font-size: 14px; padding: 3px 9px; flex: none; }
+body.hi-touch .hi-bar-f { font-size: 13.5px; padding: 2px 8px; flex: none; }
+body.hi-touch .hi-sep { flex: none; flex-basis: auto; width: 2px; height: 20px; background: #dcc8a0; }
+@media (max-width: 760px) {
+  .hi-bar { max-width: calc(100vw - 76px); }
+  .hi-sep { flex: none; flex-basis: auto; width: 2px; height: 20px; background: #dcc8a0; }
+  .hi-bar { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; border-radius: 999px; padding: 4px 6px; }
+  .hi-bar-b, .hi-bar-f { flex: none; }
+  .hi-status { bottom: calc(112px + env(safe-area-inset-bottom, 0px)); }
+  body:not(.hi-tablet) .card.sheet:not(.compact):not(.hi-full) { max-height: 46dvh; }
+  body.hi-map-on:not(.hi-tablet) .card.sheet:not(.compact):not(.hi-full) { max-height: 40dvh; }
+}
+body.hi-tablet .card.sheet { width: clamp(340px, 36vw, 420px); }
+body.hi-tablet.hi-card-open .float.zoom, body.hi-tablet.hi-card-open #pause { transform: translateX(calc(-1 * (clamp(340px, 36vw, 420px) + 16px))); }
+body.hi-tablet.hi-card-open .hi-bar, body.hi-tablet.hi-card-open .hi-status { max-width: calc(100vw - clamp(340px, 36vw, 420px) - var(--hi-bar-left, 12px) - 40px); }
+@media (max-width: 760px) { body.hi-touch .hi-bar, body .hi-bar.hi-moved { max-width: calc(100vw - 76px); } }   /* 手机：不压到右边的缩放按钮 */

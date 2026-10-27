@@ -1623,7 +1623,7 @@ function show(d, pin) {
     const tx = document.createElement('p'); tx.className = 'txt'; tx.textContent = textOf(d); tx.style.marginBottom = '0'; cardBody.append(tx);
   }
   if (d.t !== 'home') card.classList.remove('compact');
-  card.classList.toggle('sheet', touchOnly.matches || isNarrow());
+  card.classList.toggle('sheet', touchOnly.matches || isNarrow() || document.body.classList.contains('hi-tablet'));   // 平板（含接了触控板的 iPad）用右侧面板，见 home-insights.css
   card.hidden = false;
   if (prev !== d) card.scrollTop = 0;
   card.classList.add('show');

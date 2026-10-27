@@ -567,10 +567,12 @@
   applyPos();
 
   /* ---------- 平板（iPad、折叠屏展开）：触屏且屏幕短边 ≥ 700 像素时用平板布局（右侧详情面板） ---------- */
-  const coarse = matchMedia('(hover: none) and (pointer: coarse)');
+  /* 有触屏就算（iPad 接了妙控键盘或触控板时 pointer 会报 fine，所以也看 maxTouchPoints） */
+  const touchy = () => navigator.maxTouchPoints > 0 || matchMedia('(any-pointer: coarse)').matches;
   function layoutMode() {
     let narrow = false; try { narrow = isNarrow(); } catch (_) { /* 忽略 */ }
-    const tab = coarse.matches && Math.min(innerWidth, innerHeight) >= 700;
+    const touch = touchy(), tab = touch && Math.min(innerWidth, innerHeight) >= 700;
+    document.body.classList.toggle('hi-touch', touch);
     document.body.classList.toggle('hi-tablet', tab); document.body.classList.toggle('hi-narrow', narrow);
     document.body.classList.toggle('hi-portrait', innerHeight > innerWidth);
     drawStatus();
