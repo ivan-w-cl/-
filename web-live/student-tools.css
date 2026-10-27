@@ -116,3 +116,21 @@ a.rv-link b { font-size: 15px; }
 a.rv-link small { font-size: 12.5px; color: #6e5538; line-height: 1.4; }
 a.rv-link em { font-style: normal; color: #b5462f; white-space: nowrap; font-size: 14px; }
 .rv-pc { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+/* 评价：按来源分块，顶部醒目标注来源和链接 */
+.rv-srcp { flex: none; border: 2.5px solid #3b2a1a; border-radius: 14px; background: #fff; overflow: hidden; display: flex; flex-direction: column; }
+.rv-srctop { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 10px 14px; color: #fff; }
+.rv-am .rv-srctop { background: #1f6f6b; } .rv-sc .rv-srctop { background: #2c3e8f; }
+.rv-who2 { display: flex; align-items: center; gap: 8px; font: 18px var(--hand, cursive); }
+.rv-logo { font: 800 12px/1 system-ui, sans-serif; letter-spacing: .03em; background: #fff; border-radius: 6px; padding: 4px 7px; }
+.rv-am .rv-logo { color: #1f6f6b; } .rv-sc .rv-logo { color: #2c3e8f; }
+a.rv-go { background: #fff; color: #3b2a1a; text-decoration: none; font-size: 14px; padding: 4px 12px; box-shadow: none; }
+.rv-srcbody { padding: 10px 14px 2px; display: flex; align-items: flex-end; gap: 14px; flex-wrap: wrap; }
+.rv-srcbody .rv-big strong { font-size: 40px; }
+.rv-srcdesc { margin: 0; font-size: 13px; color: #6e5538; }
+.rv-ex { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; padding: 8px 14px; }
+.rv-q { margin: 0; border: 1.5px solid #e2d6bd; border-radius: 10px; padding: 8px 10px; background: #fffdf6; position: relative; }
+.rv-q p { margin: 2px 0 4px; font-size: 13.5px; line-height: 1.5; }
+.rv-q cite { font-style: normal; font-size: 11.5px; color: #7a6650; }
+.rv-sample { font-size: 10.5px; color: #8a5a00; background: #fff1c9; border-radius: 99px; padding: 1px 6px; }
+.rv-srcp > .rv-src { padding: 0 14px 10px; }
+.rv-more { margin: 0; font-size: 13px; } .rv-more a { color: #b5462f; }
