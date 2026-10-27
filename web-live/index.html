@@ -374,7 +374,7 @@
 <link rel="stylesheet" href="./fun-quizzes.css">
 <link rel="stylesheet" href="./booking-tools.css">
 <link rel="stylesheet" href="./student-tools.css">
-<link rel="stylesheet" href="./local-panel.css">
+<link rel="stylesheet" href="./home-insights.css">
 <style>.infopop .demo-links { margin-top: 8px; padding-top: 8px; border-top: 1.5px dashed #dcc8a0; } .infopop .demo-links a { color: #b5462f; font-weight: 700; }</style>
 </head>
 <body>
@@ -1548,7 +1548,7 @@ let current = null, pinned = false, cardExpanded = false;
 function show(d, pin) {
   if (!pin) return;
   const prev = current;
-  if (prev !== d) cardExpanded = false;
+  cardExpanded = true;   // 公寓卡片直接显示详情（不用再点「展开详情」）
   if (prev && prev !== d) els.get(prev.id)?.classList.remove('on');
   current = d; pinned = pin || (pinned && prev === d);
   els.get(d.id)?.classList.add('on');
@@ -1604,7 +1604,7 @@ function show(d, pin) {
       compact.hidden = cardExpanded; details.hidden = !cardExpanded; cb.hidden = !cardExpanded;
       card.classList.toggle('compact', !cardExpanded);
       detailToggle.setAttribute('aria-expanded', String(cardExpanded));
-      detailToggle.textContent = t(cardExpanded ? 'collapseDetails' : 'expandDetails');
+      detailToggle.textContent = t(cardExpanded ? 'collapseDetails' : 'expandDetails'); detailToggle.hidden = true;
       a.textContent = t(cardExpanded ? 'ask' : 'compactAsk');
     }
     detailToggle.addEventListener('click', e => {
@@ -2217,12 +2217,8 @@ initHomeUI();
 <script src="./rank-compare.js" defer=""></script>
 <script src="./booking-tools.js" defer=""></script>
 <script src="./quote-check.js" defer=""></script>
-<script src="./site-config.js" defer=""></script>
-<script src="./local-panel.js" defer=""></script>
-<script src="./reviews-store.js" defer=""></script>
-<script src="./resident-reviews.js" defer=""></script>
-<script src="./reviews.js" defer=""></script>
 <script src="./commute.js" defer=""></script>
 <script src="./cost-calc.js" defer=""></script>
+<script src="./home-insights.js" defer=""></script>
 <script src="./tablet.js" defer=""></script>
 </body></html>

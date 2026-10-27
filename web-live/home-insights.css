@@ -1,0 +1,51 @@
+/* 选房工具栏、公寓卡片「这栋楼在地图上」、地图图层（home-insights.js） */
+.hi-bar { position: fixed; z-index: 12; left: 340px; top: calc(80px + env(safe-area-inset-top, 0px)); display: flex; align-items: center; gap: 6px; padding: 6px 8px 6px 12px; background: #fffaf0; border: 2.5px solid #3b2a1a; border-radius: 999px; box-shadow: 3px 4px 0 rgba(59, 42, 26, .25); }
+.hi-bar-h { font: 14px var(--hand, cursive); color: #b5462f; white-space: nowrap; }
+.hi-bar-b { border: 2px solid #3b2a1a; border-radius: 999px; background: #fff3b8; color: #3b2a1a; padding: 4px 12px; font: 16px var(--hand, cursive); cursor: pointer; white-space: nowrap; }
+.hi-bar-b:hover { background: #ffe58a; }
+.hi-bar-b:focus-visible { outline: 3px dashed #b5462f; outline-offset: 2px; }
+.hi-short { display: none; }
+body.hi-has-bar .cm-pill { display: none !important; }
+body.cm-on .hi-bar { display: none; }
+@media (max-width: 760px) {
+  .hi-bar { left: calc(10px + env(safe-area-inset-left, 0px)); top: auto; bottom: calc(66px + env(safe-area-inset-bottom, 0px)); padding: 4px; gap: 4px; max-width: calc(100vw - 80px); }
+  .hi-bar-h, .hi-long { display: none; }
+  .hi-short { display: inline; }
+  .hi-bar-b { font-size: 14px; padding: 3px 9px; }
+}
+
+.hi-sec { margin: 4px 0 12px; display: flex; flex-direction: column; gap: 6px; }
+.hi-sec h4 { margin: 0; font-family: var(--hand, cursive); font-weight: normal; font-size: 15px; letter-spacing: .12em; color: #b5462f; }
+.hi-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.hi-tile { text-align: left; border: 2px solid #3b2a1a; border-radius: 12px; background: #f8efd9; padding: 7px 8px; cursor: pointer; color: #3b2a1a; display: flex; flex-direction: column; gap: 2px; min-width: 0; box-shadow: 2px 3px 0 rgba(59, 42, 26, .18); }
+.hi-tile b { font-family: var(--hand, cursive); font-weight: normal; font-size: 15px; }
+.hi-tile .hi-main { font-size: 12.5px; font-weight: 700; line-height: 1.3; overflow-wrap: anywhere; }
+.hi-tile small { font-size: 11px; line-height: 1.35; color: #6e5538; overflow-wrap: anywhere; }
+.hi-tile:hover { background: #fff3b8; }
+.hi-tile[aria-pressed="true"] { background: #dfe9cc; border-color: #1f7a4d; }
+.hi-tile:focus-visible { outline: 3px dashed #b5462f; outline-offset: 2px; }
+.hi-more { display: flex; flex-direction: column; gap: 6px; }
+.hi-more:empty { display: none; }
+.hi-h { font-size: 13.5px; }
+.hi-dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin: 0; font-size: 12.5px; }
+.hi-dl dt { color: #6e5538; }
+.hi-dl dd { margin: 0; }
+.hi-notes { margin: 0; padding-left: 18px; font-size: 11.5px; color: #6e5538; display: flex; flex-direction: column; gap: 2px; }
+.hi-src { font-size: 10.5px; }
+@media (max-width: 360px) { .hi-row { grid-template-columns: 1fr; } }
+
+/* 地图图层 */
+.hi-ring { fill: rgba(255, 250, 240, .4); stroke: #3b2a1a; stroke-width: 1.5; stroke-dasharray: 4 4; }
+.hi-compass { font: 700 11px system-ui, sans-serif; fill: #3b2a1a; text-anchor: middle; paint-order: stroke; stroke: #fffaf0; stroke-width: 3px; }
+.hi-bldg { stroke: #3b2a1a; stroke-width: 7; stroke-linecap: round; }
+.hi-face { stroke: #2a78d6; stroke-width: 3; marker-end: none; stroke-linecap: round; }
+.hi-arc { fill: none; stroke: #eda100; stroke-width: 3; stroke-linecap: round; }
+.hi-dot { fill: #eda100; stroke: #fffaf0; stroke-width: 1.5; }
+.hi-tick { font: 9px system-ui, sans-serif; fill: #3b2a1a; text-anchor: middle; paint-order: stroke; stroke: #fffaf0; stroke-width: 3px; }
+.hi-sun { font-size: 18px; text-anchor: middle; }
+.hi-lbl { font: 700 10.5px system-ui, sans-serif; fill: #3b2a1a; text-anchor: middle; paint-order: stroke; stroke: #fffaf0; stroke-width: 3.5px; }
+.hi-road { stroke: #eb6834; stroke-width: 8; stroke-linecap: round; opacity: .85; }
+.hi-rail { stroke: #6250d6; stroke-width: 8; stroke-linecap: round; opacity: .85; }
+.hi-link { stroke: #3b2a1a; stroke-width: 1.5; stroke-dasharray: 3 3; }
+.hi-near { fill: none; stroke: #3b2a1a; stroke-width: 1.5; stroke-dasharray: 2 3; }
+body.hi-map-on .card.sheet:not(.compact) { max-height: 46dvh; }   /* 手机：地图图层打开时卡片矮一点，留出地图 */
