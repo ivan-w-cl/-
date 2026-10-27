@@ -1,7 +1,7 @@
 /* 评价与公开记录：只放有出处的信息，每一项都写明来源，点链接去原网站看。
    - 评分：地图里记录的 Amber 评分和评价数（2026-10-17 快照，和公寓卡片上的同一份数据）。
    - 去权威网站看完整评价：StudentCrowd（只收学校邮箱验证过的学生评价）、Google 地图评价、Amber 页面。
-     StudentCrowd 和 Amber 用必应站内搜索打开（国内也能访问必应；Google 地图在国内可能打不开）。
+     StudentCrowd 直接打开这栋楼的页面（下面 SC 表）；Amber 用 Google 站内搜索打开。
    - 官方公开记录，自己查：police.uk（周边治安，输入邮编）、GOV.UK 能耗证书（EPC），合租房另有利物浦市议会的 HMO 执照登记。
      本站不转载这些数据，只给入口和这栋楼的邮编。
    - 排行榜：按记录的评分排（至少 5 条评价才上榜）。
@@ -18,8 +18,8 @@
       ratingSrc: '来源：Amber 公寓页面（2026 年 10 月 17 日记录），不是实时数据。',
       outH: '去权威网站看完整评价', outNote: '下面的链接打开的是外部网站，内容以原网站为准；本站不转载评价。',
       sites: {
-        sc: ['StudentCrowd', '英国学生评价网站，只收学校邮箱验证过的学生评价，按性价比、位置、保洁、Wi-Fi、管理等打分'],
-        gm: ['Google 地图评价', '住户和访客的评价与照片（国内可能需要特殊网络才能打开）'],
+        sc: ['StudentCrowd', '英国学生评价网站，只收学校邮箱验证过的学生评价，按性价比、位置、保洁、Wi-Fi、管理等打分'], scCity: 'StudentCrowd 上还没有这栋楼的页面，先打开利物浦的公寓列表',
+        gm: ['Google 地图评价', '住户和访客的评价与照片'],
         am: ['Amber Student', '本站评分的来源页面，可以看到逐条评价']
       },
       recLede: '这些是英国政府和警方公开的数据。本站不转载，只给你入口和这栋楼的邮编，点进去自己查。',
@@ -38,7 +38,7 @@
       ratingSrc: 'Source: the building’s Amber page (recorded 17 October 2026), not live data.',
       outH: 'Read full reviews on trusted sites', outNote: 'These links open external sites; what they say is what counts. We do not copy reviews.',
       sites: {
-        sc: ['StudentCrowd', 'UK student review site that only accepts reviews from students verified by university email, scored on value, location, cleaning, Wi-Fi, management and more'],
+        sc: ['StudentCrowd', 'UK student review site that only accepts reviews from students verified by university email, scored on value, location, cleaning, Wi-Fi, management and more'], scCity: 'StudentCrowd has no page for this building yet; opens the Liverpool list',
         gm: ['Google Maps reviews', 'Reviews and photos from residents and visitors'],
         am: ['Amber Student', 'Where our recorded rating comes from, with individual reviews']
       },
@@ -56,11 +56,57 @@
   const homes = () => { try { return HOMES; } catch (_) { return []; } };
   const stars = v => '★★★★★'.slice(0, Math.round(v)) + '☆☆☆☆☆'.slice(0, 5 - Math.round(v));
   const postcodeOf = h => (/[A-Z]{1,2}\d{1,2}[A-Z]?\s*\d[A-Z]{2}/i.exec(h.addr || '') || [''])[0].toUpperCase();
-  const bing = q => 'https://www.bing.com/search?q=' + encodeURIComponent(q);
+  /* StudentCrowd 每栋楼的页面（2026-10-27 通过搜索核对）；没有页面的楼打开 StudentCrowd 的利物浦公寓列表 */
+  const SC = {
+    'iq-great-newton-house': 's1045272-iq-great-newton-house-liverpool',
+    'capital-gate': 's1043653-capital-gate-liverpool',
+    'pembroke-studios': 's1049399-pembroke-studios-liverpool',
+    'albert-court': 's1045099-albert-court-liverpool',
+    'st-andrews-gardens': 's1044943-st-andrews-gardens-liverpool',
+    'windsor-court': 's1044942-windsor-court-liverpool',
+    'plato-house': 's1045243-plato-house-liverpool',
+    'one-islington-plaza': 's1045607-one-islington-plaza-liverpool',
+    'innovo-house': 's1055210-innovo-house-liverpool',
+    'calico': 's1046004-calico-liverpool',
+    'lennon-studios': 's1045881-lennon-studios-liverpool',
+    'hope-street': 's1046061-hope-street-liverpool',
+    'haigh-court': 's1044940-haigh-court-liverpool',
+    'maple-house': 's1045913-maple-house-liverpool',
+    'the-electra': 's1045139-the-electra-liverpool',
+    'chatham-lodge': 's1045917-chatham-lodge-liverpool',
+    'hayward-house': 's1045916-hayward-house-liverpool',
+    'the-hahnemann-building': 's1045620-the-hahnemann-building-liverpool',
+    'fusion-liverpool': 's1116067-fusion-liverpool-liverpool',
+    'the-arch': 's1045093-the-arch-liverpool',
+    'benson-yard': 's1101484-benson-yard-liverpool',
+    'grand-central': 's1043654-grand-central-liverpool',
+    'horizon-heights': 's1049122-horizon-heights-liverpool',
+    'the-lantern': 's1045600-the-lantern-liverpool',
+    'iconinc-the-ascent': 's1045526-iconinc-the-ascent-liverpool',
+    'byrom-point': 's1045374-byrom-point-liverpool',
+    'vita-student-crosshall-street': 's1044952-vita-student-liverpool-crosshall-st-liverpool',
+    'the-bridewell': 's1049496-the-bridewell-liverpool',
+    'marybone-student-village': 's1043655-marybone-1-liverpool',
+    'moorfield': 's1043659-moorfield-liverpool',
+    'yugo-ablett-house': 's1045250-ablett-house-liverpool',
+    'atlantic-point': 's1043648-atlantic-point-liverpool',
+    'glassworks': 's1045327-glassworks-liverpool',
+    'europa': 's1043651-europa-liverpool',
+    'prospect-point': 's1043657-prospect-point-liverpool',
+    'true-liverpool': 's1055205-true-liverpool-liverpool',
+    'unity-square': 's1051988-unity-square-liverpool',
+    'city-point': 's1049563-city-point-liverpool',
+    'phoenix-place': 's1045614-phoenix-place-liverpool',
+    'paddington-park-house': 's1045280-paddington-park-house-liverpool',
+    'the-railyard': 's1045112-the-railyard-liverpool',
+    'queensland-place': 's1054734-queensland-place-liverpool'
+  };
+  const SC_CITY = 'https://www.studentcrowd.com/student-accommodation-l1003919-liverpool';
+  const google = q => 'https://www.google.com/search?q=' + encodeURIComponent(q);
   const links = h => ({
-    sc: bing(`site:studentcrowd.com "${h.name}" Liverpool`),
+    sc: SC[h.id] ? 'https://www.studentcrowd.com/hall-l1003919-' + SC[h.id] : SC_CITY,
     gm: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(`${h.name}, ${h.addr || 'Liverpool'}`),
-    am: bing(`site:amberstudent.com "${h.name}" Liverpool`)
+    am: google(`site:amberstudent.com "${h.name}" Liverpool`)
   });
   const REC_URL = { police: 'https://www.police.uk/', epc: 'https://www.gov.uk/find-energy-certificate', hmo: 'https://liverpool.gov.uk/' };
   const a = (cls, text, href) => { const x = el('a', cls, text); x.href = href; x.target = '_blank'; x.rel = 'noopener'; return x; };
@@ -91,7 +137,7 @@
     const out = el('section', 'rv-out'); out.append(el('b', 'rv-h', k.outH));
     const L = links(h);
     ['sc', 'gm', 'am'].forEach(id => {
-      const [name, desc] = k.sites[id], row = a('rv-link', '', L[id]);
+      const [name, desc0] = k.sites[id], desc = id === 'sc' && !SC[h.id] ? k.sites.scCity : desc0, row = a('rv-link', '', L[id]);
       const t = el('span'); t.append(el('b', '', name), el('small', '', desc)); row.append(t, el('em', '', k.open)); out.append(row);
     });
     out.append(el('p', 'bt-note', k.outNote));
