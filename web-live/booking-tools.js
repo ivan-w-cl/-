@@ -106,7 +106,7 @@
     if (!intro || intro.querySelector('.hm-top') || intro.querySelector('.bt-entry') || !tools.length) return;
     const box = el('div', 'bt-entry'), row = el('div', 'bt-entry-row');
     box.append(el('span', 'bt-entry-h', pick(T).tools));
-    tools.forEach(t => {
+    tools.filter(t => t.intro).forEach(t => {   // 没有 intro 的工具（必须先选公寓）不放在开场页
       const b = btn('fq-entry-b', t.intro());
       b.addEventListener('click', e => { e.stopPropagation(); try { window.HomeMatch.exit(); } catch (_) { /* 没有生活选房模块 */ } setTimeout(() => t.open(null), 60); });
       row.append(b);

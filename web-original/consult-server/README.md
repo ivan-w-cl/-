@@ -89,6 +89,18 @@ SITE_DIR=web-live ADMIN_PASSWORD=换成你的密码 node web-original/consult-se
 
 网页没连上服务器（例如只放在静态网站上）时，学生端和后台会自动退回浏览器本地演示模式。
 
+## 二（新·周边）、周边治安和餐饮（`/api/local/*`）
+
+网页「周边与评价」面板用这两个接口。服务器只接受 47 栋已知公寓的编号（`lib/homes-geo.json`，未知编号返回 400 `unknown_home`），不做任意代理；数据缓存在 `DATA_DIR/local-cache.json`，默认 24 小时，过期后先返回旧数据（`status: stale`，`refreshPending: true`）并在后台更新。
+
+- `GET /api/local/police?homeId=capital-gate`：data.police.uk 最新月份，公寓参考坐标周围 1 英里的犯罪和反社会行为记录。返回 `homeId · postcode · centerBasis（building / street-area）· month · radiusMiles · total · categories[name, nameZh, count, share] · fetchedAt · status · sourceUrl · licence（OGL v3）· missingDataUrl`；各类合计等于 `total`，占比按 `total` 算。
+- `GET /api/local/food?homeId=…&q=&cuisine=all|chinese&page=&pageSize=`：FSA 食品卫生评级（餐厅/咖啡馆、外卖、酒吧三类合并去重），1 英里内按直线距离排序。`items[id, name, address, postcode, ratingValue（0–5 或 null）, ratingStatus（rated / awaiting-inspection / awaiting-publication / exempt / other）, ratingDate, distanceMeters, cuisine, sourceUrl]`，另有 `totalAll · totalChinese · chineseDirectorySize · coverage（complete / partial）· page · pages`。
+- 中餐标签来自 `lib/chinese-food.json`（`[{fhrsId, name, postcode, verifiedUrl, verifiedAt}]`，人工核实餐厅官网或官方商户页面后填写），FSA 编号和邮编都对上才标。目前是空的。
+- `status`：`ok` / `stale` / `partial` / `failed`（读不到，不返回 0）/ `unavailable`（`LOCAL_DATA=off`）。
+- 环境变量：`LOCAL_DATA=off` 关闭；`LOCAL_UPSTREAM=https://home.gxernv.cn` 改为转发到团队的 `/api/safety`、`/api/food`。
+- 服务器需要能访问 `data.police.uk` 和 `api.ratings.food.gov.uk`。给没有服务器的静态 demo 抓快照：`node scripts/snapshot-local.cjs`（写到 `web-live/local-snapshots/`，读不到的楼不写文件）。
+- 测试：`test/local-data.cjs`（`npm test` 里）。
+
 ## 二、流程（旧版小程序原型的「在线咨询」对话框）
 
 1. 学生在房源卡片、对比表、测验结果卡上点 **咨询这处公寓**，弹出“在线咨询”对话框：显示房源、测验摘要、快捷回复（我想咨询这套房 / 帮我建群 …）、可选昵称和输入框。

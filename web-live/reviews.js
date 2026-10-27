@@ -240,7 +240,7 @@
     m.body.append(box);
   }
 
-  BT.add({
+  if (!window.LocalPanel) BT.add({   // 有「周边与评价」面板时，这里只提供 Amber / StudentCrowd 的直达链接（Reviews.links）
     id: 'reviews', order: 3,
     card: h => ({ title: w().title, desc: w().desc, mini: h.rn ? fmt(w().mini, { s: Number(h.rr).toFixed(1) + '★' }) : w().miniNone, cls: 'bt-chipbtn' }),
     intro: () => w().intro,

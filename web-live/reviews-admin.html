@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>评价审核台（演示）</title>
+<style>
+  :root { --ink: #3b2a1a; --paper: #fffaf0; --muted: #6e5538; --red: #b5462f; --line: #dcc8a0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f3ead6; color: var(--ink); font: 14px/1.5 system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  header { padding: 14px 16px; background: var(--paper); border-bottom: 3px solid var(--ink); display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+  header h1 { margin: 0; font-size: 20px; flex: 1 1 auto; }
+  .demo { margin: 0; padding: 6px 10px; border-radius: 8px; background: #fff3b8; border: 1.5px dashed var(--red); font-size: 12.5px; color: #7a2e1c; }
+  main { display: grid; grid-template-columns: minmax(260px, 360px) 1fr; gap: 14px; padding: 14px 16px; max-width: 1200px; margin: 0 auto; }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } }
+  section { background: var(--paper); border: 2px solid var(--ink); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  h2 { margin: 0; font-size: 15px; color: var(--red); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+  button, select, textarea { font: inherit; color: inherit; }
+  .tabs button, .btn { border: 2px solid var(--ink); border-radius: 999px; background: #fff; padding: 2px 12px; cursor: pointer; }
+  .tabs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+  .btn.pub { background: #1f7a4d; color: #fff; } .btn.chg { background: #b07a12; color: #fff; } .btn.rej { background: #a3321f; color: #fff; }
+  .btn:disabled { opacity: .45; cursor: default; }
+  .item { text-align: left; border: 2px solid var(--ink); border-radius: 10px; background: #fff; padding: 8px 10px; cursor: pointer; display: flex; flex-direction: column; gap: 2px; width: 100%; }
+  .item[aria-current="true"] { background: #fff3b8; }
+  .item small, .muted { color: var(--muted); font-size: 12px; }
+  .badge { display: inline-block; font-size: 11px; padding: 0 8px; border-radius: 999px; border: 1.5px solid currentColor; margin-right: 4px; }
+  .ok { color: #1f7a4d; } .no { color: var(--muted); } .warn { color: #a3321f; }
+  .text { white-space: pre-wrap; overflow-wrap: anywhere; background: #fff; border: 1.5px solid var(--line); border-radius: 8px; padding: 8px; margin: 0; }
+  textarea { width: 100%; min-height: 70px; border: 2px solid var(--ink); border-radius: 8px; padding: 6px; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  ol { margin: 0; padding-left: 18px; font-size: 12.5px; }
+  .empty { color: var(--muted); padding: 12px; border: 2px dashed var(--line); border-radius: 10px; text-align: center; }
+  .err { color: #a3321f; font-size: 12.5px; margin: 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="h">评价审核台（演示）</h1>
+  <button class="btn" id="lang" type="button">English</button>
+  <button class="btn" id="reset" type="button">恢复演示数据</button>
+  <p class="demo" id="demoNote"></p>
+</header>
+<main>
+  <section>
+    <div class="tabs" id="tabs"></div>
+    <div id="list" style="display:flex;flex-direction:column;gap:6px"></div>
+  </section>
+  <section id="detail"></section>
+</main>
+<script src="./reviews-store.js"></script>
+<script>
+/* 演示审核台：和网页的住户评价共用 reviews-store.js（本浏览器的本地存储）。
+   没有真实账号和密码：正式版的审核员登录、证据和评价库都在服务器上，不放进前端代码。 */
+(() => {
+  'use strict';
+  const S = window.ReviewsStore;
+  const T = {
+    zh: { h: '评价审核台（演示）', other: 'English', reset: '恢复演示数据', resetQ: '清掉这台设备上的演示评价，恢复成初始演示数据？',
+      demo: '仅演示，未提交真实申请。模拟审核员身份；数据只在这台设备的浏览器里，不连生产评价库。正式版的审核员登录和核实证据放在服务器上，不放进前端代码。',
+      tabs: { queue: '待处理', published: '已发布', closed: '未通过 / 已撤回', reports: '举报' },
+      st: { pending: '待审核', changes: '需修改', published: '已发布', rejected: '未通过', withdrawn: '已撤回' },
+      none: '这里没有内容。', pick: '从左边选一条。', demoTag: '演示内容', ok: '入住信息已核实', no: '入住信息未核实',
+      stay: '{y} 入住 · {r}', dims: { noise: '隔音', repair: '维修响应', clean: '公共卫生', net: '网络', value: '性价比' }, skip: '未评',
+      verify: '核实状态', setOk: '标为已核实', setNo: '标为未核实', verifyNote: '演示只模拟核实状态，不收集证件、合同或地址。正式版只收必要证据，核实后删除原件。',
+      reason: '处理原因（必填，作者能看到）', publish: '发布', changes: '请作者修改', reject: '不通过', needReason: '请写处理原因。',
+      same: '正面和负面评价用同一个标准：只看是否真实、原创、没有个人信息、没有辱骂或广告，不看褒贬。',
+      history: '记录', acts: { submitted: '提交', resubmitted: '修改后重新提交', published: '发布', changes: '请作者修改', rejected: '不通过', withdrawn: '作者撤回', verified: '核实入住信息', unverified: '取消核实' }, by: { author: '作者', moderator: '审核员' },
+      rep: '举报 {n} 次', repOpen: '未处理', repDone: '已处理', repReason: { personal: '包含个人信息', fake: '不像真实入住体验', abuse: '辱骂或歧视', ad: '广告', other: '其他' }, repKeep: '保留评价，关闭举报', repNote: '举报人身份不记录，也不告诉作者。', open: '查看评价',
+      home: '公寓', locked: '作者已撤回，不能再处理。' },
+    en: { h: 'Review moderation (demo)', other: '中文', reset: 'Reset demo data', resetQ: 'Clear demo reviews on this device and restore the starting demo data?',
+      demo: 'Demo only, no real submission. Simulated moderator; data stays in this browser and never reaches production review storage. In production, moderator sign-in and verification evidence live on the server, not in client code.',
+      tabs: { queue: 'To handle', published: 'Published', closed: 'Rejected / withdrawn', reports: 'Reports' },
+      st: { pending: 'Pending', changes: 'Changes requested', published: 'Published', rejected: 'Rejected', withdrawn: 'Withdrawn' },
+      none: 'Nothing here.', pick: 'Pick an item on the left.', demoTag: 'Demo content', ok: 'Tenancy verified', no: 'Tenancy not verified',
+      stay: 'Stayed {y} · {r}', dims: { noise: 'Noise insulation', repair: 'Maintenance response', clean: 'Shared-area cleanliness', net: 'Internet', value: 'Value' }, skip: 'Not rated',
+      verify: 'Verification', setOk: 'Mark verified', setNo: 'Mark not verified', verifyNote: 'The demo only simulates verification; no IDs, contracts or addresses are collected. In production, only necessary evidence is collected and originals are deleted after checking.',
+      reason: 'Reason (required; the author sees it)', publish: 'Publish', changes: 'Request edits', reject: 'Reject', needReason: 'Enter a reason.',
+      same: 'Positive and negative reviews are held to the same standard: genuine, original, no personal information, no abuse or advertising; tone does not matter.',
+      history: 'History', acts: { submitted: 'Submitted', resubmitted: 'Resubmitted after edits', published: 'Published', changes: 'Changes requested', rejected: 'Rejected', withdrawn: 'Withdrawn by author', verified: 'Tenancy verified', unverified: 'Verification removed' }, by: { author: 'author', moderator: 'moderator' },
+      rep: 'Reported {n}×', repOpen: 'Open', repDone: 'Closed', repReason: { personal: 'Personal information', fake: 'Not a genuine stay', abuse: 'Abuse or discrimination', ad: 'Advertising', other: 'Other' }, repKeep: 'Keep review, close report', repNote: 'Reporters are not recorded or disclosed to the author.', open: 'Open review',
+      home: 'Property', locked: 'Withdrawn by the author; no further action.' }
+  };
+  const rooms = { zh: { ensuite: '独立卫浴单间', studio: 'Studio', twodio: 'Twodio', shared: '共用卫浴单间', other: '其他' }, en: { ensuite: 'En-suite', studio: 'Studio', twodio: 'Twodio', shared: 'Shared bathroom', other: 'Other' } };
+  let lang = 'zh'; try { lang = localStorage.getItem('lsm-reviews-admin-lang') || (navigator.language.startsWith('zh') ? 'zh' : 'en'); } catch (_) { /* 默认中文 */ }
+  let tab = 'queue', sel = null;
+  const K = () => T[lang], $ = id => document.getElementById(id);
+  const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x != null) n.textContent = x; return n; };
+  const fmt = (s, v) => s.replace(/\{(\w+)\}/g, (_, k) => v[k] ?? '');
+  const when = iso => new Date(iso).toLocaleString(lang === 'zh' ? 'zh-CN' : 'en-GB', { dateStyle: 'medium', timeStyle: 'short' });
+  const homeName = id => id === S.DEMO_HOME.id ? S.DEMO_HOME.name[lang] : id;
+  const filters = { queue: x => ['pending', 'changes'].includes(x.status), published: x => x.status === 'published', closed: x => ['rejected', 'withdrawn'].includes(x.status) };
+
+  function draw() {
+    const k = K(); document.documentElement.lang = lang;
+    $('h').textContent = k.h; document.title = k.h; $('lang').textContent = k.other; $('reset').textContent = k.reset; $('demoNote').textContent = '⚠️ ' + k.demo;
+    const tabs = $('tabs'); tabs.replaceChildren();
+    Object.entries(k.tabs).forEach(([id, t]) => {
+      const n = id === 'reports' ? S.read().reports.filter(r => r.open).length : S.all().filter(x => x.kind === 'resident' && filters[id](x)).length;
+      const b = el('button', '', `${t} ${n}`); b.type = 'button'; b.setAttribute('aria-pressed', String(tab === id)); b.addEventListener('click', () => { tab = id; sel = null; draw(); }); tabs.append(b);
+    });
+    const list = $('list'); list.replaceChildren();
+    if (tab === 'reports') {
+      const reps = [...S.read().reports].reverse(); if (!reps.length) list.append(el('p', 'empty', k.none));
+      reps.forEach(r => { const x = S.get(r.reviewId); const b = el('button', 'item'); b.type = 'button'; b.setAttribute('aria-current', String(sel === r.reviewId));
+        b.append(el('b', '', `${k.repReason[r.reason] || r.reason} · ${r.open ? k.repOpen : k.repDone}`), el('small', '', `${when(r.at)} · ${x ? x.alias : '—'}`));
+        b.addEventListener('click', () => { sel = r.reviewId; draw(); }); list.append(b); });
+    } else {
+      const items = S.all().filter(x => x.kind === 'resident' && filters[tab](x)).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+      if (!items.length) list.append(el('p', 'empty', k.none));
+      items.forEach(x => { const b = el('button', 'item'); b.type = 'button'; b.setAttribute('aria-current', String(sel === x.id));
+        b.append(el('b', '', `${x.alias} · ${k.st[x.status]}`), el('small', '', `${homeName(x.homeId)} · ${when(x.updatedAt || x.createdAt)}${x.reports ? ' · ' + fmt(k.rep, { n: x.reports }) : ''}`));
+        b.addEventListener('click', () => { sel = x.id; draw(); }); list.append(b); });
+    }
+    detail();
+  }
+  function detail() {
+    const k = K(), d = $('detail'); d.replaceChildren();
+    const x = sel && S.get(sel); if (!x) { d.append(el('p', 'empty', k.pick)); return; }
+    d.append(el('h2', '', `${x.alias} · ${k.st[x.status]}`));
+    const meta = el('div', 'row');
+    if (x.demo) meta.append(el('span', 'badge warn', k.demoTag));
+    meta.append(el('span', 'badge ' + (x.verified ? 'ok' : 'no'), x.verified ? k.ok : k.no), el('span', 'muted', `${k.home}: ${homeName(x.homeId)} · ${fmt(k.stay, { y: x.stayYear, r: rooms[lang][x.roomType] || x.roomType })}`));
+    d.append(meta);
+    d.append(el('div', 'muted', S.DIMS.map(id => `${k.dims[id]} ${typeof x.scores[id] === 'number' ? x.scores[id] + '/5' : k.skip}`).join(' · ')));
+    d.append(el('p', 'text', x.text));
+    // 核实
+    const v = el('div', 'row'); v.append(el('b', '', k.verify));
+    const vb = el('button', 'btn', x.verified ? k.setNo : k.setOk); vb.type = 'button'; vb.disabled = x.status === 'withdrawn';
+    vb.addEventListener('click', () => { S.setVerified(x.id, !x.verified); draw(); }); v.append(vb); d.append(v, el('p', 'muted', k.verifyNote));
+    // 处理
+    if (x.status === 'withdrawn') d.append(el('p', 'muted', k.locked));
+    else {
+      const lab = el('label', '', k.reason), ta = el('textarea'); lab.append(ta); d.append(lab);
+      const err = el('p', 'err'); err.hidden = true;
+      const row = el('div', 'row');
+      [['publish', 'pub'], ['changes', 'chg'], ['reject', 'rej']].forEach(([a, c]) => { const b = el('button', 'btn ' + c, k[a]); b.type = 'button';
+        b.addEventListener('click', () => { if (!S.moderate(x.id, a, ta.value)) { err.textContent = k.needReason; err.hidden = false; ta.focus(); return; } draw(); }); row.append(b); });
+      d.append(row, err, el('p', 'muted', k.same));
+    }
+    // 举报
+    const reps = S.read().reports.filter(r => r.reviewId === x.id);
+    if (reps.length) {
+      d.append(el('h2', '', fmt(k.rep, { n: reps.length })));
+      reps.forEach(r => { const row = el('div', 'row'); row.append(el('span', '', `${when(r.at)} · ${k.repReason[r.reason] || r.reason} · ${r.open ? k.repOpen : k.repDone}`));
+        if (r.open) { const b = el('button', 'btn', k.repKeep); b.type = 'button'; b.addEventListener('click', () => { S.resolveReport(r.id, 'kept'); draw(); }); row.append(b); }
+        d.append(row); });
+      d.append(el('p', 'muted', k.repNote));
+    }
+    d.append(el('h2', '', k.history));
+    const ol = el('ol'); x.history.forEach(hh => ol.append(el('li', '', `${when(hh.at)} · ${k.acts[hh.action] || hh.action} · ${k.by[hh.by] || hh.by}${hh.reason ? ' · ' + hh.reason : ''}`))); d.append(ol);
+  }
+  $('lang').addEventListener('click', () => { lang = lang === 'zh' ? 'en' : 'zh'; try { localStorage.setItem('lsm-reviews-admin-lang', lang); } catch (_) { /* 只这次 */ } draw(); });
+  $('reset').addEventListener('click', () => { if (confirm(K().resetQ)) { S.reset(); sel = null; draw(); } });
+  S.on(draw);
+  draw();
+})();
+</script>
+</body>
+</html>

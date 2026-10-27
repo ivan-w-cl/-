@@ -1,0 +1,106 @@
+/* 周边与评价面板（local-panel.js）、住户评价（resident-reviews.js）。电脑右侧侧栏，手机全屏；纸张风格，和其他工具同一套颜色。 */
+.lp-entry { margin: 2px 0 12px; display: flex; flex-direction: column; gap: 6px; }
+.lp-entry h4 { margin: 0; font-family: var(--hand, cursive); font-weight: normal; font-size: 15px; letter-spacing: .12em; color: #b5462f; }
+.lp-erow { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+.lp { position: fixed; z-index: 60; top: 0; right: 0; bottom: 0; width: min(440px, 100vw); background: #fffaf0; color: #3b2a1a; border-left: 3px solid #3b2a1a; box-shadow: -10px 0 30px rgba(40, 28, 16, .25); display: flex; flex-direction: column; overscroll-behavior: contain; }
+.lp[hidden] { display: none; }
+.lp-head { display: flex; align-items: flex-start; gap: 10px; padding: 14px 16px 6px; flex: none; }
+.lp-titles { flex: 1; min-width: 0; }
+.lp-title { margin: 0; font-family: var(--display, cursive); font-weight: normal; font-size: 24px; line-height: 1.1; overflow-wrap: anywhere; }
+.lp-pc { margin: 4px 0 0; font-size: 12.5px; color: #6e5538; }
+.lp-head .x { width: 40px; height: 40px; border: 0; background: none; font-size: 28px; line-height: 1; color: #3b2a1a; cursor: pointer; flex: none; }
+.lp-back { align-self: flex-start; margin: 0 16px; flex: none; }
+.lp-tabs { padding: 10px 16px 10px; border-bottom: 2px dashed #dcc8a0; }
+.lp-body { flex: 1; min-height: 0; overflow-y: auto; padding: 12px 16px 20px; display: flex; flex-direction: column; gap: 12px; font-size: 13.5px; line-height: 1.5; }
+.lp-body > * { flex: none; }
+.lp-sd { flex: none; display: flex; gap: 8px; align-items: center; padding: 8px 16px; border-top: 2px dashed #dcc8a0; background: #fff3b8; font-size: 13px; }
+.lp-sd select { flex: 1; font: inherit; padding: 2px 4px; }
+
+.lp-demo { margin: 0; padding: 6px 10px; border-radius: 8px; background: #fff3b8; border: 1.5px dashed #b5462f; font-size: 12.5px; color: #7a2e1c; }
+.lp-state { margin: 0; padding: 6px 10px; border-radius: 8px; background: #eef3e3; font-size: 12.5px; }
+.lp-state.warn { background: #fbe6d6; color: #7a2e1c; }
+.lp-empty { padding: 16px; border: 2px dashed #dcc8a0; border-radius: 12px; text-align: center; color: #6e5538; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.lp-empty p { margin: 0; }
+.lp-loading { display: flex; gap: 10px; align-items: center; color: #6e5538; padding: 12px 0; }
+.lp-loading i { width: 16px; height: 16px; border-radius: 50%; border: 3px solid #dcc8a0; border-top-color: #b5462f; animation: lpspin .8s linear infinite; }
+@keyframes lpspin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .lp-loading i { animation: none; } }
+
+.lp-meta { display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; margin: 0; font-size: 12.5px; }
+.lp-meta dt { color: #6e5538; }
+.lp-meta dd { margin: 0; }
+.lp-card { border: 2px solid #3b2a1a; border-radius: 12px; background: #fff; padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
+.lp-ptop { flex-direction: row; align-items: center; gap: 12px; }
+.lp-big { flex: 1; display: flex; flex-direction: column; }
+.lp-big strong { font-family: var(--display, cursive); font-weight: normal; font-size: 44px; line-height: 1; }
+.lp-big span { font-size: 14px; }
+.lp-big small { font-size: 11.5px; color: #6e5538; }
+.lp-area { margin: 0; width: 120px; flex: none; text-align: center; }
+.lp-area svg { width: 96px; height: 96px; }
+.lp-area figcaption { font-size: 10.5px; line-height: 1.3; color: #6e5538; }
+.lp-h { font-family: var(--hand, cursive); font-weight: normal; font-size: 15px; color: #b5462f; }
+.lp-bars { display: flex; flex-direction: column; gap: 6px; }
+.lp-bar { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) auto; gap: 8px; align-items: center; font-size: 12.5px; }
+.lp-bar i { height: 10px; background: #f1e6cc; border-radius: 5px; overflow: hidden; }
+.lp-bar i b { display: block; height: 100%; background: #2c5c8a; border-radius: 5px; }
+.lp-bar em { font-style: normal; color: #6e5538; white-space: nowrap; }
+.lp-notes { margin: 0; padding-left: 18px; font-size: 12px; color: #6e5538; display: flex; flex-direction: column; gap: 3px; }
+.lp-miss { margin: 0; font-size: 12px; color: #6e5538; }
+.lp-src { display: flex; flex-direction: column; gap: 2px; padding-top: 8px; border-top: 2px dashed #dcc8a0; font-size: 11.5px; color: #6e5538; }
+.lp-src a, .lp-miss a, .lp-food a { color: #974128; }
+
+.lp-fctrl { display: flex; flex-direction: column; gap: 8px; position: sticky; top: -12px; background: #fffaf0; padding: 4px 0 6px; z-index: 1; }
+.lp-fctrl input { font: inherit; padding: 6px 10px; border: 2px solid #3b2a1a; border-radius: 10px; background: #fff; }
+.lp-flist { display: flex; flex-direction: column; gap: 8px; }
+.lp-flist > * { flex: none; }
+.lp-count { margin: 0; font-size: 12.5px; color: #6e5538; }
+.lp-food { display: flex; gap: 10px; border: 2px solid #3b2a1a; border-radius: 12px; background: #fff; padding: 8px 10px; }
+.lp-fsa { flex: none; width: 62px; border-radius: 10px; padding: 4px; text-align: center; display: flex; flex-direction: column; justify-content: center; background: #1f7a4d; color: #fff; }
+.lp-fsa small { font-size: 9.5px; line-height: 1.2; }
+.lp-fsa strong { font-size: 24px; line-height: 1.1; }
+.lp-fsa em { font-style: normal; font-size: 10px; line-height: 1.2; }
+.lp-fsa.r3 { background: #6c8f2f; } .lp-fsa.r2 { background: #b07a12; } .lp-fsa.r1, .lp-fsa.r0 { background: #a3321f; }
+.lp-fsa.na { background: #e9dfc8; color: #3b2a1a; }
+.lp-fl { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.lp-fl b { font-size: 14px; overflow-wrap: anywhere; }
+.lp-fl small { font-size: 11.5px; color: #6e5538; overflow-wrap: anywhere; }
+.lp-cn { margin-left: 6px; font-size: 11px; font-weight: normal; padding: 0 6px; border-radius: 999px; background: #fbe6d6; color: #7a2e1c; }
+.lp-fsrc { font-size: 11.5px; align-self: flex-start; }
+.lp-pager { display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+
+/* 住户评价、团队内容 */
+.rr-sum { display: flex; flex-direction: column; gap: 6px; }
+.rr-dims { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 10px; font-size: 13px; }
+.rr-dims em { font-style: normal; color: #6e5538; }
+.rr-item { border: 2px solid #3b2a1a; border-radius: 12px; background: #fff; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; }
+.rr-item.team { background: #eef3e3; }
+.rr-item.insight { background: #eef0f7; }
+.rr-who { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12.5px; }
+.rr-who b { font-size: 14px; }
+.rr-badge { font-size: 11px; padding: 0 8px; border-radius: 999px; border: 1.5px solid currentColor; }
+.rr-badge.ok { color: #1f7a4d; } .rr-badge.no { color: #6e5538; } .rr-badge.team { color: #2c5c8a; } .rr-badge.demo { color: #a3321f; background: #fff3b8; }
+.rr-badge.st { color: #974128; }
+.rr-scores { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 12px; color: #6e5538; }
+.rr-text { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.rr-acts { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.rr-form { display: flex; flex-direction: column; gap: 10px; }
+.rr-form label { display: flex; flex-direction: column; gap: 3px; font-size: 13px; }
+.rr-form select, .rr-form textarea, .rr-form input[type=text] { font: inherit; padding: 6px 8px; border: 2px solid #3b2a1a; border-radius: 10px; background: #fff; }
+.rr-form textarea { min-height: 110px; resize: vertical; }
+.rr-dim { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; align-items: center; font-size: 13px; }
+.rr-stars { display: flex; gap: 2px; }
+.rr-stars button { width: 32px; height: 32px; border: 1.5px solid #3b2a1a; border-radius: 8px; background: #fff; cursor: pointer; font-size: 14px; }
+.rr-stars button.on { background: #f3c64a; }
+.rr-stars button.clr { width: auto; padding: 0 6px; font-size: 11.5px; }
+.rr-check { flex-direction: row !important; align-items: flex-start; gap: 8px !important; }
+.rr-ext { display: flex; flex-wrap: wrap; gap: 8px; }
+.rr-ext a { font-size: 13px; color: #974128; }
+
+@media (max-width: 640px) {
+  .lp { width: 100vw; border-left: 0; }
+  .lp-ptop { flex-direction: column; align-items: stretch; }
+  .lp-area { width: auto; display: flex; gap: 10px; align-items: center; text-align: left; }
+  .lp-area svg { width: 72px; height: 72px; flex: none; }
+}
+.lp-demohead { margin: 8px 16px 0; flex: none; }
