@@ -1,11 +1,13 @@
-/* 周边与评价面板：点开公寓后，详情里的「周边治安 / 周边餐饮 / 住户评价 / 团队探访与资料解读」都在这里打开。
+/* 周边与评价面板：点开公寓后，详情里的「安全与支持 / 周边配套 / 周边餐饮 / 住户评价 / 团队探访与资料解读」都在这里打开。
+   - 安全与支持：首屏是社区警务团队（成员、联系方式、警队公布的工作重点和社区活动）和求助渠道；警方原始记录收起来，点开才读，只写条数不画占比。
+   - 周边配套：OpenStreetMap 里直线 800 米内的超市、药店、诊所、公交站、火车站、健身房、公园、图书馆、银行、邮局。
    - 面板绑定当前公寓（名称 + 参考邮编），不用输入邮编；地图上换一栋公寓，面板跟着换；切换时丢弃上一栋迟到的响应（A1）。
    - 电脑上是右侧侧栏，手机上是全屏面板；关闭不动地图视角、语言、收藏和选房状态（A2）。
    - 数据按需读取：打开某一页时才请求，同一栋楼读过就先显示，后台更新时保留已有结果。
    - 状态：读取中 / 后台更新 / 真实零结果 / 失败（不变成 0，可重试）/ 旧数据（带日期）/ 部分结果 / 未接通（不显示数字）。
      链接加 ?demo=1 时面板底部有「状态演示」，可以逐个查看这些状态（A5），演示状态会醒目标注。
-   - 数据来源：和 consult-server 一起部署时读 /api/local/*（服务器代取 data.police.uk 和 FSA，并缓存）；没有服务器时读
-     local-snapshots/<police|food>/<公寓编号>.json 里带读取时间的真实快照；都没有就显示「数据源尚未接通」，不填任何数字。
+   - 数据来源：和 consult-server 一起部署时读 /api/local/*（服务器代取 data.police.uk、FSA 和 OpenStreetMap，并缓存）；没有服务器时读
+     local-snapshots/<police|food|neighbourhood|amenities>/<公寓编号>.json 里带读取时间的真实快照；都没有就显示「数据源尚未接通」，不填任何数字。
    住户评价、团队探访与资料解读由 resident-reviews.js 注册（LocalPanel.register）。 */
 (() => {
   'use strict';
@@ -15,8 +17,8 @@
     zh: {
       entryH: '周边与评价', mini: '📍 周边与评价', eyebrow: '周边与评价', back: '← 返回地图', close: '关闭',
       pc: '参考邮编 {p}', pcArea: '参考邮编 {p}（街区参考）',
-      tabs: { police: '周边治安', food: '周边餐饮', reviews: '住户评价', team: '团队探访与资料解读' },
-      entryDesc: { police: '警方公开的月度记录', food: '食品卫生评级 · 中餐', reviews: '本站住户匿名评价', team: '实地探访 · 有来源的解读' },
+      tabs: { safety: '安全与支持', area: '周边配套', food: '周边餐饮', reviews: '住户评价', team: '团队探访与资料解读' },
+      entryDesc: { safety: '社区警务团队 · 求助渠道', area: '超市 · 药店 · 公交 · 公园', food: '食品卫生评级 · 中餐', reviews: '本站和 Google 地图评价', team: '实地探访 · 有来源的解读' },
       loading: '正在读取…', refreshing: '后台更新中，先显示已有结果', retry: '重试', fetched: '读取时间：{t}', source: '来源', licence: '许可',
       unavailable: '数据源尚未接通，暂不显示数字。接通后这里会显示官方记录。', failed: '这次没读到数据（{e}）。没有数据不代表 0。', failedOld: '这次更新失败，下面是 {t} 读取的旧数据。',
       stale: '这是 {t} 读取的数据，正在后台更新。', partial: '只读到了部分数据，结果不完整。', demoHome: '演示公寓是虚构的，没有官方数据。',
@@ -27,6 +29,19 @@
       pNotes: ['这是警方按月公开的犯罪及反社会行为登记记录，位置已经匿名化处理，只精确到附近的参考点。', '记录发生在公寓周边，不代表发生在公寓内；数量是登记的事件数，不是受害人数。', '这些数字不能用来给公寓打「安全分」或做安全排名。'],
       pMissing: '缺报说明：个别月份可能有警队缺报或延迟，以 data.police.uk 的更新记录为准。', pMissingLink: '查看更新记录',
       pDemoShare: '{p}%',
+      // 安全与支持
+      sH: '社区警务团队', sMembers: '团队成员', sTeamNone: '这个社区暂时没有公布团队成员。', sContact: '联系：{c}', sForce: '查看这个社区的警队页面 ↗',
+      sPri: '当前工作重点（警队公布）', sPriNone: '这个社区目前没有公布工作重点。', sAction: '警队措施：', sEvents: '社区活动', sEventsNone: '近期没有公布社区活动。',
+      sHelpH: '需要帮助时', sHelp: [['紧急情况', '拨打 999'], ['非紧急报警或咨询', '拨打 101，或在警队网站上报']],
+      sLsh: '利物浦学生住房（Liverpool Student Homes）由利物浦大学、LJMU、Hope 和 LIPA 共同运营，提供免费合同检查，以及押金、维修和房东纠纷方面的建议；房源没在 LSH 登记也可以求助。', sLshLink: '了解 Liverpool Student Homes ↗',
+      sAsk: '入住前可以向公寓确认', sAskList: ['前台或管理员在岗时间', '门禁和访客登记方式', '报修渠道和一般多久上门'],
+      recH: '警方公开记录（原始数据）', recIntro: '警方按月公开的犯罪及反社会行为登记记录，点开才读取。', recOpen: '查看警方公开记录', recClose: '收起',
+      recTotal: '{m}，公寓参考点周围 1 英里（约 1.6 公里）内共登记 {n} 条记录。', recCats: '按类别（条数）',
+      recNotes: ['位置已匿名化，只精确到附近的参考点；记录不代表发生在公寓内，数量是事件数，不是受害人数。', '城市中心人流量大，登记记录通常比住宅区多，数字大小不能直接说明一栋楼是否安全。', '本站不用这些数字给公寓打「安全分」或排名。'],
+      // 周边配套
+      aH: '步行约 10 分钟范围内', aSub: '公寓参考点周围直线 800 米内', aNearest: '最近：{n} · 直线 {d}', aNone: '800 米内没有记录', aMore: '看最近 {n} 个', aLess: '收起', aUnnamed: '（没有名称）',
+      aCats: { supermarket: ['🛒', '超市和便利店'], pharmacy: ['💊', '药店'], doctors: ['🩺', '诊所'], bus: ['🚌', '公交站'], rail: ['🚆', '火车站'], gym: ['🏋️', '健身房和运动中心'], park: ['🌳', '公园'], library: ['📚', '图书馆'], bank: ['🏧', '银行和取款机'], post: ['📮', '邮局'] },
+      aNotes: ['数据来自 OpenStreetMap，由志愿者维护，可能有遗漏或过时，出发前请以地图为准。', '距离是到公寓参考点的直线距离，不是步行路线。'],
       // 餐饮
       fAll: '全部餐饮', fChinese: '中餐', fSearch: '搜索店名、地址或邮编', fNone: '没有符合条件的店。', fCount: '共 {n} 家（1 英里内）', fPage: '第 {p} / {n} 页', fPrev: '上一页', fNext: '下一页',
       fDist: '直线 {d}', fRating: '卫生等级', fDate: '评级日期 {d}', fStatus: { 'awaiting-inspection': '等待检查', 'awaiting-publication': '等待公布', exempt: '豁免评级', other: '其他状态' },
@@ -39,8 +54,8 @@
     en: {
       entryH: 'Area & reviews', mini: '📍 Area & reviews', eyebrow: 'Area & reviews', back: '← Back to map', close: 'Close',
       pc: 'Reference postcode {p}', pcArea: 'Reference postcode {p} (street-area reference)',
-      tabs: { police: 'Local police records', food: 'Nearby food', reviews: 'Resident reviews', team: 'Team visits and insights' },
-      entryDesc: { police: 'Monthly public police records', food: 'Food hygiene ratings · Chinese', reviews: 'Anonymous reviews on this site', team: 'Real visits · sourced notes' },
+      tabs: { safety: 'Safety & support', area: 'Nearby amenities', food: 'Nearby food', reviews: 'Resident reviews', team: 'Team visits and insights' },
+      entryDesc: { safety: 'Neighbourhood police team · where to get help', area: 'Shops · pharmacies · buses · parks', food: 'Food hygiene ratings · Chinese', reviews: 'Reviews here and on Google Maps', team: 'Real visits · sourced notes' },
       loading: 'Loading…', refreshing: 'Updating in the background; showing current results', retry: 'Retry', fetched: 'Retrieved: {t}', source: 'Source', licence: 'Licence',
       unavailable: 'The data source is not connected yet, so no figures are shown. Official records will appear here once it is.', failed: 'Could not load the data ({e}). Missing data is not zero.', failedOld: 'The update failed; below is data retrieved on {t}.',
       stale: 'This data was retrieved on {t} and is being updated.', partial: 'Only part of the data loaded; results are incomplete.', demoHome: 'The demo property is fictional and has no official data.',
@@ -50,6 +65,17 @@
       pNotes: ['These are monthly police records of crime and anti-social behaviour. Locations are anonymised to nearby reference points.', 'Nearby records are not necessarily incidents inside the property, and counts are incidents, not victims.', 'These figures must not be turned into a safety score or ranking for the property.'],
       pMissing: 'Missing data: some months may have late or missing returns from a force; see the data.police.uk changelog.', pMissingLink: 'View changelog',
       pDemoShare: '{p}%',
+      sH: 'Neighbourhood police team', sMembers: 'Team', sTeamNone: 'This neighbourhood has not published its team.', sContact: 'Contact: {c}', sForce: 'Open this neighbourhood on the force website ↗',
+      sPri: 'Current priorities (published by the force)', sPriNone: 'No priorities published for this neighbourhood right now.', sAction: 'Police action: ', sEvents: 'Community events', sEventsNone: 'No upcoming community events published.',
+      sHelpH: 'Getting help', sHelp: [['Emergency', 'Call 999'], ['Non-emergency report or advice', 'Call 101 or report on the force website']],
+      sLsh: 'Liverpool Student Homes, run jointly by the University of Liverpool, LJMU, Liverpool Hope and LIPA, offers free contract checks and advice on deposits, repairs and landlord disputes, even if a home is not registered with LSH.', sLshLink: 'About Liverpool Student Homes ↗',
+      sAsk: 'Questions to ask the property before moving in', sAskList: ['When reception or staff are on site', 'How door entry and visitor sign-in work', 'How to report repairs and how quickly they are usually handled'],
+      recH: 'Police records (raw data)', recIntro: 'Monthly police records of crime and anti-social behaviour, loaded only when opened.', recOpen: 'View police records', recClose: 'Hide',
+      recTotal: '{m}: {n} records within 1 mile (about 1.6 km) of the property reference point.', recCats: 'By category (number of records)',
+      recNotes: ['Locations are anonymised to nearby reference points; records are not necessarily inside the property, and counts are incidents, not victims.', 'Busy city-centre areas usually have more records than residential streets, so the figure alone does not show whether a building is safe.', 'This site does not use these figures to score or rank properties.'],
+      aH: 'Within about a 10-minute walk', aSub: 'Within 800 m in a straight line of the property reference point', aNearest: 'Nearest: {n} · {d} straight-line', aNone: 'None recorded within 800 m', aMore: 'Show nearest {n}', aLess: 'Hide', aUnnamed: '(no name)',
+      aCats: { supermarket: ['🛒', 'Supermarkets and convenience shops'], pharmacy: ['💊', 'Pharmacies'], doctors: ['🩺', 'GP surgeries and clinics'], bus: ['🚌', 'Bus stops'], rail: ['🚆', 'Train stations'], gym: ['🏋️', 'Gyms and sports centres'], park: ['🌳', 'Parks'], library: ['📚', 'Libraries'], bank: ['🏧', 'Banks and cash machines'], post: ['📮', 'Post offices'] },
+      aNotes: ['Data from OpenStreetMap, maintained by volunteers; it may be incomplete or out of date, so check a map before you go.', 'Distances are straight-line from the property reference point, not walking routes.'],
       fAll: 'All food', fChinese: 'Chinese', fSearch: 'Search name, address or postcode', fNone: 'No matching venues.', fCount: '{n} venues within 1 mile', fPage: 'Page {p} of {n}', fPrev: 'Previous', fNext: 'Next',
       fDist: '{d} straight-line', fRating: 'Hygiene rating', fDate: 'Rated {d}', fStatus: { 'awaiting-inspection': 'Awaiting inspection', 'awaiting-publication': 'Awaiting publication', exempt: 'Exempt', other: 'Other status' },
       fNotes: ['Ratings from 0 to 5 describe food hygiene, not taste or customer stars.', 'Distances are straight-line from the property reference point, not walking distances.', 'A hygiene record does not guarantee that a venue is still trading.'],
@@ -101,7 +127,7 @@
 
   /* ---------- 面板外壳 ---------- */
   const panels = {};   // 其他模块注册的页：reviews、team
-  let root = null, cur = null, tab = 'police', reqSeq = 0, ctl = null, sdState = 'real', demoFrom = null;
+  let root = null, cur = null, tab = 'safety', reqSeq = 0, ctl = null, sdState = 'real', demoFrom = null;
   function open(home, which) {
     if (!home) return;
     if (which) tab = which;
@@ -151,7 +177,7 @@
     if (ctl) ctl.abort(); ctl = new AbortController(); const id = ++reqSeq;
     b.replaceChildren(); b.scrollTop = 0;
     const ctx = { home: cur, signal: ctl.signal, live: () => id === reqSeq && root && !root.hidden, body: b };
-    if (tab === 'police') police(ctx); else if (tab === 'food') food(ctx, { cuisine: 'all', q: '', page: 1 });
+    if (tab === 'safety') safety(ctx); else if (tab === 'area') area(ctx); else if (tab === 'food') food(ctx, { cuisine: 'all', q: '', page: 1 });
     else if (panels[tab]) panels[tab](ctx); else b.append(el('p', 'bt-note', '…'));
   }
   /* 状态演示（?demo=1） */
@@ -168,7 +194,7 @@
     if (sdState === 'loading') return { status: 'loading', demoState: true };
     if (sdState === 'unavailable') return { status: 'unavailable', demoState: true };
     if (sdState === 'failed') return { status: 'failed', error: 'timeout', demoState: true };
-    if (sdState === 'zero') return { ...base, status: 'ok', total: 0, categories: [], items: [], totalAll: 0, totalChinese: 0, pages: 1, page: 1, fetchedAt: r.fetchedAt || new Date().toISOString(), month: r.month || '2026-08' };
+    if (sdState === 'zero') return { ...base, status: 'ok', total: 0, categories: [], team: [], priorities: [], events: [], items: [], totalAll: 0, totalChinese: 0, pages: 1, page: 1, fetchedAt: r.fetchedAt || new Date().toISOString(), month: r.month || '2026-08' };
     if (r.status === 'unavailable' || r.status === 'failed') return r;   // 没有真实数据时，其他演示状态没有东西可显示
     if (sdState === 'stale') return { ...base, status: 'stale', refreshPending: true };
     if (sdState === 'refreshing') return { ...base, refreshPending: true };
@@ -198,56 +224,111 @@
     return f;
   }
 
-  /* ---------- 周边治安 ---------- */
-  async function police(ctx) {
+  const distTxt = m => m < 1000 ? m + (zh() ? ' 米' : ' m') : (m / 1000).toFixed(2) + (zh() ? ' 公里' : ' km');
+  const OGL_URL = 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/';
+  /* 一块数据：先显示读过的结果，再读新的；迟到的响应不覆盖（A1）；失败不变成 0 */
+  async function section(ctx, kind, box, render) {
+    const K = k(), key = kind + ':' + ctx.home.id, had = mem.get(key);
+    const paint = (r, note) => {
+      box.replaceChildren();
+      if (r.status === 'loading') { box.append(loadingBox()); return; }
+      if (r.status === 'unavailable' || r.status === 'failed') { box.append(errorBox(r, () => section(ctx, kind, box, render))); return; }
+      if (note) box.append(el('p', 'lp-state warn', note));
+      stateBanner(r, box); render(r, box);
+    };
+    if (had) paint(applyDemo({ ...had, refreshPending: true })); else box.replaceChildren(loadingBox());
+    if (demoMode && sdState === 'loading') { box.replaceChildren(el('p', 'lp-demo', '⚠️ ' + K.sdNote), loadingBox()); return; }
+    let r;
+    try { r = await load(kind, ctx.home, {}, ctx.signal); } catch (e) { return; }   // 已取消（换了公寓）
+    if (!ctx.live()) return;
+    if (r.status === 'ok' || r.status === 'stale' || r.status === 'partial') mem.set(key, r);
+    else if (r.status === 'failed' && had) { paint(applyDemo({ ...had }), fmt(K.failedOld, { t: when(had.fetchedAt) })); return; }
+    paint(applyDemo(r));
+  }
+
+  /* ---------- 安全与支持：社区警务团队 + 求助渠道；警方原始记录收起来，点开才读 ---------- */
+  function safety(ctx) {
+    const K = k(), b = ctx.body;
+    if (ctx.home.demo) { b.append(el('div', 'lp-empty', K.demoHome), helpCard()); return; }
+    const team = el('div', 'lp-sec'); b.append(team); section(ctx, 'neighbourhood', team, renderTeam);
+    b.append(helpCard());
+    const rec = el('section', 'lp-card'), box = el('div', 'lp-sec'), t = btn('bt-btn alt', K.recOpen);
+    rec.append(el('b', 'lp-h', K.recH), el('p', 'bt-note', K.recIntro), t, box); box.hidden = true;
+    t.addEventListener('click', () => { box.hidden = !box.hidden; t.textContent = box.hidden ? K.recOpen : K.recClose; if (!box.hidden && !box.childNodes.length) section(ctx, 'police', box, renderRecords); });
+    b.append(rec);
+  }
+  function renderTeam(r, box) {
+    const K = k(), c = el('section', 'lp-card');
+    c.append(el('b', 'lp-h', K.sH), el('strong', 'lp-nb', r.name || '—'), el('span', 'bt-note', r.forceName || ''));
+    if (r.team && r.team.length) { const ul = el('ul', 'lp-plain'); r.team.forEach(p => ul.append(el('li', '', [p.rank, p.name].filter(Boolean).join(' · ')))); c.append(el('small', 'lp-sub', K.sMembers), ul); }
+    else c.append(el('p', 'bt-note', K.sTeamNone));
+    const ct = [r.contact && r.contact.telephone, r.contact && r.contact.email].filter(Boolean).join(' · ');
+    if (ct) c.append(el('p', 'bt-note', fmt(K.sContact, { c: ct })));
+    if (r.url) c.append(a(K.sForce, r.url));
+    const pri = el('section', 'lp-card'); pri.append(el('b', 'lp-h', K.sPri));
+    if (!r.priorities || !r.priorities.length) pri.append(el('p', 'bt-note', K.sPriNone));
+    (r.priorities || []).forEach(x => {
+      const it = el('div', 'lp-pri'); it.append(el('p', 'lp-pri-i', clip(x.issue)));
+      if (x.action) { const ac = el('p', 'bt-note'); ac.append(el('b', '', K.sAction), clip(x.action)); it.append(ac); }
+      if (x.actionDate || x.issueDate) it.append(el('small', 'bt-note', x.actionDate || x.issueDate));
+      pri.append(it);
+    });
+    const ev = el('section', 'lp-card'); ev.append(el('b', 'lp-h', K.sEvents));
+    if (!r.events || !r.events.length) ev.append(el('p', 'bt-note', K.sEventsNone));
+    (r.events || []).forEach(x => ev.append(el('p', 'lp-ev', [x.title, x.start ? when(x.start) : '', x.address].filter(Boolean).join(' · '))));
+    box.append(c, pri, ev, footer(r, [[K.source, 'data.police.uk', r.sourceUrl || 'https://data.police.uk/'], [K.licence, 'Open Government Licence v3.0', OGL_URL]]));
+  }
+  const clip = t => { t = String(t || ''); return t.length > 320 ? t.slice(0, 317) + '…' : t; };
+  function helpCard() {
+    const K = k(), c = el('section', 'lp-card lp-help');
+    c.append(el('b', 'lp-h', K.sHelpH));
+    const dl = el('dl', 'lp-meta'); K.sHelp.forEach(([dt, dd]) => dl.append(el('dt', '', dt), el('dd', '', dd))); c.append(dl);
+    c.append(el('p', 'bt-note', K.sLsh), a(K.sLshLink, 'https://www.liverpool.ac.uk/accommodation/find-accommodation/liverpool-student-homes/'));
+    const ul = el('ul', 'lp-notes'); K.sAskList.forEach(x => ul.append(el('li', '', x)));
+    c.append(el('small', 'lp-sub', K.sAsk), ul);
+    return c;
+  }
+  /* 警方原始记录：只写月份、范围、总数和各类条数，不画占比 */
+  function renderRecords(r, box) {
+    const K = k();
+    box.append(el('p', '', fmt(K.recTotal, { m: monthName(r.month), n: r.total })));
+    if (!r.total) box.append(el('p', 'lp-state', K.pZero));
+    else {
+      const dl = el('dl', 'lp-meta lp-cats'); (r.categories || []).forEach(c => dl.append(el('dt', '', zh() ? c.nameZh || c.name : c.name), el('dd', '', String(c.count))));
+      box.append(el('small', 'lp-sub', K.recCats), dl);
+    }
+    const notes = el('ul', 'lp-notes'); K.recNotes.forEach(n => notes.append(el('li', '', n))); box.append(notes);
+    const miss = el('p', 'lp-miss'); miss.append(K.pMissing + ' '); miss.append(a(K.pMissingLink, r.missingDataUrl || 'https://data.police.uk/changelog/')); box.append(miss);
+    box.append(footer(r, [[K.source, 'data.police.uk', r.sourceUrl || 'https://data.police.uk/'], [K.licence, (r.licence && r.licence.name) || 'Open Government Licence v3.0', (r.licence && r.licence.url) || OGL_URL]]));
+  }
+
+  /* ---------- 周边配套（OpenStreetMap）---------- */
+  function area(ctx) {
     const K = k(), b = ctx.body;
     if (ctx.home.demo) { b.append(el('div', 'lp-empty', K.demoHome)); return; }
-    const key = 'police:' + ctx.home.id, had = mem.get(key);
-    if (had) renderPolice(ctx, applyDemo({ ...had, refreshPending: true }));
-    else b.append(loadingBox());
-    if (demoMode && sdState === 'loading') { b.replaceChildren(el('p', 'lp-demo', '⚠️ ' + K.sdNote), loadingBox()); return; }
-    let r;
-    try { r = await load('police', ctx.home, {}, ctx.signal); } catch (e) { return; }   // 已取消（换了公寓）
-    if (!ctx.live()) return;   // A1：迟到的响应不覆盖当前公寓
-    if (r.status === 'ok' || r.status === 'stale') mem.set(key, r);
-    else if (r.status === 'failed' && had) { renderPolice(ctx, applyDemo({ ...had }), fmt(K.failedOld, { t: when(had.fetchedAt) })); return; }
-    renderPolice(ctx, applyDemo(r));
+    const box = el('div', 'lp-sec'); b.append(box); section(ctx, 'amenities', box, renderArea);
   }
-  function renderPolice(ctx, r, note) {
-    const K = k(), b = ctx.body; b.replaceChildren();
-    if (r.status === 'loading') { b.append(loadingBox()); return; }
-    if (r.status === 'unavailable' || r.status === 'failed') { b.append(errorBox(r, () => draw())); return; }
-    if (note) b.append(el('p', 'lp-state warn', note));
-    stateBanner(r, b);
-    const meta = el('dl', 'lp-meta');
-    [[K.pMonth, monthName(r.month)], [K.pRadius, K.pRadiusV], [K.pCenter, r.centerBasis === 'street-area' || /houses/.test(ctx.home.id) ? K.pCenterS : K.pCenterB]].forEach(([dt, dd]) => meta.append(el('dt', '', dt), el('dd', '', dd)));
-    const top = el('section', 'lp-card lp-ptop');
-    const big = el('div', 'lp-big'); big.append(el('strong', '', String(r.total)), el('span', '', K.pTotal), el('small', '', K.pTotalSub));
-    top.append(big, areaSvg(K.pArea));
-    b.append(meta, top);
-    if (!r.total) { b.append(el('p', 'lp-state', K.pZero)); }
-    else {
-      const cats = r.categories || [], list = el('section', 'lp-card');
-      list.append(el('b', 'lp-h', K.pTop));
-      const rows = el('div', 'lp-bars'); list.append(rows);
-      const drawRows = all => { rows.replaceChildren(); (all ? cats : cats.slice(0, 3)).forEach(c => { const row = el('div', 'lp-bar'), tr = el('i'), f = el('b'); f.style.width = (c.share * 100).toFixed(1) + '%'; tr.append(f); row.append(el('span', '', zh() ? c.nameZh || c.name : c.name), tr, el('em', '', `${c.count} · ${(c.share * 100).toFixed(1)}%`)); rows.append(row); }); };
-      drawRows(false);
-      if (cats.length > 3) { let all = false; const t = btn('bt-link', fmt(K.pAll, { n: cats.length })); t.addEventListener('click', () => { all = !all; drawRows(all); t.textContent = all ? K.pLess : fmt(K.pAll, { n: cats.length }); }); list.append(t); }
-      b.append(list);
-    }
-    const notes = el('ul', 'lp-notes'); K.pNotes.forEach(n => notes.append(el('li', '', n))); b.append(notes);
-    const miss = el('p', 'lp-miss'); miss.append(K.pMissing + ' '); miss.append(a(K.pMissingLink, r.missingDataUrl || 'https://data.police.uk/changelog/')); b.append(miss);
-    b.append(footer(r, [[K.source, 'data.police.uk', r.sourceUrl || 'https://data.police.uk/'], [K.licence, (r.licence && r.licence.name) || 'Open Government Licence v3.0', (r.licence && r.licence.url) || 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/']]));
-  }
-  /* 范围示意：一个圆圈 + 中心点，没有任何案件点位 */
-  function areaSvg(label) {
-    const wrap = el('figure', 'lp-area'), NS = 'http://www.w3.org/2000/svg', svg = document.createElementNS(NS, 'svg');
-    svg.setAttribute('viewBox', '0 0 120 120'); svg.setAttribute('aria-hidden', 'true');
-    const m = (t, at) => { const n = document.createElementNS(NS, t); Object.entries(at).forEach(([x, y]) => n.setAttribute(x, y)); svg.append(n); };
-    m('circle', { cx: 60, cy: 60, r: 52, fill: 'rgba(181,70,47,.10)', stroke: '#b5462f', 'stroke-width': 2, 'stroke-dasharray': '6 5' });
-    m('circle', { cx: 60, cy: 60, r: 6, fill: '#2c5c8a', stroke: '#fffaf0', 'stroke-width': 2 });
-    m('text', { x: 60, y: 20, 'text-anchor': 'middle', 'font-size': 9, fill: '#7a6650' }); svg.lastChild.textContent = '1 mi';
-    wrap.append(svg, el('figcaption', '', label)); return wrap;
+  function renderArea(r, box) {
+    const K = k(), by = new Map((r.categories || []).map(c => [c.id, c]));
+    box.append(el('b', 'lp-h', K.aH), el('span', 'bt-note', K.aSub));
+    const grid = el('div', 'lp-am');
+    Object.entries(K.aCats).forEach(([id, [icon, label]]) => {
+      const c = by.get(id) || { count: 0, nearest: [] }, card = el('article', 'lp-amc' + (c.count ? '' : ' none'));
+      const head = el('div', 'lp-amh'); head.append(el('span', 'lp-ami', icon), el('b', '', label), el('strong', '', String(c.count)));
+      card.append(head);
+      const n0 = c.nearest && c.nearest[0];
+      card.append(el('small', 'bt-note', n0 ? fmt(K.aNearest, { n: n0.name || K.aUnnamed, d: distTxt(n0.distanceMeters) }) : K.aNone));
+      if (c.nearest && c.nearest.length > 1) {
+        const ul = el('ul', 'lp-plain'); ul.hidden = true;
+        c.nearest.forEach(x => { const li = el('li'); li.append(a((x.name || K.aUnnamed) + ' ↗', x.osmUrl), ' · ' + distTxt(x.distanceMeters)); ul.append(li); });
+        const t = btn('bt-link', fmt(K.aMore, { n: c.nearest.length })); t.addEventListener('click', () => { ul.hidden = !ul.hidden; t.textContent = ul.hidden ? fmt(K.aMore, { n: c.nearest.length }) : K.aLess; });
+        card.append(t, ul);
+      }
+      grid.append(card);
+    });
+    box.append(grid);
+    const notes = el('ul', 'lp-notes'); K.aNotes.forEach(n => notes.append(el('li', '', n))); box.append(notes);
+    box.append(footer(r, [[K.source, 'OpenStreetMap', r.sourceUrl || 'https://www.openstreetmap.org/'], [K.licence, (r.licence && r.licence.name) || 'ODbL · © OpenStreetMap contributors', (r.licence && r.licence.url) || 'https://www.openstreetmap.org/copyright']]));
   }
 
   /* ---------- 周边餐饮 ---------- */

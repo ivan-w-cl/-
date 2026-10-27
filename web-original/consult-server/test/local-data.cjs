@@ -20,6 +20,17 @@ const json = (o, status = 200) => ({ ok: status < 400, status, json: async () =>
       if (url.includes('businessTypeId=7844')) return json({ establishments: [est(201, 'Noodle Bar', 'Exempt', 53.407, -2.969, 'L3 5XX'), est(102, 'Golden Dragon', '5', 53.409, -2.972, 'L3 8AA')] });
       return json({ establishments: [est(301, 'The Pub', 'AwaitingPublication', 53.4075, -2.971, 'L3 5YY')] });
     }
+    if (url.includes('locate-neighbourhood')) return json({ force: 'merseyside', neighbourhood: 'CC01' });
+    if (url.endsWith('/merseyside/CC01')) return json({ name: 'City Centre', url_force: 'https://www.merseyside.police.uk/a/your-area/', contact_details: { telephone: '101', email: 'cc@example.police.uk' } });
+    if (url.endsWith('/CC01/people')) return json([{ name: 'A. Officer', rank: 'Sergeant' }]);
+    if (url.endsWith('/CC01/priorities')) { if (mode === 'partial') return json({}, 500); return json([{ issue: '<p>Bike theft near campus</p>', 'issue-date': '2026-09-01T00:00:00', action: '<p>Extra patrols &amp; bike marking</p>', 'action-date': '2026-09-20T00:00:00' }]); }
+    if (url.endsWith('/CC01/events')) return json([{ title: 'Freshers safety stall', type: 'meeting', start_date: '2026-10-01T12:00:00', address: 'Guild' }]);
+    if (url.includes('/forces/merseyside')) return json({ name: 'Merseyside Police' });
+    if (url.includes('overpass')) return json({ elements: [
+      { type: 'node', id: 1, lat: 53.4084, lon: -2.9708, tags: { shop: 'supermarket', name: 'Near Shop' } },
+      { type: 'way', id: 2, center: { lat: 53.4100, lon: -2.9700 }, tags: { shop: 'convenience', name: 'Far Shop' } },
+      { type: 'node', id: 3, lat: 53.4084, lon: -2.9709, tags: { highway: 'bus_stop', name: 'Stop A' } },
+      { type: 'node', id: 4, lat: 53.50, lon: -2.90, tags: { amenity: 'pharmacy', name: 'Too far' } }] });
     throw new Error('unexpected ' + url);
   };
   const chinese = [{ fhrsId: 102, name: 'Golden Dragon', postcode: 'L3 8AA', verifiedUrl: 'https://example.com/golden-dragon', verifiedAt: '2026-10-27' }, { fhrsId: 201, name: 'Noodle Bar', postcode: 'L1 1AA' }];
@@ -66,6 +77,18 @@ const json = (o, status = 200) => ({ ok: status < 400, status, json: async () =>
   // 部分结果：某一类读取失败 → partial
   mode = 'partial'; f = await L.food(other); assert.strictEqual(f.status, 'partial'); assert.strictEqual(f.coverage, 'partial'); assert(f.items.length > 0);
 
+  // 社区警务团队：去掉 HTML，带联系方式；工作重点读不到时是 partial
+  mode = 'ok'; let n = await L.neighbourhood(home);
+  assert.strictEqual(n.status, 'ok'); assert.strictEqual(n.forceName, 'Merseyside Police'); assert.strictEqual(n.name, 'City Centre'); assert.strictEqual(n.contact.telephone, '101');
+  assert.strictEqual(n.priorities[0].issue, 'Bike theft near campus'); assert.strictEqual(n.priorities[0].action, 'Extra patrols & bike marking'); assert.strictEqual(n.events.length, 1); assert(n.licence.name.includes('Open Government'));
+  mode = 'partial'; n = await L.neighbourhood(other); assert.strictEqual(n.status, 'partial'); assert.deepStrictEqual(n.priorities, []);
+  mode = 'down'; n = await L.neighbourhood(L.homes.find(h => h.id === 'capital-gate')); assert.strictEqual(n.status, 'failed');
+  // 周边配套：800 米内，按距离排序，超出范围的不算，带 OSM 署名
+  mode = 'ok'; const am = await L.amenities(home);
+  assert.strictEqual(am.status, 'ok'); assert.strictEqual(am.radiusMeters, 800); assert(am.licence.name.includes('OpenStreetMap'));
+  const sm = am.categories.find(c => c.id === 'supermarket'); assert.strictEqual(sm.count, 2); assert.strictEqual(sm.nearest[0].name, 'Near Shop'); assert(sm.nearest[0].distanceMeters <= sm.nearest[1].distanceMeters);
+  assert.strictEqual(am.categories.find(c => c.id === 'pharmacy').count, 0); assert.strictEqual(am.categories.find(c => c.id === 'bus').count, 1);
+
   // 未接通
   const off = createLocalData({ dataDir: fs.mkdtempSync(path.join(os.tmpdir(), 'local-off-')), fetchImpl, env: { LOCAL_DATA: 'off' }, log: { error() {} } });
   assert.strictEqual((await off.police(home)).status, 'unavailable');
@@ -76,6 +99,7 @@ const json = (o, status = 200) => ({ ok: status < 400, status, json: async () =>
   await api({ method: 'GET' }, {}, new URL('http://x/api/local/police?homeId=https://evil.example'));
   await api({ method: 'GET' }, {}, new URL('http://x/api/local/police?homeId=iq-great-newton-house'));
   assert.strictEqual(sent[0][0], 400); assert.strictEqual(sent[1][0], 200); assert.strictEqual(sent[1][1].homeId, 'iq-great-newton-house');
+  await api({ method: 'GET' }, {}, new URL('http://x/api/local/amenities?homeId=iq-great-newton-house')); assert.strictEqual(sent[2][0], 200); assert.strictEqual(sent[2][1].radiusMeters, 800);
   await L.flush(); assert(fs.existsSync(path.join(dataDir, 'local-cache.json')));
-  console.log('PASS local data: police sums/shares, cache, street-area basis, failure is not zero, valid zero, stale + background refresh, FSA one-mile/sort/dedupe, zero rating kept, unrated statuses, Chinese match by FHRSID + postcode, search, pagination, partial, unavailable, known homes only');
+  console.log('PASS local data: neighbourhood team (HTML stripped, partial, failed), amenities within 800 m (sorted, out of range dropped, OSM attribution), police sums/shares, cache, street-area basis, failure is not zero, valid zero, stale + background refresh, FSA one-mile/sort/dedupe, zero rating kept, unrated statuses, Chinese match by FHRSID + postcode, search, pagination, partial, unavailable, known homes only');
 })().catch(e => { console.error('FAIL local data', e); process.exit(1); });

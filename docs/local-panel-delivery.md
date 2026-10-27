@@ -128,3 +128,33 @@ Automated tests: `cd web-original/consult-server && npm test` (includes `test/lo
 ### 5. Changed files
 
 See the table in the Chinese section. Price, consultation, commute, yearly cost and budget search logic is unchanged. New copy is in Chinese and English only.
+
+## 2026-10-29 更新：安全与支持、周边配套、Google 地图评价 / Update: Safety & support, Nearby amenities, Google Maps reviews
+
+### 中文
+
+团队反馈：警方的犯罪记录让每栋公寓看起来都有问题。这次改成先展示"有人在管、出事找谁"，再给配套信息；原始记录仍然保留，但收起来。
+
+| 页面 | 改动 | 数据来源（都不需要授权，注明出处即可） |
+| --- | --- | --- |
+| 安全与支持（原「周边治安」） | 首屏：社区警务团队（成员、联系方式、警队公布的工作重点、社区活动）+ 求助渠道（999 / 101、Liverpool Student Homes 免费合同检查和纠纷帮助、入住前可以问公寓的 3 个问题）。警方原始记录收起来，点开才读取，只写月份、总数和各类条数，**不再显示占比**，并说明市中心人流大、记录通常更多 | data.police.uk 社区接口和街头记录（OGL v3）；LSH 介绍来自利物浦大学官网 |
+| 周边配套（新增） | 直线 800 米（步行约 10 分钟）内的超市和便利店、药店、诊所、公交站、火车站、健身房、公园、图书馆、银行和取款机、邮局：数量、最近一家和距离，可以展开看最近 5 个 | OpenStreetMap（ODbL，署名 © OpenStreetMap contributors） |
+| 住户评价 | 新增「Google 地图上的评价（不计入本站评分）」：填了 `web-live/site-config.js` 的嵌入密钥就显示 Google 地图官方嵌入框，没填就给 Google 地图链接。不抓取、不转载评价 | Google Maps Embed API（官方写明免费、不限次数，需要 API 密钥） |
+
+接口：`/api/local/neighbourhood`、`/api/local/amenities`（见 consult-server README）。快照脚本也会抓这两项。`npm test` 全部通过。截图里的团队、工作重点和配套名称是测试数据（带 "Test" 字样）。
+
+还没接通：开发环境访问不了 data.police.uk 和 overpass-api.de，所以真实数据要等部署到能上网的服务器，或者网络放开后抓快照。Google 地图嵌入需要团队在 Google Cloud 申请密钥，并限制为只能用于 Maps Embed API 和本站域名。人口普查的"学生比例"这次没做：需要先核对 ONS 的数据表编号，没法联网核对。
+
+### English
+
+Team feedback: police crime records made every property look risky. The panel now leads with who looks after the area and where to get help, followed by amenities; the raw records are still available but collapsed.
+
+| Page | Change | Data source (no permission needed; attribution required) |
+| --- | --- | --- |
+| Safety & support (was "Local police records") | First screen: the neighbourhood police team (members, contact, the force's published priorities, community events) and where to get help (999 / 101, Liverpool Student Homes' free contract checks and dispute advice, three questions to ask the property). Raw police records are collapsed and load only when opened, showing the month, total and count per category, **with no percentages**, and noting that busy city-centre areas usually have more records | data.police.uk neighbourhood and street-level APIs (OGL v3); the LSH description comes from the University of Liverpool website |
+| Nearby amenities (new) | Within 800 m straight-line (about a 10-minute walk): supermarkets and convenience shops, pharmacies, GP surgeries and clinics, bus stops, train stations, gyms, parks, libraries, banks and cash machines, post offices. Each shows the count, the nearest one with its distance, and up to five nearest on expand | OpenStreetMap (ODbL, attribution © OpenStreetMap contributors) |
+| Resident reviews | New "Reviews on Google Maps (not counted in ratings here)": with an embed key in `web-live/site-config.js` it shows Google's official map embed; without one it links to Google Maps. Reviews are never scraped or copied | Google Maps Embed API (free with no usage limit according to Google; needs an API key) |
+
+Endpoints: `/api/local/neighbourhood` and `/api/local/amenities` (see the consult-server README); the snapshot script captures both. `npm test` passes. Team members, priorities and amenity names in the screenshots are test data (marked "Test").
+
+Not connected yet: the development environment cannot reach data.police.uk or overpass-api.de, so real data needs a connected server or snapshots once the network allows it. The Google embed needs the team to create a key in Google Cloud, restricted to the Maps Embed API and this site's domain. The census "student share" was not built this time: the ONS table IDs need checking online first.

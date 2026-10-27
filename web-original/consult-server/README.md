@@ -95,10 +95,12 @@ SITE_DIR=web-live ADMIN_PASSWORD=换成你的密码 node web-original/consult-se
 
 - `GET /api/local/police?homeId=capital-gate`：data.police.uk 最新月份，公寓参考坐标周围 1 英里的犯罪和反社会行为记录。返回 `homeId · postcode · centerBasis（building / street-area）· month · radiusMiles · total · categories[name, nameZh, count, share] · fetchedAt · status · sourceUrl · licence（OGL v3）· missingDataUrl`；各类合计等于 `total`，占比按 `total` 算。
 - `GET /api/local/food?homeId=…&q=&cuisine=all|chinese&page=&pageSize=`：FSA 食品卫生评级（餐厅/咖啡馆、外卖、酒吧三类合并去重），1 英里内按直线距离排序。`items[id, name, address, postcode, ratingValue（0–5 或 null）, ratingStatus（rated / awaiting-inspection / awaiting-publication / exempt / other）, ratingDate, distanceMeters, cuisine, sourceUrl]`，另有 `totalAll · totalChinese · chineseDirectorySize · coverage（complete / partial）· page · pages`。
+- `GET /api/local/neighbourhood?homeId=…`：社区警务团队（data.police.uk `locate-neighbourhood` → 社区信息、`/people`、`/priorities`、`/events`）。返回 `force · forceName · neighbourhoodId · name · url · contact{telephone,email,web} · team[name,rank] · priorities[issue,issueDate,action,actionDate]（已去掉 HTML）· events[title,type,start,address] · coverage`。OGL v3。
+- `GET /api/local/amenities?homeId=…`：OpenStreetMap（Overpass 接口，`OVERPASS_URL` 可改）直线 800 米内的配套。返回 `radiusMeters · categories[id, count, nearest[name, kind, distanceMeters, osmUrl]]`，类别：supermarket、pharmacy、doctors、bus、rail、gym、park、library、bank、post。ODbL，页面必须署名 © OpenStreetMap contributors。
 - 中餐标签来自 `lib/chinese-food.json`（`[{fhrsId, name, postcode, verifiedUrl, verifiedAt}]`，人工核实餐厅官网或官方商户页面后填写），FSA 编号和邮编都对上才标。目前是空的。
 - `status`：`ok` / `stale` / `partial` / `failed`（读不到，不返回 0）/ `unavailable`（`LOCAL_DATA=off`）。
 - 环境变量：`LOCAL_DATA=off` 关闭；`LOCAL_UPSTREAM=https://home.gxernv.cn` 改为转发到团队的 `/api/safety`、`/api/food`。
-- 服务器需要能访问 `data.police.uk` 和 `api.ratings.food.gov.uk`。给没有服务器的静态 demo 抓快照：`node scripts/snapshot-local.cjs`（写到 `web-live/local-snapshots/`，读不到的楼不写文件）。
+- 服务器需要能访问 `data.police.uk`、`api.ratings.food.gov.uk` 和 `overpass-api.de`。给没有服务器的静态 demo 抓快照：`node scripts/snapshot-local.cjs`（写到 `web-live/local-snapshots/`，读不到的楼不写文件）。
 - 测试：`test/local-data.cjs`（`npm test` 里）。
 
 ## 二、流程（旧版小程序原型的「在线咨询」对话框）

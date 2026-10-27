@@ -1,6 +1,6 @@
 /* 住户评价、团队探访与资料解读：周边与评价面板（local-panel.js）里的两页。数据在 reviews-store.js（演示，只在本浏览器）。
    - 「所有评论」只指本站已发布的第一方住户评价；不搬运、不翻译、不用 AI 改写其他网站的评价。
-     Amber / StudentCrowd 只给直达链接，写明「在其他网站查看（不计入本站评分）」。
+     Amber / StudentCrowd 只给直达链接，写明「在其他网站查看（不计入本站评分）」；Google 地图用官方嵌入框或官方链接（site-config.js 里的嵌入密钥）。
    - 评分只用已发布、非团队、非演示的住户评价，写样本数；没有就写「暂无评分」；样本少时提示不能下结论。
    - 提交：选公寓 → 入住年份和房型 → 各项评分和文字 → 预览 → 同意原创内容条款 → 提交，之后是「待审核」，
      可以看状态、修改后重新提交、撤回。演示阶段只能提交到虚构的演示公寓，所有内容标「演示内容」，不计入真实统计。
@@ -19,6 +19,7 @@
       dims: { noise: '隔音', repair: '维修响应', clean: '公共卫生', net: '网络', value: '性价比' },
       write: '写评价', mine: '我的评价', allH: '所有评论', allSub: '本站已发布的住户评价', none: '这栋楼还没有已发布的住户评价。',
       realWrite: '演示阶段，评价只能提交到演示公寓，真实公寓暂不接收。', goDemo: '去演示公寓试试 →',
+      gH: 'Google 地图上的评价（不计入本站评分）', gOpen: '在 Google 地图看评价 ↗', gNote: '这是 Google 地图的官方嵌入框，评分和评价属于 Google 和评价者，本站不转载、不改写。', gNoteNoKey: '点按钮在 Google 地图上看这栋楼的评分和评价。评价属于 Google 和评价者，本站不转载、不改写。', gDemoKey: '演示说明：在 site-config.js 填好 Google Maps 嵌入密钥后，这里会直接显示 Google 地图官方嵌入框（Maps Embed API，官方写明免费、不限次数）。',
       extH: '在其他网站查看（不计入本站评分）', extNote: '这些网站的评价属于原网站，本站不转载、不翻译，点链接到原网站看。',
       ok: '入住信息已核实', no: '入住信息未核实', team: '团队成员', stay: '{y} 入住 · {r}',
       rooms: { ensuite: '独立卫浴单间', studio: 'Studio', twodio: 'Twodio', shared: '共用卫浴单间', other: '其他' },
@@ -48,6 +49,7 @@
       dims: { noise: 'Noise insulation', repair: 'Maintenance response', clean: 'Shared-area cleanliness', net: 'Internet', value: 'Value' },
       write: 'Write a review', mine: 'My reviews', allH: 'All reviews', allSub: 'Published resident reviews on this site', none: 'No published resident reviews for this property yet.',
       realWrite: 'In the demo, reviews can only be submitted to the demo property; real properties do not accept them yet.', goDemo: 'Try the demo property →',
+      gH: 'Reviews on Google Maps (not counted in ratings here)', gOpen: 'See reviews on Google Maps ↗', gNote: 'This is Google Maps’ official embed. Ratings and reviews belong to Google and their authors; this site does not copy or rewrite them.', gNoteNoKey: 'Open Google Maps to see this building’s rating and reviews. They belong to Google and their authors; this site does not copy or rewrite them.', gDemoKey: 'Demo note: once a Google Maps embed key is set in site-config.js, Google’s official map embed appears here (Maps Embed API, free with no usage limit according to Google).',
       extH: 'View on other sites (not counted in ratings here)', extNote: 'Reviews on these sites belong to them; this site does not copy or translate them. Follow the links to read them there.',
       ok: 'Tenancy verified', no: 'Tenancy not verified', team: 'Team member', stay: 'Stayed {y} · {r}',
       rooms: { ensuite: 'En-suite', studio: 'Studio', twodio: 'Twodio', shared: 'Shared bathroom', other: 'Other' },
@@ -115,6 +117,7 @@
     acts.append(w, m); b.append(acts);
     if (!demo) b.append(el('p', 'bt-note', K.realWrite));
 
+    if (!demo) b.append(googleCard(h));
     const items = S.publicFor(h.id).filter(x => x.kind === 'resident' && (demo || !x.demo));
     const sec = el('section', 'rr-sum'); sec.append(el('b', 'lp-h', K.allH), el('span', 'bt-note', K.allSub));
     if (!items.length) sec.append(el('p', 'lp-empty', K.none));
@@ -128,6 +131,20 @@
       ext.append(row, el('p', 'bt-note', K.extNote)); b.append(ext);
     }
     b.append(el('p', 'bt-note', K.demoOnly));
+  }
+  /* Google 地图：有嵌入密钥时用官方嵌入框（Maps Embed API），没有就给官方链接；不抓取、不转载评价 */
+  function googleCard(h) {
+    const K = k(), c = el('section', 'lp-card'), key = (window.LSM_CONFIG || {}).googleMapsEmbedKey, q = [h.name, h.addr, 'Liverpool'].filter(Boolean).join(', ');
+    c.append(el('b', 'lp-h', K.gH));
+    if (key) {
+      const f = el('iframe', 'rr-gmap'); f.loading = 'lazy'; f.referrerPolicy = 'no-referrer-when-downgrade'; f.title = K.gH; f.allowFullscreen = true;
+      f.src = `https://www.google.com/maps/embed/v1/place?key=${encodeURIComponent(key)}&q=${encodeURIComponent(q)}&language=${zh() ? 'zh-CN' : 'en'}`;
+      c.append(f);
+    }
+    const x = el('a', 'bt-btn alt', K.gOpen); x.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`; x.target = '_blank'; x.rel = 'noopener'; c.append(x);
+    c.append(el('p', 'bt-note', key ? K.gNote : K.gNoteNoKey));
+    if (!key && LP.isDemo()) c.append(el('p', 'lp-demo', K.gDemoKey));
+    return c;
   }
   function card(x, withReport) {
     const K = k(), c = el('article', 'rr-item'), who = el('div', 'rr-who');

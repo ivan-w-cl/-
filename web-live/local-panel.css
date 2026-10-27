@@ -104,3 +104,29 @@
   .lp-area svg { width: 72px; height: 72px; flex: none; }
 }
 .lp-demohead { margin: 8px 16px 0; flex: none; }
+
+/* 安全与支持、周边配套 */
+.lp-sec { display: flex; flex-direction: column; gap: 10px; }
+.lp-sec > * { flex: none; }
+.lp-nb { font-size: 16px; }
+.lp-sub { font-size: 12px; color: #b5462f; letter-spacing: .04em; }
+.lp-plain { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; font-size: 13px; }
+.lp-pri { border-top: 1.5px dashed #dcc8a0; padding-top: 6px; display: flex; flex-direction: column; gap: 3px; }
+.lp-pri p { margin: 0; }
+.lp-pri-i { font-size: 13.5px; }
+.lp-ev { margin: 0; font-size: 13px; }
+.lp-help { background: #eef3e3; }
+.lp-cats dd { text-align: right; font-variant-numeric: tabular-nums; }
+.lp-am { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.lp-amc { border: 2px solid #3b2a1a; border-radius: 12px; background: #fff; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.lp-amc.none { background: #f6efe0; border-style: dashed; }
+.lp-amh { display: grid; grid-template-columns: auto 1fr auto; gap: 6px; align-items: center; }
+.lp-amh b { font-size: 13px; line-height: 1.25; }
+.lp-amh strong { font-family: var(--display, cursive); font-weight: normal; font-size: 24px; line-height: 1; }
+.lp-ami { font-size: 18px; }
+.lp-amc small { overflow-wrap: anywhere; }
+.lp-amc .lp-plain { font-size: 12px; }
+.lp-amc .lp-plain a { color: #974128; }
+.rr-gmap { width: 100%; height: 260px; border: 2px solid #3b2a1a; border-radius: 10px; }
+@media (max-width: 380px) { .lp-am { grid-template-columns: 1fr; } }
+.lp-card a.bt-btn { align-self: flex-start; text-decoration: none; }
