@@ -200,3 +200,44 @@ body.hi-tablet .hi-bar { border-radius: 22px; }
 /* 平板竖屏：底部工具栏一排放得下；缩放按钮和「暂停动画」抬到工具栏上方 */
 body.hi-tablet.hi-portrait:not(.hi-card-open) .hi-bar:not(.hi-moved) { max-width: calc(100vw - 32px); flex-wrap: nowrap; }
 body.hi-tablet.hi-portrait .float.zoom, body.hi-tablet.hi-portrait #pause { bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+
+/* ---------- 卡片重新排版（2026-11-06）：一次看到全部信息 ----------
+   顺序：地址 → 价格和评分 → 步行时间 → 收藏 / 分享 → 地图三格（变小）→ 介绍 → 房型与照片 → 选房小工具 → 说明。
+   「咨询这处公寓 / 加入对比」固定在卡片底部。卡片宽度 ≥ 620（平板、宽屏）时分两栏：左边房源信息，右边地图三格和图层说明。 */
+#cardBody { container-type: inline-size; }
+#propertyDetails.hi-layout { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 18px; align-items: start; }
+#propertyDetails.hi-layout > * { grid-column: 1; min-width: 0; }
+#propertyDetails.hi-layout > .addr { order: 1; margin-bottom: 4px; }
+#propertyDetails.hi-layout > .facts { order: 2; margin-bottom: 6px; }
+#propertyDetails.hi-layout > .walks { order: 3; margin-bottom: 6px; }
+#propertyDetails.hi-layout > .home-secondary-actions { order: 4; margin-bottom: 8px; }
+#propertyDetails.hi-layout > .hi-sec { order: 5; }
+#propertyDetails.hi-layout > .txt { order: 6; }
+#propertyDetails.hi-layout > .rp { order: 7; }
+#propertyDetails.hi-layout > .bt-tools { order: 8; }
+#propertyDetails.hi-layout > .src { order: 9; }
+#propertyDetails.hi-layout > * { order: 10; }
+#propertyDetails.hi-layout > .addr { order: 1; } #propertyDetails.hi-layout > .facts { order: 2; } #propertyDetails.hi-layout > .walks { order: 3; }
+#propertyDetails.hi-layout > .home-secondary-actions { order: 4; } #propertyDetails.hi-layout > .hi-sec { order: 5; } #propertyDetails.hi-layout > .txt { order: 6; }
+#propertyDetails.hi-layout > .rp { order: 7; } #propertyDetails.hi-layout > .bt-tools { order: 8; } #propertyDetails.hi-layout > .src { order: 9; }
+/* 地图三格：变成一排小按钮 */
+.hi-sec { margin: 2px 0 10px; gap: 4px; }
+.hi-sec h4 { font-size: 13px; letter-spacing: .08em; }
+.hi-sec > small.bt-note { display: none; }
+.hi-row { gap: 5px; }
+.hi-tile { padding: 5px 7px; border-width: 1.5px; border-radius: 10px; gap: 1px; box-shadow: 1px 2px 0 rgba(59, 42, 26, .15); }
+.hi-tile b { font-size: 13.5px; }
+.hi-tile .hi-main { font-size: 11.5px; line-height: 1.25; }
+.hi-tile small { font-size: 10.5px; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.hi-more { gap: 5px; font-size: 12.5px; }
+.hi-notes-d summary { cursor: pointer; font-size: 11.5px; color: #974128; }
+.hi-notes-d[open] summary { margin-bottom: 3px; }
+.hi-faces li { padding: 2px 6px; }
+/* 咨询 / 对比 固定在卡片底部 */
+.card.sheet:not(.compact) .acts { position: sticky; bottom: calc(-22px - env(safe-area-inset-bottom, 0px)); z-index: 2; background: linear-gradient(rgba(255, 250, 240, 0), #fffaf0 28%); padding: 12px 0 8px; margin-top: 4px; }
+/* 宽卡片（平板、宽屏底部面板）：两栏 */
+@container (min-width: 620px) {
+  #propertyDetails.hi-layout { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); }
+  #propertyDetails.hi-layout > .hi-sec { grid-column: 2; grid-row: 1 / span 12; order: 0; position: sticky; top: 0; margin-top: 0; }
+  #propertyDetails.hi-layout .rp { max-width: 100%; }
+}

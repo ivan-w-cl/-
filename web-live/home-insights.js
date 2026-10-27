@@ -330,7 +330,7 @@
       if (id === 'commute') { const d = commuteDests(h).find(x => x.id === cDest); if (d) fitRoute(h, d); } else reveal(h, id);
     });
     sec.append(row, more);
-    details.prepend(sec);
+    details.prepend(sec); details.classList.add('hi-layout');   // 卡片排版见 home-insights.css「卡片重新排版」：价格评分在最上面，地图三格变小，宽屏两栏
     if (layerKind && layerHome === h.id) explain(layerKind, h, more);
     if (!OSM.has(h.id) && !osmTried.has(h.id)) loadBuilding(h).then(j => { if (j && BT.homeNow() === h) refreshCard(); });
   }
@@ -371,7 +371,7 @@
       if (r.faces.length) box.append(faceList, el('small', 'bt-note', K.src[r.source] + (r.levels ? (zh() ? ` · ${r.levels} 层` : ` · ${r.levels} floors`) : '')));
       else box.append(el('p', 'lp-state warn hi-why', K.unknownWhy));
       update();
-      const ul = el('ul', 'hi-notes'); K.sunNotes.forEach(n => ul.append(el('li', '', n))); box.append(ul);
+      box.append(notesBox(K.sunNotes));
     } else if (id === 'commute') {
       const ds = commuteDests(h); if (!cDest || !ds.some(x => x.id === cDest)) cDest = ds[0] && ds[0].id;
       box.append(el('b', 'hi-h', K.cH), el('small', 'bt-note', K.cSub));
@@ -395,15 +395,17 @@
       sel.addEventListener('change', ev => { ev.stopPropagation(); cDest = sel.value; drawRes(); drawLayer('commute', h); const d = ds.find(x => x.id === cDest); if (d) fitRoute(h, d); });
       drawRes(); box.append(lab, res);
       const circ = btn('bt-link', K.cCircle); circ.addEventListener('click', ev => { ev.stopPropagation(); if (window.Commute) window.Commute.open(false); });
-      box.append(el('p', 'hi-notes-p bt-note', K.cNote), circ);
+      box.append(notesBox([K.cNote]), circ);
     } else {
       const dl = el('dl', 'hi-dl');
       dl.append(el('dt', '', K.qRoad), el('dd', '', r.dRoad != null ? mTxt(r.dRoad) : K.qNone), el('dt', '', K.qRail), el('dd', '', r.dRail != null ? mTxt(r.dRail) : K.qNone));
       box.append(el('b', 'hi-h', K.qH + ' · ' + K.qLevel[r.level]), dl);
-      const ul = el('ul', 'hi-notes'); K.qNotes.forEach(n => ul.append(el('li', '', n))); box.append(ul);
+      box.append(notesBox(K.qNotes));
     }
     const x = btn('bt-link', K.mapClear); x.addEventListener('click', ev => { ev.stopPropagation(); clearLayer(); box.replaceChildren(); }); box.append(x, el('small', 'bt-note hi-src', K.srcOsm));
   }
+  /* 说明文字默认收起，点「说明」再看 */
+  function notesBox(list) { const d = el('details', 'hi-notes-d'), sm = el('summary', '', zh() ? '说明' : 'Notes'), ul = el('ul', 'hi-notes'); list.forEach(n => ul.append(el('li', '', n))); d.append(sm, ul); d.addEventListener('click', ev => ev.stopPropagation()); return d; }
   /* ▶ 播放：每帧走 5 分钟，从日出走到日落；系统开了「减少动态」时一次跳 30 分钟 */
   function startPlay(range, update, done) {
     const day = sunDay(sunWhich), riseM = day.up.length ? day.up[0].m : 0, setM = day.up.length ? day.up[day.up.length - 1].m : 1435;
