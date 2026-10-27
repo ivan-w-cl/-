@@ -10,7 +10,7 @@
 (() => {
   'use strict';
   const BT = window.BookingTools; if (!BT) return;
-  let G; try { G = { raw, W, mk, GEO: window.GEO, els, HOMES, PLACES, BUILDINGS, ZONES, nameOf, zoneName, CENTRE }; } catch (_) { return; }   // 地图还没准备好
+  let G; try { G = { raw, W, mk, GEO: window.GEO, els, HOMES, PLACES, BUILDINGS, ZONES, SUBJECTS, nameOf, zoneName, facultyOf, subjName, CENTRE }; } catch (_) { return; }   // 地图还没准备好
   if (!G.GEO) return;
   const { el, btn, fmt, pick } = BT;
   const T = {
@@ -22,8 +22,8 @@
       sun: '☀️ 日照', quiet: '🔇 安静度', commute: '⏱️ 通勤',
       sunFace: '临街面朝{f}', sunMain: '主立面朝{f}', sunHours: '冬至约 {w} 小时直射 · 夏至约 {s} 小时', sunUnknown: '朝向未知',
       qLevel: { quiet: '相对安静', mid: '中等', loud: '临街一侧可能较吵' }, qSub: '离主路 {r} · 离铁路 {t}',
-      cWalk: '步行到利物浦大学 {u} 分钟 · LJMU {j} 分钟', cOpen: '点开看到各处要多久',
-      cH: '从这栋楼出发', cSub: '点一个地方，地图上画出示意路线（虚线）', cGroups: { uni: '大学和校区', station: '附近的车站', city: '市中心' }, cZone: '利物浦大学 · {z}', cCentre: '市中心（Liverpool ONE 一带）',
+      cWalk: '步行到利物浦大学 {u} 分钟', cWalkSubj: '到{s}的楼 {n} 分钟', cOpen: '点开看到各专业楼要多久',
+      cH: '从这栋楼出发', cSub: '点一个地方，地图上画出示意路线（虚线）', cGroups: { station: '附近的车站', city: '市中心' }, cZoneH: '利物浦大学 · {z}（{f}）', cMine: '我的专业', cSubjB: '{s} · {b}', cCentre: '市中心（Liverpool ONE 一带）',
       cWalkN: '步行 {n} 分钟', cBusN: '公交约 {n} 分钟', cDist: '约 {d}', cOnMap: '步行约 {n} 分钟', cCircle: '画通勤时间圈 ↗',
       cNote: '时间是估算：步行按直线距离 × 1.3、每分钟 80 米；公交按步行到站、等车和平均车速估算（早上 9 点到）。虚线只表示方向，不是实际路线。',
       dirs: ['北', '东北', '东', '东南', '南', '西南', '西', '西北'],
@@ -46,8 +46,8 @@
       sun: '☀️ Sunlight', quiet: '🔇 Quietness', commute: '⏱️ Commute',
       sunFace: 'Street side faces {f}', sunMain: 'Main facade faces {f}', sunHours: 'About {w} h of direct sun at midwinter · {s} h at midsummer', sunUnknown: 'Orientation unknown',
       qLevel: { quiet: 'Relatively quiet', mid: 'Moderate', loud: 'Street side may be noisy' }, qSub: '{r} from a main road · {t} from a railway',
-      cWalk: '{u} min walk to the University of Liverpool · LJMU {j} min', cOpen: 'Tap to see times to each place',
-      cH: 'From this building', cSub: 'Tap a place to draw a rough route (dashed) on the map', cGroups: { uni: 'Universities and campuses', station: 'Nearby stations', city: 'City centre' }, cZone: 'University of Liverpool · {z}', cCentre: 'City centre (around Liverpool ONE)',
+      cWalk: '{u} min walk to the University of Liverpool', cWalkSubj: '{n} min to the {s} buildings', cOpen: 'Tap for times to each subject’s buildings',
+      cH: 'From this building', cSub: 'Tap a place to draw a rough route (dashed) on the map', cGroups: { station: 'Nearby stations', city: 'City centre' }, cZoneH: 'University of Liverpool · {z} ({f})', cMine: 'My subject', cSubjB: '{s} · {b}', cCentre: 'City centre (around Liverpool ONE)',
       cWalkN: '{n} min walk', cBusN: 'bus about {n} min', cDist: 'about {d}', cOnMap: 'about {n} min walk', cCircle: 'Draw commute map ↗',
       cNote: 'Times are estimates: walking uses straight-line distance × 1.3 at 80 m a minute; buses include walking to the stop, waiting and an average speed (arriving at 9am). The dashed line shows direction only, not the actual route.',
       dirs: ['north', 'north-east', 'east', 'south-east', 'south', 'south-west', 'west', 'north-west'],
@@ -168,14 +168,18 @@
     if (mode === 'walk') return { t: walk };
     const bus = Math.round(4 + 5 + 3 + m / 300); return walk <= bus ? { t: walk, walk: true } : { t: bus };
   };
+  let mySubject = () => { try { return subject; } catch (_) { return null; } };   // 地图上「我的专业」选的专业
   function commuteDests(h) {
-    const K = k(), p0 = insight(h).p, out = [], dist = r => Math.hypot(p0[0] - r[0], p0[1] - r[1]);
-    G.PLACES.filter(p => p.t === 'uni').forEach(p => out.push({ id: 'p:' + p.name, group: 'uni', name: G.nameOf(p), r: G.raw(p.lat, p.lng) }));
-    Object.keys(G.ZONES).forEach(zk => { const bs = G.BUILDINGS.filter(b => b.zone === zk); if (bs.length) out.push({ id: 'z:' + zk, group: 'uni', name: fmt(K.cZone, { z: G.zoneName(zk) }), r: [bs.reduce((a, b) => a + b.r[0], 0) / bs.length, bs.reduce((a, b) => a + b.r[1], 0) / bs.length] }); });
+    const K = k(), p0 = insight(h).p, out = [], dist = r => Math.hypot(p0[0] - r[0], p0[1] - r[1]), mine = mySubject();
+    G.SUBJECTS.forEach(sj => {   // 每个专业取离这栋楼最近的那栋教学楼
+      const bs = G.BUILDINGS.filter(b => (sj.keys || []).includes(b.key)); if (!bs.length) return;
+      const b = bs.reduce((a, x) => dist(x.r) < dist(a.r) ? x : a);
+      out.push({ id: 's:' + sj.id, group: 'zone:' + sj.zone, zone: sj.zone, name: fmt(K.cSubjB, { s: G.subjName(sj), b: b.name }), r: b.r, mine: !!(mine && mine.id === sj.id) });
+    });
     G.PLACES.filter(p => p.t === 'rail' || p.t === 'bus').map(p => ({ id: 'p:' + p.name, group: 'station', name: G.nameOf(p), r: G.raw(p.lat, p.lng) })).sort((a, b) => dist(a.r) - dist(b.r)).slice(0, 3).forEach(x => out.push(x));
     out.push({ id: 'centre', group: 'city', name: K.cCentre, r: G.CENTRE });
     out.forEach(d => { d.m = Math.round(dist(d.r) * UNIT * 1.3 / 10) * 10; d.walk = tmin(p0, d.r, 'walk').t; const b = tmin(p0, d.r, 'bus'); d.bus = b.walk ? null : b.t; });
-    return out.sort((a, b) => (a.group === b.group ? a.walk - b.walk : 0));
+    return out.sort((a, b) => (b.mine - a.mine) || (a.group === b.group ? a.walk - b.walk : 0));
   }
   let cDest = null;
 
@@ -307,7 +311,8 @@
     const [sm, ss] = sunTileText(r);
     tile('sun', K.sun, sm, ss);
     tile('quiet', K.quiet, K.qLevel[r.level], fmt(K.qSub, { r: r.dRoad != null ? mTxt(r.dRoad) : K.qNone, t: r.dRail != null ? mTxt(r.dRail) : K.qNone }));
-    tile('commute', K.commute, fmt(K.cWalk, { u: h.uol, j: h.ljmu }), K.cOpen);
+    const mine = mySubject();
+    tile('commute', K.commute, mine && h.subj != null ? fmt(K.cWalkSubj, { s: G.subjName(mine), n: h.subj }) : fmt(K.cWalk, { u: h.uol }), K.cOpen);
     row.addEventListener('click', ev => {
       const b = ev.target.closest('.hi-tile'); if (!b) return; ev.stopPropagation();
       const id = b.dataset.id;
@@ -364,9 +369,10 @@
     } else if (id === 'commute') {
       const ds = commuteDests(h); if (!cDest || !ds.some(x => x.id === cDest)) cDest = ds[0] && ds[0].id;
       box.append(el('b', 'hi-h', K.cH), el('small', 'bt-note', K.cSub));
-      ['uni', 'station', 'city'].forEach(g => {
-        const rows = ds.filter(x => x.group === g); if (!rows.length) return;
-        const ul = el('ul', 'hi-dests'); box.append(el('small', 'hi-gh', K.cGroups[g]), ul);
+      const groups = [['mine', K.cMine, x => x.mine], ...Object.keys(G.ZONES).map(zk => ['zone:' + zk, fmt(K.cZoneH, { z: G.zoneName(zk), f: G.facultyOf(zk) }), x => !x.mine && x.group === 'zone:' + zk]), ['station', K.cGroups.station, x => x.group === 'station'], ['city', K.cGroups.city, x => x.group === 'city']];
+      groups.forEach(([g, title, f]) => {
+        const rows = ds.filter(f); if (!rows.length) return;
+        const ul = el('ul', 'hi-dests'); box.append(el('small', 'hi-gh', title), ul);
         rows.forEach(d => {
           const li = el('li'), b2 = btn('hi-dest-b' + (d.id === cDest ? ' on' : ''));
           b2.setAttribute('aria-pressed', String(d.id === cDest));
