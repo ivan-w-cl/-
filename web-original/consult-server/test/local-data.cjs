@@ -32,6 +32,14 @@ const json = (o, status = 200) => ({ ok: status < 400, status, json: async () =>
     if (url.endsWith('/CC01/priorities')) { if (mode === 'partial') return json({}, 500); return json([{ issue: '<p>Bike theft near campus</p>', 'issue-date': '2026-09-01T00:00:00', action: '<p>Extra patrols &amp; bike marking</p>', 'action-date': '2026-09-20T00:00:00' }]); }
     if (url.endsWith('/CC01/events')) return json([{ title: 'Freshers safety stall', type: 'meeting', start_date: '2026-10-01T12:00:00', address: 'Guild' }]);
     if (url.includes('/forces/merseyside')) return json({ name: 'Merseyside Police' });
+    if (url.includes('overpass') && decodeURIComponent(url).includes('"building"')) {
+      // 一个朝正南北摆的长方形楼（东西长 60 米、南北 20 米），包含参考点；另有一栋远一点的小楼
+      const lat = 53.40845, lng = -2.97075, dLat = 10 / 110540, dLng = 30 / (Math.cos(lat * Math.PI / 180) * 111320);
+      const rect = [[lat - dLat, lng - dLng], [lat - dLat, lng + dLng], [lat + dLat, lng + dLng], [lat + dLat, lng - dLng], [lat - dLat, lng - dLng]].map(([a, b]) => ({ lat: a, lon: b }));
+      if (mode === 'nobuilding') return json({ elements: [] });
+      return json({ elements: [{ type: 'way', id: 77, tags: { building: 'apartments', name: 'Test Block', 'building:levels': '9' }, geometry: rect },
+        { type: 'way', id: 78, tags: { building: 'yes' }, geometry: rect.map(p => ({ lat: p.lat + 0.0003, lon: p.lon })) }] });
+    }
     if (url.includes('overpass')) return json({ elements: [
       { type: 'node', id: 1, lat: 53.4084, lon: -2.9708, tags: { shop: 'supermarket', name: 'Near Shop' } },
       { type: 'way', id: 2, center: { lat: 53.4100, lon: -2.9700 }, tags: { shop: 'convenience', name: 'Far Shop' } },
@@ -99,6 +107,16 @@ const json = (o, status = 200) => ({ ok: status < 400, status, json: async () =>
   const sm = am.categories.find(c => c.id === 'supermarket'); assert.strictEqual(sm.count, 2); assert.strictEqual(sm.nearest[0].name, 'Near Shop'); assert(sm.nearest[0].distanceMeters <= sm.nearest[1].distanceMeters);
   assert.strictEqual(am.categories.find(c => c.id === 'pharmacy').count, 0); assert.strictEqual(am.categories.find(c => c.id === 'bus').count, 1);
 
+  // 楼体轮廓：取包含参考点的楼，四个朝向的外墙长度（长边朝南北各 60 米、短边朝东西各 20 米）；没有楼时 found: false
+  mode = 'ok'; const home2 = { ...home, lat: 53.40845, lng: -2.97075 };
+  const bd = await L.building(home2);
+  assert.strictEqual(bd.status, 'ok'); assert.strictEqual(bd.found, true); assert.strictEqual(bd.match, 'contains'); assert.strictEqual(bd.name, 'Test Block'); assert.strictEqual(bd.levels, 9);
+  const by = Object.fromEntries(bd.faces.map(f => [Math.round(f.bearing / 90) * 90 % 360, f.lengthM]));
+  assert.deepStrictEqual(Object.keys(by).map(Number).sort((a, b) => a - b), [0, 90, 180, 270]);
+  assert(Math.abs(by[0] - 60) <= 1 && Math.abs(by[180] - 60) <= 1 && Math.abs(by[90] - 20) <= 1 && Math.abs(by[270] - 20) <= 1, JSON.stringify(by));
+  assert(bd.licence.name.includes('OpenStreetMap'));
+  mode = 'nobuilding'; const nb2 = await L.building(L.homes.find(h => h.id === 'albert-court')); assert.strictEqual(nb2.status, 'ok'); assert.strictEqual(nb2.found, false);
+
   // 未接通
   const off = createLocalData({ dataDir: fs.mkdtempSync(path.join(os.tmpdir(), 'local-off-')), fetchImpl, env: { LOCAL_DATA: 'off' }, log: { error() {} } });
   assert.strictEqual((await off.police(home)).status, 'unavailable');
@@ -111,5 +129,5 @@ const json = (o, status = 200) => ({ ok: status < 400, status, json: async () =>
   assert.strictEqual(sent[0][0], 400); assert.strictEqual(sent[1][0], 200); assert.strictEqual(sent[1][1].homeId, 'iq-great-newton-house');
   await api({ method: 'GET' }, {}, new URL('http://x/api/local/amenities?homeId=iq-great-newton-house')); assert.strictEqual(sent[2][0], 200); assert.strictEqual(sent[2][1].radiusMeters, 800);
   await L.flush(); assert(fs.existsSync(path.join(dataDir, 'local-cache.json')));
-  console.log('PASS local data: police 6-month trend (missing month not zero), outcomes grouped from the oldest month, crime/ASB split, neighbourhood team (HTML stripped, partial, failed), amenities within 800 m (sorted, out of range dropped, OSM attribution), police sums/shares, cache, street-area basis, failure is not zero, valid zero, stale + background refresh, FSA one-mile/sort/dedupe, zero rating kept, unrated statuses, Chinese match by FHRSID + postcode, search, pagination, partial, unavailable, known homes only');
+  console.log('PASS local data: building footprint (contains point, four facade orientations with lengths, not found), police 6-month trend (missing month not zero), outcomes grouped from the oldest month, crime/ASB split, neighbourhood team (HTML stripped, partial, failed), amenities within 800 m (sorted, out of range dropped, OSM attribution), police sums/shares, cache, street-area basis, failure is not zero, valid zero, stale + background refresh, FSA one-mile/sort/dedupe, zero rating kept, unrated statuses, Chinese match by FHRSID + postcode, search, pagination, partial, unavailable, known homes only');
 })().catch(e => { console.error('FAIL local data', e); process.exit(1); });

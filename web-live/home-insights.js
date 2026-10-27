@@ -1,44 +1,57 @@
 /* 选房工具栏 + 公寓卡片「这栋楼在地图上」：
-   - 工具栏：⏱️ 通勤时间圈、🧮 一年总花费、💷 按预算看房，固定在地图上（电脑在底部中间，手机在底部导航上方）。
-   - 公寓卡片直接显示详情（不用再点「展开详情」），详情最上面是三格：☀️ 日照、🔇 安静度、⏱️ 通勤；点一格，地图上画出对应内容。
-   - 日照：楼的朝向按楼前最近的街道推算（临街一面朝向街道），太阳位置按天文公式算（利物浦，选冬至 / 春秋分 / 夏至 / 今天）；
-     算出每一面一天里大约几小时可能有直射阳光。没算周边楼挡光和天气，具体房间朝向要看公寓的楼层平面图。
-   - 安静度：按地图上的主路和铁路（OpenStreetMap 数据，和底图同一份）算到最近主路、铁路的直线距离，分三档估算。
-     不是噪音测量；正式版可以接英国环境部（DEFRA）公开的道路和铁路噪音地图。
-   全部在浏览器里算，不需要联网，也不需要任何授权。 */
+   - 工具栏：⏱️ 通勤时间圈、🧮 一年总花费、💷 按预算看房，再加两个地图筛选：☀️ 冬季日照、🔇 安静（不符合的楼在地图上变淡，
+     可以和通勤时间圈、按预算看房一起用）。电脑在公寓列表右边顶部，手机在底部导航上方。
+   - 公寓卡片直接显示详情，最上面三格：☀️ 日照、🔇 安静度、⏱️ 通勤；点一格，地图上画出对应内容。
+   - 日照：「一天在这栋楼」时间滑块——选季节、拖时间（或点 ▶ 播放），地图上太阳沿轨迹移动，楼的每一面被照亮或变暗，卡片实时写出哪几面有阳光。
+     楼的朝向按可靠程度依次取：① OpenStreetMap 楼体轮廓（服务器 /api/local/building 或 local-snapshots/building/ 快照，每一面外墙的真实朝向和长度）
+     ② 团队核对的朝向（orientation-overrides.json）③ 按楼前最近的街道推算（临街一面朝向街道）。都没有就写「朝向未知」。
+     太阳位置按天文公式算（利物浦）；没算周边楼挡光和天气；具体房间朝向要看楼层平面图。
+   - 安静度：到最近主路、铁路的直线距离（底图里的 OpenStreetMap 数据），分三档估算，不是噪音测量。 */
 (() => {
   'use strict';
   const BT = window.BookingTools; if (!BT) return;
-  let G; try { G = { raw, W, mk, GEO: window.GEO, els }; } catch (_) { return; }   // 地图还没准备好
+  let G; try { G = { raw, W, mk, GEO: window.GEO, els, HOMES }; } catch (_) { return; }   // 地图还没准备好
   if (!G.GEO) return;
   const { el, btn, fmt, pick } = BT;
   const T = {
     zh: {
       bar: { commute: '⏱️ 通勤时间圈', cost: '🧮 一年总花费', budget: '💷 按预算看房' }, barShort: { commute: '⏱️ 通勤圈', cost: '🧮 总花费', budget: '💷 按预算' }, barLabel: '选房工具',
+      fSun: '☀️ 冬季日照', fQuiet: '🔇 安静', fH: '地图筛选', fSunRule: '冬至主立面约 4 小时以上直射', fQuietRule: '离主路 50 米以上、离铁路 150 米以上',
+      fStatus: '{rules}：{n} 栋符合', fUnknown: '{n} 栋朝向未知，先变淡', fClear: '清除筛选', fLoading: '正在读取楼体轮廓…',
       secH: '这栋楼在地图上', secNote: '点一格，地图上会画出来',
       sun: '☀️ 日照', quiet: '🔇 安静度', commute: '⏱️ 通勤',
-      sunFace: '临街面朝{f}', sunHours: '冬至约 {w} 小时直射 · 夏至约 {s} 小时', sunUnknown: '楼前街道不明显，朝向算不出来',
+      sunFace: '临街面朝{f}', sunMain: '主立面朝{f}', sunHours: '冬至约 {w} 小时直射 · 夏至约 {s} 小时', sunUnknown: '朝向未知',
       qLevel: { quiet: '相对安静', mid: '中等', loud: '临街一侧可能较吵' }, qSub: '离主路 {r} · 离铁路 {t}',
       cWalk: '步行到利物浦大学 {u} 分钟 · LJMU {j} 分钟', cOpen: '画通勤时间圈',
       dirs: ['北', '东北', '东', '东南', '南', '西南', '西', '西北'],
       days: { winter: '冬至', equinox: '春分 / 秋分', summer: '夏至', today: '今天' },
-      sunH: '日照（{d}）', sunrise: '日出 {a} · 日落 {b}', faceFront: '临街面（朝{f}）', faceBack: '背街面（朝{f}）', faceSide: '侧面（朝{f}）', hours: '约 {n} 小时可能有直射阳光',
-      sunNotes: ['朝向按楼前最近的街道推算：临街一面朝向街道。具体房间朝哪边，要看公寓的楼层平面图，可以向公寓或 Amber 要。', '太阳位置按天文公式计算；没有算周边楼挡光和阴天。', '地图上的弧线是这一天太阳经过的方向，越靠外太阳越低；☀ 是现在的位置（太阳在地平线以下时不显示）。'],
+      sunH: '一天在这栋楼', sunrise: '日出 {a} · 日落 {b}', play: '▶ 播放', pause: '⏸ 暂停', slider: '拖动看一天里的太阳',
+      now: '{t} · 太阳在{d}方，高度 {a}°', nightNow: '{t} · 太阳在地平线以下', lit: '☀ 有阳光', shade: '背光', streetTag: '临街',
+      face: '朝{f}的外墙', faceLen: '朝{f}的外墙（约 {m} 米）', dayH: '这一天约 {n} 小时',
+      src: { osm: '朝向来源：OpenStreetMap 楼体轮廓', team: '朝向来源：团队核对', street: '朝向来源：按楼前最近的街道推算（临街一面朝向街道）' },
+      unknownWhy: '底图里这栋楼门前的小街道没有收录，楼体轮廓也还没读到，所以暂时算不出朝向。接通 OpenStreetMap 或团队补上朝向后会自动显示。',
+      sunNotes: ['太阳位置按天文公式计算；没有算周边楼挡光和阴天。', '具体房间朝哪边要看公寓的楼层平面图，可以向公寓或 Amber 要。', '地图上的弧线是这一天太阳经过的方向，越靠外太阳越低。'],
       qH: '安静度（估算）', qRoad: '离最近的主路', qRail: '离最近的铁路', qNone: '1 公里内没有',
       qNotes: ['按地图上的主路和铁路（OpenStreetMap，和底图同一份数据）的直线距离估算，不是噪音测量。', '临街的房间更容易听到车声；想安静可以问公寓有没有背街一侧的房间。', '正式版可以接英国环境部（DEFRA）公开的道路和铁路噪音地图。'],
       mapClear: '收起地图图层', srcOsm: '地图数据 © OpenStreetMap contributors（ODbL）'
     },
     en: {
       bar: { commute: '⏱️ Commute map', cost: '🧮 Yearly cost', budget: '💷 Search by budget' }, barShort: { commute: '⏱️ Commute', cost: '🧮 Yearly cost', budget: '💷 Budget' }, barLabel: 'Home tools',
+      fSun: '☀️ Winter sun', fQuiet: '🔇 Quiet', fH: 'Map filters', fSunRule: 'main facade gets about 4+ h of direct sun at midwinter', fQuietRule: '50 m+ from a main road and 150 m+ from a railway',
+      fStatus: '{rules}: {n} homes match', fUnknown: '{n} with unknown orientation are dimmed', fClear: 'Clear filters', fLoading: 'Loading building outlines…',
       secH: 'This building on the map', secNote: 'Tap a box to draw it on the map',
       sun: '☀️ Sunlight', quiet: '🔇 Quietness', commute: '⏱️ Commute',
-      sunFace: 'Street side faces {f}', sunHours: 'About {w} h of direct sun at midwinter · {s} h at midsummer', sunUnknown: 'No clear street in front, so the orientation cannot be worked out',
+      sunFace: 'Street side faces {f}', sunMain: 'Main facade faces {f}', sunHours: 'About {w} h of direct sun at midwinter · {s} h at midsummer', sunUnknown: 'Orientation unknown',
       qLevel: { quiet: 'Relatively quiet', mid: 'Moderate', loud: 'Street side may be noisy' }, qSub: '{r} from a main road · {t} from a railway',
       cWalk: '{u} min walk to the University of Liverpool · LJMU {j} min', cOpen: 'Draw commute map',
       dirs: ['north', 'north-east', 'east', 'south-east', 'south', 'south-west', 'west', 'north-west'],
       days: { winter: 'Midwinter', equinox: 'Equinox', summer: 'Midsummer', today: 'Today' },
-      sunH: 'Sunlight ({d})', sunrise: 'Sunrise {a} · sunset {b}', faceFront: 'Street side (faces {f})', faceBack: 'Back (faces {f})', faceSide: 'Side (faces {f})', hours: 'about {n} h of possible direct sun',
-      sunNotes: ['Orientation is worked out from the nearest street: the street side faces the street. Which way a particular room faces depends on the floor plan; ask the property or Amber.', 'Sun positions are calculated astronomically; shading from nearby buildings and cloud are not included.', 'The arc on the map shows the sun’s direction through the day; the further out, the lower the sun. ☀ marks where it is now (not shown when it has set).'],
+      sunH: 'A day at this building', sunrise: 'Sunrise {a} · sunset {b}', play: '▶ Play', pause: '⏸ Pause', slider: 'Drag to follow the sun through the day',
+      now: '{t} · sun in the {d}, {a}° up', nightNow: '{t} · the sun is below the horizon', lit: '☀ in sun', shade: 'in shade', streetTag: 'street',
+      face: 'Wall facing {f}', faceLen: 'Wall facing {f} (about {m} m)', dayH: 'about {n} h this day',
+      src: { osm: 'Orientation from OpenStreetMap building outline', team: 'Orientation checked by the team', street: 'Orientation estimated from the nearest street (the street side faces the street)' },
+      unknownWhy: 'The small street in front of this building is not in the base map and its building outline has not loaded yet, so the orientation cannot be worked out. It will appear once OpenStreetMap is connected or the team adds it.',
+      sunNotes: ['Sun positions are calculated astronomically; shading from nearby buildings and cloud are not included.', 'Which way a particular room faces depends on the floor plan; ask the property or Amber.', 'The arc on the map shows the sun’s direction through the day; the further out, the lower the sun.'],
       qH: 'Quietness (estimate)', qRoad: 'Nearest main road', qRail: 'Nearest railway', qNone: 'none within 1 km',
       qNotes: ['Estimated from straight-line distances to main roads and railways on the map (OpenStreetMap, the same data as the base map); it is not a noise measurement.', 'Rooms on the street side hear more traffic; for a quieter room, ask whether the property has rooms at the back.', 'The live version can use the road and rail noise maps published by Defra.'],
       mapClear: 'Hide map layer', srcOsm: 'Map data © OpenStreetMap contributors (ODbL)'
@@ -47,6 +60,7 @@
   const k = () => pick(T), zh = () => BT.lang() === 'zh';
   const LAT = 53.4084, LNG = -2.9916;   // 利物浦
   const UNIT = 10;   // 底图坐标 1 单位 ≈ 10 米
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- 底图线段（主路、次要道路、铁路），只解析一次 ---------- */
   const parse = list => (list || []).flatMap(d => {
@@ -66,6 +80,7 @@
     return best;
   }
   const bearing = (a, b) => (Math.atan2(b[0] - a[0], -(b[1] - a[1])) * 180 / Math.PI + 360) % 360;   // 底图 x 朝东、y 朝南
+  const angDiff = (a, b) => Math.abs(((a - b + 540) % 360) - 180);
   const dirName = deg => k().dirs[Math.round(deg / 45) % 8];
   const meters = u => Math.round(u * UNIT / 5) * 5;
   const mTxt = m => m >= 1000 ? (m / 1000).toFixed(1) + (zh() ? ' 公里' : ' km') : m + (zh() ? ' 米' : ' m');
@@ -81,60 +96,89 @@
     const az = Math.atan2(Math.sin(H), Math.cos(H) * Math.sin(phi) - Math.tan(dec) * Math.cos(phi)) / rad + 180;   // 从正北顺时针
     return { alt: alt / rad, az: (az + 360) % 360 };
   }
+  /* 利物浦当地时间（冬天 = UTC，夏令时 +1）：某天 0 点 */
+  const londonOffset = d => { const f = z => new Date(d.toLocaleString('en-US', { timeZone: z })); return Math.round((f('Europe/London') - f('UTC')) / 6e4); };
   const dayOf = which => {
-    const y = new Date().getFullYear(), md = { winter: [11, 21], equinox: [2, 20], summer: [5, 21] }[which];
-    const base = md ? new Date(Date.UTC(y, md[0], md[1])) : new Date(); base.setUTCHours(0, 0, 0, 0); return base;
+    const now = new Date(), y = now.getFullYear(), md = { winter: [11, 21], equinox: [2, 20], summer: [5, 21] }[which];
+    const noon = md ? new Date(Date.UTC(y, md[0], md[1], 12)) : new Date(Date.UTC(y, now.getMonth(), now.getDate(), 12));
+    return new Date(noon.getTime() - 12 * 36e5 - londonOffset(noon) * 6e4);
   };
-  /* 一天的太阳轨迹（每 10 分钟），以及每个朝向大约几小时有直射阳光（太阳在地平线上且在这面墙前方 ±90° 内） */
+  const dayCache = new Map();
   function sunDay(which) {
+    const key = which + ':' + new Date().toDateString(); if (dayCache.has(key)) return dayCache.get(key);
     const d0 = dayOf(which), pts = [];
-    for (let m = 0; m < 1440; m += 5) { const t = new Date(d0.getTime() + m * 6e4), s = sunPos(t); pts.push({ t, ...s }); }
+    for (let m = 0; m < 1440; m += 5) { const t = new Date(d0.getTime() + m * 6e4), s = sunPos(t); pts.push({ m, t, ...s }); }
     const up = pts.filter(p => p.alt > 0), vis = pts.filter(p => p.alt > -0.833);   // 日出日落按太阳上缘和大气折射（-0.833°）
-    return { pts, up, rise: vis[0] && vis[0].t, set: vis.length && vis[vis.length - 1].t };
+    const r = { d0, pts, up, rise: vis[0] && vis[0].t, set: vis.length && vis[vis.length - 1].t }; dayCache.set(key, r); return r;
   }
-  const hoursFacing = (day, face) => Math.round(day.up.filter(p => Math.abs(((p.az - face + 540) % 360) - 180) < 90).length * 5 / 60 * 2) / 2;   // 按半小时取整
+  const lit = (s, face) => s.alt > 0 && angDiff(s.az, face) < 90;
+  const hoursFacing = (day, face) => Math.round(day.up.filter(p => angDiff(p.az, face) < 90).length * 5 / 60 * 2) / 2;   // 按半小时取整
   const hhmm = t => t ? t.toLocaleTimeString(zh() ? 'zh-CN' : 'en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' }) : '—';
 
-  /* ---------- 每栋楼的结果 ---------- */
+  /* ---------- 朝向数据：OpenStreetMap 楼体轮廓 → 团队核对 → 街道推算 ---------- */
+  const OSM = new Map(), osmTried = new Set(); let TEAM = {};
+  const getJson = async u => { const r = await fetch(u, { cache: 'no-store' }); if (!r.ok) throw new Error(r.status); return r.json(); };
+  async function loadBuilding(h) {
+    if (OSM.has(h.id) || osmTried.has(h.id) || !/^https?:$/.test(location.protocol)) return OSM.get(h.id);
+    osmTried.add(h.id);
+    let j = null;
+    try { j = await getJson(`./api/local/building?homeId=${encodeURIComponent(h.id)}`); } catch (_) { /* 没有服务器 */ }
+    if (!j || !j.found || !(j.faces || []).length) { try { const s = await getJson(`./local-snapshots/building/${encodeURIComponent(h.id)}.json`); if (s && s.found) j = s; } catch (_) { /* 没有快照 */ } }
+    if (j && j.found && (j.faces || []).length) { OSM.set(h.id, j); cache.delete(h.id); return j; }
+  }
+  fetch('./orientation-overrides.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(j => {
+    if (!j || !Array.isArray(j.homes)) return;
+    j.homes.forEach(x => { if (x && x.homeId && Number.isFinite(x.front)) TEAM[x.homeId] = x; });
+    cache.clear(); refreshCard(); applyFilters();
+  }).catch(() => { /* 没有核对表 */ });
+
   const cache = new Map();
   function insight(h) {
     if (cache.has(h.id)) return cache.get(h.id);
     const p = G.raw(h.lat, h.lng), S = segs();
     const street = [nearest(p, S.major), nearest(p, S.minor)].filter(Boolean).sort((a, b) => a.d - b.d)[0];
-    const front = street && street.d * UNIT <= 80 && street.d > 0.05 ? bearing(p, street.q) : null;
+    const streetB = street && street.d * UNIT <= 80 && street.d > 0.05 ? bearing(p, street.q) : null;
     const road = nearest(p, S.major), rail = nearest(p, S.rail);
     const dRoad = road && road.d * UNIT <= 1000 ? meters(road.d) : null, dRail = rail && rail.d * UNIT <= 1000 ? meters(rail.d) : null;
     const level = (dRoad != null && dRoad < 25) || (dRail != null && dRail < 60) ? 'loud' : (dRoad != null && dRoad < 80) || (dRail != null && dRail < 150) ? 'mid' : 'quiet';
-    const r = { p, front, street, road, rail, dRoad, dRail, level };
-    if (front != null) { const w = sunDay('winter'), s = sunDay('summer'); r.best = [0, 90, 180, 270].map(o => (front + o) % 360).map(f => ({ f, w: hoursFacing(w, f), s: hoursFacing(s, f) })).sort((a, b) => b.w - a.w)[0]; r.frontW = hoursFacing(w, front); r.frontS = hoursFacing(s, front); }
+    let source = null, faces = [];
+    const osm = OSM.get(h.id), team = TEAM[h.id];
+    if (osm) { source = 'osm'; faces = osm.faces.map(f => ({ f: f.bearing, len: f.lengthM })); }
+    else if (team) { source = 'team'; faces = [0, 90, 180, 270].map(o => ({ f: (team.front + o) % 360, len: null })); }
+    else if (streetB != null) { source = 'street'; faces = [0, 90, 180, 270].map(o => ({ f: (streetB + o) % 360, len: null })); }
+    const streetFaceB = source === 'team' ? team.front : streetB;
+    if (faces.length && streetFaceB != null) { const sf = faces.reduce((a, f) => angDiff(f.f, streetFaceB) < angDiff(a.f, streetFaceB) ? f : a); if (angDiff(sf.f, streetFaceB) <= 45) sf.street = true; }
+    const w = sunDay('winter'), s = sunDay('summer');
+    faces.forEach(f => { f.w = hoursFacing(w, f.f); f.s = hoursFacing(s, f.f); });
+    const main = faces.find(f => f.street) || faces.slice().sort((a, b) => (b.len || 0) - (a.len || 0))[0] || null;
+    const r = { p, street, road, rail, dRoad, dRail, level, source, faces, main, levels: osm && osm.levels };
     cache.set(h.id, r); return r;
   }
 
   /* ---------- 地图图层 ---------- */
-  const over = document.getElementById('over'), homesG = document.getElementById('homes');
-  let layer = null, layerKind = null, layerHome = null, sunWhich = 'winter';
-  function clearLayer() { document.body.classList.remove('hi-map-on'); if (layer) layer.remove(); layer = null; layerKind = null; layerHome = null; document.querySelectorAll('.hi-tile[aria-pressed="true"]').forEach(b => b.setAttribute('aria-pressed', 'false')); }
+  const over = document.getElementById('over');
+  let layer = null, dyn = null, layerKind = null, layerHome = null, sunWhich = 'winter', sunMin = 12 * 60, playing = 0;
+  function clearLayer() {
+    stopPlay(); document.body.classList.remove('hi-map-on'); if (layer) layer.remove(); layer = dyn = null; layerKind = null; layerHome = null;
+    document.querySelectorAll('.hi-tile[aria-pressed="true"]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+  }
   const m = (tag, at, parent, text) => { const n = G.mk(tag, at, parent); if (text != null) n.textContent = text; return n; };
+  const R0 = 92;
+  function geom(h) { const r = insight(h), c = G.W(r.p[0], r.p[1]); return { r, c, at: (deg, R) => [c[0] + Math.sin(deg * rad) * R, c[1] - Math.cos(deg * rad) * R] }; }
   function drawLayer(kind, h) {
     if (layer) layer.remove();
     layer = G.mk('g', { class: 'hi-layer', 'pointer-events': 'none' }, over);   // 画在公寓图标上面，免得被挡住
     document.body.classList.add('hi-map-on');
     layerKind = kind; layerHome = h.id;
-    const r = insight(h), c = G.W(r.p[0], r.p[1]), at = (deg, R) => [c[0] + Math.sin(deg * rad) * R, c[1] - Math.cos(deg * rad) * R];
+    const { r, c, at } = geom(h);
     if (kind === 'sun') {
-      const R = 92, day = sunDay(sunWhich);
-      m('circle', { cx: c[0], cy: c[1], r: R, class: 'hi-ring' }, layer);
-      ['N', 'E', 'S', 'W'].forEach((t, i) => { const q = at(i * 90, R + 11); m('text', { x: q[0], y: q[1] + 4, class: 'hi-compass' }, layer, t); });
-      if (r.front != null) {   // 楼：一条垂直于朝向的粗线，临街一面画箭头
-        const a = at(r.front + 90, 16), b = at(r.front - 90, 16); m('path', { d: `M${a}L${b}`, class: 'hi-bldg' }, layer);
-        const f1 = at(r.front, 12), f2 = at(r.front, 40); m('path', { d: `M${f1}L${f2}`, class: 'hi-face' }, layer);
-        const tl = at(r.front, 52); m('text', { x: tl[0], y: tl[1] + 4, class: 'hi-lbl' }, layer, zh() ? '临街' : 'street');
-      }
-      const pts = day.up.map(p => at(p.az, R * (1 - p.alt / 90)));
+      const day = sunDay(sunWhich);
+      m('circle', { cx: c[0], cy: c[1], r: R0, class: 'hi-ring' }, layer);
+      ['N', 'E', 'S', 'W'].forEach((t, i) => { const q = at(i * 90, R0 + 11); m('text', { x: q[0], y: q[1] + 4, class: 'hi-compass' }, layer, t); });
+      const pts = day.up.map(p => at(p.az, R0 * (1 - p.alt / 90)));
       if (pts.length > 1) m('path', { d: 'M' + pts.map(q => q[0].toFixed(1) + ' ' + q[1].toFixed(1)).join('L'), class: 'hi-arc' }, layer);
-      day.up.filter(p => p.t.getUTCMinutes() === 0 && p.t.getUTCHours() % 3 === 0).forEach(p => { const q = at(p.az, R * (1 - p.alt / 90)); m('circle', { cx: q[0], cy: q[1], r: 3, class: 'hi-dot' }, layer); m('text', { x: q[0], y: q[1] - 6, class: 'hi-tick' }, layer, hhmm(p.t)); });
-      const now = sunPos(new Date());
-      if (sunWhich === 'today' && now.alt > 0) { const q = at(now.az, R * (1 - now.alt / 90)); m('text', { x: q[0], y: q[1] + 6, class: 'hi-sun' }, layer, '☀'); }
+      day.up.filter(p => p.m % 180 === 0).forEach(p => { const q = at(p.az, R0 * (1 - p.alt / 90)); m('circle', { cx: q[0], cy: q[1], r: 2.5, class: 'hi-dot' }, layer); m('text', { x: q[0], y: q[1] - 6, class: 'hi-tick' }, layer, hhmm(p.t)); });
+      dyn = G.mk('g', {}, layer); drawSunNow(h);
     } else {
       const lines = [[r.road, 'hi-road', zh() ? '主路' : 'main road', r.dRoad], [r.rail, 'hi-rail', zh() ? '铁路' : 'railway', r.dRail]];
       lines.forEach(([n, cls, lab, d]) => {
@@ -144,11 +188,30 @@
         m('path', { d: `M${c}L${q}`, class: 'hi-link' }, layer);
         m('text', { x: (c[0] + q[0]) / 2, y: (c[1] + q[1]) / 2 - 5, class: 'hi-lbl' }, layer, `${lab} ${mTxt(d)}`);
       });
-      m('circle', { cx: c[0], cy: c[1], r: 25 / 1, class: 'hi-near' }, layer);
+      m('circle', { cx: c[0], cy: c[1], r: 25, class: 'hi-near' }, layer);
+    }
+  }
+  /* 时间滑块对应的那一刻：太阳、照向楼的光线、每一面外墙亮或暗 */
+  function sunAt() { const day = sunDay(sunWhich), t = new Date(day.d0.getTime() + sunMin * 6e4); return { t, ...sunPos(t) }; }
+  function drawSunNow(h) {
+    if (!dyn) return; dyn.replaceChildren();
+    const { r, c, at } = geom(h), s = sunAt();
+    if (r.faces.length) {   // 楼：以主立面为基准的方块，四条边分别是四面外墙
+      const S = 15;
+      r.faces.forEach(f => {
+        const a = at(f.f - 45, S * Math.SQRT2), b = at(f.f + 45, S * Math.SQRT2), on = lit(s, f.f);
+        m('path', { d: `M${a}L${b}`, class: 'hi-wall' + (on ? ' lit' : '') + (f.street ? ' street' : '') }, dyn);
+        if (f.street) { const q = at(f.f, S + 13); m('text', { x: q[0], y: q[1] + 4, class: 'hi-lbl' }, dyn, k().streetTag); }
+      });
+    } else m('circle', { cx: c[0], cy: c[1], r: 8, class: 'hi-unknown' }, dyn);
+    if (s.alt > 0) {
+      const q = at(s.az, R0 * (1 - s.alt / 90)), q0 = at(s.az, 24);
+      m('path', { d: `M${q}L${q0}`, class: 'hi-ray' }, dyn);
+      m('circle', { cx: q[0], cy: q[1], r: 9, class: 'hi-sunc' }, dyn);
     }
   }
 
-  /* 画好图层后把这栋楼移到看得见的地方：手机上放在卡片上方的地图里，电脑上把卡片挪到图层旁边 */
+  /* 画好图层后把这栋楼移到看得见的地方：手机上放在卡片上方的地图里，电脑上图层放在公寓列表右边、卡片挨着图层 */
   const RING = 115;   // 图层半径（地图单位，含方位字母）
   function reveal(h) {
     try {
@@ -157,7 +220,7 @@
       const want = Math.min(visH / 2 - 12, sheet ? 150 : 110) / RING;   // 每个地图单位多少屏幕像素
       z = Math.max(zmin(), Math.min(zmax(), want / fitK));
       tx = viewW / 2 - h.p[0] * fitK * z; ty = top + visH / 2 - h.p[1] * fitK * z;
-      if (!sheet && cardEl) {   // 电脑：图层放在公寓列表右边，卡片紧挨着图层右侧
+      if (!sheet && cardEl) {
         const hp = document.getElementById('homesPanel'), lx = hp && !hp.classList.contains('collapsed') ? hp.getBoundingClientRect().right : 0;
         const ring = RING * fitK * z, cx = lx + ring + 36, cw = cardEl.offsetWidth, mb = document.getElementById('mapbox'), ox = mb ? mb.getBoundingClientRect().left : 0;
         tx = cx - ox - h.p[0] * fitK * z;
@@ -167,7 +230,6 @@
       render(true);
     } catch (_) { /* 地图接口不可用时不移动 */ }
   }
-
   /* 地图停下来后底图会把卡片放回图标旁边（place）；图层打开时改成放在图层右侧 */
   function dodgeCard() {
     try {
@@ -182,14 +244,21 @@
 
   /* ---------- 公寓卡片：详情最上面的三格 + 展开的说明 ---------- */
   const cardBody = document.getElementById('cardBody');
+  function sunTileText(r) {
+    const K = k();
+    if (!r.main) return [K.sunUnknown, ''];
+    return [fmt(r.main.street ? K.sunFace : K.sunMain, { f: dirName(r.main.f) }), fmt(K.sunHours, { w: r.main.w, s: r.main.s })];
+  }
   function decorate() {
     const h = BT.homeNow(), details = cardBody && cardBody.querySelector('#propertyDetails');
     if (!h || !details || details.querySelector('.hi-sec')) return;
     if (layerHome && layerHome !== h.id) clearLayer();
     const K = k(), r = insight(h), sec = el('section', 'hi-sec'), row = el('div', 'hi-row'), more = el('div', 'hi-more');
+    sec.dataset.home = h.id;
     sec.append(el('h4', '', K.secH), el('small', 'bt-note', K.secNote));
     const tile = (id, title, main, sub) => { const b = btn('hi-tile'); b.dataset.id = id; b.setAttribute('aria-pressed', String(layerKind === id && layerHome === h.id)); b.append(el('b', '', title), el('span', 'hi-main', main), el('small', '', sub)); row.append(b); return b; };
-    tile('sun', K.sun, r.front != null ? fmt(K.sunFace, { f: dirName(r.front) }) : K.sunUnknown, r.front != null ? fmt(K.sunHours, { w: r.frontW, s: r.frontS }) : '');
+    const [sm, ss] = sunTileText(r);
+    tile('sun', K.sun, sm, ss);
     tile('quiet', K.quiet, K.qLevel[r.level], fmt(K.qSub, { r: r.dRoad != null ? mTxt(r.dRoad) : K.qNone, t: r.dRail != null ? mTxt(r.dRail) : K.qNone }));
     tile('commute', K.commute, fmt(K.cWalk, { u: h.uol, j: h.ljmu }), K.cOpen);
     row.addEventListener('click', ev => {
@@ -199,24 +268,51 @@
       const on = b.getAttribute('aria-pressed') === 'true';
       row.querySelectorAll('.hi-tile').forEach(x => x.setAttribute('aria-pressed', 'false'));
       if (on) { clearLayer(); more.replaceChildren(); return; }
+      if (id === 'sun') sunMin = defaultMin();
       b.setAttribute('aria-pressed', 'true'); drawLayer(id, h); explain(id, h, more); reveal(h);
     });
     sec.append(row, more);
     details.prepend(sec);
     if (layerKind && layerHome === h.id) explain(layerKind, h, more);
+    if (!OSM.has(h.id) && !osmTried.has(h.id)) loadBuilding(h).then(j => { if (j && BT.homeNow() === h) refreshCard(); });
   }
+  /* 数据更新后重画卡片里的这一块（保留打开的图层） */
+  function refreshCard() {
+    const sec = cardBody && cardBody.querySelector('.hi-sec'), h = BT.homeNow(); if (!sec || !h) return;
+    sec.remove(); decorate();
+    if (layerKind && layerHome === h.id) drawLayer(layerKind, h);
+  }
+  const defaultMin = () => { if (sunWhich !== 'today') return 12 * 60; const now = new Date(); return Math.round((now - dayOf('today')) / 6e4 / 5) * 5 % 1440; };
   function explain(id, h, box) {
     const K = k(), r = insight(h); box.replaceChildren();
     if (id === 'sun') {
       const chips = el('div', 'br-chips');
-      Object.entries(K.days).forEach(([v, t]) => { const c = btn('bt-chipbtn' + (sunWhich === v ? ' on' : ''), t); c.setAttribute('aria-pressed', String(sunWhich === v)); c.addEventListener('click', ev => { ev.stopPropagation(); sunWhich = v; drawLayer('sun', h); explain('sun', h, box); }); chips.append(c); });
+      Object.entries(K.days).forEach(([v, t]) => { const c = btn('bt-chipbtn' + (sunWhich === v ? ' on' : ''), t); c.setAttribute('aria-pressed', String(sunWhich === v)); c.addEventListener('click', ev => { ev.stopPropagation(); stopPlay(); sunWhich = v; sunMin = defaultMin(); drawLayer('sun', h); explain('sun', h, box); }); chips.append(c); });
       const day = sunDay(sunWhich);
-      box.append(el('b', 'hi-h', fmt(K.sunH, { d: K.days[sunWhich] })), chips, el('p', 'bt-note', fmt(K.sunrise, { a: hhmm(day.rise), b: hhmm(day.set) })));
-      if (r.front != null) {
-        const dl = el('dl', 'hi-dl');
-        [[K.faceFront, r.front], [K.faceBack, (r.front + 180) % 360], [K.faceSide, (r.front + 90) % 360], [K.faceSide, (r.front + 270) % 360]].forEach(([lab, f]) => dl.append(el('dt', '', fmt(lab, { f: dirName(f) })), el('dd', '', fmt(K.hours, { n: hoursFacing(day, f) }))));
-        box.append(dl);
-      } else box.append(el('p', 'bt-note', K.sunUnknown));
+      box.append(el('b', 'hi-h', K.sunH), chips, el('p', 'bt-note', fmt(K.sunrise, { a: hhmm(day.rise), b: hhmm(day.set) })));
+      /* 时间滑块 */
+      const sl = el('div', 'hi-slider'), range = el('input'), play = btn('bt-btn alt hi-play', K.play), now = el('p', 'hi-now');
+      range.type = 'range'; range.min = 0; range.max = 1435; range.step = 5; range.value = sunMin; range.setAttribute('aria-label', K.slider);
+      const scale = el('div', 'hi-scale'); ['00:00', '06:00', '12:00', '18:00', '24:00'].forEach(t => scale.append(el('span', '', t)));
+      const faceList = el('ul', 'hi-faces');
+      const update = () => {
+        const s = sunAt(), tt = hhmm(s.t);
+        now.textContent = s.alt > 0 ? fmt(K.now, { t: tt, d: dirName(s.az), a: Math.round(s.alt) }) : fmt(K.nightNow, { t: tt });
+        faceList.replaceChildren();
+        r.faces.forEach(f => {
+          const li = el('li', lit(s, f.f) ? 'on' : ''), lab = f.len ? fmt(K.faceLen, { f: dirName(f.f), m: f.len }) : fmt(K.face, { f: dirName(f.f) });
+          li.append(el('span', 'hi-fi', lit(s, f.f) ? '☀' : '·'), el('span', '', lab + (f.street ? ` · ${K.streetTag}` : '')), el('em', '', (lit(s, f.f) ? K.lit : K.shade) + ' · ' + fmt(K.dayH, { n: hoursFacing(day, f.f) })));
+          faceList.append(li);
+        });
+        drawSunNow(h);
+      };
+      range.addEventListener('input', () => { sunMin = +range.value; update(); });
+      range.addEventListener('click', ev => ev.stopPropagation());
+      play.addEventListener('click', ev => { ev.stopPropagation(); if (playing) { stopPlay(); play.textContent = K.play; return; } play.textContent = K.pause; startPlay(range, update, () => { play.textContent = K.play; }); });
+      sl.append(play, range); box.append(sl, scale, now);
+      if (r.faces.length) box.append(faceList, el('small', 'bt-note', K.src[r.source] + (r.levels ? (zh() ? ` · ${r.levels} 层` : ` · ${r.levels} floors`) : '')));
+      else box.append(el('p', 'lp-state warn hi-why', K.unknownWhy));
+      update();
       const ul = el('ul', 'hi-notes'); K.sunNotes.forEach(n => ul.append(el('li', '', n))); box.append(ul);
     } else {
       const dl = el('dl', 'hi-dl');
@@ -226,9 +322,54 @@
     }
     const x = btn('bt-link', K.mapClear); x.addEventListener('click', ev => { ev.stopPropagation(); clearLayer(); box.replaceChildren(); }); box.append(x, el('small', 'bt-note hi-src', K.srcOsm));
   }
+  /* ▶ 播放：每帧走 5 分钟，从日出走到日落；系统开了「减少动态」时一次跳 30 分钟 */
+  function startPlay(range, update, done) {
+    const day = sunDay(sunWhich), riseM = day.up.length ? day.up[0].m : 0, setM = day.up.length ? day.up[day.up.length - 1].m : 1435;
+    if (sunMin >= setM || sunMin < riseM) sunMin = riseM;
+    let last = 0;
+    const step = ts => {
+      if (!playing) return;
+      if (ts - last > (reduceMotion ? 400 : 60)) { last = ts; sunMin += reduceMotion ? 30 : 5; if (sunMin > setM) { stopPlay(); done(); return; } range.value = sunMin; update(); }
+      playing = requestAnimationFrame(step);
+    };
+    playing = requestAnimationFrame(step);
+  }
+  function stopPlay() { if (playing) cancelAnimationFrame(playing); playing = 0; }
   if (cardBody) new MutationObserver(decorate).observe(cardBody, { childList: true });
   const card = document.getElementById('card');
   if (card) new MutationObserver(() => { if (card.hidden) clearLayer(); }).observe(card, { attributes: true, attributeFilter: ['hidden'] });
+
+  /* ---------- 地图筛选：冬季日照、安静（不符合的楼变淡） ---------- */
+  const filt = { sun: false, quiet: false };
+  const passSun = r => r.main && r.main.w >= 4, passQuiet = r => (r.dRoad == null || r.dRoad >= 50) && (r.dRail == null || r.dRail >= 150);
+  let loadingAll = false;
+  async function loadAllBuildings() {
+    if (loadingAll || !/^https?:$/.test(location.protocol)) return; loadingAll = true; applyFilters();
+    for (const h of G.HOMES) { if (!filt.sun) break; if (await loadBuilding(h)) applyFilters(); }
+    loadingAll = false; applyFilters();
+  }
+  function applyFilters() {
+    const any = filt.sun || filt.quiet; let n = 0, unknown = 0;
+    G.HOMES.forEach(h => {
+      const g = G.els.get(h.id), r = insight(h); if (!g) return;
+      const ok = (!filt.sun || passSun(r)) && (!filt.quiet || passQuiet(r));
+      if (filt.sun && !r.main) unknown++;
+      if (any && ok) n++;
+      g.classList.toggle('hi-out', any && !ok);
+    });
+    document.body.classList.toggle('hi-filter-on', any);
+    drawStatus(n, unknown);
+  }
+  const status = el('div', 'hi-status'); status.hidden = true;
+  function drawStatus(n, unknown) {
+    const K = k(), any = filt.sun || filt.quiet; status.hidden = !any; if (!any) return;
+    if (innerWidth > 760) status.style.top = Math.round(bar.getBoundingClientRect().bottom + 6) + 'px'; else status.style.top = '';   // 电脑：紧贴在工具栏下面（工具栏可能换行）
+    const rules = [filt.sun && K.fSunRule, filt.quiet && K.fQuietRule].filter(Boolean).join(zh() ? '；' : '; ');
+    status.replaceChildren(el('span', '', fmt(K.fStatus, { rules, n: n ?? '…' })));
+    if (filt.sun && unknown) status.append(el('small', '', fmt(K.fUnknown, { n: unknown })));
+    if (loadingAll) status.append(el('small', '', K.fLoading));
+    const x = btn('bt-link', K.fClear); x.addEventListener('click', ev => { ev.stopPropagation(); filt.sun = filt.quiet = false; drawBar(); applyFilters(); }); status.append(x);
+  }
 
   /* ---------- 选房工具栏 ---------- */
   const bar = el('nav', 'hi-bar'); bar.setAttribute('aria-label', k().barLabel);
@@ -240,9 +381,15 @@
   function drawBar() {
     const K = k(); bar.replaceChildren(el('span', 'hi-bar-h', K.barLabel));
     Object.keys(tools).forEach(id => { const b = btn('hi-bar-b'); b.append(el('span', 'hi-long', K.bar[id]), el('span', 'hi-short', K.barShort[id])); b.addEventListener('click', ev => { ev.stopPropagation(); tools[id](); }); bar.append(b); });
+    bar.append(el('i', 'hi-sep'));
+    [['sun', K.fSun, K.fSunRule], ['quiet', K.fQuiet, K.fQuietRule]].forEach(([id, lab, rule]) => {
+      const b = btn('hi-bar-f', lab); b.title = rule; b.setAttribute('aria-pressed', String(filt[id]));
+      b.addEventListener('click', ev => { ev.stopPropagation(); filt[id] = !filt[id]; b.setAttribute('aria-pressed', String(filt[id])); applyFilters(); if (id === 'sun' && filt.sun) loadAllBuildings(); });
+      bar.append(b);
+    });
   }
-  drawBar(); document.body.append(bar); document.body.classList.add('hi-has-bar');
-  new MutationObserver(drawBar).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  drawBar(); document.body.append(bar, status); document.body.classList.add('hi-has-bar');
+  new MutationObserver(() => { drawBar(); applyFilters(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
-  window.HomeInsights = { insight, sunPos, sunDay, hoursFacing, clearLayer };
+  window.HomeInsights = { insight, sunPos, sunDay, hoursFacing, clearLayer, loadBuilding, applyFilters, filters: filt };
 })();

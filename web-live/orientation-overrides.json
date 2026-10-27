@@ -1,0 +1,150 @@
+{
+ "_说明": "团队核对的楼朝向。front 填临街一面（大门或主立面）朝向的角度：北 0、东北 45、东 90、东南 135、南 180、西南 225、西 270、西北 315。填好的楼优先用这里的朝向（OpenStreetMap 楼体轮廓接通后优先用轮廓）。front 为 null 的楼网页显示「朝向未知」。",
+ "_how_to": "Team-checked orientation. Set front to the bearing the street side (entrance or main facade) faces: N 0, NE 45, E 90, SE 135, S 180, SW 225, W 270, NW 315. Filled entries are used unless an OpenStreetMap building outline is available. Entries with front null show as 'orientation unknown'.",
+ "homes": [
+  {
+   "homeId": "atlantic-point",
+   "name": "Atlantic Point",
+   "address": "Naylor Street, L3 6LS",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4143925,-2.9856727,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "grand-central",
+   "name": "Grand Central",
+   "address": "Skelhorne Street, L3 5GA",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4061952,-2.9773485,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "benson-yard",
+   "name": "Benson Yard",
+   "address": "18 Benson Street, L1 2ST",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4040242,-2.9757586,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "st-andrews-gardens",
+   "name": "St Andrew’s Gardens",
+   "address": "21 Moor Place, L3 5XA",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.408071,-2.9718807,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "capital-gate",
+   "name": "Capital Gate",
+   "address": "20 Daulby Street, L3 5NT",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4094759,-2.9682951,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "shamrock-house",
+   "name": "Shamrock House",
+   "address": "21 Gildart Street, L3 8ET",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4104088,-2.9713698,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "unity-square",
+   "name": "Unity Square",
+   "address": "26 Shaw Street, L6 1AA",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4138525,-2.9678769,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "phoenix-place",
+   "name": "Phoenix Place",
+   "address": "5 Prince Edwin Street, L5 3SJ",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4178565,-2.9756642,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "the-hahnemann-building",
+   "name": "The Hahnemann Building",
+   "address": "42 Hope Street, L1 9AJ",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.400596,-2.971214,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "lennon-studios",
+   "name": "Lennon Studios",
+   "address": "109 Cambridge Court, L7 7AG",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.40282,-2.9684499,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "chatham-lodge",
+   "name": "Chatham Lodge",
+   "address": "140 Chatham Street, L7 7BA",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4005645,-2.9646749,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "queensland-place",
+   "name": "Queensland Place",
+   "address": "2 Chatham Place, L7 3AA",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4035256,-2.9549952,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "the-railyard",
+   "name": "The Railyard",
+   "address": "Crown Station Place, L7 3LA",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4019166,-2.9584701,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "kensington-4-bed-student-houses",
+   "name": "Kensington 4-bed student houses",
+   "address": "Halsbury Road, L6",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.413861,-2.9475852,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "edge-hill-6-bed-student-houses",
+   "name": "Edge Hill 6-bed student houses",
+   "address": "Empress Road, L7",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4088423,-2.9564328,19z/data=!3m1!1e3"
+  },
+  {
+   "homeId": "kensington-5-bed-student-houses",
+   "name": "Kensington 5-bed student houses",
+   "address": "Jubilee Drive, L7",
+   "front": null,
+   "checkedBy": "",
+   "checkedOn": "",
+   "satellite": "https://www.google.com/maps/@53.4088249,-2.9544264,19z/data=!3m1!1e3"
+  }
+ ]
+}

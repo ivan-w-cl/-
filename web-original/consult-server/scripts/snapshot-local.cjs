@@ -10,11 +10,11 @@ const only = process.argv.slice(3);
   const L = createLocalData({ dataDir: fs.mkdtempSync(path.join(os.tmpdir(), 'lsm-snap-')) });
   const homes = L.homes.filter(h => !only.length || only.includes(h.id));
   let ok = 0, bad = 0;
-  for (const kind of ['police', 'food', 'neighbourhood', 'amenities']) fs.mkdirSync(path.join(out, kind), { recursive: true });
+  for (const kind of ['police', 'food', 'neighbourhood', 'amenities', 'building']) fs.mkdirSync(path.join(out, kind), { recursive: true });
   for (const h of homes) {
     const p = await L.police(h);
     if (p.status === 'ok') { fs.writeFileSync(path.join(out, 'police', h.id + '.json'), JSON.stringify(p, null, 1)); ok++; } else { console.log('police 未读到', h.id, p.error || p.status); bad++; }
-    for (const kind of ['neighbourhood', 'amenities']) {
+    for (const kind of ['neighbourhood', 'amenities', 'building']) {
       const r = await L[kind](h);
       if (r.status === 'ok' || r.status === 'partial') { fs.writeFileSync(path.join(out, kind, h.id + '.json'), JSON.stringify(r, null, 1)); ok++; } else { console.log(kind, '未读到', h.id, r.error || r.status); bad++; }
     }

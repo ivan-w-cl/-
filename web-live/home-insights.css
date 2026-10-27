@@ -1,5 +1,5 @@
 /* 选房工具栏、公寓卡片「这栋楼在地图上」、地图图层（home-insights.js） */
-.hi-bar { position: fixed; z-index: 12; left: 340px; top: calc(80px + env(safe-area-inset-top, 0px)); display: flex; align-items: center; gap: 6px; padding: 6px 8px 6px 12px; background: #fffaf0; border: 2.5px solid #3b2a1a; border-radius: 999px; box-shadow: 3px 4px 0 rgba(59, 42, 26, .25); }
+.hi-bar { position: fixed; z-index: 12; left: 340px; top: calc(80px + env(safe-area-inset-top, 0px)); display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 6px 8px 6px 12px; background: #fffaf0; border: 2.5px solid #3b2a1a; border-radius: 999px; box-shadow: 3px 4px 0 rgba(59, 42, 26, .25); }
 .hi-bar-h { font: 14px var(--hand, cursive); color: #b5462f; white-space: nowrap; }
 .hi-bar-b { border: 2px solid #3b2a1a; border-radius: 999px; background: #fff3b8; color: #3b2a1a; padding: 4px 12px; font: 16px var(--hand, cursive); cursor: pointer; white-space: nowrap; }
 .hi-bar-b:hover { background: #ffe58a; }
@@ -8,7 +8,7 @@
 body.hi-has-bar .cm-pill { display: none !important; }
 body.cm-on .hi-bar { display: none; }
 @media (max-width: 760px) {
-  .hi-bar { left: calc(10px + env(safe-area-inset-left, 0px)); top: auto; bottom: calc(66px + env(safe-area-inset-bottom, 0px)); padding: 4px; gap: 4px; max-width: calc(100vw - 80px); }
+  .hi-bar { left: calc(10px + env(safe-area-inset-left, 0px)); top: auto; bottom: calc(66px + env(safe-area-inset-bottom, 0px)); padding: 5px; gap: 4px; max-width: calc(100vw - 80px); border-radius: 18px; }
   .hi-bar-h, .hi-long { display: none; }
   .hi-short { display: inline; }
   .hi-bar-b { font-size: 14px; padding: 3px 9px; }
@@ -49,3 +49,42 @@ body.cm-on .hi-bar { display: none; }
 .hi-link { stroke: #3b2a1a; stroke-width: 1.5; stroke-dasharray: 3 3; }
 .hi-near { fill: none; stroke: #3b2a1a; stroke-width: 1.5; stroke-dasharray: 2 3; }
 body.hi-map-on .card.sheet:not(.compact) { max-height: 46dvh; }   /* 手机：地图图层打开时卡片矮一点，留出地图 */
+
+/* 地图筛选 */
+.hi-sep { width: 2px; height: 22px; background: #dcc8a0; border-radius: 1px; }
+.hi-bar-f { border: 2px dashed #3b2a1a; border-radius: 999px; background: #fff; color: #3b2a1a; padding: 3px 10px; font: 15px var(--hand, cursive); cursor: pointer; white-space: nowrap; }
+.hi-bar-f[aria-pressed="true"] { background: #dfe9cc; border-style: solid; border-color: #1f7a4d; }
+.hi-bar-f:focus-visible { outline: 3px dashed #b5462f; outline-offset: 2px; }
+.hi-status { position: fixed; z-index: 12; left: 340px; top: calc(128px + env(safe-area-inset-top, 0px)); max-width: min(560px, calc(100vw - 360px)); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; padding: 6px 12px; background: #eef3e3; border: 2px solid #1f7a4d; border-radius: 12px; font-size: 12.5px; color: #3b2a1a; }
+.hi-status[hidden] { display: none; }
+.hi-status small { color: #52514e; }
+#over .m.hi-out { opacity: .25; }
+
+/* 时间滑块 */
+.hi-slider { display: flex; align-items: center; gap: 8px; }
+.hi-slider input[type=range] { flex: 1; accent-color: #eda100; min-height: 28px; }
+.hi-play { padding: 3px 10px; font-size: 15px; flex: none; }
+.hi-scale { display: flex; justify-content: space-between; font-size: 10px; color: #7a6650; margin: -4px 0 0 82px; }
+.hi-now { margin: 0; font-weight: 700; font-size: 13px; }
+.hi-faces { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; }
+.hi-faces li { display: grid; grid-template-columns: 16px 1fr auto; gap: 6px; align-items: center; padding: 3px 6px; border-radius: 8px; background: #f1ece2; }
+.hi-faces li.on { background: #fff3b8; }
+.hi-faces em { font-style: normal; color: #6e5538; font-size: 11.5px; }
+.hi-fi { text-align: center; }
+.hi-why { font-size: 12px; }
+
+/* 地图图层：楼的四面外墙、太阳 */
+.hi-wall { stroke: #7a6650; stroke-width: 5; stroke-linecap: square; }
+.hi-wall.lit { stroke: #eda100; }
+.hi-wall.street { stroke-width: 7; }
+.hi-ray { stroke: #eda100; stroke-width: 2; stroke-dasharray: 4 3; }
+.hi-sunc { fill: #fab219; stroke: #fffaf0; stroke-width: 2.5; }
+.hi-unknown { fill: #fffaf0; stroke: #7a6650; stroke-width: 2; stroke-dasharray: 2 2; }
+
+/* 手机：工具栏两行（工具 / 筛选），筛选说明放在工具栏上方 */
+@media (max-width: 760px) {
+  .hi-sep { flex-basis: 100%; width: auto; height: 0; background: none; }
+  .hi-bar-f { font-size: 13.5px; padding: 2px 9px; }
+  .hi-status { left: calc(10px + env(safe-area-inset-left, 0px)); top: auto; bottom: calc(140px + env(safe-area-inset-bottom, 0px)); max-width: calc(100vw - 80px); font-size: 12px; }
+}
+@media (min-width: 761px) { .hi-bar { max-width: calc(100vw - 700px); min-width: 320px; border-radius: 22px; } }   /* 不压到右边的「找公寓」面板，放不下就换行 */

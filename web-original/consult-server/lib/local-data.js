@@ -9,6 +9,7 @@ const fs = require('fs'), path = require('path');
 const HOMES = require('./homes-geo.json');
 const byId = new Map(HOMES.map(h => [h.id, h]));
 const RADIUS_MI = 1, MI_M = 1609.344;
+const ODBL = { name: 'Open Database License (ODbL) · © OpenStreetMap contributors', url: 'https://www.openstreetmap.org/copyright' };
 const OGL = { name: 'Open Government Licence v3.0', url: 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' };
 
 /* 警方记录类别：英文名来自 data.police.uk，中文是本站翻译 */
@@ -149,6 +150,54 @@ async function fetchAmenities(fetchImpl, home, overpass) {
   return { radiusMeters: AMENITY_RADIUS_M, categories, sourceUrl: 'https://www.openstreetmap.org/', licence: { name: 'Open Database License (ODbL) · © OpenStreetMap contributors', url: 'https://www.openstreetmap.org/copyright' } };
 }
 
+/* ---------- 读取：楼体轮廓（OpenStreetMap，经 Overpass 接口）：算每一面外墙朝哪个方向 ---------- */
+/* 取包含参考点的楼；没有就取 40 米内离得最近的楼。外墙按法线方向归到四个主朝向（以最长的那面墙为基准），记每个朝向的外墙总长 */
+function inPoly(pt, poly) {
+  let inside = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const [yi, xi] = poly[i], [yj, xj] = poly[j];
+    if ((yi > pt[0]) !== (yj > pt[0]) && pt[1] < (xj - xi) * (pt[0] - yi) / (yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
+function facesOf(poly) {
+  const lat0 = poly.reduce((a, p) => a + p[0], 0) / poly.length, kx = Math.cos(lat0 * Math.PI / 180) * 111320, ky = 110540;
+  const xy = poly.map(([lat, lng]) => [lng * kx, lat * ky]);
+  let area = 0; for (let i = 0; i < xy.length - 1; i++) area += xy[i][0] * xy[i + 1][1] - xy[i + 1][0] * xy[i][1];
+  const ccw = area > 0, edges = [];
+  for (let i = 0; i < xy.length - 1; i++) {
+    const dx = xy[i + 1][0] - xy[i][0], dy = xy[i + 1][1] - xy[i][1], len = Math.hypot(dx, dy); if (len < 0.5) continue;
+    const nx = ccw ? dy : -dy, ny = ccw ? -dx : dx;   // 朝外的法线（x 朝东、y 朝北）
+    edges.push({ len, b: (Math.atan2(nx, ny) * 180 / Math.PI + 360) % 360 });
+  }
+  if (!edges.length) return [];
+  const base = edges.reduce((a, e) => e.len > a.len ? e : a).b;
+  return [0, 90, 180, 270].map(o => {
+    const f = (base + o) % 360, mine = edges.filter(e => Math.abs(((e.b - f + 540) % 360) - 180) < 45);
+    return { bearing: Math.round(f), lengthM: Math.round(mine.reduce((a, e) => a + e.len, 0)) };
+  }).filter(x => x.lengthM > 0);
+}
+async function fetchBuilding(fetchImpl, home, overpass) {
+  const q = `[out:json][timeout:25];(way["building"](around:40,${home.lat},${home.lng});relation["building"](around:40,${home.lat},${home.lng}););out geom tags;`;
+  const j = await getJson(fetchImpl, `${overpass}?data=${encodeURIComponent(q)}`);
+  if (!j || !Array.isArray(j.elements)) throw new Error('unexpected overpass response');
+  const cands = j.elements.map(e => {
+    const ring = e.type === 'way' ? e.geometry : ((e.members || []).find(m => m.role === 'outer') || {}).geometry;
+    if (!Array.isArray(ring) || ring.length < 4) return null;
+    const poly = ring.map(p => [p.lat, p.lon]); if (poly[0][0] !== poly[poly.length - 1][0] || poly[0][1] !== poly[poly.length - 1][1]) poly.push(poly[0]);
+    const c = poly.slice(0, -1).reduce((a, p) => [a[0] + p[0] / (poly.length - 1), a[1] + p[1] / (poly.length - 1)], [0, 0]);
+    return { e, poly, inside: inPoly([home.lat, home.lng], poly), d: haversine(home, { lat: c[0], lng: c[1] }) };
+  }).filter(Boolean).sort((a, b) => (b.inside - a.inside) || a.d - b.d);
+  const best = cands[0];
+  if (!best) return { found: false, sourceUrl: 'https://www.openstreetmap.org/', licence: ODBL };
+  const t = best.e.tags || {};
+  return {
+    found: true, match: best.inside ? 'contains' : 'nearest', distanceMeters: Math.round(best.d), osmUrl: `https://www.openstreetmap.org/${best.e.type}/${best.e.id}`,
+    name: t.name || '', levels: Number(t['building:levels']) || null, polygon: best.poly.map(([a, b]) => [+a.toFixed(6), +b.toFixed(6)]), faces: facesOf(best.poly),
+    sourceUrl: 'https://www.openstreetmap.org/', licence: ODBL
+  };
+}
+
 /* ---------- 已有公开接口（LOCAL_UPSTREAM）：字段和本服务一致时直接沿用 ---------- */
 async function fetchUpstream(fetchImpl, base, kind, home) {
   const j = await getJson(fetchImpl, `${base.replace(/\/$/, '')}/api/${kind === 'police' ? 'safety' : 'food'}?homeId=${encodeURIComponent(home.id)}`);
@@ -157,7 +206,7 @@ async function fetchUpstream(fetchImpl, base, kind, home) {
 
 function createLocalData({ dataDir, fetchImpl = (...a) => fetch(...a), env = process.env, ttlHours = Number(env.LOCAL_TTL_HOURS || 24), chinese = null, log = console }) {
   const file = path.join(dataDir, 'local-cache.json');
-  const KINDS = ['police', 'food', 'neighbourhood', 'amenities'], empty = () => Object.fromEntries(KINDS.map(k => [k, {}]));
+  const KINDS = ['police', 'food', 'neighbourhood', 'amenities', 'building'], empty = () => Object.fromEntries(KINDS.map(k => [k, {}]));
   let cache = empty(), queue = Promise.resolve();
   try { cache = { ...empty(), ...JSON.parse(fs.readFileSync(file, 'utf8')) }; } catch (_) { /* 第一次运行 */ }
   const OVERPASS = env.OVERPASS_URL || 'https://overpass-api.de/api/interpreter';
@@ -175,6 +224,7 @@ function createLocalData({ dataDir, fetchImpl = (...a) => fetch(...a), env = pro
       else if (kind === 'police') data = shapePolice(home, await fetchPolice(fetchImpl, home));
       else if (kind === 'neighbourhood') data = await fetchNeighbourhood(fetchImpl, home);
       else if (kind === 'amenities') data = await fetchAmenities(fetchImpl, home, OVERPASS);
+      else if (kind === 'building') data = await fetchBuilding(fetchImpl, home, OVERPASS);
       else data = await fetchFood(fetchImpl, home);
       cache[kind][home.id] = { at: new Date().toISOString(), data }; save();
       return cache[kind][home.id];
@@ -221,21 +271,21 @@ function createLocalData({ dataDir, fetchImpl = (...a) => fetch(...a), env = pro
     const d = r.entry.data;
     return { ...base(home), ...d, fetchedAt: r.entry.at, status: r.stale ? 'stale' : d.coverage === 'partial' ? 'partial' : 'ok', refreshPending: !!r.refreshPending };
   }
-  const neighbourhood = home => whole('neighbourhood', home), amenities = home => whole('amenities', home);
+  const neighbourhood = home => whole('neighbourhood', home), amenities = home => whole('amenities', home), building = home => whole('building', home);
   const norm = s => String(s || '').toUpperCase().replace(/\s+/g, '');
 
   /* GET /api/local/police|neighbourhood|amenities?homeId=…，GET /api/local/food?homeId=…&q=&cuisine=all|chinese&page= */
   function createApi({ send, limited = () => false }) {
     return async function localApi(req, res, url) {
       if (req.method !== 'GET') return send(res, 405, { error: 'method' });
-      const m = /^\/api\/local\/(police|food|neighbourhood|amenities)$/.exec(url.pathname); if (!m) return send(res, 404, { error: 'not_found' });
+      const m = /^\/api\/local\/(police|food|neighbourhood|amenities|building)$/.exec(url.pathname); if (!m) return send(res, 404, { error: 'not_found' });
       const home = byId.get(url.searchParams.get('homeId') || '');
       if (!home) return send(res, 400, { error: 'unknown_home' });
       if (limited(req, 'local:', 240, 10 * 60e3)) return send(res, 429, { error: 'rate_limited' });
-      const out = m[1] === 'food' ? await food(home, Object.fromEntries(url.searchParams)) : await ({ police, neighbourhood, amenities })[m[1]](home);
+      const out = m[1] === 'food' ? await food(home, Object.fromEntries(url.searchParams)) : await ({ police, neighbourhood, amenities, building })[m[1]](home);
       return send(res, 200, out);
     };
   }
-  return { createApi, police, food, neighbourhood, amenities, refresh, homes: HOMES, flush: () => queue, get cache() { return cache; } };
+  return { createApi, police, food, neighbourhood, amenities, building, refresh, homes: HOMES, flush: () => queue, get cache() { return cache; } };
 }
 module.exports = { createLocalData, POLICE_CATS, haversine, HOMES };
