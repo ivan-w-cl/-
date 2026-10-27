@@ -18,7 +18,7 @@
       bar: { commute: '⏱️ 通勤时间圈', cost: '🧮 一年总花费', budget: '💷 按预算看房' }, barShort: { commute: '⏱️ 通勤圈', cost: '🧮 总花费', budget: '💷 按预算' }, barLabel: '选房工具',
       fSun: '☀️ 冬季日照', fQuiet: '🔇 安静', fH: '地图筛选', dragTip: '按住拖动；拖到屏幕边上收成小箭头', tabTip: '点开选房工具', fSunRule: '冬至主立面约 4 小时以上直射', fQuietRule: '离主路 50 米以上、离铁路 150 米以上',
       fStatus: '{rules}：{n} 栋符合', fUnknown: '{n} 栋朝向未知，先变淡', fClear: '清除筛选', fLoading: '正在读取楼体轮廓…',
-      secH: '这栋楼在地图上', secNote: '点一格，地图上会画出来',
+      secH: '这栋楼在地图上', backToHome: '← 房源详情', close: '关闭', secNote: '点一格，地图上会画出来',
       sun: '☀️ 日照', quiet: '🔇 安静度', commute: '⏱️ 通勤',
       sunFace: '临街面朝{f}', sunMain: '主立面朝{f}', sunHours: '冬至约 {w} 小时直射 · 夏至约 {s} 小时', sunUnknown: '朝向未知',
       qLevel: { quiet: '相对安静', mid: '中等', loud: '临街一侧可能较吵' }, qSub: '离主路 {r} · 离铁路 {t}',
@@ -42,7 +42,7 @@
       bar: { commute: '⏱️ Commute map', cost: '🧮 Yearly cost', budget: '💷 Search by budget' }, barShort: { commute: '⏱️ Commute', cost: '🧮 Yearly cost', budget: '💷 Budget' }, barLabel: 'Home tools',
       fSun: '☀️ Winter sun', fQuiet: '🔇 Quiet', fH: 'Map filters', dragTip: 'Drag to move; drop at the screen edge to tuck it away', tabTip: 'Show home tools', fSunRule: 'main facade gets about 4+ h of direct sun at midwinter', fQuietRule: '50 m+ from a main road and 150 m+ from a railway',
       fStatus: '{rules}: {n} homes match', fUnknown: '{n} with unknown orientation are dimmed', fClear: 'Clear filters', fLoading: 'Loading building outlines…',
-      secH: 'This building on the map', secNote: 'Tap a box to draw it on the map',
+      secH: 'This building on the map', backToHome: '← Home details', close: 'Close', secNote: 'Tap a box to draw it on the map',
       sun: '☀️ Sunlight', quiet: '🔇 Quietness', commute: '⏱️ Commute',
       sunFace: 'Street side faces {f}', sunMain: 'Main facade faces {f}', sunHours: 'About {w} h of direct sun at midwinter · {s} h at midsummer', sunUnknown: 'Orientation unknown',
       qLevel: { quiet: 'Relatively quiet', mid: 'Moderate', loud: 'Street side may be noisy' }, qSub: '{r} from a main road · {t} from a railway',
@@ -255,28 +255,28 @@
     const hp = document.getElementById('homesPanel'), lx = !narrow && hp && !hp.classList.contains('collapsed') ? hp.getBoundingClientRect().right + 12 : 12;
     const v = { left: lx, right: viewW - 12, top: 70, bottom: viewH - (narrow ? 76 : 16), mode: 'none' };
     if (!open) return v;
-    if (document.body.classList.contains('hi-tablet')) { v.right = cardEl.getBoundingClientRect().left - 12; v.mode = 'side'; }
+    if (document.body.classList.contains('hi-tablet') || !cardEl.classList.contains('sheet')) { v.right = cardEl.getBoundingClientRect().left - 12; v.mode = 'side'; }
     else if (cardEl.classList.contains('sheet')) { v.left = 12; v.bottom = cardEl.getBoundingClientRect().top - 8; v.mode = 'sheet'; }
-    else { v.right = Math.max(lx + 200, innerWidth - cardEl.offsetWidth - 40); v.mode = 'float'; }
+    if (v.mode === 'side') {
+      if (!rail.hidden) v.right = Math.min(v.right, rail.getBoundingClientRect().left - 12);
+      if (!panel.hidden) { const pr = panel.getBoundingClientRect(); if (panel.dataset.pos === 'bottom') v.bottom = Math.min(v.bottom, pr.top - 8); else v.left = Math.max(v.left, pr.right + 12); }
+    }
+    else if (!panel.hidden) v.bottom = Math.min(v.bottom, panel.getBoundingClientRect().top - 8);
     return v;
   }
   function reveal(h, kind) {
     try {
+      dodgeCard();
       const v = viewRect(), cardEl = document.getElementById('card'), visW = Math.max(160, v.right - v.left), visH = Math.max(140, v.bottom - v.top);
       /* 不缩小地图：只有日照的圆圈太小时才放大一点；安静度只平移，保持学生自己选的缩放 */
       if (kind === 'sun') { const want = Math.min(Math.min(visW, visH) / 2 - 12, v.mode === 'float' ? 110 : 150) / RING; z = Math.max(z, Math.min(zmax(), want / fitK)); }
-      if (v.mode === 'float') {   // 电脑：图层放在公寓列表右边，卡片紧挨着图层右侧
-        const ring = RING * fitK * z, cx = v.left + ring + 24, cw = cardEl.offsetWidth;
-        tx = cx - h.p[0] * fitK * z; ty = (v.top + v.bottom) / 2 - h.p[1] * fitK * z;
-        let left = cx + ring + 14; if (left + cw > innerWidth - 12) left = Math.max(12, innerWidth - 12 - cw);
-        render(true); cardEl.style.left = left + 'px'; setTimeout(dodgeCard, 50); return;
-      }
       tx = (v.left + v.right) / 2 - h.p[0] * fitK * z; ty = (v.top + v.bottom) / 2 - h.p[1] * fitK * z;
       render(true);
     } catch (_) { /* 地图接口不可用时不移动 */ }
   }
   function fitRoute(h, d) {
     try {
+      dodgeCard();
       const v = viewRect(), a = h.p, b = G.W(d.r[0], d.r[1]);
       const w = Math.abs(a[0] - b[0]) + 90, hh = Math.abs(a[1] - b[1]) + 90, k0 = Math.min((v.right - v.left) / w, (v.bottom - v.top) / hh);
       z = Math.max(zmin(), Math.min(zmax() * 0.6, k0 / fitK));   // 楼和目的地刚好都看得见
@@ -284,14 +284,12 @@
       render(true);
     } catch (_) { /* 忽略 */ }
   }
-  /* 地图停下来后底图会把卡片放回图标旁边（place）；图层打开时改成放在图层右侧 */
+  /* 地图停下来后底图会把卡片放回图标旁边（place）；工具打开时改成靠右边 */
   function dodgeCard() {
     try {
       const cardEl = document.getElementById('card'); if (!layer || !cardEl || cardEl.classList.contains('sheet')) return;
-      const pin = G.els.get(layerHome); if (!pin) return;
-      const r = pin.getBoundingClientRect(), ring = RING * fitK * z, cw = cardEl.offsetWidth, cx = r.left + r.width / 2;
-      let left = cx + ring + 14; if (left + cw > innerWidth - 12) left = cx - ring - 14 - cw; if (left < 12) left = Math.max(12, innerWidth - 12 - cw);
-      cardEl.style.left = left + 'px';
+      cardEl.style.left = Math.max(12, innerWidth - 12 - cardEl.offsetWidth) + 'px';   // 电脑：打开工具时卡片靠到右边，旁边是按钮和工具面板，地图图层在左边空出来的地方
+      placeUI();
     } catch (_) { /* 忽略 */ }
   }
   /* 缩放地图时文字和线条保持同样大小（线条用 non-scaling-stroke，文字按缩放倍数反向调整） */
@@ -306,39 +304,91 @@
     if (!r.main) return [K.sunUnknown, ''];
     return [fmt(r.main.street ? K.sunFace : K.sunMain, { f: dirName(r.main.f) }), fmt(K.sunHours, { w: r.main.w, s: r.main.s })];
   }
+  /* ---------- 卡片旁边的三个按钮（☀️ 日照、🔇 安静度、⏱️ 通勤）+ 工具面板 ----------
+     卡片里只放房源信息；三个按钮单独放在卡片旁边（电脑、平板贴在卡片左侧竖排，手机在底部面板上方横排）。
+     点一个按钮：地图上画出图层，旁边打开这个工具的面板（电脑、平板在卡片左边，手机盖在房源详情上、有「← 房源详情」返回）。再点一次或点 × 收起。 */
+  const rail = el('nav', 'hi-rail'), panel = el('aside', 'hi-panel'), pHead = el('header', 'hi-ph'), pBody = el('div', 'hi-pb');
+  rail.hidden = true; panel.hidden = true; panel.append(pHead, pBody);
+  rail.addEventListener('click', ev => ev.stopPropagation()); panel.addEventListener('click', ev => ev.stopPropagation());
+  ['pointerdown', 'touchstart', 'wheel'].forEach(t => panel.addEventListener(t, ev => ev.stopPropagation(), { passive: true }));
+  document.body.append(rail, panel);
+  let railHome = null;
+  const TOOL_ICON = { sun: '☀️', quiet: '🔇', commute: '⏱️' };
+  function railTexts(h) {
+    const K = k(), r = insight(h), [sm, ss] = sunTileText(r), mine = mySubject();
+    return {
+      sun: [K.sun, sm, ss],
+      quiet: [K.quiet, K.qLevel[r.level], fmt(K.qSub, { r: r.dRoad != null ? mTxt(r.dRoad) : K.qNone, t: r.dRail != null ? mTxt(r.dRail) : K.qNone })],
+      commute: [K.commute, mine && h.subj != null ? fmt(K.cWalkSubj, { s: G.subjName(mine), n: h.subj }) : fmt(K.cWalk, { u: h.uol }), K.cOpen]
+    };
+  }
+  function drawRail(h) {
+    railHome = h.id; const tx = railTexts(h); rail.replaceChildren();
+    rail.setAttribute('aria-label', k().secH);
+    Object.entries(tx).forEach(([id, [title, main, sub]]) => {
+      const b = btn('hi-tile hi-rb'); b.dataset.id = id; b.title = [main, sub].filter(Boolean).join(' · ');
+      b.setAttribute('aria-pressed', String(layerKind === id && layerHome === h.id));
+      b.append(el('span', 'hi-ri', TOOL_ICON[id]), el('span', 'hi-rl', title.replace(/^\S+\s/, '')));
+      b.addEventListener('click', ev => { ev.stopPropagation(); toggleTool(id, h); });
+      rail.append(b);
+    });
+  }
+  function toggleTool(id, h) {
+    const on = layerKind === id && layerHome === h.id;
+    if (on) { closeTool(); return; }
+    if (id === 'sun') sunMin = defaultMin();
+    drawLayer(id, h);
+    rail.querySelectorAll('.hi-rb').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.id === id)));
+    openPanel(id, h);
+    requestAnimationFrame(() => { if (id === 'commute') { const d = commuteDests(h).find(x => x.id === cDest); if (d) fitRoute(h, d); } else reveal(h, id); });
+  }
+  function openPanel(id, h) {
+    const K = k(), [title, main, sub] = railTexts(h)[id], phone = isPhoneSheet();
+    pHead.replaceChildren();
+    if (phone) { const back = btn('bt-link hi-back', K.backToHome); back.addEventListener('click', ev => { ev.stopPropagation(); closeTool(); }); pHead.append(back); }
+    const t = el('div', 'hi-pt'); t.append(el('b', '', title), el('span', 'hi-main', main), sub ? el('small', 'bt-note', sub) : '');
+    const x = btn('x', '×'); x.setAttribute('aria-label', K.close || '×'); x.addEventListener('click', ev => { ev.stopPropagation(); closeTool(); });
+    pHead.append(t, x);
+    explain(id, h, pBody);
+    panel.dataset.tool = id; panel.hidden = false; document.body.classList.add('hi-panel-on');
+    placeUI(); pBody.scrollTop = 0;
+  }
+  function closeTool() { clearLayer(); panel.hidden = true; document.body.classList.remove('hi-panel-on'); rail.querySelectorAll('.hi-rb').forEach(x => x.setAttribute('aria-pressed', 'false')); placeUI(); }
+  const isPhoneSheet = () => { const c = document.getElementById('card'); return !!c && c.classList.contains('sheet') && !document.body.classList.contains('hi-tablet'); };
+  /* 按卡片的位置摆放按钮和面板 */
+  function placeUI() {
+    const c = document.getElementById('card'), open = c && !c.hidden && railHome && BT.homeNow() && BT.homeNow().id === railHome;
+    rail.hidden = !open; if (!open) { panel.hidden = true; document.body.classList.remove('hi-panel-on'); return; }
+    const r = c.getBoundingClientRect(), phone = isPhoneSheet();
+    rail.classList.toggle('row', phone); panel.classList.toggle('phone', phone);
+    if (phone) {
+      Object.assign(rail.style, { left: 'auto', right: '12px', top: 'auto', bottom: Math.round(innerHeight - r.top + 8) + 'px' });
+      Object.assign(panel.style, { left: '0px', right: '0px', top: 'auto', bottom: '0px', width: 'auto', maxHeight: Math.round(Math.max(220, innerHeight - r.top)) + 'px' });
+    } else {
+      const rw = rail.offsetWidth || 58, railL = r.left - rw - 8;
+      Object.assign(rail.style, { left: Math.round(railL) + 'px', right: 'auto', top: Math.round(r.top + 10) + 'px', bottom: 'auto' });
+      /* 工具面板放在屏幕左边（盖住公寓列表），中间留出地图看图层；左边放不下（平板竖屏）就放在左下角，地图在上面 */
+      const top = 76, pw = 340;
+      if (railL - 12 - pw - 12 >= 300) { panel.dataset.pos = 'left'; Object.assign(panel.style, { left: '12px', right: 'auto', top: top + 'px', bottom: 'auto', width: pw + 'px', maxHeight: Math.round(innerHeight - top - 16) + 'px' }); }
+      else { panel.dataset.pos = 'bottom'; const bottom = document.body.classList.contains('hi-portrait') && document.body.classList.contains('hi-tablet') ? 84 : 16; Object.assign(panel.style, { left: '12px', right: 'auto', top: 'auto', bottom: bottom + 'px', width: Math.round(Math.max(260, railL - 24)) + 'px', maxHeight: Math.round(innerHeight * 0.46) + 'px' }); }
+    }
+  }
   function decorate() {
     const h = BT.homeNow(), details = cardBody && cardBody.querySelector('#propertyDetails');
-    if (!h || !details || details.querySelector('.hi-sec')) return;
-    if (layerHome && layerHome !== h.id) clearLayer();
-    const K = k(), r = insight(h), sec = el('section', 'hi-sec'), row = el('div', 'hi-row'), more = el('div', 'hi-more');
-    sec.dataset.home = h.id;
-    sec.append(el('h4', '', K.secH), el('small', 'bt-note', K.secNote));
-    const tile = (id, title, main, sub) => { const b = btn('hi-tile'); b.dataset.id = id; b.setAttribute('aria-pressed', String(layerKind === id && layerHome === h.id)); b.append(el('b', '', title), el('span', 'hi-main', main), el('small', '', sub)); row.append(b); return b; };
-    const [sm, ss] = sunTileText(r);
-    tile('sun', K.sun, sm, ss);
-    tile('quiet', K.quiet, K.qLevel[r.level], fmt(K.qSub, { r: r.dRoad != null ? mTxt(r.dRoad) : K.qNone, t: r.dRail != null ? mTxt(r.dRail) : K.qNone }));
-    const mine = mySubject();
-    tile('commute', K.commute, mine && h.subj != null ? fmt(K.cWalkSubj, { s: G.subjName(mine), n: h.subj }) : fmt(K.cWalk, { u: h.uol }), K.cOpen);
-    row.addEventListener('click', ev => {
-      const b = ev.target.closest('.hi-tile'); if (!b) return; ev.stopPropagation();
-      const id = b.dataset.id;
-      const on = b.getAttribute('aria-pressed') === 'true';
-      row.querySelectorAll('.hi-tile').forEach(x => x.setAttribute('aria-pressed', 'false'));
-      if (on) { clearLayer(); more.replaceChildren(); return; }
-      if (id === 'sun') sunMin = defaultMin();
-      b.setAttribute('aria-pressed', 'true'); drawLayer(id, h); explain(id, h, more);
-      if (id === 'commute') { const d = commuteDests(h).find(x => x.id === cDest); if (d) fitRoute(h, d); } else reveal(h, id);
-    });
-    sec.append(row, more);
-    details.prepend(sec); details.classList.add('hi-layout');   // 卡片排版见 home-insights.css「卡片重新排版」：价格评分在最上面，地图三格变小，宽屏两栏
-    if (layerKind && layerHome === h.id) explain(layerKind, h, more);
+    if (!h || !details) { placeUI(); return; }
+    if (layerHome && layerHome !== h.id) closeTool();
+    details.classList.add('hi-layout');   // 卡片排版见 home-insights.css「卡片重新排版」
+    if (railHome !== h.id || !rail.childNodes.length) drawRail(h);
+    if (layerKind && layerHome === h.id && panel.hidden) openPanel(layerKind, h);
+    requestAnimationFrame(placeUI);
     if (!OSM.has(h.id) && !osmTried.has(h.id)) loadBuilding(h).then(j => { if (j && BT.homeNow() === h) refreshCard(); });
   }
-  /* 数据更新后重画卡片里的这一块（保留打开的图层） */
+  /* 数据更新后（楼体轮廓读到了、语言变了）重画按钮和打开的面板 */
   function refreshCard() {
-    const sec = cardBody && cardBody.querySelector('.hi-sec'), h = BT.homeNow(); if (!sec || !h) return;
-    sec.remove(); decorate();
-    if (layerKind && layerHome === h.id) drawLayer(layerKind, h);
+    const h = BT.homeNow(); if (!h) return;
+    drawRail(h);
+    if (layerKind && layerHome === h.id) { drawLayer(layerKind, h); openPanel(layerKind, h); }
+    placeUI();
   }
   const defaultMin = () => { if (sunWhich !== 'today') return 12 * 60; const now = new Date(); return Math.round((now - dayOf('today')) / 6e4 / 5) * 5 % 1440; };
   function explain(id, h, box) {
@@ -402,7 +452,7 @@
       box.append(el('b', 'hi-h', K.qH + ' · ' + K.qLevel[r.level]), dl);
       box.append(notesBox(K.qNotes));
     }
-    const x = btn('bt-link', K.mapClear); x.addEventListener('click', ev => { ev.stopPropagation(); clearLayer(); box.replaceChildren(); }); box.append(x, el('small', 'bt-note hi-src', K.srcOsm));
+    const x = btn('bt-link', K.mapClear); x.addEventListener('click', ev => { ev.stopPropagation(); closeTool(); }); box.append(x, el('small', 'bt-note hi-src', K.srcOsm));
   }
   /* 说明文字默认收起，点「说明」再看 */
   function notesBox(list) { const d = el('details', 'hi-notes-d'), sm = el('summary', '', zh() ? '说明' : 'Notes'), ul = el('ul', 'hi-notes'); list.forEach(n => ul.append(el('li', '', n))); d.append(sm, ul); d.addEventListener('click', ev => ev.stopPropagation()); return d; }
@@ -423,7 +473,9 @@
   [document.getElementById('mapbox'), document.querySelector('.float.zoom')].forEach(n => n && n.addEventListener('click', keepOpen));
   if (cardBody) new MutationObserver(decorate).observe(cardBody, { childList: true });
   const card = document.getElementById('card');
-  if (card) new MutationObserver(() => { if (card.hidden) clearLayer(); }).observe(card, { attributes: true, attributeFilter: ['hidden'] });
+  if (card) new MutationObserver(() => { if (card.hidden) clearLayer(); placeUI(); }).observe(card, { attributes: true, attributeFilter: ['hidden', 'style', 'class'] });
+  if (card && 'ResizeObserver' in window) new ResizeObserver(() => placeUI()).observe(card);
+  addEventListener('resize', () => placeUI());
 
   /* ---------- 手机卡片：顶部把手往上推变高（几乎全屏），往下拉回原来的高度；内容在最顶端时往上滑也能展开 ---------- */
   if (card) {
