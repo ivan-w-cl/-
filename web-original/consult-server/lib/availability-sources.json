@@ -1,0 +1,14 @@
+{
+  "_说明": "抢房监测的来源表，由订房专家维护。每栋楼填官网公开的房型 / 预订页面（url，必须是 https，域名要在 allowedHosts 里）和预计开放日（opens，YYYY-MM-DD）。服务器只读这些公开页面，不登录、不下单。url 里写的是运营商首页，上线前请换成这栋楼自己的房型页（页面上能看到学年和 Book now 按钮的那一页）；也可以在后台 PUT /api/admin/availability/sources/<id> 改。",
+  "_how_to": "Sources for availability monitoring, kept by the booking experts. For each building give its official public rooms/booking page (https, host listed in allowedHosts) and the expected release date. The server only reads public pages; it never signs in or books. The URLs below are operator home pages: replace them with each building's own rooms page before going live, or use PUT /api/admin/availability/sources/<id>.",
+  "year": "2027/28",
+  "allowedHosts": ["iqstudentaccommodation.com", "yugo.com", "vitastudent.com", "unitestudents.com", "homesforstudents.co.uk", "freshstudentliving.co.uk", "crm-students.com", "true-student.com", "hellostudent.co.uk"],
+  "homes": {
+    "iq-great-newton-house": { "url": "https://www.iqstudentaccommodation.com/", "opens": "2026-11-03", "todo": "换成楼盘房型页" },
+    "yugo-ablett-house": { "url": "https://yugo.com/", "opens": "2026-11-12", "todo": "换成楼盘房型页" },
+    "vita-student-crosshall-street": { "url": "https://www.vitastudent.com/", "opens": "2026-11-20", "todo": "换成楼盘房型页" },
+    "capital-gate": { "opens": "2026-10-20", "todo": "补官网地址并加入 allowedHosts" },
+    "pembroke-studios": { "opens": "2026-10-01", "todo": "补官网地址并加入 allowedHosts" },
+    "the-arch": { "opens": "2026-12-01", "todo": "补官网地址并加入 allowedHosts" }
+  }
+}

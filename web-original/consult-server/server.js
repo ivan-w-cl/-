@@ -12,6 +12,7 @@ const { createAuth } = require('./lib/auth');
 const { createCasesApi } = require('./lib/cases');
 const { createSnapApi } = require('./lib/snap');
 const { createOffers } = require('./lib/offers');
+const { createAvailability } = require('./lib/availability');
 const { createLocalData } = require('./lib/local-data');
 const channels = { web: require('./channels/web'), miniprogram: require('./channels/miniprogram') };
 
@@ -79,6 +80,8 @@ const wxacodes = new Map();
 const snapApi = createSnapApi({ send, readBody, json, limited });
 const offers = createOffers({ dataDir: DATA_DIR, mail: env.OFFERS_EMAIL === 'off' ? null : createMailer(env), publicUrl: PUBLIC_URL });
 const offersApi = offers.createApi({ send, readBody, json, limited });
+const availability = createAvailability({ dataDir: DATA_DIR, env, mail: env.OFFERS_EMAIL === 'off' ? null : createMailer(env), publicUrl: PUBLIC_URL });
+const availabilityApi = availability.createApi({ send, readBody, json, limited });
 const localData = createLocalData({ dataDir: DATA_DIR });
 const localApi = localData.createApi({ send, limited });
 async function api(req, res, url) {
@@ -112,6 +115,8 @@ async function api(req, res, url) {
   /* 周边官方数据：警方记录、食品卫生评级（lib/local-data.js；只接受已知房源） */
   if (p.startsWith('/api/local/')) return localApi(req, res, url);
   if (p === '/api/offers' || p.startsWith('/api/offers/')) return offersApi(req, res, url, false);
+  /* 抢房监测：定时查官网公开页面，开放时发邮件（lib/availability.js） */
+  if (p === '/api/availability' || p.startsWith('/api/availability/')) return availabilityApi(req, res, url, false);
   if (p === '/api/health') return send(res, 200, { ok: true, service: 'consult', cases: true, channels: Object.values(channels).filter(c => c.enabled).map(c => c.name), notifiers: notifier.names });
   if (!casesApi) casesApi = createCasesApi({ store, notifier, send, readBody, json, clean, limited, decodeImage, uploadDir: UPLOAD_DIR, wx: channels.miniprogram,
     adviserUrl: r => (PUBLIC_URL || (r ? `http://${r.headers.host || 'localhost:' + PORT}` : '')) + ADVISER_PATH });
@@ -167,6 +172,7 @@ async function api(req, res, url) {
   if (p.startsWith('/api/admin/')) {
     if (!auth.verify(req.headers.cookie)) return send(res, 401, { error: 'login_required' });
     if (p.startsWith('/api/admin/offers')) return offersApi(req, res, url, true);
+    if (p.startsWith('/api/admin/availability')) return availabilityApi(req, res, url, true);
     if (p.startsWith('/api/admin/cases')) { const done = await casesApi(req, res, url, true); if (done !== false) return; }
     if (p === '/api/admin/sessions' && method === 'GET') {
       return send(res, 200, { usingDefaultPassword: auth.usingDefault, sessions: store.list().map(s => ({ ...publicSession(s), channel: s.channel, updatedAt: s.updatedAt, lastStudentAt: s.lastStudentAt,
@@ -230,8 +236,10 @@ if (require.main === module) {
     console.log(`通知：${notifier.names.join(' + ')}${env.WECOM_WEBHOOK_URL ? '' : '（未设置 WECOM_WEBHOOK_URL，仅写日志）'}`);
     console.log(`小程序渠道：${channels.miniprogram.enabled ? '已启用' : '未启用（缺少 WX_APPID / WX_APPSECRET / WX_TOKEN）'}`);
     offers.startMonitor();
+    availability.start();
+    console.log(`抢房监测：${env.AVAILABILITY === 'off' ? '已关闭' : '平时每 ' + (env.AVAILABILITY_NORMAL_MIN || 45) + ' 分钟、开放日前后每 ' + (env.AVAILABILITY_FAST_MIN || 7) + ' 分钟查一次官网公开页面'}`);
     console.log(`官网优惠监测：${require('./lib/snap').enabled() ? '每 ' + (env.OFFERS_CHECK_HOURS || 6) + ' 小时检查一次' : '未启用（没有 ANTHROPIC_API_KEY，只能在后台手动录入）'}`);
     if (auth.usingDefault) console.log('⚠ 工作台使用默认密码 123456，上线前请设置 ADMIN_PASSWORD。');
   });
 }
-module.exports = { server, store, offers };
+module.exports = { server, store, offers, availability };
