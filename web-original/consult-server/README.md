@@ -89,6 +89,20 @@ SITE_DIR=web-live ADMIN_PASSWORD=换成你的密码 node web-original/consult-se
 
 网页没连上服务器（例如只放在静态网站上）时，学生端和后台会自动退回浏览器本地演示模式。
 
+## 二（新·抢房）、抢房监测、抢房计划同步和分享码
+
+**抢房监测（`lib/availability.js`，2 号方案：定时查官网公开页面）**
+- 来源表 `lib/availability-sources.json`：每栋楼的官网房型页（必须 https，域名要在 `allowedHosts` 里）和预计开放日。现在只填了 iQ、Yugo、Vita 三家的运营商首页当占位，上线前换成各楼盘自己的房型页（团队填写表：`docs/availability-sources-todo.csv`）。也可以在后台 `PUT /api/admin/availability/sources/:id`（`{url, opens, year}`）改。
+- 频率：平时每 45 分钟一次；预计开放日前 3 天到后 2 天每 7 分钟一次；连续失败自动放慢。同一网站两次访问至少隔 15 秒，遵守 robots.txt。环境变量：`AVAILABILITY=off` 关闭，`AVAILABILITY_NORMAL_MIN` / `AVAILABILITY_FAST_MIN` 改频率。
+- 判断：页面上目标学年（如 2027/28）附近出现 Book now 一类按钮 → 已开放；Sold out → 售罄；waitlist / register interest / coming soon → 候补；页面上还没有目标学年 → 即将开放。顺便读出最低周租。判断不了的，专家在后台 `PUT /api/admin/availability/status/:id`（`{status, note}`）手动改。
+- 变成「已开放」（包括售罄后又有房）时，给关注这栋楼的学生发邮件（带官网链接和退订链接）。只读公开页面，不登录、不下单、不绕过排队和验证码。
+- 接口：`GET /api/availability`（网页读状态）、`POST /api/availability/watch`（`{email, homeIds, lang}`，同一 IP 每小时 10 次）、`GET /api/availability/unwatch?t=…&home=…`；后台 `GET /api/admin/availability`、`POST /api/admin/availability/check`（`{homeId?, wait?}`）。数据存 `DATA_DIR/availability.json`。自检：`node test/availability.cjs`（假的官网页面）。
+- **服务器要能访问各公寓官网**（部署环境的网络白名单里加上 `allowedHosts` 里的域名）。
+
+**抢房计划同步给顾问（`lib/cases.js`）**：学生进群时把抢房计划（关注的公寓、开放状态、房型顺序、最高周租，不含邮箱）一起交给顾问；之后改计划自动同步：`POST /api/cases/:id/plans?token=…`。顾问后台学生资料最上方显示「🏁 抢房计划」。
+
+**抢房计划分享码（`lib/plan-shares.js`）**：网页「生成分享二维码」→ `POST /api/plan-shares`（`{code, from}`）发 6 位分享码；小程序和网页 `GET /api/plan-shares/:id` 读取。只存计划编码和可选署名；同一份计划同一个码；180 天没人打开自动清掉。配了 `WX_APPID` / `WX_APPSECRET` 时同时返回小程序码地址（`/api/wxacode?scene=p=分享码`）。自检：`node test/plan-shares.cjs`。
+
 ## 二（新·周边）、周边治安和餐饮（`/api/local/*`）
 
 网页「周边与评价」面板用这两个接口。服务器只接受 47 栋已知公寓的编号（`lib/homes-geo.json`，未知编号返回 400 `unknown_home`），不做任意代理；数据缓存在 `DATA_DIR/local-cache.json`，默认 24 小时，过期后先返回旧数据（`status: stale`，`refreshPending: true`）并在后台更新。
