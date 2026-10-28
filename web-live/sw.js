@@ -1,7 +1,7 @@
 /* Liverpool Student Map · versioned service worker (shell cache).
    From web-original/liverpool-life-map-en/sw.js, with the file list of this folder (the saved live page did not include sw.js). */
 'use strict';
-const CACHE = 'lsm-v20261108a';
+const CACHE = 'lsm-v20261109a';
 const SHELL = [
   './',
   './index.html',
@@ -39,6 +39,8 @@ const SHELL = [
   './fun-quizzes.css',
   './booking-tools.js',
   './quote-check.js',
+  './booking-prep.js',
+  './booking-prep.css',
   './home-insights.js',
   './home-insights.css',
   './commute.js',
@@ -83,7 +85,7 @@ self.addEventListener('fetch', event => {
   if (url.origin !== self.location.origin) return;
   if (url.pathname.includes('/api/') || url.pathname.includes('/admin')) return;
 
-  if (url.pathname.includes('/local-snapshots/')) { event.respondWith(networkFirst(req)); return; }   // 周边数据快照：先拿最新的
+  if (url.pathname.includes('/local-snapshots/') || /\/(booking-prep|orientation-overrides)\.json$/.test(url.pathname)) { event.respondWith(networkFirst(req)); return; }   // 周边数据快照、抢房准备和朝向核对表：先拿最新的
   const isHTML = req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html') || /\/(index\.html)?$/.test(url.pathname);
   if (isHTML) { event.respondWith(networkFirst(req)); return; }
   event.respondWith(cacheFirst(req));

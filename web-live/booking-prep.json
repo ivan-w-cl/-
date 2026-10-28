@@ -1,0 +1,14 @@
+{
+  "_说明": "抢房准备的开放信息。由订房专家维护：opens 是预计开放预订的日期（YYYY-MM-DD），status 是 open 已开放 / soon 即将开放 / waitlist 候补 / unknown 待核对；url 是官网预订页；demo 为 true 的是演示数据。没写的公寓显示「待核对」。正式版由服务器监测官网公开页面、Amber 数据和官网候补邮件后自动更新 status。",
+  "_how_to": "Release info for Booking prep, kept by the booking experts: opens is the expected booking date (YYYY-MM-DD); status is open / soon / waitlist / unknown; url is the official booking page; entries with demo true are demo data. Homes not listed show as 'to be checked'. In production the server updates status from the official public pages, Amber data and waitlist emails.",
+  "updated": "2026-10-28",
+  "academicYear": "2027/28",
+  "homes": {
+    "iq-great-newton-house": { "opens": "2026-11-03", "status": "soon", "demo": true },
+    "capital-gate": { "opens": "2026-10-20", "status": "open", "demo": true },
+    "yugo-ablett-house": { "opens": "2026-11-12", "status": "soon", "demo": true },
+    "vita-student-crosshall-street": { "opens": "2026-11-20", "status": "soon", "demo": true },
+    "pembroke-studios": { "opens": "2026-10-01", "status": "waitlist", "demo": true },
+    "the-arch": { "opens": "2026-12-01", "status": "soon", "demo": true }
+  }
+}

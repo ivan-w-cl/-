@@ -15,7 +15,7 @@
   const { el, btn, fmt, pick } = BT;
   const T = {
     zh: {
-      bar: { commute: '⏱️ 通勤时间圈', cost: '🧮 一年总花费', budget: '💷 按预算看房' }, barShort: { commute: '⏱️ 通勤圈', cost: '🧮 总花费', budget: '💷 按预算' }, barLabel: '选房工具',
+      bar: { prep: '🏁 抢房准备', commute: '⏱️ 通勤时间圈', cost: '🧮 一年总花费', budget: '💷 按预算看房' }, barShort: { prep: '🏁 抢房', commute: '⏱️ 通勤圈', cost: '🧮 总花费', budget: '💷 按预算' }, barLabel: '选房工具',
       fSun: '☀️ 冬季日照', fQuiet: '🔇 安静', fH: '地图筛选', dragTip: '按住拖动；拖到屏幕边上收成小箭头', tabTip: '点开选房工具', fSunRule: '冬至主立面约 4 小时以上直射', fQuietRule: '离主路 50 米以上、离铁路 150 米以上',
       fStatus: '{rules}：{n} 栋符合', fUnknown: '{n} 栋朝向未知，先变淡', fClear: '清除筛选', fLoading: '正在读取楼体轮廓…',
       secH: '这栋楼在地图上', backToHome: '← 房源详情', close: '关闭', secNote: '点一格，地图上会画出来',
@@ -39,7 +39,7 @@
       mapClear: '收起地图图层', srcOsm: '地图数据 © OpenStreetMap contributors（ODbL）'
     },
     en: {
-      bar: { commute: '⏱️ Commute map', cost: '🧮 Yearly cost', budget: '💷 Search by budget' }, barShort: { commute: '⏱️ Commute', cost: '🧮 Yearly cost', budget: '💷 Budget' }, barLabel: 'Home tools',
+      bar: { prep: '🏁 Booking prep', commute: '⏱️ Commute map', cost: '🧮 Yearly cost', budget: '💷 Search by budget' }, barShort: { prep: '🏁 Prep', commute: '⏱️ Commute', cost: '🧮 Yearly cost', budget: '💷 Budget' }, barLabel: 'Home tools',
       fSun: '☀️ Winter sun', fQuiet: '🔇 Quiet', fH: 'Map filters', dragTip: 'Drag to move; drop at the screen edge to tuck it away', tabTip: 'Show home tools', fSunRule: 'main facade gets about 4+ h of direct sun at midwinter', fQuietRule: '50 m+ from a main road and 150 m+ from a railway',
       fStatus: '{rules}: {n} homes match', fUnknown: '{n} with unknown orientation are dimmed', fClear: 'Clear filters', fLoading: 'Loading building outlines…',
       secH: 'This building on the map', backToHome: '← Home details', close: 'Close', secNote: 'Tap a box to draw it on the map',
@@ -538,6 +538,7 @@
   /* ---------- 选房工具栏 ---------- */
   const bar = el('nav', 'hi-bar'); bar.setAttribute('aria-label', k().barLabel);
   const tools = {
+    prep: () => window.BookingPrep && window.BookingPrep.open(null, 'cal'),
     commute: () => window.Commute && window.Commute.open(false),
     cost: () => window.CostCalc && window.CostCalc.open(BT.homeNow()),
     budget: () => window.QuoteCheck && window.QuoteCheck.open(null, null, 'budget')
