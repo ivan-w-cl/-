@@ -51,6 +51,9 @@
     <view class="zb fit {{canZoomOut ? '' : 'off'}}" bindtap="zoomFit">{{T.zfit}}</view>
   </view>
 
+  <!-- 🏁 抢房计划入口（左下角，底部按钮上面） -->
+  <view wx:if="{{!card}}" class="float planfab" bindtap="openPlan">🏁 {{T.planBtn}}<text wx:if="{{planCount}}" class="pf-n">{{planCount}}</text></view>
+
   <!-- 底部三个按钮 -->
   <view class="mbar">
     <view class="mb match" bindtap="openMatch">{{T.matchBtn}}</view>
@@ -107,6 +110,7 @@
         <view class="cta" bindtap="ask">{{expanded ? T.ask : T.compactAsk}}</view>
         <view class="detail-toggle" bindtap="toggleExpand">{{expanded ? T.collapseDetails : T.expandDetails}}</view>
         <view wx:if="{{expanded}}" class="cmpb {{card.cmp ? 'on' : ''}}" bindtap="toggleCompare">{{card.cmp ? T.cmpAdded : T.cmpAdd}}</view>
+        <view class="cmpb planb {{card.inPlan ? 'on' : ''}}" bindtap="addToPlan">🏁 {{card.inPlan ? T.inPlan : T.addPlan}}</view>
       </view>
     </block>
   </view>
@@ -138,6 +142,7 @@
     bind:map="onMatchMap" bind:card="onMatchCard" bind:ask="onMatchAsk" bind:compare="onMatchCompare" bind:subject="onMatchSubject" bind:resetfilters="onMatchResetFilters" bind:fun="onMatchFun" bind:share="onShareCard"></match>
   <fun id="fun" lang="{{lang}}" pad-top="{{nav.top + nav.h + 4}}" bind:map="onFunMap" bind:card="onMatchCard" bind:ask="onMatchAsk" bind:share="onShareCard" bind:home="onFunHome" bind:result="onFunResult"></fun>
   <share id="share" lang="{{lang}}" pad-top="{{nav.top + nav.h + 4}}"></share>
+  <plan id="plan" lang="{{lang}}" pad-top="{{nav.top + nav.h + 4}}" bind:card="onMatchCard" bind:ask="onMatchAsk" bind:close="onPlanClose" bind:copied="onPlanClose"></plan>
 
   <!-- 对比栏（网页 .tray） -->
   <view wx:if="{{tray.length && !cmp && !sheet && !subj.open}}" class="float panel tray">

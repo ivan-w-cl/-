@@ -1,0 +1,57 @@
+<!-- 🏁 抢房计划：我的计划 / 朋友分享的计划（整屏，和分享卡片同一套样式） -->
+<view wx:if="{{open}}" class="pl-wrap {{lang}}" style="padding-top:{{padTop}}px" catchtouchmove="noop">
+  <view class="pl-head">
+    <view class="pl-titles"><text class="pl-eyebrow">{{k.eyebrow}}</text><text class="pl-h">{{mode === 'friend' && friend ? friend.title : k.mine}}</text></view>
+    <view class="pl-x" bindtap="close">×</view>
+  </view>
+  <scroll-view scroll-y="true" class="pl-body" enhanced="true" show-scrollbar="false">
+    <view wx:if="{{demo}}" class="pl-demo">⚠️ {{k.demo}}</view>
+
+    <!-- 朋友的计划 -->
+    <block wx:if="{{mode === 'friend' && friend}}">
+      <view class="pl-lede">{{friend.lede}}</view>
+      <view wx:for="{{friend.items}}" wx:key="id" class="pl-card st-{{item.cls}} {{item.hot ? 'hot' : ''}}">
+        <view class="pl-row"><text class="pl-name">{{item.n}} · {{item.name}}</text><text class="pl-pill">{{item.st}}</text></view>
+        <view wx:if="{{item.when}}" class="pl-small">{{item.hot ? '🔥 ' : ''}}{{item.when}}</view>
+        <view class="pl-order"><block wx:for="{{item.rooms}}" wx:for-item="r" wx:key="r"><text wx:if="{{r.on}}" class="pl-chip on {{r.tag === k.first ? 'first' : ''}}"><text class="pl-tag">{{r.tag}}</text>{{r.label}}</text></block>
+          <text wx:if="{{!item.rooms[0].on}}" class="pl-small">{{item.orderText}}</text></view>
+        <view wx:if="{{item.maxText}}" class="pl-small">{{item.maxText}}</view>
+        <view class="pl-acts">
+          <view wx:if="{{item.mine}}" class="pl-mine">✓ {{k.inMine}}</view>
+          <view class="pl-btn" data-id="{{item.id}}" bindtap="copyOne">{{k.copyOne}}</view>
+          <view class="pl-link" data-id="{{item.id}}" bindtap="showMap">{{k.map}}</view>
+        </view>
+      </view>
+      <view class="pl-main" bindtap="copyAll">{{k.copyAll}}</view>
+      <view wx:if="{{copyMsg}}" class="pl-ok">✓ {{copyMsg}}</view>
+      <view class="pl-btn wide" bindtap="goMine">{{k.goMine}}</view>
+    </block>
+
+    <!-- 我的计划 -->
+    <block wx:else>
+      <view class="pl-lede">{{k.lede}}</view>
+      <view wx:if="{{!items.length}}" class="pl-empty">{{k.empty}}</view>
+      <view wx:for="{{items}}" wx:key="id" class="pl-card st-{{item.cls}} {{item.hot ? 'hot' : ''}}">
+        <view class="pl-row"><text class="pl-name">{{item.n}} · {{item.name}}</text><text class="pl-pill">{{item.st}}</text></view>
+        <view wx:if="{{item.when}}" class="pl-small">{{item.hot ? '🔥 ' : ''}}{{item.when}}</view>
+        <view class="pl-lab">{{k.order}}</view>
+        <view class="pl-order"><view wx:for="{{item.rooms}}" wx:for-item="r" wx:key="r" class="pl-chip {{r.on ? 'on' : ''}} {{r.tag === k.first ? 'first' : ''}}" data-id="{{item.id}}" data-r="{{r.r}}" bindtap="toggleRoom"><text wx:if="{{r.tag}}" class="pl-tag">{{r.tag}}</text>{{r.label}}</view></view>
+        <view class="pl-maxrow"><text class="pl-lab">{{k.max}}</text><input class="pl-in" type="number" value="{{item.max}}" placeholder="{{k.maxPh}}" data-id="{{item.id}}" bindinput="setMax"></input></view>
+        <view class="pl-acts"><view class="pl-link" data-id="{{item.id}}" bindtap="showMap">{{k.map}}</view><view class="pl-link muted" data-id="{{item.id}}" bindtap="removeHome">{{k.remove}}</view></view>
+      </view>
+      <view class="pl-sec">{{k.addH}}</view>
+      <view wx:if="{{!favs.length}}" class="pl-small">{{k.noFav}}</view>
+      <view class="pl-favs"><view wx:for="{{favs}}" wx:key="id" class="pl-chip" data-id="{{item.id}}" bindtap="addFav">＋ {{item.n}} · {{item.name}}</view></view>
+      <block wx:if="{{items.length}}">
+        <view class="pl-share">
+          <view class="pl-sec">{{k.shareH}}</view>
+          <view class="pl-maxrow"><text class="pl-lab">{{k.shareName}}</text><input class="pl-in name" value="{{name}}" placeholder="{{k.shareNamePh}}" maxlength="12" bindinput="setName"></input></view>
+          <button class="pl-main sharebtn" open-type="share" data-pq="plan">{{k.share}}</button>
+          <view class="pl-small">{{k.shareNote}}</view>
+        </view>
+        <view class="pl-adv" bindtap="askAdviser">{{k.adviser}} ›</view>
+      </block>
+    </block>
+    <view class="pl-small foot">{{k.note}}</view>
+  </scroll-view>
+</view>

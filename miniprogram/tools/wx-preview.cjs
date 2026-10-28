@@ -182,7 +182,8 @@ const runtime = function () {
     el.addEventListener(dom, e => {
       if (stop) e.stopPropagation();
       if (/^touch/.test(type)) { touchEvent(e, el, handler, owner); return; }
-      const fn = handler === '__share' ? null : owner[handler]; if (!fn && handler !== '__share') return;
+      if (handler === '__share') { const pg = window.__page; window.__share = pg && pg.onShareAppMessage ? pg.onShareAppMessage({ from: 'button', target: { dataset: el.__ds } }) : null; return; }   // 转发按钮：记下转发卡片的标题和路径
+      const fn = owner[handler]; if (!fn) return;
       const event = { type, currentTarget: { dataset: el.__ds, id: el.id }, target: { dataset: el.__ds }, detail: { value: e.target.value } };
       if (fn) fn.call(owner, event);
     });
@@ -219,7 +220,7 @@ const runtime = function () {
   for (const k in COMPS) { loadingComp = k; load(COMPS[k].mod); }
   load(PAGE);
   // 和微信一样：this.options 是启动参数、this.route 是页面路径（同名方法会被覆盖）
-  page.options = PREVIEW.query || {}; page.route = PAGE_PATH;
+  page.options = PREVIEW.query || {}; page.route = PAGE_PATH; window.__page = page;
   paint(); page.onLoad && page.onLoad(PREVIEW.query || {}); page.onShow && page.onShow(); setTimeout(() => { page.onReady && page.onReady(); }, 30);
 };
 

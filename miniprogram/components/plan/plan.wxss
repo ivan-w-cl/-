@@ -1,0 +1,46 @@
+/* 抢房计划（网页 booking-prep.css 的配色） */
+.pl-wrap { position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 58; background: #fffaf0; color: #3b2a1a; display: flex; flex-direction: column; box-sizing: border-box; font-size: 14px; line-height: 1.45; }
+.pl-wrap.en { --display: 'Gochi Hand', 'ZCOOL KuaiLe', cursive; --hand: 'Patrick Hand', 'ZCOOL KuaiLe', cursive; }
+.pl-head { flex: none; display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; padding: 4px 16px 10px; border-bottom: 2px dashed #e2d1ac; }
+.pl-titles { display: flex; flex-direction: column; }
+.pl-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .07em; color: #b5462f; }
+.pl-h { font-family: var(--display); font-size: 26px; line-height: 1.1; }
+.pl-x { width: 40px; height: 40px; font-size: 28px; line-height: 40px; text-align: center; flex: none; }
+.pl-body { flex: 1; min-height: 0; padding: 12px 16px calc(20px + env(safe-area-inset-bottom)); box-sizing: border-box; }
+.pl-body > * + * { margin-top: 10px; }
+.pl-demo { font-size: 12px; color: #6e5538; }
+.pl-lede { font-size: 13.5px; color: #4d3a24; }
+.pl-empty { font-size: 13px; color: #6e5538; border: 2px dashed #d9c7a1; border-radius: 12px; padding: 12px; }
+.pl-card { border: 2px solid #3b2a1a; border-radius: 12px; background: #fff; padding: 9px 11px; display: flex; flex-direction: column; gap: 6px; }
+.pl-card.hot { border-color: #b5462f; background: #fff6ee; }
+.pl-card.st-open { border-color: #1f7a4d; background: #eef6ea; }
+.pl-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pl-name { font-weight: 700; font-size: 14.5px; }
+.pl-pill { flex: none; font-size: 11.5px; border: 1.5px solid #3b2a1a; border-radius: 999px; padding: 0 8px; background: #fffaf0; }
+.pl-small { font-size: 12px; color: #6e5538; }
+.pl-lab { font-size: 12px; color: #6e5538; }
+.pl-order, .pl-favs { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pl-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; padding: 4px 10px; border: 1.5px solid #dcc8a0; border-radius: 999px; background: #fffaf0; }
+.pl-chip.on { border-color: #1f7a4d; background: #eef6ea; }
+.pl-chip.first { background: #1f7a4d; color: #fff; }
+.pl-tag { font-size: 10.5px; font-weight: 700; color: #fff; background: #1f7a4d; border-radius: 999px; padding: 0 6px; }
+.pl-chip.first .pl-tag { background: #fff; color: #1f7a4d; }
+.pl-maxrow { display: flex; align-items: center; gap: 8px; }
+.pl-in { width: 112px; height: 32px; padding: 0 8px; border: 2px solid #3b2a1a; border-radius: 9px; background: #fff; font-size: 14px; }
+.pl-in.name { width: 130px; }
+.pl-acts { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.pl-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; padding: 2px 12px; border: 2px solid #3b2a1a; border-radius: 10px; background: #fffaf0; font-family: var(--hand); font-size: 16px; }
+.pl-btn.wide { display: flex; }
+.pl-link { font-size: 12.5px; color: #974128; text-decoration: underline; }
+.pl-link.muted { color: #826b4b; }
+.pl-mine { font-size: 12.5px; color: #1f7a4d; font-weight: 700; }
+.pl-main { display: flex; align-items: center; justify-content: center; min-height: 46px; border: 2.5px solid #3b2a1a; border-radius: 12px; background: #b5462f; color: #fff;
+  font-family: var(--hand); font-size: 19px; box-shadow: 3px 4px 0 #3b2a1a; padding: 4px 14px; line-height: 1.2; }
+button.sharebtn { width: 100%; margin: 0; }
+button.sharebtn::after { border: 0; }
+.pl-ok { font-size: 13px; color: #1f7a4d; font-weight: 700; }
+.pl-sec { font-family: var(--display); font-size: 19px; margin-top: 14px; }
+.pl-share { display: flex; flex-direction: column; gap: 8px; border: 2px dashed #b5462f; border-radius: 12px; background: #fff6ee; padding: 4px 12px 12px; }
+.pl-share .pl-sec { margin-top: 6px; }
+.pl-adv { font-size: 13px; color: #974128; text-decoration: underline; }
+.pl-small.foot { margin-top: 16px; }

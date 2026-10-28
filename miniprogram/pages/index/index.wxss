@@ -15,6 +15,8 @@
 .infopop { left: 8px; right: 8px; z-index: 13; padding: 12px 14px; font-size: 12.5px; line-height: 1.5; color: var(--ink-soft); }
 
 /* 缩放 + 底部按钮 */
+.planfab { left: 12px; bottom: calc(66px + env(safe-area-inset-bottom)); font-family: var(--hand); font-size: 16px; padding: 6px 12px; border-radius: 999px; border: 2px solid var(--ink); background: var(--panel); box-shadow: 0 4px 12px rgba(40, 28, 16, .16); display: flex; align-items: center; gap: 6px; }
+.pf-n { min-width: 20px; height: 20px; line-height: 20px; text-align: center; font-family: var(--body); font-size: 12px; font-weight: 700; color: #fff; background: #b5462f; border-radius: 999px; padding: 0 5px; }
 .zoom { right: 12px; bottom: calc(66px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 6px; }
 .zb { width: 40px; height: 40px; font-family: var(--hand); font-size: 26px; line-height: 1; border-radius: 12px; border: 2px solid var(--ink); background: var(--panel); box-shadow: 0 4px 12px rgba(40, 28, 16, .16); display: flex; align-items: center; justify-content: center; }
 .zb.fit { width: auto; min-width: 40px; padding: 0 8px; font-size: 15px; white-space: nowrap; }

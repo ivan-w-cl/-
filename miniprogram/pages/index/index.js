@@ -10,6 +10,7 @@ const core = require('../../utils/handoff-core.js');
 const RP = require('../../utils/rooms-core.js');
 const WX = require('../../utils/weather.js');
 const shareLink = require('../../utils/share-link.js');
+const PL = require('../../utils/plan-core.js');
 const { API_BASE } = require('../../config.js');
 const photo = p => `${API_BASE}/photos/${p}.jpg`;
 const fmtw = (s, v) => String(s).replace(/\{(\w+)\}/g, (_, k) => (v[k] != null ? v[k] : ''));
@@ -44,7 +45,7 @@ Page({
     filters: H.defaultFilters(), rank: 'area', rankLabel: '', count: 0, groups: [], ranked: [], sortNote: '', open: '', options: {},
     layers: LAYERS.map(k => ({ k, on: true, color: LAYER_COLORS[k], label: '' })), zones: [], favCount: 0, cmpCount: 0, canZoomIn: true, canZoomOut: false,
     groupShow: false, groupHome: null, fab: null, album: null, albumTo: '', wx: null, wxOpen: false, fx: '',
-    cmp: null, tray: [], filterIds: null, subjectObj: null, subj: null },
+    cmp: null, tray: [], filterIds: null, subjectObj: null, subj: null, planCount: 0 },
 
   onLoad(q) {
     favorites = readSet('lsm-favorites-v1', 47); compare = readSet('lsm-compare-v1', 3);
@@ -61,6 +62,8 @@ Page({
     this.pendingGroup = q && q.group;   // 订阅消息「群码到了」点进来：直接打开专家群
     // 测试链接（朋友分享的 ?quiz=buddy&duo=food）或分享卡片上的小程序码（scene=q=buddy&d=food&r=推广码）
     const sc = q && q.scene ? shareLink.parseScene(q.scene) : null;
+    // 朋友转发的抢房计划：?plan=1.se.180_7.e&from=小林
+    this.pendingPlan = q && q.plan ? { code: q.plan, from: q.from ? decodeURIComponent(q.from) : '' } : null;
     this.pendingQuiz = q && q.quiz ? { quiz: q.quiz, duo: q.duo || '' } : sc && sc.quiz ? { quiz: sc.quiz, duo: sc.duo } : null;
     this.offCase = cases.on(c => this.updateFab(c));
     if (cases.stored()) this.updateFab(null);
@@ -88,12 +91,18 @@ Page({
       this.redraw();
       fonts.ready(() => { renderer.relayout(); this.redraw(); });
       if (this.pendingHome && H.byId(this.pendingHome)) this.openHome(this.pendingHome, true);
-      if (this.pendingGroup && cases.stored()) this.openGroup();
+      if (this.pendingPlan) this.selectComponent('#plan').openFriend(this.pendingPlan.code, this.pendingPlan.from);
+      else if (this.pendingGroup && cases.stored()) this.openGroup();
       else if (this.pendingQuiz) { const f = this.selectComponent('#fun'); f.setDuo(this.pendingQuiz.quiz, this.pendingQuiz.duo); f.intro(this.pendingQuiz.quiz); }
       else if (!this.pendingHome) this.selectComponent('#match').openQuiz();   // 和网页一样：一打开先看到生活选房的开场
     });
   },
   onShareAppMessage(res) {
+    // 抢房计划里的「转发我的计划」：朋友点开卡片直接看到这份计划，可以复制
+    if (res && res.from === 'button' && res.target && res.target.dataset && res.target.dataset.pq === 'plan') {
+      const s = this.selectComponent('#plan').shareInfo();
+      if (s.code) return { title: s.title, path: s.path };
+    }
     // 「留学搭子」结果卡上的「邀请朋友测合拍度」：朋友点开直接进这套测试，看两人合拍度
     if (res && res.from === 'button' && res.target && res.target.dataset && res.target.dataset.fq === 'invite') {
       const f = this.selectComponent('#fun').share;
@@ -170,14 +179,14 @@ Page({
     if (lang && lang.currentTarget) lang = lang.currentTarget.dataset.l;
     app.globalData.lang = lang; app.store('lsm-lang', lang);
     const L = lang, T = {};
-    ['title', 'zfit', 'hide', 'close', 'findHome', 'rankBy', 'homesBtn', 'filters', 'matchBtn', 'compactAsk', 'ask', 'expandDetails', 'collapseDetails', 'cmpAdd', 'cmpAdded', 'info', 'layers', 'zoneKey', 'save', 'saved', 'share', 'soon', 'compactNote']
+    ['title', 'zfit', 'hide', 'close', 'findHome', 'rankBy', 'homesBtn', 'filters', 'matchBtn', 'compactAsk', 'ask', 'expandDetails', 'collapseDetails', 'cmpAdd', 'cmpAdded', 'info', 'layers', 'zoneKey', 'save', 'saved', 'share', 'soon', 'compactNote', 'planBtn', 'addPlan', 'inPlan']
       .forEach(k => { T[k] = t(L, k); });
     ['search', 'placeholder', 'favorites', 'budget', 'room', 'destination', 'walk', 'reset', 'note', 'local', 'stable', 'empty'].forEach(k => { T['h_' + k] = ht(L, k); });
     T.filters = t(L, 'filters') === 'filters' ? (L === 'zh' ? '筛选' : 'Filters') : t(L, 'filters');
     this.setData({ lang, T, layers: this.data.layers.map(x => Object.assign({}, x, { label: t(L, 'c_' + x.k) })),
       zones: Object.keys(H.D.zones).map(k => ({ k, color: H.D.zones[k].bld, label: `${H.D.zones[k].name[L]} · ${H.D.zones[k].faculty[L]}` })) });
     if (renderer) { renderer.setLang(lang); this.redraw(); }
-    this.refreshList();
+    this.refreshList(); this.planCount();
     if (this.data.card) this.openHome(this.data.card.id, false, true);
     this.updateFab(cases.current); this.paintWeather(); this.setData({ subj: this.subjView(!!(this.data.subj && this.data.subj.open)) });
     if (!quiet) wx.vibrateShort && wx.vibrateShort({ type: 'light' });
@@ -189,12 +198,27 @@ Page({
   zoomOut() { const v = view.get(); view.zoomAt(1 / 1.5, v.w / 2, v.h / 2); this.redraw(); },
   zoomFit() { view.fit(); this.redraw(); },
 
+  /* ---------- 抢房计划（components/plan） ---------- */
+  planCount() { const n = Object.keys(PL.load(app.store).watch).filter(id => H.byId(id)).length; this.setData({ planCount: n }); return n; },
+  openPlan() { this.setData({ card: null, sheet: '' }); this.selectComponent('#plan').openMine(); },
+  addToPlan() {
+    const c = this.data.card; if (!c) return;
+    const st = PL.load(app.store);
+    if (!st.watch[c.id]) {
+      if (Object.keys(st.watch).length >= PL.MAX_HOMES) { wx.showToast({ title: t(this.data.lang, 'planFull'), icon: 'none' }); return; }
+      st.watch[c.id] = { since: new Date().toISOString() }; PL.save(app.store, st);
+      this.setData({ 'card.inPlan': true }); this.planCount();
+      wx.showToast({ title: t(this.data.lang, 'planAdded'), icon: 'success' });
+    } else { this.setData({ card: null }); this.selectComponent('#plan').openMine(c.id); }
+  },
+  onPlanClose() { this.planCount(); if (this.data.card) this.setData({ 'card.inPlan': !!PL.load(app.store).watch[this.data.card.id] }); },
+
   /* ---------- 公寓卡片 ---------- */
   openHome(id, center, keepExpanded) {
     if (id && id.currentTarget) id = id.currentTarget.dataset.id;
     const h = H.byId(id); if (!h) return;
     const c = H.card(this.data.lang, h, this.subject);
-    c.fav = favorites.has(id); c.cmp = compare.has(id); c.rooms = roomsView(this.data.lang, h);
+    c.fav = favorites.has(id); c.cmp = compare.has(id); c.inPlan = !!PL.load(app.store).watch[id]; c.rooms = roomsView(this.data.lang, h);
     this.setData({ card: c, expanded: keepExpanded ? this.data.expanded : false, sheet: '', info: false });
     if (center && view) { const m = scene.markers.find(x => x.id === id), v = view.get(); view.focus(m.x, m.y, v.w / 2, v.h * 0.38, 2); }
     this.redraw();

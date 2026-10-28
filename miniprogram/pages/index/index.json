@@ -1,1 +1,1 @@
-{ "usingComponents": { "group": "/components/group/group", "match": "/components/match/match", "fun": "/components/fun/fun", "share": "/components/share/share" }, "disableScroll": true }
+{ "usingComponents": { "group": "/components/group/group", "match": "/components/match/match", "fun": "/components/fun/fun", "share": "/components/share/share", "plan": "/components/plan/plan" }, "disableScroll": true }
