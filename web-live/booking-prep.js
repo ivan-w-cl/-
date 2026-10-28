@@ -2,6 +2,7 @@
    - 开放日历：各公寓预计开放日、倒计时和监测状态（上次检查时间、检查频率）。可以「关注」。
    - 抢房计划：给关注的公寓排好首选和备选房型、能接受的最高周租，再按「开放当天」的顺序做准备。
    - 开放提醒：留邮箱，关注的公寓开放或售罄后又有房时发邮件；页面开着时每分钟刷新一次，变了马上提示。
+   - 两手准备：自己抢的同时，引导学生找订房顾问（打开页面原有的咨询进群），抢房计划可一键复制发给顾问。
    数据来源：有服务器时读 ./api/availability（consult-server 的 lib/availability.js 定时查官网公开页面：平时每 45 分钟，
    开放日前后每 7 分钟）；静态网页读 booking-prep.json 的演示数据。
    只提醒，不替学生下单，也不绕过官网的排队和验证码。关注和计划存在这台设备的浏览器里（lsm-prep-v1）。 */
@@ -40,7 +41,12 @@
       pageTip: '这个页面开着时每分钟刷新一次，关注的公寓状态变了会马上提示。',
       simulate: '模拟开放', simulated: '🔔 {h} 已开放预订！按抢房计划去官网下单。', alertLog: '提醒记录',
       howH: '怎么监测的', how: ['服务器定时打开各公寓官网公开的房型页面：平时每 45 分钟一次，预计开放日前 3 天到后 2 天改为每 7 分钟一次。', '页面上目标学年旁边出现「Book now」就算开放；出现「Sold out」算售罄，之后又能订会再提醒一次。顺便读出最低周租。', '遵守网站的 robots.txt，同一个网站两次访问至少隔 15 秒。判断不了的由订房专家人工核对。', '只提醒，不替你下单，也不绕过官网的排队和验证码。'],
-      officialSite: '官网预订页 ↗', note: '开放日期和状态以公寓官网为准。'
+      officialSite: '官网预订页 ↗', note: '开放日期和状态以公寓官网为准。',
+      twoH: '🤝 两手准备：自己抢 + 订房顾问帮你盯', twoLede: '热门公寓开放几分钟就可能订满。加一位订房顾问，成功率更高：',
+      two: ['开放前帮你核对开放时间、房型和价格，提前排好备选', '开放当天和你一起盯，首选没了马上给你推荐相近的房', '售罄了帮你登记候补，退房、补房第一时间通知你'],
+      twoGo: '找订房顾问', twoCopy: '复制我的抢房计划', twoCopied: '已复制，进群后发给顾问', twoNote: '免费咨询；顾问能提高成功率，但不保证一定订到。',
+      twoSoon: '快开放了，加一位订房顾问一起抢 ›', twoSold: '售罄了？让订房顾问帮你候补、找相近房源 ›',
+      planTxt: '我的抢房计划：{h}（{st}）\n房型顺序：{o}\n最高周租：{m}\n预计开放：{d}', any: '未设置'
     },
     en: {
       title: '🏁 Booking prep', desc: 'Release dates · booking plan · alerts', eyebrow: 'Booking prep', intro: '🏁 Booking prep',
@@ -70,7 +76,12 @@
       pageTip: 'While this page is open it refreshes every minute and tells you as soon as a watched home changes.',
       simulate: 'Simulate opening', simulated: '🔔 {h} is now open for booking! Follow your booking plan on the official site.', alertLog: 'Alert history',
       howH: 'How monitoring works', how: ['The server opens each home’s official public rooms page: every 45 minutes normally and every 7 minutes from 3 days before to 2 days after the expected release date.', '“Book now” next to the target year counts as open; “Sold out” counts as sold out, and you are alerted again if rooms come back. The lowest weekly rent is read too.', 'It follows each site’s robots.txt and waits at least 15 seconds between visits to the same site. Anything unclear is checked by a booking expert.', 'It only alerts; it never books for you or bypasses official queues and captchas.'],
-      officialSite: 'Official booking page ↗', note: 'Always confirm dates and availability on the official site.'
+      officialSite: 'Official booking page ↗', note: 'Always confirm dates and availability on the official site.',
+      twoH: '🤝 Two tracks: book yourself, and have a booking adviser watch with you', twoLede: 'Popular homes can sell out within minutes of opening. A booking adviser improves your chances:',
+      two: ['Before release, they confirm the date, room types and prices and line up your backups', 'On the day, they watch with you and suggest a similar room the moment your first choice goes', 'If it sells out, they add you to the waitlist and tell you as soon as a room comes back'],
+      twoGo: 'Talk to a booking adviser', twoCopy: 'Copy my booking plan', twoCopied: 'Copied: send it to your adviser in the group', twoNote: 'Free to ask. An adviser improves your chances but cannot guarantee a room.',
+      twoSoon: 'Opening soon: add a booking adviser to book with you ›', twoSold: 'Sold out? A booking adviser can waitlist you and find similar rooms ›',
+      planTxt: 'My booking plan: {h} ({st})\nRoom order: {o}\nHighest weekly rent: {m}\nExpected release: {d}', any: 'not set'
     }
   };
   const k = () => pick(T), zh = () => BT.lang() === 'zh';
@@ -112,6 +123,31 @@
   function alertOpen(h) { const msg = fmt(k().simulated, { h: nameOf_(h) }); st.log.unshift({ at: new Date().toISOString(), msg }); st.log = st.log.slice(0, 20); save(); BT.say(msg); }
   const stLine = (K, i, withPrice) => { const n = daysTo(i.opens); return [K.st[i.status] || K.st.unknown, i.status !== 'open' && i.opens ? fmt(K.opensOn, { d: dDate(i.opens) }) + (n > 0 ? ' · ' + fmt(K.days, { n }) : n === 0 ? ' · ' + K.today : '') : i.status === 'open' && n != null && n < 0 ? fmt(K.since, { n: -n }) : i.status !== 'open' ? K.noDate : '', withPrice && i.price ? fmt(K.from, { p: i.price }) : ''].filter(Boolean).join(' · '); };
   const siteLink = (K, i) => { const a = el('a', 'bp-url', K.officialSite); a.href = i.url; a.target = '_blank'; a.rel = 'noopener'; return a; };
+
+  /* 两手准备：自己抢 + 订房顾问。点「找订房顾问」打开页面原有的咨询进群（openContact），抢房计划可以复制发给顾问 */
+  function adviser(h) {
+    if (m) BT.close();
+    try { openContact(h); } catch (_) { /* 页面还没准备好 */ }
+  }
+  function planText(h) {
+    const K = k(), i = infoOf(h), p = st.plan[h.id] || { order: [] };
+    return fmt(K.planTxt, { h: h.name, st: K.st[i.status] || K.st.unknown, o: p.order.length ? p.order.map(r => K.rooms[r]).join(' > ') : K.any, m: p.max ? '£' + p.max : K.any, d: i.opens || K.any });
+  }
+  function twoHands(h, compact) {
+    const K = k(), box = el('div', 'bp-two' + (compact ? ' compact' : ''));
+    box.append(el('b', 'bp-two-h', K.twoH));
+    if (!compact) { box.append(el('p', '', K.twoLede)); const ul = el('ul'); K.two.forEach(x => ul.append(el('li', '', x))); box.append(ul); }
+    const row = el('div', 'bp-two-act'), go = btn('bt-btn', K.twoGo);
+    go.addEventListener('click', () => adviser(h)); row.append(go);
+    if (!compact) {
+      const cp = btn('bt-btn alt', K.twoCopy);
+      cp.addEventListener('click', async () => { await BT.copy(planText(h)); cp.textContent = K.twoCopied; setTimeout(() => { cp.textContent = K.twoCopy; }, 1800); });
+      row.append(cp);
+    }
+    box.append(row, el('small', 'bt-note', K.twoNote));
+    return box;
+  }
+  const nudgeLink = (h, text) => { const a = btn('bp-two-link', text); a.addEventListener('click', ev => { ev.stopPropagation(); adviser(h); }); return a; };
 
   let m = null, tab = 'cal', planHome = null, filter = { q: '', watch: false };
   function open(h, which) {
@@ -157,7 +193,8 @@
         const li = el('li', 'bp-row s-' + i.status), main = el('div', 'bp-main'), n = daysTo(i.opens);
         main.append(el('b', '', nameOf_(h)), el('small', '', stLine(K, i, true)));
         const mon = monitorLine(i); if (mon) main.append(el('small', 'bp-mon' + (fastNow(i) ? ' fast' : ''), mon));
-        if (i.status === 'soon' && n != null && n <= 7 && n >= 0) main.append(el('small', 'bp-tip', K.soonTip));
+        if (i.status === 'soon' && n != null && n <= 7 && n >= 0) main.append(el('small', 'bp-tip', K.soonTip), nudgeLink(h, K.twoSoon));
+        else if ((i.status === 'soldout' || i.status === 'waitlist') && st.watch[h.id]) main.append(nudgeLink(h, K.twoSold));
         if (i.url) main.append(siteLink(K, i));
         const side = el('div', 'bp-side'), cd = el('span', 'bp-cd');
         cd.textContent = i.status === 'open' ? K.st.open : n != null && n >= 0 ? (n === 0 ? K.today : String(n)) : '—';
@@ -199,7 +236,7 @@
     const warn = el('small', 'bp-tip'); card.append(ml, warn);
     const check = () => { const mx = Number(p.max); warn.textContent = mx && i.price && i.price > mx ? fmt(K.overMax, { p: i.price }) : ''; warn.hidden = !warn.textContent; };
     mi.addEventListener('input', () => { p.max = mi.value; save(); check(); }); check();
-    box.append(card);
+    box.append(card, twoHands(h, false));
     /* 开放当天 */
     const d = st.day[planHome] = st.day[planHome] || {}, prog = el('div', 'bp-ready'), ul = el('ol', 'bp-check');
     box.append(el('h4', 'bp-h', K.dayH), prog, ul);
@@ -249,6 +286,7 @@
       em.append(lab, sv); box.append(em, msg, el('small', 'bt-note', K.pageTip));
     }
     if (st.log.length) { const d = el('details', 'hi-notes-d'), sm = el('summary', '', K.alertLog), ol = el('ul', 'hi-notes'); st.log.forEach(x => ol.append(el('li', '', new Date(x.at).toLocaleString(zh() ? 'zh-CN' : 'en-GB', { dateStyle: 'short', timeStyle: 'short' }) + ' · ' + x.msg))); d.append(sm, ol); box.append(d); }
+    if (ids.length) { const h0 = HOMES_.find(x => x.id === ids[0]); box.append(twoHands(h0, true)); }
     const how = el('details', 'hi-notes-d'), hs = el('summary', '', K.howH), hu = el('ul', 'hi-notes'); K.how.forEach(x => hu.append(el('li', '', x))); how.append(hs, hu); box.append(how);
   }
 
