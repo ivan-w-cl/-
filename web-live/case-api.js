@@ -29,6 +29,7 @@
     async create(payload) { const r = await call('api/cases', { method: 'POST', body: JSON.stringify(payload) }); write({ id: r.id, token: r.token, code: r.code }); return r.case; },
     async get() { const s = read(); if (!s) return null; try { return await call(`api/cases/${s.id}?token=${encodeURIComponent(s.token)}`); } catch (e) { if (e.status === 404) write(null); throw e; } },
     async addHome(home) { const s = read(); if (!s) return null; return call(`api/cases/${s.id}/homes?token=${encodeURIComponent(s.token)}`, { method: 'POST', body: JSON.stringify({ home }) }); },
+    async plans(list) { const s = read(); if (!s) return null; return call(`api/cases/${s.id}/plans?token=${encodeURIComponent(s.token)}`, { method: 'POST', body: JSON.stringify({ plans: list }) }); },
     async renew() { const s = read(); if (!s) return null; return call(`api/cases/${s.id}/renew?token=${encodeURIComponent(s.token)}`, { method: 'POST' }); },
     media: p => (p ? url(p.replace(/^\//, '')) : '')
   };

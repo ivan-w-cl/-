@@ -16,6 +16,12 @@
   function statusPill(s) { return `<span class="pill st-${s}">${esc(a()['st_' + s])}</span>`; }
   function regionTag(c) { const r = D.REGIONS[c.region] || { flag: '🌐', en: 'Unknown', zh: '未知' }; return `<span class="rtag">${r.flag} ${esc(U.L(r, lang()))}</span>`; }
 
+  /* 会话列表：有抢房计划的学生标 🏁，3 天内开放标 🔥 */
+  function planTag(c) {
+    const ps = c.plans || []; if (!ps.length) return '';
+    const soon = ps.some(p => p.status === 'open' || (daysTo(p.opens) != null && daysTo(p.opens) >= 0 && daysTo(p.opens) <= 3));
+    return `<span class="pill plan-tag ${soon ? 'hot' : ''}" title="${esc(ps.map(p => p.name).join(' / '))}">${soon ? '🔥' : '🏁'} ${ps.length}</span>`;
+  }
   function list() {
     const A = a();
     let cs = Store.s.conversations.slice();
@@ -34,7 +40,7 @@
           <span class="av ${c.me ? 'me' : ''}">${(D.REGIONS[c.region] || {}).flag || '·'}</span>
           <span class="grow"><span class="row between"><b>${esc(nameOf(c))}</b><span class="fine">${esc(U.ago(c.updated, lang()))}</span></span>
           <span class="row between"><span class="fine trunc">${esc(preview(last))}</span>${c.unread ? `<span class="badge-dot">${c.unread}</span>` : ''}</span>
-          <span class="row gap">${regionTag(c)}${statusPill(c.status)}</span></span></button></li>`; }).join('')}</ul></div>`;
+          <span class="row gap">${regionTag(c)}${statusPill(c.status)}${planTag(c)}</span></span></button></li>`; }).join('')}</ul></div>`;
   }
   function preview(m) {
     if (!m) return '';
@@ -84,12 +90,39 @@
     if (q.oneTap) return `<span>${esc(lg === 'en' ? 'One tap, no details asked' : '一键进群，未填资料')} · ${esc(U.L(D.CHANNELS[q.channel], lg))}</span>${q.homeName ? `<span>${esc(lg === 'en' ? 'From: ' : '来自：')}${esc(q.homeName)}</span>` : ''}`;
     return `<span>${esc(q.name)} · ${esc(q.intake)} · ${esc(U.campusName(q.uni, lg))}</span><span>${q.budget ? '≤ £' + q.budget + esc(T.perWeek) : esc(T.any)} · ${esc(T[q.room] || '')} · ${esc(U.L(D.CHANNELS[q.channel], lg))}</span>`;
   }
+  /* 抢房计划：学生在网页「抢房准备」里关注的公寓、房型顺序、最高周租、开放当天准备进度（进群后自动同步） */
+  const PLAN_T = {
+    zh: { h: '🏁 抢房计划', none: '学生还没有关注公寓', st: { open: '已开放', soon: '即将开放', waitlist: '候补', soldout: '售罄', unknown: '待核对', blocked: '待核对', error: '待核对' },
+      rooms: { ensuite: '独卫单间', studio: 'Studio', premium: '高楼层/大房间', twodio: '双人间', flat: '合租整套' }, noOrder: '没排房型', max: '最高 £{n}/周', over: '官网最低 £{p} 超出预算',
+      opens: '{d} 开放', inDays: '还有 {n} 天', today: '今天开放', ready: '开放当天准备 {a}/{b}', updated: '学生 {t}前更新', tip: '开放前联系学生核对房型和备选；开放当天在群里一起盯。' },
+    en: { h: '🏁 Booking plan', none: 'No watched homes yet', st: { open: 'Open', soon: 'Opening soon', waitlist: 'Waitlist', soldout: 'Sold out', unknown: 'To check', blocked: 'To check', error: 'To check' },
+      rooms: { ensuite: 'En-suite', studio: 'Studio', premium: 'High floor / larger', twodio: 'Twodio', flat: 'Whole flat' }, noOrder: 'no room order', max: 'max £{n}/wk', over: 'lowest official £{p} is over budget',
+      opens: 'opens {d}', inDays: 'in {n} days', today: 'opens today', ready: 'release-day prep {a}/{b}', updated: 'student updated {t} ago', tip: 'Check room choices and backups with the student before release; watch together in the group on the day.' }
+  };
+  const daysTo = d => { if (!d) return null; const t0 = new Date(); t0.setHours(0, 0, 0, 0); return Math.round((new Date(d + 'T00:00:00') - t0) / 864e5); };
+  function plansBlock(c) {
+    const P = PLAN_T[lang() === 'en' ? 'en' : 'zh'], ps = (c.plans || []).slice().sort((x, y) => (daysTo(x.opens) ?? 999) - (daysTo(y.opens) ?? 999));
+    if (!ps.length) return '';
+    const rows = ps.map(p => {
+      const n = daysTo(p.opens), hot = p.status === 'open' || (n != null && n >= 0 && n <= 3);
+      const when = p.status === 'open' ? '' : p.opens ? fmt(P.opens, { d: p.opens.slice(5) }) + (n > 0 ? ' · ' + fmt(P.inDays, { n }) : n === 0 ? ' · ' + P.today : '') : '';
+      const order = p.order && p.order.length ? p.order.map((r, i) => `<span class="chip ${i ? '' : 'first'}">${i + 1}. ${esc(P.rooms[r] || r)}</span>`).join('') : `<span class="muted">${esc(P.noOrder)}</span>`;
+      return `<li class="plan ${hot ? 'hot' : ''} st-${esc(p.status)}"><div class="row between"><b>${esc(p.name)}</b><span class="pill">${esc(P.st[p.status] || P.st.unknown)}</span></div>
+        ${when ? `<span class="fine">${hot ? '🔥 ' : ''}${esc(when)}</span>` : ''}
+        <span class="row wrap">${order}</span>
+        <span class="fine">${[p.max ? fmt(P.max, { n: p.max }) : '', p.readyOf ? fmt(P.ready, { a: p.ready, b: p.readyOf }) : ''].filter(Boolean).map(esc).join(' · ')}</span>
+        ${p.max && p.price && p.price > p.max ? `<span class="fine warn">${esc(fmt(P.over, { p: p.price }))}</span>` : ''}</li>`;
+    }).join('');
+    return `<section class="plans"><div class="row between wrap plans-h"><b class="h3">${esc(P.h)}</b>${c.plansAt ? `<span class="fine">${esc(fmt(P.updated, { t: U.ago(c.plansAt, lang()) }))}</span>` : ''}</div>
+      <ul>${rows}</ul><p class="fine">${esc(P.tip)}</p></section>`;
+  }
   function context() {
     const c = Store.conv(current), A = a(), lg = lang();
     if (!c) return '<aside class="ctx"></aside>';
     const homes = ids => HM.byIds(ids || []).map(h => `<span class="chip">${h.n} · ${esc(h.name)}</span>`).join('') || `<span class="muted">${esc(A.none)}</span>`;
     const team = c.group && D.TEAMS.find(x => x.id === c.group.team);
     return `<aside class="ctx">
+      ${plansBlock(c)}
       <b class="h3">${esc(A.ctx)}</b>
       <dl>
         <dt>${esc(A.region)}</dt><dd>${regionTag(c)}</dd>

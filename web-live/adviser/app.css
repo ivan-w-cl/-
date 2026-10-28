@@ -378,3 +378,14 @@ table { border-collapse: collapse; width: 100%; font-size: 13px; }
 }
 .field .row { flex-wrap: wrap; }
 .amsgs .msg.out .bubble.ai { background: #efe6fb; }
+/* 抢房计划（学生在网页「抢房准备」里同步过来） */
+.ctx .plans { display: flex; flex-direction: column; gap: 6px; border-bottom: 2px dashed var(--line); padding-bottom: 10px; }
+.ctx .plans-h { gap: 2px 8px; align-items: baseline; }
+.ctx .plans ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.ctx .plan { display: flex; flex-direction: column; gap: 3px; border: 2px solid var(--ink); border-radius: 10px; background: var(--panel); padding: 6px 9px; font-size: 13px; }
+.ctx .plan.hot { border-color: #b5462f; background: #fff3ec; }
+.ctx .plan.st-open { border-color: #1f7a4d; background: #eef6ea; }
+.ctx .plan .chip.first { border-color: #1f7a4d; background: #1f7a4d; color: #fff; }
+.ctx .plan .warn { color: #974128; }
+.plan-tag { background: #fff6ee; border-color: #b5462f; color: #974128; }
+.plan-tag.hot { background: #b5462f; color: #fff; }

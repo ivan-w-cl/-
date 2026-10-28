@@ -93,6 +93,14 @@
   const ABC = '23456789ABCDEFGHJKMNPQRSTUVWXYZ';
   const demoCode = () => 'LSM-' + Array.from(crypto.getRandomValues(new Uint8Array(4)), b => ABC[b % ABC.length]).join('');
   const API = () => window.CaseAPI && window.CaseAPI.enabled;
+  /* 抢房计划（booking-prep.js）：进群时一起交给顾问；之后学生改计划，syncPlans 同步过去 */
+  const plansNow = () => { try { return window.BookingPrep ? window.BookingPrep.plans() : []; } catch (_) { return []; } };
+  function syncPlans(list) {
+    const me = load(); if (!me || !me.request) return;
+    if (me.server) { if (API()) window.CaseAPI.plans(list).catch(() => { /* 下次改计划再同步 */ }); return; }
+    me.plans = list; me.plansAt = Date.now(); me.updated = Date.now(); save(me);
+  }
+  window.BookingHandoff = { syncPlans, joined: () => { const me = load(); return !!(me && me.request); } };
   /* 服务器返回的 case → 本页使用的会话格式（和演示模式相同，渲染代码不用分两套） */
   function toMe(c, prev) {
     const t = x => (x ? Date.parse(x) : null), first = c.homes && c.homes[0], prevAgent = prev ? prev.messages.filter(m => m.from === 'agent' && !m.ai).length : 0;
@@ -124,7 +132,7 @@
       try {
         const sp = new URLSearchParams(location.search);
         const c = await window.CaseAPI.create({ lang: lang(), tz: Intl.DateTimeFormat().resolvedOptions().timeZone || '', channel: chosen || defaultChannel(),
-          homes: h ? [{ id: h.id, n: h.n, name: h.name }] : [], qa: qa.map(x => ({ q: x.q, a: x.a })), source: sp.get('ref') || sp.get('utm_source') || '' });
+          homes: h ? [{ id: h.id, n: h.n, name: h.name }] : [], qa: qa.map(x => ({ q: x.q, a: x.a })), plans: plansNow(), source: sp.get('ref') || sp.get('utm_source') || '' });
         busy = ''; save(toMe(c, null));
       } catch (_) { setBusy('failed'); }
       return;
@@ -132,7 +140,7 @@
     const now = Date.now(), channel = chosen || defaultChannel(), prev = load(), code = (prev && prev.code) || demoCode();
     const viewed = [h && h.id].concat((prev && prev.viewed) || []).filter((x, i, a) => x && a.indexOf(x) === i).slice(0, 6);
     const me = { id: 'me', me: true, code, name: '', region: regionOf(), lang: lang(), source: 'Website', status: 'requested',
-      viewed, favorites: favorites(), quiz: '', group: null, unread: 1, studentUnread: 0, updated: now,
+      viewed, favorites: favorites(), quiz: '', plans: plansNow(), plansAt: now, group: null, unread: 1, studentUnread: 0, updated: now,
       request: { name: code, region: regionOf(), channel, intake: '', budget: 0, uni: 'uol', room: 'any',
         homeId: h && h.id, homeName: h && h.name, at: now, oneTap: true },
       messages: (h ? [{ from: 'student', type: 'home', homeId: h.id, at: now - 1 - qa.length * 2 }] : []).concat(qa.flatMap((x, i) => [{ from: 'student', text: x.q, at: now - (qa.length - i) * 2 }, { from: 'agent', text: x.a, ai: true, at: now - (qa.length - i) * 2 + 1 }]), [{ from: 'student', type: 'request', at: now }]) };

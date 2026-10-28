@@ -36,7 +36,7 @@
     const g = k.group;
     return {
       id: k.id, code: k.code, name: k.code, tz: k.tz, region: k.region || (k.lang === 'zh' ? 'CN' : 'SG'), lang: k.lang, source: k.source, quiz: k.quiz,
-      status: k.status, updated: t(k.updatedAt), viewed: k.homes.map(h => h.id).filter(Boolean), favorites: [], renewals: k.renewals,
+      plans: k.plans || [], plansAt: t(k.plansAt), status: k.status, updated: t(k.updatedAt), viewed: k.homes.map(h => h.id).filter(Boolean), favorites: [], renewals: k.renewals,
       unread: k.status === 'requested' && local.read[k.id] !== k.requestedAt ? 1 : 0, requestedAt: k.requestedAt,
       request: { name: k.code, channel: k.channel, homeId: first && first.id, homeName: first && first.name, at: reqAt, oneTap: true },
       group: g ? { team: g.team || 'A', channel: g.channel, name: g.name, link: g.link, image: g.image ? url(g.image.replace(/^\//, '')) : '', at: t(g.at), expiresAt: t(g.expiresAt) } : null,

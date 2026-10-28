@@ -36,6 +36,16 @@ function createCasesApi(ctx) {
     const data = {}; for (const k in tpl) data[k] = { value: String(tpl[k]).replace(/\{(\w+)\}/g, (_, x) => vals[x] || '').slice(0, 20) };
     wx.sendSubscribe(c.openid, tid, `pages/index/index?group=1`, data).catch(e => console.warn('[subscribe]', e.message));
   }
+  /* 抢房计划（网页「抢房准备」）：学生关注的公寓、房型顺序、最高周租、开放当天准备了几项。进群后同步给顾问，不含邮箱 */
+  const ROOMS = ['ensuite', 'studio', 'premium', 'twodio', 'flat'], PLAN_ST = ['open', 'soon', 'waitlist', 'soldout', 'unknown', 'blocked', 'error'];
+  const cleanPlans = list => (Array.isArray(list) ? list : []).slice(0, 10).map(x => {
+    if (!x || typeof x !== 'object') return null;
+    const name = clean(x.name, 80), max = Math.round(Number(x.max)), readyOf = Math.min(10, Math.max(0, Math.round(Number(x.readyOf)) || 0));
+    return name ? { homeId: clean(x.homeId, 60), name, status: PLAN_ST.includes(x.status) ? x.status : 'unknown',
+      opens: /^\d{4}-\d{2}-\d{2}$/.test(x.opens || '') ? x.opens : '', order: (Array.isArray(x.order) ? x.order : []).filter((r, i, a) => ROOMS.includes(r) && a.indexOf(r) === i),
+      max: max >= 60 && max <= 600 ? max : null, price: Number(x.price) > 0 ? Math.round(Number(x.price)) : null,
+      ready: Math.min(readyOf, Math.max(0, Math.round(Number(x.ready)) || 0)), readyOf } : null;
+  }).filter(Boolean);
   const cleanHome = h => (h && typeof h === 'object' ? { id: clean(h.id, 60), n: Number(h.n) || null, name: clean(h.name, 80) } : null);
   const publicCase = c => ({
     id: c.id, code: c.code, status: c.status, channel: c.channel, lang: c.lang, region: c.region, createdAt: c.createdAt, requestedAt: c.requestedAt,
@@ -43,7 +53,7 @@ function createCasesApi(ctx) {
       image: c.group.image ? '/api/consult/media/' + c.group.image : '', at: c.group.at, expiresAt: c.group.expiresAt } : null,
     messages: c.messages.filter(m => m.from === 'staff' && m.text).map(m => ({ id: m.id, at: m.at, text: m.text }))
   });
-  const adminCase = c => ({ ...publicCase(c), app: c.app || 'web', reminder: !!(c.openid && c.subscribed), tz: c.tz, source: c.source, quiz: c.quiz, qa: c.qa, renewals: c.renewals || 0, updatedAt: c.updatedAt, log: c.messages });
+  const adminCase = c => ({ ...publicCase(c), plans: c.plans || [], plansAt: c.plansAt || '', app: c.app || 'web', reminder: !!(c.openid && c.subscribed), tz: c.tz, source: c.source, quiz: c.quiz, qa: c.qa, renewals: c.renewals || 0, updatedAt: c.updatedAt, log: c.messages });
   function notify(c, req, title, text) {
     return notifier.notify({ title, text, at: Date.now(), adminUrl: adviserUrl(req),
       session: { id: c.id, nickname: `${c.code}${c.region ? ' · ' + c.region : ''}`, channel: 'web', context: { homes: c.homes, lifeCharacter: c.quiz || '' } } });
@@ -65,12 +75,12 @@ function createCasesApi(ctx) {
       // 小程序：用登录 code 换 openid（只存在服务器上，用来发「群码到了」的订阅消息，不返回、也不显示给专家）
       let openid = '';
       if (wx && wx.canLogin() && typeof b.wxcode === 'string' && b.wxcode) { try { openid = await wx.code2Session(b.wxcode); } catch (e) { console.warn('[code2session]', e.message); } }
-      const app = b.app === 'miniprogram' ? 'miniprogram' : 'web';
-      const c = store.createCase({ channel, lang, tz, region: regionOf(tz, lang), homes, qa, quiz: clean(b.quiz, 80), source: clean(b.source, 60), app, openid, subscribed: !!b.subscribed });
-      notify(c, req, '新的建群请求：学生在等群码', `一键进群 · ${channel === 'wechat' ? '微信群' : 'WhatsApp 群'}${qa.length ? ' · 进群前问过：' + qa.map(x => x.q).join(' / ') : ''}`);
+      const app = b.app === 'miniprogram' ? 'miniprogram' : 'web', plans = cleanPlans(b.plans);
+      const c = store.createCase({ channel, lang, tz, region: regionOf(tz, lang), homes, qa, plans, plansAt: plans.length ? new Date().toISOString() : '', quiz: clean(b.quiz, 80), source: clean(b.source, 60), app, openid, subscribed: !!b.subscribed });
+      notify(c, req, '新的建群请求：学生在等群码', `一键进群 · ${channel === 'wechat' ? '微信群' : 'WhatsApp 群'}${qa.length ? ' · 进群前问过：' + qa.map(x => x.q).join(' / ') : ''}${plans.length ? ' · 抢房计划：' + plans.map(x => x.name + (x.opens ? '（' + x.opens + ' 开放）' : '')).join(' / ') : ''}`);
       return send(res, 201, { id: c.id, token: c.token, code: c.code, case: publicCase(c) });
     }
-    m = /^\/api\/cases\/([\w-]+)(?:\/(homes|renew))?$/.exec(p);
+    m = /^\/api\/cases\/([\w-]+)(?:\/(homes|renew|plans))?$/.exec(p);
     if (m) {
       const c = store.getCase(m[1]);
       if (!tokenOk(c, url, req)) return send(res, 404, { error: 'not_found' });
@@ -80,6 +90,12 @@ function createCasesApi(ctx) {
         const h = cleanHome((json(await readBody(req, 4e3)) || {}).home); if (!h || !h.name) return send(res, 400, { error: 'bad_home' });
         if (!c.homes.some(x => x.name === h.name)) store.updateCase(c.id, x => { x.homes.push(h); x.messages.push({ id: 'm_' + crypto.randomBytes(5).toString('hex'), at: new Date().toISOString(), from: 'student', type: 'home', home: h }); });
         return send(res, 200, publicCase(c));
+      }
+      if (m[2] === 'plans' && method === 'POST') {   // 学生改了抢房计划：整份替换，顾问后台下次刷新就能看到
+        if (limited(req, 'caseplan:', 60, 10 * 60e3)) return send(res, 429, { error: 'rate_limited' });
+        const b = json(await readBody(req, 16e3)); if (!b) return send(res, 400, { error: 'bad_json' });
+        store.updateCase(c.id, x => { x.plans = cleanPlans(b.plans); x.plansAt = new Date().toISOString(); });
+        return send(res, 200, { ok: true, plans: store.getCase(c.id).plans.length });
       }
       if (m[2] === 'renew' && method === 'POST') {   // 微信群码过期，学生申请新的
         if (limited(req, 'renew:', 5, 10 * 60e3)) return send(res, 429, { error: 'rate_limited' });

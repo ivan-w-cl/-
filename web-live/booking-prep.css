@@ -64,3 +64,4 @@
 .bp-two.compact .bp-two-h { flex: 1 1 220px; }
 .bp-two.compact small { flex-basis: 100%; }
 .bp-two-link { align-self: flex-start; font-family: inherit; font-size: 12.5px; margin-top: 2px; padding: 0; border: 0; background: none; color: #b5462f; text-decoration: underline; cursor: pointer; text-align: left; }
+.bp-synced { color: #1f7a4d !important; }

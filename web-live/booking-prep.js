@@ -44,7 +44,7 @@
       officialSite: '官网预订页 ↗', note: '开放日期和状态以公寓官网为准。',
       twoH: '🤝 两手准备：自己抢 + 订房顾问帮你盯', twoLede: '热门公寓开放几分钟就可能订满。加一位订房顾问，成功率更高：',
       two: ['开放前帮你核对开放时间、房型和价格，提前排好备选', '开放当天和你一起盯，首选没了马上给你推荐相近的房', '售罄了帮你登记候补，退房、补房第一时间通知你'],
-      twoGo: '找订房顾问', twoCopy: '复制我的抢房计划', twoCopied: '已复制，进群后发给顾问', twoNote: '免费咨询；顾问能提高成功率，但不保证一定订到。',
+      twoGo: '找订房顾问', twoCopy: '复制我的抢房计划', twoCopied: '已复制，进群后发给顾问', twoNote: '免费咨询；顾问能提高成功率，但不保证一定订到。', twoSynced: '✓ 你的抢房计划已同步给顾问，改了会自动更新。', twoShare: '进群后，顾问能看到你关注的公寓和抢房计划（不含邮箱）。',
       twoSoon: '快开放了，加一位订房顾问一起抢 ›', twoSold: '售罄了？让订房顾问帮你候补、找相近房源 ›',
       planTxt: '我的抢房计划：{h}（{st}）\n房型顺序：{o}\n最高周租：{m}\n预计开放：{d}', any: '未设置'
     },
@@ -79,7 +79,7 @@
       officialSite: 'Official booking page ↗', note: 'Always confirm dates and availability on the official site.',
       twoH: '🤝 Two tracks: book yourself, and have a booking adviser watch with you', twoLede: 'Popular homes can sell out within minutes of opening. A booking adviser improves your chances:',
       two: ['Before release, they confirm the date, room types and prices and line up your backups', 'On the day, they watch with you and suggest a similar room the moment your first choice goes', 'If it sells out, they add you to the waitlist and tell you as soon as a room comes back'],
-      twoGo: 'Talk to a booking adviser', twoCopy: 'Copy my booking plan', twoCopied: 'Copied: send it to your adviser in the group', twoNote: 'Free to ask. An adviser improves your chances but cannot guarantee a room.',
+      twoGo: 'Talk to a booking adviser', twoCopy: 'Copy my booking plan', twoCopied: 'Copied: send it to your adviser in the group', twoNote: 'Free to ask. An adviser improves your chances but cannot guarantee a room.', twoSynced: '✓ Your booking plan is shared with your adviser and updates automatically.', twoShare: 'Once you join, your adviser can see your watched homes and booking plan (not your email).',
       twoSoon: 'Opening soon: add a booking adviser to book with you ›', twoSold: 'Sold out? A booking adviser can waitlist you and find similar rooms ›',
       planTxt: 'My booking plan: {h} ({st})\nRoom order: {o}\nHighest weekly rent: {m}\nExpected release: {d}', any: 'not set'
     }
@@ -89,7 +89,16 @@
   const st = Object.assign({ watch: {}, plan: {}, day: {}, email: '', subscribed: [], log: [], sim: {} }, S.get() || {});
   delete st.docs; delete st.steps;   // 旧版的资料清单和订房步骤不再使用
 
-  const save = () => S.set(st);
+  /* 进过顾问群的学生：计划一改，过一会儿同步给顾问（booking-handoff.js） */
+  let syncT = null;
+  const save = () => { S.set(st); clearTimeout(syncT); syncT = setTimeout(() => { if (window.BookingHandoff) window.BookingHandoff.syncPlans(plans()); }, 800); };
+  /* 发给顾问的计划：关注的公寓、状态、开放日、房型顺序、最高周租、开放当天准备了几项（不含邮箱） */
+  function plans() {
+    return Object.keys(st.watch).map(id => HOMES_.find(h => h.id === id)).filter(Boolean).map(h => {
+      const i = infoOf(h), p = st.plan[h.id] || {}, d = st.day[h.id] || {};
+      return { homeId: h.id, name: h.name, status: i.status, opens: i.opens || '', order: p.order || [], max: Number(p.max) || null, price: i.price || null, ready: Object.values(d).filter(Boolean).length, readyOf: T.zh.day.length };
+    });
+  }
 
   /* 数据：服务器监测优先，没有就用演示数据 */
   let INFO = { homes: {} }, LIVE = null, lastSeen = {};
@@ -144,7 +153,9 @@
       cp.addEventListener('click', async () => { await BT.copy(planText(h)); cp.textContent = K.twoCopied; setTimeout(() => { cp.textContent = K.twoCopy; }, 1800); });
       row.append(cp);
     }
-    box.append(row, el('small', 'bt-note', K.twoNote));
+    const joined = window.BookingHandoff && window.BookingHandoff.joined();
+    if (joined) go.textContent = zh() ? '打开我的顾问群' : 'Open my adviser group';
+    box.append(row, el('small', 'bt-note' + (joined ? ' bp-synced' : ''), joined ? K.twoSynced : K.twoShare), el('small', 'bt-note', K.twoNote));
     return box;
   }
   const nudgeLink = (h, text) => { const a = btn('bp-two-link', text); a.addEventListener('click', ev => { ev.stopPropagation(); adviser(h); }); return a; };
@@ -291,5 +302,5 @@
   }
 
   BT.add({ id: 'prep', order: 1, mini: false, card: h => ({ title: k().title, desc: (() => { const i = infoOf(h), n = daysTo(i.opens); return i.status === 'open' ? k().st.open : i.opens && n > 0 ? fmt(k().opensOn, { d: dDate(i.opens) }) : k().desc; })() }), intro: () => k().intro, open: h => open(h, 'cal') });
-  window.BookingPrep = { open, info: infoOf };
+  window.BookingPrep = { open, info: infoOf, plans };
 })();

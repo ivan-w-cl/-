@@ -46,6 +46,16 @@ const assert = require('assert'), http = require('http'), os = require('os'), fs
   assert.strictEqual((await j(`/api/cases/${id}?token=${token}`)).b.messages[0].text, 'See you in the group!');
   assert.strictEqual((await j(`/api/admin/cases/${id}/status`, { method: 'POST', headers: { cookie }, body: '{"status":"joined"}' })).b.status, 'joined');
   assert.strictEqual((await j(`/api/admin/cases/${id}/status`, { method: 'POST', headers: { cookie }, body: '{"status":"nope"}' })).s, 400);
-  console.log('PASS cases: anonymous code, region from time zone, notify, WhatsApp link / WeChat image, student poll, extra home, renew, reply, status');
+  // 抢房计划：进群后同步，顾问后台看得到；脏数据被清理；学生端接口不返回计划
+  const plan = { homeId: 'iq-great-newton-house', name: 'iQ Great Newton House', status: 'soon', opens: '2026-11-03', order: ['studio', 'ensuite', 'studio', 'castle'], max: '180', price: 199, ready: 9, readyOf: 5 };
+  assert.strictEqual((await j(`/api/cases/${id}/plans?token=nope`, { method: 'POST', body: JSON.stringify({ plans: [plan] }) })).s, 404);
+  assert.strictEqual((await j(`/api/cases/${id}/plans?token=${token}`, { method: 'POST', body: JSON.stringify({ plans: [plan, { name: '' }, 'x'] }) })).b.plans, 1);
+  let ap = (await j('/api/admin/cases', { headers: { cookie } })).b.cases.find(x => x.id === id);
+  assert.deepStrictEqual(ap.plans[0].order, ['studio', 'ensuite']); assert.strictEqual(ap.plans[0].max, 180); assert.strictEqual(ap.plans[0].ready, 5); assert(ap.plansAt);
+  assert(!('plans' in (await j(`/api/cases/${id}?token=${token}`)).b));
+  const r3 = await j('/api/cases', { method: 'POST', body: JSON.stringify({ lang: 'zh', plans: [{ ...plan, max: 5000 }] }) });
+  ap = (await j('/api/admin/cases', { headers: { cookie } })).b.cases.find(x => x.id === r3.b.id);
+  assert.strictEqual(ap.plans[0].max, null); assert(hooks.some(h => h.markdown.content.includes('抢房计划：iQ Great Newton House')));
+  console.log('PASS cases: anonymous code, region from time zone, notify, WhatsApp link / WeChat image, student poll, extra home, renew, reply, status, booking plans');
   server.close(); fake.close(); process.exit(0);
 })().catch(e => { console.error(e); process.exit(1); });
