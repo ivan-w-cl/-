@@ -64,6 +64,8 @@ Page({
     const sc = q && q.scene ? shareLink.parseScene(q.scene) : null;
     // 朋友转发的抢房计划：?plan=1.se.180_7.e&from=小林
     this.pendingPlan = q && q.plan ? { code: q.plan, from: q.from ? decodeURIComponent(q.from) : '' } : null;
+    // 网页上的抢房计划生成的小程序码：scene=p=分享码
+    if (!this.pendingPlan && sc && sc.plan) this.pendingPlan = { id: sc.plan };
     this.pendingQuiz = q && q.quiz ? { quiz: q.quiz, duo: q.duo || '' } : sc && sc.quiz ? { quiz: sc.quiz, duo: sc.duo } : null;
     this.offCase = cases.on(c => this.updateFab(c));
     if (cases.stored()) this.updateFab(null);
@@ -91,7 +93,7 @@ Page({
       this.redraw();
       fonts.ready(() => { renderer.relayout(); this.redraw(); });
       if (this.pendingHome && H.byId(this.pendingHome)) this.openHome(this.pendingHome, true);
-      if (this.pendingPlan) this.selectComponent('#plan').openFriend(this.pendingPlan.code, this.pendingPlan.from);
+      if (this.pendingPlan) { const pl = this.selectComponent('#plan'); if (this.pendingPlan.id) pl.openShareId(this.pendingPlan.id); else pl.openFriend(this.pendingPlan.code, this.pendingPlan.from); }
       else if (this.pendingGroup && cases.stored()) this.openGroup();
       else if (this.pendingQuiz) { const f = this.selectComponent('#fun'); f.setDuo(this.pendingQuiz.quiz, this.pendingQuiz.duo); f.intro(this.pendingQuiz.quiz); }
       else if (!this.pendingHome) this.selectComponent('#match').openQuiz();   // 和网页一样：一打开先看到生活选房的开场

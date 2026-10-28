@@ -17,6 +17,6 @@ function link(o) {
 function scene(o) { o = o || {}; return [o.quiz && 'q=' + o.quiz, o.duo && 'd=' + o.duo, 'r=' + refCode()].filter(Boolean).join('&'); }
 function parseScene(s) {
   const out = {}; String(s ? decodeURIComponent(s) : '').split('&').forEach(p => { const [k, v] = p.split('='); if (k && v) out[k] = v; });
-  return { quiz: out.q || '', duo: out.d || '', ref: out.r || '' };
+  return { quiz: out.q || '', duo: out.d || '', ref: out.r || '', plan: out.p || '' };   // p=抢房计划分享码（网页生成的小程序码）
 }
 module.exports = { refCode, link, scene, parseScene };

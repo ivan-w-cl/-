@@ -20,7 +20,7 @@ const W = {
     shareH: '分享给朋友', shareName: '署名（可选）', shareNamePh: '比如 小林', share: '转发我的计划', shareNote: '朋友点开卡片就能看到你在抢哪些公寓、什么房型，可以一键复制。只分享公寓和房型，不带你的个人信息。',
     copyAll: '复制整份到我的计划', copyOne: '复制这栋', inMine: '已在我的计划', copied: '已复制 {a} 栋', filled: '，补上 {f} 栋的房型', kept: '，{k} 栋保留你自己排的',
     replaceT: '替换这栋的计划？', replaceC: '你已经给这栋排了房型，用朋友的顺序替换吗？', goMine: '看我的计划', back: '‹ 返回', invalid: '这个分享链接里没有可用的计划。',
-    adviser: '🤝 两手准备：找订房顾问一起盯', note: '开放日期和状态以公寓官网为准。' },
+    adviser: '🤝 两手准备：找订房顾问一起盯', pasteH: '看朋友的计划', pastePh: '输入分享码，或粘贴朋友发来的整段文字', pasteGo: '查看', pasteBad: '没认出分享码，请检查一下', pasteFail: '没找到这个分享码，可能已经过期', loading: '正在打开…', note: '开放日期和状态以公寓官网为准。' },
   en: { eyebrow: 'Booking prep', mine: 'My booking plan', friendT: '{name}’s booking plan', friendDef: 'A friend',
     lede: 'No time to think when bookings open: rank a first choice and backups for each home, and switch the moment the first one goes.', friendLede: '{name} is going for these homes. Like them? Copy them into your own plan.',
     empty: 'No homes in your plan yet. Tap “🏁 Add to plan” on a home card, or add from your saved homes below.', addH: 'Add from saved', noFav: 'No saved homes yet.',
@@ -31,7 +31,7 @@ const W = {
     shareH: 'Share with friends', shareName: 'Your name (optional)', shareNamePh: 'e.g. Lin', share: 'Send my plan', shareNote: 'Friends open the card to see which homes and room types you are going for, and can copy them in one tap. Only homes and room types are shared, nothing personal.',
     copyAll: 'Copy the whole plan to mine', copyOne: 'Copy this home', inMine: 'In my plan', copied: 'Copied {a} homes', filled: ', filled room order for {f}', kept: ', kept your own order for {k}',
     replaceT: 'Replace this home’s plan?', replaceC: 'You already ranked rooms for this home. Use your friend’s order instead?', goMine: 'See my plan', back: '‹ Back', invalid: 'This share link has no usable plan.',
-    adviser: '🤝 Two tracks: get a booking adviser to watch with you', note: 'Always confirm dates and availability on the official site.' }
+    adviser: '🤝 Two tracks: get a booking adviser to watch with you', pasteH: 'See a friend’s plan', pastePh: 'Enter a share code, or paste the whole message', pasteGo: 'Open', pasteBad: 'No share code found, please check it', pasteFail: 'Share code not found; it may have expired', loading: 'Opening…', note: 'Always confirm dates and availability on the official site.' }
 };
 
 /* 开放信息：服务器监测优先，没有就用演示数据（只请求一次） */
@@ -63,6 +63,23 @@ Component({
       this.setData({ open: true, mode: list.length ? 'friend' : 'mine', copyMsg: '' });
       if (!list.length) wx.showToast({ title: this.k().invalid, icon: 'none' });
       this.draw();
+    },
+    /* 网页分享的计划：6 位分享码，从服务器取计划 */
+    openShareId(id) {
+      const K = this.k(); wx.showLoading && wx.showLoading({ title: K.loading });
+      wx.request({ url: `${API_BASE}/api/plan-shares/${encodeURIComponent(id)}`, timeout: 8000,
+        success: r => { wx.hideLoading && wx.hideLoading(); if (r.statusCode === 200 && r.data && r.data.code) this.openFriend(r.data.code, r.data.from); else wx.showToast({ title: K.pasteFail, icon: 'none' }); },
+        fail: () => { wx.hideLoading && wx.hideLoading(); wx.showToast({ title: K.pasteFail, icon: 'none' }); } });
+    },
+    /* 「看朋友的计划」：输入分享码，或者粘贴朋友发来的整段文字（里面有分享码或计划码） */
+    onPaste(e) { this.pasteText = e.detail.value || ''; },
+    openPasted() {
+      const s = String(this.pasteText || ''), K = this.k();
+      const plan = /(?:计划码|plan code)[:：\s]*([0-9._esptf]+)/i.exec(s), from = /(?:来自|from)[:：\s]*([^\s，,。]{1,12})/i.exec(s);
+      if (plan && P.decode(plan[1], byN).length) return this.openFriend(plan[1], from ? from[1] : '');
+      const id = /(?:分享码|share code)[:：\s]*([2-9A-HJ-NP-Z]{6})/i.exec(s) || /^\s*([2-9A-HJ-NP-Z]{6})\s*$/i.exec(s);   // 带「分享码」字样，或者只输入了 6 位码
+      if (id) return this.openShareId(id[1].toUpperCase());
+      wx.showToast({ title: K.pasteBad, icon: 'none' });
     },
     close() { this.setData({ open: false }); this.triggerEvent('close'); },
     noop() {},

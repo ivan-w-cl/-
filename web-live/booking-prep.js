@@ -46,7 +46,12 @@
       two: ['开放前帮你核对开放时间、房型和价格，提前排好备选', '开放当天和你一起盯，首选没了马上给你推荐相近的房', '售罄了帮你登记候补，退房、补房第一时间通知你'],
       twoGo: '找订房顾问', twoCopy: '复制我的抢房计划', twoCopied: '已复制，进群后发给顾问', twoNote: '免费咨询；顾问能提高成功率，但不保证一定订到。', twoSynced: '✓ 你的抢房计划已同步给顾问，改了会自动更新。', twoShare: '进群后，顾问能看到你关注的公寓和抢房计划（不含邮箱）。',
       twoSoon: '快开放了，加一位订房顾问一起抢 ›', twoSold: '售罄了？让订房顾问帮你候补、找相近房源 ›',
-      planTxt: '我的抢房计划：{h}（{st}）\n房型顺序：{o}\n最高周租：{m}\n预计开放：{d}', any: '未设置'
+      planTxt: '我的抢房计划：{h}（{st}）\n房型顺序：{o}\n最高周租：{m}\n预计开放：{d}', any: '未设置',
+      mpH: '📲 分享到微信小程序', mpLede: '朋友在微信小程序「利物浦学生住宿地图」里打开，就能看到你在抢哪些公寓、什么房型，并一键复制到自己的计划。', mpName: '署名（可选）', mpNamePh: '比如 小林',
+      mpGo: '生成分享码', mpCodeLab: '分享码', mpPlanLab: '计划码（没连服务器时用这个）', mpScan: '微信扫一扫，直接打开小程序看我的计划', mpCopy: '复制分享文案', mpCopied: '已复制，去微信里发给朋友',
+      mpTextId: '{who}在抢：{names}。打开微信小程序「利物浦学生住宿地图」→ 🏁 抢房计划 → 看朋友的计划，输入分享码 {id}，就能看到并复制我的抢房计划。',
+      mpTextCode: '{who}在抢：{names}。打开微信小程序「利物浦学生住宿地图」→ 🏁 抢房计划 → 看朋友的计划，粘贴这整段文字，就能看到并复制我的抢房计划。计划码：{code}',
+      mpNote: '只分享关注的公寓、房型顺序和最高周租，不带邮箱等个人信息。改了计划要重新生成。'
     },
     en: {
       title: '🏁 Booking prep', desc: 'Release dates · booking plan · alerts', eyebrow: 'Booking prep', intro: '🏁 Booking prep',
@@ -81,7 +86,12 @@
       two: ['Before release, they confirm the date, room types and prices and line up your backups', 'On the day, they watch with you and suggest a similar room the moment your first choice goes', 'If it sells out, they add you to the waitlist and tell you as soon as a room comes back'],
       twoGo: 'Talk to a booking adviser', twoCopy: 'Copy my booking plan', twoCopied: 'Copied: send it to your adviser in the group', twoNote: 'Free to ask. An adviser improves your chances but cannot guarantee a room.', twoSynced: '✓ Your booking plan is shared with your adviser and updates automatically.', twoShare: 'Once you join, your adviser can see your watched homes and booking plan (not your email).',
       twoSoon: 'Opening soon: add a booking adviser to book with you ›', twoSold: 'Sold out? A booking adviser can waitlist you and find similar rooms ›',
-      planTxt: 'My booking plan: {h} ({st})\nRoom order: {o}\nHighest weekly rent: {m}\nExpected release: {d}', any: 'not set'
+      planTxt: 'My booking plan: {h} ({st})\nRoom order: {o}\nHighest weekly rent: {m}\nExpected release: {d}', any: 'not set',
+      mpH: '📲 Share to the WeChat mini program', mpLede: 'Friends open it in the “Liverpool Student Map” WeChat mini program to see which homes and room types you are going for, and copy them into their own plan.', mpName: 'Your name (optional)', mpNamePh: 'e.g. Lin',
+      mpGo: 'Create share code', mpCodeLab: 'Share code', mpPlanLab: 'Plan code (used when no server is connected)', mpScan: 'Scan with WeChat to open my plan in the mini program', mpCopy: 'Copy share message', mpCopied: 'Copied: send it to friends on WeChat',
+      mpTextId: '{who} going for: {names}. Open the “Liverpool Student Map” WeChat mini program → 🏁 Booking plan → See a friend’s plan, and enter share code {id} to see and copy my booking plan.',
+      mpTextCode: '{who} going for: {names}. Open the “Liverpool Student Map” WeChat mini program → 🏁 Booking plan → See a friend’s plan, and paste this whole message to see and copy my booking plan. Plan code: {code}',
+      mpNote: 'Only your watched homes, room order and max rent are shared, nothing personal like your email. Create a new code after changing your plan.'
     }
   };
   const k = () => pick(T), zh = () => BT.lang() === 'zh';
@@ -257,6 +267,47 @@
       ul.replaceChildren(); K.day.forEach(([id, t, sub]) => ul.append(checkRow(t, sub, !!d[id], v => { d[id] = v; save(); fill(); })));
     };
     fill();
+    box.append(shareBox());
+  }
+  /* 分享到微信小程序：朋友在小程序「抢房计划 → 看朋友的计划」输入分享码（或扫小程序码），看到整份计划并能复制。
+     计划编码和小程序 utils/plan-core.js 一样：公寓编号.房型字母.最高周租，用 _ 连接。有服务器时换成 6 位分享码（/api/plan-shares）。 */
+  const LETTER = { ensuite: 'e', studio: 's', premium: 'p', twodio: 't', flat: 'f' };
+  function planCode() {
+    return Object.keys(st.watch).map(id => HOMES_.find(h => h.id === id)).filter(Boolean).slice(0, 10).map(h => {
+      const p = st.plan[h.id] || {}, max = Number(p.max) >= 60 && Number(p.max) <= 600 ? Math.round(Number(p.max)) : '';
+      return [h.n, (p.order || []).map(r => LETTER[r] || '').join(''), max].join('.').replace(/\.+$/, '');
+    }).join('_');
+  }
+  function shareBox() {
+    const K = k(), box = el('div', 'bp-mp'), out = el('div', 'bp-mp-out');
+    box.append(el('b', 'bp-two-h', K.mpH), el('p', '', K.mpLede));
+    const nl = el('label', 'bp-max'), ni = el('input'); ni.maxLength = 12; ni.placeholder = K.mpNamePh; ni.value = st.name || '';
+    ni.addEventListener('input', () => { st.name = ni.value.trim().slice(0, 12); save(); out.replaceChildren(); });
+    nl.append(el('span', '', K.mpName), ni);
+    const go = btn('bt-btn', K.mpGo);
+    go.addEventListener('click', async () => {
+      const code = planCode(); if (!code) return;
+      go.disabled = true; let id = '', qr = '';
+      try {
+        const r = await fetch('./api/plan-shares', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code, from: st.name || '' }) });
+        if (r.ok) { const j = await r.json(); id = j.id; qr = j.wxacode || ''; }
+      } catch (_) { /* 静态网页：用计划码 */ }
+      go.disabled = false; showShare(out, code, id, qr);
+    });
+    box.append(nl, go, out, el('small', 'bt-note', K.mpNote));
+    return box;
+  }
+  function showShare(out, code, id, qr) {
+    const K = k(), homes = Object.keys(st.watch).map(x => HOMES_.find(h => h.id === x)).filter(Boolean), who = zh() ? st.name || '我' : st.name ? st.name + ' is' : 'I am';
+    const names = homes.slice(0, 3).map(h => h.name).join(zh() ? '、' : ', ') + (homes.length > 3 ? (zh() ? ' 等 ' + homes.length + ' 栋' : ` and ${homes.length - 3} more`) : '');
+    const text = id ? fmt(K.mpTextId, { who, names, id }) : fmt(K.mpTextCode, { who, names, code }) + (st.name ? (zh() ? ' 来自：' : ' from: ') + st.name : '');
+    out.replaceChildren();
+    if (qr) { const im = el('img', 'bp-mp-qr'); im.alt = K.mpScan; im.src = '.' + qr; im.addEventListener('error', () => im.remove()); out.append(im, el('small', 'bt-note', K.mpScan)); }
+    if (id) out.append(el('span', 'bp-mp-lab', K.mpCodeLab), el('b', 'bp-mp-code', id));
+    else out.append(el('span', 'bp-mp-lab', K.mpPlanLab), el('code', 'bp-mp-plan', code));
+    const pre = el('p', 'bp-mp-text', text), cp = btn('bt-btn alt', K.mpCopy);
+    cp.addEventListener('click', async () => { await BT.copy(text); cp.textContent = K.mpCopied; setTimeout(() => { cp.textContent = K.mpCopy; }, 1600); });
+    out.append(pre, cp);
   }
   function checkRow(title, sub, on, set) {
     const li = el('li'), lab = el('label', 'bp-ck' + (on ? ' on' : '')), cb = el('input'); cb.type = 'checkbox'; cb.checked = on;

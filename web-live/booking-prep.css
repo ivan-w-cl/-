@@ -65,3 +65,15 @@
 .bp-two.compact small { flex-basis: 100%; }
 .bp-two-link { align-self: flex-start; font-family: inherit; font-size: 12.5px; margin-top: 2px; padding: 0; border: 0; background: none; color: #b5462f; text-decoration: underline; cursor: pointer; text-align: left; }
 .bp-synced { color: #1f7a4d !important; }
+.bp-mp { display: flex; flex-direction: column; gap: 7px; border: 2px dashed #1f7a4d; border-radius: 12px; background: #f1f8ee; padding: 10px 12px; margin-top: 6px; }
+.bp-mp p { margin: 0; font-size: 13px; }
+.bp-mp .bp-two-h { color: #1f7a4d; }
+.bp-mp .bp-max input { width: 140px; }
+.bp-mp > .bt-btn { align-self: flex-start; }
+.bp-mp-out { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.bp-mp-out:empty { display: none; }
+.bp-mp-qr { width: 150px; height: 150px; border: 2px solid #3b2a1a; border-radius: 10px; background: #fff; }
+.bp-mp-lab { font-size: 12px; color: #6e5538; }
+.bp-mp-code { font: 30px/1 ui-monospace, Menlo, monospace; letter-spacing: .12em; color: #1f7a4d; background: #fff; border: 2px solid #1f7a4d; border-radius: 10px; padding: 6px 12px; }
+.bp-mp-plan { font: 14px ui-monospace, Menlo, monospace; background: #fff; border: 1.5px solid #dcc8a0; border-radius: 8px; padding: 3px 8px; overflow-wrap: anywhere; }
+.bp-mp-text { font-size: 12.5px !important; color: #4d3a24; background: #fff; border: 1.5px solid #dcc8a0; border-radius: 8px; padding: 6px 9px; white-space: pre-wrap; }

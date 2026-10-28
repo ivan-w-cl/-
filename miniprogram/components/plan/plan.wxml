@@ -51,6 +51,10 @@
         </view>
         <view class="pl-adv" bindtap="askAdviser">{{k.adviser}} ›</view>
       </block>
+      <view class="pl-paste">
+        <view class="pl-sec">{{k.pasteH}}</view>
+        <view class="pl-maxrow"><input class="pl-in paste" placeholder="{{k.pastePh}}" maxlength="400" bindinput="onPaste" bindconfirm="openPasted"></input><view class="pl-btn" bindtap="openPasted">{{k.pasteGo}}</view></view>
+      </view>
     </block>
     <view class="pl-small foot">{{k.note}}</view>
   </scroll-view>

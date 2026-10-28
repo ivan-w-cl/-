@@ -13,6 +13,7 @@ const { createCasesApi } = require('./lib/cases');
 const { createSnapApi } = require('./lib/snap');
 const { createOffers } = require('./lib/offers');
 const { createAvailability } = require('./lib/availability');
+const { createPlanShares } = require('./lib/plan-shares');
 const { createLocalData } = require('./lib/local-data');
 const channels = { web: require('./channels/web'), miniprogram: require('./channels/miniprogram') };
 
@@ -82,6 +83,8 @@ const offers = createOffers({ dataDir: DATA_DIR, mail: env.OFFERS_EMAIL === 'off
 const offersApi = offers.createApi({ send, readBody, json, limited });
 const availability = createAvailability({ dataDir: DATA_DIR, env, mail: env.OFFERS_EMAIL === 'off' ? null : createMailer(env), publicUrl: PUBLIC_URL });
 const availabilityApi = availability.createApi({ send, readBody, json, limited });
+const planShares = createPlanShares({ dataDir: DATA_DIR, canWxacode: () => channels.miniprogram.canLogin() });
+const planSharesApi = planShares.createApi({ send, readBody, json, limited });
 const localData = createLocalData({ dataDir: DATA_DIR });
 const localApi = localData.createApi({ send, limited });
 async function api(req, res, url) {
@@ -117,6 +120,8 @@ async function api(req, res, url) {
   if (p === '/api/offers' || p.startsWith('/api/offers/')) return offersApi(req, res, url, false);
   /* 抢房监测：定时查官网公开页面，开放时发邮件（lib/availability.js） */
   if (p === '/api/availability' || p.startsWith('/api/availability/')) return availabilityApi(req, res, url, false);
+  /* 抢房计划分享码：网页分享到小程序（lib/plan-shares.js） */
+  if (p === '/api/plan-shares' || p.startsWith('/api/plan-shares/')) return planSharesApi(req, res, url);
   if (p === '/api/health') return send(res, 200, { ok: true, service: 'consult', cases: true, channels: Object.values(channels).filter(c => c.enabled).map(c => c.name), notifiers: notifier.names });
   if (!casesApi) casesApi = createCasesApi({ store, notifier, send, readBody, json, clean, limited, decodeImage, uploadDir: UPLOAD_DIR, wx: channels.miniprogram,
     adviserUrl: r => (PUBLIC_URL || (r ? `http://${r.headers.host || 'localhost:' + PORT}` : '')) + ADVISER_PATH });
