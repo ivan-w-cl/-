@@ -66,6 +66,12 @@ Page({
     this.pendingPlan = q && q.plan ? { code: q.plan, from: q.from ? decodeURIComponent(q.from) : '' } : null;
     // 网页上的抢房计划生成的小程序码：scene=p=分享码
     if (!this.pendingPlan && sc && sc.plan) this.pendingPlan = { id: sc.plan };
+    // 网页生成的普通二维码（小程序后台配了「扫普通链接二维码打开小程序」）：q 是整个网址，里面有 ps=分享码 或 plan=计划码
+    if (!this.pendingPlan && q && (q.q || q.ps)) {
+      const link = q.q ? decodeURIComponent(q.q) : '', get = k => { const m = new RegExp('[?&]' + k + '=([^&#]*)').exec(link); return m ? decodeURIComponent(m[1]) : ''; };
+      const ps = q.ps || get('ps'), code = get('plan');
+      if (ps) this.pendingPlan = { id: ps }; else if (code) this.pendingPlan = { code, from: get('from') };
+    }
     this.pendingQuiz = q && q.quiz ? { quiz: q.quiz, duo: q.duo || '' } : sc && sc.quiz ? { quiz: sc.quiz, duo: sc.duo } : null;
     this.offCase = cases.on(c => this.updateFab(c));
     if (cases.stored()) this.updateFab(null);
@@ -101,8 +107,9 @@ Page({
   },
   onShareAppMessage(res) {
     // 抢房计划里的「转发我的计划」：朋友点开卡片直接看到这份计划，可以复制
-    if (res && res.from === 'button' && res.target && res.target.dataset && res.target.dataset.pq === 'plan') {
-      const s = this.selectComponent('#plan').shareInfo();
+    // 朋友的计划页上的「转发给朋友」：把这份计划原样转出去
+    if (res && res.from === 'button' && res.target && res.target.dataset && (res.target.dataset.pq === 'plan' || res.target.dataset.pq === 'friendplan')) {
+      const pl = this.selectComponent('#plan'), s = res.target.dataset.pq === 'friendplan' ? pl.friendShareInfo() : pl.shareInfo();
       if (s.code) return { title: s.title, path: s.path };
     }
     // 「留学搭子」结果卡上的「邀请朋友测合拍度」：朋友点开直接进这套测试，看两人合拍度

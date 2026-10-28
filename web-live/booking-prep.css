@@ -77,3 +77,7 @@
 .bp-mp-code { font: 30px/1 ui-monospace, Menlo, monospace; letter-spacing: .12em; color: #1f7a4d; background: #fff; border: 2px solid #1f7a4d; border-radius: 10px; padding: 6px 12px; }
 .bp-mp-plan { font: 14px ui-monospace, Menlo, monospace; background: #fff; border: 1.5px solid #dcc8a0; border-radius: 8px; padding: 3px 8px; overflow-wrap: anywhere; }
 .bp-mp-text { font-size: 12.5px !important; color: #4d3a24; background: #fff; border: 1.5px solid #dcc8a0; border-radius: 8px; padding: 6px 9px; white-space: pre-wrap; }
+.bp-mp-card { display: flex; flex-direction: column; align-items: center; gap: 6px; align-self: stretch; background: #fff; border: 2px solid #3b2a1a; border-radius: 12px; padding: 12px; }
+.bp-mp-card .bp-mp-qr { width: 180px; height: 180px; border: 0; }
+.bp-mp-qr svg { width: 100%; height: 100%; display: block; }
+.bp-mp-cap { font-size: 12.5px; color: #1f7a4d; text-align: center; max-width: 300px; }

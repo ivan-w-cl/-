@@ -23,6 +23,7 @@
         </view>
       </view>
       <view class="pl-main" bindtap="copyAll">{{k.copyAll}}</view>
+      <button class="pl-btn wide fwd" open-type="share" data-pq="friendplan">{{k.forward}}</button>
       <view wx:if="{{copyMsg}}" class="pl-ok">✓ {{copyMsg}}</view>
       <view class="pl-btn wide" bindtap="goMine">{{k.goMine}}</view>
     </block>
