@@ -1,0 +1,11 @@
+{
+  "schema": "esssouth.l03.staging-labels/1",
+  "sectionId": "L03.S04",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain (c001 incoming card; c009 optional examples, worded from the cue). Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.contribution": "A contribution",
+    "x.ex.method": "Clarify a method",
+    "x.ex.limit": "Identify a limit",
+    "x.ex.ask": "Ask a question"
+  }
+}

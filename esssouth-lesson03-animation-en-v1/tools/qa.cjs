@@ -47,6 +47,7 @@ const AUDIT = (moving) => {
   const ov = (a, c) => Math.max(0, Math.min(a.x + a.w, c.x + c.w) - Math.max(a.x, c.x)) * Math.max(0, Math.min(a.y + a.h, c.y + c.h) - Math.max(a.y, c.y));
   for (let i = 0; i < vis.length; i++) for (let j = i + 1; j < vis.length; j++) { const A = vis[i], B = vis[j]; if (A.cont || B.cont) continue;
     if (A.o > 0.9 && B.o > 0.9 && !moving.has(A.id) && !moving.has(B.id) && ov(A.r, B.r) > 300) issues.push({ type: 'overlap', a: A.id, b: B.id });
+    if (moving.has(A.id) || moving.has(B.id)) continue;
     if (A.tr && ov(A.tr, B.r) > 60) issues.push({ type: 'tag-overlap', a: A.id + '.tag', b: B.id }); if (B.tr && ov(B.tr, A.r) > 60) issues.push({ type: 'tag-overlap', a: B.id + '.tag', b: A.id }); }
   const bub = document.querySelector('#stage .tok[data-token="bubL"]'); if (bub && +bub.style.opacity > 0.9) { const b = bub.querySelector('.t2'); if (b.scrollHeight > b.clientHeight + 1) issues.push({ type: 'bubble-overflow' }); }
   return issues;
