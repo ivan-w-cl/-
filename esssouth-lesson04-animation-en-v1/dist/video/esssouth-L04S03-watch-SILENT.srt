@@ -1,0 +1,247 @@
+1
+00:00:00,000 --> 00:00:04,714
+Coach: An objection becomes easier to examine when it names the action,
+
+2
+00:00:04,714 --> 00:00:09,428
+Coach: the possible consequence and why that consequence matters to the task.
+
+3
+00:00:09,428 --> 00:00:13,285
+Coach: Saying that something feels wrong may announce a difference
+
+4
+00:00:13,285 --> 00:00:14,571
+Coach: without explaining it.
+
+5
+00:00:14,921 --> 00:00:20,064
+Coach: The group is planning a twenty-minute session with two sample problems,
+
+6
+00:00:20,064 --> 00:00:22,207
+Coach: to understand the key reasoning.
+
+7
+00:00:22,207 --> 00:00:27,350
+Coach: The tool offers hints or full worked answers; its output is unverified.
+
+8
+00:00:27,350 --> 00:00:29,064
+Coach: Listen to Maya again.
+
+9
+00:00:29,414 --> 00:00:33,700
+Maya: An answer tool can save time when we get stuck.
+
+10
+00:00:33,700 --> 00:00:38,414
+Maya: I would use it as soon as a problem becomes difficult.
+
+11
+00:00:38,764 --> 00:00:43,907
+Coach: In this authored continuation, Maya specifies the kind of help she means.
+
+12
+00:00:43,907 --> 00:00:48,193
+Coach: This is new information, not supplied by her earlier wording.
+
+13
+00:00:48,543 --> 00:00:54,972
+Maya: I mean opening the full worked answer as soon as we reach a difficult step.
+
+14
+00:00:55,322 --> 00:00:58,751
+Coach: Now the concern can address that specific action.
+
+15
+00:00:58,751 --> 00:01:03,465
+Coach: Opening the full answer before trying a step could reduce the
+
+16
+00:01:03,465 --> 00:01:07,322
+Coach: opportunity to see what we can reason through independently.
+
+17
+00:01:07,322 --> 00:01:11,179
+Coach: That is a possible risk, not an observed result.
+
+18
+00:01:11,529 --> 00:01:15,386
+Coach: The link to the task is understanding the reasoning.
+
+19
+00:01:15,386 --> 00:01:20,957
+Coach: A completed answer alone would not show which parts the group could explain.
+
+20
+00:01:20,957 --> 00:01:27,386
+Coach: But looking at a worked answer also does not prove that nobody learns from it.
+
+21
+00:01:27,736 --> 00:01:32,450
+Coach: Before choosing wording, identify the concern you want to make discussable.
+
+22
+00:01:32,450 --> 00:01:37,165
+Coach: Which action are you questioning, and what opportunity might it reduce?
+
+23
+00:01:37,165 --> 00:01:41,879
+Coach: Keep the possible consequence separate from a claim about every learner.
+
+24
+00:01:50,229 --> 00:01:56,658
+Coach: For this comparison, consider losing an opportunity for independent reasoning before a full answer appears.
+
+25
+00:01:56,658 --> 00:01:59,229
+Coach: Which reply states that concern clearly
+
+26
+00:01:59,229 --> 00:02:02,229
+Coach: without claiming more than the example supports?
+
+27
+00:02:02,579 --> 00:02:06,008
+Coach: The example replies that follow show possible continuations,
+
+28
+00:02:06,008 --> 00:02:08,579
+Coach: not automatic effects of a sentence.
+
+29
+00:02:08,579 --> 00:02:11,150
+Coach: Compare the explanation in each objection,
+
+30
+00:02:11,150 --> 00:02:16,293
+Coach: rather than treating politeness or confidence as evidence that it is sound.
+
+31
+00:02:24,643 --> 00:02:28,929
+You: If we open the full answer before trying a step,
+
+32
+00:02:28,929 --> 00:02:34,929
+You: we may follow it without finding out which part we could reason through ourselves.
+
+33
+00:02:35,279 --> 00:02:40,850
+Maya: You are concerned about losing a chance to reason through a step ourselves.
+
+34
+00:02:40,850 --> 00:02:45,993
+Maya: We still need a way to get help when we are stuck.
+
+35
+00:02:46,343 --> 00:02:51,915
+Coach: This explains a risk tied to the proposed timing and kind of help.
+
+36
+00:02:51,915 --> 00:02:56,629
+Coach: It does not claim that seeing an answer makes learning impossible.
+
+37
+00:02:56,629 --> 00:02:59,200
+Coach: Maya keeps another requirement in view,
+
+38
+00:02:59,200 --> 00:03:02,629
+Coach: so the group still has something to compare.
+
+39
+00:03:02,979 --> 00:03:05,979
+Coach: Ask what the proposed action might change.
+
+40
+00:03:05,979 --> 00:03:12,408
+Coach: Here it is the opportunity to attempt a reasoning step before seeing the full answer.
+
+41
+00:03:12,408 --> 00:03:14,979
+Coach: The concern should name that connection.
+
+42
+00:03:15,329 --> 00:03:17,900
+Coach: You can state that concern directly.
+
+43
+00:03:17,900 --> 00:03:24,329
+Coach: You do not need to surround it with apologies, or claim that harm is certain.
+
+44
+00:03:24,329 --> 00:03:26,472
+Coach: Precision comes from the action,
+
+45
+00:03:26,472 --> 00:03:30,329
+Coach: the possible consequence and its relevance to the aim.
+
+46
+00:03:30,679 --> 00:03:32,822
+Coach: The output is also unverified:
+
+47
+00:03:32,822 --> 00:03:36,679
+Coach: a displayed solution is not automatically a trusted explanation.
+
+48
+00:03:36,679 --> 00:03:43,108
+Coach: Keep that issue separate from the concern about when the group first sees the answer.
+
+49
+00:03:43,458 --> 00:03:47,744
+Coach: A first attempt could also consume time without producing progress.
+
+50
+00:03:47,744 --> 00:03:52,458
+Coach: A precise concern does not select the best alternative by itself.
+
+51
+00:03:52,458 --> 00:03:57,172
+Coach: The next stage is comparing possible arrangements against the same task.
+
+52
+00:03:57,522 --> 00:04:01,379
+Coach: Privately put the concern into one short English contribution.
+
+53
+00:04:01,379 --> 00:04:06,093
+Coach: Name the specified action and explain what opportunity it might reduce.
+
+54
+00:04:06,093 --> 00:04:09,950
+Coach: Use your own wording; nothing is recorded or scored.
+
+55
+00:04:09,950 --> 00:04:12,093
+Coach: Pause if you want longer.
+
+56
+00:04:20,443 --> 00:04:23,872
+Coach: If you tried a version, check its scope.
+
+57
+00:04:23,872 --> 00:04:29,872
+Coach: Does it explain this concern, or make a claim about everyone and every tool?
+
+58
+00:04:29,872 --> 00:04:33,729
+Coach: You can revise it, or return later when ready.
+
+59
+00:04:34,079 --> 00:04:37,508
+Coach: Next, we will compare options using shared criteria.
+
+60
+00:04:37,508 --> 00:04:40,508
+Coach: Keep the concern available for that comparison,
+
+61
+00:04:40,508 --> 00:04:43,508
+Coach: while leaving room for other relevant considerations.
+
+62
+00:04:43,508 --> 00:04:47,365
+Coach: No option has been adopted or shown to work.

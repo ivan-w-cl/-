@@ -1,0 +1,11 @@
+{
+ "section": "S01",
+ "route": "watch",
+ "fps": 30,
+ "frames": 7730,
+ "compiledSeconds": 257.66399999999993,
+ "ffmpegExit": 0,
+ "pageErrors": [],
+ "renderSeconds": 650.925,
+ "method": "deterministic renderAt(i/30) + Chromium screenshot (JPEG q92) → ffmpeg libx264 crf 20, no audio stream"
+}

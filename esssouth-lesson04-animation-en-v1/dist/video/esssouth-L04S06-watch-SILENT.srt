@@ -1,0 +1,263 @@
+1
+00:00:00,000 --> 00:00:04,286
+Coach: Now bring the pieces together in a short English reply.
+
+2
+00:00:04,286 --> 00:00:06,429
+Coach: Constructive disagreement can be direct.
+
+3
+00:00:06,429 --> 00:00:11,572
+Coach: You do not need to say you agree when you do not.
+
+4
+00:00:11,572 --> 00:00:15,429
+Coach: Make clear which idea you question, why it matters,
+
+5
+00:00:15,429 --> 00:00:18,429
+Coach: and what the group could examine next.
+
+6
+00:00:18,779 --> 00:00:23,493
+Coach: Return to the fictional twenty-minute session with two sample problems.
+
+7
+00:00:23,493 --> 00:00:26,493
+Coach: The goal is understanding the key reasoning.
+
+8
+00:00:26,493 --> 00:00:32,493
+Coach: The tool can provide hints or full worked answers, but its output is unverified.
+
+9
+00:00:32,493 --> 00:00:35,922
+Coach: For this rehearsal, return to Maya’s original wording,
+
+10
+00:00:35,922 --> 00:00:38,065
+Coach: before the clarification explored earlier.
+
+11
+00:00:38,065 --> 00:00:39,779
+Coach: The plan remains undecided.
+
+12
+00:00:40,129 --> 00:00:44,415
+Maya: An answer tool can save time when we get stuck.
+
+13
+00:00:44,415 --> 00:00:49,129
+Maya: I would use it as soon as a problem becomes difficult.
+
+14
+00:00:49,479 --> 00:00:52,479
+Coach: Choose the part you want to question.
+
+15
+00:00:52,479 --> 00:00:57,622
+Coach: You might question the timing, ask which kind of help Maya means,
+
+16
+00:00:57,622 --> 00:01:01,479
+Coach: or explain a risk of requesting a complete solution.
+
+17
+00:01:01,479 --> 00:01:05,336
+Coach: Her original words do not specify a full answer,
+
+18
+00:01:05,336 --> 00:01:08,765
+Coach: so make that distinction clear in your response.
+
+19
+00:01:09,115 --> 00:01:12,972
+Coach: Keep the concern about the method, not the person.
+
+20
+00:01:12,972 --> 00:01:18,115
+Coach: Calling someone lazy adds a judgement you cannot establish from this proposal.
+
+21
+00:01:18,115 --> 00:01:26,258
+Coach: Saying that a worked answer may hide a gap in understanding gives the group a possible mechanism to examine.
+
+22
+00:01:26,608 --> 00:01:30,465
+Coach: Privately identify one reason that matters within this task.
+
+23
+00:01:30,465 --> 00:01:34,751
+Coach: Check what you know and what is only a possibility.
+
+24
+00:01:34,751 --> 00:01:38,179
+Coach: The group still needs to think about time,
+
+25
+00:01:38,179 --> 00:01:41,179
+Coach: getting started, and verifying the tool’s suggestions.
+
+26
+00:01:49,529 --> 00:01:51,672
+Coach: Try a short English reply.
+
+27
+00:01:51,672 --> 00:01:56,386
+Coach: You can disagree, ask for clarification, or suggest a conditional alternative.
+
+28
+00:01:56,386 --> 00:01:58,529
+Coach: Use what the moment needs,
+
+29
+00:01:58,529 --> 00:02:02,815
+Coach: rather than forcing every sentence into a three-part formula.
+
+30
+00:02:02,815 --> 00:02:06,672
+Coach: Nothing you say here is recorded, uploaded, or scored.
+
+31
+00:02:07,022 --> 00:02:11,736
+Coach: Watch mode gives you thirty-five seconds before a model exchange.
+
+32
+00:02:11,736 --> 00:02:18,593
+Coach: In Practice mode, take as long as you need, then choose the model or skip it.
+
+33
+00:02:18,593 --> 00:02:21,593
+Coach: After the model you can try again.
+
+34
+00:02:21,593 --> 00:02:25,879
+Coach: These controls do not tell us whether you have spoken.
+
+35
+00:03:01,229 --> 00:03:05,515
+You: If using the tool means opening a full answer immediately,
+
+36
+00:03:05,515 --> 00:03:07,658
+You: I would not start there.
+
+37
+00:03:07,658 --> 00:03:11,086
+You: We might follow its steps without understanding them.
+
+38
+00:03:11,086 --> 00:03:14,515
+You: Could we try a step when we can,
+
+39
+00:03:14,515 --> 00:03:19,658
+You: or ask for a focused starting hint, and check what it suggests?
+
+40
+00:03:20,008 --> 00:03:22,151
+Maya: A starting hint could help.
+
+41
+00:03:22,151 --> 00:03:27,294
+Maya: What if we still do not understand the next step after that?
+
+42
+00:03:27,644 --> 00:03:31,501
+Coach: The model questions one possible use of the tool,
+
+43
+00:03:31,501 --> 00:03:34,930
+Coach: rather than treating it as Maya’s confirmed intention.
+
+44
+00:03:34,930 --> 00:03:38,787
+Coach: It explains a risk and offers a conditional alternative.
+
+45
+00:03:38,787 --> 00:03:41,359
+Coach: Maya’s question keeps a limitation open.
+
+46
+00:03:41,359 --> 00:03:45,644
+Coach: This authored exchange does not show that the plan works
+
+47
+00:03:45,644 --> 00:03:49,073
+Coach: or that your own reply had this effect.
+
+48
+00:03:49,423 --> 00:03:54,137
+Coach: Whether you tried a reply, watched the model, or skipped it,
+
+49
+00:03:54,137 --> 00:03:57,137
+Coach: you can use the same review questions.
+
+50
+00:03:57,137 --> 00:04:00,137
+Coach: Did the response address the actual proposal?
+
+51
+00:04:00,137 --> 00:04:03,137
+Coach: Was the concern connected to this task?
+
+52
+00:04:03,137 --> 00:04:06,994
+Coach: What question or alternative could the group examine next?
+
+53
+00:04:07,344 --> 00:04:10,773
+Coach: A clear concern can still leave disagreement unresolved.
+
+54
+00:04:10,773 --> 00:04:14,630
+Coach: Check whether your words claim more than you know:
+
+55
+00:04:14,630 --> 00:04:19,773
+Coach: that the tool is always wrong, that a hint will certainly work,
+
+56
+00:04:19,773 --> 00:04:22,344
+Coach: or that everyone accepts the alternative.
+
+57
+00:04:22,344 --> 00:04:25,773
+Coach: None follows from the situation we have described.
+
+58
+00:04:26,123 --> 00:04:31,266
+Coach: You can be respectful without weakening the point you need to make.
+
+59
+00:04:31,266 --> 00:04:35,552
+Coach: A direct disagreement about opening a worked answer is different
+
+60
+00:04:35,552 --> 00:04:39,409
+Coach: from dismissing the person who suggested using a tool.
+
+61
+00:04:39,409 --> 00:04:42,409
+Coach: Keep the action and the person separate.
+
+62
+00:04:54,759 --> 00:04:58,616
+Coach: For another attempt, choose one change you can make:
+
+63
+00:04:58,616 --> 00:05:02,473
+Coach: identify the action more precisely, explain the possible risk,
+
+64
+00:05:02,473 --> 00:05:05,045
+Coach: or ask a more specific question.
+
+65
+00:05:05,045 --> 00:05:06,330
+Coach: Choose for yourself.
+
+66
+00:05:06,330 --> 00:05:10,616
+Coach: The player cannot assess an answer it has not heard.

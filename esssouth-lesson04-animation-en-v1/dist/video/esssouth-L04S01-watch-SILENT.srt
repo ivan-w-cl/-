@@ -1,0 +1,239 @@
+1
+00:00:00,000 --> 00:00:03,429
+Coach: Disagreement can help a group examine a proposal.
+
+2
+00:00:03,429 --> 00:00:06,857
+Coach: First, make clear what the difference is about.
+
+3
+00:00:06,857 --> 00:00:13,714
+Coach: Rejecting a whole topic when you disagree with one detail makes that difference harder to discuss.
+
+4
+00:00:14,064 --> 00:00:19,635
+Coach: Imagine a group planning a twenty-minute practice session with two sample problems.
+
+5
+00:00:19,635 --> 00:00:25,207
+Coach: The aim is to understand the key reasoning, not simply finish more answers.
+
+6
+00:00:25,207 --> 00:00:26,921
+Coach: In this fictional case,
+
+7
+00:00:26,921 --> 00:00:32,064
+Coach: an available tool can show a hint or a full worked answer.
+
+8
+00:00:32,064 --> 00:00:33,778
+Coach: Its output is unverified.
+
+9
+00:00:34,128 --> 00:00:38,414
+Maya: An answer tool can save time when we get stuck.
+
+10
+00:00:38,414 --> 00:00:43,128
+Maya: I would use it as soon as a problem becomes difficult.
+
+11
+00:00:43,478 --> 00:00:47,764
+Coach: Maya offers a possible benefit and a proposal about timing.
+
+12
+00:00:47,764 --> 00:00:52,478
+Coach: Saving time is her reason; immediate use is the proposed action.
+
+13
+00:00:52,478 --> 00:00:58,478
+Coach: No practice session has happened, and the group has not agreed to this plan.
+
+14
+00:00:58,828 --> 00:01:02,685
+Coach: You might value saving time while questioning that timing.
+
+15
+00:01:02,685 --> 00:01:04,828
+Coach: Those positions can fit together.
+
+16
+00:01:04,828 --> 00:01:12,114
+Coach: Disagreeing about when to use a tool does not require denying every possible benefit it might offer.
+
+17
+00:01:12,464 --> 00:01:15,892
+Coach: There is also something Maya has not specified:
+
+18
+00:01:15,892 --> 00:01:20,178
+Coach: whether she means a hint or the full worked answer.
+
+19
+00:01:20,178 --> 00:01:23,607
+Coach: The tool can offer either in this scenario.
+
+20
+00:01:23,607 --> 00:01:27,035
+Coach: Do not silently choose a mode for her.
+
+21
+00:01:27,385 --> 00:01:31,242
+Coach: Privately separate what is stated from what remains open.
+
+22
+00:01:31,242 --> 00:01:37,242
+Coach: What timing has Maya proposed, and which kind of help has she left unspecified?
+
+23
+00:01:37,242 --> 00:01:40,242
+Coach: Keep both questions visible while you think.
+
+24
+00:01:48,592 --> 00:01:50,735
+Coach: The immediate timing is explicit.
+
+25
+00:01:50,735 --> 00:01:53,306
+Coach: The kind of help is not.
+
+26
+00:01:53,306 --> 00:01:55,878
+Coach: You can question the timing directly,
+
+27
+00:01:55,878 --> 00:02:00,592
+Coach: or clarify the mode if that distinction matters to your concern.
+
+28
+00:02:00,592 --> 00:02:03,592
+Coach: You do not have to do both.
+
+29
+00:02:03,942 --> 00:02:06,085
+Coach: Direct disagreement can be respectful.
+
+30
+00:02:06,085 --> 00:02:09,514
+Coach: The important distinction is between challenging a proposal
+
+31
+00:02:09,514 --> 00:02:12,514
+Coach: and judging the person who offered it.
+
+32
+00:02:12,514 --> 00:02:15,942
+Coach: A calm voice does not replace a reason,
+
+33
+00:02:15,942 --> 00:02:20,228
+Coach: and a clear objection need not be disguised as agreement.
+
+34
+00:02:20,578 --> 00:02:25,721
+You: I would not make difficulty alone the trigger for using the tool.
+
+35
+00:02:25,721 --> 00:02:30,007
+You: I would like us to try a step ourselves first.
+
+36
+00:02:30,357 --> 00:02:32,928
+Coach: This reply identifies a timing difference.
+
+37
+00:02:32,928 --> 00:02:38,071
+Coach: It does not call Maya lazy or claim that tools prevent learning.
+
+38
+00:02:38,071 --> 00:02:41,500
+Coach: The proposed first attempt still needs a reason
+
+39
+00:02:41,500 --> 00:02:44,071
+Coach: and consideration against the available time.
+
+40
+00:02:44,421 --> 00:02:49,992
+Coach: From Maya’s words, you cannot know that she only cares about finishing quickly.
+
+41
+00:02:49,992 --> 00:02:52,135
+Coach: Her stated reason concerns time.
+
+42
+00:02:52,135 --> 00:02:56,849
+Coach: The group can examine whether her suggestion serves the shared aim
+
+43
+00:02:56,849 --> 00:02:58,992
+Coach: without inventing a hidden motive.
+
+44
+00:02:59,342 --> 00:03:04,913
+Coach: Likewise, using help immediately would not by itself prove that someone learned nothing.
+
+45
+00:03:04,913 --> 00:03:10,056
+Coach: It might support understanding, or leave less room for an independent attempt.
+
+46
+00:03:10,056 --> 00:03:14,342
+Coach: We need a more precise concern than a blanket judgement.
+
+47
+00:03:14,692 --> 00:03:19,406
+Coach: Keep the task in view: understanding the reasoning within twenty minutes.
+
+48
+00:03:19,406 --> 00:03:24,978
+Coach: The issue is how a proposed use of help might serve that aim,
+
+49
+00:03:24,978 --> 00:03:27,549
+Coach: with limited time and unverified output.
+
+50
+00:03:27,899 --> 00:03:31,756
+Coach: Choose one part of Maya’s proposal you would examine:
+
+51
+00:03:31,756 --> 00:03:36,899
+Coach: the timing, the kind of help, or the reason it should help.
+
+52
+00:03:36,899 --> 00:03:39,899
+Coach: Form a short question or objection privately.
+
+53
+00:03:39,899 --> 00:03:42,042
+Coach: Nothing is recorded or assessed.
+
+54
+00:03:50,392 --> 00:03:55,535
+Coach: If you tried a reply, check whether it names the actual difference.
+
+55
+00:03:55,535 --> 00:03:58,964
+Coach: If you did not, you can return later.
+
+56
+00:03:58,964 --> 00:04:01,964
+Coach: The aim is not to sound opposed;
+
+57
+00:04:01,964 --> 00:04:05,821
+Coach: it is to make a concern available for discussion.
+
+58
+00:04:06,171 --> 00:04:11,314
+Coach: Next, we will look at recognising a reason without pretending to agree.
+
+59
+00:04:11,314 --> 00:04:14,314
+Coach: You can take a person’s point seriously
+
+60
+00:04:14,314 --> 00:04:17,314
+Coach: while still questioning the action they suggest.

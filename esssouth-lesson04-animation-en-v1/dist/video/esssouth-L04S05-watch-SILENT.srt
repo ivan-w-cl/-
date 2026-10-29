@@ -1,0 +1,207 @@
+1
+00:00:00,000 --> 00:00:04,714
+Coach: A comparison can reveal a condition your proposal does not handle.
+
+2
+00:00:04,714 --> 00:00:07,715
+Coach: You do not have to abandon everything,
+
+3
+00:00:07,715 --> 00:00:11,143
+Coach: or insist that the first version was perfect.
+
+4
+00:00:11,143 --> 00:00:15,429
+Coach: Identify the condition, then decide what would need to change.
+
+5
+00:00:15,779 --> 00:00:20,065
+Coach: The group still has twenty minutes and two sample problems.
+
+6
+00:00:20,065 --> 00:00:24,351
+Coach: A brief attempt before a focused hint is under discussion.
+
+7
+00:00:24,351 --> 00:00:29,065
+Coach: The session has not run, and no plan has been adopted.
+
+8
+00:00:29,065 --> 00:00:32,922
+Coach: Now listen to a possible concern about getting started.
+
+9
+00:00:33,272 --> 00:00:36,701
+Maya: What if someone cannot find a first step?
+
+10
+00:00:36,701 --> 00:00:40,558
+Maya: Waiting before asking for help might use up time
+
+11
+00:00:40,558 --> 00:00:42,272
+Maya: without helping them understand.
+
+12
+00:00:42,622 --> 00:00:46,479
+Coach: This concern is about access to a starting point.
+
+13
+00:00:46,479 --> 00:00:51,194
+Coach: It does not show that the person is unwilling to think,
+
+14
+00:00:51,194 --> 00:00:56,337
+Coach: and it does not prove that immediate full answers are always better.
+
+15
+00:00:56,337 --> 00:00:58,908
+Coach: Keep the specific difficulty in view.
+
+16
+00:01:07,258 --> 00:01:12,401
+Coach: One revision would make the support conditional on what the person needs,
+
+17
+00:01:12,401 --> 00:01:15,829
+Coach: rather than requiring an attempt before any hint.
+
+18
+00:01:15,829 --> 00:01:19,258
+Coach: Listen for what changes and what remains uncertain.
+
+19
+00:01:19,608 --> 00:01:23,465
+You: Could we try a first step when we can,
+
+20
+00:01:23,465 --> 00:01:28,608
+You: but ask for a focused starting hint if we cannot identify one?
+
+21
+00:01:28,608 --> 00:01:33,751
+You: We would still need to explain and check what the tool suggests.
+
+22
+00:01:34,101 --> 00:01:37,958
+Coach: The revision changes when a hint may be requested.
+
+23
+00:01:37,958 --> 00:01:40,958
+Coach: It keeps attention on reasoning and checking.
+
+24
+00:01:40,958 --> 00:01:46,529
+Coach: That makes it responsive to the concern, but not automatically the best plan.
+
+25
+00:01:46,529 --> 00:01:51,672
+Coach: A focused hint could still be insufficient, misleading, or difficult to verify.
+
+26
+00:01:52,022 --> 00:01:54,594
+Maya: I support allowing a starting hint.
+
+27
+00:01:54,594 --> 00:01:59,308
+Maya: What would we do if the hint still does not help?
+
+28
+00:01:59,658 --> 00:02:04,801
+Coach: In this written example, Maya supports one feature: allowing a starting hint.
+
+29
+00:02:04,801 --> 00:02:07,372
+Coach: She has also asked a question.
+
+30
+00:02:07,372 --> 00:02:11,658
+Coach: Neither statement means that everyone agrees with the whole plan.
+
+31
+00:02:11,658 --> 00:02:15,515
+Coach: Do not turn partial agreement into a group decision.
+
+32
+00:02:15,865 --> 00:02:20,151
+Coach: A suggestion does not become agreed because nobody objects immediately.
+
+33
+00:02:20,151 --> 00:02:23,579
+Coach: Silence may leave us unsure what others think.
+
+34
+00:02:23,579 --> 00:02:26,579
+Coach: Ask which part they support or question,
+
+35
+00:02:26,579 --> 00:02:30,008
+Coach: and record only the response they actually give.
+
+36
+00:02:30,358 --> 00:02:34,644
+You: We have one point of support about a starting hint.
+
+37
+00:02:34,644 --> 00:02:39,786
+You: We still need to discuss what happens if it is not enough,
+
+38
+00:02:39,786 --> 00:02:41,929
+You: and hear the other views.
+
+39
+00:02:42,279 --> 00:02:46,993
+Coach: The next question could be when to examine a worked answer,
+
+40
+00:02:46,993 --> 00:02:49,993
+Coach: or how to check a disputed step.
+
+41
+00:02:49,993 --> 00:02:52,994
+Coach: Keep both within the twenty-minute session.
+
+42
+00:02:52,994 --> 00:02:55,136
+Coach: More help also takes time;
+
+43
+00:02:55,136 --> 00:03:00,708
+Coach: do not invent extra time or treat tool output as a verified answer.
+
+44
+00:03:01,058 --> 00:03:05,772
+Coach: Privately choose one unresolved issue and form a question about it.
+
+45
+00:03:05,772 --> 00:03:11,344
+Coach: Leave out claims that everybody agrees or that the new plan will work.
+
+46
+00:03:11,344 --> 00:03:14,772
+Coach: You are inviting examination, not announcing the result.
+
+47
+00:03:27,122 --> 00:03:29,693
+You: If a hint is not enough,
+
+48
+00:03:29,693 --> 00:03:34,836
+You: what would make a worked answer useful for understanding the next step?
+
+49
+00:03:35,186 --> 00:03:40,329
+Coach: A revision can address a concern while leaving a real decision open.
+
+50
+00:03:40,329 --> 00:03:45,043
+Coach: Keep the change, the expressed support, and the unanswered question separate.
+
+51
+00:03:45,043 --> 00:03:48,900
+Coach: That gives the group an accurate basis for continuing,
+
+52
+00:03:48,900 --> 00:03:50,186
+Coach: without inventing consensus.

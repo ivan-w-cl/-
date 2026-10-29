@@ -1,0 +1,215 @@
+1
+00:00:00,000 --> 00:00:04,714
+Coach: A disagreement becomes easier to examine when the alternatives are clear.
+
+2
+00:00:04,714 --> 00:00:09,000
+Coach: Instead of defending a preferred option against a vague problem,
+
+3
+00:00:09,000 --> 00:00:11,571
+Coach: ask what each proposal would involve.
+
+4
+00:00:11,571 --> 00:00:14,571
+Coach: Then compare both against the same questions.
+
+5
+00:00:14,921 --> 00:00:20,921
+Coach: Our fictional group is planning a twenty-minute practice session with two sample problems.
+
+6
+00:00:20,921 --> 00:00:26,493
+Coach: The aim is to understand the key reasoning, not simply finish more answers.
+
+7
+00:00:26,493 --> 00:00:31,207
+Coach: The tool can offer a hint or a full worked answer.
+
+8
+00:00:31,207 --> 00:00:34,207
+Coach: Neither kind of output has been verified.
+
+9
+00:00:34,557 --> 00:00:38,843
+Maya: An answer tool can save time when we get stuck.
+
+10
+00:00:38,843 --> 00:00:43,557
+Maya: I would use it as soon as a problem becomes difficult.
+
+11
+00:00:43,907 --> 00:00:48,193
+Coach: Return to Maya’s original wording, before the clarification explored earlier.
+
+12
+00:00:48,193 --> 00:00:51,193
+Coach: It leaves the kind of help open.
+
+13
+00:00:51,193 --> 00:00:53,764
+Coach: For comparison, take one possible version:
+
+14
+00:00:53,764 --> 00:00:56,336
+Coach: open a full worked answer immediately.
+
+15
+00:00:56,336 --> 00:00:58,479
+Coach: Set it beside another proposal:
+
+16
+00:00:58,479 --> 00:01:03,193
+Coach: make a brief attempt, then request a focused hint if needed.
+
+17
+00:01:03,543 --> 00:01:05,257
+Coach: Use four questions here:
+
+18
+00:01:05,257 --> 00:01:11,257
+Coach: how would time be used, what reasoning would participants examine, could someone get started,
+
+19
+00:01:11,257 --> 00:01:15,114
+Coach: and how would the group check the tool’s output?
+
+20
+00:01:15,114 --> 00:01:17,257
+Coach: These come from this task.
+
+21
+00:01:17,257 --> 00:01:20,257
+Coach: They are not a universal scoring system.
+
+22
+00:01:28,607 --> 00:01:34,179
+Coach: A worked answer could provide an entry point or a sequence to examine.
+
+23
+00:01:34,179 --> 00:01:37,607
+Coach: It also takes time to read and check.
+
+24
+00:01:37,607 --> 00:01:44,036
+Coach: Seeing a complete solution does not show that each person understands why its steps follow.
+
+25
+00:01:44,036 --> 00:01:47,036
+Coach: Those possibilities belong in the comparison together.
+
+26
+00:01:47,386 --> 00:01:53,815
+Coach: A brief attempt could help someone identify a particular gap before asking for a hint.
+
+27
+00:01:53,815 --> 00:01:59,386
+Coach: But an attempt without a starting point can use time without clarifying much.
+
+28
+00:01:59,386 --> 00:02:04,101
+Coach: The hint may help, or it may be unclear or inaccurate.
+
+29
+00:02:04,101 --> 00:02:05,815
+Coach: It still needs checking.
+
+30
+00:02:06,165 --> 00:02:10,022
+You: I would prefer a brief attempt before a hint,
+
+31
+00:02:10,022 --> 00:02:13,880
+You: because it might show us which step needs help.
+
+32
+00:02:13,880 --> 00:02:18,594
+You: How would we support someone who cannot find a first step?
+
+33
+00:02:18,944 --> 00:02:22,801
+Coach: This reply explains a preference and names a limit.
+
+34
+00:02:22,801 --> 00:02:26,658
+Coach: It does not prove that the proposal is faster.
+
+35
+00:02:26,658 --> 00:02:30,944
+Coach: Check whether your comparison gives both options the same chance:
+
+36
+00:02:30,944 --> 00:02:36,515
+Coach: do not count checking time for one while pretending the other needs none.
+
+37
+00:02:36,865 --> 00:02:41,579
+Coach: Checking could include testing a suggested step against the problem’s conditions
+
+38
+00:02:41,579 --> 00:02:43,722
+Coach: and asking why it follows.
+
+39
+00:02:43,722 --> 00:02:48,008
+Coach: If the group cannot verify it, keep that uncertainty visible.
+
+40
+00:02:48,008 --> 00:02:52,722
+Coach: A fluent explanation from the tool is not, by itself, confirmation.
+
+41
+00:02:53,072 --> 00:02:56,501
+Coach: Choose one criterion and compare both proposals privately.
+
+42
+00:02:56,501 --> 00:02:59,929
+Coach: Include a possible benefit or limit for each.
+
+43
+00:02:59,929 --> 00:03:02,501
+Coach: You can pause for more time.
+
+44
+00:03:02,501 --> 00:03:05,072
+Coach: The aim is a fair comparison,
+
+45
+00:03:05,072 --> 00:03:09,358
+Coach: not finding the sentence that makes your preferred option win.
+
+46
+00:03:21,708 --> 00:03:24,708
+You: A full answer might help us start,
+
+47
+00:03:24,708 --> 00:03:28,565
+You: but we would still need to check its reasoning.
+
+48
+00:03:28,565 --> 00:03:31,136
+You: An attempt might reveal a gap,
+
+49
+00:03:31,136 --> 00:03:34,565
+You: but someone could need help before making progress.
+
+50
+00:03:34,915 --> 00:03:37,058
+Coach: No winner has been proved.
+
+51
+00:03:37,058 --> 00:03:40,487
+Coach: The comparison identifies something the proposal must handle:
+
+52
+00:03:40,487 --> 00:03:43,487
+Coach: getting started without losing attention to reasoning.
+
+53
+00:03:43,487 --> 00:03:47,344
+Coach: Next, we will revise a suggestion around that concern
+
+54
+00:03:47,344 --> 00:03:50,344
+Coach: while keeping agreement and open questions distinct.
