@@ -1,0 +1,15 @@
+{
+  "schema": "esssouth.l06.staging-labels/1",
+  "sectionId": "L06.S04",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Case wording follows content/case-facts.en.json (F01–F09) in substance; nothing new is asserted. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.lane.p": "Case participant",
+    "x.lane.m": "Maya",
+    "x.lane.n": "Noah",
+    "x.unsupFrame": "Unsupported claim example",
+    "x.node.update": "Label updated",
+    "x.node.use": "One observed map use",
+    "x.path.own": "Own truthful experience",
+    "x.path.fiction": "Labelled fiction"
+  }
+}
