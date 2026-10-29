@@ -5,7 +5,7 @@
  "sections": [
   {
    "id": "L03.S01",
-   "status": "playable_unverified",
+   "status": "verified",
    "implementedCueIds": [
     "L03.S01.c001",
     "L03.S01.c002",
@@ -40,14 +40,14 @@
     "PASS route practice:main: L03.S01.h101 lasts 8 s",
     "PASS route practice:main: L03.S01.h102 lasts 8 s",
     "PASS every character line shows its exact words in a visible bubble near its end",
-    "FAIL route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
-    "FAIL route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+    "PASS route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+    "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.999)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.244)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.487)",
-    "PASS rate 2×: clock advances at 2× (measured 1.995)",
+    "PASS rate 1×: clock advances at 1× (measured 0.997)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.241)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.498)",
+    "PASS rate 2×: clock advances at 2× (measured 1.990)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -77,7 +77,7 @@
     "L03.S01.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S01/report.json (2026-10-29T15:30:42.678Z, Chromium 153.0.8010.12, 39 checks, 2 failed)",
+   "qaReport": "qa/S01/report.json (2026-10-29T15:33:26.572Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
    "routeSeconds": {
     "watch": 224.593,
     "practice:main": 224.593
@@ -90,7 +90,7 @@
     "index.html": "dc2f798d7c9bad648d5ad77d9e3bcee4bcd22937ff54bad0b93be1d6547be4cb",
     "L03S01_player_standalone.html": "fdf40b03be6cc32b64cd4abdd5b866033e9ad1294823b0e5e05471784fd4e9a0"
    },
-   "updatedAt": "2026-10-29T15:33:07.164Z"
+   "updatedAt": "2026-10-29T15:33:50.739Z"
   },
   {
    "id": "L03.S02",

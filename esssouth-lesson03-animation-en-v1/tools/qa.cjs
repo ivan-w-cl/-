@@ -40,9 +40,9 @@ const AUDIT = (moving) => {
   });
   // hidden behind another object: a later (higher) opaque token covering the centre of a visible text
   const toks = [...document.querySelectorAll('#stage .tok:not(.measure)')].filter((n) => +n.style.opacity > 0.9);
-  toks.forEach((n, i) => { const tx = n.querySelector('.tx'); if (!tx.textContent.trim()) return; const id = n.dataset.token;
+  toks.forEach((n, i) => { const tx = n.querySelector('.tx'); if (!tx.textContent.trim()) return; const id = n.dataset.token; if (moving.has(id)) return;
     const cx = parseFloat(n.style.left) + parseFloat(n.style.width) / 2, cy = parseFloat(n.style.top) + parseFloat(n.style.height) / 2;
-    toks.slice(i + 1).forEach((m) => { const x = parseFloat(m.style.left), y = parseFloat(m.style.top), w = parseFloat(m.style.width), h = parseFloat(m.style.height);
+    toks.slice(i + 1).forEach((m) => { if (moving.has(m.dataset.token)) return; const x = parseFloat(m.style.left), y = parseFloat(m.style.top), w = parseFloat(m.style.width), h = parseFloat(m.style.height);
       if (cx > x && cx < x + w && cy > y && cy < y + h) { const bg = getComputedStyle(m.querySelector('.t2')).backgroundColor; if (bg && bg !== 'transparent' && !/rgba\([^)]*,\s*0\)$/.test(bg)) issues.push({ type: 'covered', id, by: m.dataset.token }); } }); });
   const ov = (a, c) => Math.max(0, Math.min(a.x + a.w, c.x + c.w) - Math.max(a.x, c.x)) * Math.max(0, Math.min(a.y + a.h, c.y + c.h) - Math.max(a.y, c.y));
   for (let i = 0; i < vis.length; i++) for (let j = i + 1; j < vis.length; j++) { const A = vis[i], B = vis[j]; if (A.cont || B.cont) continue;
