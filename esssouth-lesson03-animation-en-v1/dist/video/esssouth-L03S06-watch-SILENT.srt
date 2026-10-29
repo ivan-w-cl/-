@@ -1,0 +1,235 @@
+1
+00:00:00,000 --> 00:00:02,571
+Coach: Even when you are listening carefully,
+
+2
+00:00:02,571 --> 00:00:06,857
+Coach: you may respond to the wrong part of a sentence.
+
+3
+00:00:06,857 --> 00:00:10,286
+Coach: A correction gives you another chance to understand.
+
+4
+00:00:10,286 --> 00:00:16,714
+Coach: The useful move is to update your understanding before defending the reply you already gave.
+
+5
+00:00:17,064 --> 00:00:21,778
+Coach: We will use an authored example from the same workshop discussion.
+
+6
+00:00:21,778 --> 00:00:25,207
+Coach: The group has thirty minutes and one facilitator.
+
+7
+00:00:25,207 --> 00:00:28,207
+Coach: The following misunderstanding belongs to the example.
+
+8
+00:00:28,207 --> 00:00:32,064
+Coach: It is not something we have heard you say.
+
+9
+00:00:32,414 --> 00:00:35,843
+Noah: If several pairs lose their place at once,
+
+10
+00:00:35,843 --> 00:00:38,414
+Noah: one facilitator may not reach everyone.
+
+11
+00:00:38,764 --> 00:00:42,193
+You: Could we put more paper on each table?
+
+12
+00:00:42,543 --> 00:00:47,257
+Noah: I mean help with the steps, not a shortage of paper.
+
+13
+00:00:47,607 --> 00:00:52,321
+Coach: The first reply treated the problem as a shortage of materials.
+
+14
+00:00:52,321 --> 00:00:55,321
+Coach: Noah has now made the issue clearer:
+
+15
+00:00:55,321 --> 00:01:00,464
+Coach: several pairs might need help with the instructions at the same time.
+
+16
+00:01:00,464 --> 00:01:03,464
+Coach: More paper does not address that concern.
+
+17
+00:01:03,814 --> 00:01:06,814
+Coach: A brief acknowledgement can mark the update.
+
+18
+00:01:06,814 --> 00:01:09,385
+Coach: Thanks for clarifying is one option.
+
+19
+00:01:09,385 --> 00:01:14,528
+Coach: It is useful only if the next words reflect the corrected meaning.
+
+20
+00:01:14,528 --> 00:01:17,528
+Coach: You do not need a long apology,
+
+21
+00:01:17,528 --> 00:01:23,528
+Coach: and you do not need to pretend that you agree with every proposed solution.
+
+22
+00:01:23,878 --> 00:01:28,164
+Coach: Before you rehearse, identify the concern in your own words.
+
+23
+00:01:28,164 --> 00:01:31,592
+Coach: What could happen if several pairs need help,
+
+24
+00:01:31,592 --> 00:01:34,592
+Coach: and why does having one facilitator matter?
+
+25
+00:01:34,592 --> 00:01:40,164
+Coach: Keep that issue separate from the question of how much paper is available.
+
+26
+00:01:50,514 --> 00:01:54,371
+Coach: Now form a short English reply to Noah's correction.
+
+27
+00:01:54,371 --> 00:01:59,085
+Coach: You could acknowledge the clarification, show which concern you now understand,
+
+28
+00:01:59,085 --> 00:02:02,942
+Coach: and suggest or ask about one relevant next step.
+
+29
+00:02:02,942 --> 00:02:05,514
+Coach: Use only the parts you need.
+
+30
+00:02:05,514 --> 00:02:09,371
+Coach: This is private rehearsal: nothing is recorded or scored.
+
+31
+00:02:09,721 --> 00:02:16,578
+Coach: In Watch mode, there is a short time to try before one possible reply is shown.
+
+32
+00:02:16,578 --> 00:02:23,435
+Coach: In Practice mode, take as long as you need, then choose the model or skip it.
+
+33
+00:02:23,435 --> 00:02:29,007
+Coach: Seeing the model does not mean that you have completed the speaking task.
+
+34
+00:03:04,357 --> 00:03:05,643
+You: Thanks for clarifying.
+
+35
+00:03:05,643 --> 00:03:10,357
+You: You mean several pairs may need help at the same time.
+
+36
+00:03:10,357 --> 00:03:16,786
+You: Could we keep a step card visible, and ask which steps people need help with?
+
+37
+00:03:17,136 --> 00:03:18,850
+Noah: A card might help.
+
+38
+00:03:18,850 --> 00:03:21,850
+Noah: What if someone still cannot follow it?
+
+39
+00:03:22,200 --> 00:03:26,914
+Coach: This model acknowledges the correction and addresses help with the steps.
+
+40
+00:03:26,914 --> 00:03:31,629
+Coach: Noah still has a question about someone who needs more support.
+
+41
+00:03:31,629 --> 00:03:35,057
+Coach: The reply has opened a more relevant discussion;
+
+42
+00:03:35,057 --> 00:03:40,200
+Coach: it has not guaranteed that everyone will get the help they need.
+
+43
+00:03:40,550 --> 00:03:43,979
+Coach: Whether you tried a reply, watched the model,
+
+44
+00:03:43,979 --> 00:03:47,407
+Coach: or skipped it, the same question is useful:
+
+45
+00:03:47,407 --> 00:03:51,693
+Coach: did the response address the concern that was actually stated?
+
+46
+00:03:51,693 --> 00:03:54,693
+Coach: You can check a reply you remember,
+
+47
+00:03:54,693 --> 00:03:58,550
+Coach: or simply use the question for your next attempt.
+
+48
+00:03:58,900 --> 00:04:02,329
+Coach: Notice also whether the reply adds an assumption.
+
+49
+00:04:02,329 --> 00:04:08,329
+Coach: Saying you are worried about not having enough materials would keep the original misunderstanding.
+
+50
+00:04:08,329 --> 00:04:15,186
+Coach: Saying you want us to cancel the workshop would add a claim Noah did not make.
+
+51
+00:04:15,536 --> 00:04:19,393
+Coach: You may still disagree about what to do next.
+
+52
+00:04:19,393 --> 00:04:24,107
+Coach: Understanding the concern does not commit you to a particular plan.
+
+53
+00:04:24,107 --> 00:04:27,107
+Coach: For now, keep the two questions separate:
+
+54
+00:04:27,107 --> 00:04:33,107
+Coach: what does the person mean, and what response would help the group examine it?
+
+55
+00:04:41,457 --> 00:04:47,028
+Coach: If you want another attempt, return to the rehearsal and change one thing:
+
+56
+00:04:47,028 --> 00:04:50,885
+Coach: make the corrected concern clearer, remove an added assumption,
+
+57
+00:04:50,885 --> 00:04:53,885
+Coach: or make the next question more specific.
+
+58
+00:04:53,885 --> 00:04:56,028
+Coach: You choose what needs attention.
+
+59
+00:04:56,028 --> 00:05:00,314
+Coach: The player cannot judge a reply it has not heard.

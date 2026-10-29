@@ -1,0 +1,267 @@
+1
+00:00:00,000 --> 00:00:04,286
+Coach: A clarification question should help you decide how to respond.
+
+2
+00:00:04,286 --> 00:00:07,714
+Coach: Ask about the part that is genuinely unclear,
+
+3
+00:00:07,714 --> 00:00:12,000
+Coach: rather than requesting any extra detail simply to keep talking.
+
+4
+00:00:12,350 --> 00:00:16,636
+Coach: Return to the planned thirty-minute beginner paper-folding workshop:
+
+5
+00:00:16,636 --> 00:00:21,350
+Coach: one facilitator, shared materials, and opportunities to try and ask questions.
+
+6
+00:00:21,350 --> 00:00:23,064
+Coach: Nothing has been tried.
+
+7
+00:00:23,064 --> 00:00:27,350
+Coach: Maya now describes one possible way to arrange a demonstration.
+
+8
+00:00:27,700 --> 00:00:30,271
+Maya: The facilitator could demonstrate several steps,
+
+9
+00:00:30,271 --> 00:00:32,843
+Maya: and then everyone could try them.
+
+10
+00:00:33,193 --> 00:00:37,050
+Noah: Doing it that way could be difficult for beginners.
+
+11
+00:00:37,400 --> 00:00:40,400
+Coach: You know which workshop they are planning,
+
+12
+00:00:40,400 --> 00:00:43,400
+Coach: but not exactly which part Noah means.
+
+13
+00:00:43,400 --> 00:00:48,543
+Coach: He could be referring to the sequence, the pace, or another feature.
+
+14
+00:00:48,543 --> 00:00:51,543
+Coach: Those are possibilities, not his confirmed explanation.
+
+15
+00:00:51,893 --> 00:00:56,607
+Coach: The thirty-minute length is already part of the shared task.
+
+16
+00:00:56,607 --> 00:01:01,322
+Coach: Asking for it again would not, by itself, clarify that way.
+
+17
+00:01:01,322 --> 00:01:05,179
+Coach: The missing information concerns the part he finds difficult.
+
+18
+00:01:05,529 --> 00:01:08,958
+Coach: A proposed solution can also arrive too early.
+
+19
+00:01:08,958 --> 00:01:11,529
+Coach: Shortening the demonstration might be useful,
+
+20
+00:01:11,529 --> 00:01:16,243
+Coach: but it does not tell us which difficulty Noah was raising.
+
+21
+00:01:16,243 --> 00:01:20,529
+Coach: A plausible idea is not the same as a clarification.
+
+22
+00:01:20,879 --> 00:01:24,308
+Coach: Privately identify the gap you would ask about.
+
+23
+00:01:24,308 --> 00:01:26,450
+Coach: Keep the task facts visible,
+
+24
+00:01:26,450 --> 00:01:32,879
+Coach: and consider what an answer would allow you to do differently in your next turn.
+
+25
+00:01:41,229 --> 00:01:43,372
+Coach: Compare three possible next turns.
+
+26
+00:01:43,372 --> 00:01:47,658
+Coach: One returns to a known fact, one advances a proposal,
+
+27
+00:01:47,658 --> 00:01:50,658
+Coach: and one asks about the unclear reference.
+
+28
+00:01:50,658 --> 00:01:53,658
+Coach: Which directly checks the meaning needed here?
+
+29
+00:01:54,008 --> 00:01:57,008
+Coach: The following peer replies are authored continuations.
+
+30
+00:01:57,008 --> 00:02:00,437
+Coach: In a real discussion, an answer could differ.
+
+31
+00:02:00,437 --> 00:02:03,437
+Coach: Listen to the information a question requests,
+
+32
+00:02:03,437 --> 00:02:07,294
+Coach: rather than treating a sample reaction as a rule.
+
+33
+00:02:15,644 --> 00:02:19,930
+You: Which part do you think could be difficult for beginners?
+
+34
+00:02:20,280 --> 00:02:25,423
+Noah: I mean remembering several steps before they get a chance to try.
+
+35
+00:02:25,423 --> 00:02:28,851
+Noah: Someone could lose track of the first fold.
+
+36
+00:02:29,201 --> 00:02:32,630
+Coach: This question directly asks for the missing meaning
+
+37
+00:02:32,630 --> 00:02:35,201
+Coach: without choosing a cause for Noah.
+
+38
+00:02:35,201 --> 00:02:39,058
+Coach: His answer gives a specific concern to respond to.
+
+39
+00:02:39,058 --> 00:02:43,344
+Coach: It is a possible continuation, not evidence about every beginner.
+
+40
+00:02:43,694 --> 00:02:47,551
+Coach: The key question is which part could be difficult.
+
+41
+00:02:47,551 --> 00:02:50,122
+Coach: The duration alone cannot answer that.
+
+42
+00:02:50,122 --> 00:02:53,122
+Coach: Once a speaker identifies the specific concern,
+
+43
+00:02:53,122 --> 00:02:56,551
+Coach: a reply can address it instead of guessing.
+
+44
+00:02:56,901 --> 00:03:00,758
+Coach: For the next worked example, take this clarified concern:
+
+45
+00:03:00,758 --> 00:03:03,330
+Coach: remembering several steps before trying them.
+
+46
+00:03:03,330 --> 00:03:08,044
+Coach: This is an authored example, not a finding about every beginner.
+
+47
+00:03:08,394 --> 00:03:13,965
+You: Could we show one step, pause while people try it, and then continue?
+
+48
+00:03:14,315 --> 00:03:19,029
+Coach: This proposal addresses the gap between seeing and trying a step.
+
+49
+00:03:19,029 --> 00:03:22,886
+Coach: It still needs consideration against the time and resources.
+
+50
+00:03:22,886 --> 00:03:28,029
+Coach: Clarifying the concern does not establish that the new arrangement will work.
+
+51
+00:03:28,379 --> 00:03:32,665
+Coach: Try asking about Noah’s unclear phrase in your own words.
+
+52
+00:03:32,665 --> 00:03:35,236
+Coach: Avoid selecting the explanation for him.
+
+53
+00:03:35,236 --> 00:03:40,808
+Coach: You can be specific about which words you mean without supplying the answer.
+
+54
+00:03:41,158 --> 00:03:43,301
+Coach: Think first, or speak privately.
+
+55
+00:03:43,301 --> 00:03:45,444
+Coach: Nothing is recorded or assessed.
+
+56
+00:03:45,444 --> 00:03:49,301
+Coach: Use the short pause, or pause playback for longer.
+
+57
+00:03:49,301 --> 00:03:53,158
+Coach: The wording does not need to match the model.
+
+58
+00:04:01,508 --> 00:04:05,794
+Coach: If you tried a question, check what information it requested.
+
+59
+00:04:05,794 --> 00:04:09,651
+Coach: Would that help you respond to the unclear point?
+
+60
+00:04:09,651 --> 00:04:14,794
+Coach: If the meaning was already clear, a question might not be needed.
+
+61
+00:04:15,144 --> 00:04:18,573
+Coach: Ask only as much as the situation needs.
+
+62
+00:04:18,573 --> 00:04:22,858
+Coach: A clarification can open the way to a useful response;
+
+63
+00:04:22,858 --> 00:04:27,144
+Coach: repeated questions about settled details can postpone that response instead.
+
+64
+00:04:27,494 --> 00:04:32,208
+Coach: Next we will consider how to agree with a specific point
+
+65
+00:04:32,208 --> 00:04:33,923
+Coach: and add something relevant.
+
+66
+00:04:33,923 --> 00:04:38,209
+Coach: The aim is still to respond to what was said,
+
+67
+00:04:38,209 --> 00:04:40,780
+Coach: rather than simply take another turn.

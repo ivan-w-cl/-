@@ -1,0 +1,223 @@
+1
+00:00:00,000 --> 00:00:05,571
+Coach: A response can connect to someone's concern and still leave work to do.
+
+2
+00:00:05,571 --> 00:00:09,857
+Coach: The next step is to notice exactly what remains unanswered,
+
+3
+00:00:09,857 --> 00:00:15,857
+Coach: instead of treating the suggestion as either a complete solution or a total failure.
+
+4
+00:00:16,207 --> 00:00:20,493
+Coach: The workshop plan still has thirty minutes and one facilitator.
+
+5
+00:00:20,493 --> 00:00:26,064
+Coach: A visible step card has been suggested to help beginners find their place.
+
+6
+00:00:26,064 --> 00:00:29,064
+Coach: It has not been tested or adopted.
+
+7
+00:00:29,064 --> 00:00:32,921
+Coach: Listen to the concern Noah raises about the plan.
+
+8
+00:00:33,271 --> 00:00:38,414
+Noah: A card might help, but if several pairs need help at once,
+
+9
+00:00:38,414 --> 00:00:40,985
+Noah: one facilitator may not reach everyone.
+
+10
+00:00:41,335 --> 00:00:44,764
+Coach: Noah has not said that cards are useless.
+
+11
+00:00:44,764 --> 00:00:50,764
+Coach: He has identified a situation in which some people might still need direct help.
+
+12
+00:00:50,764 --> 00:00:56,764
+Coach: The concern is how one facilitator would handle several requests at the same time.
+
+13
+00:00:57,114 --> 00:01:03,114
+Coach: Saying the card will be very clear does not by itself answer that situation.
+
+14
+00:01:03,114 --> 00:01:06,114
+Coach: Neither does repeating that practice is important.
+
+15
+00:01:06,114 --> 00:01:08,257
+Coach: Those points may be relevant,
+
+16
+00:01:08,257 --> 00:01:12,114
+Coach: but the remaining question is about access to help.
+
+17
+00:01:19,464 --> 00:01:24,178
+Coach: A more targeted response offers a possible way to handle requests,
+
+18
+00:01:24,178 --> 00:01:27,607
+Coach: or asks for information needed to compare ways.
+
+19
+00:01:27,607 --> 00:01:29,321
+Coach: Here is one proposal.
+
+20
+00:01:29,321 --> 00:01:32,321
+Coach: It is a starting point for discussion,
+
+21
+00:01:32,321 --> 00:01:36,178
+Coach: not a claim that the issue has been solved.
+
+22
+00:01:36,528 --> 00:01:40,814
+You: Could we pause after the first try and collect questions,
+
+23
+00:01:40,814 --> 00:01:45,957
+You: so the facilitator can address a step that several pairs found difficult?
+
+24
+00:01:46,307 --> 00:01:49,307
+Maya: That could help with a shared question.
+
+25
+00:01:49,307 --> 00:01:53,593
+Maya: What if just one pair is stuck before the pause?
+
+26
+00:01:53,943 --> 00:01:59,514
+Coach: The shared check might address a difficulty that several pairs have in common.
+
+27
+00:01:59,514 --> 00:02:04,229
+Coach: Maya points out a different case: someone who needs help earlier.
+
+28
+00:02:04,229 --> 00:02:05,943
+Coach: Both can be true.
+
+29
+00:02:05,943 --> 00:02:11,943
+Coach: A useful response does not have to remove every possible difficulty in one sentence.
+
+30
+00:02:12,293 --> 00:02:16,150
+Coach: You can now name the open question more precisely.
+
+31
+00:02:16,150 --> 00:02:18,722
+Coach: What would participants do while waiting,
+
+32
+00:02:18,722 --> 00:02:22,579
+Coach: and how would they signal that they need help?
+
+33
+00:02:22,579 --> 00:02:24,293
+Coach: Those details need discussion.
+
+34
+00:02:24,293 --> 00:02:28,579
+Coach: We do not yet know which arrangement would work best.
+
+35
+00:02:28,929 --> 00:02:31,929
+Coach: Keep the task visible when you respond.
+
+36
+00:02:31,929 --> 00:02:35,358
+Coach: Adding another facilitator would change the stated conditions;
+
+37
+00:02:35,358 --> 00:02:40,072
+Coach: making the demonstration fill the session would remove time to try.
+
+38
+00:02:40,072 --> 00:02:44,786
+Coach: A proposal must be checked against the resources and the purpose,
+
+39
+00:02:44,786 --> 00:02:46,929
+Coach: not only against one concern.
+
+40
+00:02:47,279 --> 00:02:51,565
+Coach: This does not mean a constraint can never be questioned.
+
+41
+00:02:51,565 --> 00:02:54,993
+Coach: If the group is allowed to change it,
+
+42
+00:02:54,993 --> 00:02:59,279
+Coach: say that explicitly and find out whether it is possible.
+
+43
+00:02:59,279 --> 00:03:04,422
+Coach: Do not silently assume a resource that the task has not provided.
+
+44
+00:03:04,772 --> 00:03:10,343
+Coach: Look again at the concern about someone needing help before the shared check.
+
+45
+00:03:10,343 --> 00:03:15,486
+Coach: Privately form one question that would help the group examine that situation.
+
+46
+00:03:15,486 --> 00:03:18,486
+Coach: It should seek information you still need,
+
+47
+00:03:18,486 --> 00:03:21,486
+Coach: rather than repeat information already on screen.
+
+48
+00:03:33,836 --> 00:03:40,265
+You: What could a pair do if they miss a step before we stop for questions?
+
+49
+00:03:40,615 --> 00:03:43,615
+Coach: That question stays with the remaining difficulty
+
+50
+00:03:43,615 --> 00:03:47,472
+Coach: and gives the group something specific to work on.
+
+51
+00:03:47,472 --> 00:03:50,472
+Coach: A different question could be useful too.
+
+52
+00:03:50,472 --> 00:03:53,472
+Coach: Check which uncertainty your question would reduce,
+
+53
+00:03:53,472 --> 00:03:57,329
+Coach: and keep the answer open until someone provides it.
+
+54
+00:03:57,679 --> 00:04:01,965
+Coach: Responding well includes noticing the limits of your own response.
+
+55
+00:04:01,965 --> 00:04:03,679
+Coach: In the next section,
+
+56
+00:04:03,679 --> 00:04:09,679
+Coach: we will practise updating a reply when someone says we understood the wrong issue.

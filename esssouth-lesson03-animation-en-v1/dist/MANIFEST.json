@@ -2,64 +2,64 @@
  "note": "Sizes and SHA-256 of the delivered files. Every ZIP is below 20,000,000 bytes.",
  "files": {
   "esssouth-L03-lesson-bundle.zip": {
-   "bytes": 381117,
-   "sha256": "c9ccc7daa7ccfbb45940212437844bd1e1314a76946554f265dfa09a87d4b34b"
+   "bytes": 381686,
+   "sha256": "aa6a163c2738cc8cbe97af3fe2ea9c4f12356292e78a774693952c5405b1cc61"
   },
   "esssouth-L03S01-playable.zip": {
    "bytes": 59145,
    "sha256": "617cdd4b5925575eedbcd1c5d67d8dde07ef1d35b20ca07295e3e44a9c751423"
   },
   "esssouth-L03S01-source.zip": {
-   "bytes": 3194890,
-   "sha256": "d088ca7bab14c70474f78254013a8a39a57c915f440cb5c2213f984307b831bf"
+   "bytes": 3197395,
+   "sha256": "0bd2d20fd5f31f3670cfe5b8ae0bd737d9948e72ffce5e5feb86a83cd28ad0e8"
   },
   "esssouth-L03S02-playable.zip": {
    "bytes": 64306,
    "sha256": "927639593f80b350bbb6f09e8244a8eab12ee89c4599d1ef5f0a5db949f7f0fe"
   },
   "esssouth-L03S02-source.zip": {
-   "bytes": 6975481,
-   "sha256": "ee148fb6fc61251ce592b3340771369a25178baac2c6762ded7d0df1ff34c9b4"
+   "bytes": 6977986,
+   "sha256": "49f727aeb6ed01e8ab801389dd7c1058609a3689e7684c1b82f56c4d293b9eed"
   },
   "esssouth-L03S03-playable.zip": {
    "bytes": 64910,
    "sha256": "75d871756559a6e0fec7e13b1c86dfd2e317ea50a99d61da8c3101d6e75b4f6a"
   },
   "esssouth-L03S03-source.zip": {
-   "bytes": 5834963,
-   "sha256": "38067f14def7880e55614c5833146fcdd424f907abac6b59a919d008b55e204c"
+   "bytes": 5837468,
+   "sha256": "0fbadb6d6b1fcfa1ba3b370cd984edfa7d8a65045d08a3a86c980cc98150c6b1"
   },
   "esssouth-L03S04-playable.zip": {
    "bytes": 58709,
    "sha256": "806240724d7cd9da1f6bc8174da414982a6393b9e20b3a6c6adb88699672c919"
   },
   "esssouth-L03S04-source.zip": {
-   "bytes": 2476320,
-   "sha256": "4cefd954c7bfb9d0176645fc19a37dd1ef02cecab0777fe5d8eca9160262573b"
+   "bytes": 2478825,
+   "sha256": "0085dfc09a9b5394615fd5ea2964d488385c9aac0dfdb25084b2b129e77af1d0"
   },
   "esssouth-L03S05-playable.zip": {
    "bytes": 57990,
    "sha256": "f2c8a1dbf9df828a649191ebbd7aea368b3a8bac97db2b007b597ed17bf9cc6f"
   },
   "esssouth-L03S05-source.zip": {
-   "bytes": 2503553,
-   "sha256": "d6561f08b17077e42ca9ecaa2d3571379ca949d8ffddd69ba3691d2860503203"
+   "bytes": 2506057,
+   "sha256": "260294f4167cc195e81a7ad5276ba290b3b67edb3dff17fea527bb8208af27b8"
   },
   "esssouth-L03S06-playable.zip": {
    "bytes": 59380,
    "sha256": "2720efb6eda4d180b86ff4b208d314b7807865f95a3d0cd7093488b2d19ab0d0"
   },
   "esssouth-L03S06-source.zip": {
-   "bytes": 3922412,
-   "sha256": "91d156e0317f5b4aec82d37bdba4e4550048c5b53d97eb34369ca5f2f44e8ff4"
+   "bytes": 3924916,
+   "sha256": "e82ee61294548ee0eee22f0279330a8531775914ca49e7e41a0ba4c7324a8ef8"
   },
   "esssouth-L03S07-playable.zip": {
    "bytes": 54087,
    "sha256": "62bddb19c6af11864a5a5bba4163d447f429e14eb8c5467bf109fa9f4017b4a5"
   },
   "esssouth-L03S07-source.zip": {
-   "bytes": 1736236,
-   "sha256": "0e024fe02585bd18e6d5f548751bc5dc7482d2f5edab8cf3bfe4c1b500b0f010"
+   "bytes": 1738740,
+   "sha256": "d9c040033f72daf6176b99aa1f032ae0602566eefa2cea1d0912cf0defca109f"
   },
   "video/esssouth-L03S01-watch-SILENT.export.json": {
    "bytes": 292,
@@ -85,21 +85,53 @@
    "bytes": 6049,
    "sha256": "d7661b432c2ffc4e47e84f3c75e565edc007e922d35eceac4550b008e0f0d5da"
   },
+  "video/esssouth-L03S03-watch-SILENT.export.json": {
+   "bytes": 292,
+   "sha256": "0255c4dea947f200b8d65ffe7b0cc2ebdfa865e8da35925f0652351c5a4b33a3"
+  },
   "video/esssouth-L03S03-watch-SILENT.mp4": {
-   "bytes": 5505072,
-   "sha256": "03bc03a41fdc6b98baa5876d1d403da05b3fa9170e8dc21bfde62de793ecf26e"
+   "bytes": 8167383,
+   "sha256": "3a408590292c1826853f7645f84a425380c0e99269aafa4b8dbba02581ad30cc"
   },
   "video/esssouth-L03S03-watch-SILENT.srt": {
    "bytes": 6261,
    "sha256": "c195281b236eaf7db6b15893c1cc7eed62ceea129849245e94d7c4fd032327f8"
   },
+  "video/esssouth-L03S04-watch-SILENT.export.json": {
+   "bytes": 292,
+   "sha256": "e78ce3bb48f1180e9e179daabbaebf3f5f64f6842233c206179e67d0f6938f2b"
+  },
   "video/esssouth-L03S04-watch-SILENT.mp4": {
-   "bytes": 1835056,
-   "sha256": "cd0fd6b8de995a19dbf482bac65b7558447a63d144b0b2dfa8178ea2d9fbfda4"
+   "bytes": 6213234,
+   "sha256": "69316c84bc027c6123a73cd8b3888547296b9436d1957e2c2a3de7e5308a3dc9"
   },
   "video/esssouth-L03S04-watch-SILENT.srt": {
    "bytes": 5494,
    "sha256": "5929004516a2b9c0ddc4551bf96d15f4a79c8ae4fdb0ff4f2503eeccfe825e52"
+  },
+  "video/esssouth-L03S05-watch-SILENT.export.json": {
+   "bytes": 291,
+   "sha256": "9fe96720b6802859638a058bb38028676d9a19a8de500af22661b01102afc119"
+  },
+  "video/esssouth-L03S05-watch-SILENT.mp4": {
+   "bytes": 5588680,
+   "sha256": "10bf3e2b41cb5817f2623e3c227ed9e1cb5146cfa34772743e02b33fdfc22f5a"
+  },
+  "video/esssouth-L03S05-watch-SILENT.srt": {
+   "bytes": 5369,
+   "sha256": "b086d284d5cf24e403f8ba5e4587054f78330717998924b7a6b6fcdd4e064e87"
+  },
+  "video/esssouth-L03S06-watch-SILENT.export.json": {
+   "bytes": 281,
+   "sha256": "8bb1130f4e9f3a14dbcef7c2125aaa14a14497f2a31286a862c7ea88e1520f00"
+  },
+  "video/esssouth-L03S06-watch-SILENT.mp4": {
+   "bytes": 7208775,
+   "sha256": "e21f2564673a1c329821539461e76f49162fdd4216a65d6e4149e604e4776544"
+  },
+  "video/esssouth-L03S06-watch-SILENT.srt": {
+   "bytes": 5648,
+   "sha256": "e6a6793f999251df19c99e3ebe9bc2dd977f034a9f14536bf3343e7c6d3782f5"
   },
   "video/esssouth-L03S07-watch-SILENT.export.json": {
    "bytes": 292,

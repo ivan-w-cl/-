@@ -1,0 +1,251 @@
+1
+00:00:00,000 --> 00:00:06,000
+Coach: Checking your understanding means making your interpretation available for the other person to confirm
+
+2
+00:00:06,000 --> 00:00:06,857
+Coach: or correct.
+
+3
+00:00:06,857 --> 00:00:11,143
+Coach: It is useful when the meaning matters to your response,
+
+4
+00:00:11,143 --> 00:00:13,714
+Coach: not a ritual before every turn.
+
+5
+00:00:14,064 --> 00:00:19,207
+Coach: The group is still planning a thirty-minute beginner paper-folding workshop,
+
+6
+00:00:19,207 --> 00:00:21,778
+Coach: with one facilitator and shared materials.
+
+7
+00:00:21,778 --> 00:00:25,635
+Coach: Participants should have opportunities to try and ask questions.
+
+8
+00:00:25,635 --> 00:00:29,064
+Coach: The plan has not been adopted or tested.
+
+9
+00:00:29,414 --> 00:00:34,557
+Noah: I would keep the demonstration brief, so people have time to try.
+
+10
+00:00:34,557 --> 00:00:40,128
+Noah: I am worried that someone who misses a step could get left behind.
+
+11
+00:00:40,478 --> 00:00:45,621
+Coach: Suppose you want to check this whole contribution before proposing a change.
+
+12
+00:00:45,621 --> 00:00:49,050
+Coach: Keep the brief demonstration, the reason for it,
+
+13
+00:00:49,050 --> 00:00:51,621
+Coach: and the possible difficulty in view.
+
+14
+00:00:51,971 --> 00:00:54,543
+Coach: A paraphrase can use different words.
+
+15
+00:00:54,543 --> 00:01:00,114
+Coach: What matters is whether the listener can recognise their point, including its limits.
+
+16
+00:01:00,114 --> 00:01:04,400
+Coach: Changing could to will makes a possible difficulty sound certain.
+
+17
+00:01:04,750 --> 00:01:07,750
+Coach: Leaving something out is a different issue.
+
+18
+00:01:07,750 --> 00:01:12,893
+Coach: A short check may be useful when only one detail needs confirming.
+
+19
+00:01:12,893 --> 00:01:17,607
+Coach: Here, however, we are checking both the purpose and the concern.
+
+20
+00:01:17,957 --> 00:01:21,385
+Coach: Before choosing a response, recall the original point.
+
+21
+00:01:21,385 --> 00:01:26,528
+Coach: What does Noah want to keep, why does he want it brief,
+
+22
+00:01:26,528 --> 00:01:29,528
+Coach: and what does he say could happen?
+
+23
+00:01:37,878 --> 00:01:41,307
+Coach: Each response uses part of the same topic.
+
+24
+00:01:41,307 --> 00:01:44,307
+Coach: Compare what it preserves, what it omits,
+
+25
+00:01:44,307 --> 00:01:47,735
+Coach: and whether it makes the original claim stronger.
+
+26
+00:01:47,735 --> 00:01:51,164
+Coach: Choose the most faithful check for this moment.
+
+27
+00:01:51,514 --> 00:01:57,086
+Coach: The replies that follow are authored examples of how this exchange could continue.
+
+28
+00:01:57,086 --> 00:02:02,657
+Coach: They illustrate the wording; they do not predict how every speaker would react.
+
+29
+00:02:11,007 --> 00:02:15,721
+You: You want a brief demonstration so people have time to try,
+
+30
+00:02:15,721 --> 00:02:21,293
+You: and you are concerned that someone who misses a step might fall behind.
+
+31
+00:02:21,643 --> 00:02:22,072
+Noah: Yes.
+
+32
+00:02:22,072 --> 00:02:25,072
+Noah: I want time for people to try,
+
+33
+00:02:25,072 --> 00:02:31,072
+Noah: while keeping a demonstration and a way to help if someone misses a step.
+
+34
+00:02:31,422 --> 00:02:36,136
+Coach: This paraphrase keeps the proposal, its purpose and the possible difficulty.
+
+35
+00:02:36,136 --> 00:02:39,136
+Coach: Noah confirms that reading in this example.
+
+36
+00:02:39,136 --> 00:02:40,850
+Coach: The wording is different,
+
+37
+00:02:40,850 --> 00:02:45,136
+Coach: but the uncertainty and the connection between the parts remain.
+
+38
+00:02:45,486 --> 00:02:49,772
+Coach: A useful check preserves the point you need to understand.
+
+39
+00:02:49,772 --> 00:02:54,486
+Coach: In this exchange, that includes a brief demonstration, time to try,
+
+40
+00:02:54,486 --> 00:02:57,486
+Coach: and the possibility of missing a step.
+
+41
+00:02:57,486 --> 00:02:59,200
+Coach: None cancels the others.
+
+42
+00:02:59,550 --> 00:03:03,836
+Coach: When the meaning is already clear, you can respond directly.
+
+43
+00:03:03,836 --> 00:03:07,693
+Coach: When a small detail is uncertain, check that detail.
+
+44
+00:03:07,693 --> 00:03:11,979
+Coach: Repeating an entire contribution may use time without improving understanding.
+
+45
+00:03:12,329 --> 00:03:15,758
+Coach: A check should also leave room for correction.
+
+46
+00:03:15,758 --> 00:03:20,901
+Coach: You are offering your reading, not telling someone what they must mean.
+
+47
+00:03:20,901 --> 00:03:25,615
+Coach: Their reply may confirm it, narrow it or change your understanding.
+
+48
+00:03:25,965 --> 00:03:30,679
+Coach: Try a brief check of Noah’s meaning in your own words.
+
+49
+00:03:30,679 --> 00:03:36,251
+Coach: Keep the proposal and its purpose, and preserve the possibility in his concern.
+
+50
+00:03:36,251 --> 00:03:39,679
+Coach: You do not need to copy the example.
+
+51
+00:03:40,029 --> 00:03:43,029
+Coach: You can think first or speak privately.
+
+52
+00:03:43,029 --> 00:03:45,172
+Coach: Nothing is recorded or assessed.
+
+53
+00:03:45,172 --> 00:03:51,172
+Coach: There is a short pause here; pause playback yourself if you want more time.
+
+54
+00:03:59,522 --> 00:04:04,236
+Coach: If you tried a version, compare its meaning with the source.
+
+55
+00:04:04,236 --> 00:04:08,950
+Coach: Did you add certainty, lose the purpose, or leave something unclear?
+
+56
+00:04:08,950 --> 00:04:13,236
+Coach: If you did not rehearse, you can return when ready.
+
+57
+00:04:13,586 --> 00:04:17,443
+Coach: Paraphrasing helps when you have a reading to check.
+
+58
+00:04:17,443 --> 00:04:21,300
+Coach: Sometimes the words themselves leave the relevant part unspecified.
+
+59
+00:04:21,300 --> 00:04:26,443
+Coach: Then a focused question may be more useful than a longer summary.
+
+60
+00:04:26,793 --> 00:04:29,364
+Coach: Next we will examine that choice:
+
+61
+00:04:29,364 --> 00:04:32,364
+Coach: asking for the information needed to respond,
+
+62
+00:04:32,364 --> 00:04:34,936
+Coach: while leaving already clear details alone.
+
+63
+00:04:34,936 --> 00:04:39,650
+Coach: Keep the question connected to the discussion in front of you.
