@@ -17,7 +17,10 @@ const sha = (b) => crypto.createHash('sha256').update(b).digest('hex');
 function load(s) {
   const n = s.slice(1), dir = path.join(ROOT, 'sections', s), src = path.join(dir, 'content/source');
   const graph = rd(path.join(src, `section${n}.en.json`)), labels = rd(path.join(src, 'labels.en.json')), anchors = rd(path.join(src, 'anchors.en.json')), timing = rd(path.join(src, 'timing.en.json'));
-  const audioSlots = rd(path.join(src, 'audio-slots.en.json')), retimeDemo = rd(path.join(src, 'retime-demo.json'));
+  // --audio=<lang>: use content/audio-slots.<lang>.json written by tools/attach-audio.mjs (measured clips); default: the
+  // supplied empty slots (silent review)
+  const al = (process.argv.find((a) => a.startsWith('--audio=')) || '').slice(8), ap = al && path.join(dir, `content/audio-slots.${al}.json`);
+  const audioSlots = ap && fs.existsSync(ap) ? rd(ap) : rd(path.join(src, 'audio-slots.en.json')), retimeDemo = rd(path.join(src, 'retime-demo.json'));
   const stagingPath = path.join(dir, 'content/staging-anchors.json'), staging = fs.existsSync(stagingPath) ? rd(stagingPath) : { anchors: {} };
   const lsPath = path.join(dir, 'content/labels.staging.en.json'), labelsStaging = fs.existsSync(lsPath) ? rd(lsPath) : { labels: {} };
   return { s, n, dir, graph, labels, anchors, timing, audioSlots, retimeDemo, staging, labelsStaging };
@@ -75,7 +78,9 @@ ${scripts}
 `;
 }
 const ui = rd(path.join(ROOT, 'shared/l03/ui.en.json'));
-const all = SECTIONS.map((s) => { const d = path.join(ROOT, 'sections', s, 'content/source'), n = s.slice(1); return { s, id: `L03.S${n}`, title: rd(path.join(d, 'labels.en.json')).labels['section.title'] }; });
+// section titles for Previous / Next come from the lesson outline (so one section's source archive rebuilds on its own)
+const outline = rd(path.join(ROOT, 'handoff-input/lesson03-outline.en.json'));
+const all = SECTIONS.map((s) => { const n = s.slice(1), o = outline.sections.find((x) => x.sectionId === `L03.S${n}`); return { s, id: `L03.S${n}`, title: o.title }; });
 let failed = 0; const report = [];
 for (const s of want) {
   const x = load(s), { errs, comp } = validate(x);

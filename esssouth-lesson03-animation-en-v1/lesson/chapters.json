@@ -1,0 +1,115 @@
+{
+ "lesson": "L03",
+ "title": "Listen Closely, Respond to the Point",
+ "note": "Durations are compiled from the silent estimated timing (140 wpm + 0.35 s tail + fixed holds). Practice excludes unlimited waiting; alternative branches are not summed.",
+ "watchTotalSeconds": 1756.295,
+ "chapters": [
+  {
+   "id": "L03.S01",
+   "num": "3.1",
+   "title": "Hear the View, Reason, and Concern",
+   "watchSeconds": 224.593,
+   "watchStartInCourse": 0,
+   "practice": {
+    "practice:main": 224.593
+   },
+   "gate": null,
+   "src": "../sections/S01/index.html",
+   "built": true
+  },
+  {
+   "id": "L03.S02",
+   "num": "3.2",
+   "title": "Check Your Understanding",
+   "watchSeconds": 280,
+   "watchStartInCourse": 224.593,
+   "practice": {
+    "practice:A": 265.056,
+    "practice:B": 273.2,
+    "practice:C": 270.199,
+    "practice:skip": 238.721
+   },
+   "gate": {
+    "id": "L03.I01",
+    "kind": "choice"
+   },
+   "src": "../sections/S02/index.html",
+   "built": true
+  },
+  {
+   "id": "L03.S03",
+   "num": "3.3",
+   "title": "Ask the Question That Matters",
+   "watchSeconds": 281.13,
+   "watchStartInCourse": 504.593,
+   "practice": {
+    "practice:A": 268.258,
+    "practice:B": 274.759,
+    "practice:C": 274.33,
+    "practice:skip": 246.28
+   },
+   "gate": {
+    "id": "L03.I02",
+    "kind": "choice"
+   },
+   "src": "../sections/S03/index.html",
+   "built": true
+  },
+  {
+   "id": "L03.S04",
+   "num": "3.4",
+   "title": "Agree and Add Something Relevant",
+   "watchSeconds": 254.951,
+   "watchStartInCourse": 785.723,
+   "practice": {
+    "practice:main": 254.951
+   },
+   "gate": null,
+   "src": "../sections/S04/index.html",
+   "built": true
+  },
+  {
+   "id": "L03.S05",
+   "num": "3.5",
+   "title": "Respond to the Concern Within the Task",
+   "watchSeconds": 250.029,
+   "watchStartInCourse": 1040.674,
+   "practice": {
+    "practice:main": 250.029
+   },
+   "gate": null,
+   "src": "../sections/S05/index.html",
+   "built": true
+  },
+  {
+   "id": "L03.S06",
+   "num": "3.6",
+   "title": "Rehearse, Hear a Correction, and Adjust",
+   "watchSeconds": 300.664,
+   "watchStartInCourse": 1290.703,
+   "practice": {
+    "practice:model": 266.864,
+    "practice:skip": 230.671
+   },
+   "gate": {
+    "id": "L03.I03",
+    "kind": "private_rehearsal"
+   },
+   "src": "../sections/S06/index.html",
+   "built": true
+  },
+  {
+   "id": "L03.S07",
+   "num": "3.7",
+   "title": "Transfer and Review",
+   "watchSeconds": 164.928,
+   "watchStartInCourse": 1591.367,
+   "practice": {
+    "practice:main": 164.928
+   },
+   "gate": null,
+   "src": "../sections/S07/index.html",
+   "built": true
+  }
+ ]
+}

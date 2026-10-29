@@ -4,8 +4,8 @@
 // Needs: Node 18+, Playwright (PLAYWRIGHT_MODULE or NODE_PATH pointing at an installed copy) with Chromium.
 const pw = require(process.env.PLAYWRIGHT_MODULE || 'playwright'); const path = require('path'), fs = require('fs'), crypto = require('crypto');
 const ROOT = path.resolve(__dirname, '..'), SEC = process.argv[2], QUICK = process.argv.includes('--quick');
-const OUT = path.join(ROOT, 'qa', SEC), STILLS = path.join(OUT, 'stills'); fs.rmSync(OUT, { recursive: true, force: true }); fs.mkdirSync(STILLS, { recursive: true });
-const URL0 = 'file://' + path.join(ROOT, 'sections', SEC, 'index.html');
+const OUT = path.join(ROOT, 'qa', process.env.QA_OUT || SEC), STILLS = path.join(OUT, 'stills'); fs.rmSync(OUT, { recursive: true, force: true }); fs.mkdirSync(STILLS, { recursive: true });
+const URL0 = 'file://' + (process.env.QA_PAGE ? path.resolve(process.env.QA_PAGE) : path.join(ROOT, 'sections', SEC, 'index.html')); // QA_PAGE: test an extracted standalone player
 const R = { section: SEC, ranAt: new Date().toISOString(), environment: {}, checks: [], failures: [], notes: [] };
 const ok = (name, cond, detail) => { R.checks.push({ name, pass: !!cond, detail: detail === undefined ? null : detail }); if (!cond) R.failures.push(name + (detail !== undefined ? ' :: ' + JSON.stringify(detail).slice(0, 400) : '')); return !!cond; };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

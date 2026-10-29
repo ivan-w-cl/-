@@ -1,6 +1,6 @@
 {
  "section": "S03",
- "ranAt": "2026-10-29T15:32:06.216Z",
+ "ranAt": "2026-10-29T15:57:37.131Z",
  "environment": {
   "os": "linux 6.18.44-fc-v185",
   "browser": "Chromium 153.0.8010.12",
@@ -161,24 +161,24 @@
    "detail": []
   },
   {
-   "name": "rate 1×: clock advances at 1× (measured 0.994)",
+   "name": "rate 1×: clock advances at 1× (measured 0.998)",
    "pass": true,
-   "detail": 0.9940011997597391
+   "detail": 0.99793360885209
   },
   {
-   "name": "rate 1.25×: clock advances at 1.25× (measured 1.249)",
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.242)",
    "pass": true,
-   "detail": 1.2486679099510225
+   "detail": 1.2417516496701446
   },
   {
-   "name": "rate 1.5×: clock advances at 1.5× (measured 1.493)",
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.498)",
    "pass": true,
-   "detail": 1.4928009598722949
+   "detail": 1.4983015851874382
   },
   {
-   "name": "rate 2×: clock advances at 2× (measured 1.981)",
+   "name": "rate 2×: clock advances at 2× (measured 1.988)",
    "pass": true,
-   "detail": 1.9814691374484605
+   "detail": 1.9877341510563484
   },
   {
    "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
@@ -195,7 +195,7 @@
    "name": "restart returns to the section start and plays",
    "pass": true,
    "detail": {
-    "t": 0.193,
+    "t": 0.20770000000018626,
     "playing": true,
     "gate": "none",
     "choice": null
@@ -315,7 +315,7 @@
    "name": "practice A: first selection wins; branch plays on its own route",
    "pass": true,
    "detail": {
-    "t": 128.85359999999983,
+    "t": 128.84399999999997,
     "gate": "branch_playing",
     "route": "practice:A",
     "choice": "A",
@@ -402,7 +402,7 @@
    "name": "practice A: Continue rejoins L03.S03.c010 once",
    "pass": true,
    "detail": {
-    "t": 151.2613499999998,
+    "t": 151.27080000000024,
     "gate": "resolved",
     "route": "practice:A",
     "choice": "A",
@@ -551,7 +551,7 @@
    "name": "practice B: Continue rejoins L03.S03.c010 once",
    "pass": true,
    "detail": {
-    "t": 157.77269999999967,
+    "t": 157.78574999999995,
     "gate": "resolved",
     "route": "practice:B",
     "choice": "B",
@@ -613,7 +613,7 @@
    "name": "practice C: first selection wins; branch plays on its own route",
    "pass": true,
    "detail": {
-    "t": 128.85480000000024,
+    "t": 128.86005000000026,
     "gate": "branch_playing",
     "route": "practice:C",
     "choice": "C",
@@ -700,7 +700,7 @@
    "name": "practice C: Continue rejoins L03.S03.c010 once",
    "pass": true,
    "detail": {
-    "t": 157.33649999999994,
+    "t": 157.3475999999998,
     "gate": "resolved",
     "route": "practice:C",
     "choice": "C",
@@ -762,7 +762,7 @@
    "name": "practice: Skip enters the common continuation once, unanswered, no assessment",
    "pass": true,
    "detail": {
-    "t": 129.14865000000012,
+    "t": 129.1448999999994,
     "gate": "resolved",
     "route": "practice:skip",
     "choice": "skip",
@@ -876,7 +876,7 @@
    "name": "watch: no waiting at the gate; the declared path (C) follows the 8 s thinking hold",
    "pass": true,
    "detail": {
-    "t": 137.35660000000053,
+    "t": 137.42499999999998,
     "gate": "none",
     "route": "watch",
     "choice": null,
@@ -915,31 +915,36 @@
    "detail": null
   },
   {
-   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier)",
+   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
    "pass": true,
    "detail": [
     {
      "name": "a_L03_S03_c001",
+     "zero": false,
      "ratio": 1.349990278047832,
      "m": 1.35
     },
     {
      "name": "a_L03_S03_d001",
+     "zero": false,
      "ratio": 1.3500583430571762,
      "m": 1.35
     },
     {
      "name": "s03_decide",
+     "zero": false,
      "ratio": 1.3500583430571762,
      "m": 1.35
     },
     {
      "name": "s03_extra",
+     "zero": false,
      "ratio": 1.3500129634430904,
      "m": 1.35
     },
     {
      "name": "s03_thenTry",
+     "zero": false,
      "ratio": 1.3499999999999999,
      "m": 1.35
     }

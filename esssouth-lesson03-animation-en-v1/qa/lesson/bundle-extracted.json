@@ -1,0 +1,410 @@
+{
+ "page": "../../../../tmp/claude-0/-home-user--/5bd73677-3fd7-5c33-b388-d8e21cc9a7f4/scratchpad/extract/esssouth-L03-lesson-bundle/index.html",
+ "ranAt": "2026-10-29T16:06:48.836Z",
+ "checks": [
+  {
+   "name": "seven sections listed in order",
+   "pass": true,
+   "detail": [
+    "L03.S01",
+    "L03.S02",
+    "L03.S03",
+    "L03.S04",
+    "L03.S05",
+    "L03.S06",
+    "L03.S07"
+   ]
+  },
+  {
+   "name": "chapter durations are compiled values (sum = Watch total)",
+   "pass": true,
+   "detail": 1756.295
+  },
+  {
+   "name": "entry 1 opens its own product (L03.S01)",
+   "pass": true,
+   "detail": {
+    "id": "L03.S01",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.1, Hear the View, Reason, and Concern: animation stage"
+   }
+  },
+  {
+   "name": "entry 2 opens its own product (L03.S02)",
+   "pass": true,
+   "detail": {
+    "id": "L03.S02",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.2, Check Your Understanding: animation stage"
+   }
+  },
+  {
+   "name": "entry 3 opens its own product (L03.S03)",
+   "pass": true,
+   "detail": {
+    "id": "L03.S03",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.3, Ask the Question That Matters: animation stage"
+   }
+  },
+  {
+   "name": "entry 4 opens its own product (L03.S04)",
+   "pass": true,
+   "detail": {
+    "id": "L03.S04",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.4, Agree and Add Something Relevant: animation stage"
+   }
+  },
+  {
+   "name": "entry 5 opens its own product (L03.S05)",
+   "pass": true,
+   "detail": {
+    "id": "L03.S05",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.5, Respond to the Concern Within the Task: animation stage"
+   }
+  },
+  {
+   "name": "entry 6 opens its own product (L03.S06)",
+   "pass": true,
+   "detail": {
+    "id": "L03.S06",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.6, Rehearse, Hear a Correction, and Adjust: animation stage"
+   }
+  },
+  {
+   "name": "entry 7 opens its own product (L03.S07)",
+   "pass": true,
+   "detail": {
+    "id": "L03.S07",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.7, Transfer and Review: animation stage"
+   }
+  },
+  {
+   "name": "switch during playback: one player remains, new section at its start, not playing, clock not advancing",
+   "pass": true,
+   "detail": {
+    "s": {
+     "id": "L03.S03",
+     "t": 0,
+     "playing": false,
+     "mode": "watch",
+     "gate": "none",
+     "route": "watch",
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "label": "Lesson 03, Section 3.3, Ask the Question That Matters: animation stage"
+    },
+    "s2": {
+     "id": "L03.S03",
+     "t": 0,
+     "playing": false,
+     "mode": "watch",
+     "gate": "none",
+     "route": "watch",
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "label": "Lesson 03, Section 3.3, Ask the Question That Matters: animation stage"
+    }
+   }
+  },
+  {
+   "name": "lesson mode switch reaches the live section",
+   "pass": true,
+   "detail": {
+    "id": "L03.S03",
+    "t": 0,
+    "playing": false,
+    "mode": "practice",
+    "gate": "before",
+    "route": "practice:skip",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.3, Ask the Question That Matters: animation stage"
+   }
+  },
+  {
+   "name": "S03 practice: waiting at the choice before switching",
+   "pass": true,
+   "detail": {
+    "id": "L03.S03",
+    "t": 128.84349999999998,
+    "playing": false,
+    "mode": "practice",
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.3, Ask the Question That Matters: animation stage"
+   }
+  },
+  {
+   "name": "switch during a branch: new section starts clean in Practice (no stale choice)",
+   "pass": true,
+   "detail": {
+    "id": "L03.S02",
+    "t": 0,
+    "playing": false,
+    "mode": "practice",
+    "gate": "before",
+    "route": "practice:skip",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.2, Check Your Understanding: animation stage"
+   }
+  },
+  {
+   "name": "S06 practice: model playing before the switch",
+   "pass": true,
+   "detail": {
+    "id": "L03.S06",
+    "t": 151.06799999999998,
+    "playing": true,
+    "mode": "practice",
+    "gate": "branch_playing",
+    "route": "practice:model",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.6, Rehearse, Hear a Correction, and Adjust: animation stage"
+   }
+  },
+  {
+   "name": "switch during model playback: S07 opens at its start; no model flag carried over",
+   "pass": true,
+   "detail": {
+    "id": "L03.S07",
+    "t": 0,
+    "playing": false,
+    "mode": "practice",
+    "gate": "none",
+    "route": "practice:main",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.7, Transfer and Review: animation stage"
+   }
+  },
+  {
+   "name": "returning to S06 shows its initial state (modelViewed false, no completion)",
+   "pass": true,
+   "detail": {
+    "id": "L03.S06",
+    "t": 0,
+    "playing": false,
+    "mode": "practice",
+    "gate": "before",
+    "route": "practice:skip",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.6, Rehearse, Hear a Correction, and Adjust: animation stage"
+   }
+  },
+  {
+   "name": "12 rapid switches: exactly one player, the last requested section, no errors",
+   "pass": true,
+   "detail": {
+    "s": {
+     "id": "L03.S05",
+     "t": 0,
+     "playing": false,
+     "mode": "practice",
+     "gate": "none",
+     "route": "practice:main",
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "label": "Lesson 03, Section 3.5, Respond to the Concern Within the Task: animation stage"
+    },
+    "errs": []
+   }
+  },
+  {
+   "name": "section end: no automatic navigation",
+   "pass": true,
+   "detail": {
+    "cur1": 0,
+    "s": {
+     "id": "L03.S01",
+     "t": 224.59299999999993,
+     "playing": false,
+     "mode": "watch",
+     "gate": "none",
+     "route": "watch",
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "label": "Lesson 03, Section 3.1, Hear the View, Reason, and Concern: animation stage"
+    }
+   }
+  },
+  {
+   "name": "explicit Next section action opens S02",
+   "pass": true,
+   "detail": {
+    "id": "L03.S02",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 03, Section 3.2, Check Your Understanding: animation stage"
+   }
+  },
+  {
+   "name": "no remote requests; no page errors",
+   "pass": true,
+   "detail": {
+    "remote": [],
+    "errs": []
+   }
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, buttons ≥ 44 px",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": 0
+   }
+  }
+ ],
+ "failures": [],
+ "browser": "Chromium 153.0.8010.12",
+ "summary": {
+  "checks": 21,
+  "failed": 0
+ }
+}

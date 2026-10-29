@@ -44,9 +44,9 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.997)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.241)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.498)",
+    "PASS rate 1×: clock advances at 1× (measured 0.993)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.248)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.487)",
     "PASS rate 2×: clock advances at 2× (measured 1.990)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
@@ -58,7 +58,7 @@
     "PASS retime: Watch duration changes by the expected clip delta (8.100 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
     "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
@@ -77,7 +77,7 @@
     "L03.S01.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S01/report.json (2026-10-29T15:33:26.572Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
+   "qaReport": "qa/S01/report.json (2026-10-29T15:55:45.951Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
    "routeSeconds": {
     "watch": 224.593,
     "practice:main": 224.593
@@ -88,9 +88,9 @@
     "content/labels.staging.en.json": "c537e299255577c06ee3efc70de447d0025ebea5768b1a7c5856ffdf6c0c94f6",
     "data/l03s01-data.js": "2f504897a5808b597e8952048f007b9f1ccc640a42a3b705b6888af7f62d4629",
     "index.html": "dc2f798d7c9bad648d5ad77d9e3bcee4bcd22937ff54bad0b93be1d6547be4cb",
-    "L03S01_player_standalone.html": "fdf40b03be6cc32b64cd4abdd5b866033e9ad1294823b0e5e05471784fd4e9a0"
+    "L03S01_player_standalone.html": "2a6bb7067cc6ecf90b620b2750b616458678531d99d64a270ea61ae1b661e405"
    },
-   "updatedAt": "2026-10-29T15:33:50.739Z"
+   "updatedAt": "2026-10-29T16:06:35.075Z"
   },
   {
    "id": "L03.S02",
@@ -155,9 +155,9 @@
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
     "PASS rate 1×: clock advances at 1× (measured 0.999)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.242)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.484)",
-    "PASS rate 2×: clock advances at 2× (measured 1.992)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.243)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.498)",
+    "PASS rate 2×: clock advances at 2× (measured 1.996)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -206,7 +206,7 @@
     "PASS retime: Watch duration changes by the expected clip delta (8.550 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
     "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
@@ -227,7 +227,7 @@
    "interactions": [
     "L03.I01"
    ],
-   "qaReport": "qa/S02/report.json (2026-10-29T15:31:07.859Z, Chromium 153.0.8010.12, 89 checks, 0 failed)",
+   "qaReport": "qa/S02/report.json (2026-10-29T15:56:20.935Z, Chromium 153.0.8010.12, 89 checks, 0 failed)",
    "routeSeconds": {
     "watch": 280,
     "practice:A": 265.056,
@@ -241,9 +241,9 @@
     "content/labels.staging.en.json": "19ccb8e4efbbd779b5d4845dc061e45f131dde5b70ece93ecfa51b91267d3de9",
     "data/l03s02-data.js": "8ee6726624133a0836d478ac7633d6daa18a3f467b344f8ef782c78a074f7513",
     "index.html": "3c9957ed2947fd24e0111b526f5ac1f80ec3ee59b687d6d26bde87a00a145d9a",
-    "L03S02_player_standalone.html": "7842cfadf2f1f14406484e6d4009bb96950203b0305b8a47e365a7542cd283ea"
+    "L03S02_player_standalone.html": "3dd63e422dc70fee10017f9a3a6969078875ebc75f4bd36ca2180a41f75bfbb6"
    },
-   "updatedAt": "2026-10-29T15:33:07.170Z"
+   "updatedAt": "2026-10-29T16:06:35.151Z"
   },
   {
    "id": "L03.S03",
@@ -309,10 +309,10 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.994)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.249)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.493)",
-    "PASS rate 2×: clock advances at 2× (measured 1.981)",
+    "PASS rate 1×: clock advances at 1× (measured 0.998)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.242)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.498)",
+    "PASS rate 2×: clock advances at 2× (measured 1.988)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -361,7 +361,7 @@
     "PASS retime: Watch duration changes by the expected clip delta (6.000 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
     "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
@@ -382,7 +382,7 @@
    "interactions": [
     "L03.I02"
    ],
-   "qaReport": "qa/S03/report.json (2026-10-29T15:32:06.216Z, Chromium 153.0.8010.12, 89 checks, 0 failed)",
+   "qaReport": "qa/S03/report.json (2026-10-29T15:57:37.131Z, Chromium 153.0.8010.12, 89 checks, 0 failed)",
    "routeSeconds": {
     "watch": 281.13,
     "practice:A": 268.258,
@@ -393,12 +393,12 @@
    "sourceHashes": {
     "scenes.js": "ccc263809908510dd7f88b89811e3c9e28a9426a30a515b9e32de5bb572bbed0",
     "content/staging-anchors.json": "0e335d49d3a086277f23b03fa85d157c9d61dec43a145cdd96b835c84b3a6299",
-    "content/labels.staging.en.json": "d0ae2eed21c81896613270b34885624748c6af71eae12f0305fc5e172866c777",
-    "data/l03s03-data.js": "bb860fe46c91383499c3ae1e8bb5fb7b7add73a3fff9db897080e2a757feca4c",
+    "content/labels.staging.en.json": "a235ed7a411b4bba1cab39b678bb2c5a004dac3c05c068f1408115eda9f8e087",
+    "data/l03s03-data.js": "c435c4d6d9a80268243ba56f8a8c131264dc35c6c1e50f82464a845685af4056",
     "index.html": "1e9aad38eb4ef03eb6bb41feeda5ea3db8fe88f2251a5971669884624589a435",
-    "L03S03_player_standalone.html": "29d65d59bc8fc766c80c4972ec2aa660ac7d3c032854303374548b770e8e4d28"
+    "L03S03_player_standalone.html": "a91fc4153ed3ff8e80e4830ee26c2990bc326582e02184fb7c5438f53bcddcb9"
    },
-   "updatedAt": "2026-10-29T15:33:07.172Z"
+   "updatedAt": "2026-10-29T16:06:35.242Z"
   },
   {
    "id": "L03.S04",
@@ -441,10 +441,10 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.994)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.249)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.493)",
-    "PASS rate 2×: clock advances at 2× (measured 1.998)",
+    "PASS rate 1×: clock advances at 1× (measured 0.997)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.244)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.491)",
+    "PASS rate 2×: clock advances at 2× (measured 1.986)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -455,7 +455,7 @@
     "PASS retime: Watch duration changes by the expected clip delta (10.200 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
     "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
@@ -474,7 +474,7 @@
     "L03.S04.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S04/report.json (2026-10-29T15:36:21.490Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
+   "qaReport": "qa/S04/report.json (2026-10-29T15:58:58.435Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
    "routeSeconds": {
     "watch": 254.951,
     "practice:main": 254.951
@@ -485,9 +485,9 @@
     "content/labels.staging.en.json": "c46c30f103fcfba7dbf511baf939dccbad33f40282b815313505c4202167a542",
     "data/l03s04-data.js": "4188f40ca0cc0a0280d245b7ce8334180c871e04e505c1d60c0548bdcb2a12aa",
     "index.html": "659f2bfb726cf2ec8fe3ea06c115df280a6f47f6e438c4721d18655cab7449ee",
-    "L03S04_player_standalone.html": "56760b371ed282dc18f440acd2559403750d7dbd8ec33b1833cd400428ed04ba"
+    "L03S04_player_standalone.html": "1253f4ebd695105b1c5f620785afc365ce474b9f0cdd744502ef2c8398f741c2"
    },
-   "updatedAt": "2026-10-29T15:37:06.709Z"
+   "updatedAt": "2026-10-29T16:06:35.391Z"
   },
   {
    "id": "L03.S05",
@@ -529,10 +529,10 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.992)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.248)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.490)",
-    "PASS rate 2×: clock advances at 2× (measured 1.998)",
+    "PASS rate 1×: clock advances at 1× (measured 0.991)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.250)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.488)",
+    "PASS rate 2×: clock advances at 2× (measured 1.992)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -562,7 +562,7 @@
     "L03.S05.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S05/report.json (2026-10-29T15:40:10.176Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
+   "qaReport": "qa/S05/report.json (2026-10-29T15:59:33.809Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
    "routeSeconds": {
     "watch": 250.029,
     "practice:main": 250.029
@@ -573,9 +573,9 @@
     "content/labels.staging.en.json": "82eec8bfdf41f71c7ad612f643498c8bd32eea22b830464d81412c57ea2fa0f7",
     "data/l03s05-data.js": "3367d353f388d1d1cfc4c1795c8b1be856b16c0de23ed3ce26b2dc89ade67a41",
     "index.html": "c352932b84febf5663fd065634640212cb0442efbd0bac313bdc1818defa1825",
-    "L03S05_player_standalone.html": "1c86d06b574732f5d932dea76e7f51e790b45bdf20b55e8ef6436b4442caed67"
+    "L03S05_player_standalone.html": "64091ab779cfe69d14e7f07b49520a4f8e4b2295250592859b1b498e9d610dce"
    },
-   "updatedAt": "2026-10-29T15:40:34.692Z"
+   "updatedAt": "2026-10-29T16:06:35.497Z"
   },
   {
    "id": "L03.S06",
@@ -622,10 +622,10 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.999)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.243)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.485)",
-    "PASS rate 2×: clock advances at 2× (measured 1.993)",
+    "PASS rate 1×: clock advances at 1× (measured 0.995)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.244)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.495)",
+    "PASS rate 2×: clock advances at 2× (measured 1.998)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -679,7 +679,7 @@
    "interactions": [
     "L03.I03"
    ],
-   "qaReport": "qa/S06/report.json (2026-10-29T15:48:03.741Z, Chromium 153.0.8010.12, 65 checks, 0 failed)",
+   "qaReport": "qa/S06/report.json (2026-10-29T16:00:10.878Z, Chromium 153.0.8010.12, 65 checks, 0 failed)",
    "routeSeconds": {
     "watch": 300.664,
     "practice:model": 266.864,
@@ -691,9 +691,9 @@
     "content/labels.staging.en.json": "f8822ef81e067c0a26ec03b35ee0fe9ed0b51bb75bc69f61286981775d843f60",
     "data/l03s06-data.js": "10cafd3336350b25809e8726bdae24a956a62e76e12fddf79ca7aedba9d2aeb5",
     "index.html": "537e40ec62ebb3d445387bf4c348b24f818140d80eca060cd4f1b100a379477e",
-    "L03S06_player_standalone.html": "dda06f5b5e9bb77546e0640724755a82f9e746680ce027d1eb077040d0459a21"
+    "L03S06_player_standalone.html": "8a1b96c723c38f70a1655b74c271a322b18002b8a49da12da7a6006784c7aacd"
    },
-   "updatedAt": "2026-10-29T15:49:29.004Z"
+   "updatedAt": "2026-10-29T16:06:35.605Z"
   },
   {
    "id": "L03.S07",
@@ -730,8 +730,8 @@
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
     "PASS rate 1×: clock advances at 1× (measured 0.998)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.243)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.488)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.241)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.487)",
     "PASS rate 2×: clock advances at 2× (measured 1.993)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
@@ -762,7 +762,7 @@
     "L03.S07.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S07/report.json (2026-10-29T15:50:28.867Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
+   "qaReport": "qa/S07/report.json (2026-10-29T16:01:53.213Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
    "routeSeconds": {
     "watch": 164.928,
     "practice:main": 164.928
@@ -772,15 +772,15 @@
     "content/staging-anchors.json": "e1247533e863f2f0c2cbd9c9d7e06c26c6788a185765e42ab25e42a23f357948",
     "data/l03s07-data.js": "6bf0f91f31d4948c5b65f9a9af879b5bf8a2510e1e3089a1276bf66e0ab4793c",
     "index.html": "60e96563f1660185b0463c30c4625fc987a8d3bd1c0bef90c057cae799651859",
-    "L03S07_player_standalone.html": "ab1b37394652247e587f98f74e06ac284fbf0db177b44c48b448781fd8efb1f8"
+    "L03S07_player_standalone.html": "5801ff3e8af011151234b2cb000a58bd395e8f1a369cee79e4f7e9839a8ed371"
    },
-   "updatedAt": "2026-10-29T15:51:06.704Z"
+   "updatedAt": "2026-10-29T16:06:35.708Z"
   }
  ],
  "combinedEntryStatus": "not_started",
  "sharedHashes": {
   "shared/l03/compile.js": "a899ec170aaa89b41fc3466718dde491d4d69b7e71ddcd2d738deace833a834f",
-  "shared/l03/player.js": "3a12144a76ec3b7385d7229efdf58aa4dc950ee977da5358e5337f24e625e5ec",
+  "shared/l03/player.js": "58b673547ffab85a0ae9ffb0c36c89624e00f889c62da9cbaefea52070efad7e",
   "shared/l03/kit.js": "0dd4512ec110667954435de17a5cf49ad9d92719ce76db01229829b4b906e91f",
   "shared/l03/l03.css": "d702c67cf9847965e2b8f1beda9d703925a66a9861bc010a666b3d7ef339cd20",
   "shared/l03/audio-hook.js": "e313b18ec8c9b96e39eeb2ac394e723649fbda5c0997271cb62aaf85a92f596e",

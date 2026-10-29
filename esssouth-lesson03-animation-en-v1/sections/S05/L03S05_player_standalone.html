@@ -1807,6 +1807,7 @@ window.L03_DATA = {"sectionId":"L03.S05","num":"3.5","graph":{"schema":"esssouth
       if (m === ST.mode) return; const tr = track(), s = tr.stepAt(ST.t), was = ST.playing; stop(); ST.playing = false;
       const inGate = GATE && !s.common && ['think', 'gate', 'ready', 'skip'].concat([]).includes(s.kind) || (GATE && s.branch) || (ST.mode === 'practice' && ['awaiting', 'branch_playing', 'branch_ready'].includes(ST.gate));
       const off = ST.t - s.start; ST.mode = m; resetGate('mode ' + m);
+      if (window.parent !== window) window.parent.postMessage({ l03: 'modechanged', mode: m }, '*');
       if (inGate) { // reset to the new mode's declared entry
         if (m === 'practice') { setRoute('practice:skip'); ST.gate = 'awaiting'; ST.t = gEnd() - EPS; } else { setRoute('watch'); ST.t = C.tracks.watch.gateStep.start; }
         live(uiText('ui.modeReset')); render(); return;
@@ -1877,7 +1878,10 @@ window.L03_DATA = {"sectionId":"L03.S05","num":"3.5","graph":{"schema":"esssouth
         if (D.nav && D.nav.prev) r.appendChild(btn(uiText('ui.previous'), '', () => nav(D.nav.prev), (b) => (b.dataset.act = 'prev')));
         if (D.nav && D.nav.next) r.appendChild(btn(uiText('ui.next') + ': ' + D.nav.nextTitle, 'primary', () => nav(D.nav.next), (b) => (b.dataset.act = 'next'))); }
     }
-    function nav(target) { pause(); if (window.parent !== window) window.parent.postMessage({ l03: 'nav', section: target.id }, '*'); else location.href = target.href + (ST.mode === 'practice' ? '?mode=practice' : ''); }
+    function nav(target) { // explicit user action only; never automatic
+      pause(); if (window.parent !== window) { window.parent.postMessage({ l03: 'nav', section: target.id }, '*'); return; }
+      const href = /_player_standalone\.html$/.test(location.pathname) ? target.id.replace('.', '') + '_player_standalone.html' : target.href; // standalone players sit side by side
+      location.href = href + (ST.mode === 'practice' ? '?mode=practice' : ''); }
 
     // ---------------- wiring ----------------
     $('play').addEventListener('click', () => (ST.playing ? pause() : play()));
@@ -1904,7 +1908,9 @@ window.L03_DATA = {"sectionId":"L03.S05","num":"3.5","graph":{"schema":"esssouth
       ` · ${profile ? 'timing profile: ' + (q.get('timing') || 'audio') : 'estimated reading timing (140 wpm + 0.35 s tail)'} · ${C.anchors.length} anchors.`);
     if (E.warnings.length) note('Layout report: ' + E.warnings.length + ' item(s) · ' + JSON.stringify(E.warnings.slice(0, 12)), true);
     render(); document.body.dataset.ready = '1';
-    if (window.parent !== window) window.parent.postMessage({ l03: 'ready', section: D.sectionId }, '*');
+    if (window.parent !== window) { window.parent.postMessage({ l03: 'ready', section: D.sectionId }, '*');
+      let lastH = 0; const postH = () => { const h = document.documentElement.scrollHeight; if (Math.abs(h - lastH) > 2) { lastH = h; window.parent.postMessage({ l03: 'height', h }, '*'); } };
+      if (window.ResizeObserver) new ResizeObserver(postH).observe(document.body); postH(); }
     window.__l03 = { E, C, scores, ST, get t() { return ST.t; }, get playing() { return ST.playing; }, play, pause, seek, restart, choose, cont, retry, skip, setMode, setRate,
       scrubValue, scrubRange, warnings: E.warnings, uiText,
       renderAt(x, route) { stop(); ST.playing = false; if (route) { setRoute(route); ST.exportRoute = true; ST.gate = 'none'; } ST.t = x; E.render(score(), x, { captions: $('cap').checked, playing: true }); return x; },

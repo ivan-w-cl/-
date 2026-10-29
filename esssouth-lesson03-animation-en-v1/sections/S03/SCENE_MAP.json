@@ -1,0 +1,6677 @@
+{
+ "sectionId": "L03.S03",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 281.13,
+   "steps": [
+    {
+     "id": "L03.S03.c001",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 12.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "contrib": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reply": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "missing": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "open"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c001",
+       "phrase": "the part that is genuinely unclear",
+       "at": 5.143
+      },
+      {
+       "name": "s03_decide",
+       "phrase": "help you decide how to respond",
+       "at": 1.714
+      },
+      {
+       "name": "s03_extra",
+       "phrase": "rather than requesting any extra detail",
+       "at": 7.714
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c002",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 12.35,
+     "end": 27.7,
+     "speaker": "coach",
+     "tokens": {
+      "contrib": [
+       "o+act"
+      ],
+      "reply": [
+       "o+act"
+      ],
+      "missing": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "frame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "task"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c002",
+       "phrase": "one possible way to arrange a demonstration",
+       "at": 24.35
+      },
+      {
+       "name": "s03_return",
+       "phrase": "Return to the planned",
+       "at": 12.35
+      },
+      {
+       "name": "s03_facil",
+       "phrase": "one facilitator, shared materials",
+       "at": 16.636
+      },
+      {
+       "name": "s03_tried",
+       "phrase": "Nothing has been tried",
+       "at": 21.35
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d001",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 27.7,
+     "end": 33.193,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "frame": [
+       "o+act"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o"
+      ],
+      "task": [
+       "x+w+h+fs+o"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "aim": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "seq": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d001",
+       "phrase": "could demonstrate several steps",
+       "at": 28.557
+      },
+      {
+       "name": "s03_thenTry",
+       "phrase": "then everyone could try them",
+       "at": 30.7
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d002",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 33.193,
+     "end": 37.4,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "sideQ"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d002",
+       "phrase": "that way",
+       "at": 34.05
+      },
+      {
+       "name": "s03_difficult",
+       "phrase": "could be difficult for beginners",
+       "at": 34.907
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c003",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 37.4,
+     "end": 51.893,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "frameLbl": [
+       "o+act"
+      ],
+      "task": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "seq": [
+       "x+w+h+fs+o"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "ambHead": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "ref1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref3": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "refs"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c003",
+       "phrase": "not exactly which part Noah means",
+       "at": 40.829
+      },
+      {
+       "name": "s03_know",
+       "phrase": "You know which workshop",
+       "at": 37.4
+      },
+      {
+       "name": "s03_sequence",
+       "phrase": "the sequence",
+       "at": 45.543
+      },
+      {
+       "name": "s03_pace",
+       "phrase": "the pace",
+       "at": 46.4
+      },
+      {
+       "name": "s03_another",
+       "phrase": "another feature",
+       "at": 47.686
+      },
+      {
+       "name": "s03_possib",
+       "phrase": "Those are possibilities",
+       "at": 48.543
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c004",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 51.893,
+     "end": 65.529,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "seq": [
+       "o+act"
+      ],
+      "ambHead": [
+       "o+act"
+      ],
+      "ref1": [
+       "o+act"
+      ],
+      "ref2": [
+       "o+act"
+      ],
+      "ref3": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "dPropH": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c004",
+       "phrase": "the part he finds difficult",
+       "at": 63.036
+      },
+      {
+       "name": "s03_length",
+       "phrase": "The thirty-minute length",
+       "at": 51.893
+      },
+      {
+       "name": "s03_again",
+       "phrase": "Asking for it again",
+       "at": 56.607
+      },
+      {
+       "name": "s03_missing",
+       "phrase": "The missing information concerns",
+       "at": 61.322
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c005",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 65.529,
+     "end": 80.879,
+     "speaker": "coach",
+     "tokens": {
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "dPropH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "shorten": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "dQH": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c005",
+       "phrase": "not the same as a clarification",
+       "at": 77.958
+      },
+      {
+       "name": "s03_early",
+       "phrase": "A proposed solution can also arrive too early",
+       "at": 65.529
+      },
+      {
+       "name": "s03_shorten",
+       "phrase": "Shortening the demonstration might be useful",
+       "at": 68.958
+      },
+      {
+       "name": "s03_which",
+       "phrase": "which difficulty Noah was raising",
+       "at": 74.1
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c006",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 80.879,
+     "end": 93.229,
+     "speaker": "coach",
+     "tokens": {
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unknown": [
+       "o+act"
+      ],
+      "dPropH": [
+       "o+act"
+      ],
+      "shorten": [
+       "o+act"
+      ],
+      "dQH": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c006",
+       "phrase": "what an answer would allow you to do differently",
+       "at": 87.308
+      },
+      {
+       "name": "s03_gap",
+       "phrase": "identify the gap you would ask about",
+       "at": 81.308
+      },
+      {
+       "name": "s03_facts",
+       "phrase": "Keep the task facts visible",
+       "at": 84.308
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.h101",
+     "kind": "hold",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 93.229,
+     "end": 101.229,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c007",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 101.229,
+     "end": 114.008,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "quote": [
+       "act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c007",
+       "phrase": "the meaning needed here",
+       "at": 111.943
+      },
+      {
+       "name": "s03_known",
+       "phrase": "One returns to a known fact",
+       "at": 103.372
+      },
+      {
+       "name": "s03_advances",
+       "phrase": "one advances a proposal",
+       "at": 105.943
+      },
+      {
+       "name": "s03_asks",
+       "phrase": "one asks about the unclear reference",
+       "at": 108.086
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c008",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 114.008,
+     "end": 127.644,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c008",
+       "phrase": "the information a question requests",
+       "at": 121.294
+      },
+      {
+       "name": "s03_differ",
+       "phrase": "an answer could differ",
+       "at": 118.722
+      }
+     ]
+    },
+    {
+     "id": "L03.I02.watchThink",
+     "kind": "think",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 127.644,
+     "end": 135.644,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o",
+       "kind+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.d301",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "C",
+     "start": 135.644,
+     "end": 140.28,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d301",
+       "phrase": "Which part",
+       "at": 135.644
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d302",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "C",
+     "start": 140.28,
+     "end": 149.201,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d302",
+       "phrase": "remembering several steps before they get a chance to try",
+       "at": 141.137
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.f301",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "C",
+     "start": 149.201,
+     "end": 163.694,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unknown": [
+       "act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "act",
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ],
+      "answer": [
+       "x+w+h+fs+o+text",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "lC"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_f301",
+       "phrase": "without choosing a cause for Noah",
+       "at": 152.63
+      },
+      {
+       "name": "sC_direct",
+       "phrase": "This question directly asks for the missing meaning",
+       "at": 149.201
+      },
+      {
+       "name": "sC_specific",
+       "phrase": "His answer gives a specific concern",
+       "at": 155.201
+      },
+      {
+       "name": "sC_possible",
+       "phrase": "It is a possible continuation",
+       "at": 159.058
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c010",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 163.694,
+     "end": 176.901,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "known": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o",
+       "act"
+      ],
+      "resp": [
+       "o+act"
+      ],
+      "answer": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c010",
+       "phrase": "a reply can address it instead of guessing",
+       "at": 173.123
+      },
+      {
+       "name": "s03_key",
+       "phrase": "The key question is",
+       "at": 163.694
+      },
+      {
+       "name": "s03_duration",
+       "phrase": "The duration alone cannot answer that",
+       "at": 167.551
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c011",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 176.901,
+     "end": 188.394,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "o+act"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c011",
+       "phrase": "remembering several steps before trying them",
+       "at": 180.758
+      },
+      {
+       "name": "s03_worked",
+       "phrase": "For the next worked example",
+       "at": 176.901
+      },
+      {
+       "name": "s03_authored",
+       "phrase": "This is an authored example",
+       "at": 183.33
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d003",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 188.394,
+     "end": 194.315,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o"
+      ],
+      "xReply": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d003",
+       "phrase": "pause while people try it",
+       "at": 190.537
+      },
+      {
+       "name": "s03_showOne",
+       "phrase": "Could we show one step",
+       "at": 188.394
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c012",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 194.315,
+     "end": 208.379,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "xReply": [
+       "o+act"
+      ],
+      "arr": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "xa"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c012",
+       "phrase": "does not establish that the new arrangement will work",
+       "at": 204.172
+      },
+      {
+       "name": "s03_gapSee",
+       "phrase": "the gap between seeing and trying a step",
+       "at": 195.601
+      },
+      {
+       "name": "s03_timeRes",
+       "phrase": "against the time and resources",
+       "at": 200.744
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c013",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 208.379,
+     "end": 221.158,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "xFrame": [
+       "o+act"
+      ],
+      "xHead": [
+       "o+act"
+      ],
+      "xConcern": [
+       "o+act"
+      ],
+      "arr": [
+       "o+act"
+      ],
+      "privTag": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c013",
+       "phrase": "without supplying the answer",
+       "at": 219.093
+      },
+      {
+       "name": "s03_ownWords",
+       "phrase": "in your own words",
+       "at": 210.95
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c014",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 221.158,
+     "end": 233.508,
+     "speaker": "coach",
+     "tokens": {
+      "blank": [
+       "act"
+      ],
+      "privTag": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c014",
+       "phrase": "The wording does not need to match the model",
+       "at": 229.301
+      },
+      {
+       "name": "s03_think",
+       "phrase": "Think first, or speak privately",
+       "at": 221.158
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.h102",
+     "kind": "hold",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 233.508,
+     "end": 241.508,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c015",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 241.508,
+     "end": 255.144,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "quote": [
+       "act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "privTag": [
+       "o+act"
+      ],
+      "hint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c015",
+       "phrase": "what information it requested",
+       "at": 244.079
+      },
+      {
+       "name": "s03_help",
+       "phrase": "Would that help you respond",
+       "at": 245.794
+      },
+      {
+       "name": "s03_already",
+       "phrase": "If the meaning was already clear",
+       "at": 249.651
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c016",
+     "kind": "line",
+     "block": "L03.S03.B06",
+     "branch": null,
+     "start": 255.144,
+     "end": 267.494,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c016",
+       "phrase": "only as much as the situation needs",
+       "at": 255.573
+      },
+      {
+       "name": "s03_open",
+       "phrase": "A clarification can open the way",
+       "at": 258.573
+      },
+      {
+       "name": "s03_repeated",
+       "phrase": "repeated questions about settled details",
+       "at": 262.858
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c017",
+     "kind": "line",
+     "block": "L03.S03.B06",
+     "branch": null,
+     "start": 267.494,
+     "end": 281.13,
+     "speaker": "coach",
+     "tokens": {
+      "xConcern": [
+       "act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c017",
+       "phrase": "respond to what was said",
+       "at": 276.065
+      },
+      {
+       "name": "s03_agree",
+       "phrase": "how to agree with a specific point",
+       "at": 269.208
+      }
+     ]
+    }
+   ]
+  },
+  "practice:A": {
+   "durationSeconds": 268.258,
+   "steps": [
+    {
+     "id": "L03.S03.c001",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 12.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "contrib": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reply": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "missing": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "open"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c001",
+       "phrase": "the part that is genuinely unclear",
+       "at": 5.143
+      },
+      {
+       "name": "s03_decide",
+       "phrase": "help you decide how to respond",
+       "at": 1.714
+      },
+      {
+       "name": "s03_extra",
+       "phrase": "rather than requesting any extra detail",
+       "at": 7.714
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c002",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 12.35,
+     "end": 27.7,
+     "speaker": "coach",
+     "tokens": {
+      "contrib": [
+       "o+act"
+      ],
+      "reply": [
+       "o+act"
+      ],
+      "missing": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "frame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "task"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c002",
+       "phrase": "one possible way to arrange a demonstration",
+       "at": 24.35
+      },
+      {
+       "name": "s03_return",
+       "phrase": "Return to the planned",
+       "at": 12.35
+      },
+      {
+       "name": "s03_facil",
+       "phrase": "one facilitator, shared materials",
+       "at": 16.636
+      },
+      {
+       "name": "s03_tried",
+       "phrase": "Nothing has been tried",
+       "at": 21.35
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d001",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 27.7,
+     "end": 33.193,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "frame": [
+       "o+act"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o"
+      ],
+      "task": [
+       "x+w+h+fs+o"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "aim": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "seq": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d001",
+       "phrase": "could demonstrate several steps",
+       "at": 28.557
+      },
+      {
+       "name": "s03_thenTry",
+       "phrase": "then everyone could try them",
+       "at": 30.7
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d002",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 33.193,
+     "end": 37.4,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "sideQ"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d002",
+       "phrase": "that way",
+       "at": 34.05
+      },
+      {
+       "name": "s03_difficult",
+       "phrase": "could be difficult for beginners",
+       "at": 34.907
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c003",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 37.4,
+     "end": 51.893,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "frameLbl": [
+       "o+act"
+      ],
+      "task": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "seq": [
+       "x+w+h+fs+o"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "ambHead": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "ref1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref3": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "refs"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c003",
+       "phrase": "not exactly which part Noah means",
+       "at": 40.829
+      },
+      {
+       "name": "s03_know",
+       "phrase": "You know which workshop",
+       "at": 37.4
+      },
+      {
+       "name": "s03_sequence",
+       "phrase": "the sequence",
+       "at": 45.543
+      },
+      {
+       "name": "s03_pace",
+       "phrase": "the pace",
+       "at": 46.4
+      },
+      {
+       "name": "s03_another",
+       "phrase": "another feature",
+       "at": 47.686
+      },
+      {
+       "name": "s03_possib",
+       "phrase": "Those are possibilities",
+       "at": 48.543
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c004",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 51.893,
+     "end": 65.529,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "seq": [
+       "o+act"
+      ],
+      "ambHead": [
+       "o+act"
+      ],
+      "ref1": [
+       "o+act"
+      ],
+      "ref2": [
+       "o+act"
+      ],
+      "ref3": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "dPropH": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c004",
+       "phrase": "the part he finds difficult",
+       "at": 63.036
+      },
+      {
+       "name": "s03_length",
+       "phrase": "The thirty-minute length",
+       "at": 51.893
+      },
+      {
+       "name": "s03_again",
+       "phrase": "Asking for it again",
+       "at": 56.607
+      },
+      {
+       "name": "s03_missing",
+       "phrase": "The missing information concerns",
+       "at": 61.322
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c005",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 65.529,
+     "end": 80.879,
+     "speaker": "coach",
+     "tokens": {
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "dPropH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "shorten": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "dQH": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c005",
+       "phrase": "not the same as a clarification",
+       "at": 77.958
+      },
+      {
+       "name": "s03_early",
+       "phrase": "A proposed solution can also arrive too early",
+       "at": 65.529
+      },
+      {
+       "name": "s03_shorten",
+       "phrase": "Shortening the demonstration might be useful",
+       "at": 68.958
+      },
+      {
+       "name": "s03_which",
+       "phrase": "which difficulty Noah was raising",
+       "at": 74.1
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c006",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 80.879,
+     "end": 93.229,
+     "speaker": "coach",
+     "tokens": {
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unknown": [
+       "o+act"
+      ],
+      "dPropH": [
+       "o+act"
+      ],
+      "shorten": [
+       "o+act"
+      ],
+      "dQH": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c006",
+       "phrase": "what an answer would allow you to do differently",
+       "at": 87.308
+      },
+      {
+       "name": "s03_gap",
+       "phrase": "identify the gap you would ask about",
+       "at": 81.308
+      },
+      {
+       "name": "s03_facts",
+       "phrase": "Keep the task facts visible",
+       "at": 84.308
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.h101",
+     "kind": "hold",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 93.229,
+     "end": 101.229,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c007",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 101.229,
+     "end": 114.008,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "quote": [
+       "act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c007",
+       "phrase": "the meaning needed here",
+       "at": 111.943
+      },
+      {
+       "name": "s03_known",
+       "phrase": "One returns to a known fact",
+       "at": 103.372
+      },
+      {
+       "name": "s03_advances",
+       "phrase": "one advances a proposal",
+       "at": 105.943
+      },
+      {
+       "name": "s03_asks",
+       "phrase": "one asks about the unclear reference",
+       "at": 108.086
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c008",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 114.008,
+     "end": 127.644,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c008",
+       "phrase": "the information a question requests",
+       "at": 121.294
+      },
+      {
+       "name": "s03_differ",
+       "phrase": "an answer could differ",
+       "at": 118.722
+      }
+     ]
+    },
+    {
+     "id": "L03.I02.gate",
+     "kind": "gate",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 127.644,
+     "end": 128.844,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.d101",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "A",
+     "start": 128.844,
+     "end": 131.694,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d101",
+       "phrase": "How long",
+       "at": 128.844
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d102",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "A",
+     "start": 131.694,
+     "end": 136.758,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d102",
+       "phrase": "how the demonstration is arranged",
+       "at": 134.265
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.f101",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "A",
+     "start": 136.758,
+     "end": 150.822,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "lA"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_f101",
+       "phrase": "which part of the arrangement",
+       "at": 147.044
+      },
+      {
+       "name": "sA_help",
+       "phrase": "could help someone who missed the duration",
+       "at": 137.615
+      },
+      {
+       "name": "sA_clear",
+       "phrase": "that fact is already clear",
+       "at": 142.758
+      }
+     ]
+    },
+    {
+     "id": "L03.I02.ready",
+     "kind": "ready",
+     "block": "L03.S03.B03",
+     "branch": "A",
+     "start": 150.822,
+     "end": 150.822,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c010",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 150.822,
+     "end": 164.029,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "known": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o",
+       "act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c010",
+       "phrase": "a reply can address it instead of guessing",
+       "at": 160.251
+      },
+      {
+       "name": "s03_key",
+       "phrase": "The key question is",
+       "at": 150.822
+      },
+      {
+       "name": "s03_duration",
+       "phrase": "The duration alone cannot answer that",
+       "at": 154.679
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c011",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 164.029,
+     "end": 175.522,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "o+act"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c011",
+       "phrase": "remembering several steps before trying them",
+       "at": 167.886
+      },
+      {
+       "name": "s03_worked",
+       "phrase": "For the next worked example",
+       "at": 164.029
+      },
+      {
+       "name": "s03_authored",
+       "phrase": "This is an authored example",
+       "at": 170.458
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d003",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 175.522,
+     "end": 181.443,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o"
+      ],
+      "xReply": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d003",
+       "phrase": "pause while people try it",
+       "at": 177.665
+      },
+      {
+       "name": "s03_showOne",
+       "phrase": "Could we show one step",
+       "at": 175.522
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c012",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 181.443,
+     "end": 195.507,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "xReply": [
+       "o+act"
+      ],
+      "arr": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "xa"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c012",
+       "phrase": "does not establish that the new arrangement will work",
+       "at": 191.3
+      },
+      {
+       "name": "s03_gapSee",
+       "phrase": "the gap between seeing and trying a step",
+       "at": 182.729
+      },
+      {
+       "name": "s03_timeRes",
+       "phrase": "against the time and resources",
+       "at": 187.872
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c013",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 195.507,
+     "end": 208.286,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "xFrame": [
+       "o+act"
+      ],
+      "xHead": [
+       "o+act"
+      ],
+      "xConcern": [
+       "o+act"
+      ],
+      "arr": [
+       "o+act"
+      ],
+      "privTag": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c013",
+       "phrase": "without supplying the answer",
+       "at": 206.221
+      },
+      {
+       "name": "s03_ownWords",
+       "phrase": "in your own words",
+       "at": 198.078
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c014",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 208.286,
+     "end": 220.636,
+     "speaker": "coach",
+     "tokens": {
+      "blank": [
+       "act"
+      ],
+      "privTag": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c014",
+       "phrase": "The wording does not need to match the model",
+       "at": 216.429
+      },
+      {
+       "name": "s03_think",
+       "phrase": "Think first, or speak privately",
+       "at": 208.286
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.h102",
+     "kind": "hold",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 220.636,
+     "end": 228.636,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c015",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 228.636,
+     "end": 242.272,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "quote": [
+       "act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "privTag": [
+       "o+act"
+      ],
+      "hint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c015",
+       "phrase": "what information it requested",
+       "at": 231.207
+      },
+      {
+       "name": "s03_help",
+       "phrase": "Would that help you respond",
+       "at": 232.922
+      },
+      {
+       "name": "s03_already",
+       "phrase": "If the meaning was already clear",
+       "at": 236.779
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c016",
+     "kind": "line",
+     "block": "L03.S03.B06",
+     "branch": null,
+     "start": 242.272,
+     "end": 254.622,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c016",
+       "phrase": "only as much as the situation needs",
+       "at": 242.701
+      },
+      {
+       "name": "s03_open",
+       "phrase": "A clarification can open the way",
+       "at": 245.701
+      },
+      {
+       "name": "s03_repeated",
+       "phrase": "repeated questions about settled details",
+       "at": 249.986
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c017",
+     "kind": "line",
+     "block": "L03.S03.B06",
+     "branch": null,
+     "start": 254.622,
+     "end": 268.258,
+     "speaker": "coach",
+     "tokens": {
+      "xConcern": [
+       "act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c017",
+       "phrase": "respond to what was said",
+       "at": 263.193
+      },
+      {
+       "name": "s03_agree",
+       "phrase": "how to agree with a specific point",
+       "at": 256.336
+      }
+     ]
+    }
+   ]
+  },
+  "practice:B": {
+   "durationSeconds": 274.759,
+   "steps": [
+    {
+     "id": "L03.S03.c001",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 12.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "contrib": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reply": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "missing": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "open"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c001",
+       "phrase": "the part that is genuinely unclear",
+       "at": 5.143
+      },
+      {
+       "name": "s03_decide",
+       "phrase": "help you decide how to respond",
+       "at": 1.714
+      },
+      {
+       "name": "s03_extra",
+       "phrase": "rather than requesting any extra detail",
+       "at": 7.714
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c002",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 12.35,
+     "end": 27.7,
+     "speaker": "coach",
+     "tokens": {
+      "contrib": [
+       "o+act"
+      ],
+      "reply": [
+       "o+act"
+      ],
+      "missing": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "frame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "task"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c002",
+       "phrase": "one possible way to arrange a demonstration",
+       "at": 24.35
+      },
+      {
+       "name": "s03_return",
+       "phrase": "Return to the planned",
+       "at": 12.35
+      },
+      {
+       "name": "s03_facil",
+       "phrase": "one facilitator, shared materials",
+       "at": 16.636
+      },
+      {
+       "name": "s03_tried",
+       "phrase": "Nothing has been tried",
+       "at": 21.35
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d001",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 27.7,
+     "end": 33.193,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "frame": [
+       "o+act"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o"
+      ],
+      "task": [
+       "x+w+h+fs+o"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "aim": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "seq": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d001",
+       "phrase": "could demonstrate several steps",
+       "at": 28.557
+      },
+      {
+       "name": "s03_thenTry",
+       "phrase": "then everyone could try them",
+       "at": 30.7
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d002",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 33.193,
+     "end": 37.4,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "sideQ"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d002",
+       "phrase": "that way",
+       "at": 34.05
+      },
+      {
+       "name": "s03_difficult",
+       "phrase": "could be difficult for beginners",
+       "at": 34.907
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c003",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 37.4,
+     "end": 51.893,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "frameLbl": [
+       "o+act"
+      ],
+      "task": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "seq": [
+       "x+w+h+fs+o"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "ambHead": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "ref1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref3": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "refs"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c003",
+       "phrase": "not exactly which part Noah means",
+       "at": 40.829
+      },
+      {
+       "name": "s03_know",
+       "phrase": "You know which workshop",
+       "at": 37.4
+      },
+      {
+       "name": "s03_sequence",
+       "phrase": "the sequence",
+       "at": 45.543
+      },
+      {
+       "name": "s03_pace",
+       "phrase": "the pace",
+       "at": 46.4
+      },
+      {
+       "name": "s03_another",
+       "phrase": "another feature",
+       "at": 47.686
+      },
+      {
+       "name": "s03_possib",
+       "phrase": "Those are possibilities",
+       "at": 48.543
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c004",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 51.893,
+     "end": 65.529,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "seq": [
+       "o+act"
+      ],
+      "ambHead": [
+       "o+act"
+      ],
+      "ref1": [
+       "o+act"
+      ],
+      "ref2": [
+       "o+act"
+      ],
+      "ref3": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "dPropH": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c004",
+       "phrase": "the part he finds difficult",
+       "at": 63.036
+      },
+      {
+       "name": "s03_length",
+       "phrase": "The thirty-minute length",
+       "at": 51.893
+      },
+      {
+       "name": "s03_again",
+       "phrase": "Asking for it again",
+       "at": 56.607
+      },
+      {
+       "name": "s03_missing",
+       "phrase": "The missing information concerns",
+       "at": 61.322
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c005",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 65.529,
+     "end": 80.879,
+     "speaker": "coach",
+     "tokens": {
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "dPropH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "shorten": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "dQH": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c005",
+       "phrase": "not the same as a clarification",
+       "at": 77.958
+      },
+      {
+       "name": "s03_early",
+       "phrase": "A proposed solution can also arrive too early",
+       "at": 65.529
+      },
+      {
+       "name": "s03_shorten",
+       "phrase": "Shortening the demonstration might be useful",
+       "at": 68.958
+      },
+      {
+       "name": "s03_which",
+       "phrase": "which difficulty Noah was raising",
+       "at": 74.1
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c006",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 80.879,
+     "end": 93.229,
+     "speaker": "coach",
+     "tokens": {
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unknown": [
+       "o+act"
+      ],
+      "dPropH": [
+       "o+act"
+      ],
+      "shorten": [
+       "o+act"
+      ],
+      "dQH": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c006",
+       "phrase": "what an answer would allow you to do differently",
+       "at": 87.308
+      },
+      {
+       "name": "s03_gap",
+       "phrase": "identify the gap you would ask about",
+       "at": 81.308
+      },
+      {
+       "name": "s03_facts",
+       "phrase": "Keep the task facts visible",
+       "at": 84.308
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.h101",
+     "kind": "hold",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 93.229,
+     "end": 101.229,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c007",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 101.229,
+     "end": 114.008,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "quote": [
+       "act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c007",
+       "phrase": "the meaning needed here",
+       "at": 111.943
+      },
+      {
+       "name": "s03_known",
+       "phrase": "One returns to a known fact",
+       "at": 103.372
+      },
+      {
+       "name": "s03_advances",
+       "phrase": "one advances a proposal",
+       "at": 105.943
+      },
+      {
+       "name": "s03_asks",
+       "phrase": "one asks about the unclear reference",
+       "at": 108.086
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c008",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 114.008,
+     "end": 127.644,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c008",
+       "phrase": "the information a question requests",
+       "at": 121.294
+      },
+      {
+       "name": "s03_differ",
+       "phrase": "an answer could differ",
+       "at": 118.722
+      }
+     ]
+    },
+    {
+     "id": "L03.I02.gate",
+     "kind": "gate",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 127.644,
+     "end": 128.844,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.d201",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "B",
+     "start": 128.844,
+     "end": 134.337,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d201",
+       "phrase": "make the demonstration shorter",
+       "at": 129.701
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d202",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "B",
+     "start": 134.337,
+     "end": 142.83,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d202",
+       "phrase": "keeping track of several steps",
+       "at": 139.051
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.f201",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "B",
+     "start": 142.83,
+     "end": 157.323,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "act",
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ],
+      "answer": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "lB"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_f201",
+       "phrase": "before establishing the concern",
+       "at": 146.687
+      },
+      {
+       "name": "sB_reason",
+       "phrase": "This contribution has a reason",
+       "at": 142.83
+      },
+      {
+       "name": "sB_supplies",
+       "phrase": "Noah supplies the missing meaning",
+       "at": 148.401
+      },
+      {
+       "name": "sB_notQ",
+       "phrase": "was not itself a question",
+       "at": 152.687
+      }
+     ]
+    },
+    {
+     "id": "L03.I02.ready",
+     "kind": "ready",
+     "block": "L03.S03.B03",
+     "branch": "B",
+     "start": 157.323,
+     "end": 157.323,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ],
+      "answer": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c010",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 157.323,
+     "end": 170.53,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "known": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o",
+       "act"
+      ],
+      "resp": [
+       "o+act"
+      ],
+      "answer": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c010",
+       "phrase": "a reply can address it instead of guessing",
+       "at": 166.752
+      },
+      {
+       "name": "s03_key",
+       "phrase": "The key question is",
+       "at": 157.323
+      },
+      {
+       "name": "s03_duration",
+       "phrase": "The duration alone cannot answer that",
+       "at": 161.18
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c011",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 170.53,
+     "end": 182.023,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "o+act"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c011",
+       "phrase": "remembering several steps before trying them",
+       "at": 174.387
+      },
+      {
+       "name": "s03_worked",
+       "phrase": "For the next worked example",
+       "at": 170.53
+      },
+      {
+       "name": "s03_authored",
+       "phrase": "This is an authored example",
+       "at": 176.959
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d003",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 182.023,
+     "end": 187.944,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o"
+      ],
+      "xReply": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d003",
+       "phrase": "pause while people try it",
+       "at": 184.166
+      },
+      {
+       "name": "s03_showOne",
+       "phrase": "Could we show one step",
+       "at": 182.023
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c012",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 187.944,
+     "end": 202.008,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "xReply": [
+       "o+act"
+      ],
+      "arr": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "xa"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c012",
+       "phrase": "does not establish that the new arrangement will work",
+       "at": 197.801
+      },
+      {
+       "name": "s03_gapSee",
+       "phrase": "the gap between seeing and trying a step",
+       "at": 189.23
+      },
+      {
+       "name": "s03_timeRes",
+       "phrase": "against the time and resources",
+       "at": 194.373
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c013",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 202.008,
+     "end": 214.787,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "xFrame": [
+       "o+act"
+      ],
+      "xHead": [
+       "o+act"
+      ],
+      "xConcern": [
+       "o+act"
+      ],
+      "arr": [
+       "o+act"
+      ],
+      "privTag": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c013",
+       "phrase": "without supplying the answer",
+       "at": 212.722
+      },
+      {
+       "name": "s03_ownWords",
+       "phrase": "in your own words",
+       "at": 204.579
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c014",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 214.787,
+     "end": 227.137,
+     "speaker": "coach",
+     "tokens": {
+      "blank": [
+       "act"
+      ],
+      "privTag": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c014",
+       "phrase": "The wording does not need to match the model",
+       "at": 222.93
+      },
+      {
+       "name": "s03_think",
+       "phrase": "Think first, or speak privately",
+       "at": 214.787
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.h102",
+     "kind": "hold",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 227.137,
+     "end": 235.137,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c015",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 235.137,
+     "end": 248.773,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "quote": [
+       "act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "privTag": [
+       "o+act"
+      ],
+      "hint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c015",
+       "phrase": "what information it requested",
+       "at": 237.708
+      },
+      {
+       "name": "s03_help",
+       "phrase": "Would that help you respond",
+       "at": 239.423
+      },
+      {
+       "name": "s03_already",
+       "phrase": "If the meaning was already clear",
+       "at": 243.28
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c016",
+     "kind": "line",
+     "block": "L03.S03.B06",
+     "branch": null,
+     "start": 248.773,
+     "end": 261.123,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c016",
+       "phrase": "only as much as the situation needs",
+       "at": 249.202
+      },
+      {
+       "name": "s03_open",
+       "phrase": "A clarification can open the way",
+       "at": 252.202
+      },
+      {
+       "name": "s03_repeated",
+       "phrase": "repeated questions about settled details",
+       "at": 256.487
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c017",
+     "kind": "line",
+     "block": "L03.S03.B06",
+     "branch": null,
+     "start": 261.123,
+     "end": 274.759,
+     "speaker": "coach",
+     "tokens": {
+      "xConcern": [
+       "act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c017",
+       "phrase": "respond to what was said",
+       "at": 269.694
+      },
+      {
+       "name": "s03_agree",
+       "phrase": "how to agree with a specific point",
+       "at": 262.837
+      }
+     ]
+    }
+   ]
+  },
+  "practice:C": {
+   "durationSeconds": 274.33,
+   "steps": [
+    {
+     "id": "L03.S03.c001",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 12.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "contrib": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reply": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "missing": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "open"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c001",
+       "phrase": "the part that is genuinely unclear",
+       "at": 5.143
+      },
+      {
+       "name": "s03_decide",
+       "phrase": "help you decide how to respond",
+       "at": 1.714
+      },
+      {
+       "name": "s03_extra",
+       "phrase": "rather than requesting any extra detail",
+       "at": 7.714
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c002",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 12.35,
+     "end": 27.7,
+     "speaker": "coach",
+     "tokens": {
+      "contrib": [
+       "o+act"
+      ],
+      "reply": [
+       "o+act"
+      ],
+      "missing": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "frame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "task"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c002",
+       "phrase": "one possible way to arrange a demonstration",
+       "at": 24.35
+      },
+      {
+       "name": "s03_return",
+       "phrase": "Return to the planned",
+       "at": 12.35
+      },
+      {
+       "name": "s03_facil",
+       "phrase": "one facilitator, shared materials",
+       "at": 16.636
+      },
+      {
+       "name": "s03_tried",
+       "phrase": "Nothing has been tried",
+       "at": 21.35
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d001",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 27.7,
+     "end": 33.193,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "frame": [
+       "o+act"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o"
+      ],
+      "task": [
+       "x+w+h+fs+o"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "aim": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "seq": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d001",
+       "phrase": "could demonstrate several steps",
+       "at": 28.557
+      },
+      {
+       "name": "s03_thenTry",
+       "phrase": "then everyone could try them",
+       "at": 30.7
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d002",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 33.193,
+     "end": 37.4,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "sideQ"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d002",
+       "phrase": "that way",
+       "at": 34.05
+      },
+      {
+       "name": "s03_difficult",
+       "phrase": "could be difficult for beginners",
+       "at": 34.907
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c003",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 37.4,
+     "end": 51.893,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "frameLbl": [
+       "o+act"
+      ],
+      "task": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "seq": [
+       "x+w+h+fs+o"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "ambHead": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "ref1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref3": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "refs"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c003",
+       "phrase": "not exactly which part Noah means",
+       "at": 40.829
+      },
+      {
+       "name": "s03_know",
+       "phrase": "You know which workshop",
+       "at": 37.4
+      },
+      {
+       "name": "s03_sequence",
+       "phrase": "the sequence",
+       "at": 45.543
+      },
+      {
+       "name": "s03_pace",
+       "phrase": "the pace",
+       "at": 46.4
+      },
+      {
+       "name": "s03_another",
+       "phrase": "another feature",
+       "at": 47.686
+      },
+      {
+       "name": "s03_possib",
+       "phrase": "Those are possibilities",
+       "at": 48.543
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c004",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 51.893,
+     "end": 65.529,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "seq": [
+       "o+act"
+      ],
+      "ambHead": [
+       "o+act"
+      ],
+      "ref1": [
+       "o+act"
+      ],
+      "ref2": [
+       "o+act"
+      ],
+      "ref3": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "dPropH": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c004",
+       "phrase": "the part he finds difficult",
+       "at": 63.036
+      },
+      {
+       "name": "s03_length",
+       "phrase": "The thirty-minute length",
+       "at": 51.893
+      },
+      {
+       "name": "s03_again",
+       "phrase": "Asking for it again",
+       "at": 56.607
+      },
+      {
+       "name": "s03_missing",
+       "phrase": "The missing information concerns",
+       "at": 61.322
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c005",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 65.529,
+     "end": 80.879,
+     "speaker": "coach",
+     "tokens": {
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "dPropH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "shorten": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "dQH": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c005",
+       "phrase": "not the same as a clarification",
+       "at": 77.958
+      },
+      {
+       "name": "s03_early",
+       "phrase": "A proposed solution can also arrive too early",
+       "at": 65.529
+      },
+      {
+       "name": "s03_shorten",
+       "phrase": "Shortening the demonstration might be useful",
+       "at": 68.958
+      },
+      {
+       "name": "s03_which",
+       "phrase": "which difficulty Noah was raising",
+       "at": 74.1
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c006",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 80.879,
+     "end": 93.229,
+     "speaker": "coach",
+     "tokens": {
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unknown": [
+       "o+act"
+      ],
+      "dPropH": [
+       "o+act"
+      ],
+      "shorten": [
+       "o+act"
+      ],
+      "dQH": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c006",
+       "phrase": "what an answer would allow you to do differently",
+       "at": 87.308
+      },
+      {
+       "name": "s03_gap",
+       "phrase": "identify the gap you would ask about",
+       "at": 81.308
+      },
+      {
+       "name": "s03_facts",
+       "phrase": "Keep the task facts visible",
+       "at": 84.308
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.h101",
+     "kind": "hold",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 93.229,
+     "end": 101.229,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c007",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 101.229,
+     "end": 114.008,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "quote": [
+       "act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c007",
+       "phrase": "the meaning needed here",
+       "at": 111.943
+      },
+      {
+       "name": "s03_known",
+       "phrase": "One returns to a known fact",
+       "at": 103.372
+      },
+      {
+       "name": "s03_advances",
+       "phrase": "one advances a proposal",
+       "at": 105.943
+      },
+      {
+       "name": "s03_asks",
+       "phrase": "one asks about the unclear reference",
+       "at": 108.086
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c008",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 114.008,
+     "end": 127.644,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c008",
+       "phrase": "the information a question requests",
+       "at": 121.294
+      },
+      {
+       "name": "s03_differ",
+       "phrase": "an answer could differ",
+       "at": 118.722
+      }
+     ]
+    },
+    {
+     "id": "L03.I02.gate",
+     "kind": "gate",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 127.644,
+     "end": 128.844,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.d301",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "C",
+     "start": 128.844,
+     "end": 133.48,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d301",
+       "phrase": "Which part",
+       "at": 128.844
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d302",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "C",
+     "start": 133.48,
+     "end": 142.401,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d302",
+       "phrase": "remembering several steps before they get a chance to try",
+       "at": 134.337
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.f301",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": "C",
+     "start": 142.401,
+     "end": 156.894,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unknown": [
+       "act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "act",
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ],
+      "answer": [
+       "x+w+h+fs+o+text",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "lC"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_f301",
+       "phrase": "without choosing a cause for Noah",
+       "at": 145.83
+      },
+      {
+       "name": "sC_direct",
+       "phrase": "This question directly asks for the missing meaning",
+       "at": 142.401
+      },
+      {
+       "name": "sC_specific",
+       "phrase": "His answer gives a specific concern",
+       "at": 148.401
+      },
+      {
+       "name": "sC_possible",
+       "phrase": "It is a possible continuation",
+       "at": 152.258
+      }
+     ]
+    },
+    {
+     "id": "L03.I02.ready",
+     "kind": "ready",
+     "block": "L03.S03.B03",
+     "branch": "C",
+     "start": 156.894,
+     "end": 156.894,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ],
+      "answer": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c010",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 156.894,
+     "end": 170.101,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "known": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o",
+       "act"
+      ],
+      "resp": [
+       "o+act"
+      ],
+      "answer": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c010",
+       "phrase": "a reply can address it instead of guessing",
+       "at": 166.323
+      },
+      {
+       "name": "s03_key",
+       "phrase": "The key question is",
+       "at": 156.894
+      },
+      {
+       "name": "s03_duration",
+       "phrase": "The duration alone cannot answer that",
+       "at": 160.751
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c011",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 170.101,
+     "end": 181.594,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "o+act"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c011",
+       "phrase": "remembering several steps before trying them",
+       "at": 173.958
+      },
+      {
+       "name": "s03_worked",
+       "phrase": "For the next worked example",
+       "at": 170.101
+      },
+      {
+       "name": "s03_authored",
+       "phrase": "This is an authored example",
+       "at": 176.53
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d003",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 181.594,
+     "end": 187.515,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o"
+      ],
+      "xReply": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d003",
+       "phrase": "pause while people try it",
+       "at": 183.737
+      },
+      {
+       "name": "s03_showOne",
+       "phrase": "Could we show one step",
+       "at": 181.594
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c012",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 187.515,
+     "end": 201.579,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "xReply": [
+       "o+act"
+      ],
+      "arr": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "xa"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c012",
+       "phrase": "does not establish that the new arrangement will work",
+       "at": 197.372
+      },
+      {
+       "name": "s03_gapSee",
+       "phrase": "the gap between seeing and trying a step",
+       "at": 188.801
+      },
+      {
+       "name": "s03_timeRes",
+       "phrase": "against the time and resources",
+       "at": 193.944
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c013",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 201.579,
+     "end": 214.358,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "xFrame": [
+       "o+act"
+      ],
+      "xHead": [
+       "o+act"
+      ],
+      "xConcern": [
+       "o+act"
+      ],
+      "arr": [
+       "o+act"
+      ],
+      "privTag": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c013",
+       "phrase": "without supplying the answer",
+       "at": 212.293
+      },
+      {
+       "name": "s03_ownWords",
+       "phrase": "in your own words",
+       "at": 204.15
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c014",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 214.358,
+     "end": 226.708,
+     "speaker": "coach",
+     "tokens": {
+      "blank": [
+       "act"
+      ],
+      "privTag": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c014",
+       "phrase": "The wording does not need to match the model",
+       "at": 222.501
+      },
+      {
+       "name": "s03_think",
+       "phrase": "Think first, or speak privately",
+       "at": 214.358
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.h102",
+     "kind": "hold",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 226.708,
+     "end": 234.708,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c015",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 234.708,
+     "end": 248.344,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "quote": [
+       "act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "privTag": [
+       "o+act"
+      ],
+      "hint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c015",
+       "phrase": "what information it requested",
+       "at": 237.279
+      },
+      {
+       "name": "s03_help",
+       "phrase": "Would that help you respond",
+       "at": 238.994
+      },
+      {
+       "name": "s03_already",
+       "phrase": "If the meaning was already clear",
+       "at": 242.851
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c016",
+     "kind": "line",
+     "block": "L03.S03.B06",
+     "branch": null,
+     "start": 248.344,
+     "end": 260.694,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c016",
+       "phrase": "only as much as the situation needs",
+       "at": 248.773
+      },
+      {
+       "name": "s03_open",
+       "phrase": "A clarification can open the way",
+       "at": 251.773
+      },
+      {
+       "name": "s03_repeated",
+       "phrase": "repeated questions about settled details",
+       "at": 256.058
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c017",
+     "kind": "line",
+     "block": "L03.S03.B06",
+     "branch": null,
+     "start": 260.694,
+     "end": 274.33,
+     "speaker": "coach",
+     "tokens": {
+      "xConcern": [
+       "act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c017",
+       "phrase": "respond to what was said",
+       "at": 269.265
+      },
+      {
+       "name": "s03_agree",
+       "phrase": "how to agree with a specific point",
+       "at": 262.408
+      }
+     ]
+    }
+   ]
+  },
+  "practice:skip": {
+   "durationSeconds": 246.28,
+   "steps": [
+    {
+     "id": "L03.S03.c001",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 12.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "contrib": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reply": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "missing": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "open"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c001",
+       "phrase": "the part that is genuinely unclear",
+       "at": 5.143
+      },
+      {
+       "name": "s03_decide",
+       "phrase": "help you decide how to respond",
+       "at": 1.714
+      },
+      {
+       "name": "s03_extra",
+       "phrase": "rather than requesting any extra detail",
+       "at": 7.714
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c002",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 12.35,
+     "end": 27.7,
+     "speaker": "coach",
+     "tokens": {
+      "contrib": [
+       "o+act"
+      ],
+      "reply": [
+       "o+act"
+      ],
+      "missing": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "frame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "task"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c002",
+       "phrase": "one possible way to arrange a demonstration",
+       "at": 24.35
+      },
+      {
+       "name": "s03_return",
+       "phrase": "Return to the planned",
+       "at": 12.35
+      },
+      {
+       "name": "s03_facil",
+       "phrase": "one facilitator, shared materials",
+       "at": 16.636
+      },
+      {
+       "name": "s03_tried",
+       "phrase": "Nothing has been tried",
+       "at": 21.35
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d001",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 27.7,
+     "end": 33.193,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "frame": [
+       "o+act"
+      ],
+      "frameLbl": [
+       "x+w+h+fs+o"
+      ],
+      "task": [
+       "x+w+h+fs+o"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "aim": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "seq": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d001",
+       "phrase": "could demonstrate several steps",
+       "at": 28.557
+      },
+      {
+       "name": "s03_thenTry",
+       "phrase": "then everyone could try them",
+       "at": 30.7
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d002",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 33.193,
+     "end": 37.4,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "sideQ"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d002",
+       "phrase": "that way",
+       "at": 34.05
+      },
+      {
+       "name": "s03_difficult",
+       "phrase": "could be difficult for beginners",
+       "at": 34.907
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c003",
+     "kind": "line",
+     "block": "L03.S03.B01",
+     "branch": null,
+     "start": 37.4,
+     "end": 51.893,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "frameLbl": [
+       "o+act"
+      ],
+      "task": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "seq": [
+       "x+w+h+fs+o"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "ambHead": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "ref1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref3": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "refs"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c003",
+       "phrase": "not exactly which part Noah means",
+       "at": 40.829
+      },
+      {
+       "name": "s03_know",
+       "phrase": "You know which workshop",
+       "at": 37.4
+      },
+      {
+       "name": "s03_sequence",
+       "phrase": "the sequence",
+       "at": 45.543
+      },
+      {
+       "name": "s03_pace",
+       "phrase": "the pace",
+       "at": 46.4
+      },
+      {
+       "name": "s03_another",
+       "phrase": "another feature",
+       "at": 47.686
+      },
+      {
+       "name": "s03_possib",
+       "phrase": "Those are possibilities",
+       "at": 48.543
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c004",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 51.893,
+     "end": 65.529,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "seq": [
+       "o+act"
+      ],
+      "ambHead": [
+       "o+act"
+      ],
+      "ref1": [
+       "o+act"
+      ],
+      "ref2": [
+       "o+act"
+      ],
+      "ref3": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "dPropH": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c004",
+       "phrase": "the part he finds difficult",
+       "at": 63.036
+      },
+      {
+       "name": "s03_length",
+       "phrase": "The thirty-minute length",
+       "at": 51.893
+      },
+      {
+       "name": "s03_again",
+       "phrase": "Asking for it again",
+       "at": 56.607
+      },
+      {
+       "name": "s03_missing",
+       "phrase": "The missing information concerns",
+       "at": 61.322
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c005",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 65.529,
+     "end": 80.879,
+     "speaker": "coach",
+     "tokens": {
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "dPropH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "shorten": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "dQH": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c005",
+       "phrase": "not the same as a clarification",
+       "at": 77.958
+      },
+      {
+       "name": "s03_early",
+       "phrase": "A proposed solution can also arrive too early",
+       "at": 65.529
+      },
+      {
+       "name": "s03_shorten",
+       "phrase": "Shortening the demonstration might be useful",
+       "at": 68.958
+      },
+      {
+       "name": "s03_which",
+       "phrase": "which difficulty Noah was raising",
+       "at": 74.1
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c006",
+     "kind": "line",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 80.879,
+     "end": 93.229,
+     "speaker": "coach",
+     "tokens": {
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unknown": [
+       "o+act"
+      ],
+      "dPropH": [
+       "o+act"
+      ],
+      "shorten": [
+       "o+act"
+      ],
+      "dQH": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c006",
+       "phrase": "what an answer would allow you to do differently",
+       "at": 87.308
+      },
+      {
+       "name": "s03_gap",
+       "phrase": "identify the gap you would ask about",
+       "at": 81.308
+      },
+      {
+       "name": "s03_facts",
+       "phrase": "Keep the task facts visible",
+       "at": 84.308
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.h101",
+     "kind": "hold",
+     "block": "L03.S03.B02",
+     "branch": null,
+     "start": 93.229,
+     "end": 101.229,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c007",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 101.229,
+     "end": 114.008,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "quote": [
+       "act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c007",
+       "phrase": "the meaning needed here",
+       "at": 111.943
+      },
+      {
+       "name": "s03_known",
+       "phrase": "One returns to a known fact",
+       "at": 103.372
+      },
+      {
+       "name": "s03_advances",
+       "phrase": "one advances a proposal",
+       "at": 105.943
+      },
+      {
+       "name": "s03_asks",
+       "phrase": "one asks about the unclear reference",
+       "at": 108.086
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c008",
+     "kind": "line",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 114.008,
+     "end": 127.644,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c008",
+       "phrase": "the information a question requests",
+       "at": 121.294
+      },
+      {
+       "name": "s03_differ",
+       "phrase": "an answer could differ",
+       "at": 118.722
+      }
+     ]
+    },
+    {
+     "id": "L03.I02.gate",
+     "kind": "gate",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 127.644,
+     "end": 128.844,
+     "speaker": null,
+     "tokens": {
+      "unknown": [
+       "x+w+h+fs+o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.I02.skip",
+     "kind": "skip",
+     "block": "L03.S03.B03",
+     "branch": null,
+     "start": 128.844,
+     "end": 128.844,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c010",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 128.844,
+     "end": 142.051,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unknown": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c010",
+       "phrase": "a reply can address it instead of guessing",
+       "at": 138.273
+      },
+      {
+       "name": "s03_key",
+       "phrase": "The key question is",
+       "at": 128.844
+      },
+      {
+       "name": "s03_duration",
+       "phrase": "The duration alone cannot answer that",
+       "at": 132.701
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c011",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 142.051,
+     "end": 153.544,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "unknown": [
+       "o+act"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c011",
+       "phrase": "remembering several steps before trying them",
+       "at": 145.908
+      },
+      {
+       "name": "s03_worked",
+       "phrase": "For the next worked example",
+       "at": 142.051
+      },
+      {
+       "name": "s03_authored",
+       "phrase": "This is an authored example",
+       "at": 148.48
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.d003",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 153.544,
+     "end": 159.465,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o"
+      ],
+      "xReply": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L03_S03_d003",
+       "phrase": "pause while people try it",
+       "at": 155.687
+      },
+      {
+       "name": "s03_showOne",
+       "phrase": "Could we show one step",
+       "at": 153.544
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c012",
+     "kind": "line",
+     "block": "L03.S03.B04",
+     "branch": null,
+     "start": 159.465,
+     "end": 173.529,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xFrame": [
+       "x+w+h+fs+o"
+      ],
+      "xHead": [
+       "x+w+h+fs+o"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "xReply": [
+       "o+act"
+      ],
+      "arr": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "xa"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c012",
+       "phrase": "does not establish that the new arrangement will work",
+       "at": 169.322
+      },
+      {
+       "name": "s03_gapSee",
+       "phrase": "the gap between seeing and trying a step",
+       "at": 160.751
+      },
+      {
+       "name": "s03_timeRes",
+       "phrase": "against the time and resources",
+       "at": 165.894
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c013",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 173.529,
+     "end": 186.308,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "known": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "xFrame": [
+       "o+act"
+      ],
+      "xHead": [
+       "o+act"
+      ],
+      "xConcern": [
+       "o+act"
+      ],
+      "arr": [
+       "o+act"
+      ],
+      "privTag": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c013",
+       "phrase": "without supplying the answer",
+       "at": 184.243
+      },
+      {
+       "name": "s03_ownWords",
+       "phrase": "in your own words",
+       "at": 176.1
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c014",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 186.308,
+     "end": 198.658,
+     "speaker": "coach",
+     "tokens": {
+      "blank": [
+       "act"
+      ],
+      "privTag": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c014",
+       "phrase": "The wording does not need to match the model",
+       "at": 194.451
+      },
+      {
+       "name": "s03_think",
+       "phrase": "Think first, or speak privately",
+       "at": 186.308
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.h102",
+     "kind": "hold",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 198.658,
+     "end": 206.658,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L03.S03.c015",
+     "kind": "line",
+     "block": "L03.S03.B05",
+     "branch": null,
+     "start": 206.658,
+     "end": 220.294,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "quote": [
+       "act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "privTag": [
+       "o+act"
+      ],
+      "hint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c015",
+       "phrase": "what information it requested",
+       "at": 209.229
+      },
+      {
+       "name": "s03_help",
+       "phrase": "Would that help you respond",
+       "at": 210.944
+      },
+      {
+       "name": "s03_already",
+       "phrase": "If the meaning was already clear",
+       "at": 214.801
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c016",
+     "kind": "line",
+     "block": "L03.S03.B06",
+     "branch": null,
+     "start": 220.294,
+     "end": 232.644,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "known": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "xConcern": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c016",
+       "phrase": "only as much as the situation needs",
+       "at": 220.723
+      },
+      {
+       "name": "s03_open",
+       "phrase": "A clarification can open the way",
+       "at": 223.723
+      },
+      {
+       "name": "s03_repeated",
+       "phrase": "repeated questions about settled details",
+       "at": 228.008
+      }
+     ]
+    },
+    {
+     "id": "L03.S03.c017",
+     "kind": "line",
+     "block": "L03.S03.B06",
+     "branch": null,
+     "start": 232.644,
+     "end": 246.28,
+     "speaker": "coach",
+     "tokens": {
+      "xConcern": [
+       "act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L03_S03_c017",
+       "phrase": "respond to what was said",
+       "at": 241.215
+      },
+      {
+       "name": "s03_agree",
+       "phrase": "how to agree with a specific point",
+       "at": 234.358
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "frame",
+  "xFrame",
+  "contrib",
+  "reply",
+  "missing",
+  "frameLbl",
+  "task",
+  "aim",
+  "res",
+  "seq",
+  "quote",
+  "ambHead",
+  "ref1",
+  "ref2",
+  "ref3",
+  "known",
+  "unknown",
+  "dPropH",
+  "dQH",
+  "shorten",
+  "blank",
+  "chNote",
+  "sHead",
+  "resp",
+  "answer",
+  "xHead",
+  "xConcern",
+  "xReply",
+  "arr",
+  "privTag",
+  "hint",
+  "next",
+  "opt.A",
+  "opt.B",
+  "opt.C",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

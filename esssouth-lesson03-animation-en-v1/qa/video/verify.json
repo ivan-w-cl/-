@@ -1,0 +1,120 @@
+{
+ "ranAt": "2026-10-29T16:13:20.937Z",
+ "method": "ffprobe streams + full decode (ffmpeg -f null) + PSNR of decoded frames vs a direct 1920×1080 player render at the same t",
+ "sections": {
+  "S07": {
+   "file": "dist/video/esssouth-L03S07-watch-SILENT.mp4",
+   "streams": [
+    {
+     "type": "video",
+     "codec": "h264",
+     "w": 1920,
+     "h": 1080,
+     "fps": "30/1",
+     "frames": 4948
+    }
+   ],
+   "durationSeconds": 164.933333,
+   "bytes": 3591772,
+   "fullDecode": "ok",
+   "compiledSeconds": 164.92799999999997,
+   "samples": [
+    {
+     "name": "first",
+     "frame": 0,
+     "t": 0,
+     "psnrVsRender": "43.189437"
+    },
+    {
+     "name": "middle",
+     "frame": 2474,
+     "t": 82.467,
+     "psnrVsRender": "40.425130"
+    },
+    {
+     "name": "end",
+     "frame": 4947,
+     "t": 164.9,
+     "psnrVsRender": "42.347341"
+    }
+   ],
+   "pass": true
+  },
+  "S02": {
+   "file": "dist/video/esssouth-L03S02-watch-SILENT.mp4",
+   "streams": [
+    {
+     "type": "video",
+     "codec": "h264",
+     "w": 1920,
+     "h": 1080,
+     "fps": "30/1",
+     "frames": 8400
+    }
+   ],
+   "durationSeconds": 280,
+   "bytes": 8847363,
+   "fullDecode": "ok",
+   "compiledSeconds": 279.99999999999994,
+   "samples": [
+    {
+     "name": "first",
+     "frame": 0,
+     "t": 0,
+     "psnrVsRender": "42.694613"
+    },
+    {
+     "name": "middle",
+     "frame": 4200,
+     "t": 140,
+     "psnrVsRender": "40.287135"
+    },
+    {
+     "name": "end",
+     "frame": 8399,
+     "t": 279.967,
+     "psnrVsRender": "41.359086"
+    }
+   ],
+   "pass": true
+  },
+  "S01": {
+   "file": "dist/video/esssouth-L03S01-watch-SILENT.mp4",
+   "streams": [
+    {
+     "type": "video",
+     "codec": "h264",
+     "w": 1920,
+     "h": 1080,
+     "fps": "30/1",
+     "frames": 6738
+    }
+   ],
+   "durationSeconds": 224.6,
+   "bytes": 7709215,
+   "fullDecode": "ok",
+   "compiledSeconds": 224.59299999999993,
+   "samples": [
+    {
+     "name": "first",
+     "frame": 0,
+     "t": 0,
+     "psnrVsRender": "42.889659"
+    },
+    {
+     "name": "middle",
+     "frame": 3369,
+     "t": 112.3,
+     "psnrVsRender": "39.337143"
+    },
+    {
+     "name": "end",
+     "frame": 6737,
+     "t": 224.567,
+     "psnrVsRender": "40.469757"
+    }
+   ],
+   "pass": true
+  }
+ }
+}

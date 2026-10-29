@@ -1,0 +1,11 @@
+{
+ "ranAt": "2026-10-29",
+ "environment": "Linux container, Chromium (Playwright 1.63.0), Node 22.22.0, Python 3",
+ "checks": [
+  "Extracted esssouth-L03-lesson-bundle.zip into a fresh directory; tools/qa-lesson.cjs on the extracted index.html: 21 checks, 0 failed (qa/lesson/bundle-extracted.json). All network requests blocked; none attempted.",
+  "Extracted each esssouth-L03S0n-playable.zip into a fresh directory; tools/qa.cjs --quick on the extracted standalone player (QA_PAGE): S01 39/0, S02 89/0, S03 89/0, S04 39/0, S05 39/0, S06 65/0, S07 39/0 (checks/failed; qa/standalone-extracted/S0n/report.json).",
+  "Extracted each esssouth-L03S0n-source.zip on its own and ran node tools/build.mjs S0n inside it: data/l03s0n-data.js, index.html and L03S0n_player_standalone.html are byte-identical (SHA-256) to the delivered build for all seven sections.",
+  "Every ZIP is below 20,000,000 bytes (dist/MANIFEST.json)."
+ ],
+ "foundAndFixed": "A section source archive could not rebuild on its own (build.mjs read the other sections' labels for Previous/Next titles). Fixed by reading titles from handoff-input/lesson03-outline.en.json; outputs unchanged; re-tested as above."
+}
