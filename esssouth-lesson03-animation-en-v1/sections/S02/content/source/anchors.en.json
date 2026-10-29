@@ -1,0 +1,162 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L03.S02",
+  "anchors": {
+    "a_L03_S02_c001": {
+      "cueId": "L03.S02.c001",
+      "phrase": "confirm or correct",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c002": {
+      "cueId": "L03.S02.c002",
+      "phrase": "opportunities to try and ask questions",
+      "estimatedSeconds": 9.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_d001": {
+      "cueId": "L03.S02.d001",
+      "phrase": "I am worried that someone who misses a step could get left behind",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c003": {
+      "cueId": "L03.S02.c003",
+      "phrase": "before proposing a change",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c004": {
+      "cueId": "L03.S02.c004",
+      "phrase": "makes a possible difficulty sound certain",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c005": {
+      "cueId": "L03.S02.c005",
+      "phrase": "both the purpose and the concern",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c006": {
+      "cueId": "L03.S02.c006",
+      "phrase": "what does he say could happen",
+      "estimatedSeconds": 9.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c007": {
+      "cueId": "L03.S02.c007",
+      "phrase": "whether it makes the original claim stronger",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c008": {
+      "cueId": "L03.S02.c008",
+      "phrase": "authored examples",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c010": {
+      "cueId": "L03.S02.c010",
+      "phrase": "None cancels the others",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c011": {
+      "cueId": "L03.S02.c011",
+      "phrase": "check that detail",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c012": {
+      "cueId": "L03.S02.c012",
+      "phrase": "offering your reading",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c013": {
+      "cueId": "L03.S02.c013",
+      "phrase": "preserve the possibility in his concern",
+      "estimatedSeconds": 7.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c014": {
+      "cueId": "L03.S02.c014",
+      "phrase": "Nothing is recorded or assessed",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c015": {
+      "cueId": "L03.S02.c015",
+      "phrase": "compare its meaning with the source",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c016": {
+      "cueId": "L03.S02.c016",
+      "phrase": "a focused question may be more useful",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_c017": {
+      "cueId": "L03.S02.c017",
+      "phrase": "the information needed to respond",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_d101": {
+      "cueId": "L03.S02.d101",
+      "phrase": "more time to practise",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_d102": {
+      "cueId": "L03.S02.d102",
+      "phrase": "someone who misses a step",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_f101": {
+      "cueId": "L03.S02.f101",
+      "phrase": "It could serve a narrower check",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_d201": {
+      "cueId": "L03.S02.d201",
+      "phrase": "someone who misses a step might fall behind",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_d202": {
+      "cueId": "L03.S02.d202",
+      "phrase": "if someone misses a step",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_f201": {
+      "cueId": "L03.S02.f201",
+      "phrase": "the uncertainty and the connection",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_d301": {
+      "cueId": "L03.S02.d301",
+      "phrase": "will get left behind",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_d302": {
+      "cueId": "L03.S02.d302",
+      "phrase": "that is not certain",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S02_f301": {
+      "cueId": "L03.S02.f301",
+      "phrase": "a stronger claim the speaker did not make",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

@@ -1,0 +1,622 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L03.S02",
+  "title": "Check Your Understanding",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 03 production script, 2026-10-29. No new animation or narration in this handoff.",
+  "learningOutcome": "Use a brief, faithful paraphrase when a check is useful; retain the speaker’s purpose and uncertainty without adding a stronger claim.",
+  "scenario": {
+    "kind": "Original fictional general discussion training",
+    "task": "Plan a 30-minute paper-folding workshop for beginners. Give participants an opportunity to try and ask questions.",
+    "conditions": [
+      "30 minutes total",
+      "One facilitator",
+      "Shared materials"
+    ],
+    "state": {
+      "workshopHeld": false,
+      "planAdopted": false,
+      "testedResults": null
+    },
+    "baselineQuote": "I would keep the demonstration brief, so people have time to try. I am worried that someone who misses a step could get left behind.",
+    "scope": "No institution, official test, observed learner performance or measured outcome is represented. S07 uses a fresh club-guide scenario."
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "You",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L03.S02.B01",
+      "title": "Restore the Shared Context",
+      "family": "standalone_context_and_exact_source",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S02.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.c003"
+        }
+      ]
+    },
+    {
+      "id": "L03.S02.B02",
+      "title": "Preserve Meaning and Its Strength",
+      "family": "paraphrase_scope_comparison",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S02.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.c006"
+        },
+        {
+          "kind": "hold",
+          "id": "L03.S02.h101"
+        }
+      ]
+    },
+    {
+      "id": "L03.S02.B03",
+      "title": "Compare Three Possible Checks",
+      "family": "authored_choice_gate",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S02.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.c008"
+        },
+        {
+          "kind": "interaction",
+          "id": "L03.I01"
+        }
+      ]
+    },
+    {
+      "id": "L03.S02.B04",
+      "title": "Keep the Check Proportionate",
+      "family": "shared_meaning_analysis",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S02.c010"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.c012"
+        }
+      ]
+    },
+    {
+      "id": "L03.S02.B05",
+      "title": "Rehearse a Brief Check Privately",
+      "family": "private_rehearsal",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S02.c013"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.c014"
+        },
+        {
+          "kind": "hold",
+          "id": "L03.S02.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.c015"
+        }
+      ]
+    },
+    {
+      "id": "L03.S02.B06",
+      "title": "Move from Checking to Clarifying",
+      "family": "neutral_bridge",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S02.c016"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S02.c017"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L03.S02.c001": {
+      "id": "L03.S02.c001",
+      "speaker": "coach",
+      "text": "Checking your understanding means making your interpretation available for the other person to confirm or correct. It is useful when the meaning matters to your response, not a ritual before every turn.",
+      "visualEn": "Introduce source meaning and a tentative interpretation card, joined by an open checking arrow. Avoid compulsory repeat-after-me animation.",
+      "anchorHint": "confirm or correct",
+      "screenLabelIds": [
+        "section.title",
+        "check.purpose"
+      ],
+      "audioId": "L03.S02.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c002": {
+      "id": "L03.S02.c002",
+      "speaker": "coach",
+      "text": "The group is still planning a thirty-minute beginner paper-folding workshop, with one facilitator and shared materials. Participants should have opportunities to try and ask questions. The plan has not been adopted or tested.",
+      "visualEn": "Restore task rail and proposal status for standalone viewing. No classroom action or successful outcome; all cards remain planning material.",
+      "anchorHint": "opportunities to try and ask questions",
+      "screenLabelIds": [
+        "task.title",
+        "task.resources",
+        "task.status"
+      ],
+      "audioId": "L03.S02.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.d001": {
+      "id": "L03.S02.d001",
+      "speaker": "noah",
+      "text": "I would keep the demonstration brief, so people have time to try. I am worried that someone who misses a step could get left behind.",
+      "visualEn": "Replay the exact baseline source line once with Noah. Keep quote segments available for later comparison. No response is attributed to the viewer.",
+      "anchorHint": "I am worried that someone who misses a step could get left behind",
+      "screenLabelIds": [
+        "quote.noah"
+      ],
+      "audioId": "L03.S02.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S02.c003": {
+      "id": "L03.S02.c003",
+      "speaker": "coach",
+      "text": "Suppose you want to check this whole contribution before proposing a change. Keep the brief demonstration, the reason for it, and the possible difficulty in view.",
+      "visualEn": "Move source fragments into three meaning cards, preserving brief, time to try and could. The task is a whole-contribution check for this moment, not a general demand.",
+      "anchorHint": "before proposing a change",
+      "screenLabelIds": [
+        "check.target"
+      ],
+      "audioId": "L03.S02.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c004": {
+      "id": "L03.S02.c004",
+      "speaker": "coach",
+      "text": "A paraphrase can use different words. What matters is whether the listener can recognise their point, including its limits. Changing could to will makes a possible difficulty sound certain.",
+      "visualEn": "Compare could and will in a labelled analysis area. The stronger wording is an interpretation to examine, never a fact added to the scenario.",
+      "anchorHint": "makes a possible difficulty sound certain",
+      "screenLabelIds": [
+        "paraphrase.rule",
+        "modal.possible",
+        "modal.certain"
+      ],
+      "audioId": "L03.S02.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c005": {
+      "id": "L03.S02.c005",
+      "speaker": "coach",
+      "text": "Leaving something out is a different issue. A short check may be useful when only one detail needs confirming. Here, however, we are checking both the purpose and the concern.",
+      "visualEn": "Keep omission and distortion visually separate. Use a narrow-detail card beside the current whole-contribution task; neither is a universal good/bad category.",
+      "anchorHint": "both the purpose and the concern",
+      "screenLabelIds": [
+        "check.context"
+      ],
+      "audioId": "L03.S02.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c006": {
+      "id": "L03.S02.c006",
+      "speaker": "coach",
+      "text": "Before choosing a response, recall the original point. What does Noah want to keep, why does he want it brief, and what does he say could happen?",
+      "visualEn": "Show the source fragments and a blank private recall area. Hide all choice options during this reflection; no inferred retrieval.",
+      "anchorHint": "what does he say could happen",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L03.S02.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c007": {
+      "id": "L03.S02.c007",
+      "speaker": "coach",
+      "text": "Each response uses part of the same topic. Compare what it preserves, what it omits, and whether it makes the original claim stronger. Choose the most faithful check for this moment.",
+      "visualEn": "Introduce three equal-sized choice cards only as the gate arrives. No option is visually privileged, revealed early or attached to a permanent good/bad character.",
+      "anchorHint": "whether it makes the original claim stronger",
+      "screenLabelIds": [
+        "choice.prompt"
+      ],
+      "audioId": "L03.S02.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c008": {
+      "id": "L03.S02.c008",
+      "speaker": "coach",
+      "text": "The replies that follow are authored examples of how this exchange could continue. They illustrate the wording; they do not predict how every speaker would react.",
+      "visualEn": "Retain the original source above the alternatives. Label the consequences as authored examples without adding mood meters or performance scores.",
+      "anchorHint": "authored examples",
+      "screenLabelIds": [
+        "choice.note"
+      ],
+      "audioId": "L03.S02.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c010": {
+      "id": "L03.S02.c010",
+      "speaker": "coach",
+      "text": "A useful check preserves the point you need to understand. In this exchange, that includes a brief demonstration, time to try, and the possibility of missing a step. None cancels the others.",
+      "visualEn": "All paths enter here once. Reconstruct essential source meaning from the original line, without assuming which branch was viewed or that a choice was made.",
+      "anchorHint": "None cancels the others",
+      "screenLabelIds": [
+        "shared.check"
+      ],
+      "audioId": "L03.S02.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c011": {
+      "id": "L03.S02.c011",
+      "speaker": "coach",
+      "text": "When the meaning is already clear, you can respond directly. When a small detail is uncertain, check that detail. Repeating an entire contribution may use time without improving understanding.",
+      "visualEn": "Show three contexts: clear meaning, one uncertain detail, whole point uncertain. Keep them alternatives chosen by context, not a numbered ritual.",
+      "anchorHint": "check that detail",
+      "screenLabelIds": [
+        "check.selective"
+      ],
+      "audioId": "L03.S02.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c012": {
+      "id": "L03.S02.c012",
+      "speaker": "coach",
+      "text": "A check should also leave room for correction. You are offering your reading, not telling someone what they must mean. Their reply may confirm it, narrow it or change your understanding.",
+      "visualEn": "Keep the interpretation card editable and the source intact. Three neutral response directions remain possibilities, without predicted facial reactions or scores.",
+      "anchorHint": "offering your reading",
+      "screenLabelIds": [
+        "check.open"
+      ],
+      "audioId": "L03.S02.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c013": {
+      "id": "L03.S02.c013",
+      "speaker": "coach",
+      "text": "Try a brief check of Noah’s meaning in your own words. Keep the proposal and its purpose, and preserve the possibility in his concern. You do not need to copy the example.",
+      "visualEn": "Hide the complete authored paraphrases. Keep short source fragments and a genuinely blank response area. Do not show a microphone or inferred transcript.",
+      "anchorHint": "preserve the possibility in his concern",
+      "screenLabelIds": [
+        "rehearsal.prompt"
+      ],
+      "audioId": "L03.S02.c013",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c014": {
+      "id": "L03.S02.c014",
+      "speaker": "coach",
+      "text": "You can think first or speak privately. Nothing is recorded or assessed. There is a short pause here; pause playback yourself if you want more time.",
+      "visualEn": "Show a neutral pause hint before the hold. No required countdown performance or claim that speaking was observed.",
+      "anchorHint": "Nothing is recorded or assessed",
+      "screenLabelIds": [
+        "rehearsal.private",
+        "rehearsal.time"
+      ],
+      "audioId": "L03.S02.c014",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c015": {
+      "id": "L03.S02.c015",
+      "speaker": "coach",
+      "text": "If you tried a version, compare its meaning with the source. Did you add certainty, lose the purpose, or leave something unclear? If you did not rehearse, you can return when ready.",
+      "visualEn": "Offer neutral self-review questions beside the original source. No comparison to a fabricated learner transcript, diagnosis, grade or completion marker.",
+      "anchorHint": "compare its meaning with the source",
+      "screenLabelIds": [
+        "review.prompt"
+      ],
+      "audioId": "L03.S02.c015",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c016": {
+      "id": "L03.S02.c016",
+      "speaker": "coach",
+      "text": "Paraphrasing helps when you have a reading to check. Sometimes the words themselves leave the relevant part unspecified. Then a focused question may be more useful than a longer summary.",
+      "visualEn": "Move from a tentative interpretation to a small unresolved referent, preserving the difference between checking and asking for missing information.",
+      "anchorHint": "a focused question may be more useful",
+      "screenLabelIds": [
+        "bridge.check",
+        "bridge.ask"
+      ],
+      "audioId": "L03.S02.c016",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.c017": {
+      "id": "L03.S02.c017",
+      "speaker": "coach",
+      "text": "Next we will examine that choice: asking for the information needed to respond, while leaving already clear details alone. Keep the question connected to the discussion in front of you.",
+      "visualEn": "End on the next-section title without automatically navigating, rewarding, opening a new question or showing a purchase prompt.",
+      "anchorHint": "the information needed to respond",
+      "screenLabelIds": [
+        "next.title"
+      ],
+      "audioId": "L03.S02.c017",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.d101": {
+      "id": "L03.S02.d101",
+      "speaker": "learner",
+      "text": "You want people to have more time to practise.",
+      "visualEn": "Authored alternative A from the common source baseline. Highlight the retained purpose without inventing other retained details.",
+      "anchorHint": "more time to practise",
+      "screenLabelIds": [
+        "branch.a.label"
+      ],
+      "audioId": "L03.S02.d101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S02.d102": {
+      "id": "L03.S02.d102",
+      "speaker": "noah",
+      "text": "Yes, and I still want a brief demonstration. I am also thinking about someone who misses a step.",
+      "visualEn": "Authored Noah continuation, calm and matter-of-fact. Reintroduce the source proposal and concern; no hurt or triumphant acting.",
+      "anchorHint": "someone who misses a step",
+      "screenLabelIds": [],
+      "audioId": "L03.S02.d102",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S02.f101": {
+      "id": "L03.S02.f101",
+      "speaker": "coach",
+      "text": "This check captures the purpose, but leaves out the proposed demonstration and the concern. It could serve a narrower check. For our present task, we need to preserve those other parts too.",
+      "visualEn": "Explain partial coverage using the original three meaning cards. No grade, failure badge or assumption about the learner’s real understanding.",
+      "anchorHint": "It could serve a narrower check",
+      "screenLabelIds": [
+        "branch.a.note"
+      ],
+      "audioId": "L03.S02.f101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.d201": {
+      "id": "L03.S02.d201",
+      "speaker": "learner",
+      "text": "You want a brief demonstration so people have time to try, and you are concerned that someone who misses a step might fall behind.",
+      "visualEn": "Authored alternative B from the unchanged source baseline. Match proposal, purpose and possible concern to exact source fragments.",
+      "anchorHint": "someone who misses a step might fall behind",
+      "screenLabelIds": [
+        "branch.b.label"
+      ],
+      "audioId": "L03.S02.d201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S02.d202": {
+      "id": "L03.S02.d202",
+      "speaker": "noah",
+      "text": "Yes. I want time for people to try, while keeping a demonstration and a way to help if someone misses a step.",
+      "visualEn": "Authored Noah continuation. Present a possible support need as a topic to develop, not a support plan already adopted.",
+      "anchorHint": "if someone misses a step",
+      "screenLabelIds": [],
+      "audioId": "L03.S02.d202",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S02.f201": {
+      "id": "L03.S02.f201",
+      "speaker": "coach",
+      "text": "This paraphrase keeps the proposal, its purpose and the possible difficulty. Noah confirms that reading in this example. The wording is different, but the uncertainty and the connection between the parts remain.",
+      "visualEn": "Analyze the authored exchange only. Match might to could without erasing uncertainty. No student mastery claim or simulated automatic assessment.",
+      "anchorHint": "the uncertainty and the connection",
+      "screenLabelIds": [
+        "branch.b.note"
+      ],
+      "audioId": "L03.S02.f201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S02.d301": {
+      "id": "L03.S02.d301",
+      "speaker": "learner",
+      "text": "You want a brief demonstration so people can practise, and anyone who misses a step will get left behind.",
+      "visualEn": "Authored alternative C from the source baseline. Retain proposal and purpose, then isolate anyone/will as a strengthened version under examination.",
+      "anchorHint": "will get left behind",
+      "screenLabelIds": [
+        "branch.c.label"
+      ],
+      "audioId": "L03.S02.d301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S02.d302": {
+      "id": "L03.S02.d302",
+      "speaker": "noah",
+      "text": "They could get left behind, but that is not certain. I am raising a possibility we should consider.",
+      "visualEn": "Authored Noah correction with a calm delivery. Restore source uncertainty; no accusation, humiliation or claim of universal reaction.",
+      "anchorHint": "that is not certain",
+      "screenLabelIds": [],
+      "audioId": "L03.S02.d302",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S02.f301": {
+      "id": "L03.S02.f301",
+      "speaker": "coach",
+      "text": "The proposal and purpose are recognisable, but the concern has become a certainty about anyone who misses a step. Restore the possible wording rather than defending a stronger claim the speaker did not make.",
+      "visualEn": "Compare only the changed scope and modality. Keep the concern as possible, not a guaranteed result or real workshop finding.",
+      "anchorHint": "a stronger claim the speaker did not make",
+      "screenLabelIds": [
+        "branch.c.note"
+      ],
+      "audioId": "L03.S02.f301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    }
+  },
+  "holds": {
+    "L03.S02.h101": {
+      "kind": "hold",
+      "id": "L03.S02.h101",
+      "seconds": 8,
+      "purpose": "Privately recall the source meaning before comparing paraphrases.",
+      "visualEn": "Retain the source quote; no choice labels, model, selected focus or learner success state appear during the hold.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L03.S02.h102": {
+      "kind": "hold",
+      "id": "L03.S02.h102",
+      "seconds": 8,
+      "purpose": "Privately formulate a faithful check, with extra time available by pausing.",
+      "visualEn": "Keep the response area blank throughout. Hide full models and avoid filling the area afterward with an assumed answer.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {
+    "L03.I01": {
+      "kind": "choice",
+      "prompt": "Which response best checks Noah’s whole point without changing its meaning?",
+      "watchChoice": "B",
+      "watchThinkSeconds": 8,
+      "rejoinCue": "L03.S02.c010",
+      "options": [
+        {
+          "id": "A",
+          "label": "You want people to have more time to practise.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L03.S02.d101"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S02.d102"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S02.f101"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "label": "You want a brief demonstration so people have time to try, and you are concerned that someone who misses a step might fall behind.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L03.S02.d201"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S02.d202"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S02.f201"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "label": "You want a brief demonstration so people can practise, and anyone who misses a step will get left behind.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L03.S02.d301"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S02.d302"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S02.f301"
+            }
+          ]
+        }
+      ],
+      "skipNote": "Skipped this comparison. No response or understanding was recorded; continue to the shared explanation.",
+      "baseline": "Restore the exact d001 source, the fictional 30-minute task and three neutral choice cards before each option. No workshop has occurred and no proposal is adopted. Every branch is a separate possible continuation. Retry removes prior dialogue and feedback; skip makes no assessment. Watch demonstrates B only after eight seconds, then rejoins c010; Practice waits without a timer and rejoins only by explicit Continue or Skip.",
+      "id": "L03.I01",
+      "practiceTimeout": null,
+      "autoSelect": false,
+      "skipIsUnanswered": true,
+      "score": null,
+      "stateStorage": "memory only",
+      "branchOutcome": "Authored fictional continuation, not a prediction or universal reaction."
+    }
+  },
+  "boundary": "Use formal explanation and short examples. No perpetual three-person scene; no school, exam, policy or assessed-learner claim."
+}

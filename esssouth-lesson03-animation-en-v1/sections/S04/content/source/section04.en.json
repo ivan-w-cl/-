@@ -1,0 +1,426 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L03.S04",
+  "title": "Agree and Add Something Relevant",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 03 production script, 2026-10-29. No new animation or narration in this handoff.",
+  "learningOutcome": "Make clear which part of a contribution you support, then add a relevant detail only if the discussion needs one.",
+  "scenario": {
+    "kind": "Original fictional general discussion training",
+    "task": "Plan a 30-minute paper-folding workshop for beginners. Give participants an opportunity to try and ask questions.",
+    "conditions": [
+      "30 minutes total",
+      "One facilitator",
+      "Shared materials"
+    ],
+    "state": {
+      "workshopHeld": false,
+      "planAdopted": false,
+      "testedResults": null
+    },
+    "baselineQuote": "I would keep the demonstration brief, so people have time to try. I am worried that someone who misses a step could get left behind.",
+    "scope": "No institution, official test, observed learner performance or measured outcome is represented. S07 uses a fresh club-guide scenario."
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "You",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L03.S04.B01",
+      "title": "A Specific Point to Support",
+      "family": "task_and_exact_quote",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S04.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.d001"
+        }
+      ]
+    },
+    {
+      "id": "L03.S04.B02",
+      "title": "Name What You Agree With",
+      "family": "comparison",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S04.c003"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.d002"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.c004"
+        },
+        {
+          "kind": "hold",
+          "id": "L03.S04.h101"
+        }
+      ]
+    },
+    {
+      "id": "L03.S04.B03",
+      "title": "An Addition With a Job to Do",
+      "family": "worked_extension",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S04.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.d003"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.d004"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.c006"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.c007"
+        }
+      ]
+    },
+    {
+      "id": "L03.S04.B04",
+      "title": "Avoid Automatic Extra Sentences",
+      "family": "contextual_choice",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S04.c008"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.c009"
+        }
+      ]
+    },
+    {
+      "id": "L03.S04.B05",
+      "title": "Try a Short Connected Reply",
+      "family": "private_retrieval",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S04.c010"
+        },
+        {
+          "kind": "hold",
+          "id": "L03.S04.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.d005"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S04.c012"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L03.S04.c001": {
+      "id": "L03.S04.c001",
+      "speaker": "coach",
+      "text": "Once you understand a contribution, you can decide what it needs from you. Sometimes it needs a question. Sometimes a brief confirmation is enough. In this section, we will look at agreement and useful additions, without turning every reply into a long speech.",
+      "visualEn": "Start with one incoming contribution card and three possible response resources; none selected. Keep characters offstage.",
+      "anchorHint": "brief confirmation is enough",
+      "screenLabelIds": [
+        "section.title",
+        "resource.confirm",
+        "resource.question",
+        "resource.add"
+      ],
+      "audioId": "L03.S04.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.c002": {
+      "id": "L03.S04.c002",
+      "speaker": "coach",
+      "text": "Return to the planning group. They have thirty minutes for a beginner paper-folding workshop, with one facilitator. They want participants to have an opportunity to try the activity and ask questions. The group has not chosen a plan.",
+      "visualEn": "Rebuild the same task card, time and facilitator constraints. A status tag remains beside the proposal area.",
+      "anchorHint": "has not chosen a plan",
+      "screenLabelIds": [
+        "task.time",
+        "task.staff",
+        "task.goal",
+        "task.state"
+      ],
+      "audioId": "L03.S04.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.d001": {
+      "id": "L03.S04.d001",
+      "speaker": "noah",
+      "text": "I would keep the demonstration brief, so people have time to try. I am worried that someone who misses a step could get left behind.",
+      "visualEn": "Brief original cast appearance. Separate suggestion, reason and concern using the same three card identities from S01. No demonstration is actually performed.",
+      "anchorHint": "someone who misses a step",
+      "screenLabelIds": [
+        "view.brief",
+        "reason.try",
+        "concern.missed"
+      ],
+      "audioId": "L03.S04.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S04.c003": {
+      "id": "L03.S04.c003",
+      "speaker": "coach",
+      "text": "Imagine that you support leaving time for practice. A simple yes communicates support. But if the group still needs to work out what you support, name the specific point. That makes your agreement easier to use.",
+      "visualEn": "Move the reason card into a full-screen comparison. Show a short Yes beside an empty specific-point space without red crosses.",
+      "anchorHint": "name the specific point",
+      "screenLabelIds": [
+        "agreement.short",
+        "agreement.specific"
+      ],
+      "audioId": "L03.S04.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.d002": {
+      "id": "L03.S04.d002",
+      "speaker": "learner",
+      "text": "I agree that people need time to try the activity themselves.",
+      "visualEn": "Show one brief learner line; highlight its connection to Noah's reason. Do not link agreement to every part of the proposal.",
+      "anchorHint": "time to try",
+      "screenLabelIds": [
+        "agreement.quote"
+      ],
+      "audioId": "L03.S04.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S04.c004": {
+      "id": "L03.S04.c004",
+      "speaker": "coach",
+      "text": "This supports the reason for a shorter demonstration. It does not mean that you accept every detail, or that the concern about missed steps has disappeared. Keep the part you support separate from the part that remains open.",
+      "visualEn": "Keep the supported reason in blue and the unanswered concern outlined. Use words as well as color.",
+      "anchorHint": "remains open",
+      "screenLabelIds": [
+        "agreement.supported",
+        "concern.open"
+      ],
+      "audioId": "L03.S04.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.c005": {
+      "id": "L03.S04.c005",
+      "speaker": "coach",
+      "text": "Now decide whether another detail would help. An addition is relevant when it changes something the group still needs to decide. Listen to this possible continuation.",
+      "visualEn": "Bring the concern card to the same center position and open one proposal slot; no checklist of required sentence parts.",
+      "anchorHint": "still needs to decide",
+      "screenLabelIds": [
+        "addition.check"
+      ],
+      "audioId": "L03.S04.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.d003": {
+      "id": "L03.S04.d003",
+      "speaker": "learner",
+      "text": "We could keep a step card visible during practice, so people can check where they are.",
+      "visualEn": "Introduce a new step-card proposal connected by a dashed line to the missed-step concern. The card is a generic outline, not proof that a tested aid exists.",
+      "anchorHint": "check where they are",
+      "screenLabelIds": [
+        "addition.card",
+        "addition.possible",
+        "proposal.status"
+      ],
+      "audioId": "L03.S04.d003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S04.d004": {
+      "id": "L03.S04.d004",
+      "speaker": "maya",
+      "text": "That might help. Would the card be clear enough for someone who is completely new?",
+      "visualEn": "Maya looks toward the proposed card with a small offset reaction. Her bubble is a question, not an acceptance stamp.",
+      "anchorHint": "clear enough",
+      "screenLabelIds": [
+        "question.clear"
+      ],
+      "audioId": "L03.S04.d004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S04.c006": {
+      "id": "L03.S04.c006",
+      "speaker": "coach",
+      "text": "The addition addresses a specific concern, and Maya now has a more precise question to examine. That is a useful connection. It is not evidence that the card will work, or that every beginner would understand it.",
+      "visualEn": "Return to the formal board. Retain the dashed link and put Maya's question at its end. No happy-participant outcome.",
+      "anchorHint": "not evidence that the card will work",
+      "screenLabelIds": [
+        "relation.link"
+      ],
+      "audioId": "L03.S04.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.c007": {
+      "id": "L03.S04.c007",
+      "speaker": "coach",
+      "text": "A different sentence might still be about the workshop without helping with this concern. For example, suggesting a bright poster is on the same topic, but it does not explain how someone would recover a missed step. It could matter later, when publicity is the question.",
+      "visualEn": "Compare the relevant step card with a small Bright poster card outside this concern pathway. Label it Another issue, not a permanently bad idea.",
+      "anchorHint": "when publicity is the question",
+      "screenLabelIds": [
+        "offtopic.poster",
+        "offtopic.context"
+      ],
+      "audioId": "L03.S04.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.c008": {
+      "id": "L03.S04.c008",
+      "speaker": "coach",
+      "text": "Do not add a new idea simply to make the reply longer. If the group has already checked a detail and is confirming the arrangement, a clear yes may be all that is needed. The value of your response depends on the moment.",
+      "visualEn": "Show a separate explicitly hypothetical confirmation panel. Do not alter the open main-case decision state.",
+      "anchorHint": "depends on the moment",
+      "screenLabelIds": [
+        "confirmation.frame",
+        "confirmation.enough"
+      ],
+      "audioId": "L03.S04.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.c009": {
+      "id": "L03.S04.c009",
+      "speaker": "coach",
+      "text": "Before adding something, ask yourself: which point am I responding to, and what work will the extra detail do? You might clarify a method, identify a limit, or ask a question. You do not have to do all three.",
+      "visualEn": "Return to the main board; reveal two diagnostic questions, with optional examples underneath. No mandatory sequence numbers.",
+      "anchorHint": "do not have to do all three",
+      "screenLabelIds": [
+        "self.point",
+        "self.work"
+      ],
+      "audioId": "L03.S04.c009",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.c010": {
+      "id": "L03.S04.c010",
+      "speaker": "coach",
+      "text": "Keep Noah's reason and concern on screen. Form a short reply that supports the time for practice and adds one relevant detail, if you think one is needed. Think it through privately, or say it aloud. Pause if you want more time.",
+      "visualEn": "Show the exact original cards and a blank private area. Hide all prior learner model text and do not display a microphone.",
+      "anchorHint": "one relevant detail",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L03.S04.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.d005": {
+      "id": "L03.S04.d005",
+      "speaker": "learner",
+      "text": "I agree that people need time to try. Could we check whether a simple step card would help someone follow the activity?",
+      "visualEn": "Introduce a new card labelled One possible reply, separate from the blank response area. Ask about checking usefulness rather than asserting effectiveness.",
+      "anchorHint": "Could we check",
+      "screenLabelIds": [
+        "model.label"
+      ],
+      "audioId": "L03.S04.d005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S04.c011": {
+      "id": "L03.S04.c011",
+      "speaker": "coach",
+      "text": "This model supports a particular reason and suggests something to examine. You may have chosen another relevant addition, or a shorter response. Compare the connection to Noah's point, not whether you used the same words.",
+      "visualEn": "Draw the two exact links, then leave the model beside, never inside, the private response area.",
+      "anchorHint": "not whether you used the same words",
+      "screenLabelIds": [
+        "review.connection"
+      ],
+      "audioId": "L03.S04.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S04.c012": {
+      "id": "L03.S04.c012",
+      "speaker": "coach",
+      "text": "Keep agreement precise, and give an addition a clear purpose. Next we will look at a concern that a relevant suggestion still does not fully answer.",
+      "visualEn": "Keep the concern card and a small unresolved marker for the next section; end neutrally.",
+      "anchorHint": "does not fully answer",
+      "screenLabelIds": [
+        "recap"
+      ],
+      "audioId": "L03.S04.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    }
+  },
+  "holds": {
+    "L03.S04.h101": {
+      "kind": "hold",
+      "id": "L03.S04.h101",
+      "seconds": 6,
+      "purpose": "Notice the supported point and the unanswered concern.",
+      "visualEn": "Keep both readable and separated; no implied adopted decision.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L03.S04.h102": {
+      "kind": "hold",
+      "id": "L03.S04.h102",
+      "seconds": 12,
+      "purpose": "Form a private reply before the model.",
+      "visualEn": "The private response area stays blank. The prompt and original statement stay visible.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {},
+  "boundary": "Use formal explanation and short examples. No perpetual three-person scene; no school, exam, policy or assessed-learner claim."
+}

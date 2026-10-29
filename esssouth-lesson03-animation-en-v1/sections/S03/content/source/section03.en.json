@@ -1,0 +1,659 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L03.S03",
+  "title": "Ask the Question That Matters",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 03 production script, 2026-10-29. No new animation or narration in this handoff.",
+  "learningOutcome": "Locate a consequential ambiguity and ask a focused clarification before giving a targeted response; distinguish clarification from repeating known information or advancing an ungrounded interpretation.",
+  "scenario": {
+    "kind": "Original fictional general discussion training",
+    "task": "Plan a 30-minute paper-folding workshop for beginners. Give participants an opportunity to try and ask questions.",
+    "conditions": [
+      "30 minutes total",
+      "One facilitator",
+      "Shared materials"
+    ],
+    "state": {
+      "workshopHeld": false,
+      "planAdopted": false,
+      "testedResults": null
+    },
+    "baselineQuote": "I would keep the demonstration brief, so people have time to try. I am worried that someone who misses a step could get left behind.",
+    "scope": "No institution, official test, observed learner performance or measured outcome is represented. S07 uses a fresh club-guide scenario."
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "You",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L03.S03.B01",
+      "title": "Notice What Is Still Unclear",
+      "family": "standalone_task_and_ambiguous_exchange",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S03.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.d002"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.c003"
+        }
+      ]
+    },
+    {
+      "id": "L03.S03.B02",
+      "title": "Separate Known Facts from the Missing Link",
+      "family": "known_unknown_information_map",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S03.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.c006"
+        },
+        {
+          "kind": "hold",
+          "id": "L03.S03.h101"
+        }
+      ]
+    },
+    {
+      "id": "L03.S03.B03",
+      "title": "Choose a Focused Clarification",
+      "family": "authored_choice_gate",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S03.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.c008"
+        },
+        {
+          "kind": "interaction",
+          "id": "L03.I02"
+        }
+      ]
+    },
+    {
+      "id": "L03.S03.B04",
+      "title": "Use the Clarification in the Next Turn",
+      "family": "shared_explanation_and_targeted_reply",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S03.c010"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.d003"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.c012"
+        }
+      ]
+    },
+    {
+      "id": "L03.S03.B05",
+      "title": "Try a Focused Question Privately",
+      "family": "private_question_rehearsal",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S03.c013"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.c014"
+        },
+        {
+          "kind": "hold",
+          "id": "L03.S03.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.c015"
+        }
+      ]
+    },
+    {
+      "id": "L03.S03.B06",
+      "title": "Keep the Question Useful",
+      "family": "neutral_transfer_bridge",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S03.c016"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S03.c017"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L03.S03.c001": {
+      "id": "L03.S03.c001",
+      "speaker": "coach",
+      "text": "A clarification question should help you decide how to respond. Ask about the part that is genuinely unclear, rather than requesting any extra detail simply to keep talking.",
+      "visualEn": "Show an unresolved link between a contribution and a possible reply. Establish a missing-information card without portraying uncertainty as failure.",
+      "anchorHint": "the part that is genuinely unclear",
+      "screenLabelIds": [
+        "section.title",
+        "question.purpose"
+      ],
+      "audioId": "L03.S03.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c002": {
+      "id": "L03.S03.c002",
+      "speaker": "coach",
+      "text": "Return to the planned thirty-minute beginner paper-folding workshop: one facilitator, shared materials, and opportunities to try and ask questions. Nothing has been tried. Maya now describes one possible way to arrange a demonstration.",
+      "visualEn": "Restore the shared task and planning-only status. Introduce Maya’s arrangement as a proposal, not an adopted workshop sequence or a result.",
+      "anchorHint": "one possible way to arrange a demonstration",
+      "screenLabelIds": [
+        "task.title",
+        "task.resources",
+        "task.status"
+      ],
+      "audioId": "L03.S03.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.d001": {
+      "id": "L03.S03.d001",
+      "speaker": "maya",
+      "text": "The facilitator could demonstrate several steps, and then everyone could try them.",
+      "visualEn": "Brief Maya example. Show proposed sequence cards for demonstrate several steps and then try, linked with conditional styling. Do not show actual beginners performing.",
+      "anchorHint": "could demonstrate several steps",
+      "screenLabelIds": [
+        "proposal.sequence"
+      ],
+      "audioId": "L03.S03.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S03.d002": {
+      "id": "L03.S03.d002",
+      "speaker": "noah",
+      "text": "Doing it that way could be difficult for beginners.",
+      "visualEn": "Brief Noah example. Keep that way visibly unresolved against the proposal cards; no mind-reading emotion or implied rejection of all demonstrations.",
+      "anchorHint": "that way",
+      "screenLabelIds": [
+        "quote.unclear"
+      ],
+      "audioId": "L03.S03.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S03.c003": {
+      "id": "L03.S03.c003",
+      "speaker": "coach",
+      "text": "You know which workshop they are planning, but not exactly which part Noah means. He could be referring to the sequence, the pace, or another feature. Those are possibilities, not his confirmed explanation.",
+      "visualEn": "Return to a full-screen diagram. Place possible referents beside the source wording with a shared unconfirmed label. Do not select a referent for Noah before clarification.",
+      "anchorHint": "not exactly which part Noah means",
+      "screenLabelIds": [
+        "ambiguity.note"
+      ],
+      "audioId": "L03.S03.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c004": {
+      "id": "L03.S03.c004",
+      "speaker": "coach",
+      "text": "The thirty-minute length is already part of the shared task. Asking for it again would not, by itself, clarify that way. The missing information concerns the part he finds difficult.",
+      "visualEn": "Keep duration on the known-facts rail; isolate that way and difficult as the current unknown. Avoid marking a real listener’s forgotten information as a character flaw.",
+      "anchorHint": "the part he finds difficult",
+      "screenLabelIds": [
+        "known.label",
+        "unknown.label"
+      ],
+      "audioId": "L03.S03.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c005": {
+      "id": "L03.S03.c005",
+      "speaker": "coach",
+      "text": "A proposed solution can also arrive too early. Shortening the demonstration might be useful, but it does not tell us which difficulty Noah was raising. A plausible idea is not the same as a clarification.",
+      "visualEn": "Separate a possible shortening proposal from the unresolved referent. Do not claim the proposal is wrong, adopted or guaranteed to solve the concern.",
+      "anchorHint": "not the same as a clarification",
+      "screenLabelIds": [
+        "distinction.proposal",
+        "distinction.question"
+      ],
+      "audioId": "L03.S03.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c006": {
+      "id": "L03.S03.c006",
+      "speaker": "coach",
+      "text": "Privately identify the gap you would ask about. Keep the task facts visible, and consider what an answer would allow you to do differently in your next turn.",
+      "visualEn": "Keep source wording and task facts; show an empty question-planning area. Full choice texts remain hidden until the gate.",
+      "anchorHint": "what an answer would allow you to do differently",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L03.S03.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c007": {
+      "id": "L03.S03.c007",
+      "speaker": "coach",
+      "text": "Compare three possible next turns. One returns to a known fact, one advances a proposal, and one asks about the unclear reference. Which directly checks the meaning needed here?",
+      "visualEn": "Reveal equal neutral alternatives at the gate, with the ambiguous source still visible. Do not attach good/bad colours or preselect an answer.",
+      "anchorHint": "the meaning needed here",
+      "screenLabelIds": [
+        "choice.prompt"
+      ],
+      "audioId": "L03.S03.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c008": {
+      "id": "L03.S03.c008",
+      "speaker": "coach",
+      "text": "The following peer replies are authored continuations. In a real discussion, an answer could differ. Listen to the information a question requests, rather than treating a sample reaction as a rule.",
+      "visualEn": "Show a brief authored-example label. Keep expressions restrained and avoid emotional reward or punishment for an option.",
+      "anchorHint": "the information a question requests",
+      "screenLabelIds": [
+        "choice.note"
+      ],
+      "audioId": "L03.S03.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c010": {
+      "id": "L03.S03.c010",
+      "speaker": "coach",
+      "text": "The key question is which part could be difficult. The duration alone cannot answer that. Once a speaker identifies the specific concern, a reply can address it instead of guessing.",
+      "visualEn": "All routes rejoin here. Rebuild the known-versus-unknown map without assuming a branch was viewed, an answer was chosen or the learner spoke.",
+      "anchorHint": "a reply can address it instead of guessing",
+      "screenLabelIds": [
+        "shared.question"
+      ],
+      "audioId": "L03.S03.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c011": {
+      "id": "L03.S03.c011",
+      "speaker": "coach",
+      "text": "For the next worked example, take this clarified concern: remembering several steps before trying them. This is an authored example, not a finding about every beginner.",
+      "visualEn": "Reset every prior branch card and outcome. Before presenting the concern, reveal a frame labelled Shared worked example. State this new example premise explicitly so it is valid after any option or Skip. Keep the concern in that frame through the following learner proposal; do not imply it was heard on an unplayed branch.",
+      "anchorHint": "remembering several steps before trying them",
+      "screenLabelIds": [
+        "shared.concern",
+        "shared.status",
+        "common.example"
+      ],
+      "audioId": "L03.S03.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.d003": {
+      "id": "L03.S03.d003",
+      "speaker": "learner",
+      "text": "Could we show one step, pause while people try it, and then continue?",
+      "visualEn": "Brief authored learner proposal, explicitly unadopted. Connect a possible step-and-try arrangement to the clarified concern. Do not show workshop success or actual acceptance.",
+      "anchorHint": "pause while people try it",
+      "screenLabelIds": [
+        "reply.label"
+      ],
+      "audioId": "L03.S03.d003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S03.c012": {
+      "id": "L03.S03.c012",
+      "speaker": "coach",
+      "text": "This proposal addresses the gap between seeing and trying a step. It still needs consideration against the time and resources. Clarifying the concern does not establish that the new arrangement will work.",
+      "visualEn": "Retain the proposed arrangement beside the existing 30-minute and resource constraints. Keep effects unresolved; do not move to a vote, agreement or implemented class.",
+      "anchorHint": "does not establish that the new arrangement will work",
+      "screenLabelIds": [
+        "reply.scope"
+      ],
+      "audioId": "L03.S03.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c013": {
+      "id": "L03.S03.c013",
+      "speaker": "coach",
+      "text": "Try asking about Noah’s unclear phrase in your own words. Avoid selecting the explanation for him. You can be specific about which words you mean without supplying the answer.",
+      "visualEn": "Hide the full question models, retain only source wording and task context, and leave the private question area empty.",
+      "anchorHint": "without supplying the answer",
+      "screenLabelIds": [
+        "rehearsal.prompt"
+      ],
+      "audioId": "L03.S03.c013",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c014": {
+      "id": "L03.S03.c014",
+      "speaker": "coach",
+      "text": "Think first, or speak privately. Nothing is recorded or assessed. Use the short pause, or pause playback for longer. The wording does not need to match the model.",
+      "visualEn": "Show a neutral private-practice notice. No microphone, transcript, keyword scoring or completion inference.",
+      "anchorHint": "The wording does not need to match the model",
+      "screenLabelIds": [
+        "rehearsal.private",
+        "rehearsal.time"
+      ],
+      "audioId": "L03.S03.c014",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c015": {
+      "id": "L03.S03.c015",
+      "speaker": "coach",
+      "text": "If you tried a question, check what information it requested. Would that help you respond to the unclear point? If the meaning was already clear, a question might not be needed.",
+      "visualEn": "Offer a purpose check, not an assessment. Preserve the conditional if and avoid telling the viewer that they performed an attempt.",
+      "anchorHint": "what information it requested",
+      "screenLabelIds": [
+        "review.prompt"
+      ],
+      "audioId": "L03.S03.c015",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c016": {
+      "id": "L03.S03.c016",
+      "speaker": "coach",
+      "text": "Ask only as much as the situation needs. A clarification can open the way to a useful response; repeated questions about settled details can postpone that response instead.",
+      "visualEn": "Condense known information and resolved concern into a compact reference. Keep the distinction contextual, without a fixed question quota.",
+      "anchorHint": "only as much as the situation needs",
+      "screenLabelIds": [
+        "recap.title"
+      ],
+      "audioId": "L03.S03.c016",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.c017": {
+      "id": "L03.S03.c017",
+      "speaker": "coach",
+      "text": "Next we will consider how to agree with a specific point and add something relevant. The aim is still to respond to what was said, rather than simply take another turn.",
+      "visualEn": "Settle the clarified-point card and next-section title. End normally with replay available; no completion score, purchase or automatic navigation.",
+      "anchorHint": "respond to what was said",
+      "screenLabelIds": [
+        "next.title"
+      ],
+      "audioId": "L03.S03.c017",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.d101": {
+      "id": "L03.S03.d101",
+      "speaker": "learner",
+      "text": "How long is the workshop?",
+      "visualEn": "Authored alternative A from the unchanged d001/d002 exchange. Keep the previously stated duration visible in context.",
+      "anchorHint": "How long",
+      "screenLabelIds": [
+        "branch.a.label"
+      ],
+      "audioId": "L03.S03.d101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S03.d102": {
+      "id": "L03.S03.d102",
+      "speaker": "noah",
+      "text": "Thirty minutes. I was talking about how the demonstration is arranged.",
+      "visualEn": "Authored Noah response, neutral and patient. Point back to the arrangement without inventing an exact difficulty yet.",
+      "anchorHint": "how the demonstration is arranged",
+      "screenLabelIds": [],
+      "audioId": "L03.S03.d102",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S03.f101": {
+      "id": "L03.S03.f101",
+      "speaker": "coach",
+      "text": "This question could help someone who missed the duration. In the information given here, that fact is already clear. It has not yet identified which part of the arrangement Noah finds difficult.",
+      "visualEn": "Distinguish usefulness in another context from relevance here. No universal ban on repeating information or claim about the learner’s attention.",
+      "anchorHint": "which part of the arrangement",
+      "screenLabelIds": [
+        "branch.a.note"
+      ],
+      "audioId": "L03.S03.f101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.d201": {
+      "id": "L03.S03.d201",
+      "speaker": "learner",
+      "text": "We could make the demonstration shorter, so everyone has more practice time.",
+      "visualEn": "Authored alternative B, a reasoned proposal. Keep it visually separate from a clarification question and leave proposal status unadopted.",
+      "anchorHint": "make the demonstration shorter",
+      "screenLabelIds": [
+        "branch.b.label"
+      ],
+      "audioId": "L03.S03.d201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S03.d202": {
+      "id": "L03.S03.d202",
+      "speaker": "noah",
+      "text": "More practice time could be useful. The difficulty I meant is keeping track of several steps before trying them.",
+      "visualEn": "Authored Noah clarification volunteered after a proposal. Do not present this response as inevitable or as proof that asking a question is always mandatory.",
+      "anchorHint": "keeping track of several steps",
+      "screenLabelIds": [],
+      "audioId": "L03.S03.d202",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S03.f201": {
+      "id": "L03.S03.f201",
+      "speaker": "coach",
+      "text": "This contribution has a reason, but offers a change before establishing the concern. Noah supplies the missing meaning in this example. The proposal was not itself a question that checked what he meant.",
+      "visualEn": "Retain the valid reason while showing the unverified interpretation at the time of the learner line. Explain action type, not a failure score.",
+      "anchorHint": "before establishing the concern",
+      "screenLabelIds": [
+        "branch.b.note"
+      ],
+      "audioId": "L03.S03.f201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S03.d301": {
+      "id": "L03.S03.d301",
+      "speaker": "learner",
+      "text": "Which part do you think could be difficult for beginners?",
+      "visualEn": "Authored alternative C from the same source baseline. Direct a neutral question arrow to that way; no assumption about the answer.",
+      "anchorHint": "Which part",
+      "screenLabelIds": [
+        "branch.c.label"
+      ],
+      "audioId": "L03.S03.d301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S03.d302": {
+      "id": "L03.S03.d302",
+      "speaker": "noah",
+      "text": "I mean remembering several steps before they get a chance to try. Someone could lose track of the first fold.",
+      "visualEn": "Authored Noah clarification. Resolve the referent to remembering before trying; preserve could and do not enact an observed beginner error.",
+      "anchorHint": "remembering several steps before they get a chance to try",
+      "screenLabelIds": [],
+      "audioId": "L03.S03.d302",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S03.f301": {
+      "id": "L03.S03.f301",
+      "speaker": "coach",
+      "text": "This question directly asks for the missing meaning without choosing a cause for Noah. His answer gives a specific concern to respond to. It is a possible continuation, not evidence about every beginner.",
+      "visualEn": "Connect requested information to the authored answer. Keep the beginner difficulty hypothetical and avoid claiming successful real-world communication or student mastery.",
+      "anchorHint": "without choosing a cause for Noah",
+      "screenLabelIds": [
+        "branch.c.note"
+      ],
+      "audioId": "L03.S03.f301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    }
+  },
+  "holds": {
+    "L03.S03.h101": {
+      "kind": "hold",
+      "id": "L03.S03.h101",
+      "seconds": 8,
+      "purpose": "Privately identify the missing information before seeing the alternatives.",
+      "visualEn": "Keep the question-planning area blank. No auto-selection, inferred response, hidden answer or speaker reaction appears during the hold.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L03.S03.h102": {
+      "kind": "hold",
+      "id": "L03.S03.h102",
+      "seconds": 8,
+      "purpose": "Privately form a focused clarification question without viewing a full model.",
+      "visualEn": "Keep the private response area empty. No automatic answer or inferred practice result appears during or after the hold.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {
+    "L03.I02": {
+      "kind": "choice",
+      "prompt": "Which next turn directly clarifies what Noah means by “that way”?",
+      "watchChoice": "C",
+      "watchThinkSeconds": 8,
+      "rejoinCue": "L03.S03.c010",
+      "options": [
+        {
+          "id": "A",
+          "label": "How long is the workshop?",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L03.S03.d101"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S03.d102"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S03.f101"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "label": "We could make the demonstration shorter, so everyone has more practice time.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L03.S03.d201"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S03.d202"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S03.f201"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "label": "Which part do you think could be difficult for beginners?",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L03.S03.d301"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S03.d302"
+            },
+            {
+              "kind": "line",
+              "id": "L03.S03.f301"
+            }
+          ]
+        }
+      ],
+      "skipNote": "Skipped this comparison. No response or understanding was recorded; continue to the shared explanation.",
+      "baseline": "Restore Maya d001, Noah d002, known 30-minute task facts and neutral choices before every option. The precise difficulty is initially unconfirmed. No workshop, trial or adopted arrangement has occurred. Branches are separate authored possibilities. Retry removes prior dialogue and feedback. Watch demonstrates C only after eight seconds; Practice waits indefinitely. Continue or Skip rejoins c010 exactly once without a performance claim.",
+      "id": "L03.I02",
+      "practiceTimeout": null,
+      "autoSelect": false,
+      "skipIsUnanswered": true,
+      "score": null,
+      "stateStorage": "memory only",
+      "branchOutcome": "Authored fictional continuation, not a prediction or universal reaction."
+    }
+  },
+  "boundary": "Use formal explanation and short examples. No perpetual three-person scene; no school, exam, policy or assessed-learner claim."
+}

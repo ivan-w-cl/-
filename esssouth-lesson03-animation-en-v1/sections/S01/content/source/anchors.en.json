@@ -1,0 +1,108 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L03.S01",
+  "anchors": {
+    "a_L03_S01_c001": {
+      "cueId": "L03.S01.c001",
+      "phrase": "what their contribution actually contains",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c002": {
+      "cueId": "L03.S01.c002",
+      "phrase": "an opportunity to try and ask questions",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_d001": {
+      "cueId": "L03.S01.d001",
+      "phrase": "someone who misses a step could get left behind",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c003": {
+      "cueId": "L03.S01.c003",
+      "phrase": "a proposal, explains its purpose, and raises a concern",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c004": {
+      "cueId": "L03.S01.c004",
+      "phrase": "does not mean removing it",
+      "estimatedSeconds": 3.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c005": {
+      "cueId": "L03.S01.c005",
+      "phrase": "leave time for people to try",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c006": {
+      "cueId": "L03.S01.c006",
+      "phrase": "what Noah suggests",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c007": {
+      "cueId": "L03.S01.c007",
+      "phrase": "the proposal in relation to the task",
+      "estimatedSeconds": 9.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c008": {
+      "cueId": "L03.S01.c008",
+      "phrase": "Noah names a possibility",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c009": {
+      "cueId": "L03.S01.c009",
+      "phrase": "keep that question open",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c010": {
+      "cueId": "L03.S01.c010",
+      "phrase": "His words identify a concern",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_d002": {
+      "cueId": "L03.S01.d002",
+      "phrase": "a short demonstration",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c011": {
+      "cueId": "L03.S01.c011",
+      "phrase": "if we need to check the whole contribution",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_d003": {
+      "cueId": "L03.S01.d003",
+      "phrase": "someone who misses a step might fall behind",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c012": {
+      "cueId": "L03.S01.c012",
+      "phrase": "without copying every word",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c013": {
+      "cueId": "L03.S01.c013",
+      "phrase": "choose one detail you would listen for",
+      "estimatedSeconds": 0.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S01_c014": {
+      "cueId": "L03.S01.c014",
+      "phrase": "without changing the speaker’s point",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

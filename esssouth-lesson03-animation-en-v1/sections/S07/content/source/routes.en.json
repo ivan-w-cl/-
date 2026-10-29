@@ -1,0 +1,116 @@
+{
+  "sectionId": "L03.S07",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L03.S07.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S07.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S07.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c007"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L03.S07.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S07.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S07.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S07.c007"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L03.S07",
+    "title": "Transfer and Review",
+    "budgetSeconds": 180,
+    "spokenCueCount": 10,
+    "watchCueCount": 10,
+    "watchWords": 330,
+    "estimatedWatchSeconds": 164.928,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 164.928,
+    "interactions": [],
+    "learningOutcome": "Select a relevant listening or response move in a new context, without applying a rigid sequence or implying assessed mastery."
+  }
+}

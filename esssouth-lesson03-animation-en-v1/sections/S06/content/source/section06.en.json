@@ -1,0 +1,451 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L03.S06",
+  "title": "Rehearse, Hear a Correction, and Adjust",
+  "budgetSeconds": 330,
+  "status": "New proposed Lesson 03 production script, 2026-10-29. No new animation or narration in this handoff.",
+  "learningOutcome": "Acknowledge a correction, update the understood concern, and offer a relevant next move without pretending that the learner has been recorded or assessed.",
+  "scenario": {
+    "kind": "Original fictional general discussion training",
+    "task": "Plan a 30-minute paper-folding workshop for beginners. Give participants an opportunity to try and ask questions.",
+    "conditions": [
+      "30 minutes total",
+      "One facilitator",
+      "Shared materials"
+    ],
+    "state": {
+      "workshopHeld": false,
+      "planAdopted": false,
+      "testedResults": null
+    },
+    "baselineQuote": "I would keep the demonstration brief, so people have time to try. I am worried that someone who misses a step could get left behind.",
+    "scope": "No institution, official test, observed learner performance or measured outcome is represented. S07 uses a fresh club-guide scenario."
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "You",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L03.S06.B01",
+      "title": "Understand Before You Repair",
+      "family": "formal_setup",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S06.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.d002"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.d003"
+        }
+      ]
+    },
+    {
+      "id": "L03.S06.B02",
+      "title": "Revise the Meaning First",
+      "family": "formal_correction_analysis",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S06.c003"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.c005"
+        },
+        {
+          "kind": "hold",
+          "id": "L03.S06.h101"
+        }
+      ]
+    },
+    {
+      "id": "L03.S06.B03",
+      "title": "A Private Spoken Attempt",
+      "family": "self_paced_rehearsal",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S06.c006"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.c007"
+        },
+        {
+          "kind": "interaction",
+          "id": "L03.I03"
+        }
+      ]
+    },
+    {
+      "id": "L03.S06.B04",
+      "title": "Review Without Assuming Performance",
+      "family": "shared_analysis",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S06.c008"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.c009"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.c010"
+        },
+        {
+          "kind": "hold",
+          "id": "L03.S06.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.c011"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L03.S06.c001": {
+      "id": "L03.S06.c001",
+      "speaker": "coach",
+      "text": "Even when you are listening carefully, you may respond to the wrong part of a sentence. A correction gives you another chance to understand. The useful move is to update your understanding before defending the reply you already gave.",
+      "visualEn": "Show a provisional Understanding card that can be edited, not a broken learner or red failure icon.",
+      "anchorHint": "update your understanding",
+      "screenLabelIds": [
+        "section.title",
+        "understanding.state"
+      ],
+      "audioId": "L03.S06.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.c002": {
+      "id": "L03.S06.c002",
+      "speaker": "coach",
+      "text": "We will use an authored example from the same workshop discussion. The group has thirty minutes and one facilitator. The following misunderstanding belongs to the example. It is not something we have heard you say.",
+      "visualEn": "Re-establish task facts and display Authored example before any cast appears. No learner recording or response data.",
+      "anchorHint": "not something we have heard you say",
+      "screenLabelIds": [
+        "scenario.label",
+        "task.time",
+        "task.staff"
+      ],
+      "audioId": "L03.S06.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.d001": {
+      "id": "L03.S06.d001",
+      "speaker": "noah",
+      "text": "If several pairs lose their place at once, one facilitator may not reach everyone.",
+      "visualEn": "Noah states a conditional support concern; show possible concurrent requests inside a clearly labelled If frame.",
+      "anchorHint": "one facilitator",
+      "screenLabelIds": [
+        "concern.help"
+      ],
+      "audioId": "L03.S06.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S06.d002": {
+      "id": "L03.S06.d002",
+      "speaker": "learner",
+      "text": "Could we put more paper on each table?",
+      "visualEn": "The model learner proposes additional paper. Show this in a separate material-supply lane, not as an action the real student chose.",
+      "anchorHint": "more paper",
+      "screenLabelIds": [
+        "misread.paper"
+      ],
+      "audioId": "L03.S06.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S06.d003": {
+      "id": "L03.S06.d003",
+      "speaker": "noah",
+      "text": "I mean help with the steps, not a shortage of paper.",
+      "visualEn": "Noah calmly points back to the help lane. Do not animate anger, shame or rejection of the learner as a person.",
+      "anchorHint": "help with the steps",
+      "screenLabelIds": [
+        "correction.help",
+        "correction.not"
+      ],
+      "audioId": "L03.S06.d003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S06.c003": {
+      "id": "L03.S06.c003",
+      "speaker": "coach",
+      "text": "The first reply treated the problem as a shortage of materials. Noah has now made the issue clearer: several pairs might need help with the instructions at the same time. More paper does not address that concern.",
+      "visualEn": "Move the provisional understanding card from the materials lane to the support lane. Preserve the quote so the reason for the move is visible.",
+      "anchorHint": "at the same time",
+      "screenLabelIds": [
+        "understanding.before",
+        "understanding.after"
+      ],
+      "audioId": "L03.S06.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.c004": {
+      "id": "L03.S06.c004",
+      "speaker": "coach",
+      "text": "A brief acknowledgement can mark the update. Thanks for clarifying is one option. It is useful only if the next words reflect the corrected meaning. You do not need a long apology, and you do not need to pretend that you agree with every proposed solution.",
+      "visualEn": "Show Thanks for clarifying as a small optional phrase attached to the updated meaning, never as a mandatory first box.",
+      "anchorHint": "corrected meaning",
+      "screenLabelIds": [
+        "repair.phrase",
+        "repair.rule"
+      ],
+      "audioId": "L03.S06.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.c005": {
+      "id": "L03.S06.c005",
+      "speaker": "coach",
+      "text": "Before you rehearse, identify the concern in your own words. What could happen if several pairs need help, and why does having one facilitator matter? Keep that issue separate from the question of how much paper is available.",
+      "visualEn": "Use the formal two-lane board and a blank thought area, with only the task and corrected quote retained.",
+      "anchorHint": "one facilitator matter",
+      "screenLabelIds": [
+        "reflection.meaning"
+      ],
+      "audioId": "L03.S06.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.c006": {
+      "id": "L03.S06.c006",
+      "speaker": "coach",
+      "text": "Now form a short English reply to Noah's correction. You could acknowledge the clarification, show which concern you now understand, and suggest or ask about one relevant next step. Use only the parts you need. This is private rehearsal: nothing is recorded or scored.",
+      "visualEn": "Show the exact correction and optional response resources, not a fill-in formula. No microphone, transcript field or assessment.",
+      "anchorHint": "Use only the parts you need",
+      "screenLabelIds": [
+        "rehearsal.prompt",
+        "rehearsal.private",
+        "rehearsal.resources"
+      ],
+      "audioId": "L03.S06.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.c007": {
+      "id": "L03.S06.c007",
+      "speaker": "coach",
+      "text": "In Watch mode, there is a short time to try before one possible reply is shown. In Practice mode, take as long as you need, then choose the model or skip it. Seeing the model does not mean that you have completed the speaking task.",
+      "visualEn": "Show a quiet mode note before entering the gate; mode-specific controls will be readable DOM outside the stage.",
+      "anchorHint": "does not mean that you have completed",
+      "screenLabelIds": [
+        "mode.watch",
+        "mode.practice"
+      ],
+      "audioId": "L03.S06.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.c008": {
+      "id": "L03.S06.c008",
+      "speaker": "coach",
+      "text": "Whether you tried a reply, watched the model, or skipped it, the same question is useful: did the response address the concern that was actually stated? You can check a reply you remember, or simply use the question for your next attempt.",
+      "visualEn": "Use neutral common continuation identical after model or skip. Do not show a copied model as the user's response.",
+      "anchorHint": "or skipped it",
+      "screenLabelIds": [
+        "review.actual"
+      ],
+      "audioId": "L03.S06.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.c009": {
+      "id": "L03.S06.c009",
+      "speaker": "coach",
+      "text": "Notice also whether the reply adds an assumption. Saying you are worried about not having enough materials would keep the original misunderstanding. Saying you want us to cancel the workshop would add a claim Noah did not make.",
+      "visualEn": "Display these as explicitly labelled inaccurate interpretations, each next to the exact correction. Avoid personality judgements.",
+      "anchorHint": "a claim Noah did not make",
+      "screenLabelIds": [
+        "review.misread",
+        "review.added"
+      ],
+      "audioId": "L03.S06.c009",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.c010": {
+      "id": "L03.S06.c010",
+      "speaker": "coach",
+      "text": "You may still disagree about what to do next. Understanding the concern does not commit you to a particular plan. For now, keep the two questions separate: what does the person mean, and what response would help the group examine it?",
+      "visualEn": "Reveal separate Understanding and Next move cards. This section does not expand into negotiation or winning a disagreement.",
+      "anchorHint": "does not commit you",
+      "screenLabelIds": [
+        "review.meaning",
+        "review.move"
+      ],
+      "audioId": "L03.S06.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.c011": {
+      "id": "L03.S06.c011",
+      "speaker": "coach",
+      "text": "If you want another attempt, return to the rehearsal and change one thing: make the corrected concern clearer, remove an added assumption, or make the next question more specific. You choose what needs attention. The player cannot judge a reply it has not heard.",
+      "visualEn": "End with optional review resources and normal transport; no forced retry, new recording or automatic advancement.",
+      "anchorHint": "cannot judge a reply it has not heard",
+      "screenLabelIds": [
+        "review.focus"
+      ],
+      "audioId": "L03.S06.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S06.d101": {
+      "id": "L03.S06.d101",
+      "speaker": "learner",
+      "text": "Thanks for clarifying. You mean several pairs may need help at the same time. Could we keep a step card visible, and ask which steps people need help with?",
+      "visualEn": "Label this One possible reply in its own model frame. Never replace the blank private response area. Link the words to the corrected concern; both proposals remain conditional.",
+      "anchorHint": "several pairs may need help",
+      "screenLabelIds": [
+        "model.label",
+        "model.update",
+        "model.next"
+      ],
+      "audioId": "L03.S06.d101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S06.d102": {
+      "id": "L03.S06.d102",
+      "speaker": "noah",
+      "text": "A card might help. What if someone still cannot follow it?",
+      "visualEn": "An authored follow-up question remains visibly within the model frame. It is not an AI reaction to the learner's unheard attempt.",
+      "anchorHint": "still cannot follow it",
+      "screenLabelIds": [
+        "model.remaining"
+      ],
+      "audioId": "L03.S06.d102",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S06.f101": {
+      "id": "L03.S06.f101",
+      "speaker": "coach",
+      "text": "This model acknowledges the correction and addresses help with the steps. Noah still has a question about someone who needs more support. The reply has opened a more relevant discussion; it has not guaranteed that everyone will get the help they need.",
+      "visualEn": "Return to a formal model-analysis board. Retain the remaining question. No learner score, praise for participation, mastered badge or solved outcome.",
+      "anchorHint": "has not guaranteed",
+      "screenLabelIds": [
+        "model.scope"
+      ],
+      "audioId": "L03.S06.f101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    }
+  },
+  "holds": {
+    "L03.S06.h101": {
+      "kind": "hold",
+      "id": "L03.S06.h101",
+      "seconds": 10,
+      "purpose": "Privately identify the corrected meaning.",
+      "visualEn": "Private area stays blank; no automatic inference about understanding.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L03.S06.h102": {
+      "kind": "hold",
+      "id": "L03.S06.h102",
+      "seconds": 8,
+      "purpose": "Choose one feature to check privately.",
+      "visualEn": "Leave both questions visible without ticking either or claiming mastery.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {
+    "L03.I03": {
+      "kind": "private_rehearsal",
+      "prompt": "Respond to Noah's correction in a short English reply.",
+      "watchThinkSeconds": 35,
+      "watchPath": "model",
+      "rejoinCue": "L03.S06.c008",
+      "model": [
+        {
+          "kind": "line",
+          "id": "L03.S06.d101"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.d102"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S06.f101"
+        }
+      ],
+      "actions": [
+        "show_model",
+        "skip",
+        "retry",
+        "continue"
+      ],
+      "baseline": {
+        "responseText": null,
+        "modelViewed": false,
+        "speakingObserved": false,
+        "completionAssumed": false,
+        "proposalAdopted": false
+      },
+      "skipNote": "No response was recorded or assessed. Continue to the shared explanation.",
+      "practiceTimeout": null,
+      "id": "L03.I03",
+      "recordAudio": false,
+      "automaticAssessment": false,
+      "stateStorage": "memory only",
+      "skipIsUnanswered": true
+    }
+  },
+  "boundary": "Use formal explanation and short examples. No perpetual three-person scene; no school, exam, policy or assessed-learner claim."
+}

@@ -1,0 +1,771 @@
+{
+ "section": "S01",
+ "ranAt": "2026-10-29T15:11:52.128Z",
+ "environment": {
+  "os": "linux 6.18.44-fc-v185",
+  "browser": "Chromium 153.0.8010.12",
+  "playwright": "1.63.0",
+  "node": "v22.22.0",
+  "fonts": "Inter installed (first in the stack); the approved reference frames were rendered with Segoe UI",
+  "viewportsAreEmulated": true
+ },
+ "checks": [
+  {
+   "name": "page loads without errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no layout / overflow warnings from the engine (all routes, settled states)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no remote requests (offline)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "silent: no media elements, no microphone request",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "stage accessible name names Lesson 03 and this section",
+   "pass": true,
+   "detail": "Lesson 03, Section 3.1, Hear the View, Reason, and Concern: animation stage"
+  },
+  {
+   "name": "captions reproduce exact cue words (every route)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every supplied cue is reachable in some route",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L03.S01.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L03.S01.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L03.S01.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L03.S01.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every character line shows its exact words in a visible bubble near its end",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "deterministic: same frame after different seek histories",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "rate 1×: clock advances at 1× (measured 0.991)",
+   "pass": true,
+   "detail": 0.9906018796240138
+  },
+  {
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.247)",
+   "pass": true,
+   "detail": 1.2469170777230094
+  },
+  {
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.490)",
+   "pass": true,
+   "detail": 1.4897020595880357
+  },
+  {
+   "name": "rate 2×: clock advances at 2× (measured 1.997)",
+   "pass": true,
+   "detail": 1.996806812134237
+  },
+  {
+   "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
+   "pass": true,
+   "detail": {
+    "a": "L03.S01.c004",
+    "off1": 2,
+    "b": "L03.S01.c004",
+    "off2": 2,
+    "mode": "watch"
+   }
+  },
+  {
+   "name": "restart returns to the section start and plays",
+   "pass": true,
+   "detail": {
+    "t": 0.19319999999995344,
+    "playing": true,
+    "gate": "none",
+    "choice": null
+   }
+  },
+  {
+   "name": "keyboard: Space plays and pauses",
+   "pass": true,
+   "detail": {
+    "k1": true,
+    "k2": false
+   }
+  },
+  {
+   "name": "keyboard: Tab reaches mode and playback controls with a visible focus outline",
+   "pass": true,
+   "detail": [
+    {
+     "tag": "BUTTON",
+     "id": "watch",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "practice",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "play",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "restart",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "scrub",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "cap",
+     "outline": true
+    }
+   ]
+  },
+  {
+   "name": "captions toggle hides the stage caption; DOM caption carries the current words",
+   "pass": true,
+   "detail": {
+    "on": 1,
+    "off": 0,
+    "dom": "CoachA reply can sound relevant because it mentions the same topic,"
+   }
+  },
+  {
+   "name": "no runtime errors during transport tests",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: shared reflection route identical to Watch (no gate in this section)",
+   "pass": true,
+   "detail": {
+    "route": "practice:main",
+    "same": true
+   }
+  },
+  {
+   "name": "retime: Watch duration changes by the expected clip delta (8.100 s)",
+   "pass": true,
+   "detail": {
+    "prod": 224.59299999999993,
+    "retimed": 232.69299999999993
+   }
+  },
+  {
+   "name": "retime: step order unchanged in every route",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: holds keep their fixture length; think holds unchanged",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier)",
+   "pass": true,
+   "detail": [
+    {
+     "name": "a_L03_S01_c001",
+     "ratio": 1.349990278047832,
+     "m": 1.35
+    },
+    {
+     "name": "a_L03_S01_d001",
+     "ratio": 1.3500072918185795,
+     "m": 1.35
+    },
+    {
+     "name": "s01_sameTopic",
+     "ratio": 1.3499999999999999,
+     "m": 1.35
+    },
+    {
+     "name": "s01_missPoint",
+     "ratio": 1.349990278047832,
+     "m": 1.35
+    },
+    {
+     "name": "s01_brief",
+     "ratio": 1.3500583430571762,
+     "m": 1.35
+    },
+    {
+     "name": "s01_try",
+     "ratio": 1.3500129634430904,
+     "m": 1.35
+    }
+   ]
+  },
+  {
+   "name": "retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: no layout warnings",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 41,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 41,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 41,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 41,
+    "domcapFs": 16,
+    "panel": false
+   }
+  }
+ ],
+ "failures": [],
+ "notes": [
+  "Text expansion is a stress report, not a pass/fail gate: overflow at ×1.3/×1.6 is reported by the fitter (never clipped silently) and needs layout work in the localization pass where it occurs."
+ ],
+ "routes": {
+  "watch": 224.593,
+  "practice:main": 224.593
+ },
+ "anchors": [
+  {
+   "name": "a_L03_S01_c001",
+   "cue": "L03.S01.c001",
+   "phrase": "what their contribution actually contains",
+   "localSec": 10.286,
+   "suppliedSec": 10.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c002",
+   "cue": "L03.S01.c002",
+   "phrase": "an opportunity to try and ask questions",
+   "localSec": 10.714,
+   "suppliedSec": 10.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_d001",
+   "cue": "L03.S01.d001",
+   "phrase": "someone who misses a step could get left behind",
+   "localSec": 6.857,
+   "suppliedSec": 6.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c003",
+   "cue": "L03.S01.c003",
+   "phrase": "a proposal, explains its purpose, and raises a concern",
+   "localSec": 0.857,
+   "suppliedSec": 0.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c004",
+   "cue": "L03.S01.c004",
+   "phrase": "does not mean removing it",
+   "localSec": 3.857,
+   "suppliedSec": 3.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c005",
+   "cue": "L03.S01.c005",
+   "phrase": "leave time for people to try",
+   "localSec": 1.714,
+   "suppliedSec": 1.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c006",
+   "cue": "L03.S01.c006",
+   "phrase": "what Noah suggests",
+   "localSec": 4.286,
+   "suppliedSec": 4.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c007",
+   "cue": "L03.S01.c007",
+   "phrase": "the proposal in relation to the task",
+   "localSec": 9,
+   "suppliedSec": 9,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c008",
+   "cue": "L03.S01.c008",
+   "phrase": "Noah names a possibility",
+   "localSec": 5.571,
+   "suppliedSec": 5.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c009",
+   "cue": "L03.S01.c009",
+   "phrase": "keep that question open",
+   "localSec": 9.429,
+   "suppliedSec": 9.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c010",
+   "cue": "L03.S01.c010",
+   "phrase": "His words identify a concern",
+   "localSec": 5.143,
+   "suppliedSec": 5.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_d002",
+   "cue": "L03.S01.d002",
+   "phrase": "a short demonstration",
+   "localSec": 0.857,
+   "suppliedSec": 0.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c011",
+   "cue": "L03.S01.c011",
+   "phrase": "if we need to check the whole contribution",
+   "localSec": 10.286,
+   "suppliedSec": 10.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_d003",
+   "cue": "L03.S01.d003",
+   "phrase": "someone who misses a step might fall behind",
+   "localSec": 6.857,
+   "suppliedSec": 6.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c012",
+   "cue": "L03.S01.c012",
+   "phrase": "without copying every word",
+   "localSec": 3,
+   "suppliedSec": 3,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c013",
+   "cue": "L03.S01.c013",
+   "phrase": "choose one detail you would listen for",
+   "localSec": 0.429,
+   "suppliedSec": 0.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L03_S01_c014",
+   "cue": "L03.S01.c014",
+   "phrase": "without changing the speaker’s point",
+   "localSec": 9.857,
+   "suppliedSec": 9.857,
+   "source": "supplied semantic anchor"
+  }
+ ],
+ "layoutAudit": {
+  "watch": [],
+  "practice:main": []
+ },
+ "stills": [
+  "S01_watch_B01-open_t1.20.jpg",
+  "S01_watch_B01-mid_t25.77.jpg",
+  "S01_watch_B01-end_t51.24.jpg",
+  "S01_watch_B02-open_t52.74.jpg",
+  "S01_watch_B02-mid_t80.89.jpg",
+  "S01_watch_B02-end_t109.93.jpg",
+  "S01_watch_B03-open_t111.43.jpg",
+  "S01_watch_B03-mid_t130.90.jpg",
+  "S01_watch_B03-end_t151.26.jpg",
+  "S01_watch_B04-open_t152.76.jpg",
+  "S01_watch_B04-mid_t171.09.jpg",
+  "S01_watch_B04-end_t190.31.jpg",
+  "S01_watch_B05-open_t191.81.jpg",
+  "S01_watch_B05-mid_t207.60.jpg",
+  "S01_watch_B05-end_t224.29.jpg",
+  "S01_watch_trans-c002_t13.13.jpg",
+  "S01_watch_trans-d001_t29.34.jpg",
+  "S01_watch_trans-c003_t40.40.jpg",
+  "S01_watch_trans-c004_t51.89.jpg",
+  "S01_watch_trans-c005_t65.10.jpg",
+  "S01_watch_trans-c006_t78.31.jpg",
+  "S01_watch_trans-h101_t90.23.jpg",
+  "S01_watch_trans-c007_t98.23.jpg",
+  "S01_watch_trans-c008_t110.58.jpg",
+  "S01_watch_trans-c009_t124.21.jpg",
+  "S01_watch_trans-c010_t137.85.jpg",
+  "S01_watch_trans-d002_t151.91.jpg",
+  "S01_watch_trans-c011_t154.76.jpg",
+  "S01_watch_trans-d003_t168.83.jpg",
+  "S01_watch_trans-c012_t179.46.jpg",
+  "S01_watch_trans-c013_t190.96.jpg",
+  "S01_watch_trans-h102_t204.59.jpg",
+  "S01_watch_trans-c014_t212.59.jpg",
+  "S01_reduced-motion_t110.53.jpg",
+  "S01_retime-demo_c001-end_t16.63.jpg",
+  "S01_retime-demo_d001-end_t47.65.jpg",
+  "S01_text-x1.3_t109.83.jpg",
+  "S01_text-x1.6_t109.83.jpg",
+  "S01_text-long_t109.83.jpg",
+  "S01_viewport-390x844.png",
+  "S01_viewport-820x1180.png",
+  "S01_viewport-1180x820.png",
+  "S01_viewport-1366x768.png"
+ ],
+ "textExpansion": {
+  "x1.3": {
+   "warnings": 1,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "limit",
+     "score": "watch",
+     "t": 57.54,
+     "text": "Brief does not specify an exact duration Brief does not"
+    }
+   ],
+   "errors": []
+  },
+  "x1.6": {
+   "warnings": 8,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "header.section",
+     "text": "Hear the View, Reason, and Concern Hear the View, Reason,",
+     "atMinFs": 24,
+     "detail": "section title reaches the header chips"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "frameLbl",
+     "score": "watch",
+     "t": 12.78,
+     "text": "Fictional planning scenario; no workshop held Fictional planning scenario;"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "res",
+     "score": "watch",
+     "t": 29.25,
+     "text": "One facilitator · shared materials One facilitator · shared"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.quote",
+     "token": "quote",
+     "score": "watch",
+     "t": 151.76,
+     "text": "I would keep the demonstration brief, so people have time to try. I am worried t"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "limit",
+     "score": "watch",
+     "t": 57.54,
+     "text": "Brief does not specify an exact duration Brief does not specify an"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "bInf",
+     "score": "watch",
+     "t": 137.7,
+     "text": "Do not add an unstated motive Do not add an unstated"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hSum",
+     "score": "watch",
+     "t": 179.51,
+     "text": "A broader check of the meaning A broader check of"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.summary",
+     "token": "sum2",
+     "score": "watch",
+     "t": 179.71,
+     "text": "You want a brief demonstration so people have time to try, and you are concerned"
+    }
+   ],
+   "errors": []
+  },
+  "long": {
+   "warnings": 16,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "header.section",
+     "text": "Hear the View, Unbreakablelongtokenforlayoutchecking Reason, and Concern",
+     "atMinFs": 24,
+     "detail": "section title reaches the header chips"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "topic",
+     "score": "watch",
+     "t": 3,
+     "text": "Same topic Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 4.94,
+     "text": "The same topic is Unbreakablelongtokenforlayoutchecking not always the same poin"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "frameLbl",
+     "score": "watch",
+     "t": 12.78,
+     "text": "Fictional planning scenario; Unbreakablelongtokenforlayoutchecking no workshop h"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "res",
+     "score": "watch",
+     "t": 18.78,
+     "text": "One facilitator Unbreakablelongtokenforlayoutchecking · shared materials"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "fR",
+     "score": "watch",
+     "t": 171.05,
+     "text": "so people have Unbreakablelongtokenforlayoutchecking time to try"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hV",
+     "score": "watch",
+     "t": 110.33,
+     "text": "View Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "limit",
+     "score": "watch",
+     "t": 57.54,
+     "text": "Brief does not Unbreakablelongtokenforlayoutchecking specify an exact duration"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hR",
+     "score": "watch",
+     "t": 64.9,
+     "text": "Reason Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "aimR",
+     "score": "watch",
+     "t": 69.04,
+     "text": "Aim: chances to Unbreakablelongtokenforlayoutchecking try and ask questions"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hC",
+     "score": "watch",
+     "t": 110.73,
+     "text": "Concern Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "bSaid",
+     "score": "watch",
+     "t": 137.65,
+     "text": "What Unbreakablelongtokenforlayoutchecking he said"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "bInf",
+     "score": "watch",
+     "t": 137.7,
+     "text": "Do not add Unbreakablelongtokenforlayoutchecking an unstated motive"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hSum",
+     "score": "watch",
+     "t": 179.51,
+     "text": "A broader check Unbreakablelongtokenforlayoutchecking of the meaning"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.summary",
+     "token": "sum2",
+     "score": "watch",
+     "t": 179.71,
+     "text": "You want a brief demonstration so people have time to try, and Unbreakablelongto"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "blank",
+     "score": "watch",
+     "t": 191.04,
+     "text": "What would you Unbreakablelongtokenforlayoutchecking listen for before replying?"
+    }
+   ],
+   "errors": []
+  }
+ },
+ "viewports": [
+  {
+   "viewport": "phone 390x844",
+   "hscroll": false,
+   "small": [],
+   "domcap": 41,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet 820x1180",
+   "hscroll": false,
+   "small": [],
+   "domcap": 41,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet landscape 1180x820",
+   "hscroll": false,
+   "small": [],
+   "domcap": 41,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "desktop 1366x768",
+   "hscroll": false,
+   "small": [],
+   "domcap": 41,
+   "domcapFs": 16,
+   "panel": false
+  }
+ ],
+ "summary": {
+  "checks": 39,
+  "failed": 0,
+  "stills": 43
+ }
+}

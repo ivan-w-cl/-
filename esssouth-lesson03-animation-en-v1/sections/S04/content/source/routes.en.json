@@ -1,0 +1,172 @@
+{
+  "sectionId": "L03.S04",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L03.S04.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c004"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S04.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.d004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S04.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.d005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c012"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L03.S04.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c004"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S04.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.d004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S04.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.d005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S04.c012"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L03.S04",
+    "title": "Agree and Add Something Relevant",
+    "budgetSeconds": 270,
+    "spokenCueCount": 17,
+    "watchCueCount": 17,
+    "watchWords": 539,
+    "estimatedWatchSeconds": 254.951,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 254.951,
+    "interactions": [],
+    "learningOutcome": "Make clear which part of a contribution you support, then add a relevant detail only if the discussion needs one."
+  }
+}

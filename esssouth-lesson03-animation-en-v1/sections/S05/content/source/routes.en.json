@@ -1,0 +1,164 @@
+{
+  "sectionId": "L03.S05",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L03.S05.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c004"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S05.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S05.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.d004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c012"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L03.S05.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c004"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S05.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S05.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.d004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S05.c012"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L03.S05",
+    "title": "Respond to the Concern Within the Task",
+    "budgetSeconds": 270,
+    "spokenCueCount": 16,
+    "watchCueCount": 16,
+    "watchWords": 526,
+    "estimatedWatchSeconds": 250.029,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 250.029,
+    "interactions": [],
+    "learningOutcome": "Address the actual concern without losing the shared objective or treating a partial response as a complete solution."
+  }
+}

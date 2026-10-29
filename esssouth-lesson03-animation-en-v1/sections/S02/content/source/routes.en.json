@@ -1,0 +1,196 @@
+{
+  "sectionId": "L03.S02",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L03.S02.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S02.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c008"
+    },
+    {
+      "kind": "watch_hold",
+      "id": "L03.I01.watchThink",
+      "seconds": 8
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.d201"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.d202"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.f201"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c012"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c013"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c014"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S02.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c015"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c016"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c017"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L03.S02.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S02.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c008"
+    },
+    {
+      "kind": "gate",
+      "id": "L03.I01",
+      "seconds": null
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c012"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c013"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c014"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S02.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c015"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c016"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S02.c017"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L03.S02",
+    "title": "Check Your Understanding",
+    "budgetSeconds": 270,
+    "spokenCueCount": 26,
+    "watchCueCount": 20,
+    "watchWords": 581,
+    "estimatedWatchSeconds": 280.0,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 237.521,
+    "interactions": [
+      "L03.I01"
+    ],
+    "learningOutcome": "Use a brief, faithful paraphrase when a check is useful; retain the speaker’s purpose and uncertainty without adding a stronger claim."
+  }
+}

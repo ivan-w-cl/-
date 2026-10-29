@@ -1,0 +1,66 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L03.S07",
+  "anchors": {
+    "a_L03_S07_c001": {
+      "cueId": "L03.S07.c001",
+      "phrase": "No version has been chosen",
+      "estimatedSeconds": 17.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S07_d001": {
+      "cueId": "L03.S07.d001",
+      "phrase": "some new members may not know the terms",
+      "estimatedSeconds": 3.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S07_c002": {
+      "cueId": "L03.S07.c002",
+      "phrase": "unless she says so",
+      "estimatedSeconds": 17.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S07_c003": {
+      "cueId": "L03.S07.c003",
+      "phrase": "Choose one move",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S07_d002": {
+      "cueId": "L03.S07.d002",
+      "phrase": "Which terms",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S07_d003": {
+      "cueId": "L03.S07.d003",
+      "phrase": "activity groups",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S07_c004": {
+      "cueId": "L03.S07.c004",
+      "phrase": "does not settle",
+      "estimatedSeconds": 7.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S07_c005": {
+      "cueId": "L03.S07.c005",
+      "phrase": "if you formed one",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S07_c006": {
+      "cueId": "L03.S07.c006",
+      "phrase": "choose what is needed",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S07_c007": {
+      "cueId": "L03.S07.c007",
+      "phrase": "which part",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

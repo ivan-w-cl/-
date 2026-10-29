@@ -1,0 +1,405 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L03.S05",
+  "title": "Respond to the Concern Within the Task",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 03 production script, 2026-10-29. No new animation or narration in this handoff.",
+  "learningOutcome": "Address the actual concern without losing the shared objective or treating a partial response as a complete solution.",
+  "scenario": {
+    "kind": "Original fictional general discussion training",
+    "task": "Plan a 30-minute paper-folding workshop for beginners. Give participants an opportunity to try and ask questions.",
+    "conditions": [
+      "30 minutes total",
+      "One facilitator",
+      "Shared materials"
+    ],
+    "state": {
+      "workshopHeld": false,
+      "planAdopted": false,
+      "testedResults": null
+    },
+    "baselineQuote": "I would keep the demonstration brief, so people have time to try. I am worried that someone who misses a step could get left behind.",
+    "scope": "No institution, official test, observed learner performance or measured outcome is represented. S07 uses a fresh club-guide scenario."
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "You",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L03.S05.B01",
+      "title": "A Useful Suggestion Has a Limit",
+      "family": "task_reentry",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S05.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.d001"
+        }
+      ]
+    },
+    {
+      "id": "L03.S05.B02",
+      "title": "Locate the Remaining Issue",
+      "family": "precise_concern_map",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S05.c003"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.c004"
+        },
+        {
+          "kind": "hold",
+          "id": "L03.S05.h101"
+        }
+      ]
+    },
+    {
+      "id": "L03.S05.B03",
+      "title": "Make a Response Specific Enough to Examine",
+      "family": "proposal_and_consequence",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S05.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.d002"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.d003"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.c006"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.c007"
+        }
+      ]
+    },
+    {
+      "id": "L03.S05.B04",
+      "title": "Retain the Shared Constraints",
+      "family": "constraint_check",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S05.c008"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.c009"
+        }
+      ]
+    },
+    {
+      "id": "L03.S05.B05",
+      "title": "Choose a Relevant Next Question",
+      "family": "private_retrieval_and_close",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L03.S05.c010"
+        },
+        {
+          "kind": "hold",
+          "id": "L03.S05.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.d004"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L03.S05.c012"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L03.S05.c001": {
+      "id": "L03.S05.c001",
+      "speaker": "coach",
+      "text": "A response can connect to someone's concern and still leave work to do. The next step is to notice exactly what remains unanswered, instead of treating the suggestion as either a complete solution or a total failure.",
+      "visualEn": "Start with the proposed step card and two distinct labels: possible support and unresolved issue. No cast yet.",
+      "anchorHint": "exactly what remains unanswered",
+      "screenLabelIds": [
+        "section.title",
+        "status.partial",
+        "status.open"
+      ],
+      "audioId": "L03.S05.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.c002": {
+      "id": "L03.S05.c002",
+      "speaker": "coach",
+      "text": "The workshop plan still has thirty minutes and one facilitator. A visible step card has been suggested to help beginners find their place. It has not been tested or adopted. Listen to the concern Noah raises about the plan.",
+      "visualEn": "Restore the time and facilitator constraints around the same proposal. Mark the proposal untried and unadopted.",
+      "anchorHint": "has not been tested or adopted",
+      "screenLabelIds": [
+        "task.time",
+        "task.staff",
+        "proposal.status"
+      ],
+      "audioId": "L03.S05.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.d001": {
+      "id": "L03.S05.d001",
+      "speaker": "noah",
+      "text": "A card might help, but if several pairs need help at once, one facilitator may not reach everyone.",
+      "visualEn": "Short scenario: Noah presents a conditional concern. Show a schematic of several possible help requests inside an If frame, not observed participants waiting.",
+      "anchorHint": "if several pairs need help at once",
+      "screenLabelIds": [
+        "concern.if",
+        "concern.limit"
+      ],
+      "audioId": "L03.S05.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S05.c003": {
+      "id": "L03.S05.c003",
+      "speaker": "coach",
+      "text": "Noah has not said that cards are useless. He has identified a situation in which some people might still need direct help. The concern is how one facilitator would handle several requests at the same time.",
+      "visualEn": "Underline might help in the exact quote, then isolate the conditional clause. Keep the useful part and limit visible together.",
+      "anchorHint": "several requests at the same time",
+      "screenLabelIds": [
+        "meaning.support",
+        "meaning.remaining"
+      ],
+      "audioId": "L03.S05.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.c004": {
+      "id": "L03.S05.c004",
+      "speaker": "coach",
+      "text": "Saying the card will be very clear does not by itself answer that situation. Neither does repeating that practice is important. Those points may be relevant, but the remaining question is about access to help.",
+      "visualEn": "Place two candidate responses near, but not connected to, the access-to-help question; do not ridicule either speaker.",
+      "anchorHint": "access to help",
+      "screenLabelIds": [
+        "response.clear",
+        "response.practice",
+        "question.help"
+      ],
+      "audioId": "L03.S05.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.c005": {
+      "id": "L03.S05.c005",
+      "speaker": "coach",
+      "text": "A more targeted response offers a possible way to handle requests, or asks for information needed to compare ways. Here is one proposal. It is a starting point for discussion, not a claim that the issue has been solved.",
+      "visualEn": "Open a possible-next-step space beside the concern. Use a dashed arrow and retain the word Possible.",
+      "anchorHint": "not a claim that the issue has been solved",
+      "screenLabelIds": [
+        "next.label"
+      ],
+      "audioId": "L03.S05.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.d002": {
+      "id": "L03.S05.d002",
+      "speaker": "learner",
+      "text": "Could we pause after the first try and collect questions, so the facilitator can address a step that several pairs found difficult?",
+      "visualEn": "The learner proposes a shared check after a first attempt. The planned pause stays inside the thirty-minute rail; do not invent its length.",
+      "anchorHint": "collect questions",
+      "screenLabelIds": [
+        "proposal.check",
+        "proposal.time"
+      ],
+      "audioId": "L03.S05.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S05.d003": {
+      "id": "L03.S05.d003",
+      "speaker": "maya",
+      "text": "That could help with a shared question. What if just one pair is stuck before the pause?",
+      "visualEn": "Maya acknowledges the stated scope, then adds a specific unresolved case. No frown suggesting personal conflict.",
+      "anchorHint": "before the pause",
+      "screenLabelIds": [
+        "question.early"
+      ],
+      "audioId": "L03.S05.d003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S05.c006": {
+      "id": "L03.S05.c006",
+      "speaker": "coach",
+      "text": "The shared check might address a difficulty that several pairs have in common. Maya points out a different case: someone who needs help earlier. Both can be true. A useful response does not have to remove every possible difficulty in one sentence.",
+      "visualEn": "Split the help diagram into common questions at the check and earlier individual help. Keep only the first connected to the proposal, with a conditional line.",
+      "anchorHint": "Both can be true",
+      "screenLabelIds": [
+        "scope.shared",
+        "scope.early"
+      ],
+      "audioId": "L03.S05.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.c007": {
+      "id": "L03.S05.c007",
+      "speaker": "coach",
+      "text": "You can now name the open question more precisely. What would participants do while waiting, and how would they signal that they need help? Those details need discussion. We do not yet know which arrangement would work best.",
+      "visualEn": "Reveal these questions beneath the earlier-help case without drawing invented solutions or claimed outcomes.",
+      "anchorHint": "do not yet know",
+      "screenLabelIds": [
+        "question.wait",
+        "question.signal"
+      ],
+      "audioId": "L03.S05.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.c008": {
+      "id": "L03.S05.c008",
+      "speaker": "coach",
+      "text": "Keep the task visible when you respond. Adding another facilitator would change the stated conditions; making the demonstration fill the session would remove time to try. A proposal must be checked against the resources and the purpose, not only against one concern.",
+      "visualEn": "Show the fixed one-facilitator card and a thirty-minute rail. Place these counterfactual changes in a separate comparison lane, not the actual plan.",
+      "anchorHint": "resources and the purpose",
+      "screenLabelIds": [
+        "constraint.people",
+        "constraint.try"
+      ],
+      "audioId": "L03.S05.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.c009": {
+      "id": "L03.S05.c009",
+      "speaker": "coach",
+      "text": "This does not mean a constraint can never be questioned. If the group is allowed to change it, say that explicitly and find out whether it is possible. Do not silently assume a resource that the task has not provided.",
+      "visualEn": "Keep a small conditional Ask whether change is possible note separate from the unchanged actual task.",
+      "anchorHint": "Do not silently assume",
+      "screenLabelIds": [
+        "constraint.change"
+      ],
+      "audioId": "L03.S05.c009",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.c010": {
+      "id": "L03.S05.c010",
+      "speaker": "coach",
+      "text": "Look again at the concern about someone needing help before the shared check. Privately form one question that would help the group examine that situation. It should seek information you still need, rather than repeat information already on screen.",
+      "visualEn": "Show the exact unresolved case and a blank question area. Hide the two previously displayed question models.",
+      "anchorHint": "information you still need",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L03.S05.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.d004": {
+      "id": "L03.S05.d004",
+      "speaker": "learner",
+      "text": "What could a pair do if they miss a step before we stop for questions?",
+      "visualEn": "Show a separate One possible question card. Keep all proposals undecided.",
+      "anchorHint": "before we stop for questions",
+      "screenLabelIds": [
+        "model.label"
+      ],
+      "audioId": "L03.S05.d004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L03.S05.c011": {
+      "id": "L03.S05.c011",
+      "speaker": "coach",
+      "text": "That question stays with the remaining difficulty and gives the group something specific to work on. A different question could be useful too. Check which uncertainty your question would reduce, and keep the answer open until someone provides it.",
+      "visualEn": "Connect the model question to the exact unresolved case with a neutral relationship line, not a solved badge.",
+      "anchorHint": "keep the answer open",
+      "screenLabelIds": [
+        "review.check"
+      ],
+      "audioId": "L03.S05.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L03.S05.c012": {
+      "id": "L03.S05.c012",
+      "speaker": "coach",
+      "text": "Responding well includes noticing the limits of your own response. In the next section, we will practise updating a reply when someone says we understood the wrong issue.",
+      "visualEn": "Let the unresolved issue settle and introduce a small Understanding can be revised label.",
+      "anchorHint": "understood the wrong issue",
+      "screenLabelIds": [
+        "recap"
+      ],
+      "audioId": "L03.S05.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    }
+  },
+  "holds": {
+    "L03.S05.h101": {
+      "kind": "hold",
+      "id": "L03.S05.h101",
+      "seconds": 7,
+      "purpose": "Separate relevant background from the unanswered concern.",
+      "visualEn": "Settle the help question in the center; keep the other two cards small but readable.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L03.S05.h102": {
+      "kind": "hold",
+      "id": "L03.S05.h102",
+      "seconds": 12,
+      "purpose": "Form one question about the remaining concern.",
+      "visualEn": "Keep the private area blank and do not imply a response is recorded.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {},
+  "boundary": "Use formal explanation and short examples. No perpetual three-person scene; no school, exam, policy or assessed-learner claim."
+}

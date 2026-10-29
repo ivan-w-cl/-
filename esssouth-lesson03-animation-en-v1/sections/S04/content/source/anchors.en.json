@@ -1,0 +1,108 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L03.S04",
+  "anchors": {
+    "a_L03_S04_c001": {
+      "cueId": "L03.S04.c001",
+      "phrase": "brief confirmation is enough",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c002": {
+      "cueId": "L03.S04.c002",
+      "phrase": "has not chosen a plan",
+      "estimatedSeconds": 14.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_d001": {
+      "cueId": "L03.S04.d001",
+      "phrase": "someone who misses a step",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c003": {
+      "cueId": "L03.S04.c003",
+      "phrase": "name the specific point",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_d002": {
+      "cueId": "L03.S04.d002",
+      "phrase": "time to try",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c004": {
+      "cueId": "L03.S04.c004",
+      "phrase": "remains open",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c005": {
+      "cueId": "L03.S04.c005",
+      "phrase": "still needs to decide",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_d003": {
+      "cueId": "L03.S04.d003",
+      "phrase": "check where they are",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_d004": {
+      "cueId": "L03.S04.d004",
+      "phrase": "clear enough",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c006": {
+      "cueId": "L03.S04.c006",
+      "phrase": "not evidence that the card will work",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c007": {
+      "cueId": "L03.S04.c007",
+      "phrase": "when publicity is the question",
+      "estimatedSeconds": 17.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c008": {
+      "cueId": "L03.S04.c008",
+      "phrase": "depends on the moment",
+      "estimatedSeconds": 16.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c009": {
+      "cueId": "L03.S04.c009",
+      "phrase": "do not have to do all three",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c010": {
+      "cueId": "L03.S04.c010",
+      "phrase": "one relevant detail",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_d005": {
+      "cueId": "L03.S04.d005",
+      "phrase": "Could we check",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c011": {
+      "cueId": "L03.S04.c011",
+      "phrase": "not whether you used the same words",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S04_c012": {
+      "cueId": "L03.S04.c012",
+      "phrase": "does not fully answer",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

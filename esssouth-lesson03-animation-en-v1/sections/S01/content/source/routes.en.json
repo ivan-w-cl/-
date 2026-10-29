@@ -1,0 +1,172 @@
+{
+  "sectionId": "L03.S01",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L03.S01.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S01.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c012"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c013"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S01.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c014"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L03.S01.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S01.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c012"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c013"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S01.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S01.c014"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L03.S01",
+    "title": "Hear the View, Reason, and Concern",
+    "budgetSeconds": 210,
+    "spokenCueCount": 17,
+    "watchCueCount": 17,
+    "watchWords": 472,
+    "estimatedWatchSeconds": 224.593,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 224.593,
+    "interactions": [],
+    "learningOutcome": "Identify what a speaker proposes, the reason offered and an expressed concern; preserve uncertainty and separate what was said from interpretation."
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "sectionId": "L03.S02",
+  "status": "Empty future audio slots. This review must remain silent.",
+  "slots": {
+    "L03.S02.c001": {
+      "audioId": "L03.S02.c001",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c002": {
+      "audioId": "L03.S02.c002",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.d001": {
+      "audioId": "L03.S02.d001",
+      "speaker": "noah",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c003": {
+      "audioId": "L03.S02.c003",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c004": {
+      "audioId": "L03.S02.c004",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c005": {
+      "audioId": "L03.S02.c005",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c006": {
+      "audioId": "L03.S02.c006",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c007": {
+      "audioId": "L03.S02.c007",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c008": {
+      "audioId": "L03.S02.c008",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c010": {
+      "audioId": "L03.S02.c010",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c011": {
+      "audioId": "L03.S02.c011",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c012": {
+      "audioId": "L03.S02.c012",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c013": {
+      "audioId": "L03.S02.c013",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c014": {
+      "audioId": "L03.S02.c014",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c015": {
+      "audioId": "L03.S02.c015",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c016": {
+      "audioId": "L03.S02.c016",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.c017": {
+      "audioId": "L03.S02.c017",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.d101": {
+      "audioId": "L03.S02.d101",
+      "speaker": "learner",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.d102": {
+      "audioId": "L03.S02.d102",
+      "speaker": "noah",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.f101": {
+      "audioId": "L03.S02.f101",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.d201": {
+      "audioId": "L03.S02.d201",
+      "speaker": "learner",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.d202": {
+      "audioId": "L03.S02.d202",
+      "speaker": "noah",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.f201": {
+      "audioId": "L03.S02.f201",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.d301": {
+      "audioId": "L03.S02.d301",
+      "speaker": "learner",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.d302": {
+      "audioId": "L03.S02.d302",
+      "speaker": "noah",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L03.S02.f301": {
+      "audioId": "L03.S02.f301",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    }
+  }
+}

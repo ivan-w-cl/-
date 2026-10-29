@@ -1,0 +1,108 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L03.S06",
+  "anchors": {
+    "a_L03_S06_c001": {
+      "cueId": "L03.S06.c001",
+      "phrase": "update your understanding",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_c002": {
+      "cueId": "L03.S06.c002",
+      "phrase": "not something we have heard you say",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_d001": {
+      "cueId": "L03.S06.d001",
+      "phrase": "one facilitator",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_d002": {
+      "cueId": "L03.S06.d002",
+      "phrase": "more paper",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_d003": {
+      "cueId": "L03.S06.d003",
+      "phrase": "help with the steps",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_c003": {
+      "cueId": "L03.S06.c003",
+      "phrase": "at the same time",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_c004": {
+      "cueId": "L03.S06.c004",
+      "phrase": "corrected meaning",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_c005": {
+      "cueId": "L03.S06.c005",
+      "phrase": "one facilitator matter",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_c006": {
+      "cueId": "L03.S06.c006",
+      "phrase": "Use only the parts you need",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_c007": {
+      "cueId": "L03.S06.c007",
+      "phrase": "does not mean that you have completed",
+      "estimatedSeconds": 15.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_c008": {
+      "cueId": "L03.S06.c008",
+      "phrase": "or skipped it",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_c009": {
+      "cueId": "L03.S06.c009",
+      "phrase": "a claim Noah did not make",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_c010": {
+      "cueId": "L03.S06.c010",
+      "phrase": "does not commit you",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_c011": {
+      "cueId": "L03.S06.c011",
+      "phrase": "cannot judge a reply it has not heard",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_d101": {
+      "cueId": "L03.S06.d101",
+      "phrase": "several pairs may need help",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_d102": {
+      "cueId": "L03.S06.d102",
+      "phrase": "still cannot follow it",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S06_f101": {
+      "cueId": "L03.S06.f101",
+      "phrase": "has not guaranteed",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "esssouth.l03.staging-labels/1",
+  "sectionId": "L03.S01",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.contribution": "A contribution",
+    "x.reply": "A reply",
+    "x.topic": "Same topic",
+    "x.aim": "Aim: chances to try and ask questions",
+    "x.noDemo": "No demonstration",
+    "x.notSaid": "Not said by Noah"
+  }
+}

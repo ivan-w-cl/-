@@ -1,0 +1,212 @@
+{
+  "sectionId": "L03.S03",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L03.S03.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S03.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c008"
+    },
+    {
+      "kind": "watch_hold",
+      "id": "L03.I02.watchThink",
+      "seconds": 8
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.d301"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.d302"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.f301"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c012"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c013"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c014"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S03.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c015"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c016"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c017"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L03.S03.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S03.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c008"
+    },
+    {
+      "kind": "gate",
+      "id": "L03.I02",
+      "seconds": null
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c012"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c013"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c014"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S03.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c015"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c016"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S03.c017"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L03.S03",
+    "title": "Ask the Question That Matters",
+    "budgetSeconds": 270,
+    "spokenCueCount": 28,
+    "watchCueCount": 22,
+    "watchWords": 582,
+    "estimatedWatchSeconds": 281.13,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 245.08,
+    "interactions": [
+      "L03.I02"
+    ],
+    "learningOutcome": "Locate a consequential ambiguity and ask a focused clarification before giving a targeted response; distinguish clarification from repeating known information or advancing an ungrounded interpretation."
+  }
+}

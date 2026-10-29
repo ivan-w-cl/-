@@ -1,0 +1,174 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L03.S03",
+  "anchors": {
+    "a_L03_S03_c001": {
+      "cueId": "L03.S03.c001",
+      "phrase": "the part that is genuinely unclear",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c002": {
+      "cueId": "L03.S03.c002",
+      "phrase": "one possible way to arrange a demonstration",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_d001": {
+      "cueId": "L03.S03.d001",
+      "phrase": "could demonstrate several steps",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_d002": {
+      "cueId": "L03.S03.d002",
+      "phrase": "that way",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c003": {
+      "cueId": "L03.S03.c003",
+      "phrase": "not exactly which part Noah means",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c004": {
+      "cueId": "L03.S03.c004",
+      "phrase": "the part he finds difficult",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c005": {
+      "cueId": "L03.S03.c005",
+      "phrase": "not the same as a clarification",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c006": {
+      "cueId": "L03.S03.c006",
+      "phrase": "what an answer would allow you to do differently",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c007": {
+      "cueId": "L03.S03.c007",
+      "phrase": "the meaning needed here",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c008": {
+      "cueId": "L03.S03.c008",
+      "phrase": "the information a question requests",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c010": {
+      "cueId": "L03.S03.c010",
+      "phrase": "a reply can address it instead of guessing",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c011": {
+      "cueId": "L03.S03.c011",
+      "phrase": "remembering several steps before trying them",
+      "estimatedSeconds": 3.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_d003": {
+      "cueId": "L03.S03.d003",
+      "phrase": "pause while people try it",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c012": {
+      "cueId": "L03.S03.c012",
+      "phrase": "does not establish that the new arrangement will work",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c013": {
+      "cueId": "L03.S03.c013",
+      "phrase": "without supplying the answer",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c014": {
+      "cueId": "L03.S03.c014",
+      "phrase": "The wording does not need to match the model",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c015": {
+      "cueId": "L03.S03.c015",
+      "phrase": "what information it requested",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c016": {
+      "cueId": "L03.S03.c016",
+      "phrase": "only as much as the situation needs",
+      "estimatedSeconds": 0.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_c017": {
+      "cueId": "L03.S03.c017",
+      "phrase": "respond to what was said",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_d101": {
+      "cueId": "L03.S03.d101",
+      "phrase": "How long",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_d102": {
+      "cueId": "L03.S03.d102",
+      "phrase": "how the demonstration is arranged",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_f101": {
+      "cueId": "L03.S03.f101",
+      "phrase": "which part of the arrangement",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_d201": {
+      "cueId": "L03.S03.d201",
+      "phrase": "make the demonstration shorter",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_d202": {
+      "cueId": "L03.S03.d202",
+      "phrase": "keeping track of several steps",
+      "estimatedSeconds": 4.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_f201": {
+      "cueId": "L03.S03.f201",
+      "phrase": "before establishing the concern",
+      "estimatedSeconds": 3.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_d301": {
+      "cueId": "L03.S03.d301",
+      "phrase": "Which part",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_d302": {
+      "cueId": "L03.S03.d302",
+      "phrase": "remembering several steps before they get a chance to try",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S03_f301": {
+      "cueId": "L03.S03.f301",
+      "phrase": "without choosing a cause for Noah",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

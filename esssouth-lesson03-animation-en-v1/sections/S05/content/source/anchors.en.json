@@ -1,0 +1,102 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L03.S05",
+  "anchors": {
+    "a_L03_S05_c001": {
+      "cueId": "L03.S05.c001",
+      "phrase": "exactly what remains unanswered",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c002": {
+      "cueId": "L03.S05.c002",
+      "phrase": "has not been tested or adopted",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_d001": {
+      "cueId": "L03.S05.d001",
+      "phrase": "if several pairs need help at once",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c003": {
+      "cueId": "L03.S05.c003",
+      "phrase": "several requests at the same time",
+      "estimatedSeconds": 12.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c004": {
+      "cueId": "L03.S05.c004",
+      "phrase": "access to help",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c005": {
+      "cueId": "L03.S05.c005",
+      "phrase": "not a claim that the issue has been solved",
+      "estimatedSeconds": 12.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_d002": {
+      "cueId": "L03.S05.d002",
+      "phrase": "collect questions",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_d003": {
+      "cueId": "L03.S05.d003",
+      "phrase": "before the pause",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c006": {
+      "cueId": "L03.S05.c006",
+      "phrase": "Both can be true",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c007": {
+      "cueId": "L03.S05.c007",
+      "phrase": "do not yet know",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c008": {
+      "cueId": "L03.S05.c008",
+      "phrase": "resources and the purpose",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c009": {
+      "cueId": "L03.S05.c009",
+      "phrase": "Do not silently assume",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c010": {
+      "cueId": "L03.S05.c010",
+      "phrase": "information you still need",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_d004": {
+      "cueId": "L03.S05.d004",
+      "phrase": "before we stop for questions",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c011": {
+      "cueId": "L03.S05.c011",
+      "phrase": "keep the answer open",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L03_S05_c012": {
+      "cueId": "L03.S05.c012",
+      "phrase": "understood the wrong issue",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

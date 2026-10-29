@@ -1,0 +1,172 @@
+{
+  "sectionId": "L03.S06",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L03.S06.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S06.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c007"
+    },
+    {
+      "kind": "watch_hold",
+      "id": "L03.I03.watchThink",
+      "seconds": 35
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.d101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.d102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.f101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S06.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c011"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L03.S06.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S06.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c007"
+    },
+    {
+      "kind": "gate",
+      "id": "L03.I03",
+      "seconds": null
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L03.S06.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L03.S06.c011"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L03.S06",
+    "title": "Rehearse, Hear a Correction, and Adjust",
+    "budgetSeconds": 330,
+    "spokenCueCount": 17,
+    "watchCueCount": 17,
+    "watchWords": 564,
+    "estimatedWatchSeconds": 300.664,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 229.471,
+    "interactions": [
+      "L03.I03"
+    ],
+    "learningOutcome": "Acknowledge a correction, update the understood concern, and offer a relevant next move without pretending that the learner has been recorded or assessed."
+  }
+}
