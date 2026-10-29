@@ -1,0 +1,8 @@
+{
+  "schema": "esssouth.l03.staging-labels/1",
+  "sectionId": "L03.S06",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. x.ifFrame is the exact conditional clause of d001. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.ifFrame": "If several pairs lose their place at once"
+  }
+}

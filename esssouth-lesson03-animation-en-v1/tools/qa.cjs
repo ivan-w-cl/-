@@ -207,7 +207,7 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l03; const pos = (n) => [n.
     // skip
     await p.evaluate(() => document.querySelector('#ipanel button[data-act="skip"]').click()); await sleep(200); s = await S();
     ok('practice: Skip enters the common continuation once, unanswered, no assessment', s.gate === 'resolved' && s.choice === 'skip' && s.route === 'practice:skip' && s.step === G.rejoin && !s.flags.modelViewed, s);
-    if (G.kind !== 'choice') { await p.evaluate((x) => { window.__l03.pause(); window.__l03.seek(x); }, gEnd); await p.evaluate(() => document.querySelector('#ipanel button[data-act="continue"]').click()); await sleep(200); s = await S();
+    if (G.kind !== 'choice') { await p.evaluate(([a, b]) => { window.__l03.pause(); window.__l03.seek(a); window.__l03.seek(b); }, [gStart - 3, gEnd]); await p.evaluate(() => document.querySelector('#ipanel button[data-act="continue"]').click()); await sleep(200); s = await S();
       ok('practice rehearsal: Continue without the model rejoins once (modelViewed stays false)', s.gate === 'resolved' && s.step === G.rejoin && s.flags.modelViewed === false, s); }
     // seek forward across an unvisited gate (fresh state)
     await p.evaluate(() => { window.__l03.pause(); window.__l03.seek(1); }); await p.evaluate((x) => window.__l03.seek(x), info.routes['practice:skip'].duration - 4); s = await S();
