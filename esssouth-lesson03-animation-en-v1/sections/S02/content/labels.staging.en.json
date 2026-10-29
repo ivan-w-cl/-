@@ -1,0 +1,26 @@
+{
+  "schema": "esssouth.l03.staging-labels/1",
+  "sectionId": "L03.S02",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Quote fragments are exact substrings of quote.noah. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.source": "What the speaker means",
+    "x.reading": "Your reading",
+    "x.aim": "Aim: chances to try and ask questions",
+    "x.view": "keep the demonstration brief",
+    "x.reason": "so people have time to try",
+    "x.concern": "someone who misses a step could get left behind",
+    "x.h.view": "Proposal",
+    "x.h.reason": "Purpose",
+    "x.h.concern": "Possible concern",
+    "x.examine": "An interpretation to examine",
+    "x.ctx.clear": "Meaning already clear: respond directly",
+    "x.ctx.detail": "One detail uncertain: check that detail",
+    "x.ctx.whole": "Whole point uncertain: check the whole",
+    "x.dir.confirm": "Confirm it",
+    "x.dir.narrow": "Narrow it",
+    "x.dir.change": "Change your understanding",
+    "x.rev1": "Added certainty?",
+    "x.rev2": "Lost the purpose?",
+    "x.rev3": "Left something unclear?"
+  }
+}

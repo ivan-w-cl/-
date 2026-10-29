@@ -157,6 +157,8 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l03; const pos = (n) => [n.
     // play into the gate at 2×
     await p.evaluate((x) => { const L = window.__l03; L.setRate(2); L.seek(x); L.play(); }, gStart - 2);
     await p.waitForFunction(() => window.__l03.ST.gate === 'awaiting', null, { timeout: 15000 });
+    const capW = await p.evaluate(() => ({ stage: +document.querySelector('#stage .capbar').style.opacity, dom: document.getElementById('domcap').textContent, prompt: window.__l03.uiText('gate.prompt') }));
+    ok('practice: while waiting, no caption from the next cue; the DOM line shows the prompt', capW.stage === 0 && capW.dom === capW.prompt, capW);
     let s = await S(); ok('practice: playback stops and waits at the gate (awaiting_choice)', s.gate === 'awaiting' && !s.playing && Math.abs(s.t - gEnd) < 0.01, s);
     const base = await p.evaluate((S) => eval('(' + S + ')')(), SNAP.toString());
     await p.screenshot({ path: path.join(STILLS, `${SEC}_practice_gate-awaiting.jpg`), type: 'jpeg', quality: 70 }); stills.push(`${SEC}_practice_gate-awaiting.jpg`);
@@ -188,7 +190,7 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l03; const pos = (n) => [n.
       await sleep(300); s = await S(); const r = info.routes['practice:' + k].steps; const rj = r.findIndex((x) => x.id === G.rejoin);
       ok(`practice ${k}: Continue rejoins ${G.rejoin} once`, s.gate === 'resolved' && s.step === G.rejoin && s.playing && r.filter((x) => x.id === G.rejoin).length === 1 && r[rj - 1].kind === 'ready', s);
       if (k === 'model') ok('practice model: flags after Continue still claim nothing', s.flags.modelViewed === true && !s.flags.speakingObserved && !s.flags.completionAssumed && !s.flags.proposalAdopted, s.flags);
-      const capAfter = await p.evaluate(() => document.querySelector('#stage .capbar .ctext').textContent); const brTexts = await p.evaluate((ids) => ids.map((i) => window.L03_DATA.graph.cues[i].text), br.map((x) => x.id));
+      const capAfter = await p.evaluate(() => document.querySelector('#stage .capbar .ctext').textContent); const brTexts = await p.evaluate((ids) => ids.map((i) => window.L03_DATA.graph.cues[i].text), br.filter((x) => x.kind === 'line').map((x) => x.id));
       ok(`practice ${k}: no branch words in the common continuation caption`, !brTexts.some((t) => t.includes(capAfter) && capAfter.length > 5), capAfter);
       // seek before the gate resets the attempt
       await p.evaluate((x) => { window.__l03.pause(); window.__l03.seek(x); }, gStart - 3); s = await S();
@@ -241,11 +243,9 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l03; const pos = (n) => [n.
   const stateDiff = [];
   for (const a of rt.anchors.filter((a) => rt.P.durationMultipliers[a.cue]).slice(0, 12)) {
     const at = (tr, an) => tr.steps.find((s) => s.id === an.cue);
-    const tP = prod.watch.steps.find((s) => s.id === a.cue).start + info.anchors.find((x) => x.name === a.name).localSec + 0.7;
-    const sR = rt.tracks.watch.steps.reduce((acc, s) => acc, 0);
     const tR = await p.evaluate((n) => window.__l03.C.tracks.watch.at(n), a.name) + 0.7;
     const snapR = await p.evaluate(([t, S]) => { window.__l03.renderAt(t, 'watch'); return eval('(' + S + ')')(); }, [tR, SNAP.toString()]);
-    const { p: p2, ctx: c2 } = await open(browser, 'export=1'); const snapP = await p2.evaluate(([t, S]) => { window.__l03.renderAt(t, 'watch'); return eval('(' + S + ')')(); }, [tP, SNAP.toString()]); await p2.close(); await c2.close();
+    const { p: p2, ctx: c2 } = await open(browser, 'export=1'); const [tP, snapP] = await p2.evaluate(([n, S]) => { const t = window.__l03.C.tracks.watch.at(n) + 0.7; window.__l03.renderAt(t, 'watch'); return [t, eval('(' + S + ')')()]; }, [a.name, SNAP.toString()]); await p2.close(); await c2.close();
     const strip = (s) => JSON.parse(s).filter((x) => x[0] !== 'cap').map((x) => x.slice(0, 8)); // captions follow the clip; compare the board
     if (JSON.stringify(strip(snapR)) !== JSON.stringify(strip(snapP))) stateDiff.push({ anchor: a.name, tProd: tP, tRetimed: tR });
   }

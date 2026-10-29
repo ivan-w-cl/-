@@ -44,14 +44,14 @@
     // speaker-aware bubble: exact cue text, key phrases blue 0.1 s after it rises (the approved say(), plus the speaker)
     X.say = (c, hls, wait) => {
       const s = c.start + (wait || 0), rect = GG.bubWide, spk = c.speakerId;
-      if (S.vis.has('bubL')) S.put('bubL', s - 0.5, MOTION.cut, { o: 0, hl: 0 });
+      if (S.vis.has('bubL')) S.put('bubL', c.start - 0.1, MOTION.focus, { o: 0, hl: 0 }); // the previous speaker's words leave as this line starts
       S.set('bubL', s - 0.16, 0, Object.assign({}, rect, { text: markup(E.cueText(c.cueId), hls || []), hl: 0, y: rect.y + 12, o: 0, spk, kind: 'bubble spk-' + spk }));
       S.put('bubL', s - 0.15, MOTION.rise, { y: rect.y, o: 1 }); S.put('bubL', s + 0.1, MOTION.focus, { hl: 1 });
     };
     // a character line in the side layout: room in (once), speaker pose and listeners, bubble after the room settles
     X.line = (id, pose, hls, opts) => {
       opts = opts || {}; const c = X.cue(id), x0 = c.start; let wait;
-      if (S.roomMode !== 'side') { S.roomTo(x0 + 0.2, 'side'); Rx.neutral(S, x0); wait = Rx.WAIT + (opts.headFirst ? 0.2 : 0); } else wait = 0.15;
+      if (S.roomMode !== 'side') { S.roomTo(x0 + 0.2, 'side'); Rx.neutral(S, x0); wait = Rx.WAIT + (opts.headFirst ? 0.2 : 0); } else wait = 0.35;
       X.say(c, hls, wait); Rx.speak(S, c, pose, c.speakerId); return c;
     };
     X.roomOut = (t) => { S.roomTo(t, 'off'); S.hide(['bubL'], t); };

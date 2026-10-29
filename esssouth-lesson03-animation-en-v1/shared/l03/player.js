@@ -167,8 +167,9 @@
     function scrubRange() { if (ST.mode === 'practice' && GATE) { if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') return [track().branchStart, track().readyStep.start]; return [0, COMMON.duration]; } return [0, track().duration]; }
     const lastCap = { k: null };
     function render() {
-      const tr = track(), S = score();
-      E.render(S, ST.t, { captions: $('cap').checked, playing: ST.playing });
+      const tr = track(), S = score(), waiting = ST.mode === 'practice' && (ST.gate === 'awaiting' || ST.gate === 'branch_ready');
+      // while Practice waits, no caption of the next cue may appear (captions lead their segment by 0.1 s)
+      E.render(S, ST.t, { captions: $('cap').checked && !waiting, playing: ST.playing });
       const [a, b] = scrubRange(), v = scrubValue(); $('scrub').min = String(a); $('scrub').max = String(b); $('scrub').value = String(v);
       const branch = ST.mode === 'practice' && (ST.gate === 'branch_playing' || ST.gate === 'branch_ready');
       $('time').textContent = branch ? `${ST.choice === 'model' ? uiText('ui.model') : uiText('ui.option') + ' ' + ST.choice} · ${(ST.t - a).toFixed(1)} / ${(b - a).toFixed(1)} s` : `${v.toFixed(1)} / ${b.toFixed(1)} s`;
@@ -184,6 +185,7 @@
     }
     function renderDomCap(tr, s) {
       let txt = '', who = '';
+      if (ST.mode === 'practice' && (ST.gate === 'awaiting' || ST.gate === 'branch_ready')) { const k = 'wait|' + ST.gate; if (lastCap.k === k) return; lastCap.k = k; $('domcap').textContent = uiText('gate.prompt'); return; }
       Object.values(tr.captionCues).forEach((c) => c.segments.forEach((sg) => { if (ST.t >= c.start + sg.start - 0.1 && ST.t <= c.start + sg.end + 0.25) { txt = sg.text; who = (charMap[c.speakerId] || { name: 'Coach' }).name; } }));
       if (!txt && s.kind === 'hold') { who = ''; txt = labels['hold.' + s.id].text + ' ' + uiText('ui.pauseMore'); }
       if (!txt && (s.kind === 'think' || s.kind === 'gate')) { who = ''; txt = uiText('gate.prompt'); }

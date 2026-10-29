@@ -1447,14 +1447,14 @@ window.L03Slots = {
     // speaker-aware bubble: exact cue text, key phrases blue 0.1 s after it rises (the approved say(), plus the speaker)
     X.say = (c, hls, wait) => {
       const s = c.start + (wait || 0), rect = GG.bubWide, spk = c.speakerId;
-      if (S.vis.has('bubL')) S.put('bubL', s - 0.5, MOTION.cut, { o: 0, hl: 0 });
+      if (S.vis.has('bubL')) S.put('bubL', c.start - 0.1, MOTION.focus, { o: 0, hl: 0 }); // the previous speaker's words leave as this line starts
       S.set('bubL', s - 0.16, 0, Object.assign({}, rect, { text: markup(E.cueText(c.cueId), hls || []), hl: 0, y: rect.y + 12, o: 0, spk, kind: 'bubble spk-' + spk }));
       S.put('bubL', s - 0.15, MOTION.rise, { y: rect.y, o: 1 }); S.put('bubL', s + 0.1, MOTION.focus, { hl: 1 });
     };
     // a character line in the side layout: room in (once), speaker pose and listeners, bubble after the room settles
     X.line = (id, pose, hls, opts) => {
       opts = opts || {}; const c = X.cue(id), x0 = c.start; let wait;
-      if (S.roomMode !== 'side') { S.roomTo(x0 + 0.2, 'side'); Rx.neutral(S, x0); wait = Rx.WAIT + (opts.headFirst ? 0.2 : 0); } else wait = 0.15;
+      if (S.roomMode !== 'side') { S.roomTo(x0 + 0.2, 'side'); Rx.neutral(S, x0); wait = Rx.WAIT + (opts.headFirst ? 0.2 : 0); } else wait = 0.35;
       X.say(c, hls, wait); Rx.speak(S, c, pose, c.speakerId); return c;
     };
     X.roomOut = (t) => { S.roomTo(t, 'off'); S.hide(['bubL'], t); };
@@ -1857,8 +1857,9 @@ window.L03_DATA = {"sectionId":"L03.S01","num":"3.1","graph":{"schema":"esssouth
     function scrubRange() { if (ST.mode === 'practice' && GATE) { if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') return [track().branchStart, track().readyStep.start]; return [0, COMMON.duration]; } return [0, track().duration]; }
     const lastCap = { k: null };
     function render() {
-      const tr = track(), S = score();
-      E.render(S, ST.t, { captions: $('cap').checked, playing: ST.playing });
+      const tr = track(), S = score(), waiting = ST.mode === 'practice' && (ST.gate === 'awaiting' || ST.gate === 'branch_ready');
+      // while Practice waits, no caption of the next cue may appear (captions lead their segment by 0.1 s)
+      E.render(S, ST.t, { captions: $('cap').checked && !waiting, playing: ST.playing });
       const [a, b] = scrubRange(), v = scrubValue(); $('scrub').min = String(a); $('scrub').max = String(b); $('scrub').value = String(v);
       const branch = ST.mode === 'practice' && (ST.gate === 'branch_playing' || ST.gate === 'branch_ready');
       $('time').textContent = branch ? `${ST.choice === 'model' ? uiText('ui.model') : uiText('ui.option') + ' ' + ST.choice} · ${(ST.t - a).toFixed(1)} / ${(b - a).toFixed(1)} s` : `${v.toFixed(1)} / ${b.toFixed(1)} s`;
@@ -1874,6 +1875,7 @@ window.L03_DATA = {"sectionId":"L03.S01","num":"3.1","graph":{"schema":"esssouth
     }
     function renderDomCap(tr, s) {
       let txt = '', who = '';
+      if (ST.mode === 'practice' && (ST.gate === 'awaiting' || ST.gate === 'branch_ready')) { const k = 'wait|' + ST.gate; if (lastCap.k === k) return; lastCap.k = k; $('domcap').textContent = uiText('gate.prompt'); return; }
       Object.values(tr.captionCues).forEach((c) => c.segments.forEach((sg) => { if (ST.t >= c.start + sg.start - 0.1 && ST.t <= c.start + sg.end + 0.25) { txt = sg.text; who = (charMap[c.speakerId] || { name: 'Coach' }).name; } }));
       if (!txt && s.kind === 'hold') { who = ''; txt = labels['hold.' + s.id].text + ' ' + uiText('ui.pauseMore'); }
       if (!txt && (s.kind === 'think' || s.kind === 'gate')) { who = ''; txt = uiText('gate.prompt'); }
