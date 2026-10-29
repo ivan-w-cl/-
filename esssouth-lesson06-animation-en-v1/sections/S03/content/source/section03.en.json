@@ -1,0 +1,635 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L06.S03",
+  "title": "Explain Why You Made a Decision",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 06 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Explain the information and uncertainty behind a decision, keeping the participant’s stated reasoning separate from later observations or unproved causal outcomes.",
+  "scenario": {
+    "id": "L06.CASE01",
+    "kind": "Explicitly fictional authored training case, not a learner biography or a real admission interview",
+    "caseLabel": "Fictional worked example",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "Three volunteers prepared a one-page visitor guide for a community open afternoon."
+      },
+      {
+        "id": "F02",
+        "text": "The case participant drew the map. Maya listed session times. Noah assembled the guide."
+      },
+      {
+        "id": "F03",
+        "text": "The day before the event, the participant noticed that the map said Studio B while Maya's schedule said Blue Room."
+      },
+      {
+        "id": "F04",
+        "text": "The participant did not know whether those names meant the same room and asked the event coordinator rather than guessing."
+      },
+      {
+        "id": "F05",
+        "text": "The coordinator confirmed that both names referred to the same room and that its door sign said Blue Room."
+      },
+      {
+        "id": "F06",
+        "text": "The participant changed the map label to Blue Room and told Maya and Noah. Maya checked the schedule; Noah assembled the updated guide."
+      },
+      {
+        "id": "F07",
+        "text": "During the event, the participant saw one visitor use the map to find Blue Room."
+      },
+      {
+        "id": "F08",
+        "text": "There was no visitor survey or total count of people helped. No comparison shows what would have happened without the change."
+      },
+      {
+        "id": "F09",
+        "text": "In reflection, the participant would agree a shared list of room names earlier next time. This is a proposed future change, not an action already taken."
+      }
+    ],
+    "unknowns": [
+      "Whether anyone else used the map successfully",
+      "Whether a visitor would have found the room without this change",
+      "Whether the guide made the whole event successful",
+      "How long checking with the coordinator took",
+      "The coordinator's exact words",
+      "Any awards, numerical impact, leadership appointment or wider achievement"
+    ],
+    "permittedDecisionReason": "Conflicting labels could confuse visitors; confirming the door-sign name avoided choosing a name without checking. This is the participant's stated reasoning, not a measured causal result.",
+    "roles": {
+      "learner": "Case participant (fictional example only)",
+      "maya": "Follow-up partner in a later authored rehearsal; also the schedule volunteer within the remembered case",
+      "noah": "Guide assembler within the remembered case",
+      "coach": "Offstage instructor"
+    },
+    "state": {
+      "fictional": true,
+      "guideUpdated": true,
+      "observedVisitorsFindingRoom": 1,
+      "broaderImpactMeasured": false,
+      "futureNamingListImplemented": false,
+      "realLearnerExperienceCaptured": false
+    },
+    "boundaries": [
+      "Do not invent new case events, timings, quotations, achievements or causal outcomes.",
+      "Keep own actions distinct from Maya's and Noah's work.",
+      "Clearly label the model as fiction; never insert it into a real learner's personal response.",
+      "A private learner may rehearse an ordinary truthful experience, choose another topic or use this labelled fictional case for language practice.",
+      "No recording, AI scoring, truth verification, upload or success inferred from a click.",
+      "No rigid answer length or required STAR script; these are optional planning distinctions, not official assessment criteria."
+    ]
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Case participant",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L06.S03.B01",
+      "title": "Explain the Choice, Not Just the Action",
+      "family": "standalone_fictional_decision",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S03.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S03.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S03.c003"
+        }
+      ]
+    },
+    {
+      "id": "L06.S03.B02",
+      "title": "Connect the Uncertainty to the Decision",
+      "family": "reason_and_time_order",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S03.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S03.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S03.c006"
+        },
+        {
+          "kind": "hold",
+          "id": "L06.S03.h101"
+        }
+      ]
+    },
+    {
+      "id": "L06.S03.B03",
+      "title": "Answer Why You Checked",
+      "family": "later_rehearsal_choice_gate",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S03.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S03.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S03.c008"
+        },
+        {
+          "kind": "interaction",
+          "id": "L06.I02"
+        }
+      ]
+    },
+    {
+      "id": "L06.S03.B04",
+      "title": "Separate a Reason from an Outcome",
+      "family": "shared_source_based_analysis",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S03.c010"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S03.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S03.c012"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S03.c013"
+        },
+        {
+          "kind": "hold",
+          "id": "L06.S03.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S03.c014"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L06.S03.c001": {
+      "id": "L06.S03.c001",
+      "speaker": "coach",
+      "text": "An account of an action becomes more useful when the listener can understand the choice behind it. Explain what you knew, what was uncertain and why that uncertainty mattered, without turning a decision into proof of a successful outcome.",
+      "visualEn": "Open a formal before-decision information board, with action and result kept in distinct lanes. Do not impose a compulsory answer formula or show a success score.",
+      "anchorHint": "the choice behind it",
+      "screenLabelIds": [
+        "section.title",
+        "decision.focus"
+      ],
+      "audioId": "L06.S03.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c002": {
+      "id": "L06.S03.c002",
+      "speaker": "coach",
+      "text": "In the fictional guide case, the participant drew the map, Maya listed times and Noah assembled the guide. The day before the event, the map said Studio B while the schedule said Blue Room. The participant did not know whether those names meant the same room.",
+      "visualEn": "Establish Fictional worked example and the supplied role facts. Place the two exact labels in the before-check lane; do not imply their equivalence was already known.",
+      "anchorHint": "did not know whether those names meant the same room",
+      "screenLabelIds": [
+        "case.label",
+        "case.before"
+      ],
+      "audioId": "L06.S03.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c003": {
+      "id": "L06.S03.c003",
+      "speaker": "coach",
+      "text": "The participant asked the coordinator instead of guessing. Confirmation came afterward: both names referred to the same room, and the door sign said Blue Room. The map label was then changed and the other volunteers were told.",
+      "visualEn": "Show the supplied order: unknown relation, ask, reported confirmation, change and notify. Never invent the coordinator’s verbatim words or how long the exchange took.",
+      "anchorHint": "Confirmation came afterward",
+      "screenLabelIds": [
+        "case.sequence"
+      ],
+      "audioId": "L06.S03.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c004": {
+      "id": "L06.S03.c004",
+      "speaker": "coach",
+      "text": "The stated reasoning is that conflicting labels could confuse visitors. Checking the door-sign name avoided choosing a label without verification. This explains why the participant asked; it does not measure how many visitors the change helped.",
+      "visualEn": "Connect a conditional confusion concern to the decision to check. Keep possible confusion inside a possibility frame, with no depicted actual lost visitors or impact count.",
+      "anchorHint": "does not measure how many visitors",
+      "screenLabelIds": [
+        "reason.possible",
+        "reason.action"
+      ],
+      "audioId": "L06.S03.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c005": {
+      "id": "L06.S03.c005",
+      "speaker": "coach",
+      "text": "Keep the information in the right order. Knowing the correct door-sign name after asking cannot be treated as something the participant knew beforehand. A clear account makes the original uncertainty visible.",
+      "visualEn": "Use separate before-check and after-confirmation columns. Move the confirmed name only when the confirmation fact is introduced; never backfill certainty into the earlier state.",
+      "anchorHint": "knew beforehand",
+      "screenLabelIds": [
+        "time.before",
+        "time.after"
+      ],
+      "audioId": "L06.S03.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c006": {
+      "id": "L06.S03.c006",
+      "speaker": "coach",
+      "text": "Privately identify what made checking relevant. Which inconsistency had been noticed, and what remained unknown? Use the supplied facts rather than inventing an earlier complaint or a visitor who was already lost.",
+      "visualEn": "Retain the two source labels and blank private reasoning area. No hypothetical complaint is drawn as an event; the original uncertainty remains the only trigger.",
+      "anchorHint": "what remained unknown",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L06.S03.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.d001": {
+      "id": "L06.S03.d001",
+      "speaker": "maya",
+      "text": "Why did you ask the coordinator rather than choose one of the names yourself?",
+      "visualEn": "Place Maya in the separate Later authored rehearsal frame. This is an authored follow-up about the remembered fictional case, not dialogue occurring during the event.",
+      "anchorHint": "rather than choose one of the names yourself",
+      "screenLabelIds": [
+        "rehearsal.frame",
+        "question.why"
+      ],
+      "audioId": "L06.S03.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S03.c007": {
+      "id": "L06.S03.c007",
+      "speaker": "coach",
+      "text": "Compare three possible replies. Look for a connection between the information available at the time and the choice to check. Naming the action again is not yet a full explanation of that choice.",
+      "visualEn": "Present neutral options with fixed source facts still accessible. Do not preselect a response or treat confidence as evidence of accuracy.",
+      "anchorHint": "the information available at the time",
+      "screenLabelIds": [
+        "choice.prompt"
+      ],
+      "audioId": "L06.S03.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c008": {
+      "id": "L06.S03.c008",
+      "speaker": "coach",
+      "text": "Check whether each reply explains the choice or simply announces confidence. A later outcome cannot replace the information available when the decision was made. Keep that distinction in mind as you compare the three replies.",
+      "visualEn": "Later authored rehearsal: Information then and Outcome later cards remain distinct. All options remain labelled alternatives until selected; do not add their claims to the source fact ledger.",
+      "anchorHint": "information available",
+      "screenLabelIds": [
+        "choice.note"
+      ],
+      "audioId": "L06.S03.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c010": {
+      "id": "L06.S03.c010",
+      "speaker": "coach",
+      "text": "The shared facts support a simple decision explanation: the labels conflicted, their relationship was uncertain, and checking avoided an unverified choice. The later confirmation allowed a specific update. None of that establishes a measured improvement for all visitors.",
+      "visualEn": "All routes rejoin once. Rebuild before-check and after-confirmation facts directly from the authoritative case, independent of viewed or skipped branch content.",
+      "anchorHint": "None of that establishes a measured improvement",
+      "screenLabelIds": [
+        "shared.reason"
+      ],
+      "audioId": "L06.S03.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c011": {
+      "id": "L06.S03.c011",
+      "speaker": "coach",
+      "text": "A reason can include a concern about what might happen. Say could confuse visitors when that is the stated concern. Do not change it into visitors were confused unless the account actually contains that observation.",
+      "visualEn": "Compare possible confusion with an explicitly unsupported past-event wording. Never animate the latter as a case event. Preserve the actual one-visitor observation in its separate lane.",
+      "anchorHint": "unless the account actually contains that observation",
+      "screenLabelIds": [
+        "scope.possible",
+        "scope.unsupported"
+      ],
+      "audioId": "L06.S03.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c012": {
+      "id": "L06.S03.c012",
+      "speaker": "coach",
+      "text": "For a private attempt, explain the decision in this labelled case or a truthful choice you remember. Name the information that mattered and what you did not know. You do not need the same sentence pattern.",
+      "visualEn": "Hide full sample replies. Provide optional source facts and a blank private response area, with an explicit distinction between fictional language practice and private real experience.",
+      "anchorHint": "what you did not know",
+      "screenLabelIds": [
+        "private.prompt"
+      ],
+      "audioId": "L06.S03.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c013": {
+      "id": "L06.S03.c013",
+      "speaker": "coach",
+      "text": "If you cannot remember exactly why you made a choice, acknowledge that limit instead of adding a persuasive reason afterwards. You can choose another episode you remember more clearly, or continue examining the supplied example.",
+      "visualEn": "Formal reflection board: Remembered reason / Detail not recalled. Keep the second as an acknowledged gap, not an empty slot automatically filled by a model. Optional private area remains blank.",
+      "anchorHint": "acknowledge that limit",
+      "screenLabelIds": [
+        "private.note"
+      ],
+      "audioId": "L06.S03.c013",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.c014": {
+      "id": "L06.S03.c014",
+      "speaker": "coach",
+      "text": "If you formed a version, check its time order and its claims. Did you explain the original uncertainty, or add something known only later? Next, we will describe results with the same attention to what the evidence supports.",
+      "visualEn": "Offer a conditional self-check, not feedback on unheard speech. End on the results section title with source facts intact and neutral user-controlled navigation.",
+      "anchorHint": "something known only later",
+      "screenLabelIds": [
+        "review.question",
+        "next.title"
+      ],
+      "audioId": "L06.S03.c014",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.d101": {
+      "id": "L06.S03.d101",
+      "speaker": "learner",
+      "text": "I asked the coordinator because checking was important.",
+      "visualEn": "Authored learner alternative A inside later rehearsal. The reply is a generic value statement, not a fabricated achievement or source detail.",
+      "anchorHint": "checking was important",
+      "screenLabelIds": [
+        "branch.a.label"
+      ],
+      "audioId": "L06.S03.d101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S03.d102": {
+      "id": "L06.S03.d102",
+      "speaker": "maya",
+      "text": "What needed checking, and why did that affect your choice?",
+      "visualEn": "Maya’s authored later follow-up requests the missing relationship. Do not imply dissatisfaction, an examiner judgement or a real event-time conversation.",
+      "anchorHint": "why did that affect your choice",
+      "screenLabelIds": [],
+      "audioId": "L06.S03.d102",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S03.f101": {
+      "id": "L06.S03.f101",
+      "speaker": "coach",
+      "text": "This names a value but leaves its relevance unexplained. It could begin an answer. The useful next detail is the mismatch and the uncertainty about whether both labels referred to the same room.",
+      "visualEn": "Map generic checking to the unfilled case-specific link, then retain the source facts. Do not mark every short opener wrong or grade the real viewer.",
+      "anchorHint": "leaves its relevance unexplained",
+      "screenLabelIds": [
+        "branch.a.note"
+      ],
+      "audioId": "L06.S03.f101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.d201": {
+      "id": "L06.S03.d201",
+      "speaker": "learner",
+      "text": "I knew that changing the name would stop every visitor from getting lost.",
+      "visualEn": "Mark Deliberately flawed claim before this line. Do not depict its universal outcome or show the participant as knowing the correct label before asking. The true facts remain beside it.",
+      "anchorHint": "every visitor",
+      "screenLabelIds": [
+        "branch.b.label"
+      ],
+      "audioId": "L06.S03.d201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S03.d202": {
+      "id": "L06.S03.d202",
+      "speaker": "maya",
+      "text": "How do you know it stopped every visitor from getting lost? What did you know when you decided to ask?",
+      "visualEn": "In the later authored rehearsal, Maya asks the bounded follow-up with a small open-hand gesture. Keep a Claim to examine label on the preceding overstatement; no visitor crowd or implied outcome.",
+      "anchorHint": "when you decided",
+      "screenLabelIds": [],
+      "audioId": "L06.S03.d202",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S03.f201": {
+      "id": "L06.S03.f201",
+      "speaker": "coach",
+      "text": "That certainty is not supported. One visitor was later seen using the map, but no comparison proves what the change caused. Explain the uncertainty at the time of the decision, rather than replacing it with an unmeasured result.",
+      "visualEn": "Separate the single later observation from unknown wider and counterfactual effects. No all-visitor animation, measured improvement or moral diagnosis of the viewer.",
+      "anchorHint": "no comparison proves what the change caused",
+      "screenLabelIds": [
+        "branch.b.note"
+      ],
+      "audioId": "L06.S03.f201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S03.d301": {
+      "id": "L06.S03.d301",
+      "speaker": "learner",
+      "text": "The labels differed, and I did not know whether they meant the same room. I asked the coordinator so I would not choose a name by guessing.",
+      "visualEn": "Authored learner explanation of the fixed decision. Keep original uncertainty, decision to ask and purpose distinct; do not claim a measured visitor benefit.",
+      "anchorHint": "so I would not choose a name by guessing",
+      "screenLabelIds": [
+        "branch.c.label"
+      ],
+      "audioId": "L06.S03.d301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S03.d302": {
+      "id": "L06.S03.d302",
+      "speaker": "maya",
+      "text": "How did the coordinator’s confirmation affect what you changed?",
+      "visualEn": "Maya’s later authored follow-up asks about the next known action. Do not voice an invented quotation from the coordinator or imply an official assessment.",
+      "anchorHint": "what you changed",
+      "screenLabelIds": [],
+      "audioId": "L06.S03.d302",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S03.f301": {
+      "id": "L06.S03.f301",
+      "speaker": "coach",
+      "text": "This reply explains the choice using the information available then. It leaves the confirmation and later observation in their proper places. A listener can examine the reasoning without being asked to accept an invented achievement.",
+      "visualEn": "Analyze the time-ordered source facts only. A follow-up question is not a success certificate, and the model does not become the viewer’s own experience.",
+      "anchorHint": "the information available then",
+      "screenLabelIds": [
+        "branch.c.note"
+      ],
+      "audioId": "L06.S03.f301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L06.S03.h101": {
+      "kind": "hold",
+      "id": "L06.S03.h101",
+      "seconds": 8,
+      "purpose": "Privately connect the observed label mismatch and uncertainty to the decision to ask.",
+      "visualEn": "Keep the private area blank and facts available. No model, extra incident, inferred reasoning success or automatic answer appears during the hold.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L06.S03.h102": {
+      "kind": "hold",
+      "id": "L06.S03.h102",
+      "seconds": 8,
+      "purpose": "Privately rehearse a decision explanation using supplied fiction or a comfortable truthful experience.",
+      "visualEn": "Keep private content blank. No invented biography, model insertion, capture or success inferred from waiting.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {
+    "L06.I02": {
+      "kind": "choice",
+      "prompt": "Which reply explains why the participant checked the labels, without inventing an outcome or prior certainty?",
+      "watchChoice": "C",
+      "watchThinkSeconds": 8,
+      "rejoinCue": "L06.S03.c010",
+      "options": [
+        {
+          "id": "A",
+          "label": "I asked the coordinator because checking was important.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L06.S03.d101"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S03.d102"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S03.f101"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "label": "I knew that changing the name would stop every visitor from getting lost.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L06.S03.d201"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S03.d202"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S03.f201"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "label": "The labels differed, and I did not know whether they meant the same room. I asked the coordinator so I would not choose a name by guessing.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L06.S03.d301"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S03.d302"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S03.f301"
+            }
+          ]
+        }
+      ],
+      "skipNote": "Comparison skipped. No personal account or reasoning performance was assessed; the shared explanation restores the same source facts.",
+      "baseline": "Keep the fixed fictional case and the separate Later authored rehearsal frame. Before asking, only the mismatch and uncertainty are known; the coordinator confirms same room and Blue Room door sign afterward. The guide update is supplied, and one later visitor observation is limited; no broader causal result or personal biography is invented. Each branch is independent. Label and promptly correct unsupported claims. Retry clears prior sample replies and reactions. Watch plays C only after eight seconds. Practice waits indefinitely. Continue or Skip joins c010 once without assuming a choice, disclosure, correct reasoning or event-time conversation.",
+      "id": "L06.I02",
+      "practiceTimeout": null,
+      "autoSelect": false,
+      "skipIsUnanswered": true,
+      "score": null,
+      "stateStorage": "memory only",
+      "branchOutcome": "Authored fictional continuation, not a prediction or universal reaction."
+    }
+  },
+  "boundary": "Use formal explanation and short explicitly fictional examples. Model events are not learner biography. No inferred recording, truth verification, official rubric or wider outcome."
+}

@@ -1,0 +1,138 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L06.S02",
+  "anchors": {
+    "a_L06_S02_c001": {
+      "cueId": "L06.S02.c001",
+      "phrase": "Neither I nor we is automatically the right choice",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c002": {
+      "cueId": "L06.S02.c002",
+      "phrase": "These role facts stay the same",
+      "estimatedSeconds": 12.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c003": {
+      "cueId": "L06.S02.c003",
+      "phrase": "rather than selecting a name by guessing",
+      "estimatedSeconds": 12.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c004": {
+      "cueId": "L06.S02.c004",
+      "phrase": "An individual action and a team result",
+      "estimatedSeconds": 15.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c005": {
+      "cueId": "L06.S02.c005",
+      "phrase": "who did what",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c006": {
+      "cueId": "L06.S02.c006",
+      "phrase": "rather than filling a gap",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_d001": {
+      "cueId": "L06.S02.d001",
+      "phrase": "your own part",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c007": {
+      "cueId": "L06.S02.c007",
+      "phrase": "a personal action",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c008": {
+      "cueId": "L06.S02.c008",
+      "phrase": "not an added event",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c010": {
+      "cueId": "L06.S02.c010",
+      "phrase": "several distinct contributions",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c011": {
+      "cueId": "L06.S02.c011",
+      "phrase": "what was asked",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c012": {
+      "cueId": "L06.S02.c012",
+      "phrase": "ownership of every action",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_c013": {
+      "cueId": "L06.S02.c013",
+      "phrase": "who each action belongs to",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_d101": {
+      "cueId": "L06.S02.d101",
+      "phrase": "updated it together",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_d102": {
+      "cueId": "L06.S02.d102",
+      "phrase": "Which actions were yours",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_f101": {
+      "cueId": "L06.S02.f101",
+      "phrase": "for this particular question",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_d201": {
+      "cueId": "L06.S02.d201",
+      "phrase": "checked the conflicting names with the coordinator",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_d202": {
+      "cueId": "L06.S02.d202",
+      "phrase": "the schedule and the assembled guide",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_f201": {
+      "cueId": "L06.S02.f201",
+      "phrase": "without taking over the other roles",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_d301": {
+      "cueId": "L06.S02.d301",
+      "phrase": "the schedule and the finished guide myself",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_d302": {
+      "cueId": "L06.S02.d302",
+      "phrase": "Noah assembled the guide",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S02_f301": {
+      "cueId": "L06.S02.f301",
+      "phrase": "The case does not support that claim",
+      "estimatedSeconds": 3.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

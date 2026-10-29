@@ -1,0 +1,90 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L06.S06",
+  "anchors": {
+    "a_L06_S06_c001": {
+      "cueId": "L06.S06.c001",
+      "phrase": "purely for language practice",
+      "estimatedSeconds": 15.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_c002": {
+      "cueId": "L06.S06.c002",
+      "phrase": "Keep the substance accurate",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_c003": {
+      "cueId": "L06.S06.c003",
+      "phrase": "not a required sequence",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_c004": {
+      "cueId": "L06.S06.c004",
+      "phrase": "Sharing credit",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_c005": {
+      "cueId": "L06.S06.c005",
+      "phrase": "one boundary you should retain",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_c006": {
+      "cueId": "L06.S06.c006",
+      "phrase": "Rehearse your account in English",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_c007": {
+      "cueId": "L06.S06.c007",
+      "phrase": "put the account together",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_c008": {
+      "cueId": "L06.S06.c008",
+      "phrase": "the result words match",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_c009": {
+      "cueId": "L06.S06.c009",
+      "phrase": "instead of constructing a confident answer",
+      "estimatedSeconds": 15.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_c010": {
+      "cueId": "L06.S06.c010",
+      "phrase": "different words or a different experience",
+      "estimatedSeconds": 14.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_c011": {
+      "cueId": "L06.S06.c011",
+      "phrase": "keep their limits intact",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_d101": {
+      "cueId": "L06.S06.d101",
+      "phrase": "I changed my map",
+      "estimatedSeconds": 21.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_d102": {
+      "cueId": "L06.S06.d102",
+      "phrase": "do differently",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S06_f101": {
+      "cueId": "L06.S06.f101",
+      "phrase": "keep it in the future",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

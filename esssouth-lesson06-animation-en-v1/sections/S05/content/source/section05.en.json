@@ -1,0 +1,457 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L06.S05",
+  "title": "Reflect and Answer the Question Asked",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 06 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Give a reflection grounded in the case and respond to the particular follow-up asked, distinguishing future intentions from completed actions and unknown details.",
+  "scenario": {
+    "id": "L06.CASE01",
+    "kind": "Explicitly fictional authored training case, not a learner biography or a real admission interview",
+    "caseLabel": "Fictional worked example",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "Three volunteers prepared a one-page visitor guide for a community open afternoon."
+      },
+      {
+        "id": "F02",
+        "text": "The case participant drew the map. Maya listed session times. Noah assembled the guide."
+      },
+      {
+        "id": "F03",
+        "text": "The day before the event, the participant noticed that the map said Studio B while Maya's schedule said Blue Room."
+      },
+      {
+        "id": "F04",
+        "text": "The participant did not know whether those names meant the same room and asked the event coordinator rather than guessing."
+      },
+      {
+        "id": "F05",
+        "text": "The coordinator confirmed that both names referred to the same room and that its door sign said Blue Room."
+      },
+      {
+        "id": "F06",
+        "text": "The participant changed the map label to Blue Room and told Maya and Noah. Maya checked the schedule; Noah assembled the updated guide."
+      },
+      {
+        "id": "F07",
+        "text": "During the event, the participant saw one visitor use the map to find Blue Room."
+      },
+      {
+        "id": "F08",
+        "text": "There was no visitor survey or total count of people helped. No comparison shows what would have happened without the change."
+      },
+      {
+        "id": "F09",
+        "text": "In reflection, the participant would agree a shared list of room names earlier next time. This is a proposed future change, not an action already taken."
+      }
+    ],
+    "unknowns": [
+      "Whether anyone else used the map successfully",
+      "Whether a visitor would have found the room without this change",
+      "Whether the guide made the whole event successful",
+      "How long checking with the coordinator took",
+      "The coordinator's exact words",
+      "Any awards, numerical impact, leadership appointment or wider achievement"
+    ],
+    "permittedDecisionReason": "Conflicting labels could confuse visitors; confirming the door-sign name avoided choosing a name without checking. This is the participant's stated reasoning, not a measured causal result.",
+    "roles": {
+      "learner": "Case participant (fictional example only)",
+      "maya": "Follow-up partner in a later authored rehearsal; also the schedule volunteer within the remembered case",
+      "noah": "Guide assembler within the remembered case",
+      "coach": "Offstage instructor"
+    },
+    "state": {
+      "fictional": true,
+      "guideUpdated": true,
+      "observedVisitorsFindingRoom": 1,
+      "broaderImpactMeasured": false,
+      "futureNamingListImplemented": false,
+      "realLearnerExperienceCaptured": false
+    },
+    "boundaries": [
+      "Do not invent new case events, timings, quotations, achievements or causal outcomes.",
+      "Keep own actions distinct from Maya's and Noah's work.",
+      "Clearly label the model as fiction; never insert it into a real learner's personal response.",
+      "A private learner may rehearse an ordinary truthful experience, choose another topic or use this labelled fictional case for language practice.",
+      "No recording, AI scoring, truth verification, upload or success inferred from a click.",
+      "No rigid answer length or required STAR script; these are optional planning distinctions, not official assessment criteria."
+    ]
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Case participant",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L06.S05.B01",
+      "title": "Reflect on a Specific Part of the Experience",
+      "family": "formal_reflection",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S05.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.c003"
+        },
+        {
+          "kind": "hold",
+          "id": "L06.S05.h101"
+        }
+      ]
+    },
+    {
+      "id": "L06.S05.B02",
+      "title": "Listen for the Particular Follow-Up",
+      "family": "later_authored_rehearsal",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S05.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.d002"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.c005"
+        }
+      ]
+    },
+    {
+      "id": "L06.S05.B03",
+      "title": "Explain Why the Reflection Fits",
+      "family": "focused_followup_and_evidence",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S05.d003"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.d004"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.c006"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.c008"
+        }
+      ]
+    },
+    {
+      "id": "L06.S05.B04",
+      "title": "Answer the Question Before Expanding",
+      "family": "private_retrieval_and_close",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S05.c009"
+        },
+        {
+          "kind": "hold",
+          "id": "L06.S05.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.d005"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S05.c010"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L06.S05.c001": {
+      "id": "L06.S05.c001",
+      "speaker": "coach",
+      "text": "Reflection is more useful when it connects to something specific that happened. Instead of adding a broad claim about becoming a better person, identify what you would keep or change and why it follows from the experience. You do not need to claim a complete personal transformation.",
+      "visualEn": "Open a formal link between an established difficulty and a possible future change. No personality score, growth graph or invented achievement.",
+      "anchorHint": "something specific that happened",
+      "screenLabelIds": [
+        "section.title",
+        "reflection.link"
+      ],
+      "audioId": "L06.S05.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S05.c002": {
+      "id": "L06.S05.c002",
+      "speaker": "coach",
+      "text": "In the fictional guide case, the participant found different room names on the map and schedule. The coordinator confirmed that they referred to the same room and that its sign said Blue Room. The participant then changed the map label. Those actions have already happened within the story.",
+      "visualEn": "Retain the Fictional worked example label. Show only F03–F06; confirmation is indirect narration, not a newly invented historical quote.",
+      "anchorHint": "Those actions have already happened",
+      "screenLabelIds": [
+        "case.label",
+        "case.difficulty",
+        "case.confirmed",
+        "case.completed"
+      ],
+      "audioId": "L06.S05.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S05.c003": {
+      "id": "L06.S05.c003",
+      "speaker": "coach",
+      "text": "The reflection points forward: next time, the participant would agree a shared list of room names earlier. That could make the naming choice explicit before separate parts are prepared. It remains a proposed change, not a system the team has already introduced or proved effective.",
+      "visualEn": "Put F09 in a distinct Future proposal area with a dashed connection to the naming mismatch. Do not animate the list being created, adopted or tested.",
+      "anchorHint": "It remains a proposed change",
+      "screenLabelIds": [
+        "future.idea",
+        "future.status"
+      ],
+      "audioId": "L06.S05.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S05.c004": {
+      "id": "L06.S05.c004",
+      "speaker": "coach",
+      "text": "In a later practice conversation, Maya asks what the participant would change next time. Focus on that question before deciding how much of the story to repeat. The listener already has the setting; the useful new detail is the reflection.",
+      "visualEn": "Transition explicitly to Later authored rehearsal before Maya appears. Keep the remembered-case facts in a separate reference panel; no flashback bubbles containing these new lines.",
+      "anchorHint": "the useful new detail",
+      "screenLabelIds": [
+        "conversation.label",
+        "maya.role",
+        "conversation.boundary"
+      ],
+      "audioId": "L06.S05.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S05.d001": {
+      "id": "L06.S05.d001",
+      "speaker": "maya",
+      "text": "What would you do differently next time?",
+      "visualEn": "Maya asks only within the later-rehearsal frame. Highlight next time to mark the requested focus.",
+      "anchorHint": "next time",
+      "screenLabelIds": [
+        "question.focus"
+      ],
+      "audioId": "L06.S05.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S05.d002": {
+      "id": "L06.S05.d002",
+      "speaker": "learner",
+      "text": "Next time, I would agree a shared list of room names earlier, before preparing separate parts of the guide.",
+      "visualEn": "Show a fictional case-participant answer in the later-rehearsal frame. This describes F09 only: a future proposal, not an implemented list. Keep the real learner’s private account blank.",
+      "anchorHint": "Next time, I would",
+      "screenLabelIds": [
+        "answer.future",
+        "answer.status"
+      ],
+      "audioId": "L06.S05.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S05.c005": {
+      "id": "L06.S05.c005",
+      "speaker": "coach",
+      "text": "This answers the future-change question directly. It does not retell every action or turn a plan into an achievement. Saying what you would do locates the idea in the future. If the listener asks for more, let that particular question guide the next detail.",
+      "visualEn": "Analyse the exact answer, retaining future status. Show one current question, not a menu routing among different interview topics.",
+      "anchorHint": "that particular question",
+      "screenLabelIds": [
+        "analysis.focus",
+        "analysis.time"
+      ],
+      "audioId": "L06.S05.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S05.d003": {
+      "id": "L06.S05.d003",
+      "speaker": "maya",
+      "text": "Why does that change make sense in this experience?",
+      "visualEn": "Maya remains the partner in the later authored rehearsal. This is a specific probe about the proposed future change, not a quotation from the guide event.",
+      "anchorHint": "in this experience",
+      "screenLabelIds": [
+        "question.reason"
+      ],
+      "audioId": "L06.S05.d003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S05.d004": {
+      "id": "L06.S05.d004",
+      "speaker": "learner",
+      "text": "The map and schedule used different names for the same room. I would propose agreeing the names before preparing separate parts of the guide. We have not put that change into practice.",
+      "visualEn": "Connect established F03/F05 to proposed F09. Do not show the shared list being written, adopted or used. This is a fictional model account, not observed learner speech.",
+      "anchorHint": "We have not put that change into practice",
+      "screenLabelIds": [
+        "answer.basis",
+        "answer.proposal",
+        "answer.limit"
+      ],
+      "audioId": "L06.S05.d004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S05.c006": {
+      "id": "L06.S05.c006",
+      "speaker": "coach",
+      "text": "This follow-up asks for the connection between the experience and the proposed change. The answer starts with the mismatch, then explains what would be done earlier. It does not need to repeat the whole guide story, or claim that the list has already prevented a problem.",
+      "visualEn": "Use one relationship diagram: established naming mismatch → proposed earlier shared reference. The arrow means a reason for considering the proposal, not proof of its future effect.",
+      "anchorHint": "the connection between the experience and the proposed change",
+      "screenLabelIds": [
+        "focus.connection",
+        "focus.limit"
+      ],
+      "audioId": "L06.S05.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S05.c007": {
+      "id": "L06.S05.c007",
+      "speaker": "coach",
+      "text": "Be careful about the cause you add to a reflection. The two labels differed, but both referred to the same room. The case does not show that Maya was careless or that the team ignored an instruction. Do not turn an information mismatch into an unsupported judgement about a person.",
+      "visualEn": "Keep F03–F05 visible. Put any blame statement in a separate Unsupported interpretation area; no angry cast, invented instruction or claim of negligent behaviour.",
+      "anchorHint": "an unsupported judgement about a person",
+      "screenLabelIds": [
+        "reflection.fact",
+        "reflection.unsupported"
+      ],
+      "audioId": "L06.S05.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S05.c008": {
+      "id": "L06.S05.c008",
+      "speaker": "coach",
+      "text": "The proposed list might make the naming choice explicit earlier. That is a reason to consider it, not evidence that it will prevent every mismatch. No later event in this case tests the idea. You can explain a possible benefit while leaving its effectiveness unknown.",
+      "visualEn": "Keep F09 in the future region with a conditional possible-benefit link. Do not create a second event, implemented list, measured improvement or certain outcome.",
+      "anchorHint": "leaving its effectiveness unknown",
+      "screenLabelIds": [
+        "future.reason",
+        "future.evidence"
+      ],
+      "audioId": "L06.S05.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S05.c009": {
+      "id": "L06.S05.c009",
+      "speaker": "coach",
+      "text": "Try the original question privately: what would you do differently next time? Use the fictional case, or reflect on a truthful experience of your own. Answer the question before expanding the story. Keep any future change separate from something you have already done.",
+      "visualEn": "Show only the current future-change question and a separate optional F03/F09 reference. Hide previous model text; the private response area remains blank.",
+      "anchorHint": "before expanding the story",
+      "screenLabelIds": [
+        "reflection.question"
+      ],
+      "audioId": "L06.S05.c009",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S05.d005": {
+      "id": "L06.S05.d005",
+      "speaker": "learner",
+      "text": "I would agree the room names earlier so that the separate parts have a common reference. I have not tried that change yet, so I cannot say how well it would work.",
+      "visualEn": "Label this One fictional model answer. Keep proposed earlier coordination distinct from implementation and tested effectiveness; never populate the real learner’s account.",
+      "anchorHint": "I have not tried that change yet",
+      "screenLabelIds": [
+        "model.label",
+        "model.future",
+        "model.limit"
+      ],
+      "audioId": "L06.S05.d005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S05.c010": {
+      "id": "L06.S05.c010",
+      "speaker": "coach",
+      "text": "A focused answer may be shorter than the story you prepared. Respond to the question asked, add the detail that helps, and stop before adding unsupported material. A clear limit can be part of an answer, rather than a gap that needs disguising.",
+      "visualEn": "Close on question focus and evidence boundary. No fixed interview duration, mandatory formula or official scoring claim.",
+      "anchorHint": "A clear limit can be part of an answer",
+      "screenLabelIds": [
+        "recap"
+      ],
+      "audioId": "L06.S05.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L06.S05.h101": {
+      "kind": "hold",
+      "id": "L06.S05.h101",
+      "seconds": 8,
+      "purpose": "Privately distinguish the completed label change from the future naming-list proposal.",
+      "visualEn": "Keep past action and future proposal in separate labelled regions; no inference that the learner answered.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L06.S05.h102": {
+      "kind": "hold",
+      "id": "L06.S05.h102",
+      "seconds": 12,
+      "purpose": "Privately answer the future-change question without turning intention into achievement.",
+      "visualEn": "No response is recorded, verified, scored or assumed to have been spoken.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {},
+  "boundary": "Use formal explanation and short explicitly fictional examples. Model events are not learner biography. No inferred recording, truth verification, official rubric or wider outcome."
+}

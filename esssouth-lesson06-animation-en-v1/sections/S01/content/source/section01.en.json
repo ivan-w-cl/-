@@ -1,0 +1,437 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L06.S01",
+  "title": "Choose One Specific Experience",
+  "budgetSeconds": 210,
+  "status": "New proposed Lesson 06 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Choose a specific, truthful episode with a clear action or decision to discuss; distinguish a useful experience account from a broad claim about personal qualities, without inventing achievements or disclosing private details.",
+  "scenario": {
+    "id": "L06.CASE01",
+    "kind": "Explicitly fictional authored training case, not a learner biography or a real admission interview",
+    "caseLabel": "Fictional worked example",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "Three volunteers prepared a one-page visitor guide for a community open afternoon."
+      },
+      {
+        "id": "F02",
+        "text": "The case participant drew the map. Maya listed session times. Noah assembled the guide."
+      },
+      {
+        "id": "F03",
+        "text": "The day before the event, the participant noticed that the map said Studio B while Maya's schedule said Blue Room."
+      },
+      {
+        "id": "F04",
+        "text": "The participant did not know whether those names meant the same room and asked the event coordinator rather than guessing."
+      },
+      {
+        "id": "F05",
+        "text": "The coordinator confirmed that both names referred to the same room and that its door sign said Blue Room."
+      },
+      {
+        "id": "F06",
+        "text": "The participant changed the map label to Blue Room and told Maya and Noah. Maya checked the schedule; Noah assembled the updated guide."
+      },
+      {
+        "id": "F07",
+        "text": "During the event, the participant saw one visitor use the map to find Blue Room."
+      },
+      {
+        "id": "F08",
+        "text": "There was no visitor survey or total count of people helped. No comparison shows what would have happened without the change."
+      },
+      {
+        "id": "F09",
+        "text": "In reflection, the participant would agree a shared list of room names earlier next time. This is a proposed future change, not an action already taken."
+      }
+    ],
+    "unknowns": [
+      "Whether anyone else used the map successfully",
+      "Whether a visitor would have found the room without this change",
+      "Whether the guide made the whole event successful",
+      "How long checking with the coordinator took",
+      "The coordinator's exact words",
+      "Any awards, numerical impact, leadership appointment or wider achievement"
+    ],
+    "permittedDecisionReason": "Conflicting labels could confuse visitors; confirming the door-sign name avoided choosing a name without checking. This is the participant's stated reasoning, not a measured causal result.",
+    "roles": {
+      "learner": "Case participant (fictional example only)",
+      "maya": "Follow-up partner in a later authored rehearsal; also the schedule volunteer within the remembered case",
+      "noah": "Guide assembler within the remembered case",
+      "coach": "Offstage instructor"
+    },
+    "state": {
+      "fictional": true,
+      "guideUpdated": true,
+      "observedVisitorsFindingRoom": 1,
+      "broaderImpactMeasured": false,
+      "futureNamingListImplemented": false,
+      "realLearnerExperienceCaptured": false
+    },
+    "boundaries": [
+      "Do not invent new case events, timings, quotations, achievements or causal outcomes.",
+      "Keep own actions distinct from Maya's and Noah's work.",
+      "Clearly label the model as fiction; never insert it into a real learner's personal response.",
+      "A private learner may rehearse an ordinary truthful experience, choose another topic or use this labelled fictional case for language practice.",
+      "No recording, AI scoring, truth verification, upload or success inferred from a click.",
+      "No rigid answer length or required STAR script; these are optional planning distinctions, not official assessment criteria."
+    ]
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Case participant",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L06.S01.B01",
+      "title": "Choose Something You Can Explain",
+      "family": "experience_scope_and_fictional_frame",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S01.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S01.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S01.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S01.c003"
+        }
+      ]
+    },
+    {
+      "id": "L06.S01.B02",
+      "title": "Find the Action within the Larger Experience",
+      "family": "episode_boundary_and_source_facts",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S01.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S01.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S01.c006"
+        },
+        {
+          "kind": "hold",
+          "id": "L06.S01.h101"
+        }
+      ]
+    },
+    {
+      "id": "L06.S01.B03",
+      "title": "Specific Does Not Mean Elaborate",
+      "family": "relevance_and_information_limits",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S01.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S01.c008"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S01.c009"
+        }
+      ]
+    },
+    {
+      "id": "L06.S01.B04",
+      "title": "Choose a Truthful and Comfortable Topic",
+      "family": "private_choice_and_alternative",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S01.c010"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S01.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S01.c012"
+        },
+        {
+          "kind": "hold",
+          "id": "L06.S01.h102"
+        }
+      ]
+    },
+    {
+      "id": "L06.S01.B05",
+      "title": "Make the Next Question Answerable",
+      "family": "neutral_recap_and_bridge",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S01.c013"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L06.S01.c001": {
+      "id": "L06.S01.c001",
+      "speaker": "coach",
+      "text": "When asked about an experience, you do not need to begin with your most impressive achievement. Choose something specific that lets you explain what happened, what you did and what you can honestly say about it.",
+      "visualEn": "Open with a broad experience-topic card narrowing to one event, action and question. Do not introduce awards, status rankings, an official rubric or a required three-part answer template.",
+      "anchorHint": "something specific",
+      "screenLabelIds": [
+        "section.title",
+        "selection.focus"
+      ],
+      "audioId": "L06.S01.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c002": {
+      "id": "L06.S01.c002",
+      "speaker": "coach",
+      "text": "We will use a fictional worked example, not anyone’s personal record. Three volunteers prepared a one-page visitor guide for a community open afternoon. The participant drew the map, Maya listed session times, and Noah assembled the guide.",
+      "visualEn": "Reveal the persistent Fictional worked example frame before any case material. Show three role lanes and one-page guide; these are supplied case facts, not a viewer biography. Maya and Noah need not appear as speaking characters inside the event.",
+      "anchorHint": "The participant drew the map",
+      "screenLabelIds": [
+        "case.label",
+        "case.task",
+        "case.roles"
+      ],
+      "audioId": "L06.S01.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.d001": {
+      "id": "L06.S01.d001",
+      "speaker": "learner",
+      "text": "I drew the map for a visitor guide. The day before the event, I noticed that my map said Studio B while Maya’s schedule said Blue Room.",
+      "visualEn": "Show a brief authored account by the fictional case participant in a separate model frame. Retain the fiction label. This is a later account, not a captured statement from the event or the real viewer.",
+      "anchorHint": "Studio B while Maya’s schedule said Blue Room",
+      "screenLabelIds": [
+        "model.label"
+      ],
+      "audioId": "L06.S01.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S01.c003": {
+      "id": "L06.S01.c003",
+      "speaker": "coach",
+      "text": "This gives us an episode to examine: conflicting labels while preparing a guide. It is more specific than saying I helped at an event, and it does not yet claim a dramatic result.",
+      "visualEn": "Move to a formal board with context and the two exact source labels. Keep the contradiction unresolved until the supplied confirmation facts appear.",
+      "anchorHint": "an episode to examine",
+      "screenLabelIds": [
+        "episode.focus"
+      ],
+      "audioId": "L06.S01.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c004": {
+      "id": "L06.S01.c004",
+      "speaker": "coach",
+      "text": "The participant did not know whether the names meant the same room. Instead of guessing, they asked the coordinator. The coordinator confirmed that both names referred to the same room and that its door sign said Blue Room.",
+      "visualEn": "Sequence only the given facts: uncertainty, asking, then confirmation. Use reported information rather than invented direct speech from the coordinator. No new room, timing or conversation details.",
+      "anchorHint": "Instead of guessing",
+      "screenLabelIds": [
+        "case.uncertainty",
+        "case.confirmed"
+      ],
+      "audioId": "L06.S01.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c005": {
+      "id": "L06.S01.c005",
+      "speaker": "coach",
+      "text": "The participant changed the map label and told Maya and Noah. Maya checked the schedule; Noah assembled the updated guide. That is the shared work surrounding the episode, not evidence that one person completed everything.",
+      "visualEn": "Reuse the three role lanes. Put map correction and notification in the participant lane, schedule check in Maya’s, updated assembly in Noah’s. Do not invent additional work or a leader role.",
+      "anchorHint": "not evidence that one person completed everything",
+      "screenLabelIds": [
+        "case.action",
+        "case.team"
+      ],
+      "audioId": "L06.S01.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c006": {
+      "id": "L06.S01.c006",
+      "speaker": "coach",
+      "text": "Privately identify the part of this experience you could explain in more detail. Which moment involves an uncertainty, an action or a decision? You can use the supplied case without pretending it happened to you.",
+      "visualEn": "Retain the labelled source facts and a blank private focus area. No automatic topic selection, personal history capture or model copied into the private area.",
+      "anchorHint": "without pretending it happened to you",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L06.S01.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c007": {
+      "id": "L06.S01.c007",
+      "speaker": "coach",
+      "text": "A specific account does not need every detail of the afternoon. Include enough context for the listener to understand the problem and your part. Extra details are useful only when they help explain the point you are making.",
+      "visualEn": "Show a compact episode frame within the larger event. Do not populate peripheral cards with invented attendees, decoration, dates or quotations.",
+      "anchorHint": "Extra details are useful only when",
+      "screenLabelIds": [
+        "detail.rule"
+      ],
+      "audioId": "L06.S01.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c008": {
+      "id": "L06.S01.c008",
+      "speaker": "coach",
+      "text": "The source also limits the result: the participant saw one visitor use the map to find Blue Room. There was no survey or total count, and no comparison showing what would have happened without the change.",
+      "visualEn": "Add the single supplied observation separately from broader unknown impact. Do not animate a crowd succeeding, create a percentage or imply the correction caused the observed visitor’s success.",
+      "anchorHint": "one visitor",
+      "screenLabelIds": [
+        "result.observed",
+        "result.unknown"
+      ],
+      "audioId": "L06.S01.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c009": {
+      "id": "L06.S01.c009",
+      "speaker": "coach",
+      "text": "Those limits do not make the experience unusable. The label check is still something the participant can explain. Do not add a larger outcome simply to make the story sound more impressive.",
+      "visualEn": "Keep the concrete decision visible alongside the limited observation and unknowns. Avoid a success/failure grade or heroic character treatment.",
+      "anchorHint": "Do not add a larger outcome",
+      "screenLabelIds": [
+        "truthfulness.note"
+      ],
+      "audioId": "L06.S01.c009",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c010": {
+      "id": "L06.S01.c010",
+      "speaker": "coach",
+      "text": "For your own practice, consider an ordinary experience you remember well. It could involve preparing something, helping with a task or noticing a problem. Choose an episode small enough to describe clearly, with a part that you can explain from your own experience.",
+      "visualEn": "Formal board shows ordinary task categories as possibilities: preparing, helping, noticing. A selection frame narrows to one episode; no achievement badge or invented biography. Keep private response blank.",
+      "anchorHint": "small enough",
+      "screenLabelIds": [
+        "private.options"
+      ],
+      "audioId": "L06.S01.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c011": {
+      "id": "L06.S01.c011",
+      "speaker": "coach",
+      "text": "If one topic feels too personal, choose another. You can also use the fictional case for language practice, while keeping it labelled as an example. A useful episode does not need an award, a leadership title or a dramatic ending.",
+      "visualEn": "Offer two labelled blank paths: Own experience and Fictional example. A small optional privacy note stays in the controls, not a repeated warning card. No automatic answer population.",
+      "anchorHint": "A useful episode",
+      "screenLabelIds": [
+        "practice.alternative"
+      ],
+      "audioId": "L06.S01.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c012": {
+      "id": "L06.S01.c012",
+      "speaker": "coach",
+      "text": "Privately choose one episode and name the part you could explain. Keep the choice to yourself. What was happening, and where did you take part? Pause here if you would like more time to think.",
+      "visualEn": "Private thinking board with empty Setting and My part slots; do not fill them with model events. The fixed reflection hold follows; no recorded response or success mark.",
+      "anchorHint": "where did you take part",
+      "screenLabelIds": [
+        "private.prompt",
+        "private.note"
+      ],
+      "audioId": "L06.S01.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S01.c013": {
+      "id": "L06.S01.c013",
+      "speaker": "coach",
+      "text": "A useful starting point is an experience with a clear setting and an action you can describe. It need not prove an entire personal quality. In the next section, we will separate your contribution from the team’s work.",
+      "visualEn": "Settle the episode frame and supplied role lanes. End with neutral replay and explicit navigation, without a personality certificate, mastery claim or automatic next lesson.",
+      "anchorHint": "separate your contribution from the team’s work",
+      "screenLabelIds": [
+        "recap.focus",
+        "next.title"
+      ],
+      "audioId": "L06.S01.c013",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L06.S01.h101": {
+      "kind": "hold",
+      "id": "L06.S01.h101",
+      "seconds": 8,
+      "purpose": "Privately choose a specific episode or decision from the labelled fictional case.",
+      "visualEn": "Keep the private area blank. No response is recorded, chosen automatically or treated as completed when time passes.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L06.S01.h102": {
+      "kind": "hold",
+      "id": "L06.S01.h102",
+      "seconds": 8,
+      "purpose": "Privately choose an experience or the explicitly fictional language-practice case.",
+      "visualEn": "Keep both possible routes available and the private response blank. Do not assume the viewer has chosen, spoken or disclosed anything.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {},
+  "boundary": "Use formal explanation and short explicitly fictional examples. Model events are not learner biography. No inferred recording, truth verification, official rubric or wider outcome."
+}

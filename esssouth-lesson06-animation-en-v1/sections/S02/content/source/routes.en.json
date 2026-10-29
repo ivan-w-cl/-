@@ -1,0 +1,164 @@
+{
+  "sectionId": "L06.S02",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L06.S02.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S02.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c008"
+    },
+    {
+      "kind": "watch_hold",
+      "id": "L06.I01.watchThink",
+      "seconds": 8
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.d201"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.d202"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.f201"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c012"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S02.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c013"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L06.S02.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S02.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c008"
+    },
+    {
+      "kind": "gate",
+      "id": "L06.I01",
+      "seconds": null
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c012"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S02.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S02.c013"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L06.S02",
+    "title": "Make Your Own Contribution Clear",
+    "budgetSeconds": 270,
+    "spokenCueCount": 22,
+    "watchCueCount": 16,
+    "watchWords": 537,
+    "estimatedWatchSeconds": 259.741,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 217.691,
+    "interactions": [
+      "L06.I01"
+    ],
+    "learningOutcome": "Make personal actions clear while preserving other people’s contributions; use I and we according to the supplied facts rather than inflating ownership or hiding an individual role."
+  }
+}

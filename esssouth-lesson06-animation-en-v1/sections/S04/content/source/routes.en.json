@@ -1,0 +1,132 @@
+{
+  "sectionId": "L06.S04",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L06.S04.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S04.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c009"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S04.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c010"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L06.S04.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S04.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c009"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S04.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S04.c010"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L06.S04",
+    "title": "Describe Results Without Overclaiming",
+    "budgetSeconds": 270,
+    "spokenCueCount": 12,
+    "watchCueCount": 12,
+    "watchWords": 498,
+    "estimatedWatchSeconds": 237.629,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 237.629,
+    "interactions": [],
+    "learningOutcome": "Distinguish a completed action, a directly observed outcome and an unsupported wider or causal claim when describing an experience."
+  }
+}

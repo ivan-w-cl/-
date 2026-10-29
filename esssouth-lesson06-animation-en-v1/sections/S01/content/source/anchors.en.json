@@ -1,0 +1,90 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L06.S01",
+  "anchors": {
+    "a_L06_S01_c001": {
+      "cueId": "L06.S01.c001",
+      "phrase": "something specific",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c002": {
+      "cueId": "L06.S01.c002",
+      "phrase": "The participant drew the map",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_d001": {
+      "cueId": "L06.S01.d001",
+      "phrase": "Studio B while Maya’s schedule said Blue Room",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c003": {
+      "cueId": "L06.S01.c003",
+      "phrase": "an episode to examine",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c004": {
+      "cueId": "L06.S01.c004",
+      "phrase": "Instead of guessing",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c005": {
+      "cueId": "L06.S01.c005",
+      "phrase": "not evidence that one person completed everything",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c006": {
+      "cueId": "L06.S01.c006",
+      "phrase": "without pretending it happened to you",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c007": {
+      "cueId": "L06.S01.c007",
+      "phrase": "Extra details are useful only when",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c008": {
+      "cueId": "L06.S01.c008",
+      "phrase": "one visitor",
+      "estimatedSeconds": 3.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c009": {
+      "cueId": "L06.S01.c009",
+      "phrase": "Do not add a larger outcome",
+      "estimatedSeconds": 7.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c010": {
+      "cueId": "L06.S01.c010",
+      "phrase": "small enough",
+      "estimatedSeconds": 11.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c011": {
+      "cueId": "L06.S01.c011",
+      "phrase": "A useful episode",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c012": {
+      "cueId": "L06.S01.c012",
+      "phrase": "where did you take part",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S01_c013": {
+      "cueId": "L06.S01.c013",
+      "phrase": "separate your contribution from the team’s work",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

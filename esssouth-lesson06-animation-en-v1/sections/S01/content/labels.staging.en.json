@@ -1,0 +1,33 @@
+{
+  "schema": "esssouth.l06.staging-labels/1",
+  "sectionId": "L06.S01",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Case wording follows content/case-facts.en.json (F01–F09) exactly in substance; nothing new is asserted. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.broad": "An experience",
+    "x.event": "One event",
+    "x.action": "One action",
+    "x.question": "One question you can answer",
+    "x.lane.p": "Case participant",
+    "x.lane.m": "Maya",
+    "x.lane.n": "Noah",
+    "x.role.map": "Drew the map",
+    "x.role.times": "Listed session times",
+    "x.role.assembly": "Assembled the guide",
+    "x.studioB": "Map: Studio B",
+    "x.blueRoom": "Schedule: Blue Room",
+    "x.asked": "Asked the event coordinator",
+    "x.summary": "Summary, not the coordinator's exact words",
+    "x.maya.check": "Checked the schedule",
+    "x.noah.assemble": "Assembled the updated guide",
+    "x.day": "The community open afternoon",
+    "x.decision": "Checked the label before changing it",
+    "x.cat.prep": "Preparing something",
+    "x.cat.help": "Helping with a task",
+    "x.cat.notice": "Noticing a problem",
+    "x.oneEpisode": "One episode",
+    "x.path.own": "Own experience",
+    "x.path.fiction": "Fictional example",
+    "x.slot.setting": "Setting",
+    "x.slot.part": "My part"
+  }
+}

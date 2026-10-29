@@ -1,0 +1,148 @@
+{
+  "sectionId": "L06.S01",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L06.S01.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S01.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c012"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S01.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c013"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L06.S01.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S01.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c012"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S01.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S01.c013"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L06.S01",
+    "title": "Choose One Specific Experience",
+    "budgetSeconds": 210,
+    "spokenCueCount": 14,
+    "watchCueCount": 14,
+    "watchWords": 504,
+    "estimatedWatchSeconds": 236.902,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 236.902,
+    "interactions": [],
+    "learningOutcome": "Choose a specific, truthful episode with a clear action or decision to discuss; distinguish a useful experience account from a broad claim about personal qualities, without inventing achievements or disclosing private details."
+  }
+}

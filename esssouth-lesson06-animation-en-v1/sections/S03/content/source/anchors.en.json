@@ -1,0 +1,144 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L06.S03",
+  "anchors": {
+    "a_L06_S03_c001": {
+      "cueId": "L06.S03.c001",
+      "phrase": "the choice behind it",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c002": {
+      "cueId": "L06.S03.c002",
+      "phrase": "did not know whether those names meant the same room",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c003": {
+      "cueId": "L06.S03.c003",
+      "phrase": "Confirmation came afterward",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c004": {
+      "cueId": "L06.S03.c004",
+      "phrase": "does not measure how many visitors",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c005": {
+      "cueId": "L06.S03.c005",
+      "phrase": "knew beforehand",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c006": {
+      "cueId": "L06.S03.c006",
+      "phrase": "what remained unknown",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_d001": {
+      "cueId": "L06.S03.d001",
+      "phrase": "rather than choose one of the names yourself",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c007": {
+      "cueId": "L06.S03.c007",
+      "phrase": "the information available at the time",
+      "estimatedSeconds": 3.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c008": {
+      "cueId": "L06.S03.c008",
+      "phrase": "information available",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c010": {
+      "cueId": "L06.S03.c010",
+      "phrase": "None of that establishes a measured improvement",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c011": {
+      "cueId": "L06.S03.c011",
+      "phrase": "unless the account actually contains that observation",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c012": {
+      "cueId": "L06.S03.c012",
+      "phrase": "what you did not know",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c013": {
+      "cueId": "L06.S03.c013",
+      "phrase": "acknowledge that limit",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_c014": {
+      "cueId": "L06.S03.c014",
+      "phrase": "something known only later",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_d101": {
+      "cueId": "L06.S03.d101",
+      "phrase": "checking was important",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_d102": {
+      "cueId": "L06.S03.d102",
+      "phrase": "why did that affect your choice",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_f101": {
+      "cueId": "L06.S03.f101",
+      "phrase": "leaves its relevance unexplained",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_d201": {
+      "cueId": "L06.S03.d201",
+      "phrase": "every visitor",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_d202": {
+      "cueId": "L06.S03.d202",
+      "phrase": "when you decided",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_f201": {
+      "cueId": "L06.S03.f201",
+      "phrase": "no comparison proves what the change caused",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_d301": {
+      "cueId": "L06.S03.d301",
+      "phrase": "so I would not choose a name by guessing",
+      "estimatedSeconds": 7.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_d302": {
+      "cueId": "L06.S03.d302",
+      "phrase": "what you changed",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S03_f301": {
+      "cueId": "L06.S03.f301",
+      "phrase": "the information available then",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

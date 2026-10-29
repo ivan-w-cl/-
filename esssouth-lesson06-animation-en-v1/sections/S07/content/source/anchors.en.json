@@ -1,0 +1,60 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L06.S07",
+  "anchors": {
+    "a_L06_S07_c001": {
+      "cueId": "L06.S07.c001",
+      "phrase": "the same facts",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S07_c002": {
+      "cueId": "L06.S07.c002",
+      "phrase": "different requests",
+      "estimatedSeconds": 16.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S07_c003": {
+      "cueId": "L06.S07.c003",
+      "phrase": "their own work",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S07_d001": {
+      "cueId": "L06.S07.d001",
+      "phrase": "could help",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S07_c004": {
+      "cueId": "L06.S07.c004",
+      "phrase": "stays in the future",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S07_d002": {
+      "cueId": "L06.S07.d002",
+      "phrase": "cannot say",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S07_c005": {
+      "cueId": "L06.S07.c005",
+      "phrase": "does not prove",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S07_c006": {
+      "cueId": "L06.S07.c006",
+      "phrase": "not a personal history",
+      "estimatedSeconds": 19.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S07_c007": {
+      "cueId": "L06.S07.c007",
+      "phrase": "what is being asked",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

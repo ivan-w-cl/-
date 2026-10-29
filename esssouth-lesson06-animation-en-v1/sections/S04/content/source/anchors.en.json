@@ -1,0 +1,78 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L06.S04",
+  "anchors": {
+    "a_L06_S04_c001": {
+      "cueId": "L06.S04.c001",
+      "phrase": "what you actually know",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_c002": {
+      "cueId": "L06.S04.c002",
+      "phrase": "different people responsible",
+      "estimatedSeconds": 16.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_c003": {
+      "cueId": "L06.S04.c003",
+      "phrase": "this particular use of the map",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_d001": {
+      "cueId": "L06.S04.d001",
+      "phrase": "I saw one visitor",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_c004": {
+      "cueId": "L06.S04.c004",
+      "phrase": "this case cannot support",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_c005": {
+      "cueId": "L06.S04.c005",
+      "phrase": "None of those details is available",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_c006": {
+      "cueId": "L06.S04.c006",
+      "phrase": "without the change",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_c007": {
+      "cueId": "L06.S04.c007",
+      "phrase": "the reasoning behind the action",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_d002": {
+      "cueId": "L06.S04.d002",
+      "phrase": "cannot say what would have happened",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_c008": {
+      "cueId": "L06.S04.c008",
+      "phrase": "other people’s work",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_c009": {
+      "cueId": "L06.S04.c009",
+      "phrase": "claim more",
+      "estimatedSeconds": 11.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L06_S04_c010": {
+      "cueId": "L06.S04.c010",
+      "phrase": "not three compulsory sentences",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "lessonId": "L06",
+  "status": "Author-created fictional case; exact scenario source for all seven sections.",
+  "scenario": {
+    "id": "L06.CASE01",
+    "kind": "Explicitly fictional authored training case, not a learner biography or a real admission interview",
+    "caseLabel": "Fictional worked example",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "Three volunteers prepared a one-page visitor guide for a community open afternoon."
+      },
+      {
+        "id": "F02",
+        "text": "The case participant drew the map. Maya listed session times. Noah assembled the guide."
+      },
+      {
+        "id": "F03",
+        "text": "The day before the event, the participant noticed that the map said Studio B while Maya's schedule said Blue Room."
+      },
+      {
+        "id": "F04",
+        "text": "The participant did not know whether those names meant the same room and asked the event coordinator rather than guessing."
+      },
+      {
+        "id": "F05",
+        "text": "The coordinator confirmed that both names referred to the same room and that its door sign said Blue Room."
+      },
+      {
+        "id": "F06",
+        "text": "The participant changed the map label to Blue Room and told Maya and Noah. Maya checked the schedule; Noah assembled the updated guide."
+      },
+      {
+        "id": "F07",
+        "text": "During the event, the participant saw one visitor use the map to find Blue Room."
+      },
+      {
+        "id": "F08",
+        "text": "There was no visitor survey or total count of people helped. No comparison shows what would have happened without the change."
+      },
+      {
+        "id": "F09",
+        "text": "In reflection, the participant would agree a shared list of room names earlier next time. This is a proposed future change, not an action already taken."
+      }
+    ],
+    "unknowns": [
+      "Whether anyone else used the map successfully",
+      "Whether a visitor would have found the room without this change",
+      "Whether the guide made the whole event successful",
+      "How long checking with the coordinator took",
+      "The coordinator's exact words",
+      "Any awards, numerical impact, leadership appointment or wider achievement"
+    ],
+    "permittedDecisionReason": "Conflicting labels could confuse visitors; confirming the door-sign name avoided choosing a name without checking. This is the participant's stated reasoning, not a measured causal result.",
+    "roles": {
+      "learner": "Case participant (fictional example only)",
+      "maya": "Follow-up partner in a later authored rehearsal; also the schedule volunteer within the remembered case",
+      "noah": "Guide assembler within the remembered case",
+      "coach": "Offstage instructor"
+    },
+    "state": {
+      "fictional": true,
+      "guideUpdated": true,
+      "observedVisitorsFindingRoom": 1,
+      "broaderImpactMeasured": false,
+      "futureNamingListImplemented": false,
+      "realLearnerExperienceCaptured": false
+    },
+    "boundaries": [
+      "Do not invent new case events, timings, quotations, achievements or causal outcomes.",
+      "Keep own actions distinct from Maya's and Noah's work.",
+      "Clearly label the model as fiction; never insert it into a real learner's personal response.",
+      "A private learner may rehearse an ordinary truthful experience, choose another topic or use this labelled fictional case for language practice.",
+      "No recording, AI scoring, truth verification, upload or success inferred from a click.",
+      "No rigid answer length or required STAR script; these are optional planning distinctions, not official assessment criteria."
+    ]
+  }
+}

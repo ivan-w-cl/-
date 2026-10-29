@@ -1,0 +1,156 @@
+{
+  "sectionId": "L06.S05",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L06.S05.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S05.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.d004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c009"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S05.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.d005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c010"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L06.S05.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S05.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.d004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c009"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S05.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.d005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S05.c010"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L06.S05",
+    "title": "Reflect and Answer the Question Asked",
+    "budgetSeconds": 270,
+    "spokenCueCount": 15,
+    "watchCueCount": 15,
+    "watchWords": 552,
+    "estimatedWatchSeconds": 261.823,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 261.823,
+    "interactions": [],
+    "learningOutcome": "Give a reflection grounded in the case and respond to the particular follow-up asked, distinguishing future intentions from completed actions and unknown details."
+  }
+}

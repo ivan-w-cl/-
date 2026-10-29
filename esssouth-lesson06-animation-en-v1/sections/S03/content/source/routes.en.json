@@ -1,0 +1,172 @@
+{
+  "sectionId": "L06.S03",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L06.S03.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S03.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c008"
+    },
+    {
+      "kind": "watch_hold",
+      "id": "L06.I02.watchThink",
+      "seconds": 8
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.d301"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.d302"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.f301"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c012"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c013"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S03.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c014"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L06.S03.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S03.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c008"
+    },
+    {
+      "kind": "gate",
+      "id": "L06.I02",
+      "seconds": null
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c012"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c013"
+    },
+    {
+      "kind": "hold",
+      "id": "L06.S03.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L06.S03.c014"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L06.S03",
+    "title": "Explain Why You Made a Decision",
+    "budgetSeconds": 270,
+    "spokenCueCount": 23,
+    "watchCueCount": 17,
+    "watchWords": 558,
+    "estimatedWatchSeconds": 269.092,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 229.614,
+    "interactions": [
+      "L06.I02"
+    ],
+    "learningOutcome": "Explain the information and uncertainty behind a decision, keeping the participant’s stated reasoning separate from later observations or unproved causal outcomes."
+  }
+}

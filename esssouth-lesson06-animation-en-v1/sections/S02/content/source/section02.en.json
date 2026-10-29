@@ -1,0 +1,616 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L06.S02",
+  "title": "Make Your Own Contribution Clear",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 06 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Make personal actions clear while preserving other people’s contributions; use I and we according to the supplied facts rather than inflating ownership or hiding an individual role.",
+  "scenario": {
+    "id": "L06.CASE01",
+    "kind": "Explicitly fictional authored training case, not a learner biography or a real admission interview",
+    "caseLabel": "Fictional worked example",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "Three volunteers prepared a one-page visitor guide for a community open afternoon."
+      },
+      {
+        "id": "F02",
+        "text": "The case participant drew the map. Maya listed session times. Noah assembled the guide."
+      },
+      {
+        "id": "F03",
+        "text": "The day before the event, the participant noticed that the map said Studio B while Maya's schedule said Blue Room."
+      },
+      {
+        "id": "F04",
+        "text": "The participant did not know whether those names meant the same room and asked the event coordinator rather than guessing."
+      },
+      {
+        "id": "F05",
+        "text": "The coordinator confirmed that both names referred to the same room and that its door sign said Blue Room."
+      },
+      {
+        "id": "F06",
+        "text": "The participant changed the map label to Blue Room and told Maya and Noah. Maya checked the schedule; Noah assembled the updated guide."
+      },
+      {
+        "id": "F07",
+        "text": "During the event, the participant saw one visitor use the map to find Blue Room."
+      },
+      {
+        "id": "F08",
+        "text": "There was no visitor survey or total count of people helped. No comparison shows what would have happened without the change."
+      },
+      {
+        "id": "F09",
+        "text": "In reflection, the participant would agree a shared list of room names earlier next time. This is a proposed future change, not an action already taken."
+      }
+    ],
+    "unknowns": [
+      "Whether anyone else used the map successfully",
+      "Whether a visitor would have found the room without this change",
+      "Whether the guide made the whole event successful",
+      "How long checking with the coordinator took",
+      "The coordinator's exact words",
+      "Any awards, numerical impact, leadership appointment or wider achievement"
+    ],
+    "permittedDecisionReason": "Conflicting labels could confuse visitors; confirming the door-sign name avoided choosing a name without checking. This is the participant's stated reasoning, not a measured causal result.",
+    "roles": {
+      "learner": "Case participant (fictional example only)",
+      "maya": "Follow-up partner in a later authored rehearsal; also the schedule volunteer within the remembered case",
+      "noah": "Guide assembler within the remembered case",
+      "coach": "Offstage instructor"
+    },
+    "state": {
+      "fictional": true,
+      "guideUpdated": true,
+      "observedVisitorsFindingRoom": 1,
+      "broaderImpactMeasured": false,
+      "futureNamingListImplemented": false,
+      "realLearnerExperienceCaptured": false
+    },
+    "boundaries": [
+      "Do not invent new case events, timings, quotations, achievements or causal outcomes.",
+      "Keep own actions distinct from Maya's and Noah's work.",
+      "Clearly label the model as fiction; never insert it into a real learner's personal response.",
+      "A private learner may rehearse an ordinary truthful experience, choose another topic or use this labelled fictional case for language practice.",
+      "No recording, AI scoring, truth verification, upload or success inferred from a click.",
+      "No rigid answer length or required STAR script; these are optional planning distinctions, not official assessment criteria."
+    ]
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Case participant",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L06.S02.B01",
+      "title": "Keep the Person and the Team Visible",
+      "family": "standalone_case_and_role_map",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S02.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S02.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S02.c003"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S02.c004"
+        }
+      ]
+    },
+    {
+      "id": "L06.S02.B02",
+      "title": "Choose Pronouns by the Work They Describe",
+      "family": "ownership_precision",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S02.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S02.c006"
+        },
+        {
+          "kind": "hold",
+          "id": "L06.S02.h101"
+        }
+      ]
+    },
+    {
+      "id": "L06.S02.B03",
+      "title": "Answer a Follow-Up about Your Part",
+      "family": "later_rehearsal_choice_gate",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S02.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S02.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S02.c008"
+        },
+        {
+          "kind": "interaction",
+          "id": "L06.I01"
+        }
+      ]
+    },
+    {
+      "id": "L06.S02.B04",
+      "title": "Keep Both Levels of the Account",
+      "family": "shared_fact_based_analysis",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S02.c010"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S02.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S02.c012"
+        },
+        {
+          "kind": "hold",
+          "id": "L06.S02.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S02.c013"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L06.S02.c001": {
+      "id": "L06.S02.c001",
+      "speaker": "coach",
+      "text": "An experience may belong to a team while particular actions belong to different people. A clear account makes your own part visible without taking credit for everyone’s work. Neither I nor we is automatically the right choice.",
+      "visualEn": "Open with a shared output and three separate contribution lanes. Avoid ranking collaborators or treating individual credit as more valuable than collaboration.",
+      "anchorHint": "Neither I nor we is automatically the right choice",
+      "screenLabelIds": [
+        "section.title",
+        "ownership.focus"
+      ],
+      "audioId": "L06.S02.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.c002": {
+      "id": "L06.S02.c002",
+      "speaker": "coach",
+      "text": "In our fictional example, three volunteers prepared a one-page guide for a community open afternoon. The participant drew the map, Maya listed session times, and Noah assembled the guide. These role facts stay the same throughout the examples.",
+      "visualEn": "Show Fictional worked example before the source facts. Keep map, schedule and assembly attributed to the correct people. No leadership appointment, award or extra responsibilities.",
+      "anchorHint": "These role facts stay the same",
+      "screenLabelIds": [
+        "case.label",
+        "role.participant",
+        "role.others"
+      ],
+      "audioId": "L06.S02.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.c003": {
+      "id": "L06.S02.c003",
+      "speaker": "coach",
+      "text": "The day before the event, the participant noticed Studio B on the map and Blue Room on the schedule. They asked the coordinator whether the names meant the same room, rather than selecting a name by guessing.",
+      "visualEn": "Show the conflicting written labels and the participant’s question as reported facts. Do not invent the coordinator’s exact speech or how long checking took.",
+      "anchorHint": "rather than selecting a name by guessing",
+      "screenLabelIds": [
+        "case.check"
+      ],
+      "audioId": "L06.S02.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.c004": {
+      "id": "L06.S02.c004",
+      "speaker": "coach",
+      "text": "After confirmation that both names meant the same room and its door sign said Blue Room, the participant changed the map label and told the others. Maya checked the schedule. Noah assembled the updated guide. An individual action and a team result can be described together.",
+      "visualEn": "Keep the confirmation precise: both names refer to the same room; door sign says Blue Room. Attribute the subsequent three actions separately. No broad visitor impact is inferred from the update.",
+      "anchorHint": "An individual action and a team result",
+      "screenLabelIds": [
+        "updated.roles"
+      ],
+      "audioId": "L06.S02.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.c005": {
+      "id": "L06.S02.c005",
+      "speaker": "coach",
+      "text": "We prepared a guide describes the shared task. I changed the map label describes the participant’s action. The distinction is not about making one sound better; it helps the listener understand who did what.",
+      "visualEn": "Match the two example phrases to the shared task and participant action. Leave Maya’s and Noah’s lanes visible, with no competitive score.",
+      "anchorHint": "who did what",
+      "screenLabelIds": [
+        "pronoun.we",
+        "pronoun.i"
+      ],
+      "audioId": "L06.S02.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.c006": {
+      "id": "L06.S02.c006",
+      "speaker": "coach",
+      "text": "Privately separate one personal action from one contribution by someone else. Use the supplied facts rather than filling a gap with an impressive responsibility. Nothing about the case establishes that the participant led the whole project.",
+      "visualEn": "Show a blank two-column private note beside the role facts. Do not fill in an answer or introduce a leader badge.",
+      "anchorHint": "rather than filling a gap",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L06.S02.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.d001": {
+      "id": "L06.S02.d001",
+      "speaker": "maya",
+      "text": "What was your own part in preparing and updating the guide?",
+      "visualEn": "Introduce a separate frame labelled Later authored rehearsal. Maya is a rehearsal partner asking about the remembered fictional case, not asking this during the event. Do not invent a real interview or examiner.",
+      "anchorHint": "your own part",
+      "screenLabelIds": [
+        "rehearsal.frame",
+        "question.part"
+      ],
+      "audioId": "L06.S02.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S02.c007": {
+      "id": "L06.S02.c007",
+      "speaker": "coach",
+      "text": "Compare three possible accounts of the same case. Which answers Maya’s question while keeping everyone’s contribution accurate? Listen for a personal action, and notice whether the words also leave room for the other volunteers’ work.",
+      "visualEn": "Later authored rehearsal frame; Fictional worked example label persists. Present the three alternatives as separate reply cards, not consecutive speech. Highlight ownership verbs only when their phrase arrives.",
+      "anchorHint": "a personal action",
+      "screenLabelIds": [
+        "choice.prompt"
+      ],
+      "audioId": "L06.S02.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.c008": {
+      "id": "L06.S02.c008",
+      "speaker": "coach",
+      "text": "One alternative deliberately claims more than the facts support. Read it as wording to examine, not an added event. The source facts, not the confidence of a reply, decide whether its attribution is accurate.",
+      "visualEn": "Put an examination label on all alternatives. The flawed option must never appear as factual narration or overwrite source-role cards; do not reveal a correct option in advance.",
+      "anchorHint": "not an added event",
+      "screenLabelIds": [
+        "choice.note"
+      ],
+      "audioId": "L06.S02.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.c010": {
+      "id": "L06.S02.c010",
+      "speaker": "coach",
+      "text": "The participant handled the map and checked its conflicting label; Maya handled the schedule; Noah assembled the guide. Keep that division clear when you put the account into your own words. A shared result can include several distinct contributions.",
+      "visualEn": "Common rejoin returns to unchanged three-role board, valid after every alternative or Skip. Map/checking under participant, schedule under Maya, assembly under Noah; no selected-answer praise.",
+      "anchorHint": "several distinct contributions",
+      "screenLabelIds": [
+        "shared.roles"
+      ],
+      "audioId": "L06.S02.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.c011": {
+      "id": "L06.S02.c011",
+      "speaker": "coach",
+      "text": "Say enough about the others to make the work understandable, but do not let a long team description hide your answer to a question about your own part. The right balance depends on what was asked.",
+      "visualEn": "Keep the shared output and personal action connected with adjustable emphasis. No required sentence count or fixed ratio of I to we.",
+      "anchorHint": "what was asked",
+      "screenLabelIds": [
+        "answer.focus"
+      ],
+      "audioId": "L06.S02.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.c012": {
+      "id": "L06.S02.c012",
+      "speaker": "coach",
+      "text": "Privately explain the participant’s role, or use a truthful experience of your own. Where does we describe the team accurately, and where would I make your own action clearer? Try changing one sentence while keeping the ownership of every action intact.",
+      "visualEn": "Show We / I as editable illustration labels beside a blank private practice area. Keep optional case source separate. Do not infer speech, correctness or completion.",
+      "anchorHint": "ownership of every action",
+      "screenLabelIds": [
+        "private.prompt",
+        "private.note"
+      ],
+      "audioId": "L06.S02.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.c013": {
+      "id": "L06.S02.c013",
+      "speaker": "coach",
+      "text": "If you formed a version, check who each action belongs to. Do not borrow a responsibility to make the answer sound stronger. Next, we will explain why the participant chose to check the room name.",
+      "visualEn": "Offer a conditional self-check against known roles; do not evaluate an unheard answer. End neutrally, preserving the later rehearsal and fictional-source distinction.",
+      "anchorHint": "who each action belongs to",
+      "screenLabelIds": [
+        "review.question",
+        "next.title"
+      ],
+      "audioId": "L06.S02.c013",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.d101": {
+      "id": "L06.S02.d101",
+      "speaker": "learner",
+      "text": "We prepared the guide and updated it together.",
+      "visualEn": "Authored learner alternative A in the later rehearsal frame. Connect we to the collective output, without inventing identical work by all three people.",
+      "anchorHint": "updated it together",
+      "screenLabelIds": [
+        "branch.a.label"
+      ],
+      "audioId": "L06.S02.d101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S02.d102": {
+      "id": "L06.S02.d102",
+      "speaker": "maya",
+      "text": "That describes the group’s work. Which actions were yours?",
+      "visualEn": "Maya asks a follow-up as a later rehearsal partner. This is an authored continuation, not an event-time quotation or diagnosis of the viewer.",
+      "anchorHint": "Which actions were yours",
+      "screenLabelIds": [],
+      "audioId": "L06.S02.d102",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S02.f101": {
+      "id": "L06.S02.f101",
+      "speaker": "coach",
+      "text": "The shared description is not necessarily wrong. It leaves the personal role unclear for this particular question. Add the map work and the checking action, while retaining the others’ separate contributions.",
+      "visualEn": "Compare the broad shared-output statement with the question about individual actions. Do not present we as inherently weak or false.",
+      "anchorHint": "for this particular question",
+      "screenLabelIds": [
+        "branch.a.note"
+      ],
+      "audioId": "L06.S02.f101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.d201": {
+      "id": "L06.S02.d201",
+      "speaker": "learner",
+      "text": "I drew the map, checked the conflicting names with the coordinator, and changed its label to Blue Room. I then told the other volunteers.",
+      "visualEn": "Authored learner account of the fixed facts. Retain the fiction and later-rehearsal labels. Map actions to the participant lane, without claiming ownership of the schedule or assembled guide.",
+      "anchorHint": "checked the conflicting names with the coordinator",
+      "screenLabelIds": [
+        "branch.b.label"
+      ],
+      "audioId": "L06.S02.d201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S02.d202": {
+      "id": "L06.S02.d202",
+      "speaker": "maya",
+      "text": "That identifies the map work. How did it connect with the schedule and the assembled guide?",
+      "visualEn": "Maya’s later authored follow-up invites the team context. It does not certify truthfulness, grades or actual speaking performance.",
+      "anchorHint": "the schedule and the assembled guide",
+      "screenLabelIds": [],
+      "audioId": "L06.S02.d202",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S02.f201": {
+      "id": "L06.S02.f201",
+      "speaker": "coach",
+      "text": "This account names actions supported by the case without taking over the other roles. The surrounding explanation can add that Maya checked the schedule and Noah assembled the updated guide. Specific ownership does not require erasing collaboration.",
+      "visualEn": "Connect the participant’s actions to separate supplied team actions. Do not show a leadership badge or a new impact claim.",
+      "anchorHint": "without taking over the other roles",
+      "screenLabelIds": [
+        "branch.b.note"
+      ],
+      "audioId": "L06.S02.f201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S02.d301": {
+      "id": "L06.S02.d301",
+      "speaker": "learner",
+      "text": "I created the map, the schedule and the finished guide myself.",
+      "visualEn": "Before the line begins, mark it Deliberately flawed account. Never animate its claim as a true event. Keep the correct three source-role lanes beside it for prompt comparison.",
+      "anchorHint": "the schedule and the finished guide myself",
+      "screenLabelIds": [
+        "branch.c.label"
+      ],
+      "audioId": "L06.S02.d301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S02.d302": {
+      "id": "L06.S02.d302",
+      "speaker": "maya",
+      "text": "I listed the session times, and Noah assembled the guide. Can you separate your part from ours?",
+      "visualEn": "Maya corrects the claim within the later authored rehearsal. These actions are supplied facts, not newly invented accusations or an event-time conversation.",
+      "anchorHint": "Noah assembled the guide",
+      "screenLabelIds": [],
+      "audioId": "L06.S02.d302",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S02.f301": {
+      "id": "L06.S02.f301",
+      "speaker": "coach",
+      "text": "This version attributes other volunteers’ work to the participant. The case does not support that claim. Return to the map, the label check and the update; describe the schedule and assembly as the others’ contributions.",
+      "visualEn": "Remove the unsupported ownership links and restore the unchanged source-role map. Do not imply the real viewer lied or award a moral score.",
+      "anchorHint": "The case does not support that claim",
+      "screenLabelIds": [
+        "branch.c.note"
+      ],
+      "audioId": "L06.S02.f301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L06.S02.h101": {
+      "kind": "hold",
+      "id": "L06.S02.h101",
+      "seconds": 8,
+      "purpose": "Privately distinguish the participant’s work from another volunteer’s contribution.",
+      "visualEn": "Retain the source-role cards and blank private area. No response capture, inferred correct attribution or automatic completed state.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L06.S02.h102": {
+      "kind": "hold",
+      "id": "L06.S02.h102",
+      "seconds": 8,
+      "purpose": "Privately distinguish own and shared actions in the supplied fiction or a comfortable truthful experience.",
+      "visualEn": "Leave the response blank, with no model substitution, audio capture, stored biography or inferred completed attempt.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {
+    "L06.I01": {
+      "kind": "choice",
+      "prompt": "Which account answers the question about the participant’s own part while preserving the supplied team roles?",
+      "watchChoice": "B",
+      "watchThinkSeconds": 8,
+      "rejoinCue": "L06.S02.c010",
+      "options": [
+        {
+          "id": "A",
+          "label": "We prepared the guide and updated it together.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L06.S02.d101"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S02.d102"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S02.f101"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "label": "I drew the map, checked the conflicting names with the coordinator, and changed its label to Blue Room. I then told the other volunteers.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L06.S02.d201"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S02.d202"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S02.f201"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "label": "I created the map, the schedule and the finished guide myself.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L06.S02.d301"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S02.d302"
+            },
+            {
+              "kind": "line",
+              "id": "L06.S02.f301"
+            }
+          ]
+        }
+      ],
+      "skipNote": "Comparison skipped. No personal account, truthfulness or understanding was assessed; continue to the shared source-based explanation.",
+      "baseline": "Keep Fictional worked example visible and put all peer questions/replies inside a separate Later authored rehearsal frame. The fixed source roles never change: participant map/check/correction/notification; Maya listed times and later checked the schedule; Noah assembled the guide and updated version. Each branch is a separate authored account. Label unsupported claims before they are spoken and promptly restore source facts. Retry removes branch text and reactions. Watch shows B only after eight seconds. Practice waits indefinitely; Continue or Skip enters c010 once without inferring speaking, honesty, accuracy or agreement.",
+      "id": "L06.I01",
+      "practiceTimeout": null,
+      "autoSelect": false,
+      "skipIsUnanswered": true,
+      "score": null,
+      "stateStorage": "memory only",
+      "branchOutcome": "Authored fictional continuation, not a prediction or universal reaction."
+    }
+  },
+  "boundary": "Use formal explanation and short explicitly fictional examples. Model events are not learner biography. No inferred recording, truth verification, official rubric or wider outcome."
+}

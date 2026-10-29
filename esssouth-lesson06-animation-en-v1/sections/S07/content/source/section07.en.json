@@ -1,0 +1,339 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L06.S07",
+  "title": "Adapt the Same Experience to a New Question",
+  "budgetSeconds": 180,
+  "status": "New proposed Lesson 06 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Select different relevant evidence from the same experience for a changed follow-up, without changing its facts, ownership or uncertainty.",
+  "scenario": {
+    "id": "L06.CASE01",
+    "kind": "Explicitly fictional authored training case, not a learner biography or a real admission interview",
+    "caseLabel": "Fictional worked example",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "Three volunteers prepared a one-page visitor guide for a community open afternoon."
+      },
+      {
+        "id": "F02",
+        "text": "The case participant drew the map. Maya listed session times. Noah assembled the guide."
+      },
+      {
+        "id": "F03",
+        "text": "The day before the event, the participant noticed that the map said Studio B while Maya's schedule said Blue Room."
+      },
+      {
+        "id": "F04",
+        "text": "The participant did not know whether those names meant the same room and asked the event coordinator rather than guessing."
+      },
+      {
+        "id": "F05",
+        "text": "The coordinator confirmed that both names referred to the same room and that its door sign said Blue Room."
+      },
+      {
+        "id": "F06",
+        "text": "The participant changed the map label to Blue Room and told Maya and Noah. Maya checked the schedule; Noah assembled the updated guide."
+      },
+      {
+        "id": "F07",
+        "text": "During the event, the participant saw one visitor use the map to find Blue Room."
+      },
+      {
+        "id": "F08",
+        "text": "There was no visitor survey or total count of people helped. No comparison shows what would have happened without the change."
+      },
+      {
+        "id": "F09",
+        "text": "In reflection, the participant would agree a shared list of room names earlier next time. This is a proposed future change, not an action already taken."
+      }
+    ],
+    "unknowns": [
+      "Whether anyone else used the map successfully",
+      "Whether a visitor would have found the room without this change",
+      "Whether the guide made the whole event successful",
+      "How long checking with the coordinator took",
+      "The coordinator's exact words",
+      "Any awards, numerical impact, leadership appointment or wider achievement"
+    ],
+    "permittedDecisionReason": "Conflicting labels could confuse visitors; confirming the door-sign name avoided choosing a name without checking. This is the participant's stated reasoning, not a measured causal result.",
+    "roles": {
+      "learner": "Case participant (fictional example only)",
+      "maya": "Follow-up partner in a later authored rehearsal; also the schedule volunteer within the remembered case",
+      "noah": "Guide assembler within the remembered case",
+      "coach": "Offstage instructor"
+    },
+    "state": {
+      "fictional": true,
+      "guideUpdated": true,
+      "observedVisitorsFindingRoom": 1,
+      "broaderImpactMeasured": false,
+      "futureNamingListImplemented": false,
+      "realLearnerExperienceCaptured": false
+    },
+    "boundaries": [
+      "Do not invent new case events, timings, quotations, achievements or causal outcomes.",
+      "Keep own actions distinct from Maya's and Noah's work.",
+      "Clearly label the model as fiction; never insert it into a real learner's personal response.",
+      "A private learner may rehearse an ordinary truthful experience, choose another topic or use this labelled fictional case for language practice.",
+      "No recording, AI scoring, truth verification, upload or success inferred from a click.",
+      "No rigid answer length or required STAR script; these are optional planning distinctions, not official assessment criteria."
+    ]
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Case participant",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L06.S07.B01",
+      "title": "Same evidence, different question",
+      "family": "question-to-evidence board",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S07.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S07.c002"
+        },
+        {
+          "kind": "hold",
+          "id": "L06.S07.h101"
+        }
+      ]
+    },
+    {
+      "id": "L06.S07.B02",
+      "title": "Change the selection, not the history",
+      "family": "selective evidence routing",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S07.c003"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S07.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S07.c004"
+        }
+      ]
+    },
+    {
+      "id": "L06.S07.B03",
+      "title": "A useful limit is still an answer",
+      "family": "bounded evidence board",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S07.d002"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S07.c005"
+        },
+        {
+          "kind": "hold",
+          "id": "L06.S07.h102"
+        }
+      ]
+    },
+    {
+      "id": "L06.S07.B04",
+      "title": "Carry the method into your account",
+      "family": "closing checklist without scoring",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L06.S07.c006"
+        },
+        {
+          "kind": "line",
+          "id": "L06.S07.c007"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L06.S07.c001": {
+      "id": "L06.S07.c001",
+      "speaker": "coach",
+      "text": "A follow-up can change what the listener needs without changing what happened. Keep the same facts, then select the part that answers this question. You do not need a fresh story for every question, or the whole story every time.",
+      "visualEn": "Full-screen board. Retain Fictional worked example on the source bank. Three question tabs sit above fixed fact cards; moving a pointer changes selection, not the facts. No characters.",
+      "anchorHint": "the same facts",
+      "screenLabelIds": [
+        "s07.title",
+        "s07.case"
+      ],
+      "audioId": "L06.S07.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S07.c002": {
+      "id": "L06.S07.c002",
+      "speaker": "coach",
+      "text": "For the visitor-guide case, compare these questions: What did you contribute? What would you change next time? How much did the guide help? They ask for an action, a proposed improvement, and evidence of impact. Those are different requests.",
+      "visualEn": "Show the three questions as separate editable labels. Reveal matching Action / Proposed change / Impact evidence lanes without filling learner notes. Keep numbered case sources available in the DOM panel.",
+      "anchorHint": "different requests",
+      "screenLabelIds": [
+        "s07.q1",
+        "s07.q2",
+        "s07.q3",
+        "s07.action",
+        "s07.future",
+        "s07.impact"
+      ],
+      "audioId": "L06.S07.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S07.c003": {
+      "id": "L06.S07.c003",
+      "speaker": "coach",
+      "text": "For contribution, bring forward drawing the map, checking the conflicting names, and changing its label. Keep Maya and Noah beside their own work. Shortening the account should not turn a shared task into a claim that one person did everything.",
+      "visualEn": "Move F02/F04/F06 cards into the Action lane while leaving Maya: schedule and Noah: assembled guide visible at normal legible contrast. Same cards retain their IDs; no duplication into personal ownership.",
+      "anchorHint": "their own work",
+      "screenLabelIds": [
+        "s07.own",
+        "s07.team"
+      ],
+      "audioId": "L06.S07.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S07.d001": {
+      "id": "L06.S07.d001",
+      "speaker": "learner",
+      "text": "Next time, I would agree a shared list of room names earlier. That could help us check the map and schedule before assembling the guide, rather than noticing the mismatch the day before.",
+      "visualEn": "Brief model answer card headed Fictional worked example / Proposed change. No past-event reenactment of a shared list being made. Use a dashed future card, not a completed tick. Characters may remain offstage.",
+      "anchorHint": "could help",
+      "screenLabelIds": [
+        "s07.model.future",
+        "s07.proposed"
+      ],
+      "audioId": "L06.S07.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S07.c004": {
+      "id": "L06.S07.c004",
+      "speaker": "coach",
+      "text": "That answer stays in the future. It connects the proposed change to the mismatch, without claiming the new process has already worked. Do not quietly move a good idea from the reflection card into the history of the event.",
+      "visualEn": "Return to board; proposed list stays right of a labelled Future boundary. A ghost arrow toward Past stops without implying that the action occurred. Preserve F09 wording.",
+      "anchorHint": "stays in the future",
+      "screenLabelIds": [
+        "s07.past",
+        "s07.next"
+      ],
+      "audioId": "L06.S07.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S07.d002": {
+      "id": "L06.S07.d002",
+      "speaker": "learner",
+      "text": "I saw one visitor use the map to find Blue Room. We did not collect a total or survey visitors, so I cannot say how much the guide helped overall.",
+      "visualEn": "Authored model card in Impact evidence lane. One visitor observation card only; no audience crowd, percentage or success chart. Show No overall measure as text, not a red failure state.",
+      "anchorHint": "cannot say",
+      "screenLabelIds": [
+        "s07.observed",
+        "s07.limit"
+      ],
+      "audioId": "L06.S07.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L06.S07.c005": {
+      "id": "L06.S07.c005",
+      "speaker": "coach",
+      "text": "This answers the impact question with the evidence available. It does not prove that changing the label caused that visitor to find the room. A precise limit can make an account clearer than a confident statement the facts cannot support.",
+      "visualEn": "Place observation and causal inference on separate cards. Keep causal inference tagged Not established. Do not imply the visitor would otherwise have been lost.",
+      "anchorHint": "does not prove",
+      "screenLabelIds": [
+        "s07.cause"
+      ],
+      "audioId": "L06.S07.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S07.c006": {
+      "id": "L06.S07.c006",
+      "speaker": "coach",
+      "text": "If you prepared your own account, try one different follow-up now. Select relevant details you can honestly describe; leave other details available for later. If you are using the fictional case for language practice, keep that label. A model gives you a way to practise, not a personal history.",
+      "visualEn": "Replace case board with an unfilled private planning surface. Keep model bank separately labelled and collapsed, not copied into the personal area. No mic or submit button.",
+      "anchorHint": "not a personal history",
+      "screenLabelIds": [
+        "s07.private",
+        "s07.blank"
+      ],
+      "audioId": "L06.S07.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L06.S07.c007": {
+      "id": "L06.S07.c007",
+      "speaker": "coach",
+      "text": "Before answering, notice what is being asked. Then make your contribution, reasoning, evidence and uncertainty clear where they matter. You can pause, clarify a question, or say that you do not remember a detail. The aim is an understandable account you can stand behind.",
+      "visualEn": "Final calm board: Question / Relevant facts / Honest limits. Retain white space; no badge, score, automatic course completion or invented future-course preview. Offer ordinary Replay and Next section or Back to lesson controls as applicable.",
+      "anchorHint": "what is being asked",
+      "screenLabelIds": [
+        "s07.end",
+        "s07.limits"
+      ],
+      "audioId": "L06.S07.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L06.S07.h101": {
+      "kind": "hold",
+      "id": "L06.S07.h101",
+      "seconds": 8,
+      "purpose": "Let the viewer locate which known facts address each question; no response is inferred.",
+      "visualEn": "Hold fixed fact bank and questions. No automatic check mark or completed answer state.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L06.S07.h102": {
+      "kind": "hold",
+      "id": "L06.S07.h102",
+      "seconds": 8,
+      "purpose": "Compare action, future proposal and limited impact evidence while preserving the same fact bank.",
+      "visualEn": "Settle all three lanes with equal visual weight. No best-person score, progression reward or inferred learner achievement.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {},
+  "boundary": "Use formal explanation and short explicitly fictional examples. Model events are not learner biography. No inferred recording, truth verification, official rubric or wider outcome."
+}
