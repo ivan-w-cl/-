@@ -1,0 +1,25 @@
+{
+  "schema": "esssouth.l06.staging-labels/1",
+  "sectionId": "L06.S03",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Case wording follows content/case-facts.en.json (F01–F09) in substance; nothing new is asserted. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.h.info": "Information",
+    "x.h.action": "Action",
+    "x.h.result": "Result",
+    "x.roles": "Participant: map · Maya: times · Noah: assembly",
+    "x.unk": "Same room? Not known yet",
+    "x.ask": "Asked the coordinator",
+    "x.conf": "Same room; door sign: Blue Room",
+    "x.summary": "Summary, not the coordinator's exact words",
+    "x.upd": "Changed the label; told the others",
+    "x.poss": "A possibility, not an observed event",
+    "x.infoThen": "Information then",
+    "x.outLater": "Outcome later",
+    "x.obs": "One visitor later used the map to find Blue Room",
+    "x.unknownWide": "No comparison: what the change caused is unknown",
+    "x.path.fiction": "Fictional language practice",
+    "x.path.own": "Private real experience",
+    "x.remembered": "Remembered reason",
+    "x.notRecalled": "Detail not recalled"
+  }
+}
