@@ -1,0 +1,12 @@
+{
+  "schema": "esssouth.l04.staging-labels/1",
+  "sectionId": "L04.S06",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain (worded from the cue and its direction). Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.lane.method": "About the method",
+    "x.lane.person": "About the person",
+    "x.c.time": "Time",
+    "x.c.start": "Getting started",
+    "x.c.verify": "Verifying the tool's suggestions"
+  }
+}
