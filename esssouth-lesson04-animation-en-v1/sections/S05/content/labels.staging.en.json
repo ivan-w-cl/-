@@ -1,0 +1,10 @@
+{
+  "schema": "esssouth.l04.staging-labels/1",
+  "sectionId": "L04.S05",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain (worded from the visual direction). Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.condSlot": "A condition it may not handle",
+    "x.hOrig": "Original proposal",
+    "x.hRev": "Possible revision"
+  }
+}
