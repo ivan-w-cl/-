@@ -1,9 +1,9 @@
 {
- "ranAt": "2026-10-29T16:13:20.937Z",
+ "ranAt": "2026-10-29T16:27:29.179Z",
  "method": "ffprobe streams + full decode (ffmpeg -f null) + PSNR of decoded frames vs a direct 1920×1080 player render at the same t",
  "sections": {
-  "S07": {
-   "file": "dist/video/esssouth-L03S07-watch-SILENT.mp4",
+  "S03": {
+   "file": "dist/video/esssouth-L03S03-watch-SILENT.mp4",
    "streams": [
     {
      "type": "video",
@@ -11,37 +11,37 @@
      "w": 1920,
      "h": 1080,
      "fps": "30/1",
-     "frames": 4948
+     "frames": 8434
     }
    ],
-   "durationSeconds": 164.933333,
-   "bytes": 3591772,
+   "durationSeconds": 281.133333,
+   "bytes": 8167383,
    "fullDecode": "ok",
-   "compiledSeconds": 164.92799999999997,
+   "compiledSeconds": 281.12999999999994,
    "samples": [
     {
      "name": "first",
      "frame": 0,
      "t": 0,
-     "psnrVsRender": "43.189437"
+     "psnrVsRender": "42.911192"
     },
     {
      "name": "middle",
-     "frame": 2474,
-     "t": 82.467,
-     "psnrVsRender": "40.425130"
+     "frame": 4217,
+     "t": 140.567,
+     "psnrVsRender": "41.051170"
     },
     {
      "name": "end",
-     "frame": 4947,
-     "t": 164.9,
-     "psnrVsRender": "42.347341"
+     "frame": 8433,
+     "t": 281.1,
+     "psnrVsRender": "40.830990"
     }
    ],
    "pass": true
   },
-  "S02": {
-   "file": "dist/video/esssouth-L03S02-watch-SILENT.mp4",
+  "S04": {
+   "file": "dist/video/esssouth-L03S04-watch-SILENT.mp4",
    "streams": [
     {
      "type": "video",
@@ -49,37 +49,37 @@
      "w": 1920,
      "h": 1080,
      "fps": "30/1",
-     "frames": 8400
+     "frames": 7649
     }
    ],
-   "durationSeconds": 280,
-   "bytes": 8847363,
+   "durationSeconds": 254.966667,
+   "bytes": 6213234,
    "fullDecode": "ok",
-   "compiledSeconds": 279.99999999999994,
+   "compiledSeconds": 254.95099999999994,
    "samples": [
     {
      "name": "first",
      "frame": 0,
      "t": 0,
-     "psnrVsRender": "42.694613"
+     "psnrVsRender": "42.832557"
     },
     {
      "name": "middle",
-     "frame": 4200,
-     "t": 140,
-     "psnrVsRender": "40.287135"
+     "frame": 3824,
+     "t": 127.467,
+     "psnrVsRender": "41.209711"
     },
     {
      "name": "end",
-     "frame": 8399,
-     "t": 279.967,
-     "psnrVsRender": "41.359086"
+     "frame": 7648,
+     "t": 254.933,
+     "psnrVsRender": "42.195400"
     }
    ],
    "pass": true
   },
-  "S01": {
-   "file": "dist/video/esssouth-L03S01-watch-SILENT.mp4",
+  "S05": {
+   "file": "dist/video/esssouth-L03S05-watch-SILENT.mp4",
    "streams": [
     {
      "type": "video",
@@ -87,31 +87,31 @@
      "w": 1920,
      "h": 1080,
      "fps": "30/1",
-     "frames": 6738
+     "frames": 7501
     }
    ],
-   "durationSeconds": 224.6,
-   "bytes": 7709215,
+   "durationSeconds": 250.033333,
+   "bytes": 5588680,
    "fullDecode": "ok",
-   "compiledSeconds": 224.59299999999993,
+   "compiledSeconds": 250.02899999999994,
    "samples": [
     {
      "name": "first",
      "frame": 0,
      "t": 0,
-     "psnrVsRender": "42.889659"
+     "psnrVsRender": "42.809284"
     },
     {
      "name": "middle",
-     "frame": 3369,
-     "t": 112.3,
-     "psnrVsRender": "39.337143"
+     "frame": 3750,
+     "t": 125,
+     "psnrVsRender": "41.346842"
     },
     {
      "name": "end",
-     "frame": 6737,
-     "t": 224.567,
-     "psnrVsRender": "40.469757"
+     "frame": 7500,
+     "t": 250,
+     "psnrVsRender": "40.857877"
     }
    ],
    "pass": true
