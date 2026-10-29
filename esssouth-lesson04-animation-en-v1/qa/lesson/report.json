@@ -1,0 +1,410 @@
+{
+ "page": "lesson/index.html",
+ "ranAt": "2026-10-29T22:25:32.841Z",
+ "checks": [
+  {
+   "name": "seven sections listed in order",
+   "pass": true,
+   "detail": [
+    "L04.S01",
+    "L04.S02",
+    "L04.S03",
+    "L04.S04",
+    "L04.S05",
+    "L04.S06",
+    "L04.S07"
+   ]
+  },
+  {
+   "name": "chapter durations are compiled values (sum = Watch total)",
+   "pass": true,
+   "detail": 1746.806
+  },
+  {
+   "name": "entry 1 opens its own product (L04.S01)",
+   "pass": true,
+   "detail": {
+    "id": "L04.S01",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.1, Locate the Point of Disagreement: animation stage"
+   }
+  },
+  {
+   "name": "entry 2 opens its own product (L04.S02)",
+   "pass": true,
+   "detail": {
+    "id": "L04.S02",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.2, Recognise a Reason Without Pretending to Agree: animation stage"
+   }
+  },
+  {
+   "name": "entry 3 opens its own product (L04.S03)",
+   "pass": true,
+   "detail": {
+    "id": "L04.S03",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.3, Explain the Concern Precisely: animation stage"
+   }
+  },
+  {
+   "name": "entry 4 opens its own product (L04.S04)",
+   "pass": true,
+   "detail": {
+    "id": "L04.S04",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.4, Compare Options Against the Same Criteria: animation stage"
+   }
+  },
+  {
+   "name": "entry 5 opens its own product (L04.S05)",
+   "pass": true,
+   "detail": {
+    "id": "L04.S05",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.5, Revise a Proposal Without Inventing Agreement: animation stage"
+   }
+  },
+  {
+   "name": "entry 6 opens its own product (L04.S06)",
+   "pass": true,
+   "detail": {
+    "id": "L04.S06",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.6, Rehearse a Constructive Disagreement: animation stage"
+   }
+  },
+  {
+   "name": "entry 7 opens its own product (L04.S07)",
+   "pass": true,
+   "detail": {
+    "id": "L04.S07",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.7, Transfer and Review: animation stage"
+   }
+  },
+  {
+   "name": "switch during playback: one player remains, new section at its start, not playing, clock not advancing",
+   "pass": true,
+   "detail": {
+    "s": {
+     "id": "L04.S03",
+     "t": 0,
+     "playing": false,
+     "mode": "watch",
+     "gate": "none",
+     "route": "watch",
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "label": "Lesson 04, Section 4.3, Explain the Concern Precisely: animation stage"
+    },
+    "s2": {
+     "id": "L04.S03",
+     "t": 0,
+     "playing": false,
+     "mode": "watch",
+     "gate": "none",
+     "route": "watch",
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "label": "Lesson 04, Section 4.3, Explain the Concern Precisely: animation stage"
+    }
+   }
+  },
+  {
+   "name": "lesson mode switch reaches the live section",
+   "pass": true,
+   "detail": {
+    "id": "L04.S03",
+    "t": 0,
+    "playing": false,
+    "mode": "practice",
+    "gate": "before",
+    "route": "practice:skip",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.3, Explain the Concern Precisely: animation stage"
+   }
+  },
+  {
+   "name": "S03 practice: waiting at the choice before switching",
+   "pass": true,
+   "detail": {
+    "id": "L04.S03",
+    "t": 137.83799999999997,
+    "playing": false,
+    "mode": "practice",
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.3, Explain the Concern Precisely: animation stage"
+   }
+  },
+  {
+   "name": "switch during a branch: new section starts clean in Practice (no stale choice)",
+   "pass": true,
+   "detail": {
+    "id": "L04.S02",
+    "t": 0,
+    "playing": false,
+    "mode": "practice",
+    "gate": "before",
+    "route": "practice:skip",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.2, Recognise a Reason Without Pretending to Agree: animation stage"
+   }
+  },
+  {
+   "name": "S06 practice: model playing before the switch",
+   "pass": true,
+   "detail": {
+    "id": "L04.S06",
+    "t": 147.93649999999997,
+    "playing": true,
+    "mode": "practice",
+    "gate": "branch_playing",
+    "route": "practice:model",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.6, Rehearse a Constructive Disagreement: animation stage"
+   }
+  },
+  {
+   "name": "switch during model playback: S07 opens at its start; no model flag carried over",
+   "pass": true,
+   "detail": {
+    "id": "L04.S07",
+    "t": 0,
+    "playing": false,
+    "mode": "practice",
+    "gate": "none",
+    "route": "practice:main",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.7, Transfer and Review: animation stage"
+   }
+  },
+  {
+   "name": "returning to S06 shows its initial state (modelViewed false, no completion)",
+   "pass": true,
+   "detail": {
+    "id": "L04.S06",
+    "t": 0,
+    "playing": false,
+    "mode": "practice",
+    "gate": "before",
+    "route": "practice:skip",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.6, Rehearse a Constructive Disagreement: animation stage"
+   }
+  },
+  {
+   "name": "12 rapid switches: exactly one player, the last requested section, no errors",
+   "pass": true,
+   "detail": {
+    "s": {
+     "id": "L04.S05",
+     "t": 0,
+     "playing": false,
+     "mode": "practice",
+     "gate": "none",
+     "route": "practice:main",
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "label": "Lesson 04, Section 4.5, Revise a Proposal Without Inventing Agreement: animation stage"
+    },
+    "errs": []
+   }
+  },
+  {
+   "name": "section end: no automatic navigation",
+   "pass": true,
+   "detail": {
+    "cur1": 0,
+    "s": {
+     "id": "L04.S01",
+     "t": 257.66399999999993,
+     "playing": false,
+     "mode": "watch",
+     "gate": "none",
+     "route": "watch",
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "label": "Lesson 04, Section 4.1, Locate the Point of Disagreement: animation stage"
+    }
+   }
+  },
+  {
+   "name": "explicit Next section action opens S02",
+   "pass": true,
+   "detail": {
+    "id": "L04.S02",
+    "t": 0,
+    "playing": false,
+    "mode": "watch",
+    "gate": "none",
+    "route": "watch",
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "label": "Lesson 04, Section 4.2, Recognise a Reason Without Pretending to Agree: animation stage"
+   }
+  },
+  {
+   "name": "no remote requests; no page errors",
+   "pass": true,
+   "detail": {
+    "remote": [],
+    "errs": []
+   }
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, buttons ≥ 44 px",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": 0
+   }
+  }
+ ],
+ "failures": [],
+ "browser": "Chromium 153.0.8010.12",
+ "summary": {
+  "checks": 21,
+  "failed": 0
+ }
+}

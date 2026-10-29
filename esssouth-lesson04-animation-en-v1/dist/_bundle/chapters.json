@@ -1,0 +1,115 @@
+{
+ "lesson": "L04",
+ "title": "Disagree Constructively and Move the Discussion Forward",
+ "note": "Durations are compiled from the silent estimated timing (140 wpm + 0.35 s tail + fixed holds). Practice excludes unlimited waiting; alternative branches are not summed.",
+ "watchTotalSeconds": 1746.806,
+ "chapters": [
+  {
+   "id": "L04.S01",
+   "num": "4.1",
+   "title": "Locate the Point of Disagreement",
+   "watchSeconds": 257.664,
+   "watchStartInCourse": 0,
+   "practice": {
+    "practice:main": 257.664
+   },
+   "gate": null,
+   "src": "players/L04S01_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L04.S02",
+   "num": "4.2",
+   "title": "Recognise a Reason Without Pretending to Agree",
+   "watchSeconds": 265.588,
+   "watchStartInCourse": 257.664,
+   "practice": {
+    "practice:A": 251.073,
+    "practice:B": 258.788,
+    "practice:C": 250.644,
+    "practice:skip": 225.166
+   },
+   "gate": {
+    "id": "L04.I01",
+    "kind": "choice"
+   },
+   "src": "players/L04S02_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L04.S03",
+   "num": "4.3",
+   "title": "Explain the Concern Precisely",
+   "watchSeconds": 287.715,
+   "watchStartInCourse": 523.252,
+   "practice": {
+    "practice:A": 269.343,
+    "practice:B": 271.486,
+    "practice:C": 280.915,
+    "practice:skip": 242.579
+   },
+   "gate": {
+    "id": "L04.I02",
+    "kind": "choice"
+   },
+   "src": "players/L04S03_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L04.S04",
+   "num": "4.4",
+   "title": "Compare Options Against the Same Criteria",
+   "watchSeconds": 230.694,
+   "watchStartInCourse": 810.967,
+   "practice": {
+    "practice:main": 230.694
+   },
+   "gate": null,
+   "src": "players/L04S04_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L04.S05",
+   "num": "4.5",
+   "title": "Revise a Proposal Without Inventing Agreement",
+   "watchSeconds": 230.536,
+   "watchStartInCourse": 1041.661,
+   "practice": {
+    "practice:main": 230.536
+   },
+   "gate": null,
+   "src": "players/L04S05_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L04.S06",
+   "num": "4.6",
+   "title": "Rehearse a Constructive Disagreement",
+   "watchSeconds": 310.966,
+   "watchStartInCourse": 1272.197,
+   "practice": {
+    "practice:model": 277.166,
+    "practice:skip": 228.972
+   },
+   "gate": {
+    "id": "L04.I03",
+    "kind": "private_rehearsal"
+   },
+   "src": "players/L04S06_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L04.S07",
+   "num": "4.7",
+   "title": "Transfer and Review",
+   "watchSeconds": 163.643,
+   "watchStartInCourse": 1583.163,
+   "practice": {
+    "practice:main": 163.643
+   },
+   "gate": null,
+   "src": "players/L04S07_player_standalone.html",
+   "built": true
+  }
+ ]
+}

@@ -1,0 +1,231 @@
+1
+00:00:00,000 --> 00:00:05,143
+Coach: Recognising a reason means showing that you have understood why it matters.
+
+2
+00:00:05,143 --> 00:00:08,143
+Coach: It does not require accepting the proposal.
+
+3
+00:00:08,143 --> 00:00:14,143
+Coach: You can be honest about both a useful consideration and a concern that remains.
+
+4
+00:00:14,493 --> 00:00:18,779
+Coach: The group is planning twenty minutes with two sample problems.
+
+5
+00:00:18,779 --> 00:00:21,779
+Coach: They want to understand the key reasoning.
+
+6
+00:00:21,779 --> 00:00:28,208
+Coach: Their tool can show a hint or a full worked answer in this fictional case,
+
+7
+00:00:28,208 --> 00:00:32,922
+Coach: but its output is unverified and no plan has been adopted.
+
+8
+00:00:33,272 --> 00:00:37,558
+Maya: An answer tool can save time when we get stuck.
+
+9
+00:00:37,558 --> 00:00:42,272
+Maya: I would use it as soon as a problem becomes difficult.
+
+10
+00:00:42,622 --> 00:00:45,193
+Coach: Time is relevant to this task.
+
+11
+00:00:45,193 --> 00:00:52,479
+Coach: But a possible saving does not settle whether help should be used at the first difficult step.
+
+12
+00:00:52,479 --> 00:00:55,479
+Coach: That timing can remain open for discussion.
+
+13
+00:00:55,829 --> 00:01:00,972
+Coach: A phrase such as I see why time matters recognises the reason.
+
+14
+00:01:00,972 --> 00:01:06,115
+Coach: I agree that we should use it immediately accepts the proposed action.
+
+15
+00:01:06,115 --> 00:01:09,972
+Coach: These are different commitments, even if both sound friendly.
+
+16
+00:01:10,322 --> 00:01:16,751
+Coach: Do not use agreement as a polite disguise for a concern you want to raise.
+
+17
+00:01:16,751 --> 00:01:21,036
+Coach: Equally, do not add an acknowledgement you do not mean.
+
+18
+00:01:21,036 --> 00:01:24,465
+Coach: A direct, reasoned objection can also be appropriate.
+
+19
+00:01:24,815 --> 00:01:29,101
+Coach: Before comparing replies, consider what you can genuinely recognise here.
+
+20
+00:01:29,101 --> 00:01:32,530
+Coach: The time limit is real within the scenario.
+
+21
+00:01:32,530 --> 00:01:37,244
+Coach: Whether immediate tool use best serves understanding has not been established.
+
+22
+00:01:45,594 --> 00:01:49,880
+Coach: For this exercise, consider a speaker who values saving time
+
+23
+00:01:49,880 --> 00:01:55,880
+Coach: but worries that immediate help could leave too little room for an independent attempt.
+
+24
+00:01:55,880 --> 00:01:58,451
+Coach: Which reply expresses both points honestly?
+
+25
+00:01:58,801 --> 00:02:01,372
+Coach: The peer replies are authored possibilities.
+
+26
+00:02:01,372 --> 00:02:05,230
+Coach: They illustrate what the wording introduces into this exchange,
+
+27
+00:02:05,230 --> 00:02:12,087
+Coach: not a prediction of Maya’s feelings or a guarantee that one sentence will resolve the difference.
+
+28
+00:02:20,437 --> 00:02:21,723
+You: Saving time matters.
+
+29
+00:02:21,723 --> 00:02:29,437
+You: I am concerned that using the tool immediately could leave too little room to try a step ourselves.
+
+30
+00:02:29,787 --> 00:02:33,644
+Maya: I want to avoid spending the whole session stuck.
+
+31
+00:02:33,644 --> 00:02:37,073
+Maya: What kind of first attempt do you mean?
+
+32
+00:02:37,423 --> 00:02:40,423
+Coach: This reply recognises a task-related reason
+
+33
+00:02:40,423 --> 00:02:43,852
+Coach: and states a possible concern without claiming certainty.
+
+34
+00:02:43,852 --> 00:02:47,280
+Coach: Maya asks about the alternative in this example.
+
+35
+00:02:47,280 --> 00:02:53,709
+Coach: The difference is now clearer, but no method has been agreed or shown to work.
+
+36
+00:02:54,059 --> 00:02:58,345
+Coach: The shared task gives a reason to care about time.
+
+37
+00:02:58,345 --> 00:03:02,631
+Coach: It also gives a reason to examine opportunities for reasoning.
+
+38
+00:03:02,631 --> 00:03:06,059
+Coach: Recognising one consideration does not remove the other,
+
+39
+00:03:06,059 --> 00:03:09,488
+Coach: and neither settles the method on its own.
+
+40
+00:03:09,838 --> 00:03:14,124
+Coach: You can say what you recognise and what you question.
+
+41
+00:03:14,124 --> 00:03:15,410
+Coach: Keep both specific.
+
+42
+00:03:15,410 --> 00:03:21,410
+Coach: Empty praise followed by an unrelated objection does not make the concern clearer merely
+
+43
+00:03:21,410 --> 00:03:23,124
+Coach: because it sounds polite.
+
+44
+00:03:23,474 --> 00:03:24,760
+Coach: Acknowledgement is optional.
+
+45
+00:03:24,760 --> 00:03:29,902
+Coach: If the reason is already understood, a concise objection may be enough.
+
+46
+00:03:29,902 --> 00:03:32,902
+Coach: The aim is an honest, relevant response,
+
+47
+00:03:32,902 --> 00:03:37,188
+Coach: not a requirement to begin every disagreement with I agree.
+
+48
+00:03:37,538 --> 00:03:43,109
+Coach: For the same assigned position, form a short reply in your own words.
+
+49
+00:03:43,109 --> 00:03:47,824
+Coach: Recognise the time concern if useful, then make the reservation clear.
+
+50
+00:03:47,824 --> 00:03:51,681
+Coach: Do not claim that immediate help guarantees no learning.
+
+51
+00:03:52,031 --> 00:03:54,174
+Coach: Think first or speak privately.
+
+52
+00:03:54,174 --> 00:03:56,317
+Coach: Nothing is recorded or assessed.
+
+53
+00:03:56,317 --> 00:04:00,174
+Coach: The pause is a small opportunity, not a deadline;
+
+54
+00:04:00,174 --> 00:04:02,745
+Coach: pause playback if you want longer.
+
+55
+00:04:11,095 --> 00:04:13,238
+Coach: If you tried a reply,
+
+56
+00:04:13,238 --> 00:04:17,524
+Coach: check whether it says what the assigned speaker actually means.
+
+57
+00:04:17,524 --> 00:04:21,381
+Coach: If you did not rehearse, you can return later.
+
+58
+00:04:21,381 --> 00:04:25,238
+Coach: Next we will make the concern itself more precise.
