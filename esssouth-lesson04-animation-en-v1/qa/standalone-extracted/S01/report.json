@@ -1,0 +1,742 @@
+{
+ "section": "S01",
+ "ranAt": "2026-10-29T22:33:32.957Z",
+ "environment": {
+  "os": "linux 6.18.44-fc-v185",
+  "browser": "Chromium 153.0.8010.12",
+  "playwright": "1.63.0",
+  "node": "v22.22.0",
+  "fonts": "Inter installed (first in the stack); the approved reference frames were rendered with Segoe UI",
+  "viewportsAreEmulated": true
+ },
+ "checks": [
+  {
+   "name": "page loads without errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no layout / overflow warnings from the engine (all routes, settled states)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no remote requests (offline)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "silent: no media elements, no microphone request",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "stage accessible name names Lesson 04 and this section",
+   "pass": true,
+   "detail": "Lesson 04, Section 4.1, Locate the Point of Disagreement: animation stage"
+  },
+  {
+   "name": "captions reproduce exact cue words (every route)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every supplied cue is reachable in some route",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L04.S01.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L04.S01.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L04.S01.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L04.S01.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every character line shows its exact words in a visible bubble near its end",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 1 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 1 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "deterministic: same frame after different seek histories",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "rate 1×: clock advances at 1× (measured 1.000)",
+   "pass": true,
+   "detail": 0.9996007984031321
+  },
+  {
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.248)",
+   "pass": true,
+   "detail": 1.2477564315623113
+  },
+  {
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.488)",
+   "pass": true,
+   "detail": 1.4877016397815457
+  },
+  {
+   "name": "rate 2×: clock advances at 2× (measured 1.986)",
+   "pass": true,
+   "detail": 1.9864036256989481
+  },
+  {
+   "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
+   "pass": true,
+   "detail": {
+    "a": "L04.S01.c004",
+    "off1": 2,
+    "b": "L04.S01.c004",
+    "off2": 2,
+    "mode": "watch"
+   }
+  },
+  {
+   "name": "restart returns to the section start and plays",
+   "pass": true,
+   "detail": {
+    "t": 0.1935,
+    "playing": true,
+    "gate": "none",
+    "choice": null
+   }
+  },
+  {
+   "name": "keyboard: Space plays and pauses",
+   "pass": true,
+   "detail": {
+    "k1": true,
+    "k2": false
+   }
+  },
+  {
+   "name": "keyboard: Tab reaches mode and playback controls with a visible focus outline",
+   "pass": true,
+   "detail": [
+    {
+     "tag": "BUTTON",
+     "id": "watch",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "practice",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "play",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "restart",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "scrub",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "cap",
+     "outline": true
+    }
+   ]
+  },
+  {
+   "name": "captions toggle hides the stage caption; DOM caption carries the current words",
+   "pass": true,
+   "detail": {
+    "on": 1,
+    "off": 0,
+    "dom": "CoachDisagreement can help a group examine a proposal."
+   }
+  },
+  {
+   "name": "no runtime errors during transport tests",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: shared reflection route identical to Watch (no gate in this section)",
+   "pass": true,
+   "detail": {
+    "route": "practice:main",
+    "same": true
+   }
+  },
+  {
+   "name": "retime: Watch duration changes by the expected clip delta (7.950 s)",
+   "pass": true,
+   "detail": {
+    "prod": 257.66399999999993,
+    "retimed": 265.6139999999999
+   }
+  },
+  {
+   "name": "retime: step order unchanged in every route",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: holds keep their fixture length; think holds unchanged",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+   "pass": true,
+   "detail": [
+    {
+     "name": "a_L04_S01_c001",
+     "zero": false,
+     "ratio": 1.350021213406873,
+     "m": 1.35
+    },
+    {
+     "name": "a_L04_S01_d001",
+     "zero": false,
+     "ratio": 1.3499999999999999,
+     "m": 1.35
+    },
+    {
+     "name": "s1_help",
+     "zero": true,
+     "ratio": 1,
+     "m": 1.35
+    },
+    {
+     "name": "s1_whole",
+     "zero": false,
+     "ratio": 1.3500072918185795,
+     "m": 1.35
+    },
+    {
+     "name": "s1_save",
+     "zero": false,
+     "ratio": 1.3499222395023327,
+     "m": 1.35
+    }
+   ]
+  },
+  {
+   "name": "retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: no layout warnings",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 52,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 52,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 52,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 52,
+    "domcapFs": 16,
+    "panel": false
+   }
+  }
+ ],
+ "failures": [],
+ "notes": [
+  "Text expansion is a stress report, not a pass/fail gate: overflow at ×1.3/×1.6 is reported by the fitter (never clipped silently) and needs layout work in the localization pass where it occurs."
+ ],
+ "routes": {
+  "watch": 257.664,
+  "practice:main": 257.664
+ },
+ "anchors": [
+  {
+   "name": "a_L04_S01_c001",
+   "cue": "L04.S01.c001",
+   "phrase": "what the difference is about",
+   "localSec": 4.714,
+   "suppliedSec": 4.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c002",
+   "cue": "L04.S01.c002",
+   "phrase": "understand the key reasoning",
+   "localSec": 7.286,
+   "suppliedSec": 7.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_d001",
+   "cue": "L04.S01.d001",
+   "phrase": "as soon as a problem becomes difficult",
+   "localSec": 6,
+   "suppliedSec": 6,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c003",
+   "cue": "L04.S01.c003",
+   "phrase": "a proposal about timing",
+   "localSec": 2.571,
+   "suppliedSec": 2.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c004",
+   "cue": "L04.S01.c004",
+   "phrase": "questioning that timing",
+   "localSec": 2.571,
+   "suppliedSec": 2.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c005",
+   "cue": "L04.S01.c005",
+   "phrase": "Do not silently choose a mode for her",
+   "localSec": 11.143,
+   "suppliedSec": 11.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c006",
+   "cue": "L04.S01.c006",
+   "phrase": "what is stated from what remains open",
+   "localSec": 0.857,
+   "suppliedSec": 0.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c007",
+   "cue": "L04.S01.c007",
+   "phrase": "You do not have to do both",
+   "localSec": 12,
+   "suppliedSec": 12,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c008",
+   "cue": "L04.S01.c008",
+   "phrase": "need not be disguised as agreement",
+   "localSec": 13.714,
+   "suppliedSec": 13.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_d002",
+   "cue": "L04.S01.d002",
+   "phrase": "difficulty alone the trigger",
+   "localSec": 1.714,
+   "suppliedSec": 1.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c009",
+   "cue": "L04.S01.c009",
+   "phrase": "identifies a timing difference",
+   "localSec": 0.857,
+   "suppliedSec": 0.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c010",
+   "cue": "L04.S01.c010",
+   "phrase": "without inventing a hidden motive",
+   "localSec": 12.429,
+   "suppliedSec": 12.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c011",
+   "cue": "L04.S01.c011",
+   "phrase": "would not by itself prove that someone learned nothing",
+   "localSec": 1.714,
+   "suppliedSec": 1.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c012",
+   "cue": "L04.S01.c012",
+   "phrase": "how a proposed use of help might serve that aim",
+   "localSec": 6,
+   "suppliedSec": 6,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c013",
+   "cue": "L04.S01.c013",
+   "phrase": "one part of Maya’s proposal",
+   "localSec": 0.429,
+   "suppliedSec": 0.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c014",
+   "cue": "L04.S01.c014",
+   "phrase": "make a concern available for discussion",
+   "localSec": 12.857,
+   "suppliedSec": 12.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S01_c015",
+   "cue": "L04.S01.c015",
+   "phrase": "without pretending to agree",
+   "localSec": 3.429,
+   "suppliedSec": 3.429,
+   "source": "supplied semantic anchor"
+  }
+ ],
+ "layoutAudit": {
+  "watch": [],
+  "practice:main": []
+ },
+ "stills": [
+  "S01_watch_B01-open_t1.20.jpg",
+  "S01_watch_B01-mid_t29.41.jpg",
+  "S01_watch_B01-end_t58.53.jpg",
+  "S01_watch_B02-open_t60.03.jpg",
+  "S01_watch_B02-mid_t91.38.jpg",
+  "S01_watch_B02-end_t123.64.jpg",
+  "S01_watch_B03-open_t125.14.jpg",
+  "S01_watch_B03-mid_t144.18.jpg",
+  "S01_watch_B03-end_t164.12.jpg",
+  "S01_watch_B04-open_t165.62.jpg",
+  "S01_watch_B04-mid_t186.16.jpg",
+  "S01_watch_B04-end_t207.60.jpg",
+  "S01_watch_B05-open_t209.10.jpg",
+  "S01_watch_B05-mid_t227.03.jpg",
+  "S01_watch_B05-end_t245.87.jpg",
+  "S01_watch_B06-open_t247.37.jpg",
+  "S01_watch_B06-mid_t251.92.jpg",
+  "S01_watch_B06-end_t257.36.jpg",
+  "S01_watch_trans-c002_t14.41.jpg",
+  "S01_watch_trans-d001_t34.48.jpg",
+  "S01_watch_trans-c003_t43.83.jpg",
+  "S01_watch_trans-c004_t59.18.jpg",
+  "S01_watch_trans-c005_t72.81.jpg",
+  "S01_watch_trans-c006_t87.73.jpg",
+  "S01_watch_trans-h101_t100.94.jpg",
+  "S01_watch_trans-c007_t108.94.jpg",
+  "S01_watch_trans-c008_t124.29.jpg",
+  "S01_watch_trans-d002_t140.93.jpg",
+  "S01_watch_trans-c009_t150.71.jpg",
+  "S01_watch_trans-c010_t164.77.jpg",
+  "S01_watch_trans-c011_t179.69.jpg",
+  "S01_watch_trans-c012_t195.04.jpg",
+  "S01_watch_trans-c013_t208.25.jpg",
+  "S01_watch_trans-h102_t222.74.jpg",
+  "S01_watch_trans-c014_t230.74.jpg",
+  "S01_watch_trans-c015_t246.52.jpg",
+  "S01_reduced-motion_t124.24.jpg",
+  "S01_retime-demo_c001-end_t18.36.jpg",
+  "S01_retime-demo_d001-end_t50.93.jpg",
+  "S01_text-x1.3_t123.54.jpg",
+  "S01_text-x1.6_t123.54.jpg",
+  "S01_text-long_t123.54.jpg",
+  "S01_viewport-390x844.png",
+  "S01_viewport-820x1180.png",
+  "S01_viewport-1180x820.png",
+  "S01_viewport-1366x768.png"
+ ],
+ "textExpansion": {
+  "x1.3": {
+   "warnings": 0,
+   "sample": [],
+   "errors": []
+  },
+  "x1.6": {
+   "warnings": 1,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 180.86,
+     "text": "Immediate help does not establish what was learned Immediate help does not estab"
+    }
+   ],
+   "errors": []
+  },
+  "long": {
+   "warnings": 20,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "header.section",
+     "text": "Locate the Unbreakablelongtokenforlayoutchecking Point of Disagreement",
+     "atMinFs": 24,
+     "detail": "section title reaches the header chips"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 113.11,
+     "text": "Question the timing, Unbreakablelongtokenforlayoutchecking or clarify what matte"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 151.01,
+     "text": "A timing difference; Unbreakablelongtokenforlayoutchecking comparison still need"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 180.86,
+     "text": "Immediate help does not Unbreakablelongtokenforlayoutchecking establish what was"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 243.05,
+     "text": "Does the reply Unbreakablelongtokenforlayoutchecking identify the actual differe"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "ctxC",
+     "score": "watch",
+     "t": 14.46,
+     "text": "20 minutes · Unbreakablelongtokenforlayoutchecking two sample problems"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "p1",
+     "score": "watch",
+     "t": 17.92,
+     "text": "Problem 1 Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "p2",
+     "score": "watch",
+     "t": 18.12,
+     "text": "Problem 2 Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "aim",
+     "score": "watch",
+     "t": 34.31,
+     "text": "Understand the Unbreakablelongtokenforlayoutchecking key reasoning"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "hint",
+     "score": "watch",
+     "t": 80.18,
+     "text": "A hint Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "full",
+     "score": "watch",
+     "t": 80.38,
+     "text": "The full Unbreakablelongtokenforlayoutchecking worked answer"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "blank",
+     "score": "watch",
+     "t": 87.38,
+     "text": "What is stated? Unbreakablelongtokenforlayoutchecking What remains unspecified?"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "stated",
+     "score": "watch",
+     "t": 108.59,
+     "text": "Stated Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "laneP",
+     "score": "watch",
+     "t": 123.94,
+     "text": "About Unbreakablelongtokenforlayoutchecking the proposal"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "laneX",
+     "score": "watch",
+     "t": 129.94,
+     "text": "About Unbreakablelongtokenforlayoutchecking the person"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "bSaid",
+     "score": "watch",
+     "t": 164.72,
+     "text": "Stated Unbreakablelongtokenforlayoutchecking reason: time"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "path2",
+     "score": "watch",
+     "t": 187.06,
+     "text": "Might leave less room Unbreakablelongtokenforlayoutchecking for an independent a"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "fo1",
+     "score": "watch",
+     "t": 211.76,
+     "text": "The timing Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "fo2",
+     "score": "watch",
+     "t": 212.61,
+     "text": "The kind Unbreakablelongtokenforlayoutchecking of help"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "fo3",
+     "score": "watch",
+     "t": 214.76,
+     "text": "Why it Unbreakablelongtokenforlayoutchecking should help"
+    }
+   ],
+   "errors": []
+  }
+ },
+ "viewports": [
+  {
+   "viewport": "phone 390x844",
+   "hscroll": false,
+   "small": [],
+   "domcap": 52,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet 820x1180",
+   "hscroll": false,
+   "small": [],
+   "domcap": 52,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet landscape 1180x820",
+   "hscroll": false,
+   "small": [],
+   "domcap": 52,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "desktop 1366x768",
+   "hscroll": false,
+   "small": [],
+   "domcap": 52,
+   "domcapFs": 16,
+   "panel": false
+  }
+ ],
+ "summary": {
+  "checks": 39,
+  "failed": 0,
+  "stills": 46
+ }
+}

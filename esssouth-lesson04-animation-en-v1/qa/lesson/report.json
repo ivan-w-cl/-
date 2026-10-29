@@ -1,6 +1,6 @@
 {
  "page": "lesson/index.html",
- "ranAt": "2026-10-29T22:25:32.841Z",
+ "ranAt": "2026-10-29T22:32:33.639Z",
  "checks": [
   {
    "name": "seven sections listed in order",
@@ -263,7 +263,7 @@
    "pass": true,
    "detail": {
     "id": "L04.S06",
-    "t": 147.93649999999997,
+    "t": 147.9371999999997,
     "playing": true,
     "mode": "practice",
     "gate": "branch_playing",

@@ -1,0 +1,10 @@
+{
+ "ranAt": "2026-10-29",
+ "environment": "Linux container, Chromium (Playwright 1.63.0), Node 22.22.0, Python 3",
+ "checks": [
+  "Extracted esssouth-L04-lesson-bundle.zip into a fresh directory; tools/qa-lesson.cjs on the extracted index.html: 21 checks, 0 failed (qa/lesson/bundle-extracted.json). All network requests blocked; none attempted.",
+  "Extracted each esssouth-L04S0n-playable.zip into a fresh directory; tools/qa.cjs --quick on the extracted standalone player: S01 39/0, S02 90/0, S03 90/0, S04 39/0, S05 39/0, S06 66/0, S07 39/0 (checks/failed; qa/standalone-extracted/S0n/report.json).",
+  "Extracted each esssouth-L04S0n-source.zip on its own and ran node tools/build.mjs S0n inside it: data/l04s0n-data.js, index.html and L04S0n_player_standalone.html are byte-identical to the delivered build for all seven sections.",
+  "Every ZIP is below 20,000,000 bytes (dist/MANIFEST.json)."
+ ]
+}

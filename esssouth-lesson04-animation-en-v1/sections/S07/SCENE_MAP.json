@@ -1,0 +1,1489 @@
+{
+ "sectionId": "L04.S07",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 163.643,
+   "steps": [
+    {
+     "id": "L04.S07.c001",
+     "kind": "line",
+     "block": "L04.S07.B01",
+     "branch": null,
+     "start": 0,
+     "end": 15.779,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "page": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "att": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "det": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "state": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "pg"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c001",
+       "phrase": "No layout has been chosen",
+       "at": 13.286
+      },
+      {
+       "name": "s7_team",
+       "phrase": "A team is planning a one-page event notice",
+       "at": 1.714
+      },
+      {
+       "name": "s7_notice",
+       "phrase": "They want people to notice the event",
+       "at": 7.286
+      },
+      {
+       "name": "s7_find",
+       "phrase": "easily find its time and place",
+       "at": 10.714
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.d001",
+     "kind": "line",
+     "block": "L04.S07.B01",
+     "branch": null,
+     "start": 15.779,
+     "end": 22.986,
+     "speaker": "noah",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "page": [
+       "o+act"
+      ],
+      "att": [
+       "o+act"
+      ],
+      "det": [
+       "o+act"
+      ],
+      "state": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "eff": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "img": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L04_S07_d001",
+       "phrase": "could catch",
+       "at": 17.065
+      },
+      {
+       "name": "s7_most",
+       "phrase": "I would use most of the page for it",
+       "at": 18.779
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.c002",
+     "kind": "line",
+     "block": "L04.S07.B01",
+     "branch": null,
+     "start": 22.986,
+     "end": 38.765,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "att": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "eff": [
+       "x+w+h+fs+o"
+      ],
+      "img": [
+       "x+w+h+fs+o"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "ifF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ifH": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "ifq"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c002",
+       "phrase": "keep the concern conditional",
+       "at": 36.7
+      },
+      {
+       "name": "s7_recog",
+       "phrase": "You can recognise the possible benefit",
+       "at": 22.986
+      },
+      {
+       "name": "s7_if",
+       "phrase": "If the information becomes difficult to find",
+       "at": 28.129
+      },
+      {
+       "name": "s7_tested",
+       "phrase": "We have not tested a layout",
+       "at": 33.7
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.c003",
+     "kind": "line",
+     "block": "L04.S07.B02",
+     "branch": null,
+     "start": 38.765,
+     "end": 54.115,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "att": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "det": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "eff": [
+       "o+act"
+      ],
+      "img": [
+       "o+act"
+      ],
+      "ifF": [
+       "o+act"
+      ],
+      "ifH": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "rv0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rv1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rv2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "priv": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c003",
+       "phrase": "Use only the parts needed",
+       "at": 49.479
+      },
+      {
+       "name": "s7_form",
+       "phrase": "Privately form one short English reply",
+       "at": 38.765
+      },
+      {
+       "name": "s7_which",
+       "phrase": "which part you question",
+       "at": 42.194
+      },
+      {
+       "name": "s7_why",
+       "phrase": "why it matters to this notice",
+       "at": 43.908
+      },
+      {
+       "name": "s7_next",
+       "phrase": "what the team could examine next",
+       "at": 46.908
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.h101",
+     "kind": "hold",
+     "block": "L04.S07.B02",
+     "branch": null,
+     "start": 54.115,
+     "end": 66.115,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L04.S07.d002",
+     "kind": "line",
+     "block": "L04.S07.B03",
+     "branch": null,
+     "start": 66.115,
+     "end": 79.751,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "att": [
+       "o+act"
+      ],
+      "det": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "rv0": [
+       "o+act"
+      ],
+      "rv1": [
+       "o+act"
+      ],
+      "rv2": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "priv": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "sF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "mq": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "mn": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "sm"
+     ],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L04_S07_d002",
+       "phrase": "may make the time and place harder to find",
+       "at": 70.829
+      },
+      {
+       "name": "s7_most2",
+       "phrase": "using most of the page",
+       "at": 68.686
+      },
+      {
+       "name": "s7_compare",
+       "phrase": "Could we compare two layouts",
+       "at": 74.686
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.d003",
+     "kind": "line",
+     "block": "L04.S07.B03",
+     "branch": null,
+     "start": 79.751,
+     "end": 85.672,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "ag": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "op": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_d003",
+       "phrase": "I still think",
+       "at": 81.894
+      },
+      {
+       "name": "s7_yes",
+       "phrase": "Yes, we can compare them",
+       "at": 79.751
+      },
+      {
+       "name": "s7_still",
+       "phrase": "I still think the picture should be prominent",
+       "at": 81.894
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.c004",
+     "kind": "line",
+     "block": "L04.S07.B03",
+     "branch": null,
+     "start": 85.672,
+     "end": 101.879,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "sF": [
+       "o+act"
+      ],
+      "sH": [
+       "o+act"
+      ],
+      "mq": [
+       "o+act"
+      ],
+      "mn": [
+       "o+act"
+      ],
+      "ag": [
+       "x+w+h+fs+o"
+      ],
+      "op": [
+       "act",
+       "x+w+h+fs+o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hO": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lay1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c004",
+       "phrase": "has not chosen a layout",
+       "at": 95.101
+      },
+      {
+       "name": "s7_identifies",
+       "phrase": "The reply identifies a specific concern",
+       "at": 85.672
+      },
+      {
+       "name": "s7_agrees",
+       "phrase": "Noah agrees to the comparison",
+       "at": 91.243
+      },
+      {
+       "name": "s7_pref",
+       "phrase": "His continuing preference",
+       "at": 97.243
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.c005",
+     "kind": "line",
+     "block": "L04.S07.B03",
+     "branch": null,
+     "start": 101.879,
+     "end": 119.372,
+     "speaker": "coach",
+     "tokens": {
+      "att": [
+       "x+w+h+fs+o+kind",
+       "o"
+      ],
+      "det": [
+       "x+w+h+fs+o+kind",
+       "o"
+      ],
+      "ag": [
+       "o+act"
+      ],
+      "op": [
+       "o+act"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "hO": [
+       "o+act"
+      ],
+      "lay1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lay2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pend": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c005",
+       "phrase": "cannot conclude",
+       "at": 104.879
+      },
+      {
+       "name": "s7_needs",
+       "phrase": "The comparison still needs to happen",
+       "at": 101.879
+      },
+      {
+       "name": "s7_split",
+       "phrase": "Nor must the team split the page equally",
+       "at": 110.45
+      },
+      {
+       "name": "s7_checkAlt",
+       "phrase": "Check the alternatives against the task",
+       "at": 116.45
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.c006",
+     "kind": "line",
+     "block": "L04.S07.B04",
+     "branch": null,
+     "start": 119.372,
+     "end": 136.436,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "att": [
+       "o+act"
+      ],
+      "det": [
+       "o+act"
+      ],
+      "rv0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rv1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rv2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lay1": [
+       "o+act"
+      ],
+      "lay2": [
+       "o+act"
+      ],
+      "pend": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c006",
+       "phrase": "If you formed a reply",
+       "at": 119.372
+      },
+      {
+       "name": "s7_specific",
+       "phrase": "was the disagreement specific",
+       "at": 122.801
+      },
+      {
+       "name": "s7_reason",
+       "phrase": "was the reason connected to the task",
+       "at": 124.515
+      },
+      {
+       "name": "s7_step",
+       "phrase": "did the next step make something examinable",
+       "at": 127.943
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.h102",
+     "kind": "hold",
+     "block": "L04.S07.B04",
+     "branch": null,
+     "start": 136.436,
+     "end": 144.436,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L04.S07.c007",
+     "kind": "line",
+     "block": "L04.S07.B04",
+     "branch": null,
+     "start": 144.436,
+     "end": 163.643,
+     "speaker": "coach",
+     "tokens": {
+      "rv0": [
+       "o+act"
+      ],
+      "rv1": [
+       "o+act"
+      ],
+      "rv2": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "fin": [
+       "act",
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c007",
+       "phrase": "directly and respectfully",
+       "at": 145.722
+      },
+      {
+       "name": "s7_direct",
+       "phrase": "You can disagree directly and respectfully",
+       "at": 144.436
+      },
+      {
+       "name": "s7_clear",
+       "phrase": "Keep the issue clear enough",
+       "at": 155.15
+      }
+     ]
+    }
+   ]
+  },
+  "practice:main": {
+   "durationSeconds": 163.643,
+   "steps": [
+    {
+     "id": "L04.S07.c001",
+     "kind": "line",
+     "block": "L04.S07.B01",
+     "branch": null,
+     "start": 0,
+     "end": 15.779,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "page": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "att": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "det": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "state": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "pg"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c001",
+       "phrase": "No layout has been chosen",
+       "at": 13.286
+      },
+      {
+       "name": "s7_team",
+       "phrase": "A team is planning a one-page event notice",
+       "at": 1.714
+      },
+      {
+       "name": "s7_notice",
+       "phrase": "They want people to notice the event",
+       "at": 7.286
+      },
+      {
+       "name": "s7_find",
+       "phrase": "easily find its time and place",
+       "at": 10.714
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.d001",
+     "kind": "line",
+     "block": "L04.S07.B01",
+     "branch": null,
+     "start": 15.779,
+     "end": 22.986,
+     "speaker": "noah",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "page": [
+       "o+act"
+      ],
+      "att": [
+       "o+act"
+      ],
+      "det": [
+       "o+act"
+      ],
+      "state": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "eff": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "img": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L04_S07_d001",
+       "phrase": "could catch",
+       "at": 17.065
+      },
+      {
+       "name": "s7_most",
+       "phrase": "I would use most of the page for it",
+       "at": 18.779
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.c002",
+     "kind": "line",
+     "block": "L04.S07.B01",
+     "branch": null,
+     "start": 22.986,
+     "end": 38.765,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "att": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "eff": [
+       "x+w+h+fs+o"
+      ],
+      "img": [
+       "x+w+h+fs+o"
+      ],
+      "quote": [
+       "x+w+h+fs+o+hl",
+       "o"
+      ],
+      "ifF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ifH": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "ifq"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c002",
+       "phrase": "keep the concern conditional",
+       "at": 36.7
+      },
+      {
+       "name": "s7_recog",
+       "phrase": "You can recognise the possible benefit",
+       "at": 22.986
+      },
+      {
+       "name": "s7_if",
+       "phrase": "If the information becomes difficult to find",
+       "at": 28.129
+      },
+      {
+       "name": "s7_tested",
+       "phrase": "We have not tested a layout",
+       "at": 33.7
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.c003",
+     "kind": "line",
+     "block": "L04.S07.B02",
+     "branch": null,
+     "start": 38.765,
+     "end": 54.115,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "att": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "det": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "eff": [
+       "o+act"
+      ],
+      "img": [
+       "o+act"
+      ],
+      "ifF": [
+       "o+act"
+      ],
+      "ifH": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "rv0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rv1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rv2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "priv": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c003",
+       "phrase": "Use only the parts needed",
+       "at": 49.479
+      },
+      {
+       "name": "s7_form",
+       "phrase": "Privately form one short English reply",
+       "at": 38.765
+      },
+      {
+       "name": "s7_which",
+       "phrase": "which part you question",
+       "at": 42.194
+      },
+      {
+       "name": "s7_why",
+       "phrase": "why it matters to this notice",
+       "at": 43.908
+      },
+      {
+       "name": "s7_next",
+       "phrase": "what the team could examine next",
+       "at": 46.908
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.h101",
+     "kind": "hold",
+     "block": "L04.S07.B02",
+     "branch": null,
+     "start": 54.115,
+     "end": 66.115,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L04.S07.d002",
+     "kind": "line",
+     "block": "L04.S07.B03",
+     "branch": null,
+     "start": 66.115,
+     "end": 79.751,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "att": [
+       "o+act"
+      ],
+      "det": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "rv0": [
+       "o+act"
+      ],
+      "rv1": [
+       "o+act"
+      ],
+      "rv2": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "priv": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "sF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "mq": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "mn": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "sm"
+     ],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L04_S07_d002",
+       "phrase": "may make the time and place harder to find",
+       "at": 70.829
+      },
+      {
+       "name": "s7_most2",
+       "phrase": "using most of the page",
+       "at": 68.686
+      },
+      {
+       "name": "s7_compare",
+       "phrase": "Could we compare two layouts",
+       "at": 74.686
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.d003",
+     "kind": "line",
+     "block": "L04.S07.B03",
+     "branch": null,
+     "start": 79.751,
+     "end": 85.672,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind",
+       "o",
+       "hl"
+      ],
+      "ag": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "op": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_d003",
+       "phrase": "I still think",
+       "at": 81.894
+      },
+      {
+       "name": "s7_yes",
+       "phrase": "Yes, we can compare them",
+       "at": 79.751
+      },
+      {
+       "name": "s7_still",
+       "phrase": "I still think the picture should be prominent",
+       "at": 81.894
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.c004",
+     "kind": "line",
+     "block": "L04.S07.B03",
+     "branch": null,
+     "start": 85.672,
+     "end": 101.879,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "sF": [
+       "o+act"
+      ],
+      "sH": [
+       "o+act"
+      ],
+      "mq": [
+       "o+act"
+      ],
+      "mn": [
+       "o+act"
+      ],
+      "ag": [
+       "x+w+h+fs+o"
+      ],
+      "op": [
+       "act",
+       "x+w+h+fs+o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hO": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lay1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c004",
+       "phrase": "has not chosen a layout",
+       "at": 95.101
+      },
+      {
+       "name": "s7_identifies",
+       "phrase": "The reply identifies a specific concern",
+       "at": 85.672
+      },
+      {
+       "name": "s7_agrees",
+       "phrase": "Noah agrees to the comparison",
+       "at": 91.243
+      },
+      {
+       "name": "s7_pref",
+       "phrase": "His continuing preference",
+       "at": 97.243
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.c005",
+     "kind": "line",
+     "block": "L04.S07.B03",
+     "branch": null,
+     "start": 101.879,
+     "end": 119.372,
+     "speaker": "coach",
+     "tokens": {
+      "att": [
+       "x+w+h+fs+o+kind",
+       "o"
+      ],
+      "det": [
+       "x+w+h+fs+o+kind",
+       "o"
+      ],
+      "ag": [
+       "o+act"
+      ],
+      "op": [
+       "o+act"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "hO": [
+       "o+act"
+      ],
+      "lay1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lay2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pend": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c005",
+       "phrase": "cannot conclude",
+       "at": 104.879
+      },
+      {
+       "name": "s7_needs",
+       "phrase": "The comparison still needs to happen",
+       "at": 101.879
+      },
+      {
+       "name": "s7_split",
+       "phrase": "Nor must the team split the page equally",
+       "at": 110.45
+      },
+      {
+       "name": "s7_checkAlt",
+       "phrase": "Check the alternatives against the task",
+       "at": 116.45
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.c006",
+     "kind": "line",
+     "block": "L04.S07.B04",
+     "branch": null,
+     "start": 119.372,
+     "end": 136.436,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "att": [
+       "o+act"
+      ],
+      "det": [
+       "o+act"
+      ],
+      "rv0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rv1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rv2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lay1": [
+       "o+act"
+      ],
+      "lay2": [
+       "o+act"
+      ],
+      "pend": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c006",
+       "phrase": "If you formed a reply",
+       "at": 119.372
+      },
+      {
+       "name": "s7_specific",
+       "phrase": "was the disagreement specific",
+       "at": 122.801
+      },
+      {
+       "name": "s7_reason",
+       "phrase": "was the reason connected to the task",
+       "at": 124.515
+      },
+      {
+       "name": "s7_step",
+       "phrase": "did the next step make something examinable",
+       "at": 127.943
+      }
+     ]
+    },
+    {
+     "id": "L04.S07.h102",
+     "kind": "hold",
+     "block": "L04.S07.B04",
+     "branch": null,
+     "start": 136.436,
+     "end": 144.436,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L04.S07.c007",
+     "kind": "line",
+     "block": "L04.S07.B04",
+     "branch": null,
+     "start": 144.436,
+     "end": 163.643,
+     "speaker": "coach",
+     "tokens": {
+      "rv0": [
+       "o+act"
+      ],
+      "rv1": [
+       "o+act"
+      ],
+      "rv2": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "fin": [
+       "act",
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L04_S07_c007",
+       "phrase": "directly and respectfully",
+       "at": 145.722
+      },
+      {
+       "name": "s7_direct",
+       "phrase": "You can disagree directly and respectfully",
+       "at": 144.436
+      },
+      {
+       "name": "s7_clear",
+       "phrase": "Keep the issue clear enough",
+       "at": 155.15
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "page",
+  "ifF",
+  "sF",
+  "lay1",
+  "lay2",
+  "att",
+  "det",
+  "state",
+  "img",
+  "eff",
+  "quote",
+  "ifH",
+  "unk",
+  "rv0",
+  "rv1",
+  "rv2",
+  "blank",
+  "priv",
+  "sH",
+  "mq",
+  "mn",
+  "ag",
+  "op",
+  "hA",
+  "hO",
+  "pend",
+  "fin",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

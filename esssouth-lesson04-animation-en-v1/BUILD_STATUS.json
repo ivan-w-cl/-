@@ -44,10 +44,10 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.990)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.245)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.495)",
-    "PASS rate 2×: clock advances at 2× (measured 1.984)",
+    "PASS rate 1×: clock advances at 1× (measured 0.998)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.241)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.487)",
+    "PASS rate 2×: clock advances at 2× (measured 1.991)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -77,7 +77,7 @@
     "L04.S01.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S01/report.json (2026-10-29T22:05:28.336Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
+   "qaReport": "qa/S01/report.json (2026-10-29T22:25:56.613Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
    "routeSeconds": {
     "watch": 257.664,
     "practice:main": 257.664
@@ -88,9 +88,9 @@
     "content/labels.staging.en.json": "7b9ee05d5d64ce7be721328a136ece1eb75a8fd59ad4ebb95dd355c6c73d00ac",
     "data/l04s01-data.js": "fdfe672ce1e91d6af20746d8ccbac3459ecfd224c1547324e2bff087081e460a",
     "index.html": "f4fee0b6172041796268e21d69697e0c8797fe19b5ea658619d847fdd2039a75",
-    "L04S01_player_standalone.html": "fff5d12985402ae17e3b826c06d330213eb0795e1f7f9f52f99dda2a3ca26a27"
+    "L04S01_player_standalone.html": "c169cc5f305a41f77f15451a31ea131337a973f7d1f80b9507c1c47e7fee990a"
    },
-   "updatedAt": "2026-10-29T22:10:24.681Z"
+   "updatedAt": "2026-10-29T22:33:07.618Z"
   },
   {
    "id": "L04.S02",
@@ -152,10 +152,10 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.994)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.247)",
+    "PASS rate 1×: clock advances at 1× (measured 0.993)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.241)",
     "PASS rate 1.5×: clock advances at 1.5× (measured 1.491)",
-    "PASS rate 2×: clock advances at 2× (measured 1.979)",
+    "PASS rate 2×: clock advances at 2× (measured 1.990)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -226,7 +226,7 @@
    "interactions": [
     "L04.I01"
    ],
-   "qaReport": "qa/S02/report.json (2026-10-29T22:08:12.581Z, Chromium 153.0.8010.12, 90 checks, 0 failed)",
+   "qaReport": "qa/S02/report.json (2026-10-29T22:26:33.021Z, Chromium 153.0.8010.12, 90 checks, 0 failed)",
    "routeSeconds": {
     "watch": 265.588,
     "practice:A": 251.073,
@@ -240,9 +240,9 @@
     "content/labels.staging.en.json": "99faaefe61b25cd980f52a825cc9ba8eef49a109f4f3ab1f8f9ca541ca771dc5",
     "data/l04s02-data.js": "12552c8164c73684d79a498a0eee7281bbb2cb499ac078ef714085089b0c0cd3",
     "index.html": "d69b18e97d7c44420e31455b587fcae4b6727663dd99c641859c1dc8380c56b1",
-    "L04S02_player_standalone.html": "9b660fd4391f810cac5bb5d0a2fa6d5a397316340a69e15541455a378b56e9dc"
+    "L04S02_player_standalone.html": "8e605635090c1357647da905ac6a0ab186d5528e6660d401d8770bbbe505a045"
    },
-   "updatedAt": "2026-10-29T22:10:24.685Z"
+   "updatedAt": "2026-10-29T22:33:07.703Z"
   },
   {
    "id": "L04.S03",
@@ -306,10 +306,10 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.995)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.237)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.495)",
-    "PASS rate 2×: clock advances at 2× (measured 1.985)",
+    "PASS rate 1×: clock advances at 1× (measured 0.992)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.244)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.492)",
+    "PASS rate 2×: clock advances at 2× (measured 1.996)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -380,7 +380,7 @@
    "interactions": [
     "L04.I02"
    ],
-   "qaReport": "qa/S03/report.json (2026-10-29T22:09:12.320Z, Chromium 153.0.8010.12, 90 checks, 0 failed)",
+   "qaReport": "qa/S03/report.json (2026-10-29T22:27:44.318Z, Chromium 153.0.8010.12, 90 checks, 0 failed)",
    "routeSeconds": {
     "watch": 287.715,
     "practice:A": 269.343,
@@ -394,9 +394,9 @@
     "content/labels.staging.en.json": "f2d48ce366ffa5fd74816e429e517401c34c24d4a271076d7c147a299ad3ced0",
     "data/l04s03-data.js": "7b8c27ff3e65a2e9bd7ae66d7d2560b88e3f706345087e0dd16aa2c3ac4a217b",
     "index.html": "990d4c75f118ed10f4e0e1c4532c7f31ab28e6cf9eb92c188cde48cc93f5487b",
-    "L04S03_player_standalone.html": "7d8530dfe2d1996384539a31a381b4d1b65edb517bd076ef66e61d52740f4d29"
+    "L04S03_player_standalone.html": "344dff263bdd54fcab667a2eda97b2bf36daee448dd8e24d074db6bac08b29ba"
    },
-   "updatedAt": "2026-10-29T22:10:24.688Z"
+   "updatedAt": "2026-10-29T22:33:07.779Z"
   },
   {
    "id": "L04.S04",
@@ -435,10 +435,10 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.999)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.240)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.497)",
-    "PASS rate 2×: clock advances at 2× (measured 1.985)",
+    "PASS rate 1×: clock advances at 1× (measured 0.993)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.245)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.488)",
+    "PASS rate 2×: clock advances at 2× (measured 1.992)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -468,7 +468,7 @@
     "L04.S04.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S04/report.json (2026-10-29T22:12:43.006Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
+   "qaReport": "qa/S04/report.json (2026-10-29T22:29:06.561Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
    "routeSeconds": {
     "watch": 230.694,
     "practice:main": 230.694
@@ -479,9 +479,9 @@
     "content/labels.staging.en.json": "8dffc7ed40ce988acdbb3a4ec4326e104d2af1a416900f8748fad310f851a473",
     "data/l04s04-data.js": "5619adaee5dd922a401cc033060da505a516e453ce7bfe98280c13242d3d13e9",
     "index.html": "0d6e29ca3143302bdaf5dd379b4e56b80689d1e0c7d62452c5d2984b035db6fe",
-    "L04S04_player_standalone.html": "f7fe76816b2ad1b17a9cd72561e7ec289fe77ced805332553731e5bf75e6a1e5"
+    "L04S04_player_standalone.html": "f03b7ccd8128b2d6bc81400cbf155f250f9163b0e04c9091c398d937b231e257"
    },
-   "updatedAt": "2026-10-29T22:16:46.527Z"
+   "updatedAt": "2026-10-29T22:33:07.866Z"
   },
   {
    "id": "L04.S05",
@@ -522,10 +522,10 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.998)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.248)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.497)",
-    "PASS rate 2×: clock advances at 2× (measured 1.996)",
+    "PASS rate 1×: clock advances at 1× (measured 0.994)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.241)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.493)",
+    "PASS rate 2×: clock advances at 2× (measured 1.992)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -555,7 +555,7 @@
     "L04.S05.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S05/report.json (2026-10-29T22:16:19.751Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
+   "qaReport": "qa/S05/report.json (2026-10-29T22:29:39.431Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
    "routeSeconds": {
     "watch": 230.536,
     "practice:main": 230.536
@@ -566,9 +566,9 @@
     "content/labels.staging.en.json": "8d2069bc36755ec062b595a7182abb87465350d425da0287b3c6c99f945fcea3",
     "data/l04s05-data.js": "3a291a06f8145902886d322fa13cf95155c12bb8a88eeee9047c388f2d967d0f",
     "index.html": "257271dace783610b463df3624f33ba557c3692f2c2d6f8ef2418cacc8805263",
-    "L04S05_player_standalone.html": "32fc930ccc25018a896dcbe05f99cbdbe8f74a5c0e6546811ee2d9bffaa1435c"
+    "L04S05_player_standalone.html": "a7aa88e2458023317ce79dbb30bb17b45c7120179541c1613d0bba8cfdfda08f"
    },
-   "updatedAt": "2026-10-29T22:16:46.533Z"
+   "updatedAt": "2026-10-29T22:33:07.957Z"
   },
   {
    "id": "L04.S06",
@@ -613,10 +613,10 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.999)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.243)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.498)",
-    "PASS rate 2×: clock advances at 2× (measured 1.989)",
+    "PASS rate 1×: clock advances at 1× (measured 0.997)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.233)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.489)",
+    "PASS rate 2×: clock advances at 2× (measured 1.983)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -671,7 +671,7 @@
    "interactions": [
     "L04.I03"
    ],
-   "qaReport": "qa/S06/report.json (2026-10-29T22:22:06.383Z, Chromium 153.0.8010.12, 66 checks, 0 failed)",
+   "qaReport": "qa/S06/report.json (2026-10-29T22:30:16.007Z, Chromium 153.0.8010.12, 66 checks, 0 failed)",
    "routeSeconds": {
     "watch": 310.966,
     "practice:model": 277.166,
@@ -685,7 +685,7 @@
     "index.html": "16d8a146d80afa12d81d71d5267d984728ba1e7ff6742edceda3017eccdb4418",
     "L04S06_player_standalone.html": "729079f638f30789db5ed4afcc544f4d9b471ffd662e0672a3d7ac4399abca69"
    },
-   "updatedAt": "2026-10-29T22:23:37.263Z"
+   "updatedAt": "2026-10-29T22:33:08.044Z"
   },
   {
    "id": "L04.S07",
@@ -721,10 +721,10 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.996)",
+    "PASS rate 1×: clock advances at 1× (measured 0.998)",
     "PASS rate 1.25×: clock advances at 1.25× (measured 1.240)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.497)",
-    "PASS rate 2×: clock advances at 2× (measured 1.990)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.484)",
+    "PASS rate 2×: clock advances at 2× (measured 2.008)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -754,7 +754,7 @@
     "L04.S07.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S07/report.json (2026-10-29T22:24:37.055Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
+   "qaReport": "qa/S07/report.json (2026-10-29T22:32:02.065Z, Chromium 153.0.8010.12, 39 checks, 0 failed)",
    "routeSeconds": {
     "watch": 163.643,
     "practice:main": 163.643
@@ -767,7 +767,7 @@
     "index.html": "d132e9a1b76de93d66c7235814070c0767be5b6dd7cdef065f7de1ab7b38a35f",
     "L04S07_player_standalone.html": "b569dc731d34b8ea8917fc24c30ecf355988a7894303db88fe076e782c65983b"
    },
-   "updatedAt": "2026-10-29T22:25:15.070Z"
+   "updatedAt": "2026-10-29T22:33:08.106Z"
   }
  ],
  "combinedEntryStatus": "not_started",

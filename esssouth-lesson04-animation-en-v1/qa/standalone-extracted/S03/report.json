@@ -1,0 +1,1595 @@
+{
+ "section": "S03",
+ "ranAt": "2026-10-29T22:34:57.434Z",
+ "environment": {
+  "os": "linux 6.18.44-fc-v185",
+  "browser": "Chromium 153.0.8010.12",
+  "playwright": "1.63.0",
+  "node": "v22.22.0",
+  "fonts": "Inter installed (first in the stack); the approved reference frames were rendered with Segoe UI",
+  "viewportsAreEmulated": true
+ },
+ "checks": [
+  {
+   "name": "page loads without errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no layout / overflow warnings from the engine (all routes, settled states)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no remote requests (offline)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "silent: no media elements, no microphone request",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "stage accessible name names Lesson 04 and this section",
+   "pass": true,
+   "detail": "Lesson 04, Section 4.3, Explain the Concern Precisely: animation stage"
+  },
+  {
+   "name": "captions reproduce exact cue words (every route)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every supplied cue is reachable in some route",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L04.S03.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L04.S03.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:A: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:A: L04.S03.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:A: L04.S03.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:B: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:B: L04.S03.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:B: L04.S03.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:C: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:C: L04.S03.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:C: L04.S03.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:skip: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:skip: L04.S03.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:skip: L04.S03.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every character line shows its exact words in a visible bubble near its end",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 1 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:A: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 1 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:B: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 1 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:C: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 1 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 1 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "deterministic: same frame after different seek histories",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "rate 1×: clock advances at 1× (measured 0.990)",
+   "pass": true,
+   "detail": 0.9902686129437074
+  },
+  {
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.245)",
+   "pass": true,
+   "detail": 1.2447555940327995
+  },
+  {
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.497)",
+   "pass": true,
+   "detail": 1.4972076324714318
+  },
+  {
+   "name": "rate 2×: clock advances at 2× (measured 1.990)",
+   "pass": true,
+   "detail": 1.9897347020394807
+  },
+  {
+   "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
+   "pass": true,
+   "detail": {
+    "a": "L04.S03.d002",
+    "off1": 2,
+    "b": "L04.S03.d002",
+    "off2": 2,
+    "mode": "watch"
+   }
+  },
+  {
+   "name": "restart returns to the section start and plays",
+   "pass": true,
+   "detail": {
+    "t": 0.19679999999981374,
+    "playing": true,
+    "gate": "none",
+    "choice": null
+   }
+  },
+  {
+   "name": "keyboard: Space plays and pauses",
+   "pass": true,
+   "detail": {
+    "k1": true,
+    "k2": false
+   }
+  },
+  {
+   "name": "keyboard: Tab reaches mode and playback controls with a visible focus outline",
+   "pass": true,
+   "detail": [
+    {
+     "tag": "BUTTON",
+     "id": "watch",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "practice",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "play",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "restart",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "scrub",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "cap",
+     "outline": true
+    }
+   ]
+  },
+  {
+   "name": "captions toggle hides the stage caption; DOM caption carries the current words",
+   "pass": true,
+   "detail": {
+    "on": 1,
+    "off": 0,
+    "dom": "CoachAn objection becomes easier to examine when it names the action,"
+   }
+  },
+  {
+   "name": "no runtime errors during transport tests",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: while waiting, no caption from the next cue; the DOM line shows the prompt",
+   "pass": true,
+   "detail": {
+    "stage": 0,
+    "dom": "Which reply most precisely explains the stated concern about opening a full worked answer immediately?",
+    "prompt": "Which reply most precisely explains the stated concern about opening a full worked answer immediately?"
+   }
+  },
+  {
+   "name": "practice: playback stops and waits at the gate (awaiting_choice)",
+   "pass": true,
+   "detail": {
+    "t": 137.83799999999997,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.I02.gate"
+   }
+  },
+  {
+   "name": "practice: the waiting frame keeps everything that was settled just before it (nothing from the next step leaks in or out)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: Play, Space, a rate change and 9.5 s of wall time do not choose (still waiting beyond the 8 s Watch hold)",
+   "pass": true,
+   "detail": {
+    "t": 137.83799999999997,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.I02.gate"
+   }
+  },
+  {
+   "name": "practice: DOM choice buttons list every option",
+   "pass": true,
+   "detail": 3
+  },
+  {
+   "name": "practice A: first selection wins; branch plays on its own route",
+   "pass": true,
+   "detail": {
+    "t": 137.86099999999996,
+    "gate": "branch_playing",
+    "route": "practice:A",
+    "choice": "A",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.d101"
+   }
+  },
+  {
+   "name": "practice A: scrubber is branch-local",
+   "pass": true,
+   "detail": [
+    137.84299999999996,
+    164.60199999999995
+   ]
+  },
+  {
+   "name": "practice A: seek beyond the branch stays inside it (branch_ready, no common cue)",
+   "pass": true,
+   "detail": {
+    "t": 164.60199999999995,
+    "gate": "branch_ready",
+    "route": "practice:A",
+    "choice": "A",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.f101"
+   }
+  },
+  {
+   "name": "practice A: branch end waits for Continue",
+   "pass": true,
+   "detail": {
+    "t": 164.60199999999995,
+    "gate": "branch_ready",
+    "route": "practice:A",
+    "choice": "A",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.f101"
+   }
+  },
+  {
+   "name": "practice A: Try again restores the gate baseline (state + identical stage)",
+   "pass": true,
+   "detail": {
+    "s": {
+     "t": 137.83799999999997,
+     "gate": "awaiting",
+     "route": "practice:skip",
+     "choice": null,
+     "playing": false,
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "step": "L04.I02.gate"
+    },
+    "same": true
+   }
+  },
+  {
+   "name": "practice A: Continue rejoins L04.S03.c010 once",
+   "pass": true,
+   "detail": {
+    "t": 165.05955000000023,
+    "gate": "resolved",
+    "route": "practice:A",
+    "choice": "A",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.c010"
+   }
+  },
+  {
+   "name": "practice A: no branch words in the common continuation caption",
+   "pass": true,
+   "detail": "Ask what the proposed action might change."
+  },
+  {
+   "name": "practice A: seek before the gate resets the attempt",
+   "pass": true,
+   "detail": {
+    "t": 133.64299999999997,
+    "gate": "before",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.c008"
+   }
+  },
+  {
+   "name": "practice A: seek to the gate stops there",
+   "pass": true,
+   "detail": {
+    "t": 137.83799999999997,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.I02.gate"
+   }
+  },
+  {
+   "name": "practice B: first selection wins; branch plays on its own route",
+   "pass": true,
+   "detail": {
+    "t": 137.91185000000053,
+    "gate": "branch_playing",
+    "route": "practice:B",
+    "choice": "B",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.d201"
+   }
+  },
+  {
+   "name": "practice B: scrubber is branch-local",
+   "pass": true,
+   "detail": [
+    137.84299999999996,
+    166.74499999999995
+   ]
+  },
+  {
+   "name": "practice B: seek beyond the branch stays inside it (branch_ready, no common cue)",
+   "pass": true,
+   "detail": {
+    "t": 166.74499999999995,
+    "gate": "branch_ready",
+    "route": "practice:B",
+    "choice": "B",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.f201"
+   }
+  },
+  {
+   "name": "practice B: branch end waits for Continue",
+   "pass": true,
+   "detail": {
+    "t": 166.74499999999995,
+    "gate": "branch_ready",
+    "route": "practice:B",
+    "choice": "B",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.f201"
+   }
+  },
+  {
+   "name": "practice B: Try again restores the gate baseline (state + identical stage)",
+   "pass": true,
+   "detail": {
+    "s": {
+     "t": 137.83799999999997,
+     "gate": "awaiting",
+     "route": "practice:skip",
+     "choice": null,
+     "playing": false,
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "step": "L04.I02.gate"
+    },
+    "same": true
+   }
+  },
+  {
+   "name": "practice B: Continue rejoins L04.S03.c010 once",
+   "pass": true,
+   "detail": {
+    "t": 167.2076500000001,
+    "gate": "resolved",
+    "route": "practice:B",
+    "choice": "B",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.c010"
+   }
+  },
+  {
+   "name": "practice B: no branch words in the common continuation caption",
+   "pass": true,
+   "detail": "Ask what the proposed action might change."
+  },
+  {
+   "name": "practice B: seek before the gate resets the attempt",
+   "pass": true,
+   "detail": {
+    "t": 133.64299999999997,
+    "gate": "before",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.c008"
+   }
+  },
+  {
+   "name": "practice B: seek to the gate stops there",
+   "pass": true,
+   "detail": {
+    "t": 137.83799999999997,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.I02.gate"
+   }
+  },
+  {
+   "name": "practice C: first selection wins; branch plays on its own route",
+   "pass": true,
+   "detail": {
+    "t": 137.85649999999995,
+    "gate": "branch_playing",
+    "route": "practice:C",
+    "choice": "C",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.d301"
+   }
+  },
+  {
+   "name": "practice C: scrubber is branch-local",
+   "pass": true,
+   "detail": [
+    137.84299999999996,
+    176.17399999999995
+   ]
+  },
+  {
+   "name": "practice C: seek beyond the branch stays inside it (branch_ready, no common cue)",
+   "pass": true,
+   "detail": {
+    "t": 176.17399999999995,
+    "gate": "branch_ready",
+    "route": "practice:C",
+    "choice": "C",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.f301"
+   }
+  },
+  {
+   "name": "practice C: branch end waits for Continue",
+   "pass": true,
+   "detail": {
+    "t": 176.17399999999995,
+    "gate": "branch_ready",
+    "route": "practice:C",
+    "choice": "C",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.f301"
+   }
+  },
+  {
+   "name": "practice C: Try again restores the gate baseline (state + identical stage)",
+   "pass": true,
+   "detail": {
+    "s": {
+     "t": 137.83799999999997,
+     "gate": "awaiting",
+     "route": "practice:skip",
+     "choice": null,
+     "playing": false,
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "proposalAdopted": false
+     },
+     "step": "L04.I02.gate"
+    },
+    "same": true
+   }
+  },
+  {
+   "name": "practice C: Continue rejoins L04.S03.c010 once",
+   "pass": true,
+   "detail": {
+    "t": 176.62629999999953,
+    "gate": "resolved",
+    "route": "practice:C",
+    "choice": "C",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.c010"
+   }
+  },
+  {
+   "name": "practice C: no branch words in the common continuation caption",
+   "pass": true,
+   "detail": "Ask what the proposed action might change."
+  },
+  {
+   "name": "practice C: seek before the gate resets the attempt",
+   "pass": true,
+   "detail": {
+    "t": 133.64299999999997,
+    "gate": "before",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.c008"
+   }
+  },
+  {
+   "name": "practice C: seek to the gate stops there",
+   "pass": true,
+   "detail": {
+    "t": 137.83799999999997,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.I02.gate"
+   }
+  },
+  {
+   "name": "practice: Skip enters the common continuation once, unanswered, no assessment",
+   "pass": true,
+   "detail": {
+    "t": 138.1458500000005,
+    "gate": "resolved",
+    "route": "practice:skip",
+    "choice": "skip",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.c010"
+   }
+  },
+  {
+   "name": "practice: seek forward across an unvisited gate stops at the gate",
+   "pass": true,
+   "detail": {
+    "t": 137.83799999999997,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.I02.gate"
+   }
+  },
+  {
+   "name": "practice: after Skip, seeking within the continuation is allowed",
+   "pass": true,
+   "detail": {
+    "t": 238.57899999999992,
+    "gate": "resolved",
+    "route": "practice:skip",
+    "choice": "skip",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.c016"
+   }
+  },
+  {
+   "name": "mode switch at the gate: Watch restarts at its thinking hold",
+   "pass": true,
+   "detail": {
+    "t": 136.64299999999997,
+    "gate": "none",
+    "route": "watch",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.I02.watchThink"
+   }
+  },
+  {
+   "name": "mode switch at the gate: Practice returns to awaiting_choice",
+   "pass": true,
+   "detail": {
+    "t": 137.83799999999997,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.I02.gate"
+   }
+  },
+  {
+   "name": "mode switch inside a branch: Watch restarts at its thinking hold (no branch carried over)",
+   "pass": true,
+   "detail": {
+    "t": 136.64299999999997,
+    "gate": "none",
+    "route": "watch",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.I02.watchThink"
+   }
+  },
+  {
+   "name": "watch: no waiting at the gate; the declared path (C) follows the 8 s thinking hold",
+   "pass": true,
+   "detail": {
+    "t": 146.34679999999977,
+    "gate": "none",
+    "route": "watch",
+    "choice": null,
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "proposalAdopted": false
+    },
+    "step": "L04.S03.d301"
+   }
+  },
+  {
+   "name": "practice: no runtime errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: Watch duration changes by the expected clip delta (8.250 s)",
+   "pass": true,
+   "detail": {
+    "prod": 287.715,
+    "retimed": 295.965
+   }
+  },
+  {
+   "name": "retime: step order unchanged in every route",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: holds keep their fixture length; think holds unchanged",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+   "pass": true,
+   "detail": [
+    {
+     "name": "a_L04_S03_c001",
+     "zero": false,
+     "ratio": 1.3499766682221186,
+     "m": 1.35
+    },
+    {
+     "name": "a_L04_S03_d001",
+     "zero": false,
+     "ratio": 1.3499999999999999,
+     "m": 1.35
+    },
+    {
+     "name": "s3_action",
+     "zero": false,
+     "ratio": 1.3499999999999999,
+     "m": 1.35
+    },
+    {
+     "name": "s3_conseq",
+     "zero": false,
+     "ratio": 1.350021213406873,
+     "m": 1.35
+    },
+    {
+     "name": "s3_feels",
+     "zero": false,
+     "ratio": 1.3499840916321983,
+     "m": 1.35
+    }
+   ]
+  },
+  {
+   "name": "retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: no layout warnings",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 102,
+    "domcapFs": 16,
+    "panel": true
+   }
+  },
+  {
+   "name": "tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 102,
+    "domcapFs": 16,
+    "panel": true
+   }
+  },
+  {
+   "name": "tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 102,
+    "domcapFs": 16,
+    "panel": true
+   }
+  },
+  {
+   "name": "desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 102,
+    "domcapFs": 16,
+    "panel": true
+   }
+  }
+ ],
+ "failures": [],
+ "notes": [
+  "Text expansion is a stress report, not a pass/fail gate: overflow at ×1.3/×1.6 is reported by the fitter (never clipped silently) and needs layout work in the localization pass where it occurs."
+ ],
+ "routes": {
+  "watch": 287.715,
+  "practice:A": 269.343,
+  "practice:B": 271.486,
+  "practice:C": 280.915,
+  "practice:skip": 242.579
+ },
+ "anchors": [
+  {
+   "name": "a_L04_S03_c001",
+   "cue": "L04.S03.c001",
+   "phrase": "why that consequence matters to the task",
+   "localSec": 6.429,
+   "suppliedSec": 6.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c002",
+   "cue": "L04.S03.c002",
+   "phrase": "understand the key reasoning",
+   "localSec": 5.571,
+   "suppliedSec": 5.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_d001",
+   "cue": "L04.S03.d001",
+   "phrase": "as soon as a problem becomes difficult",
+   "localSec": 6,
+   "suppliedSec": 6,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c003",
+   "cue": "L04.S03.c003",
+   "phrase": "new information",
+   "localSec": 6,
+   "suppliedSec": 6,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_d002",
+   "cue": "L04.S03.d002",
+   "phrase": "the full worked answer",
+   "localSec": 1.286,
+   "suppliedSec": 1.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c004",
+   "cue": "L04.S03.c004",
+   "phrase": "before trying a step",
+   "localSec": 5.143,
+   "suppliedSec": 5.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c005",
+   "cue": "L04.S03.c005",
+   "phrase": "does not prove that nobody learns from it",
+   "localSec": 12.429,
+   "suppliedSec": 12.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c006",
+   "cue": "L04.S03.c006",
+   "phrase": "what opportunity might it reduce",
+   "localSec": 7.286,
+   "suppliedSec": 7.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c007",
+   "cue": "L04.S03.c007",
+   "phrase": "without claiming more than the example supports",
+   "localSec": 9,
+   "suppliedSec": 9,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c008",
+   "cue": "L04.S03.c008",
+   "phrase": "the explanation in each objection",
+   "localSec": 6.429,
+   "suppliedSec": 6.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c010",
+   "cue": "L04.S03.c010",
+   "phrase": "before seeing the full answer",
+   "localSec": 7.286,
+   "suppliedSec": 7.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c011",
+   "cue": "L04.S03.c011",
+   "phrase": "or claim that harm is certain",
+   "localSec": 6.429,
+   "suppliedSec": 6.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c012",
+   "cue": "L04.S03.c012",
+   "phrase": "Keep that issue separate",
+   "localSec": 6,
+   "suppliedSec": 6,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c013",
+   "cue": "L04.S03.c013",
+   "phrase": "does not select the best alternative by itself",
+   "localSec": 5.571,
+   "suppliedSec": 5.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c014",
+   "cue": "L04.S03.c014",
+   "phrase": "what opportunity it might reduce",
+   "localSec": 6.429,
+   "suppliedSec": 6.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c015",
+   "cue": "L04.S03.c015",
+   "phrase": "check its scope",
+   "localSec": 2.143,
+   "suppliedSec": 2.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_c016",
+   "cue": "L04.S03.c016",
+   "phrase": "No option has been adopted or shown to work",
+   "localSec": 9.429,
+   "suppliedSec": 9.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_d101",
+   "cue": "L04.S03.d101",
+   "phrase": "do not really agree",
+   "localSec": 2.571,
+   "suppliedSec": 2.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_d102",
+   "cue": "L04.S03.d102",
+   "phrase": "what do you think could happen",
+   "localSec": 2.143,
+   "suppliedSec": 2.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_f101",
+   "cue": "L04.S03.f101",
+   "phrase": "rather than stopping at disagreement",
+   "localSec": 13.286,
+   "suppliedSec": 13.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_d201",
+   "cue": "L04.S03.d201",
+   "phrase": "always stop people from learning",
+   "localSec": 0.857,
+   "suppliedSec": 0.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_d202",
+   "cue": "L04.S03.d202",
+   "phrase": "the timing here, or to every use",
+   "localSec": 4.286,
+   "suppliedSec": 4.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_f201",
+   "cue": "L04.S03.f201",
+   "phrase": "cannot establish that all help prevents learning",
+   "localSec": 9.429,
+   "suppliedSec": 9.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_d301",
+   "cue": "L04.S03.d301",
+   "phrase": "we may follow it without finding out",
+   "localSec": 4.286,
+   "suppliedSec": 4.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_d302",
+   "cue": "L04.S03.d302",
+   "phrase": "We still need a way to get help",
+   "localSec": 5.571,
+   "suppliedSec": 5.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L04_S03_f301",
+   "cue": "L04.S03.f301",
+   "phrase": "does not claim that seeing an answer makes learning impossible",
+   "localSec": 6,
+   "suppliedSec": 6,
+   "source": "supplied semantic anchor"
+  }
+ ],
+ "layoutAudit": {
+  "watch": [],
+  "practice:A": [],
+  "practice:B": [],
+  "practice:C": [],
+  "practice:skip": []
+ },
+ "stills": [
+  "S03_watch_B01-open_t1.20.jpg",
+  "S03_watch_B01-mid_t27.66.jpg",
+  "S03_watch_B01-end_t55.02.jpg",
+  "S03_watch_B02-open_t56.52.jpg",
+  "S03_watch_B02-mid_t82.78.jpg",
+  "S03_watch_B02-end_t109.93.jpg",
+  "S03_watch_B03-open_t111.43.jpg",
+  "S03_watch_B03-mid_t146.60.jpg",
+  "S03_watch_B03-end_t182.68.jpg",
+  "S03_watch_B04-open_t184.18.jpg",
+  "S03_watch_B04-mid_t210.25.jpg",
+  "S03_watch_B04-end_t237.22.jpg",
+  "S03_watch_B05-open_t238.72.jpg",
+  "S03_watch_B05-mid_t262.62.jpg",
+  "S03_watch_B05-end_t287.41.jpg",
+  "S03_watch_trans-c002_t15.27.jpg",
+  "S03_watch_trans-d001_t29.76.jpg",
+  "S03_watch_trans-c003_t39.11.jpg",
+  "S03_watch_trans-d002_t48.89.jpg",
+  "S03_watch_trans-c004_t55.67.jpg",
+  "S03_watch_trans-c005_t71.88.jpg",
+  "S03_watch_trans-c006_t88.09.jpg",
+  "S03_watch_trans-h101_t102.58.jpg",
+  "S03_watch_trans-c007_t110.58.jpg",
+  "S03_watch_trans-c008_t122.93.jpg",
+  "S03_watch_trans-watchThink_t136.99.jpg",
+  "S03_watch_trans-d301_t144.99.jpg",
+  "S03_watch_trans-d302_t155.63.jpg",
+  "S03_watch_trans-f301_t166.69.jpg",
+  "S03_watch_trans-c010_t183.33.jpg",
+  "S03_watch_trans-c011_t195.68.jpg",
+  "S03_watch_trans-c012_t211.03.jpg",
+  "S03_watch_trans-c013_t223.81.jpg",
+  "S03_watch_trans-c014_t237.87.jpg",
+  "S03_watch_trans-h102_t252.79.jpg",
+  "S03_watch_trans-c015_t260.79.jpg",
+  "S03_watch_trans-c016_t274.43.jpg",
+  "S03_practice-A_B03-open_t139.04.jpg",
+  "S03_practice-A_B03-mid_t151.22.jpg",
+  "S03_practice-A_B03-end_t164.31.jpg",
+  "S03_practice-A_trans-d101_t138.19.jpg",
+  "S03_practice-A_settled-d101_t143.46.jpg",
+  "S03_practice-A_trans-d102_t144.11.jpg",
+  "S03_practice-A_settled-d102_t148.53.jpg",
+  "S03_practice-A_trans-f101_t149.18.jpg",
+  "S03_practice-A_settled-f101_t164.31.jpg",
+  "S03_practice-A_trans-ready_t164.96.jpg",
+  "S03_practice-A_settled-ready_t164.31.jpg",
+  "S03_practice-B_B03-open_t139.04.jpg",
+  "S03_practice-B_B03-mid_t152.30.jpg",
+  "S03_practice-B_B03-end_t166.45.jpg",
+  "S03_practice-B_trans-d201_t138.19.jpg",
+  "S03_practice-B_settled-d201_t140.89.jpg",
+  "S03_practice-B_trans-d202_t141.54.jpg",
+  "S03_practice-B_settled-d202_t150.24.jpg",
+  "S03_practice-B_trans-f201_t150.89.jpg",
+  "S03_practice-B_settled-f201_t166.45.jpg",
+  "S03_practice-B_trans-ready_t167.10.jpg",
+  "S03_practice-B_settled-ready_t166.45.jpg",
+  "S03_practice-C_B03-open_t139.04.jpg",
+  "S03_practice-C_B03-mid_t157.01.jpg",
+  "S03_practice-C_B03-end_t175.88.jpg",
+  "S03_practice-C_trans-d301_t138.19.jpg",
+  "S03_practice-C_settled-d301_t148.18.jpg",
+  "S03_practice-C_trans-d302_t148.83.jpg",
+  "S03_practice-C_settled-d302_t159.24.jpg",
+  "S03_practice-C_trans-f301_t159.89.jpg",
+  "S03_practice-C_settled-f301_t175.88.jpg",
+  "S03_practice-C_trans-ready_t176.53.jpg",
+  "S03_practice-C_settled-ready_t175.88.jpg",
+  "S03_practice-skip_B03-open_t111.43.jpg",
+  "S03_practice-skip_B03-mid_t124.04.jpg",
+  "S03_practice-skip_B03-end_t137.54.jpg",
+  "S03_reduced-motion_t136.94.jpg",
+  "S03_practice_gate-awaiting.jpg",
+  "S03_practice_A_branch-ready.jpg",
+  "S03_practice_B_branch-ready.jpg",
+  "S03_practice_C_branch-ready.jpg",
+  "S03_retime-demo_c001-end_t19.52.jpg",
+  "S03_retime-demo_d001-end_t46.51.jpg",
+  "S03_text-x1.3_t136.24.jpg",
+  "S03_text-x1.6_t136.24.jpg",
+  "S03_text-long_t136.24.jpg",
+  "S03_viewport-390x844.png",
+  "S03_viewport-820x1180.png",
+  "S03_viewport-1180x820.png",
+  "S03_viewport-1366x768.png"
+ ],
+ "textExpansion": {
+  "x1.3": {
+   "warnings": 0,
+   "sample": [],
+   "errors": []
+  },
+  "x1.6": {
+   "warnings": 6,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 6.83,
+     "text": "Which action? What could follow? Why does it matter? Which action? What could fo"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 190.06,
+     "text": "Full answer first → possible lost independent attempt Full answer first → possib"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "pRed",
+     "score": "watch",
+     "t": 195.63,
+     "text": "Possibly less chance to reason a step independently Possibly less chance to reas"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "pvNote",
+     "score": "watch",
+     "t": 243.95,
+     "text": "No recording or assessment No recording or"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "practice:A",
+     "t": 161.91,
+     "text": "A possible opener; the concern still needs explaining A possible opener; the con"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "practice:B",
+     "t": 159.77,
+     "text": "A specific concern cannot establish a universal result A specific concern cannot"
+    }
+   ],
+   "errors": []
+  },
+  "long": {
+   "warnings": 20,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "header.section",
+     "text": "Explain the Unbreakablelongtokenforlayoutchecking Concern Precisely",
+     "atMinFs": 24,
+     "detail": "section title reaches the header chips"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "n2",
+     "score": "watch",
+     "t": 4.71,
+     "text": "A Unbreakablelongtokenforlayoutchecking possible consequence"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 6.83,
+     "text": "Which action? What could Unbreakablelongtokenforlayoutchecking follow? Why does "
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 190.06,
+     "text": "Full answer first → Unbreakablelongtokenforlayoutchecking possible lost independ"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "ctxC",
+     "score": "watch",
+     "t": 15.32,
+     "text": "20 minutes · Unbreakablelongtokenforlayoutchecking two sample problems"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "p1",
+     "score": "watch",
+     "t": 15.72,
+     "text": "Problem 1 Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "p2",
+     "score": "watch",
+     "t": 15.92,
+     "text": "Problem 2 Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "aim",
+     "score": "watch",
+     "t": 29.59,
+     "text": "Understand the Unbreakablelongtokenforlayoutchecking key reasoning"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "full",
+     "score": "watch",
+     "t": 22.51,
+     "text": "The full Unbreakablelongtokenforlayoutchecking worked answer"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "rHead",
+     "score": "watch",
+     "t": 55.92,
+     "text": "Possible risk, not Unbreakablelongtokenforlayoutchecking an observed result"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "pOpen",
+     "score": "watch",
+     "t": 60.46,
+     "text": "Open the full answer Unbreakablelongtokenforlayoutchecking before a first attemp"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "pRed",
+     "score": "watch",
+     "t": 62.48,
+     "text": "Possibly less chance to Unbreakablelongtokenforlayoutchecking reason a step inde"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.idea",
+     "token": "link",
+     "score": "watch",
+     "t": 75.39,
+     "text": "Completion alone does not Unbreakablelongtokenforlayoutchecking show what can be"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "blank",
+     "score": "watch",
+     "t": 89.02,
+     "text": "Name the action Unbreakablelongtokenforlayoutchecking and the possible consequen"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "chNote",
+     "score": "watch",
+     "t": 128.41,
+     "text": "Compare the explanation, Unbreakablelongtokenforlayoutchecking not just the tone"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "pvBlank",
+     "score": "watch",
+     "t": 238.12,
+     "text": "Explain one Unbreakablelongtokenforlayoutchecking precise concern"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "pvNote",
+     "score": "watch",
+     "t": 243.95,
+     "text": "No recording Unbreakablelongtokenforlayoutchecking or assessment"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "practice:A",
+     "t": 161.91,
+     "text": "A possible opener; the Unbreakablelongtokenforlayoutchecking concern still needs"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "practice:B",
+     "t": 159.77,
+     "text": "A specific concern cannot Unbreakablelongtokenforlayoutchecking establish a univ"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "fCard",
+     "score": "practice:B",
+     "t": 162.97,
+     "text": "This timing and kind Unbreakablelongtokenforlayoutchecking of help, not every us"
+    }
+   ],
+   "errors": []
+  }
+ },
+ "viewports": [
+  {
+   "viewport": "phone 390x844",
+   "hscroll": false,
+   "small": [],
+   "domcap": 102,
+   "domcapFs": 16,
+   "panel": true
+  },
+  {
+   "viewport": "tablet 820x1180",
+   "hscroll": false,
+   "small": [],
+   "domcap": 102,
+   "domcapFs": 16,
+   "panel": true
+  },
+  {
+   "viewport": "tablet landscape 1180x820",
+   "hscroll": false,
+   "small": [],
+   "domcap": 102,
+   "domcapFs": 16,
+   "panel": true
+  },
+  {
+   "viewport": "desktop 1366x768",
+   "hscroll": false,
+   "small": [],
+   "domcap": 102,
+   "domcapFs": 16,
+   "panel": true
+  }
+ ],
+ "summary": {
+  "checks": 90,
+  "failed": 0,
+  "stills": 87
+ }
+}

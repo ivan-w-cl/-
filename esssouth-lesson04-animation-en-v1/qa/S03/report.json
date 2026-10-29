@@ -1,6 +1,6 @@
 {
  "section": "S03",
- "ranAt": "2026-10-29T22:09:12.320Z",
+ "ranAt": "2026-10-29T22:27:44.318Z",
  "environment": {
   "os": "linux 6.18.44-fc-v185",
   "browser": "Chromium 153.0.8010.12",
@@ -161,24 +161,24 @@
    "detail": []
   },
   {
-   "name": "rate 1×: clock advances at 1× (measured 0.995)",
+   "name": "rate 1×: clock advances at 1× (measured 0.992)",
    "pass": true,
-   "detail": 0.9946677331200426
+   "detail": 0.9916683330003757
   },
   {
-   "name": "rate 1.25×: clock advances at 1.25× (measured 1.237)",
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.244)",
    "pass": true,
-   "detail": 1.237086776859503
+   "detail": 1.2435841887750614
   },
   {
-   "name": "rate 1.5×: clock advances at 1.5× (measured 1.495)",
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.492)",
    "pass": true,
-   "detail": 1.4953003133124916
+   "detail": 1.4917055296470885
   },
   {
-   "name": "rate 2×: clock advances at 2× (measured 1.985)",
+   "name": "rate 2×: clock advances at 2× (measured 1.996)",
    "pass": true,
-   "detail": 1.984670754465475
+   "detail": 1.9956008798242828
   },
   {
    "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
@@ -195,7 +195,7 @@
    "name": "restart returns to the section start and plays",
    "pass": true,
    "detail": {
-    "t": 0.19130000000004657,
+    "t": 0.19710000000009315,
     "playing": true,
     "gate": "none",
     "choice": null
@@ -320,7 +320,7 @@
    "name": "practice A: first selection wins; branch plays on its own route",
    "pass": true,
    "detail": {
-    "t": 137.8491500000001,
+    "t": 137.86894999999967,
     "gate": "branch_playing",
     "route": "practice:A",
     "choice": "A",
@@ -407,7 +407,7 @@
    "name": "practice A: Continue rejoins L04.S03.c010 once",
    "pass": true,
    "detail": {
-    "t": 165.06645,
+    "t": 165.05774999999994,
     "gate": "resolved",
     "route": "practice:A",
     "choice": "A",
@@ -469,7 +469,7 @@
    "name": "practice B: first selection wins; branch plays on its own route",
    "pass": true,
    "detail": {
-    "t": 137.85394999999968,
+    "t": 137.84299999999996,
     "gate": "branch_playing",
     "route": "practice:B",
     "choice": "B",
@@ -556,7 +556,7 @@
    "name": "practice B: Continue rejoins L04.S03.c010 once",
    "pass": true,
    "detail": {
-    "t": 167.19910000000016,
+    "t": 167.1911499999994,
     "gate": "resolved",
     "route": "practice:B",
     "choice": "B",
@@ -618,7 +618,7 @@
    "name": "practice C: first selection wins; branch plays on its own route",
    "pass": true,
    "detail": {
-    "t": 137.84299999999996,
+    "t": 137.85529999999954,
     "gate": "branch_playing",
     "route": "practice:C",
     "choice": "C",
@@ -705,7 +705,7 @@
    "name": "practice C: Continue rejoins L04.S03.c010 once",
    "pass": true,
    "detail": {
-    "t": 176.61535000000015,
+    "t": 176.6254000000001,
     "gate": "resolved",
     "route": "practice:C",
     "choice": "C",
@@ -767,7 +767,7 @@
    "name": "practice: Skip enters the common continuation once, unanswered, no assessment",
    "pass": true,
    "detail": {
-    "t": 138.1365499999999,
+    "t": 138.1514000000001,
     "gate": "resolved",
     "route": "practice:skip",
     "choice": "skip",
@@ -881,7 +881,7 @@
    "name": "watch: no waiting at the gate; the declared path (C) follows the 8 s thinking hold",
    "pass": true,
    "detail": {
-    "t": 146.33680000000027,
+    "t": 146.33960000000053,
     "gate": "none",
     "route": "watch",
     "choice": null,
