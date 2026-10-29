@@ -1,0 +1,22 @@
+{
+  "schema": "esssouth.l04.staging-labels/1",
+  "sectionId": "L04.S02",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain (worded from the cue and its direction). Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.reasonCard": "A reason",
+    "x.proposalCard": "A proposal",
+    "x.fictional": "Fictional planning scenario",
+    "x.prob1": "Problem 1",
+    "x.prob2": "Problem 2",
+    "x.direct": "A direct, reasoned objection",
+    "x.recog": "Recognise: time matters",
+    "x.question": "Question: using it immediately",
+    "x.agreeMark": "Agrees to the timing (this branch only)",
+    "x.b.concern": "Immediate use could leave too little room to try a step",
+    "x.b.question": "What kind of first attempt?",
+    "x.judge": "A personal label, not a reason",
+    "x.c.concern": "Immediate help might reduce independent reasoning",
+    "x.crit.time": "Use time well",
+    "x.crit.reason": "Understand the reasoning"
+  }
+}
