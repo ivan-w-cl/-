@@ -1,0 +1,29 @@
+{
+  "schema": "esssouth.l03.staging-anchors/1",
+  "sectionId": "L03.S07",
+  "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+  "anchors": {
+    "s07_guide":    { "cue": "L03.S07.c001", "phrase": "A group is planning a short guide" },
+    "s07_easy":     { "cue": "L03.S07.c001", "phrase": "easy to read and useful" },
+    "s07_shorter":  { "cue": "L03.S07.d001", "phrase": "A shorter guide" },
+    "s07_quicker":  { "cue": "L03.S07.d001", "phrase": "quicker to read" },
+    "s07_separate": { "cue": "L03.S07.c002", "phrase": "Separate the benefit Maya suggests" },
+    "s07_possib":   { "cue": "L03.S07.c002", "phrase": "Do not turn the possibility" },
+    "s07_longer":   { "cue": "L03.S07.c002", "phrase": "Do not assume she wants a longer guide" },
+    "s07_check":    { "cue": "L03.S07.c003", "phrase": "check your understanding" },
+    "s07_clarify":  { "cue": "L03.S07.c003", "phrase": "clarify an uncertainty" },
+    "s07_support":  { "cue": "L03.S07.c003", "phrase": "support a specific point" },
+    "s07_add":      { "cue": "L03.S07.c003", "phrase": "add a relevant suggestion" },
+    "s07_specific": { "cue": "L03.S07.c004", "phrase": "The question makes the uncertainty more specific" },
+    "s07_discuss":  { "cue": "L03.S07.c004", "phrase": "The group can now discuss" },
+    "s07_another":  { "cue": "L03.S07.c004", "phrase": "Another relevant reply might also have helped" },
+    "s07_intact":   { "cue": "L03.S07.c005", "phrase": "meaning and uncertainty intact" },
+    "s07_connect":  { "cue": "L03.S07.c005", "phrase": "Did your response connect" },
+    "s07_pick":     { "cue": "L03.S07.c005", "phrase": "Pick one feature" },
+    "s07_precise":  { "cue": "L03.S07.c006", "phrase": "one precise question" },
+    "s07_confirm":  { "cue": "L03.S07.c006", "phrase": "a short confirmation" },
+    "s07_contrib":  { "cue": "L03.S07.c006", "phrase": "a relevant contribution of your own" },
+    "s07_ends":     { "cue": "L03.S07.c007", "phrase": "This lesson ends here" },
+    "s07_carry":    { "cue": "L03.S07.c007", "phrase": "Carry one check" }
+  }
+}
