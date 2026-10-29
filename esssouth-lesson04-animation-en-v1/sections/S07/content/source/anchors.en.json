@@ -1,0 +1,66 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L04.S07",
+  "anchors": {
+    "a_L04_S07_c001": {
+      "cueId": "L04.S07.c001",
+      "phrase": "No layout has been chosen",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S07_d001": {
+      "cueId": "L04.S07.d001",
+      "phrase": "could catch",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S07_c002": {
+      "cueId": "L04.S07.c002",
+      "phrase": "keep the concern conditional",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S07_c003": {
+      "cueId": "L04.S07.c003",
+      "phrase": "Use only the parts needed",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S07_d002": {
+      "cueId": "L04.S07.d002",
+      "phrase": "may make the time and place harder to find",
+      "estimatedSeconds": 4.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S07_d003": {
+      "cueId": "L04.S07.d003",
+      "phrase": "I still think",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S07_c004": {
+      "cueId": "L04.S07.c004",
+      "phrase": "has not chosen a layout",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S07_c005": {
+      "cueId": "L04.S07.c005",
+      "phrase": "cannot conclude",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S07_c006": {
+      "cueId": "L04.S07.c006",
+      "phrase": "If you formed a reply",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S07_c007": {
+      "cueId": "L04.S07.c007",
+      "phrase": "directly and respectfully",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

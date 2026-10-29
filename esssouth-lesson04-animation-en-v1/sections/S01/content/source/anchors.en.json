@@ -1,0 +1,108 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L04.S01",
+  "anchors": {
+    "a_L04_S01_c001": {
+      "cueId": "L04.S01.c001",
+      "phrase": "what the difference is about",
+      "estimatedSeconds": 4.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c002": {
+      "cueId": "L04.S01.c002",
+      "phrase": "understand the key reasoning",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_d001": {
+      "cueId": "L04.S01.d001",
+      "phrase": "as soon as a problem becomes difficult",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c003": {
+      "cueId": "L04.S01.c003",
+      "phrase": "a proposal about timing",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c004": {
+      "cueId": "L04.S01.c004",
+      "phrase": "questioning that timing",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c005": {
+      "cueId": "L04.S01.c005",
+      "phrase": "Do not silently choose a mode for her",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c006": {
+      "cueId": "L04.S01.c006",
+      "phrase": "what is stated from what remains open",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c007": {
+      "cueId": "L04.S01.c007",
+      "phrase": "You do not have to do both",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c008": {
+      "cueId": "L04.S01.c008",
+      "phrase": "need not be disguised as agreement",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_d002": {
+      "cueId": "L04.S01.d002",
+      "phrase": "difficulty alone the trigger",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c009": {
+      "cueId": "L04.S01.c009",
+      "phrase": "identifies a timing difference",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c010": {
+      "cueId": "L04.S01.c010",
+      "phrase": "without inventing a hidden motive",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c011": {
+      "cueId": "L04.S01.c011",
+      "phrase": "would not by itself prove that someone learned nothing",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c012": {
+      "cueId": "L04.S01.c012",
+      "phrase": "how a proposed use of help might serve that aim",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c013": {
+      "cueId": "L04.S01.c013",
+      "phrase": "one part of Maya’s proposal",
+      "estimatedSeconds": 0.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c014": {
+      "cueId": "L04.S01.c014",
+      "phrase": "make a concern available for discussion",
+      "estimatedSeconds": 12.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S01_c015": {
+      "cueId": "L04.S01.c015",
+      "phrase": "without pretending to agree",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

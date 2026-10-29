@@ -1,0 +1,96 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L04.S05",
+  "anchors": {
+    "a_L04_S05_c001": {
+      "cueId": "L04.S05.c001",
+      "phrase": "Identify the condition",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_c002": {
+      "cueId": "L04.S05.c002",
+      "phrase": "no plan has been adopted",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_d001": {
+      "cueId": "L04.S05.d001",
+      "phrase": "cannot find a first step",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_c003": {
+      "cueId": "L04.S05.c003",
+      "phrase": "access to a starting point",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_c004": {
+      "cueId": "L04.S05.c004",
+      "phrase": "requiring an attempt before any hint",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_d002": {
+      "cueId": "L04.S05.d002",
+      "phrase": "if we cannot identify one",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_c005": {
+      "cueId": "L04.S05.c005",
+      "phrase": "not automatically the best plan",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_d003": {
+      "cueId": "L04.S05.d003",
+      "phrase": "I support allowing a starting hint",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_c006": {
+      "cueId": "L04.S05.c006",
+      "phrase": "Do not turn partial agreement into a group decision",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_c007": {
+      "cueId": "L04.S05.c007",
+      "phrase": "record only the response they actually give",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_d004": {
+      "cueId": "L04.S05.d004",
+      "phrase": "hear the other views",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_c008": {
+      "cueId": "L04.S05.c008",
+      "phrase": "More help also takes time",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_c009": {
+      "cueId": "L04.S05.c009",
+      "phrase": "not announcing the result",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_d005": {
+      "cueId": "L04.S05.d005",
+      "phrase": "useful for understanding the next step",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S05_c010": {
+      "cueId": "L04.S05.c010",
+      "phrase": "without inventing consensus",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

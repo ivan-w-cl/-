@@ -1,0 +1,196 @@
+{
+  "sectionId": "L04.S03",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L04.S03.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S03.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c008"
+    },
+    {
+      "kind": "watch_hold",
+      "id": "L04.I02.watchThink",
+      "seconds": 8
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.d301"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.d302"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.f301"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c012"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c013"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c014"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S03.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c015"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c016"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L04.S03.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S03.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c008"
+    },
+    {
+      "kind": "gate",
+      "id": "L04.I02",
+      "seconds": null
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c012"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c013"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c014"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S03.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c015"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S03.c016"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L04.S03",
+    "title": "Explain the Concern Precisely",
+    "budgetSeconds": 270,
+    "spokenCueCount": 26,
+    "watchCueCount": 20,
+    "watchWords": 599,
+    "estimatedWatchSeconds": 287.715,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 241.379,
+    "interactions": [
+      "L04.I02"
+    ],
+    "learningOutcome": "State a task-related concern with a clear condition and possible consequence; distinguish a precise objection from vague politeness or an unsupported universal claim."
+  }
+}

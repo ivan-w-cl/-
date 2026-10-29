@@ -1,0 +1,116 @@
+{
+  "sectionId": "L04.S07",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L04.S07.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S07.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S07.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c007"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L04.S07.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S07.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c006"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S07.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S07.c007"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L04.S07",
+    "title": "Transfer and Review",
+    "budgetSeconds": 180,
+    "spokenCueCount": 10,
+    "watchCueCount": 10,
+    "watchWords": 327,
+    "estimatedWatchSeconds": 163.643,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 163.643,
+    "interactions": [],
+    "learningOutcome": "Express a task-relevant disagreement in a new setting, propose a way to examine it, and distinguish procedural agreement from agreement on the final choice."
+  }
+}

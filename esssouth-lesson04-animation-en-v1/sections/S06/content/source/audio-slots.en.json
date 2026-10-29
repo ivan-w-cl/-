@@ -1,0 +1,111 @@
+{
+  "sectionId": "L04.S06",
+  "status": "Empty future audio slots. This review must remain silent.",
+  "slots": {
+    "L04.S06.c001": {
+      "audioId": "L04.S06.c001",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.c002": {
+      "audioId": "L04.S06.c002",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.d001": {
+      "audioId": "L04.S06.d001",
+      "speaker": "maya",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.c003": {
+      "audioId": "L04.S06.c003",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.c004": {
+      "audioId": "L04.S06.c004",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.c005": {
+      "audioId": "L04.S06.c005",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.c006": {
+      "audioId": "L04.S06.c006",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.c007": {
+      "audioId": "L04.S06.c007",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.c008": {
+      "audioId": "L04.S06.c008",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.c009": {
+      "audioId": "L04.S06.c009",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.c010": {
+      "audioId": "L04.S06.c010",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.c011": {
+      "audioId": "L04.S06.c011",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.d101": {
+      "audioId": "L04.S06.d101",
+      "speaker": "learner",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.d102": {
+      "audioId": "L04.S06.d102",
+      "speaker": "maya",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L04.S06.f101": {
+      "audioId": "L04.S06.f101",
+      "speaker": "coach",
+      "lang": "en",
+      "path": null,
+      "durationSeconds": null
+    }
+  }
+}

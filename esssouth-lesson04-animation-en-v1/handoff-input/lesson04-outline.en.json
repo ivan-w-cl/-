@@ -1,0 +1,109 @@
+{
+  "lessonId": "L04",
+  "title": "Disagree Constructively and Move the Discussion Forward",
+  "status": "New proposed full-lesson production plan, not a recovered previously approved Lesson04 outline.",
+  "date": "2026-10-29",
+  "editorialTargetSeconds": 1800,
+  "estimatedWatchSeconds": 1746.806,
+  "measuredRuntimeSeconds": null,
+  "continuity": "Lesson01 introduced a shared discussion; Lesson02 developed reasons and their limits; Lesson03 deepened listening and connected responses. Lesson04 applies those resources to disagreement, comparing alternatives and keeping the decision state accurate.",
+  "boundaries": [
+    "Seven sections fit these learning steps; seven is not mandatory for all future lessons.",
+    "This lesson addresses ordinary constructive disagreement, not formal negotiation, conflict mediation or methods for winning an argument.",
+    "No compulsory acknowledgement formula, manufactured agreement, automatic compromise or claimed consensus.",
+    "Original fictional examples are not real exam questions, official criteria or observed outcomes.",
+    "English silent review only; final recorded audio and localization are handled in the downstream production pass."
+  ],
+  "sections": [
+    {
+      "sectionId": "L04.S01",
+      "title": "Locate the Point of Disagreement",
+      "budgetSeconds": 210,
+      "spokenCueCount": 17,
+      "watchCueCount": 17,
+      "watchWords": 550,
+      "estimatedWatchSeconds": 257.664,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 257.664,
+      "interactions": [],
+      "learningOutcome": "Identify the specific proposal, reason or unresolved detail being challenged; disagree with a claim without inventing a motive or rejecting every related idea."
+    },
+    {
+      "sectionId": "L04.S02",
+      "title": "Recognise a Reason Without Pretending to Agree",
+      "budgetSeconds": 270,
+      "spokenCueCount": 24,
+      "watchCueCount": 18,
+      "watchWords": 549,
+      "estimatedWatchSeconds": 265.588,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 223.966,
+      "interactions": [
+        "L04.I01"
+      ],
+      "learningOutcome": "Acknowledge a genuinely relevant reason while stating a real reservation; distinguish recognition from agreement and avoid using personal judgements as objections."
+    },
+    {
+      "sectionId": "L04.S03",
+      "title": "Explain the Concern Precisely",
+      "budgetSeconds": 270,
+      "spokenCueCount": 26,
+      "watchCueCount": 20,
+      "watchWords": 599,
+      "estimatedWatchSeconds": 287.715,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 241.379,
+      "interactions": [
+        "L04.I02"
+      ],
+      "learningOutcome": "State a task-related concern with a clear condition and possible consequence; distinguish a precise objection from vague politeness or an unsupported universal claim."
+    },
+    {
+      "sectionId": "L04.S04",
+      "title": "Compare Options Against the Same Criteria",
+      "budgetSeconds": 270,
+      "spokenCueCount": 13,
+      "watchCueCount": 13,
+      "watchWords": 481,
+      "estimatedWatchSeconds": 230.694,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 230.694,
+      "interactions": [],
+      "learningOutcome": "Compare two concrete proposals using the same task-relevant criteria, while separating possible advantages from unverified outcomes."
+    },
+    {
+      "sectionId": "L04.S05",
+      "title": "Revise a Proposal Without Inventing Agreement",
+      "budgetSeconds": 270,
+      "spokenCueCount": 15,
+      "watchCueCount": 15,
+      "watchWords": 479,
+      "estimatedWatchSeconds": 230.536,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 230.536,
+      "interactions": [],
+      "learningOutcome": "Revise a proposal in response to a specific concern and record only the agreement actually expressed, leaving unanswered questions visible."
+    },
+    {
+      "sectionId": "L04.S06",
+      "title": "Rehearse a Constructive Disagreement",
+      "budgetSeconds": 330,
+      "spokenCueCount": 15,
+      "watchCueCount": 15,
+      "watchWords": 585,
+      "estimatedWatchSeconds": 310.966,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 227.772,
+      "interactions": [
+        "L04.I03"
+      ],
+      "learningOutcome": "Privately rehearse a clear, respectful disagreement that addresses the actual proposal, explains a relevant concern and leaves the group a concrete question or alternative to examine."
+    },
+    {
+      "sectionId": "L04.S07",
+      "title": "Transfer and Review",
+      "budgetSeconds": 180,
+      "spokenCueCount": 10,
+      "watchCueCount": 10,
+      "watchWords": 327,
+      "estimatedWatchSeconds": 163.643,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 163.643,
+      "interactions": [],
+      "learningOutcome": "Express a task-relevant disagreement in a new setting, propose a way to examine it, and distinguish procedural agreement from agreement on the final choice."
+    }
+  ]
+}

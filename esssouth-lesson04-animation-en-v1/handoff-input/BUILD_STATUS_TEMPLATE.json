@@ -1,0 +1,85 @@
+{
+  "lessonId": "L04",
+  "status": "not_started",
+  "note": "Template only. Script readiness is not animation completion.",
+  "sections": [
+    {
+      "id": "L04.S01",
+      "status": "not_started",
+      "implementedCueIds": [],
+      "testsActuallyRun": [],
+      "measuredWatchSeconds": null,
+      "sourceArchive": null,
+      "playableArchive": null,
+      "video": null,
+      "nextAction": "Implement from the supplied section graph."
+    },
+    {
+      "id": "L04.S02",
+      "status": "not_started",
+      "implementedCueIds": [],
+      "testsActuallyRun": [],
+      "measuredWatchSeconds": null,
+      "sourceArchive": null,
+      "playableArchive": null,
+      "video": null,
+      "nextAction": "Implement from the supplied section graph."
+    },
+    {
+      "id": "L04.S03",
+      "status": "not_started",
+      "implementedCueIds": [],
+      "testsActuallyRun": [],
+      "measuredWatchSeconds": null,
+      "sourceArchive": null,
+      "playableArchive": null,
+      "video": null,
+      "nextAction": "Implement from the supplied section graph."
+    },
+    {
+      "id": "L04.S04",
+      "status": "not_started",
+      "implementedCueIds": [],
+      "testsActuallyRun": [],
+      "measuredWatchSeconds": null,
+      "sourceArchive": null,
+      "playableArchive": null,
+      "video": null,
+      "nextAction": "Implement from the supplied section graph."
+    },
+    {
+      "id": "L04.S05",
+      "status": "not_started",
+      "implementedCueIds": [],
+      "testsActuallyRun": [],
+      "measuredWatchSeconds": null,
+      "sourceArchive": null,
+      "playableArchive": null,
+      "video": null,
+      "nextAction": "Implement from the supplied section graph."
+    },
+    {
+      "id": "L04.S06",
+      "status": "not_started",
+      "implementedCueIds": [],
+      "testsActuallyRun": [],
+      "measuredWatchSeconds": null,
+      "sourceArchive": null,
+      "playableArchive": null,
+      "video": null,
+      "nextAction": "Implement from the supplied section graph."
+    },
+    {
+      "id": "L04.S07",
+      "status": "not_started",
+      "implementedCueIds": [],
+      "testsActuallyRun": [],
+      "measuredWatchSeconds": null,
+      "sourceArchive": null,
+      "playableArchive": null,
+      "video": null,
+      "nextAction": "Implement from the supplied section graph."
+    }
+  ],
+  "combinedEntryStatus": "not_started"
+}

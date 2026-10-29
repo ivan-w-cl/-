@@ -1,0 +1,156 @@
+{
+  "sectionId": "L04.S06",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L04.S06.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S06.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c007"
+    },
+    {
+      "kind": "watch_hold",
+      "id": "L04.I03.watchThink",
+      "seconds": 35
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.d101"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.d102"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.f101"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S06.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c011"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L04.S06.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S06.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c007"
+    },
+    {
+      "kind": "gate",
+      "id": "L04.I03",
+      "seconds": null
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S06.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S06.c011"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L04.S06",
+    "title": "Rehearse a Constructive Disagreement",
+    "budgetSeconds": 330,
+    "spokenCueCount": 15,
+    "watchCueCount": 15,
+    "watchWords": 585,
+    "estimatedWatchSeconds": 310.966,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 227.772,
+    "interactions": [
+      "L04.I03"
+    ],
+    "learningOutcome": "Privately rehearse a clear, respectful disagreement that addresses the actual proposal, explains a relevant concern and leaves the group a concrete question or alternative to examine."
+  }
+}

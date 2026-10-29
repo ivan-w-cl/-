@@ -1,0 +1,162 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L04.S03",
+  "anchors": {
+    "a_L04_S03_c001": {
+      "cueId": "L04.S03.c001",
+      "phrase": "why that consequence matters to the task",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c002": {
+      "cueId": "L04.S03.c002",
+      "phrase": "understand the key reasoning",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_d001": {
+      "cueId": "L04.S03.d001",
+      "phrase": "as soon as a problem becomes difficult",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c003": {
+      "cueId": "L04.S03.c003",
+      "phrase": "new information",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_d002": {
+      "cueId": "L04.S03.d002",
+      "phrase": "the full worked answer",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c004": {
+      "cueId": "L04.S03.c004",
+      "phrase": "before trying a step",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c005": {
+      "cueId": "L04.S03.c005",
+      "phrase": "does not prove that nobody learns from it",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c006": {
+      "cueId": "L04.S03.c006",
+      "phrase": "what opportunity might it reduce",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c007": {
+      "cueId": "L04.S03.c007",
+      "phrase": "without claiming more than the example supports",
+      "estimatedSeconds": 9.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c008": {
+      "cueId": "L04.S03.c008",
+      "phrase": "the explanation in each objection",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c010": {
+      "cueId": "L04.S03.c010",
+      "phrase": "before seeing the full answer",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c011": {
+      "cueId": "L04.S03.c011",
+      "phrase": "or claim that harm is certain",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c012": {
+      "cueId": "L04.S03.c012",
+      "phrase": "Keep that issue separate",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c013": {
+      "cueId": "L04.S03.c013",
+      "phrase": "does not select the best alternative by itself",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c014": {
+      "cueId": "L04.S03.c014",
+      "phrase": "what opportunity it might reduce",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c015": {
+      "cueId": "L04.S03.c015",
+      "phrase": "check its scope",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_c016": {
+      "cueId": "L04.S03.c016",
+      "phrase": "No option has been adopted or shown to work",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_d101": {
+      "cueId": "L04.S03.d101",
+      "phrase": "do not really agree",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_d102": {
+      "cueId": "L04.S03.d102",
+      "phrase": "what do you think could happen",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_f101": {
+      "cueId": "L04.S03.f101",
+      "phrase": "rather than stopping at disagreement",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_d201": {
+      "cueId": "L04.S03.d201",
+      "phrase": "always stop people from learning",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_d202": {
+      "cueId": "L04.S03.d202",
+      "phrase": "the timing here, or to every use",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_f201": {
+      "cueId": "L04.S03.f201",
+      "phrase": "cannot establish that all help prevents learning",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_d301": {
+      "cueId": "L04.S03.d301",
+      "phrase": "we may follow it without finding out",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_d302": {
+      "cueId": "L04.S03.d302",
+      "phrase": "We still need a way to get help",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S03_f301": {
+      "cueId": "L04.S03.f301",
+      "phrase": "does not claim that seeing an answer makes learning impossible",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

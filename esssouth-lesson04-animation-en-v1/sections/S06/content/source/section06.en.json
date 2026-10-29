@@ -1,0 +1,428 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L04.S06",
+  "title": "Rehearse a Constructive Disagreement",
+  "budgetSeconds": 330,
+  "status": "New proposed Lesson 04 production script, 2026-10-29. No new animation or narration in this handoff.",
+  "learningOutcome": "Privately rehearse a clear, respectful disagreement that addresses the actual proposal, explains a relevant concern and leaves the group a concrete question or alternative to examine.",
+  "scenario": {
+    "kind": "Original fictional general discussion training",
+    "task": "Plan how a group will use an answer-help tool during a twenty-minute practice session with two sample problems. The aim is to understand the key reasoning, not merely finish answers.",
+    "conditions": [
+      "20 minutes total",
+      "Two sample problems",
+      "The fictional tool can offer a hint or a worked answer",
+      "Tool output is not independently verified"
+    ],
+    "state": {
+      "sessionHeld": false,
+      "planAdopted": false,
+      "testedResults": null
+    },
+    "baselineQuote": "An answer tool can save time when we get stuck. I would use it as soon as a problem becomes difficult.",
+    "scope": "No institution, official test, observed learner performance or measured outcome is represented. S07 transfers to a new event-notice layout discussion. The baseline quote does not specify whether the help is a hint or a full answer."
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "You",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L04.S06.B01",
+      "title": "Disagree With an Idea You Can Identify",
+      "family": "formal_setup",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S06.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S06.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S06.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S06.c003"
+        }
+      ]
+    },
+    {
+      "id": "L04.S06.B02",
+      "title": "Prepare a Relevant Reason",
+      "family": "formal_rehearsal_preparation",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S06.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S06.c005"
+        },
+        {
+          "kind": "hold",
+          "id": "L04.S06.h101"
+        }
+      ]
+    },
+    {
+      "id": "L04.S06.B03",
+      "title": "Make a Private Attempt",
+      "family": "self_paced_rehearsal",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S06.c006"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S06.c007"
+        },
+        {
+          "kind": "interaction",
+          "id": "L04.I03"
+        }
+      ]
+    },
+    {
+      "id": "L04.S06.B04",
+      "title": "Review Without Assuming a Performance",
+      "family": "shared_analysis",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S06.c008"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S06.c009"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S06.c010"
+        },
+        {
+          "kind": "hold",
+          "id": "L04.S06.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S06.c011"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L04.S06.c001": {
+      "id": "L04.S06.c001",
+      "speaker": "coach",
+      "text": "Now bring the pieces together in a short English reply. Constructive disagreement can be direct. You do not need to say you agree when you do not. Make clear which idea you question, why it matters, and what the group could examine next.",
+      "visualEn": "Introduce optional resources around one central proposal; do not number them as compulsory sentence parts. Characters remain offstage.",
+      "anchorHint": "do not need to say you agree",
+      "screenLabelIds": [
+        "section.title",
+        "resource.idea",
+        "resource.reason",
+        "resource.next"
+      ],
+      "audioId": "L04.S06.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.c002": {
+      "id": "L04.S06.c002",
+      "speaker": "coach",
+      "text": "Return to the fictional twenty-minute session with two sample problems. The goal is understanding the key reasoning. The tool can provide hints or full worked answers, but its output is unverified. For this rehearsal, return to Maya’s original wording, before the clarification explored earlier. The plan remains undecided.",
+      "visualEn": "Restore the unchanged task and proposal status. No progress bar showing actual completed practice or verified tool answers. Explicitly label this a return to the original statement before the earlier illustrative clarification. Clear all previous branch assumptions; the tool mode is unspecified again for this new rehearsal, not forgotten in an ongoing exchange.",
+      "anchorHint": "return to Maya’s original wording",
+      "screenLabelIds": [
+        "task.time",
+        "task.problems",
+        "task.goal",
+        "tool.status",
+        "plan.status",
+        "baseline.original"
+      ],
+      "audioId": "L04.S06.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.d001": {
+      "id": "L04.S06.d001",
+      "speaker": "maya",
+      "text": "An answer tool can save time when we get stuck. I would use it as soon as a problem becomes difficult.",
+      "visualEn": "Brief exact Maya quotation. Keep it visible for rehearsal. Do not add lazy, cheating or unwilling-to-think character labels.",
+      "anchorHint": "as soon as a problem becomes difficult",
+      "screenLabelIds": [
+        "proposal.quote"
+      ],
+      "audioId": "L04.S06.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S06.c003": {
+      "id": "L04.S06.c003",
+      "speaker": "coach",
+      "text": "Choose the part you want to question. You might question the timing, ask which kind of help Maya means, or explain a risk of requesting a complete solution. Her original words do not specify a full answer, so make that distinction clear in your response.",
+      "visualEn": "Separate exact wording from possible interpretations. The Full answer card is labelled An alternative to examine, never Maya’s exact proposal.",
+      "anchorHint": "which kind of help Maya means",
+      "screenLabelIds": [
+        "meaning.exact",
+        "meaning.open",
+        "meaning.option"
+      ],
+      "audioId": "L04.S06.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.c004": {
+      "id": "L04.S06.c004",
+      "speaker": "coach",
+      "text": "Keep the concern about the method, not the person. Calling someone lazy adds a judgement you cannot establish from this proposal. Saying that a worked answer may hide a gap in understanding gives the group a possible mechanism to examine.",
+      "visualEn": "Compare Person judgement with Concern about the method. Mark the former unsupported, not proof of a bad personality. All possible effects remain conditional.",
+      "anchorHint": "the method, not the person",
+      "screenLabelIds": [
+        "contrast.person",
+        "contrast.method"
+      ],
+      "audioId": "L04.S06.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.c005": {
+      "id": "L04.S06.c005",
+      "speaker": "coach",
+      "text": "Privately identify one reason that matters within this task. Check what you know and what is only a possibility. The group still needs to think about time, getting started, and verifying the tool’s suggestions.",
+      "visualEn": "Open a blank private planning space with the fixed criteria visible. No model response yet.",
+      "anchorHint": "what is only a possibility",
+      "screenLabelIds": [
+        "reflection.reason",
+        "reflection.evidence"
+      ],
+      "audioId": "L04.S06.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.c006": {
+      "id": "L04.S06.c006",
+      "speaker": "coach",
+      "text": "Try a short English reply. You can disagree, ask for clarification, or suggest a conditional alternative. Use what the moment needs, rather than forcing every sentence into a three-part formula. Nothing you say here is recorded, uploaded, or scored.",
+      "visualEn": "Show exact Maya quote plus optional resources. Do not add a microphone, speech detector, transcript or mandatory three-slot form.",
+      "anchorHint": "rather than forcing every sentence",
+      "screenLabelIds": [
+        "rehearsal.prompt",
+        "rehearsal.private",
+        "rehearsal.resources"
+      ],
+      "audioId": "L04.S06.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.c007": {
+      "id": "L04.S06.c007",
+      "speaker": "coach",
+      "text": "Watch mode gives you thirty-five seconds before a model exchange. In Practice mode, take as long as you need, then choose the model or skip it. After the model you can try again. These controls do not tell us whether you have spoken.",
+      "visualEn": "Explain mode behavior before the gate. Real controls are legible DOM outside the animation stage. A blank personal area remains separate from the model.",
+      "anchorHint": "do not tell us whether you have spoken",
+      "screenLabelIds": [
+        "mode.watch",
+        "mode.practice",
+        "mode.status"
+      ],
+      "audioId": "L04.S06.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.c008": {
+      "id": "L04.S06.c008",
+      "speaker": "coach",
+      "text": "Whether you tried a reply, watched the model, or skipped it, you can use the same review questions. Did the response address the actual proposal? Was the concern connected to this task? What question or alternative could the group examine next?",
+      "visualEn": "Identical common continuation after model or skip. No reference to having heard the learner and no model text copied into a private response field.",
+      "anchorHint": "or skipped it",
+      "screenLabelIds": [
+        "review.actual",
+        "review.relevant",
+        "review.next"
+      ],
+      "audioId": "L04.S06.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.c009": {
+      "id": "L04.S06.c009",
+      "speaker": "coach",
+      "text": "A clear concern can still leave disagreement unresolved. Check whether your words claim more than you know: that the tool is always wrong, that a hint will certainly work, or that everyone accepts the alternative. None follows from the situation we have described.",
+      "visualEn": "Display these as unsupported claims, separate from the main case. No rejection of all tools or unsupported certainty about learner outcomes.",
+      "anchorHint": "None follows from the situation",
+      "screenLabelIds": [
+        "review.overclaim",
+        "review.boundary"
+      ],
+      "audioId": "L04.S06.c009",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.c010": {
+      "id": "L04.S06.c010",
+      "speaker": "coach",
+      "text": "You can be respectful without weakening the point you need to make. A direct disagreement about opening a worked answer is different from dismissing the person who suggested using a tool. Keep the action and the person separate.",
+      "visualEn": "Return to action and person lanes. Maintain neutral cast expressions if shown; do not guarantee a friendly reaction.",
+      "anchorHint": "Keep the action and the person separate",
+      "screenLabelIds": [
+        "review.direct",
+        "review.target"
+      ],
+      "audioId": "L04.S06.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.c011": {
+      "id": "L04.S06.c011",
+      "speaker": "coach",
+      "text": "For another attempt, choose one change you can make: identify the action more precisely, explain the possible risk, or ask a more specific question. Choose for yourself. The player cannot assess an answer it has not heard.",
+      "visualEn": "End with optional review resources and ordinary replay controls. No forced retry, new gate, automatic navigation or mastery badge.",
+      "anchorHint": "cannot assess an answer it has not heard",
+      "screenLabelIds": [
+        "review.focus"
+      ],
+      "audioId": "L04.S06.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S06.d101": {
+      "id": "L04.S06.d101",
+      "speaker": "learner",
+      "text": "If using the tool means opening a full answer immediately, I would not start there. We might follow its steps without understanding them. Could we try a step when we can, or ask for a focused starting hint, and check what it suggests?",
+      "visualEn": "Show One possible reply in its own model frame. The full-answer alternative is the learner’s stated comparison, not a quotation attributed to Maya. The real private-response area stays blank. Keep the opening If condition visible before any full-answer proposal card appears. This questions one possible use, not a confirmed statement of Maya’s intention.",
+      "anchorHint": "If using the tool means opening a full answer immediately",
+      "screenLabelIds": [
+        "model.label",
+        "model.concern",
+        "model.proposal",
+        "model.condition"
+      ],
+      "audioId": "L04.S06.d101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S06.d102": {
+      "id": "L04.S06.d102",
+      "speaker": "maya",
+      "text": "A starting hint could help. What if we still do not understand the next step after that?",
+      "visualEn": "Keep this authored follow-up inside the model frame, separate from any response to real learner speech. No acceptance stamp or group agreement.",
+      "anchorHint": "still do not understand the next step",
+      "screenLabelIds": [
+        "model.remaining"
+      ],
+      "audioId": "L04.S06.d102",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S06.f101": {
+      "id": "L04.S06.f101",
+      "speaker": "coach",
+      "text": "The model questions one possible use of the tool, rather than treating it as Maya’s confirmed intention. It explains a risk and offers a conditional alternative. Maya’s question keeps a limitation open. This authored exchange does not show that the plan works or that your own reply had this effect.",
+      "visualEn": "Return to a formal model-analysis board. Preserve proposal and unresolved question; do not display learner results, praise for speaking or a success score.",
+      "anchorHint": "one possible use of the tool",
+      "screenLabelIds": [
+        "model.analysis",
+        "model.scope",
+        "model.status"
+      ],
+      "audioId": "L04.S06.f101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    }
+  },
+  "holds": {
+    "L04.S06.h101": {
+      "kind": "hold",
+      "id": "L04.S06.h101",
+      "seconds": 8,
+      "purpose": "Privately identify one relevant concern and its uncertainty.",
+      "visualEn": "The private planning space stays blank; no inferred understanding or learner score.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L04.S06.h102": {
+      "kind": "hold",
+      "id": "L04.S06.h102",
+      "seconds": 12,
+      "purpose": "Privately choose one feature to improve on a later attempt.",
+      "visualEn": "Leave review questions visible without automatic ticks, evaluation, recording or completion.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {
+    "L04.I03": {
+      "kind": "private_rehearsal",
+      "prompt": "Respond to Maya’s proposal in a short English reply.",
+      "watchThinkSeconds": 35,
+      "watchPath": "model",
+      "rejoinCue": "L04.S06.c008",
+      "model": [
+        {
+          "kind": "line",
+          "id": "L04.S06.d101"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S06.d102"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S06.f101"
+        }
+      ],
+      "actions": [
+        "show_model",
+        "skip",
+        "retry",
+        "continue"
+      ],
+      "baseline": {
+        "responseText": null,
+        "modelViewed": false,
+        "speakingObserved": false,
+        "completionAssumed": false,
+        "proposalAdopted": false
+      },
+      "skipNote": "No response was recorded or assessed. Continue to the shared explanation.",
+      "practiceTimeout": null,
+      "id": "L04.I03",
+      "recordAudio": false,
+      "automaticAssessment": false,
+      "stateStorage": "memory only",
+      "skipIsUnanswered": true
+    }
+  },
+  "boundary": "Use formal explanation and short examples. No perpetual three-person scene; no school, exam, policy or assessed-learner claim."
+}

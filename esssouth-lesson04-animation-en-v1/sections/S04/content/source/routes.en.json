@@ -1,0 +1,140 @@
+{
+  "sectionId": "L04.S04",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L04.S04.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c004"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S04.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c009"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S04.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c010"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L04.S04.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c004"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S04.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c009"
+    },
+    {
+      "kind": "hold",
+      "id": "L04.S04.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L04.S04.c010"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L04.S04",
+    "title": "Compare Options Against the Same Criteria",
+    "budgetSeconds": 270,
+    "spokenCueCount": 13,
+    "watchCueCount": 13,
+    "watchWords": 481,
+    "estimatedWatchSeconds": 230.694,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 230.694,
+    "interactions": [],
+    "learningOutcome": "Compare two concrete proposals using the same task-relevant criteria, while separating possible advantages from unverified outcomes."
+  }
+}

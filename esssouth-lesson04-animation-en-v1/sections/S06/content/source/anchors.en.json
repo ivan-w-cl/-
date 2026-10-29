@@ -1,0 +1,96 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L04.S06",
+  "anchors": {
+    "a_L04_S06_c001": {
+      "cueId": "L04.S06.c001",
+      "phrase": "do not need to say you agree",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_c002": {
+      "cueId": "L04.S06.c002",
+      "phrase": "return to Maya’s original wording",
+      "estimatedSeconds": 15.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_d001": {
+      "cueId": "L04.S06.d001",
+      "phrase": "as soon as a problem becomes difficult",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_c003": {
+      "cueId": "L04.S06.c003",
+      "phrase": "which kind of help Maya means",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_c004": {
+      "cueId": "L04.S06.c004",
+      "phrase": "the method, not the person",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_c005": {
+      "cueId": "L04.S06.c005",
+      "phrase": "what is only a possibility",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_c006": {
+      "cueId": "L04.S06.c006",
+      "phrase": "rather than forcing every sentence",
+      "estimatedSeconds": 9.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_c007": {
+      "cueId": "L04.S06.c007",
+      "phrase": "do not tell us whether you have spoken",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_c008": {
+      "cueId": "L04.S06.c008",
+      "phrase": "or skipped it",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_c009": {
+      "cueId": "L04.S06.c009",
+      "phrase": "None follows from the situation",
+      "estimatedSeconds": 15.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_c010": {
+      "cueId": "L04.S06.c010",
+      "phrase": "Keep the action and the person separate",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_c011": {
+      "cueId": "L04.S06.c011",
+      "phrase": "cannot assess an answer it has not heard",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_d101": {
+      "cueId": "L04.S06.d101",
+      "phrase": "If using the tool means opening a full answer immediately",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_d102": {
+      "cueId": "L04.S06.d102",
+      "phrase": "still do not understand the next step",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S06_f101": {
+      "cueId": "L04.S06.f101",
+      "phrase": "one possible use of the tool",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

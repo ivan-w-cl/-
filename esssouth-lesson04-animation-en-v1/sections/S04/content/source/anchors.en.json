@@ -1,0 +1,84 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L04.S04",
+  "anchors": {
+    "a_L04_S04_c001": {
+      "cueId": "L04.S04.c001",
+      "phrase": "same questions",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_c002": {
+      "cueId": "L04.S04.c002",
+      "phrase": "Neither kind of output has been verified",
+      "estimatedSeconds": 16.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_d001": {
+      "cueId": "L04.S04.d001",
+      "phrase": "as soon as a problem becomes difficult",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_c003": {
+      "cueId": "L04.S04.c003",
+      "phrase": "one possible version",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_c004": {
+      "cueId": "L04.S04.c004",
+      "phrase": "These come from this task",
+      "estimatedSeconds": 11.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_c005": {
+      "cueId": "L04.S04.c005",
+      "phrase": "does not show that each person understands",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_c006": {
+      "cueId": "L04.S04.c006",
+      "phrase": "It still needs checking",
+      "estimatedSeconds": 16.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_d002": {
+      "cueId": "L04.S04.d002",
+      "phrase": "might show us which step",
+      "estimatedSeconds": 4.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_c007": {
+      "cueId": "L04.S04.c007",
+      "phrase": "both options the same chance",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_c008": {
+      "cueId": "L04.S04.c008",
+      "phrase": "not, by itself, confirmation",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_c009": {
+      "cueId": "L04.S04.c009",
+      "phrase": "one criterion",
+      "estimatedSeconds": 0.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_d003": {
+      "cueId": "L04.S04.d003",
+      "phrase": "still need to check its reasoning",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L04_S04_c010": {
+      "cueId": "L04.S04.c010",
+      "phrase": "No winner has been proved",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

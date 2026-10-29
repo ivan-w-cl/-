@@ -1,0 +1,426 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L04.S01",
+  "title": "Locate the Point of Disagreement",
+  "budgetSeconds": 210,
+  "status": "New proposed Lesson 04 production script, 2026-10-29. No new animation or narration in this handoff.",
+  "learningOutcome": "Identify the specific proposal, reason or unresolved detail being challenged; disagree with a claim without inventing a motive or rejecting every related idea.",
+  "scenario": {
+    "kind": "Original fictional general discussion training",
+    "task": "Plan how a group will use an answer-help tool during a twenty-minute practice session with two sample problems. The aim is to understand the key reasoning, not merely finish answers.",
+    "conditions": [
+      "20 minutes total",
+      "Two sample problems",
+      "The fictional tool can offer a hint or a worked answer",
+      "Tool output is not independently verified"
+    ],
+    "state": {
+      "sessionHeld": false,
+      "planAdopted": false,
+      "testedResults": null
+    },
+    "baselineQuote": "An answer tool can save time when we get stuck. I would use it as soon as a problem becomes difficult.",
+    "scope": "No institution, official test, observed learner performance or measured outcome is represented. S07 transfers to a new event-notice layout discussion. The baseline quote does not specify whether the help is a hint or a full answer."
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "You",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L04.S01.B01",
+      "title": "A Difference Worth Identifying",
+      "family": "fictional_task_and_short_quote",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S01.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.c003"
+        }
+      ]
+    },
+    {
+      "id": "L04.S01.B02",
+      "title": "Keep the Parts of the Proposal Separate",
+      "family": "reason_timing_and_unknown_mode",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S01.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.c006"
+        },
+        {
+          "kind": "hold",
+          "id": "L04.S01.h101"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.c007"
+        }
+      ]
+    },
+    {
+      "id": "L04.S01.B03",
+      "title": "Make Direct Disagreement About the Proposal",
+      "family": "brief_respectful_example",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S01.c008"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.d002"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.c009"
+        }
+      ]
+    },
+    {
+      "id": "L04.S01.B04",
+      "title": "Do Not Turn a Difference into a Diagnosis",
+      "family": "scope_and_motive_boundary",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S01.c010"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.c012"
+        }
+      ]
+    },
+    {
+      "id": "L04.S01.B05",
+      "title": "Name One Precise Difference",
+      "family": "private_retrieval",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S01.c013"
+        },
+        {
+          "kind": "hold",
+          "id": "L04.S01.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S01.c014"
+        }
+      ]
+    },
+    {
+      "id": "L04.S01.B06",
+      "title": "Move toward an Honest Response",
+      "family": "neutral_bridge",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S01.c015"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L04.S01.c001": {
+      "id": "L04.S01.c001",
+      "speaker": "coach",
+      "text": "Disagreement can help a group examine a proposal. First, make clear what the difference is about. Rejecting a whole topic when you disagree with one detail makes that difference harder to discuss.",
+      "visualEn": "Open with one proposal card and several distinct features. Highlight an unresolved difference without red failure marks or character conflict. Use a full-screen explanatory board.",
+      "anchorHint": "what the difference is about",
+      "screenLabelIds": [
+        "section.title",
+        "opening.focus"
+      ],
+      "audioId": "L04.S01.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c002": {
+      "id": "L04.S01.c002",
+      "speaker": "coach",
+      "text": "Imagine a group planning a twenty-minute practice session with two sample problems. The aim is to understand the key reasoning, not simply finish more answers. In this fictional case, an available tool can show a hint or a full worked answer. Its output is unverified.",
+      "visualEn": "Establish the fictional planning frame before the tool appears: twenty-minute rail, two problem cards, reasoning aim, and two possible help modes. Do not display completed student work or a trusted-answer badge.",
+      "anchorHint": "understand the key reasoning",
+      "screenLabelIds": [
+        "task.context",
+        "task.aim",
+        "tool.state"
+      ],
+      "audioId": "L04.S01.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.d001": {
+      "id": "L04.S01.d001",
+      "speaker": "maya",
+      "text": "An answer tool can save time when we get stuck. I would use it as soon as a problem becomes difficult.",
+      "visualEn": "Brief Maya example. Keep her proposal visibly unadopted. Show exact words and preserve can as a stated possibility, not a verified time-saving result.",
+      "anchorHint": "as soon as a problem becomes difficult",
+      "screenLabelIds": [
+        "quote.maya"
+      ],
+      "audioId": "L04.S01.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S01.c003": {
+      "id": "L04.S01.c003",
+      "speaker": "coach",
+      "text": "Maya offers a possible benefit and a proposal about timing. Saving time is her reason; immediate use is the proposed action. No practice session has happened, and the group has not agreed to this plan.",
+      "visualEn": "Return to the board. Separate possible time benefit from proposed timing, with a persistent planning-only label. Do not animate the tool producing a successful result.",
+      "anchorHint": "a proposal about timing",
+      "screenLabelIds": [
+        "proposal.timing",
+        "reason.time",
+        "plan.state"
+      ],
+      "audioId": "L04.S01.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c004": {
+      "id": "L04.S01.c004",
+      "speaker": "coach",
+      "text": "You might value saving time while questioning that timing. Those positions can fit together. Disagreeing about when to use a tool does not require denying every possible benefit it might offer.",
+      "visualEn": "Keep the possible benefit card while highlighting the timing card as the point under discussion. Do not erase the reason when disagreement appears.",
+      "anchorHint": "questioning that timing",
+      "screenLabelIds": [
+        "difference.note"
+      ],
+      "audioId": "L04.S01.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c005": {
+      "id": "L04.S01.c005",
+      "speaker": "coach",
+      "text": "There is also something Maya has not specified: whether she means a hint or the full worked answer. The tool can offer either in this scenario. Do not silently choose a mode for her.",
+      "visualEn": "Show hint and full answer as two unselected alternatives under an unresolved mode question. Neither is displayed as Maya’s selected action.",
+      "anchorHint": "Do not silently choose a mode for her",
+      "screenLabelIds": [
+        "mode.question",
+        "mode.state"
+      ],
+      "audioId": "L04.S01.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c006": {
+      "id": "L04.S01.c006",
+      "speaker": "coach",
+      "text": "Privately separate what is stated from what remains open. What timing has Maya proposed, and which kind of help has she left unspecified? Keep both questions visible while you think.",
+      "visualEn": "Retain the exact source quote and a blank private note space. Do not fill a tool mode or infer that the viewer chose one.",
+      "anchorHint": "what is stated from what remains open",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L04.S01.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c007": {
+      "id": "L04.S01.c007",
+      "speaker": "coach",
+      "text": "The immediate timing is explicit. The kind of help is not. You can question the timing directly, or clarify the mode if that distinction matters to your concern. You do not have to do both.",
+      "visualEn": "Label the timing as stated and the mode as open. Present direct disagreement and clarification as context-dependent options, not a compulsory two-step script.",
+      "anchorHint": "You do not have to do both",
+      "screenLabelIds": [
+        "response.options"
+      ],
+      "audioId": "L04.S01.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c008": {
+      "id": "L04.S01.c008",
+      "speaker": "coach",
+      "text": "Direct disagreement can be respectful. The important distinction is between challenging a proposal and judging the person who offered it. A calm voice does not replace a reason, and a clear objection need not be disguised as agreement.",
+      "visualEn": "Separate a proposal-focused lane from personal judgements. Do not assign moral identities to the cast or represent politeness as a winning score.",
+      "anchorHint": "need not be disguised as agreement",
+      "screenLabelIds": [
+        "direct.note"
+      ],
+      "audioId": "L04.S01.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.d002": {
+      "id": "L04.S01.d002",
+      "speaker": "learner",
+      "text": "I would not make difficulty alone the trigger for using the tool. I would like us to try a step ourselves first.",
+      "visualEn": "Brief authored learner example. Link difficulty alone to Maya’s proposed timing. Present the first-attempt alternative as another unadopted proposal; do not show its results.",
+      "anchorHint": "difficulty alone the trigger",
+      "screenLabelIds": [
+        "model.label"
+      ],
+      "audioId": "L04.S01.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S01.c009": {
+      "id": "L04.S01.c009",
+      "speaker": "coach",
+      "text": "This reply identifies a timing difference. It does not call Maya lazy or claim that tools prevent learning. The proposed first attempt still needs a reason and consideration against the available time.",
+      "visualEn": "Return to analysis. Keep two timing proposals visible with unresolved comparison marks, not a correct answer or unanimous decision.",
+      "anchorHint": "identifies a timing difference",
+      "screenLabelIds": [
+        "model.scope"
+      ],
+      "audioId": "L04.S01.c009",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c010": {
+      "id": "L04.S01.c010",
+      "speaker": "coach",
+      "text": "From Maya’s words, you cannot know that she only cares about finishing quickly. Her stated reason concerns time. The group can examine whether her suggestion serves the shared aim without inventing a hidden motive.",
+      "visualEn": "Keep the exact source reason within a stated-content boundary. Place the only-cares-about-speed interpretation outside it as unestablished, without caricature or emotion inference.",
+      "anchorHint": "without inventing a hidden motive",
+      "screenLabelIds": [
+        "boundary.said",
+        "boundary.unsaid"
+      ],
+      "audioId": "L04.S01.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c011": {
+      "id": "L04.S01.c011",
+      "speaker": "coach",
+      "text": "Likewise, using help immediately would not by itself prove that someone learned nothing. It might support understanding, or leave less room for an independent attempt. We need a more precise concern than a blanket judgement.",
+      "visualEn": "Use a clearly labelled possibility frame containing two unresolved paths. Do not show actual student outcomes, test results or causal certainty.",
+      "anchorHint": "would not by itself prove that someone learned nothing",
+      "screenLabelIds": [
+        "scope.learning"
+      ],
+      "audioId": "L04.S01.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c012": {
+      "id": "L04.S01.c012",
+      "speaker": "coach",
+      "text": "Keep the task in view: understanding the reasoning within twenty minutes. The issue is how a proposed use of help might serve that aim, with limited time and unverified output.",
+      "visualEn": "Bring the aim and time rail back beside the two timing proposals. Keep tool-output verification unresolved; no new rule or guaranteed best method.",
+      "anchorHint": "how a proposed use of help might serve that aim",
+      "screenLabelIds": [
+        "task.check"
+      ],
+      "audioId": "L04.S01.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c013": {
+      "id": "L04.S01.c013",
+      "speaker": "coach",
+      "text": "Choose one part of Maya’s proposal you would examine: the timing, the kind of help, or the reason it should help. Form a short question or objection privately. Nothing is recorded or assessed.",
+      "visualEn": "Hide complete model wording, retain the source and optional focus labels, and leave a blank private area. No microphone, automatic focus selection or assumed response.",
+      "anchorHint": "one part of Maya’s proposal",
+      "screenLabelIds": [
+        "private.prompt"
+      ],
+      "audioId": "L04.S01.c013",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c014": {
+      "id": "L04.S01.c014",
+      "speaker": "coach",
+      "text": "If you tried a reply, check whether it names the actual difference. If you did not, you can return later. The aim is not to sound opposed; it is to make a concern available for discussion.",
+      "visualEn": "Offer a neutral self-check beside the unchanged proposal. Do not claim the viewer has spoken or judge an unheard response.",
+      "anchorHint": "make a concern available for discussion",
+      "screenLabelIds": [
+        "review.question"
+      ],
+      "audioId": "L04.S01.c014",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S01.c015": {
+      "id": "L04.S01.c015",
+      "speaker": "coach",
+      "text": "Next, we will look at recognising a reason without pretending to agree. You can take a person’s point seriously while still questioning the action they suggest.",
+      "visualEn": "Settle the source reason and proposed timing as distinct cards. End with user-controlled replay/navigation; no purchase, assessment or automatic next section.",
+      "anchorHint": "without pretending to agree",
+      "screenLabelIds": [
+        "next.title"
+      ],
+      "audioId": "L04.S01.c015",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    }
+  },
+  "holds": {
+    "L04.S01.h101": {
+      "kind": "hold",
+      "id": "L04.S01.h101",
+      "seconds": 8,
+      "purpose": "Privately distinguish the stated timing from the unspecified kind of help.",
+      "visualEn": "Hold the source wording, timing card and blank mode choice. No model answer, selected option, learner response or score appears during the pause.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L04.S01.h102": {
+      "kind": "hold",
+      "id": "L04.S01.h102",
+      "seconds": 8,
+      "purpose": "Privately form one focused question or objection.",
+      "visualEn": "Keep the private area blank. The learner may pause for longer; no model is inserted into their area and no completion is inferred.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {},
+  "boundary": "Use formal explanation and short examples. No perpetual three-person scene; no school, exam, policy or assessed-learner claim."
+}

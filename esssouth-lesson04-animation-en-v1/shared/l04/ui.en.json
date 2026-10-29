@@ -1,0 +1,24 @@
+{
+  "schema": "esssouth.l04.runtime-ui/1",
+  "note": "Runtime interface strings added for the Lesson 04 player (not lesson content). Editable and localizable; the section labels.en.json files supply ui.watch, ui.practice, ui.play, ui.pause, ui.restart, ui.captions, ui.reduced, ui.silent, ui.retry, ui.continue, ui.skip, ui.model, ui.speed, ui.previous and ui.next.",
+  "strings": {
+    "ui.pauseMore": "Pause if you want longer.",
+    "ui.thinkHint": "Think first. Watch then shows one authored possibility.",
+    "ui.gateHint": "Choose below, or skip. There is no timer.",
+    "ui.rehearseHint": "Take as long as you need. Nothing is recorded.",
+    "ui.awaitChoice": "Waiting for your choice. Play does not choose for you.",
+    "ui.awaitRehearsal": "Waiting. Rehearse privately, then show a possible reply, skip, or continue.",
+    "ui.branchPlaying": "Playing authored possibility",
+    "ui.branchReady": "This authored possibility has finished. Continue, or try again.",
+    "ui.modelReady": "The possible reply has finished. It is an authored example, not your response.",
+    "ui.skipped": "Skipped. Nothing was recorded or assessed.",
+    "ui.replay": "Replay",
+    "ui.end": "End of section. Nothing was recorded or assessed.",
+    "ui.watchPath": "Watch shows option",
+    "ui.option": "Option",
+    "ui.modeShared": "Both modes share this section's reflection route.",
+    "ui.modeReset": "Mode changed inside an interaction: returned to its start.",
+    "ui.backToGate": "Returned to the interaction. The earlier attempt was cleared.",
+    "ui.stoppedAtGate": "Stopped at the interaction. Choose or skip to continue."
+  }
+}

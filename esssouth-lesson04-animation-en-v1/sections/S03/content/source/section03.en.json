@@ -1,0 +1,615 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L04.S03",
+  "title": "Explain the Concern Precisely",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 04 production script, 2026-10-29. No new animation or narration in this handoff.",
+  "learningOutcome": "State a task-related concern with a clear condition and possible consequence; distinguish a precise objection from vague politeness or an unsupported universal claim.",
+  "scenario": {
+    "kind": "Original fictional general discussion training",
+    "task": "Plan how a group will use an answer-help tool during a twenty-minute practice session with two sample problems. The aim is to understand the key reasoning, not merely finish answers.",
+    "conditions": [
+      "20 minutes total",
+      "Two sample problems",
+      "The fictional tool can offer a hint or a worked answer",
+      "Tool output is not independently verified"
+    ],
+    "state": {
+      "sessionHeld": false,
+      "planAdopted": false,
+      "testedResults": null
+    },
+    "baselineQuote": "An answer tool can save time when we get stuck. I would use it as soon as a problem becomes difficult.",
+    "scope": "No institution, official test, observed learner performance or measured outcome is represented. S07 transfers to a new event-notice layout discussion. The baseline quote does not specify whether the help is a hint or a full answer."
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "You",
+    "maya": "Maya",
+    "noah": "Noah"
+  },
+  "blocks": [
+    {
+      "id": "L04.S03.B01",
+      "title": "Specify the Proposal Before Explaining a Concern",
+      "family": "standalone_context_and_explicit_mode",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S03.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.c003"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.d002"
+        }
+      ]
+    },
+    {
+      "id": "L04.S03.B02",
+      "title": "Connect the Concern to the Aim",
+      "family": "conditional_risk_pathway",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S03.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.c006"
+        },
+        {
+          "kind": "hold",
+          "id": "L04.S03.h101"
+        }
+      ]
+    },
+    {
+      "id": "L04.S03.B03",
+      "title": "Compare the Precision of Three Objections",
+      "family": "authored_choice_gate",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S03.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.c008"
+        },
+        {
+          "kind": "interaction",
+          "id": "L04.I02"
+        }
+      ]
+    },
+    {
+      "id": "L04.S03.B04",
+      "title": "Keep the Concern Conditional and Task-Related",
+      "family": "shared_concern_analysis",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S03.c010"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.c012"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.c013"
+        }
+      ]
+    },
+    {
+      "id": "L04.S03.B05",
+      "title": "Rehearse the Concern without Overclaiming",
+      "family": "private_rehearsal_and_bridge",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L04.S03.c014"
+        },
+        {
+          "kind": "hold",
+          "id": "L04.S03.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.c015"
+        },
+        {
+          "kind": "line",
+          "id": "L04.S03.c016"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L04.S03.c001": {
+      "id": "L04.S03.c001",
+      "speaker": "coach",
+      "text": "An objection becomes easier to examine when it names the action, the possible consequence and why that consequence matters to the task. Saying that something feels wrong may announce a difference without explaining it.",
+      "visualEn": "Introduce action, possible consequence and task aim as linked resources, not mandatory sentence boxes. Avoid presenting a concern as a proven causal result.",
+      "anchorHint": "why that consequence matters to the task",
+      "screenLabelIds": [
+        "section.title",
+        "concern.resources"
+      ],
+      "audioId": "L04.S03.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c002": {
+      "id": "L04.S03.c002",
+      "speaker": "coach",
+      "text": "The group is planning a twenty-minute session with two sample problems, to understand the key reasoning. The tool offers hints or full worked answers; its output is unverified. Listen to Maya again.",
+      "visualEn": "Restore fixed facts, both help modes and an unverified-output tag. The plan remains unadopted and no practice has occurred.",
+      "anchorHint": "understand the key reasoning",
+      "screenLabelIds": [
+        "task.context",
+        "task.aim",
+        "tool.state"
+      ],
+      "audioId": "L04.S03.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.d001": {
+      "id": "L04.S03.d001",
+      "speaker": "maya",
+      "text": "An answer tool can save time when we get stuck. I would use it as soon as a problem becomes difficult.",
+      "visualEn": "Use the exact baseline source line. Keep hint versus full-answer mode unselected during this line.",
+      "anchorHint": "as soon as a problem becomes difficult",
+      "screenLabelIds": [
+        "quote.maya"
+      ],
+      "audioId": "L04.S03.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S03.c003": {
+      "id": "L04.S03.c003",
+      "speaker": "coach",
+      "text": "In this authored continuation, Maya specifies the kind of help she means. This is new information, not supplied by her earlier wording.",
+      "visualEn": "Before the new line, mark a new authored continuation. Remove any previous section’s branch outcome. Only this new line may resolve the tool mode.",
+      "anchorHint": "new information",
+      "screenLabelIds": [
+        "continuation.label"
+      ],
+      "audioId": "L04.S03.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.d002": {
+      "id": "L04.S03.d002",
+      "speaker": "maya",
+      "text": "I mean opening the full worked answer as soon as we reach a difficult step.",
+      "visualEn": "Maya explicitly identifies the mode now. Move full worked answer into her proposal; leave hint as a different available mode, not her selected proposal.",
+      "anchorHint": "the full worked answer",
+      "screenLabelIds": [
+        "proposal.mode"
+      ],
+      "audioId": "L04.S03.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S03.c004": {
+      "id": "L04.S03.c004",
+      "speaker": "coach",
+      "text": "Now the concern can address that specific action. Opening the full answer before trying a step could reduce the opportunity to see what we can reason through independently. That is a possible risk, not an observed result.",
+      "visualEn": "Show a clearly framed hypothetical pathway: opening the full answer before a first attempt, then a possible reduced independent-attempt opportunity. No actual learner performance or certainty.",
+      "anchorHint": "before trying a step",
+      "screenLabelIds": [
+        "risk.label"
+      ],
+      "audioId": "L04.S03.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c005": {
+      "id": "L04.S03.c005",
+      "speaker": "coach",
+      "text": "The link to the task is understanding the reasoning. A completed answer alone would not show which parts the group could explain. But looking at a worked answer also does not prove that nobody learns from it.",
+      "visualEn": "Keep completion and demonstrated explanation as distinct concepts. Place neither learning nor no-learning as an established outcome from viewing an answer.",
+      "anchorHint": "does not prove that nobody learns from it",
+      "screenLabelIds": [
+        "task.link",
+        "scope.limit"
+      ],
+      "audioId": "L04.S03.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c006": {
+      "id": "L04.S03.c006",
+      "speaker": "coach",
+      "text": "Before choosing wording, identify the concern you want to make discussable. Which action are you questioning, and what opportunity might it reduce? Keep the possible consequence separate from a claim about every learner.",
+      "visualEn": "Show the explicit full-answer proposal and a blank private concern area. Hide choice texts; no diagnosed learner trait or prefilled answer.",
+      "anchorHint": "what opportunity might it reduce",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L04.S03.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c007": {
+      "id": "L04.S03.c007",
+      "speaker": "coach",
+      "text": "For this comparison, consider losing an opportunity for independent reasoning before a full answer appears. Which reply states that concern clearly without claiming more than the example supports?",
+      "visualEn": "Display the assigned concern as the comparison target, not the viewer’s detected belief. Present three equally styled choices at the gate.",
+      "anchorHint": "without claiming more than the example supports",
+      "screenLabelIds": [
+        "choice.target"
+      ],
+      "audioId": "L04.S03.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c008": {
+      "id": "L04.S03.c008",
+      "speaker": "coach",
+      "text": "The example replies that follow show possible continuations, not automatic effects of a sentence. Compare the explanation in each objection, rather than treating politeness or confidence as evidence that it is sound.",
+      "visualEn": "Retain the authored-continuation label and source proposal. No emotion meter, winning reaction or scoring animation.",
+      "anchorHint": "the explanation in each objection",
+      "screenLabelIds": [
+        "choice.note"
+      ],
+      "audioId": "L04.S03.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c010": {
+      "id": "L04.S03.c010",
+      "speaker": "coach",
+      "text": "Ask what the proposed action might change. Here it is the opportunity to attempt a reasoning step before seeing the full answer. The concern should name that connection.",
+      "visualEn": "All paths enter once. Reconstruct the concern from the common explicit proposal, not an unplayed branch. Show no learner answer or inferred choice.",
+      "anchorHint": "before seeing the full answer",
+      "screenLabelIds": [
+        "shared.connection"
+      ],
+      "audioId": "L04.S03.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c011": {
+      "id": "L04.S03.c011",
+      "speaker": "coach",
+      "text": "You can state that concern directly. You do not need to surround it with apologies, or claim that harm is certain. Precision comes from the action, the possible consequence and its relevance to the aim.",
+      "visualEn": "Use a formal relationship map, not a three-box fill-in formula. Keep direct respectful wording as an available style without required softening.",
+      "anchorHint": "or claim that harm is certain",
+      "screenLabelIds": [
+        "precision.note"
+      ],
+      "audioId": "L04.S03.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c012": {
+      "id": "L04.S03.c012",
+      "speaker": "coach",
+      "text": "The output is also unverified: a displayed solution is not automatically a trusted explanation. Keep that issue separate from the concern about when the group first sees the answer.",
+      "visualEn": "Separate unverified output from timing. No incorrect answer is invented, no trustworthy source badge appears, and neither issue is silently resolved.",
+      "anchorHint": "Keep that issue separate",
+      "screenLabelIds": [
+        "separate.accuracy",
+        "separate.timing"
+      ],
+      "audioId": "L04.S03.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c013": {
+      "id": "L04.S03.c013",
+      "speaker": "coach",
+      "text": "A first attempt could also consume time without producing progress. A precise concern does not select the best alternative by itself. The next stage is comparing possible arrangements against the same task.",
+      "visualEn": "Keep a first-attempt proposal conditional beside time and reasoning criteria. Do not turn the concern into an automatic endorsement of one method.",
+      "anchorHint": "does not select the best alternative by itself",
+      "screenLabelIds": [
+        "scope.choice"
+      ],
+      "audioId": "L04.S03.c013",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c014": {
+      "id": "L04.S03.c014",
+      "speaker": "coach",
+      "text": "Privately put the concern into one short English contribution. Name the specified action and explain what opportunity it might reduce. Use your own wording; nothing is recorded or scored. Pause if you want longer.",
+      "visualEn": "Hide full branch/model text. Keep only the specified proposal, task context and a blank private response area. No audio capture or transcript.",
+      "anchorHint": "what opportunity it might reduce",
+      "screenLabelIds": [
+        "private.prompt",
+        "private.note"
+      ],
+      "audioId": "L04.S03.c014",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c015": {
+      "id": "L04.S03.c015",
+      "speaker": "coach",
+      "text": "If you tried a version, check its scope. Does it explain this concern, or make a claim about everyone and every tool? You can revise it, or return later when ready.",
+      "visualEn": "Offer a neutral conditional self-check, preserving the distinction between the stated case and universal claims. Do not diagnose unseen performance.",
+      "anchorHint": "check its scope",
+      "screenLabelIds": [
+        "review.scope"
+      ],
+      "audioId": "L04.S03.c015",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.c016": {
+      "id": "L04.S03.c016",
+      "speaker": "coach",
+      "text": "Next, we will compare options using shared criteria. Keep the concern available for that comparison, while leaving room for other relevant considerations. No option has been adopted or shown to work.",
+      "visualEn": "Settle the task criteria and unresolved proposals. End with explicit, user-controlled navigation only; no automatic decision, purchase or score.",
+      "anchorHint": "No option has been adopted or shown to work",
+      "screenLabelIds": [
+        "next.title"
+      ],
+      "audioId": "L04.S03.c016",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.d101": {
+      "id": "L04.S03.d101",
+      "speaker": "learner",
+      "text": "I see your point, but I do not really agree with that approach.",
+      "visualEn": "Authored alternative A, calm and respectful. Mark an objection as present, but leave its reason unspecified; do not portray politeness as wrong.",
+      "anchorHint": "do not really agree",
+      "screenLabelIds": [
+        "branch.a.label"
+      ],
+      "audioId": "L04.S03.d101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S03.d102": {
+      "id": "L04.S03.d102",
+      "speaker": "maya",
+      "text": "Which part concerns you, and what do you think could happen?",
+      "visualEn": "Authored Maya request for a reason. Do not imply annoyance or that this is every speaker’s inevitable response.",
+      "anchorHint": "what do you think could happen",
+      "screenLabelIds": [],
+      "audioId": "L04.S03.d102",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S03.f101": {
+      "id": "L04.S03.f101",
+      "speaker": "coach",
+      "text": "This is a respectful opening, but the concern is still missing. It could lead into an explanation. For the task here, name the action and the possible effect on independent reasoning rather than stopping at disagreement.",
+      "visualEn": "Show the missing connection without a failure grade. Keep the polite opener available as an optional introduction, not a complete explanation.",
+      "anchorHint": "rather than stopping at disagreement",
+      "screenLabelIds": [
+        "branch.a.note"
+      ],
+      "audioId": "L04.S03.f101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.d201": {
+      "id": "L04.S03.d201",
+      "speaker": "learner",
+      "text": "Answer tools always stop people from learning.",
+      "visualEn": "Present this as a claim under examination, never a factual teaching statement. Isolate always and the broad category answer tools without imagery proving the claim.",
+      "anchorHint": "always stop people from learning",
+      "screenLabelIds": [
+        "branch.b.label"
+      ],
+      "audioId": "L04.S03.d201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S03.d202": {
+      "id": "L04.S03.d202",
+      "speaker": "maya",
+      "text": "I am not sure that follows. Are you objecting to the timing here, or to every use of an answer tool?",
+      "visualEn": "Authored Maya distinction, measured and non-combative. Do not replace the unsupported claim with a guarantee that tools improve learning.",
+      "anchorHint": "the timing here, or to every use",
+      "screenLabelIds": [],
+      "audioId": "L04.S03.d202",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S03.f201": {
+      "id": "L04.S03.f201",
+      "speaker": "coach",
+      "text": "The example does not support always or a claim about every use. A specific concern about early access to a full answer cannot establish that all help prevents learning. Narrow the objection to what you can explain.",
+      "visualEn": "Return to the specified mode and timing with a conditional boundary. Do not label the real learner as dishonest or defeated.",
+      "anchorHint": "cannot establish that all help prevents learning",
+      "screenLabelIds": [
+        "branch.b.note"
+      ],
+      "audioId": "L04.S03.f201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    },
+    "L04.S03.d301": {
+      "id": "L04.S03.d301",
+      "speaker": "learner",
+      "text": "If we open the full answer before trying a step, we may follow it without finding out which part we could reason through ourselves.",
+      "visualEn": "Authored alternative C. Link the explicit condition, possible consequence and independent-reasoning aim. Keep if and may visible; no outcome is enacted.",
+      "anchorHint": "we may follow it without finding out",
+      "screenLabelIds": [
+        "branch.c.label"
+      ],
+      "audioId": "L04.S03.d301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S03.d302": {
+      "id": "L04.S03.d302",
+      "speaker": "maya",
+      "text": "You are concerned about losing a chance to reason through a step ourselves. We still need a way to get help when we are stuck.",
+      "visualEn": "Authored Maya continuation: she recognises this particular concern and retains the need for help. No acceptance of a new procedure or implied end to the disagreement.",
+      "anchorHint": "We still need a way to get help",
+      "screenLabelIds": [],
+      "audioId": "L04.S03.d302",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L04.S03.f301": {
+      "id": "L04.S03.f301",
+      "speaker": "coach",
+      "text": "This explains a risk tied to the proposed timing and kind of help. It does not claim that seeing an answer makes learning impossible. Maya keeps another requirement in view, so the group still has something to compare.",
+      "visualEn": "Analyze the authored statement and keep the task’s time/help consideration alongside it. No solved badge or praise of the viewer’s speaking.",
+      "anchorHint": "does not claim that seeing an answer makes learning impossible",
+      "screenLabelIds": [
+        "branch.c.note"
+      ],
+      "audioId": "L04.S03.f301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses."
+    }
+  },
+  "holds": {
+    "L04.S03.h101": {
+      "kind": "hold",
+      "id": "L04.S03.h101",
+      "seconds": 8,
+      "purpose": "Privately connect the specified action to a possible task-related consequence.",
+      "visualEn": "Keep the source proposal visible and private area blank. Do not display options early or show the hypothetical risk as an actual result.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L04.S03.h102": {
+      "kind": "hold",
+      "id": "L04.S03.h102",
+      "seconds": 8,
+      "purpose": "Privately formulate a precise, conditional concern.",
+      "visualEn": "Keep the response area empty and models hidden. No auto-answer, completion inference or assessment follows the hold.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {
+    "L04.I02": {
+      "kind": "choice",
+      "prompt": "Which reply most precisely explains the stated concern about opening a full worked answer immediately?",
+      "watchChoice": "C",
+      "watchThinkSeconds": 8,
+      "rejoinCue": "L04.S03.c010",
+      "options": [
+        {
+          "id": "A",
+          "label": "I see your point, but I do not really agree with that approach.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L04.S03.d101"
+            },
+            {
+              "kind": "line",
+              "id": "L04.S03.d102"
+            },
+            {
+              "kind": "line",
+              "id": "L04.S03.f101"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "label": "Answer tools always stop people from learning.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L04.S03.d201"
+            },
+            {
+              "kind": "line",
+              "id": "L04.S03.d202"
+            },
+            {
+              "kind": "line",
+              "id": "L04.S03.f201"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "label": "If we open the full answer before trying a step, we may follow it without finding out which part we could reason through ourselves.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L04.S03.d301"
+            },
+            {
+              "kind": "line",
+              "id": "L04.S03.d302"
+            },
+            {
+              "kind": "line",
+              "id": "L04.S03.f301"
+            }
+          ]
+        }
+      ],
+      "skipNote": "Comparison skipped. No response or understanding was recorded; continue to the shared explanation.",
+      "baseline": "Restore common d001 and explicit authored clarification d002, the 20-minute/two-problem task, unverified output and neutral options. The specified proposal is opening a full worked answer immediately; it is not adopted or tested. Alternatives are independent continuations. Retry clears prior dialogue and reactions. Watch demonstrates C only after eight seconds. Practice waits indefinitely, and Continue or Skip rejoins c010 once without inferred success or belief.",
+      "id": "L04.I02",
+      "practiceTimeout": null,
+      "autoSelect": false,
+      "skipIsUnanswered": true,
+      "score": null,
+      "stateStorage": "memory only",
+      "branchOutcome": "Authored fictional continuation, not a prediction or universal reaction."
+    }
+  },
+  "boundary": "Use formal explanation and short examples. No perpetual three-person scene; no school, exam, policy or assessed-learner claim."
+}
