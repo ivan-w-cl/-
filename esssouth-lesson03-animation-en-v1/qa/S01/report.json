@@ -1,6 +1,6 @@
 {
  "section": "S01",
- "ranAt": "2026-10-29T15:20:31.224Z",
+ "ranAt": "2026-10-29T15:30:42.678Z",
  "environment": {
   "os": "linux 6.18.44-fc-v185",
   "browser": "Chromium 153.0.8010.12",
@@ -82,13 +82,27 @@
   },
   {
    "name": "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
-   "pass": true,
-   "detail": []
+   "pass": false,
+   "detail": [
+    {
+     "key": "covered|hR",
+     "count": 1,
+     "first": 110.75,
+     "last": 110.75
+    }
+   ]
   },
   {
    "name": "route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
-   "pass": true,
-   "detail": []
+   "pass": false,
+   "detail": [
+    {
+     "key": "covered|hR",
+     "count": 1,
+     "first": 110.75,
+     "last": 110.75
+    }
+   ]
   },
   {
    "name": "deterministic: same frame after different seek histories",
@@ -103,22 +117,22 @@
   {
    "name": "rate 1×: clock advances at 1× (measured 0.999)",
    "pass": true,
-   "detail": 0.9990001333155578
+   "detail": 0.9992666666666045
   },
   {
    "name": "rate 1.25×: clock advances at 1.25× (measured 1.244)",
    "pass": true,
-   "detail": 1.2435008665510887
+   "detail": 1.2440007998931937
   },
   {
-   "name": "rate 1.5×: clock advances at 1.5× (measured 1.486)",
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.487)",
    "pass": true,
-   "detail": 1.4856038389761341
+   "detail": 1.4868017597651795
   },
   {
-   "name": "rate 2×: clock advances at 2× (measured 1.994)",
+   "name": "rate 2×: clock advances at 2× (measured 1.995)",
    "pass": true,
-   "detail": 1.9936008532195084
+   "detail": 1.9954672710306538
   },
   {
    "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
@@ -135,7 +149,7 @@
    "name": "restart returns to the section start and plays",
    "pass": true,
    "detail": {
-    "t": 0.20280000000004655,
+    "t": 0.19340000000037252,
     "playing": true,
     "gate": "none",
     "choice": null
@@ -316,7 +330,10 @@
    }
   }
  ],
- "failures": [],
+ "failures": [
+  "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints) :: [{\"key\":\"covered|hR\",\"count\":1,\"first\":110.75,\"last\":110.75}]",
+  "route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints) :: [{\"key\":\"covered|hR\",\"count\":1,\"first\":110.75,\"last\":110.75}]"
+ ],
  "notes": [
   "Text expansion is a stress report, not a pass/fail gate: overflow at ×1.3/×1.6 is reported by the fitter (never clipped silently) and needs layout work in the localization pass where it occurs."
  ],
@@ -463,8 +480,22 @@
   }
  ],
  "layoutAudit": {
-  "watch": [],
-  "practice:main": []
+  "watch": [
+   {
+    "key": "covered|hR",
+    "count": 1,
+    "first": 110.75,
+    "last": 110.75
+   }
+  ],
+  "practice:main": [
+   {
+    "key": "covered|hR",
+    "count": 1,
+    "first": 110.75,
+    "last": 110.75
+   }
+  ]
  },
  "stills": [
   "S01_watch_B01-open_t1.20.jpg",
@@ -765,7 +796,7 @@
  ],
  "summary": {
   "checks": 39,
-  "failed": 0,
+  "failed": 2,
   "stills": 43
  }
 }

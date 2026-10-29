@@ -38,6 +38,12 @@ const AUDIT = (moving) => {
     if (tag.textContent && getComputedStyle(tag).display !== 'none') { const tb = tag.getBoundingClientRect(), sb = document.getElementById('stage').getBoundingClientRect(), k = 1920 / sb.width; tr = { x: (tb.left - sb.left) * k, y: (tb.top - sb.top) * k, w: tb.width * k, h: tb.height * k }; }
     if (o > 0.9 && txt || tr) vis.push({ id, r, tr, cont: CONTAINER.test(b.className), o });
   });
+  // hidden behind another object: a later (higher) opaque token covering the centre of a visible text
+  const toks = [...document.querySelectorAll('#stage .tok:not(.measure)')].filter((n) => +n.style.opacity > 0.9);
+  toks.forEach((n, i) => { const tx = n.querySelector('.tx'); if (!tx.textContent.trim()) return; const id = n.dataset.token;
+    const cx = parseFloat(n.style.left) + parseFloat(n.style.width) / 2, cy = parseFloat(n.style.top) + parseFloat(n.style.height) / 2;
+    toks.slice(i + 1).forEach((m) => { const x = parseFloat(m.style.left), y = parseFloat(m.style.top), w = parseFloat(m.style.width), h = parseFloat(m.style.height);
+      if (cx > x && cx < x + w && cy > y && cy < y + h) { const bg = getComputedStyle(m.querySelector('.t2')).backgroundColor; if (bg && bg !== 'transparent' && !/rgba\([^)]*,\s*0\)$/.test(bg)) issues.push({ type: 'covered', id, by: m.dataset.token }); } }); });
   const ov = (a, c) => Math.max(0, Math.min(a.x + a.w, c.x + c.w) - Math.max(a.x, c.x)) * Math.max(0, Math.min(a.y + a.h, c.y + c.h) - Math.max(a.y, c.y));
   for (let i = 0; i < vis.length; i++) for (let j = i + 1; j < vis.length; j++) { const A = vis[i], B = vis[j]; if (A.cont || B.cont) continue;
     if (A.o > 0.9 && B.o > 0.9 && !moving.has(A.id) && !moving.has(B.id) && ov(A.r, B.r) > 300) issues.push({ type: 'overlap', a: A.id, b: B.id });
@@ -246,7 +252,7 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l03; const pos = (n) => [n.
     const tR = await p.evaluate((n) => window.__l03.C.tracks.watch.at(n), a.name) + 0.7;
     const snapR = await p.evaluate(([t, S]) => { window.__l03.renderAt(t, 'watch'); return eval('(' + S + ')')(); }, [tR, SNAP.toString()]);
     const { p: p2, ctx: c2 } = await open(browser, 'export=1'); const [tP, snapP] = await p2.evaluate(([n, S]) => { const t = window.__l03.C.tracks.watch.at(n) + 0.7; window.__l03.renderAt(t, 'watch'); return [t, eval('(' + S + ')')()]; }, [a.name, SNAP.toString()]); await p2.close(); await c2.close();
-    const strip = (s) => JSON.parse(s).filter((x) => x[0] !== 'cap').map((x) => x.slice(0, 8)); // captions follow the clip; compare the board
+    const strip = (s) => JSON.parse(s).filter((x) => x[0] !== 'cap').map((x) => x.slice(0, 8).map((v) => (typeof v === 'string' && /^-?[\d.]+(px)?$/.test(v) ? Math.round(parseFloat(v) * 50) / 50 : v))); // captions follow the clip; compare the board
     if (JSON.stringify(strip(snapR)) !== JSON.stringify(strip(snapP))) stateDiff.push({ anchor: a.name, tProd: tP, tRetimed: tR });
   }
   ok('retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)', stateDiff.length === 0, stateDiff);

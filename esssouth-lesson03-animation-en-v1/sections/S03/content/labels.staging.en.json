@@ -1,0 +1,18 @@
+{
+  "schema": "esssouth.l03.staging-labels/1",
+  "sectionId": "L03.S03",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Answer fragments are exact substrings of the authored Noah lines. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.contribution": "A contribution",
+    "x.reply": "A possible reply",
+    "x.missing": "Missing information",
+    "x.aim": "Aim: chances to try and ask questions",
+    "x.ref.seq": "The sequence?",
+    "x.ref.pace": "The pace?",
+    "x.ref.other": "Another feature?",
+    "x.shorten": "Make the demonstration shorter",
+    "x.a.answer": "how the demonstration is arranged",
+    "x.b.answer": "keeping track of several steps before trying them",
+    "x.c.answer": "remembering several steps before they get a chance to try"
+  }
+}
