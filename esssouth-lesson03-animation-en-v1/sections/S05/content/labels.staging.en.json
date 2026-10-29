@@ -1,0 +1,12 @@
+{
+  "schema": "esssouth.l03.staging-labels/1",
+  "sectionId": "L03.S05",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain (worded from the cue and its visual direction). Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.stepCard": "Keep a step card visible",
+    "x.cfLane": "Not the actual plan",
+    "x.cf.staff": "Add another facilitator",
+    "x.cf.demo": "Demonstrate for the whole session",
+    "x.revise": "Understanding can be revised"
+  }
+}
