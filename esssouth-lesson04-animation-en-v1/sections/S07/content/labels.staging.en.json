@@ -1,0 +1,9 @@
+{
+  "schema": "esssouth.l04.staging-labels/1",
+  "sectionId": "L04.S07",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain (c005 'two neutral empty candidate frames'). Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.layoutA": "Layout 1",
+    "x.layoutB": "Layout 2"
+  }
+}

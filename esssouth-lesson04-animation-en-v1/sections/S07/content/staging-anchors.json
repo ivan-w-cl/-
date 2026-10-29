@@ -1,0 +1,33 @@
+{
+  "schema": "esssouth.l04.staging-anchors/1",
+  "sectionId": "L04.S07",
+  "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+  "anchors": {
+    "s7_team":     { "cue": "L04.S07.c001", "phrase": "A team is planning a one-page event notice" },
+    "s7_notice":   { "cue": "L04.S07.c001", "phrase": "They want people to notice the event" },
+    "s7_find":     { "cue": "L04.S07.c001", "phrase": "easily find its time and place" },
+    "s7_most":     { "cue": "L04.S07.d001", "phrase": "I would use most of the page for it" },
+    "s7_recog":    { "cue": "L04.S07.c002", "phrase": "You can recognise the possible benefit" },
+    "s7_if":       { "cue": "L04.S07.c002", "phrase": "If the information becomes difficult to find" },
+    "s7_tested":   { "cue": "L04.S07.c002", "phrase": "We have not tested a layout" },
+    "s7_form":     { "cue": "L04.S07.c003", "phrase": "Privately form one short English reply" },
+    "s7_which":    { "cue": "L04.S07.c003", "phrase": "which part you question" },
+    "s7_why":      { "cue": "L04.S07.c003", "phrase": "why it matters to this notice" },
+    "s7_next":     { "cue": "L04.S07.c003", "phrase": "what the team could examine next" },
+    "s7_most2":    { "cue": "L04.S07.d002", "phrase": "using most of the page" },
+    "s7_compare":  { "cue": "L04.S07.d002", "phrase": "Could we compare two layouts" },
+    "s7_yes":      { "cue": "L04.S07.d003", "phrase": "Yes, we can compare them" },
+    "s7_still":    { "cue": "L04.S07.d003", "phrase": "I still think the picture should be prominent" },
+    "s7_identifies":{ "cue": "L04.S07.c004", "phrase": "The reply identifies a specific concern" },
+    "s7_agrees":   { "cue": "L04.S07.c004", "phrase": "Noah agrees to the comparison" },
+    "s7_pref":     { "cue": "L04.S07.c004", "phrase": "His continuing preference" },
+    "s7_needs":    { "cue": "L04.S07.c005", "phrase": "The comparison still needs to happen" },
+    "s7_split":    { "cue": "L04.S07.c005", "phrase": "Nor must the team split the page equally" },
+    "s7_checkAlt": { "cue": "L04.S07.c005", "phrase": "Check the alternatives against the task" },
+    "s7_specific": { "cue": "L04.S07.c006", "phrase": "was the disagreement specific" },
+    "s7_reason":   { "cue": "L04.S07.c006", "phrase": "was the reason connected to the task" },
+    "s7_step":     { "cue": "L04.S07.c006", "phrase": "did the next step make something examinable" },
+    "s7_direct":   { "cue": "L04.S07.c007", "phrase": "You can disagree directly and respectfully" },
+    "s7_clear":    { "cue": "L04.S07.c007", "phrase": "Keep the issue clear enough" }
+  }
+}
