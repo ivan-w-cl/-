@@ -1,0 +1,21 @@
+{
+  "schema": "esssouth.l06.staging-labels/1",
+  "sectionId": "L06.S02",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Case wording follows content/case-facts.en.json (F01–F09) in substance; nothing new is asserted. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.output": "One shared guide",
+    "x.contrib": "A contribution",
+    "x.lane.p": "Case participant",
+    "x.lane.m": "Maya",
+    "x.lane.n": "Noah",
+    "x.act.p": "Changed the map label and told the others",
+    "x.act.m": "Checked the schedule",
+    "x.act.n": "Assembled the updated guide",
+    "x.studioB": "Map: Studio B",
+    "x.blueRoom": "Schedule: Blue Room",
+    "x.confirmed": "Same room; door sign: Blue Room",
+    "x.summary": "Summary, not the coordinator's exact words",
+    "x.note.mine": "One personal action",
+    "x.note.other": "One contribution by someone else"
+  }
+}
