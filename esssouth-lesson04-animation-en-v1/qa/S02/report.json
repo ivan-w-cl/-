@@ -1,6 +1,6 @@
 {
  "section": "S02",
- "ranAt": "2026-10-29T21:59:09.227Z",
+ "ranAt": "2026-10-29T22:08:12.581Z",
  "environment": {
   "os": "linux 6.18.44-fc-v185",
   "browser": "Chromium 153.0.8010.12",
@@ -161,24 +161,24 @@
    "detail": []
   },
   {
-   "name": "rate 1×: clock advances at 1× (measured 0.991)",
+   "name": "rate 1×: clock advances at 1× (measured 0.994)",
    "pass": true,
-   "detail": 0.9914683729921149
+   "detail": 0.9937354215262203
   },
   {
    "name": "rate 1.25×: clock advances at 1.25× (measured 1.247)",
    "pass": true,
-   "detail": 1.2473336888414295
+   "detail": 1.247250549889983
   },
   {
-   "name": "rate 1.5×: clock advances at 1.5× (measured 1.489)",
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.491)",
    "pass": true,
-   "detail": 1.4893014264765156
+   "detail": 1.4913023193817772
   },
   {
-   "name": "rate 2×: clock advances at 2× (measured 1.997)",
+   "name": "rate 2×: clock advances at 2× (measured 1.979)",
    "pass": true,
-   "detail": 1.9972016789926352
+   "detail": 1.9793374658401652
   },
   {
    "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
@@ -195,7 +195,7 @@
    "name": "restart returns to the section start and plays",
    "pass": true,
    "detail": {
-    "t": 0.19640000000002328,
+    "t": 0.197,
     "playing": true,
     "gate": "none",
     "choice": null
@@ -272,7 +272,7 @@
    "name": "practice: playback stops and waits at the gate (awaiting_choice)",
    "pass": true,
    "detail": {
-    "t": 133.63649999999998,
+    "t": 133.63199999999998,
     "gate": "awaiting",
     "route": "practice:skip",
     "choice": null,
@@ -288,10 +288,15 @@
    }
   },
   {
+   "name": "practice: the waiting frame keeps everything that was settled just before it (nothing from the next step leaks in or out)",
+   "pass": true,
+   "detail": []
+  },
+  {
    "name": "practice: Play, Space, a rate change and 9.5 s of wall time do not choose (still waiting beyond the 8 s Watch hold)",
    "pass": true,
    "detail": {
-    "t": 133.63649999999998,
+    "t": 133.63199999999998,
     "gate": "awaiting",
     "route": "practice:skip",
     "choice": null,
@@ -315,7 +320,7 @@
    "name": "practice A: first selection wins; branch plays on its own route",
    "pass": true,
    "detail": {
-    "t": 133.65124999999998,
+    "t": 133.64390000000012,
     "gate": "branch_playing",
     "route": "practice:A",
     "choice": "A",
@@ -335,14 +340,14 @@
    "pass": true,
    "detail": [
     133.63699999999997,
-    159.54399999999995
+    159.53899999999996
    ]
   },
   {
    "name": "practice A: seek beyond the branch stays inside it (branch_ready, no common cue)",
    "pass": true,
    "detail": {
-    "t": 159.54399999999995,
+    "t": 159.53899999999996,
     "gate": "branch_ready",
     "route": "practice:A",
     "choice": "A",
@@ -354,14 +359,14 @@
      "completionAssumed": false,
      "proposalAdopted": false
     },
-    "step": "L04.S02.c010"
+    "step": "L04.S02.f101"
    }
   },
   {
    "name": "practice A: branch end waits for Continue",
    "pass": true,
    "detail": {
-    "t": 159.54399999999995,
+    "t": 159.53899999999996,
     "gate": "branch_ready",
     "route": "practice:A",
     "choice": "A",
@@ -373,7 +378,7 @@
      "completionAssumed": false,
      "proposalAdopted": false
     },
-    "step": "L04.S02.c010"
+    "step": "L04.S02.f101"
    }
   },
   {
@@ -381,7 +386,7 @@
    "pass": true,
    "detail": {
     "s": {
-     "t": 133.63649999999998,
+     "t": 133.63199999999998,
      "gate": "awaiting",
      "route": "practice:skip",
      "choice": null,
@@ -402,7 +407,7 @@
    "name": "practice A: Continue rejoins L04.S02.c010 once",
    "pass": true,
    "detail": {
-    "t": 159.9837999999999,
+    "t": 159.98335000000017,
     "gate": "resolved",
     "route": "practice:A",
     "choice": "A",
@@ -445,7 +450,7 @@
    "name": "practice A: seek to the gate stops there",
    "pass": true,
    "detail": {
-    "t": 133.63649999999998,
+    "t": 133.63199999999998,
     "gate": "awaiting",
     "route": "practice:skip",
     "choice": null,
@@ -464,7 +469,7 @@
    "name": "practice B: first selection wins; branch plays on its own route",
    "pass": true,
    "detail": {
-    "t": 133.63699999999997,
+    "t": 133.6492999999999,
     "gate": "branch_playing",
     "route": "practice:B",
     "choice": "B",
@@ -484,14 +489,14 @@
    "pass": true,
    "detail": [
     133.63699999999997,
-    167.25899999999996
+    167.25399999999996
    ]
   },
   {
    "name": "practice B: seek beyond the branch stays inside it (branch_ready, no common cue)",
    "pass": true,
    "detail": {
-    "t": 167.25899999999996,
+    "t": 167.25399999999996,
     "gate": "branch_ready",
     "route": "practice:B",
     "choice": "B",
@@ -503,14 +508,14 @@
      "completionAssumed": false,
      "proposalAdopted": false
     },
-    "step": "L04.S02.c010"
+    "step": "L04.S02.f201"
    }
   },
   {
    "name": "practice B: branch end waits for Continue",
    "pass": true,
    "detail": {
-    "t": 167.25899999999996,
+    "t": 167.25399999999996,
     "gate": "branch_ready",
     "route": "practice:B",
     "choice": "B",
@@ -522,7 +527,7 @@
      "completionAssumed": false,
      "proposalAdopted": false
     },
-    "step": "L04.S02.c010"
+    "step": "L04.S02.f201"
    }
   },
   {
@@ -530,7 +535,7 @@
    "pass": true,
    "detail": {
     "s": {
-     "t": 133.63649999999998,
+     "t": 133.63199999999998,
      "gate": "awaiting",
      "route": "practice:skip",
      "choice": null,
@@ -551,7 +556,7 @@
    "name": "practice B: Continue rejoins L04.S02.c010 once",
    "pass": true,
    "detail": {
-    "t": 167.70735,
+    "t": 167.7010499999999,
     "gate": "resolved",
     "route": "practice:B",
     "choice": "B",
@@ -594,7 +599,7 @@
    "name": "practice B: seek to the gate stops there",
    "pass": true,
    "detail": {
-    "t": 133.63649999999998,
+    "t": 133.63199999999998,
     "gate": "awaiting",
     "route": "practice:skip",
     "choice": null,
@@ -633,14 +638,14 @@
    "pass": true,
    "detail": [
     133.63699999999997,
-    159.11499999999995
+    159.10999999999996
    ]
   },
   {
    "name": "practice C: seek beyond the branch stays inside it (branch_ready, no common cue)",
    "pass": true,
    "detail": {
-    "t": 159.11499999999995,
+    "t": 159.10999999999996,
     "gate": "branch_ready",
     "route": "practice:C",
     "choice": "C",
@@ -652,14 +657,14 @@
      "completionAssumed": false,
      "proposalAdopted": false
     },
-    "step": "L04.S02.c010"
+    "step": "L04.S02.f301"
    }
   },
   {
    "name": "practice C: branch end waits for Continue",
    "pass": true,
    "detail": {
-    "t": 159.11499999999995,
+    "t": 159.10999999999996,
     "gate": "branch_ready",
     "route": "practice:C",
     "choice": "C",
@@ -671,7 +676,7 @@
      "completionAssumed": false,
      "proposalAdopted": false
     },
-    "step": "L04.S02.c010"
+    "step": "L04.S02.f301"
    }
   },
   {
@@ -679,7 +684,7 @@
    "pass": true,
    "detail": {
     "s": {
-     "t": 133.63649999999998,
+     "t": 133.63199999999998,
      "gate": "awaiting",
      "route": "practice:skip",
      "choice": null,
@@ -700,7 +705,7 @@
    "name": "practice C: Continue rejoins L04.S02.c010 once",
    "pass": true,
    "detail": {
-    "t": 159.55149999999995,
+    "t": 159.55345000000003,
     "gate": "resolved",
     "route": "practice:C",
     "choice": "C",
@@ -743,7 +748,7 @@
    "name": "practice C: seek to the gate stops there",
    "pass": true,
    "detail": {
-    "t": 133.63649999999998,
+    "t": 133.63199999999998,
     "gate": "awaiting",
     "route": "practice:skip",
     "choice": null,
@@ -762,7 +767,7 @@
    "name": "practice: Skip enters the common continuation once, unanswered, no assessment",
    "pass": true,
    "detail": {
-    "t": 133.92289999999994,
+    "t": 133.9245499999999,
     "gate": "resolved",
     "route": "practice:skip",
     "choice": "skip",
@@ -781,7 +786,7 @@
    "name": "practice: seek forward across an unvisited gate stops at the gate",
    "pass": true,
    "detail": {
-    "t": 133.63649999999998,
+    "t": 133.63199999999998,
     "gate": "awaiting",
     "route": "practice:skip",
     "choice": null,
@@ -838,7 +843,7 @@
    "name": "mode switch at the gate: Practice returns to awaiting_choice",
    "pass": true,
    "detail": {
-    "t": 133.63649999999998,
+    "t": 133.63199999999998,
     "gate": "awaiting",
     "route": "practice:skip",
     "choice": null,
@@ -876,7 +881,7 @@
    "name": "watch: no waiting at the gate; the declared path (B) follows the 8 s thinking hold",
    "pass": true,
    "detail": {
-    "t": 142.13740000000013,
+    "t": 142.12660000000008,
     "gate": "none",
     "route": "watch",
     "choice": null,
@@ -1551,7 +1556,7 @@
   }
  ],
  "summary": {
-  "checks": 89,
+  "checks": 90,
   "failed": 0,
   "stills": 85
  }

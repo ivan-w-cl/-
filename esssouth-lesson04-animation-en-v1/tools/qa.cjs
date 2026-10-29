@@ -168,6 +168,10 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l04; const pos = (n) => [n.
     ok('practice: while waiting, no caption from the next cue; the DOM line shows the prompt', capW.stage === 0 && capW.dom === capW.prompt, capW);
     let s = await S(); ok('practice: playback stops and waits at the gate (awaiting_choice)', s.gate === 'awaiting' && !s.playing && Math.abs(s.t - gEnd) < 0.01, s);
     const base = await p.evaluate((S) => eval('(' + S + ')')(), SNAP.toString());
+    const lost = await p.evaluate(() => { const L = window.__l04, vis = () => Object.fromEntries([...document.querySelectorAll('#stage .tok:not(.measure)')].map((n) => [n.dataset.token, +n.style.opacity]));
+      const now = vis(), t = L.t; L.E.render(L.scores[L.ST.route], t - 0.25, { captions: false, playing: false }); const before = vis(); L.E.render(L.scores[L.ST.route], t, { captions: false, playing: false });
+      return Object.keys(before).filter((k) => before[k] > 0.9 && !(now[k] > 0.9)); });
+    ok('practice: the waiting frame keeps everything that was settled just before it (nothing from the next step leaks in or out)', lost.length === 0, lost);
     await p.screenshot({ path: path.join(STILLS, `${SEC}_practice_gate-awaiting.jpg`), type: 'jpeg', quality: 70 }); stills.push(`${SEC}_practice_gate-awaiting.jpg`);
     await p.keyboard.press('Space'); await p.click('#play', { force: true }).catch(() => {}); await p.evaluate(() => window.__l04.setRate(1.5)); await sleep((G.think + 1.5) * 1000);
     s = await S(); ok(`practice: Play, Space, a rate change and ${G.think + 1.5} s of wall time do not choose (still waiting beyond the ${G.think} s Watch hold)`, s.gate === 'awaiting' && s.choice === null && Math.abs(s.t - gEnd) < 0.01, s);
@@ -180,9 +184,9 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l04; const pos = (n) => [n.
       else await p.evaluate(() => { const b = document.querySelector('#ipanel button[data-act="model"]'); b.click(); b.click(); });
       s = await S(); ok(`practice ${k}: first selection wins; branch plays on its own route`, s.gate === 'branch_playing' && s.route === 'practice:' + k && s.choice === k && s.playing, s);
       const rng = await p.evaluate(() => window.__l04.scrubRange()); const br = info.routes['practice:' + k].steps.filter((x) => x.branch);
-      ok(`practice ${k}: scrubber is branch-local`, Math.abs(rng[0] - br[0].start) < 1e-6 && Math.abs(rng[1] - br[br.length - 1].end) < 1e-6, rng);
+      ok(`practice ${k}: scrubber is branch-local`, Math.abs(rng[0] - br[0].start) < 1e-6 && Math.abs(rng[1] - br[br.length - 1].end) < 0.01, rng);
       // branch-local seek cannot leave the branch
-      await p.evaluate((x) => window.__l04.seek(x), rng[1] + 50); s = await S(); ok(`practice ${k}: seek beyond the branch stays inside it (branch_ready, no common cue)`, s.gate === 'branch_ready' && Math.abs(s.t - rng[1]) < 1e-6, s);
+      await p.evaluate((x) => window.__l04.seek(x), rng[1] + 50); s = await S(); ok(`practice ${k}: seek beyond the branch stays inside it (branch_ready, no common cue)`, s.gate === 'branch_ready' && Math.abs(s.t - rng[1]) < 0.01, s);
       await p.evaluate((x) => { window.__l04.seek(x); window.__l04.play(); }, rng[1] - 1.0); await p.waitForFunction(() => window.__l04.ST.gate === 'branch_ready', null, { timeout: 8000 });
       s = await S(); ok(`practice ${k}: branch end waits for Continue`, s.gate === 'branch_ready' && !s.playing, s);
       await shootP(p, `${SEC}_practice_${k}_branch-ready.jpg`);

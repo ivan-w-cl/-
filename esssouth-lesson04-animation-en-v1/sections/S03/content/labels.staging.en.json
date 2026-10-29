@@ -1,0 +1,22 @@
+{
+  "schema": "esssouth.l04.staging-labels/1",
+  "sectionId": "L04.S03",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain (worded from the cue and its direction). Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.node.action": "An action",
+    "x.node.consequence": "A possible consequence",
+    "x.node.aim": "The task aim",
+    "x.fictional": "Fictional planning scenario",
+    "x.prob1": "Problem 1",
+    "x.prob2": "Problem 2",
+    "x.hint": "A hint",
+    "x.full": "The full worked answer",
+    "x.path.open": "Open the full answer before a first attempt",
+    "x.path.reduce": "Possibly less chance to reason a step independently",
+    "x.a.missing": "The concern is not yet explained",
+    "x.b.narrow": "This timing and kind of help, not every use",
+    "x.c.help": "A way to get help when stuck",
+    "x.firstTry": "Try a step first",
+    "x.crit.time": "Use the 20 minutes well"
+  }
+}

@@ -70,7 +70,7 @@
     const track = () => C.tracks[ST.route], score = () => scores[ST.route];
     const baseRoute = () => (ST.mode === 'watch' ? 'watch' : GATE ? 'practice:skip' : 'practice:main');
     const gEnd = () => (GATE ? COMMON.gateStep.end : Infinity), gStart = () => (GATE ? COMMON.gateStep.start : Infinity);
-    const EPS = 0.0005;
+    const EPS = 0.005; // waiting frames sit just before the next step, so its first keyframes (rise sets at t − 0.001) have not begun
     const audio = window.L04Audio ? window.L04Audio.create(D, C) : null;
 
     function resetGate(why) { ST.gate = GATE && ST.mode === 'practice' ? 'before' : 'none'; ST.choice = null; ST.flags = { responseText: null, modelViewed: false, speakingObserved: false, completionAssumed: false, proposalAdopted: false }; if (why) ST.log.push(why); }
@@ -82,7 +82,7 @@
       const tr = track();
       if (ST.mode === 'practice' && GATE) {
         if (ST.gate === 'before' || ST.gate === 'awaiting') return gEnd() - EPS;
-        if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') return tr.readyStep.start;
+        if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') return tr.readyStep.start - EPS;
       }
       return tr.duration;
     }
@@ -110,7 +110,7 @@
     function seekCommon(x) { // practice with a gate: x is a position on the common timeline
       const was = ST.playing; stop(); ST.playing = false;
       if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') { // branch-local scrubber
-        const tr = track(); ST.t = Math.max(tr.branchStart, Math.min(tr.readyStep.start, x)); ST.gate = ST.t >= tr.readyStep.start - 1e-9 ? 'branch_ready' : 'branch_playing';
+        const tr = track(); ST.t = Math.max(tr.branchStart, Math.min(tr.readyStep.start - EPS, x)); ST.gate = ST.t >= tr.readyStep.start - EPS - 1e-9 ? 'branch_ready' : 'branch_playing';
         if (ST.gate === 'branch_ready' && ST.choice === 'model') ST.flags.modelViewed = true;
         if (was && ST.gate === 'branch_playing') play(); else render(); return;
       }
@@ -165,7 +165,7 @@
 
     // ---------------- view ----------------
     function scrubValue() { if (ST.mode === 'practice' && GATE) { if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') return ST.t; return window.L04Compile.commonTime(C, track(), ST.t); } return ST.t; }
-    function scrubRange() { if (ST.mode === 'practice' && GATE) { if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') return [track().branchStart, track().readyStep.start]; return [0, COMMON.duration]; } return [0, track().duration]; }
+    function scrubRange() { if (ST.mode === 'practice' && GATE) { if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') return [track().branchStart, track().readyStep.start - EPS]; return [0, COMMON.duration]; } return [0, track().duration]; }
     const lastCap = { k: null };
     function render() {
       const tr = track(), S = score(), waiting = ST.mode === 'practice' && (ST.gate === 'awaiting' || ST.gate === 'branch_ready');
