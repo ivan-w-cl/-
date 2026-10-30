@@ -1,0 +1,17 @@
+{
+  "schema": "esssouth.l07.staging-labels/1",
+  "sectionId": "L07.S06",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or content/case-facts.en.json. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.caseLabel": "Practice example",
+    "x.ref": "Source prompt (reference)",
+    "x.unadopted": "Proposal, not adopted",
+    "x.interval": "Chosen illustration interval: 3 s",
+    "x.r.gap": "Locate a missing link",
+    "x.r.ask": "Ask a manageable question",
+    "x.r.room": "Give someone room to continue",
+    "x.resp1": "Suggests a connection",
+    "x.resp2": "Asks for clarification",
+    "x.resp3": "Still needs time"
+  }
+}
