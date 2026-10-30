@@ -1,0 +1,123 @@
+{
+ "schema": "esssouth.l08.staging-anchors/1",
+ "sectionId": "L08.S04",
+ "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+ "anchors": {
+  "s4_when": {
+   "cue": "L08.S04.c001",
+   "phrase": "When two arrangements compete"
+  },
+  "s4_will": {
+   "cue": "L08.S04.c001",
+   "phrase": "will newcomers have an opportunity"
+  },
+  "s4_how": {
+   "cue": "L08.S04.c001",
+   "phrase": "How will they find out"
+  },
+  "s4_can": {
+   "cue": "L08.S04.c001",
+   "phrase": "Can the stages and transitions fit"
+  },
+  "s4_one": {
+   "cue": "L08.S04.c002",
+   "phrase": "One candidate gives more room"
+  },
+  "s4_another": {
+   "cue": "L08.S04.c002",
+   "phrase": "Another keeps the example brief"
+  },
+  "s4_neither": {
+   "cue": "L08.S04.c002",
+   "phrase": "Neither description supplies"
+  },
+  "s4_longer": {
+   "cue": "L08.S04.c003",
+   "phrase": "A longer example may make"
+  },
+  "s4_also": {
+   "cue": "L08.S04.c003",
+   "phrase": "It can also use minutes"
+  },
+  "s4_total": {
+   "cue": "L08.S04.c003",
+   "phrase": "The total stays the same"
+  },
+  "s4_useful": {
+   "cue": "L08.S04.c004",
+   "phrase": "A useful trade-off statement"
+  },
+  "s4_prefer": {
+   "cue": "L08.S04.c004",
+   "phrase": "You can prefer the briefer example"
+  },
+  "s4_still": {
+   "cue": "L08.S04.c004",
+   "phrase": "That preference still needs a check"
+  },
+  "s4_not": {
+   "cue": "L08.S04.c005",
+   "phrase": "That statement does not claim"
+  },
+  "s4_someone": {
+   "cue": "L08.S04.c005",
+   "phrase": "Someone can now question the link"
+  },
+  "s4_helps": {
+   "cue": "L08.S04.c006",
+   "phrase": "That question helps define"
+  },
+  "s4_keeping": {
+   "cue": "L08.S04.c006",
+   "phrase": "Keeping the reasoning visible"
+  },
+  "s4_apply": {
+   "cue": "L08.S04.c007",
+   "phrase": "Apply the same care"
+  },
+  "s4_least": {
+   "cue": "L08.S04.c007",
+   "phrase": "At least five minutes is required"
+  },
+  "s4_pres": {
+   "cue": "L08.S04.c007",
+   "phrase": "Preserve the requirement"
+  },
+  "s4_false": {
+   "cue": "L08.S04.c008",
+   "phrase": "Do not create a false choice"
+  },
+  "s4_taking": {
+   "cue": "L08.S04.c008",
+   "phrase": "Taking someone's contribution seriously"
+  },
+  "s4_explain": {
+   "cue": "L08.S04.c008",
+   "phrase": "It can also mean explaining"
+  },
+  "s4_remains": {
+   "cue": "L08.S04.c009",
+   "phrase": "A trade-off remains open to review"
+  },
+  "s4_here": {
+   "cue": "L08.S04.c009",
+   "phrase": "Here, a brief example depends"
+  },
+  "s4_now": {
+   "cue": "L08.S04.c010",
+   "phrase": "You can now explain a preference"
+  },
+  "s4_keep": {
+   "cue": "L08.S04.c010",
+   "phrase": "Keep the proposal, its purpose"
+  },
+  "s4_next": {
+   "cue": "L08.S04.c011",
+   "phrase": "Next, bring the candidate back"
+  },
+  "s4_check": {
+   "cue": "L08.S04.c011",
+   "phrase": "A useful check can reveal"
+  }
+ }
+}

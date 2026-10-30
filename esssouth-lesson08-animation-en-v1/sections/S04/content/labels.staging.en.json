@@ -1,0 +1,22 @@
+{
+ "schema": "esssouth.l08.staging-labels/1",
+ "sectionId": "L08.S04",
+ "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or the case file (F03). Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+ "labels": {
+  "x.candA": "Candidate",
+  "x.candB": "Candidate",
+  "x.crit": "Shared criteria",
+  "x.total": "30 minutes total",
+  "x.bEx": "Example",
+  "x.bPairs": "Pairs",
+  "x.bShare": "Sharing",
+  "x.bQ": "Questions",
+  "x.benefit": "Benefit (private note)",
+  "x.cost": "Cost (private note)",
+  "x.unknownQ": "Visitor questions: not yet known",
+  "x.purposeM": "Maya's purpose: pairs try the text first",
+  "x.notAdopted": "Not adopted",
+  "x.toGroup": "Which parts do you support, and with which conditions?",
+  "x.challenge": "A clearer example? A different place for sharing?"
+ }
+}
