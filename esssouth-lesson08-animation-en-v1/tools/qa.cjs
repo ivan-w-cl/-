@@ -113,6 +113,14 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l08; const pos = (n) => [n.
     ok('branch-only reveal (' + reveal.map((x) => x.key).join() + ') is visible only inside its own branch, on every route', leaks.length === 0, leaks.slice(0, 10));
   }
 
+  // L08: every reflection hold shows the ordinary pause hint, never a gate's hint left over from an earlier gate
+  const holdHints = [], UI_PAUSE = (() => { const u = JSON.parse(fs.readFileSync(path.join(ROOT, 'shared/l08/ui.en.json'), 'utf8')); return (u.strings || u.labels || u)['ui.pauseMore']; })();
+  for (const [k, r] of Object.entries(info.routes)) for (const s of r.steps.filter((s) => s.kind === 'hold')) {
+    holdHints.push(Object.assign({ route: k, id: s.id }, await p.evaluate(([t, k]) => { window.__l08.renderAt(t, k); const n = document.querySelector('#stage .tok[data-token="holdHint"] .tx'); return { text: n ? n.textContent : null }; }, [s.start + Math.min(2, (s.end - s.start) / 2), k]), { want: UI_PAUSE }));
+  }
+  const badHint = holdHints.filter((h) => h.text !== h.want && !(h.id.endsWith('.h001') || h.id.endsWith('.h100')));
+  ok('every reflection hold shows the ordinary pause hint (no leftover gate hint)', badHint.length === 0, badHint.slice(0, 6));
+
   // ---------- 2 · determinism + layout audit over every route ----------
   const audit = {}, det = []; const step = QUICK ? 1.0 : 0.25;
   for (const [k, r] of Object.entries(info.routes)) {
@@ -289,7 +297,7 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l08; const pos = (n) => [n.
   ok('retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)', shifted.every((x) => x.zero || Math.abs(x.ratio - x.m) < 1e-3), shifted.slice(0, 6));
   // visible state at semantic anchors: the frame 0.7 s after each anchor of a retimed cue matches production's
   const stateDiff = [];
-  for (const a of rt.anchors.filter((a) => rt.P.durationMultipliers[a.cue]).slice(0, 12)) {
+  for (const a of rt.anchors.filter((a) => rt.P.durationMultipliers[a.cue] && rt.tracks.watch.steps.some((s) => s.id === a.cue)).slice(0, 12)) { // Watch-route anchors only (a retimed branch cue is not on Watch)
     const at = (tr, an) => tr.steps.find((s) => s.id === an.cue);
     const tR = await p.evaluate((n) => window.__l08.C.tracks.watch.at(n), a.name) + 0.7;
     const snapR = await p.evaluate(([t, S]) => { window.__l08.renderAt(t, 'watch'); return eval('(' + S + ')')(); }, [tR, SNAP.toString()]);

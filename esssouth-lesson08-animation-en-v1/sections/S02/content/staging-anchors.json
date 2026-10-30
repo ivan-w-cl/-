@@ -1,0 +1,147 @@
+{
+ "schema": "esssouth.l08.staging-anchors/1",
+ "sectionId": "L08.S02",
+ "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+ "anchors": {
+  "s2_more": {
+   "cue": "L08.S02.c001",
+   "phrase": "A shared summary is more than"
+  },
+  "s2_says": {
+   "cue": "L08.S02.c001",
+   "phrase": "It says what people support"
+  },
+  "s2_one": {
+   "cue": "L08.S02.c001",
+   "phrase": "If one person supports"
+  },
+  "s2_return": {
+   "cue": "L08.S02.c002",
+   "phrase": "Return to the taster proposals"
+  },
+  "s2_read": {
+   "cue": "L08.S02.c002",
+   "phrase": "Read their qualifications"
+  },
+  "s2_maya": {
+   "cue": "L08.S02.c003",
+   "phrase": "Maya supports showing an example"
+  },
+  "s2_noah": {
+   "cue": "L08.S02.c003",
+   "phrase": "Noah supports some pair discussion"
+  },
+  "s2_these": {
+   "cue": "L08.S02.c003",
+   "phrase": "These positions have a useful connection"
+  },
+  "s2_person": {
+   "cue": "L08.S02.c004",
+   "phrase": "A person who has not replied"
+  },
+  "s2_nod": {
+   "cue": "L08.S02.c004",
+   "phrase": "Nodding"
+  },
+  "s2_if": {
+   "cue": "L08.S02.c004",
+   "phrase": "If the status matters"
+  },
+  "s2_over": {
+   "cue": "L08.S02.c005",
+   "phrase": "You can also overcorrect"
+  },
+  "s2_keep": {
+   "cue": "L08.S02.c005",
+   "phrase": "Keep agreement at the level"
+  },
+  "s2_complete": {
+   "cue": "L08.S02.c005",
+   "phrase": "A complete group decision"
+  },
+  "s2_firm": {
+   "cue": "L08.S02.c006",
+   "phrase": "The prompt gives a firm constraint"
+  },
+  "s2_sep": {
+   "cue": "L08.S02.c006",
+   "phrase": "Separate the task requirement"
+  },
+  "s2_useful": {
+   "cue": "L08.S02.c007",
+   "phrase": "A useful summary can therefore"
+  },
+  "s2_saying": {
+   "cue": "L08.S02.c007",
+   "phrase": "Saying what is supported"
+  },
+  "s2_open": {
+   "cue": "L08.S02.c007",
+   "phrase": "saying what remains open"
+  },
+  "s2_compare": {
+   "cue": "L08.S02.c008",
+   "phrase": "Now compare three possible accounts"
+  },
+  "s2_choose": {
+   "cue": "L08.S02.c009",
+   "phrase": "Choose the account you could defend"
+  },
+  "s2_after": {
+   "cue": "L08.S02.c009",
+   "phrase": "Afterward, notice"
+  },
+  "s2_any": {
+   "cue": "L08.S02.c010",
+   "phrase": "On any path"
+  },
+  "s2_ready": {
+   "cue": "L08.S02.c010",
+   "phrase": "A summary is ready for use"
+  },
+  "s2_words": {
+   "cue": "L08.S02.c011",
+   "phrase": "Use accurate status words"
+  },
+  "s2_job": {
+   "cue": "L08.S02.c011",
+   "phrase": "Their job is to stop"
+  },
+  "s2_once": {
+   "cue": "L08.S02.c012",
+   "phrase": "Once the shared ground is clear"
+  },
+  "s2_nextS": {
+   "cue": "L08.S02.c012",
+   "phrase": "The next section looks at"
+  },
+  "sA_promotes": {
+   "cue": "L08.S02.f101",
+   "phrase": "This account promotes partial support"
+  },
+  "sA_keep": {
+   "cue": "L08.S02.f101",
+   "phrase": "Keep the supported elements"
+  },
+  "sB_pres": {
+   "cue": "L08.S02.f201",
+   "phrase": "This summary preserves support"
+  },
+  "sB_noah": {
+   "cue": "L08.S02.f201",
+   "phrase": "Noah confirms his own unresolved question"
+  },
+  "sB_reply": {
+   "cue": "L08.S02.f201",
+   "phrase": "That reply does not certify"
+  },
+  "sC_loses": {
+   "cue": "L08.S02.f301",
+   "phrase": "This account loses support"
+  },
+  "sC_keep": {
+   "cue": "L08.S02.f301",
+   "phrase": "Keep the partial support"
+  }
+ }
+}

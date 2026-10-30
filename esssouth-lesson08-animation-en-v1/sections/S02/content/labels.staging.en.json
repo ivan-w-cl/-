@@ -1,0 +1,23 @@
+{
+ "schema": "esssouth.l08.staging-labels/1",
+ "sectionId": "L08.S02",
+ "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or the baseline statements F06-F08. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+ "labels": {
+  "x.l.person": "Person",
+  "x.l.element": "Supported element",
+  "x.l.cond": "Condition",
+  "x.l.open": "Open question",
+  "x.by.maya": "Maya",
+  "x.by.noah": "Noah",
+  "x.by.part": "Participant",
+  "x.notTimed": "Not yet a fully timed agreement",
+  "x.st.sup": "Supports",
+  "x.st.not": "Does not support",
+  "x.noReply": "A person who has not replied",
+  "x.psup": "Participant: protect question time",
+  "x.sumSup": "Supported: an example; some pair discussion",
+  "x.sumOpen": "Open: timing and the whole sequence",
+  "x.toRevise": "An overbroad claim to revise",
+  "x.slot": "Arrangement and timing: still to decide"
+ }
+}
