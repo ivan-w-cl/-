@@ -1,0 +1,1342 @@
+{
+ "sectionId": "L07.S07",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 146.007,
+   "steps": [
+    {
+     "id": "L07.S07.c001",
+     "kind": "line",
+     "block": "L07.S07.B01",
+     "branch": null,
+     "start": 0,
+     "end": 18.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "newL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prompt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oS": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c001",
+       "phrase": "They have not chosen",
+       "at": 15.857
+      },
+      {
+       "name": "s7_try",
+       "phrase": "Try the same judgement",
+       "at": 0
+      },
+      {
+       "name": "s7_team",
+       "phrase": "A team is comparing",
+       "at": 3.429
+      },
+      {
+       "name": "s7_need",
+       "phrase": "They need to compare",
+       "at": 9.429
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.d001",
+     "kind": "line",
+     "block": "L07.S07.B01",
+     "branch": null,
+     "start": 18.35,
+     "end": 21.271,
+     "speaker": "noah",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "newL": [
+       "x+w+h+fs+o"
+      ],
+      "prompt": [
+       "o+act"
+      ],
+      "oP": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oS": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "q": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S07_d001",
+       "phrase": "wash the shared mugs",
+       "at": 19.207
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.c002",
+     "kind": "line",
+     "block": "L07.S07.B01",
+     "branch": null,
+     "start": 21.271,
+     "end": 41.335,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "newL": [
+       "o+act"
+      ],
+      "oP": [
+       "x+w+h+fs+o"
+      ],
+      "oS": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "q": [
+       "x+w+h+fs+o"
+      ],
+      "rel": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "open": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "cl"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c002",
+       "phrase": "its answer is still missing",
+       "at": 34.128
+      },
+      {
+       "name": "s7_clean",
+       "phrase": "Cleaning may sound like a side topic",
+       "at": 21.271
+      },
+      {
+       "name": "s7_return",
+       "phrase": "Return to the actual task",
+       "at": 28.557
+      },
+      {
+       "name": "s7_here",
+       "phrase": "Here, the question is relevant",
+       "at": 31.557
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.d002",
+     "kind": "line",
+     "block": "L07.S07.B02",
+     "branch": null,
+     "start": 41.335,
+     "end": 45.542,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "newL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oP": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oS": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "q": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rel": [
+       "o+act"
+      ],
+      "open": [
+       "o+act"
+      ],
+      "req": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S07_d002",
+       "phrase": "a moment to think",
+       "at": 42.621
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.c003",
+     "kind": "line",
+     "block": "L07.S07.B02",
+     "branch": null,
+     "start": 45.542,
+     "end": 64.321,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "newL": [
+       "o+act"
+      ],
+      "oP": [
+       "o+act"
+      ],
+      "oS": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "q": [
+       "x+w+h+fs+o"
+      ],
+      "req": [
+       "o+act"
+      ],
+      "obs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "space": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "os"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c003",
+       "phrase": "more information than silence alone",
+       "at": 49.399
+      },
+      {
+       "name": "s7_asked",
+       "phrase": "Maya has asked for thinking time",
+       "at": 45.542
+      },
+      {
+       "name": "s7_consider",
+       "phrase": "Consider a response",
+       "at": 58.828
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.h101",
+     "kind": "hold",
+     "block": "L07.S07.B02",
+     "branch": null,
+     "start": 64.321,
+     "end": 72.321,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S07.d003",
+     "kind": "line",
+     "block": "L07.S07.B02",
+     "branch": null,
+     "start": 72.321,
+     "end": 79.1,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "newL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oS": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "q": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "space": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "pos": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S07_d003",
+       "phrase": "before we decide",
+       "at": 77.464
+      },
+      {
+       "name": "s7_take",
+       "phrase": "Take your time",
+       "at": 72.321
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.c004",
+     "kind": "line",
+     "block": "L07.S07.B02",
+     "branch": null,
+     "start": 79.1,
+     "end": 99.164,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "newL": [
+       "o+act"
+      ],
+      "oP": [
+       "x+w+h+fs+o"
+      ],
+      "oS": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "q": [
+       "x+w+h+fs+o"
+      ],
+      "pos": [
+       "o+act"
+      ],
+      "park": [
+       "x+w+h+fs+o"
+      ],
+      "unres": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nextC": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c004",
+       "phrase": "the contribution that follows",
+       "at": 91.1
+      },
+      {
+       "name": "s7_stays",
+       "phrase": "The question stays available",
+       "at": 79.1
+      },
+      {
+       "name": "s7_small",
+       "phrase": "This is a small next move",
+       "at": 84.671
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.c005",
+     "kind": "line",
+     "block": "L07.S07.B03",
+     "branch": null,
+     "start": 99.164,
+     "end": 118.371,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "oP": [
+       "o+act"
+      ],
+      "oS": [
+       "o+act"
+      ],
+      "q": [
+       "o+act"
+      ],
+      "park": [
+       "o+act"
+      ],
+      "unres": [
+       "o+act"
+      ],
+      "nextC": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "o0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "o1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "o2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "waitC": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nmH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nm": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c005",
+       "phrase": "what you can observe",
+       "at": 101.307
+      },
+      {
+       "name": "s7_fin",
+       "phrase": "Is someone still finishing a point?",
+       "at": 103.021
+      },
+      {
+       "name": "s7_time",
+       "phrase": "Has a person asked for time?",
+       "at": 105.593
+      },
+      {
+       "name": "s7_rel",
+       "phrase": "Is a new topic relevant to the task?",
+       "at": 108.164
+      },
+      {
+       "name": "s7_wait",
+       "phrase": "sometimes waiting is the useful choice",
+       "at": 115.45
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.h102",
+     "kind": "hold",
+     "block": "L07.S07.B03",
+     "branch": null,
+     "start": 118.371,
+     "end": 126.371,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S07.c006",
+     "kind": "line",
+     "block": "L07.S07.B03",
+     "branch": null,
+     "start": 126.371,
+     "end": 146.007,
+     "speaker": "coach",
+     "tokens": {
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "o0": [
+       "o+act"
+      ],
+      "o1": [
+       "o+act"
+      ],
+      "o2": [
+       "o+act"
+      ],
+      "waitC": [
+       "o+act"
+      ],
+      "nmH": [
+       "o+act"
+      ],
+      "nm": [
+       "o+act"
+      ],
+      "f0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f2": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "flow"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c006",
+       "phrase": "make room and check",
+       "at": 128.514
+      },
+      {
+       "name": "s7_tryOne",
+       "phrase": "Try one small move",
+       "at": 126.371
+      }
+     ]
+    }
+   ]
+  },
+  "practice:main": {
+   "durationSeconds": 146.007,
+   "steps": [
+    {
+     "id": "L07.S07.c001",
+     "kind": "line",
+     "block": "L07.S07.B01",
+     "branch": null,
+     "start": 0,
+     "end": 18.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "newL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prompt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oS": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "task": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c001",
+       "phrase": "They have not chosen",
+       "at": 15.857
+      },
+      {
+       "name": "s7_try",
+       "phrase": "Try the same judgement",
+       "at": 0
+      },
+      {
+       "name": "s7_team",
+       "phrase": "A team is comparing",
+       "at": 3.429
+      },
+      {
+       "name": "s7_need",
+       "phrase": "They need to compare",
+       "at": 9.429
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.d001",
+     "kind": "line",
+     "block": "L07.S07.B01",
+     "branch": null,
+     "start": 18.35,
+     "end": 21.271,
+     "speaker": "noah",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "newL": [
+       "x+w+h+fs+o"
+      ],
+      "prompt": [
+       "o+act"
+      ],
+      "oP": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oS": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "task": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "q": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S07_d001",
+       "phrase": "wash the shared mugs",
+       "at": 19.207
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.c002",
+     "kind": "line",
+     "block": "L07.S07.B01",
+     "branch": null,
+     "start": 21.271,
+     "end": 41.335,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "newL": [
+       "o+act"
+      ],
+      "oP": [
+       "x+w+h+fs+o"
+      ],
+      "oS": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "q": [
+       "x+w+h+fs+o"
+      ],
+      "rel": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "open": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "cl"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c002",
+       "phrase": "its answer is still missing",
+       "at": 34.128
+      },
+      {
+       "name": "s7_clean",
+       "phrase": "Cleaning may sound like a side topic",
+       "at": 21.271
+      },
+      {
+       "name": "s7_return",
+       "phrase": "Return to the actual task",
+       "at": 28.557
+      },
+      {
+       "name": "s7_here",
+       "phrase": "Here, the question is relevant",
+       "at": 31.557
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.d002",
+     "kind": "line",
+     "block": "L07.S07.B02",
+     "branch": null,
+     "start": 41.335,
+     "end": 45.542,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "newL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oP": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oS": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "q": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rel": [
+       "o+act"
+      ],
+      "open": [
+       "o+act"
+      ],
+      "req": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S07_d002",
+       "phrase": "a moment to think",
+       "at": 42.621
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.c003",
+     "kind": "line",
+     "block": "L07.S07.B02",
+     "branch": null,
+     "start": 45.542,
+     "end": 64.321,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "newL": [
+       "o+act"
+      ],
+      "oP": [
+       "o+act"
+      ],
+      "oS": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "q": [
+       "x+w+h+fs+o"
+      ],
+      "req": [
+       "o+act"
+      ],
+      "obs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "space": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "os"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c003",
+       "phrase": "more information than silence alone",
+       "at": 49.399
+      },
+      {
+       "name": "s7_asked",
+       "phrase": "Maya has asked for thinking time",
+       "at": 45.542
+      },
+      {
+       "name": "s7_consider",
+       "phrase": "Consider a response",
+       "at": 58.828
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.h101",
+     "kind": "hold",
+     "block": "L07.S07.B02",
+     "branch": null,
+     "start": 64.321,
+     "end": 72.321,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S07.d003",
+     "kind": "line",
+     "block": "L07.S07.B02",
+     "branch": null,
+     "start": 72.321,
+     "end": 79.1,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "newL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oS": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "q": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "space": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "pos": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S07_d003",
+       "phrase": "before we decide",
+       "at": 77.464
+      },
+      {
+       "name": "s7_take",
+       "phrase": "Take your time",
+       "at": 72.321
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.c004",
+     "kind": "line",
+     "block": "L07.S07.B02",
+     "branch": null,
+     "start": 79.1,
+     "end": 99.164,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "newL": [
+       "o+act"
+      ],
+      "oP": [
+       "x+w+h+fs+o"
+      ],
+      "oS": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "q": [
+       "x+w+h+fs+o"
+      ],
+      "pos": [
+       "o+act"
+      ],
+      "park": [
+       "x+w+h+fs+o"
+      ],
+      "unres": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nextC": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c004",
+       "phrase": "the contribution that follows",
+       "at": 91.1
+      },
+      {
+       "name": "s7_stays",
+       "phrase": "The question stays available",
+       "at": 79.1
+      },
+      {
+       "name": "s7_small",
+       "phrase": "This is a small next move",
+       "at": 84.671
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.c005",
+     "kind": "line",
+     "block": "L07.S07.B03",
+     "branch": null,
+     "start": 99.164,
+     "end": 118.371,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "oP": [
+       "o+act"
+      ],
+      "oS": [
+       "o+act"
+      ],
+      "q": [
+       "o+act"
+      ],
+      "park": [
+       "o+act"
+      ],
+      "unres": [
+       "o+act"
+      ],
+      "nextC": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "o0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "o1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "o2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "waitC": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nmH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nm": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c005",
+       "phrase": "what you can observe",
+       "at": 101.307
+      },
+      {
+       "name": "s7_fin",
+       "phrase": "Is someone still finishing a point?",
+       "at": 103.021
+      },
+      {
+       "name": "s7_time",
+       "phrase": "Has a person asked for time?",
+       "at": 105.593
+      },
+      {
+       "name": "s7_rel",
+       "phrase": "Is a new topic relevant to the task?",
+       "at": 108.164
+      },
+      {
+       "name": "s7_wait",
+       "phrase": "sometimes waiting is the useful choice",
+       "at": 115.45
+      }
+     ]
+    },
+    {
+     "id": "L07.S07.h102",
+     "kind": "hold",
+     "block": "L07.S07.B03",
+     "branch": null,
+     "start": 118.371,
+     "end": 126.371,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S07.c006",
+     "kind": "line",
+     "block": "L07.S07.B03",
+     "branch": null,
+     "start": 126.371,
+     "end": 146.007,
+     "speaker": "coach",
+     "tokens": {
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "o0": [
+       "o+act"
+      ],
+      "o1": [
+       "o+act"
+      ],
+      "o2": [
+       "o+act"
+      ],
+      "waitC": [
+       "o+act"
+      ],
+      "nmH": [
+       "o+act"
+      ],
+      "nm": [
+       "o+act"
+      ],
+      "f0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f2": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "flow"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S07_c006",
+       "phrase": "make room and check",
+       "at": 128.514
+      },
+      {
+       "name": "s7_tryOne",
+       "phrase": "Try one small move",
+       "at": 126.371
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "nm",
+  "newL",
+  "prompt",
+  "oP",
+  "oS",
+  "task",
+  "q",
+  "rel",
+  "open",
+  "req",
+  "obs",
+  "space",
+  "pos",
+  "park",
+  "unres",
+  "nextC",
+  "o0",
+  "o1",
+  "o2",
+  "waitC",
+  "nmH",
+  "f0",
+  "f1",
+  "f2",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

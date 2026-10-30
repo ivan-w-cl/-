@@ -1,0 +1,1760 @@
+{
+ "sectionId": "L07.S05",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 234.122,
+   "steps": [
+    {
+     "id": "L07.S05.c001",
+     "kind": "line",
+     "block": "L07.S05.B01",
+     "branch": null,
+     "start": 0,
+     "end": 18.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "need": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "topic": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "link"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c001",
+       "phrase": "what connection it has to the decision",
+       "at": 8.571
+      },
+      {
+       "name": "s5_drift",
+       "phrase": "A discussion can drift",
+       "at": 0
+      },
+      {
+       "name": "s5_before",
+       "phrase": "Before calling the new topic irrelevant",
+       "at": 5.571
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c002",
+     "kind": "line",
+     "block": "L07.S05.B01",
+     "branch": null,
+     "start": 18.35,
+     "end": 35.414,
+     "speaker": "coach",
+     "tokens": {
+      "need": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "topic": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reset": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prompt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "status": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c002",
+       "phrase": "a different design question appears",
+       "at": 32.921
+      },
+      {
+       "name": "s5_fresh",
+       "phrase": "This is a fresh excerpt",
+       "at": 18.35
+      },
+      {
+       "name": "s5_still",
+       "phrase": "The group still needs one activity",
+       "at": 22.636
+      },
+      {
+       "name": "s5_none",
+       "phrase": "No activity has been chosen",
+       "at": 30.35
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.d001",
+     "kind": "line",
+     "block": "L07.S05.B01",
+     "branch": null,
+     "start": 35.414,
+     "end": 40.907,
+     "speaker": "noah",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "need": [
+       "o+act"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reset": [
+       "o+act"
+      ],
+      "prompt": [
+       "o+act"
+      ],
+      "status": [
+       "o+act"
+      ],
+      "ts": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S05_d001",
+       "phrase": "Which lettering style would be better?",
+       "at": 37.985
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c003",
+     "kind": "line",
+     "block": "L07.S05.B01",
+     "branch": null,
+     "start": 40.907,
+     "end": 59.686,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "ts": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "aM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cStat": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "cn"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c003",
+       "phrase": "a missing connection to examine",
+       "at": 50.336
+      },
+      {
+       "name": "s5_concerns",
+       "phrase": "That question concerns the sign",
+       "at": 40.907
+      },
+      {
+       "name": "s5_notHeard",
+       "phrase": "We have not yet heard",
+       "at": 43.478
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.h101",
+     "kind": "hold",
+     "block": "L07.S05.B01",
+     "branch": null,
+     "start": 59.686,
+     "end": 67.686,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S05.d002",
+     "kind": "line",
+     "block": "L07.S05.B02",
+     "branch": null,
+     "start": 67.686,
+     "end": 74.893,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aM": [
+       "o+act"
+      ],
+      "aF": [
+       "o+act"
+      ],
+      "cStat": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "qLink": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S05_d002",
+       "phrase": "help new members meet",
+       "at": 69.829
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c004",
+     "kind": "line",
+     "block": "L07.S05.B02",
+     "branch": null,
+     "start": 74.893,
+     "end": 94.957,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "qLink": [
+       "x+w+h+fs+o"
+      ],
+      "relOpen": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "noLink": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c004",
+       "phrase": "A clear link could change your judgement",
+       "at": 79.607
+      },
+      {
+       "name": "s5_chance",
+       "phrase": "This question gives the idea a chance",
+       "at": 74.893
+      },
+      {
+       "name": "s5_without",
+       "phrase": "Without that link",
+       "at": 82.607
+      },
+      {
+       "name": "s5_keep",
+       "phrase": "Keep the task",
+       "at": 90.322
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c005",
+     "kind": "line",
+     "block": "L07.S05.B02",
+     "branch": null,
+     "start": 94.957,
+     "end": 114.593,
+     "speaker": "coach",
+     "tokens": {
+      "qLink": [
+       "o+act"
+      ],
+      "relOpen": [
+       "o+act"
+      ],
+      "noLink": [
+       "o+act"
+      ],
+      "ref": [
+       "o+act"
+      ],
+      "hF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "names": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pp": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "dist": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cond": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c005",
+       "phrase": "a possible task-related design question",
+       "at": 101.814
+      },
+      {
+       "name": "s5_example",
+       "phrase": "For example, legibility might matter",
+       "at": 94.957
+      },
+      {
+       "name": "s5_redesign",
+       "phrase": "Redesigning the centre",
+       "at": 107.386
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c006",
+     "kind": "line",
+     "block": "L07.S05.B02",
+     "branch": null,
+     "start": 114.593,
+     "end": 133.372,
+     "speaker": "coach",
+     "tokens": {
+      "quote": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hF": [
+       "o+act"
+      ],
+      "hH": [
+       "o+act"
+      ],
+      "names": [
+       "o+act"
+      ],
+      "pp": [
+       "o+act"
+      ],
+      "dist": [
+       "o+act"
+      ],
+      "cond": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nextR": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c006",
+       "phrase": "if the connection is still unclear",
+       "at": 115.022
+      },
+      {
+       "name": "s5_alt",
+       "phrase": "Alternatively, if the connection is still unclear",
+       "at": 114.593
+      },
+      {
+       "name": "s5_settle",
+       "phrase": "You do not have to settle",
+       "at": 121.45
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.d003",
+     "kind": "line",
+     "block": "L07.S05.B03",
+     "branch": null,
+     "start": 133.372,
+     "end": 144.436,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cond": [
+       "o+act"
+      ],
+      "nextR": [
+       "o+act"
+      ],
+      "mStat": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "mRet": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S05_d003",
+       "phrase": "We still need that link",
+       "at": 140.229
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c007",
+     "kind": "line",
+     "block": "L07.S05.B03",
+     "branch": null,
+     "start": 144.436,
+     "end": 164.072,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "mStat": [
+       "o+act"
+      ],
+      "mRet": [
+       "o+act"
+      ],
+      "spec": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "vague": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "actF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c007",
+       "phrase": "without deciding the answer for everyone",
+       "at": 161.15
+      },
+      {
+       "name": "s5_specific",
+       "phrase": "The return is specific",
+       "at": 144.436
+      },
+      {
+       "name": "s5_simply",
+       "phrase": "Simply saying focus",
+       "at": 148.293
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c008",
+     "kind": "line",
+     "block": "L07.S05.B03",
+     "branch": null,
+     "start": 164.072,
+     "end": 182.851,
+     "speaker": "coach",
+     "tokens": {
+      "spec": [
+       "o+act"
+      ],
+      "vague": [
+       "o+act"
+      ],
+      "actF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "actH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tScope": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "discF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "discH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tNot": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rr": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c008",
+       "phrase": "not each person’s turn",
+       "at": 169.643
+      },
+      {
+       "name": "s5_remember",
+       "phrase": "Remember what the twenty minutes means",
+       "at": 164.072
+      },
+      {
+       "name": "s5_limits",
+       "phrase": "It limits the welcome activity",
+       "at": 166.643
+      },
+      {
+       "name": "s5_point",
+       "phrase": "You can point to an unfinished task",
+       "at": 174.358
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c009",
+     "kind": "line",
+     "block": "L07.S05.B04",
+     "branch": null,
+     "start": 182.851,
+     "end": 202.915,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "quote": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "actF": [
+       "o+act"
+      ],
+      "actH": [
+       "o+act"
+      ],
+      "tScope": [
+       "o+act"
+      ],
+      "discF": [
+       "o+act"
+      ],
+      "discH": [
+       "o+act"
+      ],
+      "tNot": [
+       "o+act"
+      ],
+      "rr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c009",
+       "phrase": "Leave room to hear what follows",
+       "at": 197.422
+      },
+      {
+       "name": "s5_return",
+       "phrase": "Return to the moment just after",
+       "at": 182.851
+      },
+      {
+       "name": "s5_choose",
+       "phrase": "Privately choose a next line",
+       "at": 189.708
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.h102",
+     "kind": "hold",
+     "block": "L07.S05.B04",
+     "branch": null,
+     "start": 202.915,
+     "end": 214.915,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rt": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S05.c010",
+     "kind": "line",
+     "block": "L07.S05.B04",
+     "branch": null,
+     "start": 214.915,
+     "end": 234.122,
+     "speaker": "coach",
+     "tokens": {
+      "need": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "aM": [
+       "o+act"
+      ],
+      "aF": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "rr": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "rt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ro": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c010",
+       "phrase": "when its purpose is explained",
+       "at": 223.915
+      },
+      {
+       "name": "s5_check",
+       "phrase": "Check whether your line uses",
+       "at": 214.915
+      },
+      {
+       "name": "s5_creative",
+       "phrase": "A creative idea may become relevant",
+       "at": 221.344
+      }
+     ]
+    }
+   ]
+  },
+  "practice:main": {
+   "durationSeconds": 234.122,
+   "steps": [
+    {
+     "id": "L07.S05.c001",
+     "kind": "line",
+     "block": "L07.S05.B01",
+     "branch": null,
+     "start": 0,
+     "end": 18.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "need": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "topic": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "link"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c001",
+       "phrase": "what connection it has to the decision",
+       "at": 8.571
+      },
+      {
+       "name": "s5_drift",
+       "phrase": "A discussion can drift",
+       "at": 0
+      },
+      {
+       "name": "s5_before",
+       "phrase": "Before calling the new topic irrelevant",
+       "at": 5.571
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c002",
+     "kind": "line",
+     "block": "L07.S05.B01",
+     "branch": null,
+     "start": 18.35,
+     "end": 35.414,
+     "speaker": "coach",
+     "tokens": {
+      "need": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "topic": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reset": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prompt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "status": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c002",
+       "phrase": "a different design question appears",
+       "at": 32.921
+      },
+      {
+       "name": "s5_fresh",
+       "phrase": "This is a fresh excerpt",
+       "at": 18.35
+      },
+      {
+       "name": "s5_still",
+       "phrase": "The group still needs one activity",
+       "at": 22.636
+      },
+      {
+       "name": "s5_none",
+       "phrase": "No activity has been chosen",
+       "at": 30.35
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.d001",
+     "kind": "line",
+     "block": "L07.S05.B01",
+     "branch": null,
+     "start": 35.414,
+     "end": 40.907,
+     "speaker": "noah",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "need": [
+       "o+act"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reset": [
+       "o+act"
+      ],
+      "prompt": [
+       "o+act"
+      ],
+      "status": [
+       "o+act"
+      ],
+      "ts": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S05_d001",
+       "phrase": "Which lettering style would be better?",
+       "at": 37.985
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c003",
+     "kind": "line",
+     "block": "L07.S05.B01",
+     "branch": null,
+     "start": 40.907,
+     "end": 59.686,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "ts": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "quote": [
+       "x+w+h+fs+o"
+      ],
+      "aM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cStat": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "cn"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c003",
+       "phrase": "a missing connection to examine",
+       "at": 50.336
+      },
+      {
+       "name": "s5_concerns",
+       "phrase": "That question concerns the sign",
+       "at": 40.907
+      },
+      {
+       "name": "s5_notHeard",
+       "phrase": "We have not yet heard",
+       "at": 43.478
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.h101",
+     "kind": "hold",
+     "block": "L07.S05.B01",
+     "branch": null,
+     "start": 59.686,
+     "end": 67.686,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S05.d002",
+     "kind": "line",
+     "block": "L07.S05.B02",
+     "branch": null,
+     "start": 67.686,
+     "end": 74.893,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aM": [
+       "o+act"
+      ],
+      "aF": [
+       "o+act"
+      ],
+      "cStat": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "qLink": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S05_d002",
+       "phrase": "help new members meet",
+       "at": 69.829
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c004",
+     "kind": "line",
+     "block": "L07.S05.B02",
+     "branch": null,
+     "start": 74.893,
+     "end": 94.957,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "qLink": [
+       "x+w+h+fs+o"
+      ],
+      "relOpen": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "noLink": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ref": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c004",
+       "phrase": "A clear link could change your judgement",
+       "at": 79.607
+      },
+      {
+       "name": "s5_chance",
+       "phrase": "This question gives the idea a chance",
+       "at": 74.893
+      },
+      {
+       "name": "s5_without",
+       "phrase": "Without that link",
+       "at": 82.607
+      },
+      {
+       "name": "s5_keep",
+       "phrase": "Keep the task",
+       "at": 90.322
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c005",
+     "kind": "line",
+     "block": "L07.S05.B02",
+     "branch": null,
+     "start": 94.957,
+     "end": 114.593,
+     "speaker": "coach",
+     "tokens": {
+      "qLink": [
+       "o+act"
+      ],
+      "relOpen": [
+       "o+act"
+      ],
+      "noLink": [
+       "o+act"
+      ],
+      "ref": [
+       "o+act"
+      ],
+      "hF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "names": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pp": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "dist": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cond": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c005",
+       "phrase": "a possible task-related design question",
+       "at": 101.814
+      },
+      {
+       "name": "s5_example",
+       "phrase": "For example, legibility might matter",
+       "at": 94.957
+      },
+      {
+       "name": "s5_redesign",
+       "phrase": "Redesigning the centre",
+       "at": 107.386
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c006",
+     "kind": "line",
+     "block": "L07.S05.B02",
+     "branch": null,
+     "start": 114.593,
+     "end": 133.372,
+     "speaker": "coach",
+     "tokens": {
+      "quote": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hF": [
+       "o+act"
+      ],
+      "hH": [
+       "o+act"
+      ],
+      "names": [
+       "o+act"
+      ],
+      "pp": [
+       "o+act"
+      ],
+      "dist": [
+       "o+act"
+      ],
+      "cond": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nextR": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c006",
+       "phrase": "if the connection is still unclear",
+       "at": 115.022
+      },
+      {
+       "name": "s5_alt",
+       "phrase": "Alternatively, if the connection is still unclear",
+       "at": 114.593
+      },
+      {
+       "name": "s5_settle",
+       "phrase": "You do not have to settle",
+       "at": 121.45
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.d003",
+     "kind": "line",
+     "block": "L07.S05.B03",
+     "branch": null,
+     "start": 133.372,
+     "end": 144.436,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "quote": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cond": [
+       "o+act"
+      ],
+      "nextR": [
+       "o+act"
+      ],
+      "mStat": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "mRet": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S05_d003",
+       "phrase": "We still need that link",
+       "at": 140.229
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c007",
+     "kind": "line",
+     "block": "L07.S05.B03",
+     "branch": null,
+     "start": 144.436,
+     "end": 164.072,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "mStat": [
+       "o+act"
+      ],
+      "mRet": [
+       "o+act"
+      ],
+      "spec": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "vague": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "actF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c007",
+       "phrase": "without deciding the answer for everyone",
+       "at": 161.15
+      },
+      {
+       "name": "s5_specific",
+       "phrase": "The return is specific",
+       "at": 144.436
+      },
+      {
+       "name": "s5_simply",
+       "phrase": "Simply saying focus",
+       "at": 148.293
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c008",
+     "kind": "line",
+     "block": "L07.S05.B03",
+     "branch": null,
+     "start": 164.072,
+     "end": 182.851,
+     "speaker": "coach",
+     "tokens": {
+      "spec": [
+       "o+act"
+      ],
+      "vague": [
+       "o+act"
+      ],
+      "actF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "actH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tScope": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "discF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "discH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tNot": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rr": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c008",
+       "phrase": "not each person’s turn",
+       "at": 169.643
+      },
+      {
+       "name": "s5_remember",
+       "phrase": "Remember what the twenty minutes means",
+       "at": 164.072
+      },
+      {
+       "name": "s5_limits",
+       "phrase": "It limits the welcome activity",
+       "at": 166.643
+      },
+      {
+       "name": "s5_point",
+       "phrase": "You can point to an unfinished task",
+       "at": 174.358
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.c009",
+     "kind": "line",
+     "block": "L07.S05.B04",
+     "branch": null,
+     "start": 182.851,
+     "end": 202.915,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "quote": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "actF": [
+       "o+act"
+      ],
+      "actH": [
+       "o+act"
+      ],
+      "tScope": [
+       "o+act"
+      ],
+      "discF": [
+       "o+act"
+      ],
+      "discH": [
+       "o+act"
+      ],
+      "tNot": [
+       "o+act"
+      ],
+      "rr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c009",
+       "phrase": "Leave room to hear what follows",
+       "at": 197.422
+      },
+      {
+       "name": "s5_return",
+       "phrase": "Return to the moment just after",
+       "at": 182.851
+      },
+      {
+       "name": "s5_choose",
+       "phrase": "Privately choose a next line",
+       "at": 189.708
+      }
+     ]
+    },
+    {
+     "id": "L07.S05.h102",
+     "kind": "hold",
+     "block": "L07.S05.B04",
+     "branch": null,
+     "start": 202.915,
+     "end": 214.915,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rt": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S05.c010",
+     "kind": "line",
+     "block": "L07.S05.B04",
+     "branch": null,
+     "start": 214.915,
+     "end": 234.122,
+     "speaker": "coach",
+     "tokens": {
+      "need": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "quote": [
+       "o+act"
+      ],
+      "aM": [
+       "o+act"
+      ],
+      "aF": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "rr": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "rt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ro": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S05_c010",
+       "phrase": "when its purpose is explained",
+       "at": 223.915
+      },
+      {
+       "name": "s5_check",
+       "phrase": "Check whether your line uses",
+       "at": 214.915
+      },
+      {
+       "name": "s5_creative",
+       "phrase": "A creative idea may become relevant",
+       "at": 221.344
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "hF",
+  "actF",
+  "discF",
+  "blank",
+  "need",
+  "topic",
+  "caseL",
+  "reset",
+  "prompt",
+  "status",
+  "ts",
+  "quote",
+  "aM",
+  "aF",
+  "cStat",
+  "qLink",
+  "relOpen",
+  "noLink",
+  "ref",
+  "hH",
+  "names",
+  "pp",
+  "dist",
+  "cond",
+  "nextR",
+  "mStat",
+  "mRet",
+  "vague",
+  "spec",
+  "actH",
+  "tScope",
+  "discH",
+  "tNot",
+  "rr",
+  "rt",
+  "ro",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

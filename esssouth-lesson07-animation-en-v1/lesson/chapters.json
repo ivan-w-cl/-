@@ -1,0 +1,115 @@
+{
+ "lesson": "L07",
+ "title": "Keep the Discussion Moving When It Gets Stuck",
+ "note": "Durations are compiled from the silent estimated timing (140 wpm + 0.35 s tail + fixed holds). Practice excludes unlimited waiting; alternative branches are not summed.",
+ "watchTotalSeconds": 1680.791,
+ "chapters": [
+  {
+   "id": "L07.S01",
+   "num": "7.1",
+   "title": "Notice What the Discussion Needs",
+   "watchSeconds": 230.9,
+   "watchStartInCourse": 0,
+   "practice": {
+    "practice:main": 230.9
+   },
+   "gate": null,
+   "src": "../sections/S01/index.html",
+   "built": true
+  },
+  {
+   "id": "L07.S02",
+   "num": "7.2",
+   "title": "Restart After a Pause",
+   "watchSeconds": 247.459,
+   "watchStartInCourse": 230.9,
+   "practice": {
+    "practice:A": 233.802,
+    "practice:B": 240.659,
+    "practice:C": 234.659,
+    "practice:skip": 208.752
+   },
+   "gate": {
+    "id": "L07.I01",
+    "kind": "choice"
+   },
+   "src": "../sections/S02/index.html",
+   "built": true
+  },
+  {
+   "id": "L07.S03",
+   "num": "7.3",
+   "title": "Handle Overlapping Turns",
+   "watchSeconds": 281.643,
+   "watchStartInCourse": 478.359,
+   "practice": {
+    "practice:A": 264.057,
+    "practice:B": 264.557,
+    "practice:C": 274.843,
+    "practice:skip": 241.65
+   },
+   "gate": {
+    "id": "L07.I02",
+    "kind": "choice"
+   },
+   "src": "../sections/S03/index.html",
+   "built": true
+  },
+  {
+   "id": "L07.S04",
+   "num": "7.4",
+   "title": "Invite a Contribution Without Pressure",
+   "watchSeconds": 224.123,
+   "watchStartInCourse": 760.002,
+   "practice": {
+    "practice:main": 224.123
+   },
+   "gate": null,
+   "src": "../sections/S04/index.html",
+   "built": true
+  },
+  {
+   "id": "L07.S05",
+   "num": "7.5",
+   "title": "Bring a Sidetrack Back to the Task",
+   "watchSeconds": 234.122,
+   "watchStartInCourse": 984.125,
+   "practice": {
+    "practice:main": 234.122
+   },
+   "gate": null,
+   "src": "../sections/S05/index.html",
+   "built": true
+  },
+  {
+   "id": "L07.S06",
+   "num": "7.6",
+   "title": "Rehearse a Small Repair",
+   "watchSeconds": 316.537,
+   "watchStartInCourse": 1218.247,
+   "practice": {
+    "practice:model": 282.737,
+    "practice:skip": 243.116
+   },
+   "gate": {
+    "id": "L07.I03",
+    "kind": "private_rehearsal"
+   },
+   "src": "../sections/S06/index.html",
+   "built": true
+  },
+  {
+   "id": "L07.S07",
+   "num": "7.7",
+   "title": "Choose the Next Move in a New Discussion",
+   "watchSeconds": 146.007,
+   "watchStartInCourse": 1534.784,
+   "practice": {
+    "practice:main": 146.007
+   },
+   "gate": null,
+   "src": "../sections/S07/index.html",
+   "built": true
+  }
+ ]
+}

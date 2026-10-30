@@ -19,7 +19,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   ok('chapter durations are compiled values (sum = Watch total)', Math.abs(META.chapters.reduce((a, c) => a + c.watchSeconds, 0) - META.watchTotalSeconds) < 0.01, META.watchTotalSeconds);
   for (let i = 0; i < 7; i++) { await p.evaluate((i) => window.__lesson.show(i), i); const f = await child(); const s = await st(f);
     const exists = fs.existsSync(path.resolve(path.dirname(PAGE), META.chapters[i].src));
-    ok(`entry ${i + 1} opens its own product (${META.chapters[i].id})`, s.id === META.chapters[i].id && exists && s.t === 0 && !s.playing && new RegExp('Section 6\\.' + (i + 1)).test(s.label), s); }
+    ok(`entry ${i + 1} opens its own product (${META.chapters[i].id})`, s.id === META.chapters[i].id && exists && s.t === 0 && !s.playing && new RegExp('Section 7\\.' + (i + 1)).test(s.label), s); }
   // switch during playback
   await p.evaluate(() => window.__lesson.show(1)); let f = await child(); await f.evaluate(() => { window.__l07.setRate(2); window.__l07.seek(30); window.__l07.play(); }); await sleep(800);
   await p.evaluate(() => window.__lesson.show(2)); f = await child(); let s = await st(f); await sleep(600); const s2 = await st(f);
@@ -38,7 +38,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await p.evaluate(() => window.__lesson.show(6)); f = await child(); s = await st(f);
   ok('switch during model playback: S07 opens at its start; no model flag carried over', s.id === 'L07.S07' && s.t === 0 && !s.playing && !s.flags.modelViewed, s);
   await p.evaluate(() => window.__lesson.show(5)); f = await child(); s = await st(f);
-  ok('returning to S06 shows its initial state (modelViewed false, no completion)', s.gate === 'before' && !s.flags.modelViewed && !s.flags.completionAssumed && !s.flags.speakingObserved, s);
+  ok('returning to S06 shows its initial state (modelViewed false, no completion, no repair success)', s.gate === 'before' && !s.flags.modelViewed && !s.flags.completionAssumed && !s.flags.speakingObserved && !s.flags.repairSucceeded && !s.flags.proposalAdopted, s);
   // rapid repeated switching
   for (let k = 0; k < 12; k++) await p.evaluate((k) => window.__lesson.show(k % 7), k);
   f = await child(); s = await st(f); ok('12 rapid switches: exactly one player, the last requested section, no errors', (await p.$$('#host iframe')).length === 1 && s.id === 'L07.S05' && errs.length === 0, { s, errs });

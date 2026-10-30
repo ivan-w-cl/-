@@ -1,0 +1,2044 @@
+{
+ "sectionId": "L07.S01",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 230.9,
+   "steps": [
+    {
+     "id": "L07.S01.c001",
+     "kind": "line",
+     "block": "L07.S01.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.493,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "exH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c001",
+       "phrase": "different judgements",
+       "at": 16.286
+      },
+      {
+       "name": "s1_pause",
+       "phrase": "A short pause",
+       "at": 11.143
+      },
+      {
+       "name": "s1_unf",
+       "phrase": "an unfinished explanation",
+       "at": 12.429
+      },
+      {
+       "name": "s1_two",
+       "phrase": "two overlapping turns",
+       "at": 14.143
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c002",
+     "kind": "line",
+     "block": "L07.S01.B01",
+     "branch": null,
+     "start": 17.493,
+     "end": 31.557,
+     "speaker": "coach",
+     "tokens": {
+      "exH": [
+       "o+act"
+      ],
+      "ex0": [
+       "o+act"
+      ],
+      "ex1": [
+       "o+act"
+      ],
+      "ex2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "plan": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "selH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sel": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "state": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c002",
+       "phrase": "not a timer for the discussion",
+       "at": 23.922
+      },
+      {
+       "name": "s1_use",
+       "phrase": "Use this practice task",
+       "at": 17.493
+      },
+      {
+       "name": "s1_limit",
+       "phrase": "twenty-minute limit",
+       "at": 20.064
+      },
+      {
+       "name": "s1_none",
+       "phrase": "No recommendation has been adopted",
+       "at": 26.493
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.d001",
+     "kind": "line",
+     "block": "L07.S01.B01",
+     "branch": null,
+     "start": 31.557,
+     "end": 53.764,
+     "speaker": "prompt_reader",
+     "tokens": {
+      "plan": [
+       "o+act"
+      ],
+      "selH": [
+       "o+act"
+      ],
+      "sel": [
+       "o+act"
+      ],
+      "state": [
+       "o+act"
+      ],
+      "promptH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prompt": [
+       "x+w+h+fs+o",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_d001",
+       "phrase": "explain how it serves both aims",
+       "at": 45.271
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.d002",
+     "kind": "line",
+     "block": "L07.S01.B01",
+     "branch": null,
+     "start": 53.764,
+     "end": 58.4,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "promptH": [
+       "o+act"
+      ],
+      "prompt": [
+       "o+act"
+      ],
+      "fresh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "prop": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S01_d002",
+       "phrase": "exchange names and interests",
+       "at": 56.335
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c003",
+     "kind": "line",
+     "block": "L07.S01.B02",
+     "branch": null,
+     "start": 58.4,
+     "end": 74.607,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "fresh": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "prop": [
+       "x+w+h+fs+o"
+      ],
+      "aimM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aimF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "poss": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "open": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "link",
+      "gap"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c003",
+       "phrase": "That link remains open",
+       "at": 72.543
+      },
+      {
+       "name": "s1_offered",
+       "phrase": "Maya has offered paired introductions",
+       "at": 58.4
+      },
+      {
+       "name": "s1_could",
+       "phrase": "Exchanging names and interests could provide",
+       "at": 60.543
+      },
+      {
+       "name": "s1_notYet",
+       "phrase": "Her sentence has not yet explained",
+       "at": 65.686
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c004",
+     "kind": "line",
+     "block": "L07.S01.B02",
+     "branch": null,
+     "start": 74.607,
+     "end": 89.1,
+     "speaker": "coach",
+     "tokens": {
+      "open": [
+       "act"
+      ],
+      "rep": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c004",
+       "phrase": "not proof that the idea is poor",
+       "at": 77.607
+      },
+      {
+       "name": "s1_develop",
+       "phrase": "An open link is something to develop",
+       "at": 74.607
+      },
+      {
+       "name": "s1_explore",
+       "phrase": "A useful next contribution",
+       "at": 82.75
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c005",
+     "kind": "line",
+     "block": "L07.S01.B02",
+     "branch": null,
+     "start": 89.1,
+     "end": 102.736,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "prop": [
+       "x+w+h+fs+o"
+      ],
+      "aimM": [
+       "x+w+h+fs+o"
+      ],
+      "aimF": [
+       "x+w+h+fs+o"
+      ],
+      "poss": [
+       "o+act"
+      ],
+      "open": [
+       "o+act"
+      ],
+      "rep": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c005",
+       "phrase": "separate a fact from an interpretation",
+       "at": 89.529
+      },
+      {
+       "name": "s1_priv",
+       "phrase": "Privately separate a fact",
+       "at": 89.1
+      },
+      {
+       "name": "s1_what",
+       "phrase": "What has Maya actually suggested",
+       "at": 92.1
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.h101",
+     "kind": "hold",
+     "block": "L07.S01.B02",
+     "branch": null,
+     "start": 102.736,
+     "end": 110.736,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S01.c006",
+     "kind": "line",
+     "block": "L07.S01.B03",
+     "branch": null,
+     "start": 110.736,
+     "end": 125.657,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "prop": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aimM": [
+       "o+act"
+      ],
+      "aimF": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "pauseC": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "knownH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "possH": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "p0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "p1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "p2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "p3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pb": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c006",
+       "phrase": "the cause of that pause remains unknown",
+       "at": 122.307
+      },
+      {
+       "name": "s1_agree",
+       "phrase": "whether others agree",
+       "at": 113.307
+      },
+      {
+       "name": "s1_poss",
+       "phrase": "Those are possibilities",
+       "at": 118.879
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c007",
+     "kind": "line",
+     "block": "L07.S01.B03",
+     "branch": null,
+     "start": 125.657,
+     "end": 142.293,
+     "speaker": "coach",
+     "tokens": {
+      "prop": [
+       "o+act"
+      ],
+      "pauseC": [
+       "o+act"
+      ],
+      "knownH": [
+       "o+act"
+      ],
+      "possH": [
+       "o+act"
+      ],
+      "p0": [
+       "o+act"
+      ],
+      "p1": [
+       "o+act"
+      ],
+      "p2": [
+       "o+act"
+      ],
+      "p3": [
+       "o+act"
+      ],
+      "pb": [
+       "o+act"
+      ],
+      "xf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xfH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "laneA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "laneB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "barA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "barB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ovl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tb": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "o1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "ovl"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c007",
+       "phrase": "rather than assigning a personality",
+       "at": 139.8
+      },
+      {
+       "name": "s1_same",
+       "phrase": "beginning at the same moment",
+       "at": 126.086
+      },
+      {
+       "name": "s1_less",
+       "phrase": "One person speaking less",
+       "at": 130.8
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c008",
+     "kind": "line",
+     "block": "L07.S01.B03",
+     "branch": null,
+     "start": 142.293,
+     "end": 158.5,
+     "speaker": "coach",
+     "tokens": {
+      "open": [
+       "x+w+h+fs+o"
+      ],
+      "xf": [
+       "o+act"
+      ],
+      "xfH": [
+       "o+act"
+      ],
+      "laneA": [
+       "o+act"
+      ],
+      "laneB": [
+       "o+act"
+      ],
+      "barA": [
+       "o+act"
+      ],
+      "barB": [
+       "o+act"
+      ],
+      "ovl": [
+       "o+act"
+      ],
+      "tb": [
+       "o+act"
+      ],
+      "o1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "o2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "r1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "r2": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c008",
+       "phrase": "no single pause length",
+       "at": 148.293
+      },
+      {
+       "name": "s1_space",
+       "phrase": "Sometimes leaving a little space",
+       "at": 142.293
+      },
+      {
+       "name": "s1_focused",
+       "phrase": "Sometimes a focused question helps",
+       "at": 145.293
+      },
+      {
+       "name": "s1_noLen",
+       "phrase": "There is no single pause length",
+       "at": 147.436
+      },
+      {
+       "name": "s1_leader",
+       "phrase": "no need to appoint yourself",
+       "at": 153.007
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c009",
+     "kind": "line",
+     "block": "L07.S01.B04",
+     "branch": null,
+     "start": 158.5,
+     "end": 174.279,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "open": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "o1": [
+       "o+act"
+      ],
+      "o2": [
+       "o+act"
+      ],
+      "r1": [
+       "o+act"
+      ],
+      "r2": [
+       "o+act"
+      ],
+      "pu0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pu1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pu2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pu3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c009",
+       "phrase": "Choose the immediate need",
+       "at": 168.786
+      },
+      {
+       "name": "s1_ask",
+       "phrase": "Ask what your next words",
+       "at": 158.5
+      },
+      {
+       "name": "s1_understand",
+       "phrase": "understanding an idea",
+       "at": 161.929
+      },
+      {
+       "name": "s1_finish",
+       "phrase": "finishing a turn",
+       "at": 163.214
+      },
+      {
+       "name": "s1_connect",
+       "phrase": "connecting a proposal",
+       "at": 164.5
+      },
+      {
+       "name": "s1_hear",
+       "phrase": "hearing another view",
+       "at": 167.5
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c010",
+     "kind": "line",
+     "block": "L07.S01.B04",
+     "branch": null,
+     "start": 174.279,
+     "end": 191.343,
+     "speaker": "coach",
+     "tokens": {
+      "prop": [
+       "x+w+h+fs+o"
+      ],
+      "open": [
+       "x+w+h+fs+o"
+      ],
+      "pu0": [
+       "o+act"
+      ],
+      "pu1": [
+       "o+act"
+      ],
+      "pu2": [
+       "o+act"
+      ],
+      "pu3": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "rq": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lim": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prog": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "ask"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c010",
+       "phrase": "would not supply the programme details",
+       "at": 182.85
+      },
+      {
+       "name": "s1_how",
+       "phrase": "asking how it could introduce",
+       "at": 175.565
+      },
+      {
+       "name": "s1_notSupply",
+       "phrase": "The question would not supply",
+       "at": 181.993
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c011",
+     "kind": "line",
+     "block": "L07.S01.B04",
+     "branch": null,
+     "start": 191.343,
+     "end": 206.693,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "prop": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "open": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "rq": [
+       "o+act"
+      ],
+      "lim": [
+       "o+act"
+      ],
+      "prog": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c011",
+       "phrase": "what it would help the group do next",
+       "at": 199.486
+      },
+      {
+       "name": "s1_choose",
+       "phrase": "Privately choose one small move",
+       "at": 191.343
+      },
+      {
+       "name": "s1_think",
+       "phrase": "Think about what it would help",
+       "at": 198.629
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.h102",
+     "kind": "hold",
+     "block": "L07.S01.B04",
+     "branch": null,
+     "start": 206.693,
+     "end": 214.693,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S01.c012",
+     "kind": "line",
+     "block": "L07.S01.B05",
+     "branch": null,
+     "start": 214.693,
+     "end": 230.9,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prop": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aimM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aimF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "poss": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "open": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c012",
+       "phrase": "attend to the reply",
+       "at": 217.693
+      },
+      {
+       "name": "s1_fresh",
+       "phrase": "We will start with one fresh example",
+       "at": 224.979
+      }
+     ]
+    }
+   ]
+  },
+  "practice:main": {
+   "durationSeconds": 230.9,
+   "steps": [
+    {
+     "id": "L07.S01.c001",
+     "kind": "line",
+     "block": "L07.S01.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.493,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "exH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c001",
+       "phrase": "different judgements",
+       "at": 16.286
+      },
+      {
+       "name": "s1_pause",
+       "phrase": "A short pause",
+       "at": 11.143
+      },
+      {
+       "name": "s1_unf",
+       "phrase": "an unfinished explanation",
+       "at": 12.429
+      },
+      {
+       "name": "s1_two",
+       "phrase": "two overlapping turns",
+       "at": 14.143
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c002",
+     "kind": "line",
+     "block": "L07.S01.B01",
+     "branch": null,
+     "start": 17.493,
+     "end": 31.557,
+     "speaker": "coach",
+     "tokens": {
+      "exH": [
+       "o+act"
+      ],
+      "ex0": [
+       "o+act"
+      ],
+      "ex1": [
+       "o+act"
+      ],
+      "ex2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "plan": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "selH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sel": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "state": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c002",
+       "phrase": "not a timer for the discussion",
+       "at": 23.922
+      },
+      {
+       "name": "s1_use",
+       "phrase": "Use this practice task",
+       "at": 17.493
+      },
+      {
+       "name": "s1_limit",
+       "phrase": "twenty-minute limit",
+       "at": 20.064
+      },
+      {
+       "name": "s1_none",
+       "phrase": "No recommendation has been adopted",
+       "at": 26.493
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.d001",
+     "kind": "line",
+     "block": "L07.S01.B01",
+     "branch": null,
+     "start": 31.557,
+     "end": 53.764,
+     "speaker": "prompt_reader",
+     "tokens": {
+      "plan": [
+       "o+act"
+      ],
+      "selH": [
+       "o+act"
+      ],
+      "sel": [
+       "o+act"
+      ],
+      "state": [
+       "o+act"
+      ],
+      "promptH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prompt": [
+       "x+w+h+fs+o",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_d001",
+       "phrase": "explain how it serves both aims",
+       "at": 45.271
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.d002",
+     "kind": "line",
+     "block": "L07.S01.B01",
+     "branch": null,
+     "start": 53.764,
+     "end": 58.4,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "promptH": [
+       "o+act"
+      ],
+      "prompt": [
+       "o+act"
+      ],
+      "fresh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "prop": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S01_d002",
+       "phrase": "exchange names and interests",
+       "at": 56.335
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c003",
+     "kind": "line",
+     "block": "L07.S01.B02",
+     "branch": null,
+     "start": 58.4,
+     "end": 74.607,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "fresh": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "prop": [
+       "x+w+h+fs+o"
+      ],
+      "aimM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aimF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "poss": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "open": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "link",
+      "gap"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c003",
+       "phrase": "That link remains open",
+       "at": 72.543
+      },
+      {
+       "name": "s1_offered",
+       "phrase": "Maya has offered paired introductions",
+       "at": 58.4
+      },
+      {
+       "name": "s1_could",
+       "phrase": "Exchanging names and interests could provide",
+       "at": 60.543
+      },
+      {
+       "name": "s1_notYet",
+       "phrase": "Her sentence has not yet explained",
+       "at": 65.686
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c004",
+     "kind": "line",
+     "block": "L07.S01.B02",
+     "branch": null,
+     "start": 74.607,
+     "end": 89.1,
+     "speaker": "coach",
+     "tokens": {
+      "open": [
+       "act"
+      ],
+      "rep": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c004",
+       "phrase": "not proof that the idea is poor",
+       "at": 77.607
+      },
+      {
+       "name": "s1_develop",
+       "phrase": "An open link is something to develop",
+       "at": 74.607
+      },
+      {
+       "name": "s1_explore",
+       "phrase": "A useful next contribution",
+       "at": 82.75
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c005",
+     "kind": "line",
+     "block": "L07.S01.B02",
+     "branch": null,
+     "start": 89.1,
+     "end": 102.736,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "prop": [
+       "x+w+h+fs+o"
+      ],
+      "aimM": [
+       "x+w+h+fs+o"
+      ],
+      "aimF": [
+       "x+w+h+fs+o"
+      ],
+      "poss": [
+       "o+act"
+      ],
+      "open": [
+       "o+act"
+      ],
+      "rep": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c005",
+       "phrase": "separate a fact from an interpretation",
+       "at": 89.529
+      },
+      {
+       "name": "s1_priv",
+       "phrase": "Privately separate a fact",
+       "at": 89.1
+      },
+      {
+       "name": "s1_what",
+       "phrase": "What has Maya actually suggested",
+       "at": 92.1
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.h101",
+     "kind": "hold",
+     "block": "L07.S01.B02",
+     "branch": null,
+     "start": 102.736,
+     "end": 110.736,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S01.c006",
+     "kind": "line",
+     "block": "L07.S01.B03",
+     "branch": null,
+     "start": 110.736,
+     "end": 125.657,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "prop": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aimM": [
+       "o+act"
+      ],
+      "aimF": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "pauseC": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "knownH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "possH": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "p0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "p1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "p2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "p3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pb": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c006",
+       "phrase": "the cause of that pause remains unknown",
+       "at": 122.307
+      },
+      {
+       "name": "s1_agree",
+       "phrase": "whether others agree",
+       "at": 113.307
+      },
+      {
+       "name": "s1_poss",
+       "phrase": "Those are possibilities",
+       "at": 118.879
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c007",
+     "kind": "line",
+     "block": "L07.S01.B03",
+     "branch": null,
+     "start": 125.657,
+     "end": 142.293,
+     "speaker": "coach",
+     "tokens": {
+      "prop": [
+       "o+act"
+      ],
+      "pauseC": [
+       "o+act"
+      ],
+      "knownH": [
+       "o+act"
+      ],
+      "possH": [
+       "o+act"
+      ],
+      "p0": [
+       "o+act"
+      ],
+      "p1": [
+       "o+act"
+      ],
+      "p2": [
+       "o+act"
+      ],
+      "p3": [
+       "o+act"
+      ],
+      "pb": [
+       "o+act"
+      ],
+      "xf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "xfH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "laneA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "laneB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "barA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "barB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ovl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tb": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "o1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "ovl"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c007",
+       "phrase": "rather than assigning a personality",
+       "at": 139.8
+      },
+      {
+       "name": "s1_same",
+       "phrase": "beginning at the same moment",
+       "at": 126.086
+      },
+      {
+       "name": "s1_less",
+       "phrase": "One person speaking less",
+       "at": 130.8
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c008",
+     "kind": "line",
+     "block": "L07.S01.B03",
+     "branch": null,
+     "start": 142.293,
+     "end": 158.5,
+     "speaker": "coach",
+     "tokens": {
+      "open": [
+       "x+w+h+fs+o"
+      ],
+      "xf": [
+       "o+act"
+      ],
+      "xfH": [
+       "o+act"
+      ],
+      "laneA": [
+       "o+act"
+      ],
+      "laneB": [
+       "o+act"
+      ],
+      "barA": [
+       "o+act"
+      ],
+      "barB": [
+       "o+act"
+      ],
+      "ovl": [
+       "o+act"
+      ],
+      "tb": [
+       "o+act"
+      ],
+      "o1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "o2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "r1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "r2": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c008",
+       "phrase": "no single pause length",
+       "at": 148.293
+      },
+      {
+       "name": "s1_space",
+       "phrase": "Sometimes leaving a little space",
+       "at": 142.293
+      },
+      {
+       "name": "s1_focused",
+       "phrase": "Sometimes a focused question helps",
+       "at": 145.293
+      },
+      {
+       "name": "s1_noLen",
+       "phrase": "There is no single pause length",
+       "at": 147.436
+      },
+      {
+       "name": "s1_leader",
+       "phrase": "no need to appoint yourself",
+       "at": 153.007
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c009",
+     "kind": "line",
+     "block": "L07.S01.B04",
+     "branch": null,
+     "start": 158.5,
+     "end": 174.279,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "open": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "o1": [
+       "o+act"
+      ],
+      "o2": [
+       "o+act"
+      ],
+      "r1": [
+       "o+act"
+      ],
+      "r2": [
+       "o+act"
+      ],
+      "pu0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pu1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pu2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pu3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "res": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c009",
+       "phrase": "Choose the immediate need",
+       "at": 168.786
+      },
+      {
+       "name": "s1_ask",
+       "phrase": "Ask what your next words",
+       "at": 158.5
+      },
+      {
+       "name": "s1_understand",
+       "phrase": "understanding an idea",
+       "at": 161.929
+      },
+      {
+       "name": "s1_finish",
+       "phrase": "finishing a turn",
+       "at": 163.214
+      },
+      {
+       "name": "s1_connect",
+       "phrase": "connecting a proposal",
+       "at": 164.5
+      },
+      {
+       "name": "s1_hear",
+       "phrase": "hearing another view",
+       "at": 167.5
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c010",
+     "kind": "line",
+     "block": "L07.S01.B04",
+     "branch": null,
+     "start": 174.279,
+     "end": 191.343,
+     "speaker": "coach",
+     "tokens": {
+      "prop": [
+       "x+w+h+fs+o"
+      ],
+      "open": [
+       "x+w+h+fs+o"
+      ],
+      "pu0": [
+       "o+act"
+      ],
+      "pu1": [
+       "o+act"
+      ],
+      "pu2": [
+       "o+act"
+      ],
+      "pu3": [
+       "o+act"
+      ],
+      "res": [
+       "o+act"
+      ],
+      "rq": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lim": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prog": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "ask"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c010",
+       "phrase": "would not supply the programme details",
+       "at": 182.85
+      },
+      {
+       "name": "s1_how",
+       "phrase": "asking how it could introduce",
+       "at": 175.565
+      },
+      {
+       "name": "s1_notSupply",
+       "phrase": "The question would not supply",
+       "at": 181.993
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.c011",
+     "kind": "line",
+     "block": "L07.S01.B04",
+     "branch": null,
+     "start": 191.343,
+     "end": 206.693,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "prop": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "open": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "rq": [
+       "o+act"
+      ],
+      "lim": [
+       "o+act"
+      ],
+      "prog": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c011",
+       "phrase": "what it would help the group do next",
+       "at": 199.486
+      },
+      {
+       "name": "s1_choose",
+       "phrase": "Privately choose one small move",
+       "at": 191.343
+      },
+      {
+       "name": "s1_think",
+       "phrase": "Think about what it would help",
+       "at": 198.629
+      }
+     ]
+    },
+    {
+     "id": "L07.S01.h102",
+     "kind": "hold",
+     "block": "L07.S01.B04",
+     "branch": null,
+     "start": 206.693,
+     "end": 214.693,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S01.c012",
+     "kind": "line",
+     "block": "L07.S01.B05",
+     "branch": null,
+     "start": 214.693,
+     "end": 230.9,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prop": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aimM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aimF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "poss": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "open": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S01_c012",
+       "phrase": "attend to the reply",
+       "at": 217.693
+      },
+      {
+       "name": "s1_fresh",
+       "phrase": "We will start with one fresh example",
+       "at": 224.979
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "sel",
+  "blank",
+  "xf",
+  "exH",
+  "ex0",
+  "ex1",
+  "ex2",
+  "caseL",
+  "state",
+  "plan",
+  "selH",
+  "promptH",
+  "prompt",
+  "fresh",
+  "prop",
+  "aimM",
+  "aimF",
+  "poss",
+  "open",
+  "rep",
+  "pauseC",
+  "knownH",
+  "possH",
+  "p0",
+  "p1",
+  "p2",
+  "p3",
+  "pb",
+  "xfH",
+  "laneA",
+  "laneB",
+  "barA",
+  "barB",
+  "ovl",
+  "tb",
+  "o1",
+  "o2",
+  "r1",
+  "r2",
+  "pu0",
+  "pu1",
+  "pu2",
+  "pu3",
+  "res",
+  "rq",
+  "lim",
+  "prog",
+  "next",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

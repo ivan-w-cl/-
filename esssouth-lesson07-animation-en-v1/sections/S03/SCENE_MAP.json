@@ -1,0 +1,5551 @@
+{
+ "sectionId": "L07.S03",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 281.643,
+   "steps": [
+    {
+     "id": "L07.S03.c001",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aims": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "frame": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c001",
+       "phrase": "Start a fresh excerpt",
+       "at": 0
+      },
+      {
+       "name": "s3_aims",
+       "phrase": "The group still needs one activity",
+       "at": 3.857
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c002",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 17.064,
+     "end": 32.843,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "o+act"
+      ],
+      "aims": [
+       "o+act"
+      ],
+      "frame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fHead": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "silent": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lhP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lhN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bound": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c002",
+       "phrase": "whether it was deliberate",
+       "at": 30.778
+      },
+      {
+       "name": "s3_begins",
+       "phrase": "The learner begins to connect",
+       "at": 17.064
+      },
+      {
+       "name": "s3_before",
+       "phrase": "Before that point is finished",
+       "at": 21.778
+      },
+      {
+       "name": "s3_lanes",
+       "phrase": "The two lanes show this brief overlap",
+       "at": 25.635
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d001",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 32.843,
+     "end": 35.693,
+     "speaker": "learner",
+     "tokens": {
+      "bound": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "zone"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d001",
+       "phrase": "pairs could",
+       "at": 34.129
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d002",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 35.693,
+     "end": 38.614,
+     "speaker": "noah",
+     "tokens": {
+      "fragL": [
+       "act"
+      ],
+      "fragN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "zone": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d002",
+       "phrase": "draw or write",
+       "at": 36.979
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c003",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 38.614,
+     "end": 52.678,
+     "speaker": "coach",
+     "tokens": {
+      "contL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "contN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "t1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "cont"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c003",
+       "phrase": "not a complete comparison of ideas",
+       "at": 40.757
+      },
+      {
+       "name": "s3_two",
+       "phrase": "We have two unfinished turns",
+       "at": 38.614
+      },
+      {
+       "name": "s3_small",
+       "phrase": "A small repair can decide",
+       "at": 43.328
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c004",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 52.678,
+     "end": 70.171,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "frame": [
+       "o+act"
+      ],
+      "fHead": [
+       "o+act"
+      ],
+      "silent": [
+       "o+act"
+      ],
+      "lhP": [
+       "o+act"
+      ],
+      "lhN": [
+       "o+act"
+      ],
+      "fragL": [
+       "o+act",
+       "x+w+h+fs+o"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "zone": [
+       "o+act"
+      ],
+      "contL": [
+       "o+act"
+      ],
+      "contN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "t1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "t2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tb": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c004",
+       "phrase": "does not mean agreeing",
+       "at": 63.821
+      },
+      {
+       "name": "s3_offer",
+       "phrase": "You can offer someone room to finish",
+       "at": 52.678
+      },
+      {
+       "name": "s3_ask",
+       "phrase": "or ask briefly to finish your own point",
+       "at": 55.678
+      },
+      {
+       "name": "s3_giving",
+       "phrase": "Giving a turn away",
+       "at": 62.107
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c005",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 70.171,
+     "end": 85.95,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "t1": [
+       "o+act"
+      ],
+      "t2": [
+       "o+act"
+      ],
+      "tb": [
+       "o+act"
+      ],
+      "pNc": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c005",
+       "phrase": "keep a short reminder",
+       "at": 73.171
+      },
+      {
+       "name": "s3_let",
+       "phrase": "If you let the other person continue",
+       "at": 70.171
+      },
+      {
+       "name": "s3_otherwise",
+       "phrase": "Otherwise, an intended return",
+       "at": 76.6
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c006",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 85.95,
+     "end": 101.3,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "pNc": [
+       "o+act"
+      ],
+      "park": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c006",
+       "phrase": "preserve what remains unfinished",
+       "at": 94.95
+      },
+      {
+       "name": "s3_priv",
+       "phrase": "Privately identify the immediate need",
+       "at": 85.95
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.h101",
+     "kind": "hold",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 101.3,
+     "end": 109.3,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c007",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 109.3,
+     "end": 123.364,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragL": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c007",
+       "phrase": "what each actually accomplishes",
+       "at": 121.3
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c008",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 123.364,
+     "end": 137,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c008",
+       "phrase": "not as approval of the idea itself",
+       "at": 133.65
+      },
+      {
+       "name": "s3_peer",
+       "phrase": "The peer replies are written possibilities",
+       "at": 123.364
+      }
+     ]
+    },
+    {
+     "id": "L07.I02.watchThink",
+     "kind": "think",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 137,
+     "end": 145,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o",
+       "kind+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.d301",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "C",
+     "start": 145,
+     "end": 153.493,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d301",
+       "phrase": "I'd like to finish my point",
+       "at": 146.714
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d302",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "C",
+     "start": 153.493,
+     "end": 161.557,
+     "speaker": "noah",
+     "tokens": {
+      "fragN": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "nFull": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d302",
+       "phrase": "then use that to introduce ourselves",
+       "at": 158.636
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.f301",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "C",
+     "start": 161.557,
+     "end": 178.193,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "nFull": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_f301",
+       "phrase": "the phrase alone does not complete it",
+       "at": 170.986
+      },
+      {
+       "name": "sC_room",
+       "phrase": "This gives Noah room",
+       "at": 161.557
+      },
+      {
+       "name": "sC_still",
+       "phrase": "The learner still needs to make that return",
+       "at": 167.557
+      },
+      {
+       "name": "sC_hear",
+       "phrase": "Hearing the proposal is not deciding",
+       "at": 173.986
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c010",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 178.193,
+     "end": 194.829,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "park": [
+       "o+act"
+      ],
+      "nFull": [
+       "o+act"
+      ],
+      "st0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c010",
+       "phrase": "a decision about speaking order",
+       "at": 185.479
+      },
+      {
+       "name": "s3_shared",
+       "phrase": "The shared principle",
+       "at": 178.193
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c011",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 194.829,
+     "end": 211.893,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "o+act"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "st0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "steps"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c011",
+       "phrase": "has already been understood",
+       "at": 209.829
+      },
+      {
+       "name": "s3_offerT",
+       "phrase": "If you offer someone the turn",
+       "at": 194.829
+      },
+      {
+       "name": "s3_listen",
+       "phrase": "listen to what follows",
+       "at": 197.4
+      },
+      {
+       "name": "s3_then",
+       "phrase": "You can then connect your point",
+       "at": 199.972
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c012",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 211.893,
+     "end": 220.814,
+     "speaker": "coach",
+     "tokens": {
+      "st0": [
+       "o+act"
+      ],
+      "st1": [
+       "o+act"
+      ],
+      "st2": [
+       "o+act"
+      ],
+      "rr": [
+       "o+act"
+      ],
+      "ex": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c012",
+       "phrase": "the learner’s complete point",
+       "at": 215.322
+      },
+      {
+       "name": "s3_sep",
+       "phrase": "In a separate example",
+       "at": 211.893
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d003",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 220.814,
+     "end": 226.735,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ],
+      "pend": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "plim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d003",
+       "phrase": "one question about the weekly drawing group",
+       "at": 223.385
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c013",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 226.735,
+     "end": 242.514,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "aims": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ],
+      "pend": [
+       "x+w+h+fs+o"
+      ],
+      "plim": [
+       "o+act"
+      ],
+      "tlim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "src"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c013",
+       "phrase": "even after the turn is clear",
+       "at": 239.592
+      },
+      {
+       "name": "s3_adds",
+       "phrase": "That adds a possible question-forming step",
+       "at": 226.735
+      },
+      {
+       "name": "s3_notYet",
+       "phrase": "It does not yet tell newcomers",
+       "at": 229.735
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c014",
+     "kind": "line",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 242.514,
+     "end": 257.864,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "aims": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "ex": [
+       "o+act"
+      ],
+      "pend": [
+       "o+act"
+      ],
+      "tlim": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c014",
+       "phrase": "preserve the other point",
+       "at": 250.228
+      },
+      {
+       "name": "s3_return",
+       "phrase": "Return privately to the original",
+       "at": 242.514
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.h102",
+     "kind": "hold",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 257.864,
+     "end": 265.864,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c015",
+     "kind": "line",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 265.864,
+     "end": 281.643,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c015",
+       "phrase": "without pretending the discussion is settled",
+       "at": 271.435
+      },
+      {
+       "name": "s3_check",
+       "phrase": "Check what your chosen move",
+       "at": 265.864
+      },
+      {
+       "name": "s3_next",
+       "phrase": "Next, we will consider",
+       "at": 274.007
+      }
+     ]
+    }
+   ]
+  },
+  "practice:A": {
+   "durationSeconds": 264.057,
+   "steps": [
+    {
+     "id": "L07.S03.c001",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aims": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "frame": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c001",
+       "phrase": "Start a fresh excerpt",
+       "at": 0
+      },
+      {
+       "name": "s3_aims",
+       "phrase": "The group still needs one activity",
+       "at": 3.857
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c002",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 17.064,
+     "end": 32.843,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "o+act"
+      ],
+      "aims": [
+       "o+act"
+      ],
+      "frame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fHead": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "silent": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lhP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lhN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bound": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c002",
+       "phrase": "whether it was deliberate",
+       "at": 30.778
+      },
+      {
+       "name": "s3_begins",
+       "phrase": "The learner begins to connect",
+       "at": 17.064
+      },
+      {
+       "name": "s3_before",
+       "phrase": "Before that point is finished",
+       "at": 21.778
+      },
+      {
+       "name": "s3_lanes",
+       "phrase": "The two lanes show this brief overlap",
+       "at": 25.635
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d001",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 32.843,
+     "end": 35.693,
+     "speaker": "learner",
+     "tokens": {
+      "bound": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "zone"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d001",
+       "phrase": "pairs could",
+       "at": 34.129
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d002",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 35.693,
+     "end": 38.614,
+     "speaker": "noah",
+     "tokens": {
+      "fragL": [
+       "act"
+      ],
+      "fragN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "zone": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d002",
+       "phrase": "draw or write",
+       "at": 36.979
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c003",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 38.614,
+     "end": 52.678,
+     "speaker": "coach",
+     "tokens": {
+      "contL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "contN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "t1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "cont"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c003",
+       "phrase": "not a complete comparison of ideas",
+       "at": 40.757
+      },
+      {
+       "name": "s3_two",
+       "phrase": "We have two unfinished turns",
+       "at": 38.614
+      },
+      {
+       "name": "s3_small",
+       "phrase": "A small repair can decide",
+       "at": 43.328
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c004",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 52.678,
+     "end": 70.171,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "frame": [
+       "o+act"
+      ],
+      "fHead": [
+       "o+act"
+      ],
+      "silent": [
+       "o+act"
+      ],
+      "lhP": [
+       "o+act"
+      ],
+      "lhN": [
+       "o+act"
+      ],
+      "fragL": [
+       "o+act",
+       "x+w+h+fs+o"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "zone": [
+       "o+act"
+      ],
+      "contL": [
+       "o+act"
+      ],
+      "contN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "t1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "t2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tb": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c004",
+       "phrase": "does not mean agreeing",
+       "at": 63.821
+      },
+      {
+       "name": "s3_offer",
+       "phrase": "You can offer someone room to finish",
+       "at": 52.678
+      },
+      {
+       "name": "s3_ask",
+       "phrase": "or ask briefly to finish your own point",
+       "at": 55.678
+      },
+      {
+       "name": "s3_giving",
+       "phrase": "Giving a turn away",
+       "at": 62.107
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c005",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 70.171,
+     "end": 85.95,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "t1": [
+       "o+act"
+      ],
+      "t2": [
+       "o+act"
+      ],
+      "tb": [
+       "o+act"
+      ],
+      "pNc": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c005",
+       "phrase": "keep a short reminder",
+       "at": 73.171
+      },
+      {
+       "name": "s3_let",
+       "phrase": "If you let the other person continue",
+       "at": 70.171
+      },
+      {
+       "name": "s3_otherwise",
+       "phrase": "Otherwise, an intended return",
+       "at": 76.6
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c006",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 85.95,
+     "end": 101.3,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "pNc": [
+       "o+act"
+      ],
+      "park": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c006",
+       "phrase": "preserve what remains unfinished",
+       "at": 94.95
+      },
+      {
+       "name": "s3_priv",
+       "phrase": "Privately identify the immediate need",
+       "at": 85.95
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.h101",
+     "kind": "hold",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 101.3,
+     "end": 109.3,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c007",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 109.3,
+     "end": 123.364,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragL": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c007",
+       "phrase": "what each actually accomplishes",
+       "at": 121.3
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c008",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 123.364,
+     "end": 137,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c008",
+       "phrase": "not as approval of the idea itself",
+       "at": 133.65
+      },
+      {
+       "name": "s3_peer",
+       "phrase": "The peer replies are written possibilities",
+       "at": 123.364
+      }
+     ]
+    },
+    {
+     "id": "L07.I02.gate",
+     "kind": "gate",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 137,
+     "end": 138.2,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.d101",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "A",
+     "start": 138.2,
+     "end": 141.121,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d101",
+       "phrase": "finish this point first",
+       "at": 139.057
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d102",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "A",
+     "start": 141.121,
+     "end": 143.971,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d102",
+       "phrase": "finish your point",
+       "at": 141.978
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.f101",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "A",
+     "start": 143.971,
+     "end": 160.607,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag"
+      ],
+      "fragN": [
+       "x+w+h+fs+o+tag",
+       "act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "turn": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_f101",
+       "phrase": "His yes concerns the speaking order",
+       "at": 156.4
+      },
+      {
+       "name": "sA_reason",
+       "phrase": "This is a reasonable way",
+       "at": 143.971
+      },
+      {
+       "name": "sA_yes",
+       "phrase": "His yes concerns the speaking order",
+       "at": 156.4
+      }
+     ]
+    },
+    {
+     "id": "L07.I02.ready",
+     "kind": "ready",
+     "block": "L07.S03.B02",
+     "branch": "A",
+     "start": 160.607,
+     "end": 160.607,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "turn": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c010",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 160.607,
+     "end": 177.243,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "turn": [
+       "o+act"
+      ],
+      "st0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c010",
+       "phrase": "a decision about speaking order",
+       "at": 167.893
+      },
+      {
+       "name": "s3_shared",
+       "phrase": "The shared principle",
+       "at": 160.607
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c011",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 177.243,
+     "end": 194.307,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "o+act"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "st0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "steps"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c011",
+       "phrase": "has already been understood",
+       "at": 192.243
+      },
+      {
+       "name": "s3_offerT",
+       "phrase": "If you offer someone the turn",
+       "at": 177.243
+      },
+      {
+       "name": "s3_listen",
+       "phrase": "listen to what follows",
+       "at": 179.814
+      },
+      {
+       "name": "s3_then",
+       "phrase": "You can then connect your point",
+       "at": 182.386
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c012",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 194.307,
+     "end": 203.228,
+     "speaker": "coach",
+     "tokens": {
+      "st0": [
+       "o+act"
+      ],
+      "st1": [
+       "o+act"
+      ],
+      "st2": [
+       "o+act"
+      ],
+      "rr": [
+       "o+act"
+      ],
+      "ex": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c012",
+       "phrase": "the learner’s complete point",
+       "at": 197.736
+      },
+      {
+       "name": "s3_sep",
+       "phrase": "In a separate example",
+       "at": 194.307
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d003",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 203.228,
+     "end": 209.149,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ],
+      "pend": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "plim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d003",
+       "phrase": "one question about the weekly drawing group",
+       "at": 205.799
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c013",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 209.149,
+     "end": 224.928,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "aims": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ],
+      "pend": [
+       "x+w+h+fs+o"
+      ],
+      "plim": [
+       "o+act"
+      ],
+      "tlim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "src"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c013",
+       "phrase": "even after the turn is clear",
+       "at": 222.006
+      },
+      {
+       "name": "s3_adds",
+       "phrase": "That adds a possible question-forming step",
+       "at": 209.149
+      },
+      {
+       "name": "s3_notYet",
+       "phrase": "It does not yet tell newcomers",
+       "at": 212.149
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c014",
+     "kind": "line",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 224.928,
+     "end": 240.278,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "aims": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "ex": [
+       "o+act"
+      ],
+      "pend": [
+       "o+act"
+      ],
+      "tlim": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c014",
+       "phrase": "preserve the other point",
+       "at": 232.642
+      },
+      {
+       "name": "s3_return",
+       "phrase": "Return privately to the original",
+       "at": 224.928
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.h102",
+     "kind": "hold",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 240.278,
+     "end": 248.278,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c015",
+     "kind": "line",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 248.278,
+     "end": 264.057,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c015",
+       "phrase": "without pretending the discussion is settled",
+       "at": 253.849
+      },
+      {
+       "name": "s3_check",
+       "phrase": "Check what your chosen move",
+       "at": 248.278
+      },
+      {
+       "name": "s3_next",
+       "phrase": "Next, we will consider",
+       "at": 256.421
+      }
+     ]
+    }
+   ]
+  },
+  "practice:B": {
+   "durationSeconds": 264.557,
+   "steps": [
+    {
+     "id": "L07.S03.c001",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aims": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "frame": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c001",
+       "phrase": "Start a fresh excerpt",
+       "at": 0
+      },
+      {
+       "name": "s3_aims",
+       "phrase": "The group still needs one activity",
+       "at": 3.857
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c002",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 17.064,
+     "end": 32.843,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "o+act"
+      ],
+      "aims": [
+       "o+act"
+      ],
+      "frame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fHead": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "silent": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lhP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lhN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bound": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c002",
+       "phrase": "whether it was deliberate",
+       "at": 30.778
+      },
+      {
+       "name": "s3_begins",
+       "phrase": "The learner begins to connect",
+       "at": 17.064
+      },
+      {
+       "name": "s3_before",
+       "phrase": "Before that point is finished",
+       "at": 21.778
+      },
+      {
+       "name": "s3_lanes",
+       "phrase": "The two lanes show this brief overlap",
+       "at": 25.635
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d001",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 32.843,
+     "end": 35.693,
+     "speaker": "learner",
+     "tokens": {
+      "bound": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "zone"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d001",
+       "phrase": "pairs could",
+       "at": 34.129
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d002",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 35.693,
+     "end": 38.614,
+     "speaker": "noah",
+     "tokens": {
+      "fragL": [
+       "act"
+      ],
+      "fragN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "zone": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d002",
+       "phrase": "draw or write",
+       "at": 36.979
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c003",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 38.614,
+     "end": 52.678,
+     "speaker": "coach",
+     "tokens": {
+      "contL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "contN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "t1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "cont"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c003",
+       "phrase": "not a complete comparison of ideas",
+       "at": 40.757
+      },
+      {
+       "name": "s3_two",
+       "phrase": "We have two unfinished turns",
+       "at": 38.614
+      },
+      {
+       "name": "s3_small",
+       "phrase": "A small repair can decide",
+       "at": 43.328
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c004",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 52.678,
+     "end": 70.171,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "frame": [
+       "o+act"
+      ],
+      "fHead": [
+       "o+act"
+      ],
+      "silent": [
+       "o+act"
+      ],
+      "lhP": [
+       "o+act"
+      ],
+      "lhN": [
+       "o+act"
+      ],
+      "fragL": [
+       "o+act",
+       "x+w+h+fs+o"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "zone": [
+       "o+act"
+      ],
+      "contL": [
+       "o+act"
+      ],
+      "contN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "t1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "t2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tb": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c004",
+       "phrase": "does not mean agreeing",
+       "at": 63.821
+      },
+      {
+       "name": "s3_offer",
+       "phrase": "You can offer someone room to finish",
+       "at": 52.678
+      },
+      {
+       "name": "s3_ask",
+       "phrase": "or ask briefly to finish your own point",
+       "at": 55.678
+      },
+      {
+       "name": "s3_giving",
+       "phrase": "Giving a turn away",
+       "at": 62.107
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c005",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 70.171,
+     "end": 85.95,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "t1": [
+       "o+act"
+      ],
+      "t2": [
+       "o+act"
+      ],
+      "tb": [
+       "o+act"
+      ],
+      "pNc": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c005",
+       "phrase": "keep a short reminder",
+       "at": 73.171
+      },
+      {
+       "name": "s3_let",
+       "phrase": "If you let the other person continue",
+       "at": 70.171
+      },
+      {
+       "name": "s3_otherwise",
+       "phrase": "Otherwise, an intended return",
+       "at": 76.6
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c006",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 85.95,
+     "end": 101.3,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "pNc": [
+       "o+act"
+      ],
+      "park": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c006",
+       "phrase": "preserve what remains unfinished",
+       "at": 94.95
+      },
+      {
+       "name": "s3_priv",
+       "phrase": "Privately identify the immediate need",
+       "at": 85.95
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.h101",
+     "kind": "hold",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 101.3,
+     "end": 109.3,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c007",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 109.3,
+     "end": 123.364,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragL": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c007",
+       "phrase": "what each actually accomplishes",
+       "at": 121.3
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c008",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 123.364,
+     "end": 137,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c008",
+       "phrase": "not as approval of the idea itself",
+       "at": 133.65
+      },
+      {
+       "name": "s3_peer",
+       "phrase": "The peer replies are written possibilities",
+       "at": 123.364
+      }
+     ]
+    },
+    {
+     "id": "L07.I02.gate",
+     "kind": "gate",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 137,
+     "end": 138.2,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.d201",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "B",
+     "start": 138.2,
+     "end": 142.407,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d201",
+       "phrase": "let's do both activities",
+       "at": 140.343
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d202",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "B",
+     "start": 142.407,
+     "end": 145.328,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d202",
+       "phrase": "haven't finished explaining",
+       "at": 142.836
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.f201",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "B",
+     "start": 145.328,
+     "end": 161.107,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "act"
+      ],
+      "fragN": [
+       "x+w+h+fs+o+tag",
+       "act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "merge": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_f201",
+       "phrase": "one coherent activity",
+       "at": 147.899
+      },
+      {
+       "name": "sB_comb",
+       "phrase": "Combining useful parts",
+       "at": 145.328
+      },
+      {
+       "name": "sB_here",
+       "phrase": "Here the ideas have not been heard fully",
+       "at": 149.185
+      }
+     ]
+    },
+    {
+     "id": "L07.I02.ready",
+     "kind": "ready",
+     "block": "L07.S03.B02",
+     "branch": "B",
+     "start": 161.107,
+     "end": 161.107,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "merge": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c010",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 161.107,
+     "end": 177.743,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "merge": [
+       "o+act"
+      ],
+      "st0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c010",
+       "phrase": "a decision about speaking order",
+       "at": 168.393
+      },
+      {
+       "name": "s3_shared",
+       "phrase": "The shared principle",
+       "at": 161.107
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c011",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 177.743,
+     "end": 194.807,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "o+act"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "st0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "steps"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c011",
+       "phrase": "has already been understood",
+       "at": 192.743
+      },
+      {
+       "name": "s3_offerT",
+       "phrase": "If you offer someone the turn",
+       "at": 177.743
+      },
+      {
+       "name": "s3_listen",
+       "phrase": "listen to what follows",
+       "at": 180.314
+      },
+      {
+       "name": "s3_then",
+       "phrase": "You can then connect your point",
+       "at": 182.886
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c012",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 194.807,
+     "end": 203.728,
+     "speaker": "coach",
+     "tokens": {
+      "st0": [
+       "o+act"
+      ],
+      "st1": [
+       "o+act"
+      ],
+      "st2": [
+       "o+act"
+      ],
+      "rr": [
+       "o+act"
+      ],
+      "ex": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c012",
+       "phrase": "the learner’s complete point",
+       "at": 198.236
+      },
+      {
+       "name": "s3_sep",
+       "phrase": "In a separate example",
+       "at": 194.807
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d003",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 203.728,
+     "end": 209.649,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ],
+      "pend": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "plim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d003",
+       "phrase": "one question about the weekly drawing group",
+       "at": 206.299
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c013",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 209.649,
+     "end": 225.428,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "aims": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ],
+      "pend": [
+       "x+w+h+fs+o"
+      ],
+      "plim": [
+       "o+act"
+      ],
+      "tlim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "src"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c013",
+       "phrase": "even after the turn is clear",
+       "at": 222.506
+      },
+      {
+       "name": "s3_adds",
+       "phrase": "That adds a possible question-forming step",
+       "at": 209.649
+      },
+      {
+       "name": "s3_notYet",
+       "phrase": "It does not yet tell newcomers",
+       "at": 212.649
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c014",
+     "kind": "line",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 225.428,
+     "end": 240.778,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "aims": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "ex": [
+       "o+act"
+      ],
+      "pend": [
+       "o+act"
+      ],
+      "tlim": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c014",
+       "phrase": "preserve the other point",
+       "at": 233.142
+      },
+      {
+       "name": "s3_return",
+       "phrase": "Return privately to the original",
+       "at": 225.428
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.h102",
+     "kind": "hold",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 240.778,
+     "end": 248.778,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c015",
+     "kind": "line",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 248.778,
+     "end": 264.557,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c015",
+       "phrase": "without pretending the discussion is settled",
+       "at": 254.349
+      },
+      {
+       "name": "s3_check",
+       "phrase": "Check what your chosen move",
+       "at": 248.778
+      },
+      {
+       "name": "s3_next",
+       "phrase": "Next, we will consider",
+       "at": 256.921
+      }
+     ]
+    }
+   ]
+  },
+  "practice:C": {
+   "durationSeconds": 274.843,
+   "steps": [
+    {
+     "id": "L07.S03.c001",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aims": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "frame": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c001",
+       "phrase": "Start a fresh excerpt",
+       "at": 0
+      },
+      {
+       "name": "s3_aims",
+       "phrase": "The group still needs one activity",
+       "at": 3.857
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c002",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 17.064,
+     "end": 32.843,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "o+act"
+      ],
+      "aims": [
+       "o+act"
+      ],
+      "frame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fHead": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "silent": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lhP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lhN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bound": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c002",
+       "phrase": "whether it was deliberate",
+       "at": 30.778
+      },
+      {
+       "name": "s3_begins",
+       "phrase": "The learner begins to connect",
+       "at": 17.064
+      },
+      {
+       "name": "s3_before",
+       "phrase": "Before that point is finished",
+       "at": 21.778
+      },
+      {
+       "name": "s3_lanes",
+       "phrase": "The two lanes show this brief overlap",
+       "at": 25.635
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d001",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 32.843,
+     "end": 35.693,
+     "speaker": "learner",
+     "tokens": {
+      "bound": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "zone"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d001",
+       "phrase": "pairs could",
+       "at": 34.129
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d002",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 35.693,
+     "end": 38.614,
+     "speaker": "noah",
+     "tokens": {
+      "fragL": [
+       "act"
+      ],
+      "fragN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "zone": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d002",
+       "phrase": "draw or write",
+       "at": 36.979
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c003",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 38.614,
+     "end": 52.678,
+     "speaker": "coach",
+     "tokens": {
+      "contL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "contN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "t1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "cont"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c003",
+       "phrase": "not a complete comparison of ideas",
+       "at": 40.757
+      },
+      {
+       "name": "s3_two",
+       "phrase": "We have two unfinished turns",
+       "at": 38.614
+      },
+      {
+       "name": "s3_small",
+       "phrase": "A small repair can decide",
+       "at": 43.328
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c004",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 52.678,
+     "end": 70.171,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "frame": [
+       "o+act"
+      ],
+      "fHead": [
+       "o+act"
+      ],
+      "silent": [
+       "o+act"
+      ],
+      "lhP": [
+       "o+act"
+      ],
+      "lhN": [
+       "o+act"
+      ],
+      "fragL": [
+       "o+act",
+       "x+w+h+fs+o"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "zone": [
+       "o+act"
+      ],
+      "contL": [
+       "o+act"
+      ],
+      "contN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "t1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "t2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tb": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c004",
+       "phrase": "does not mean agreeing",
+       "at": 63.821
+      },
+      {
+       "name": "s3_offer",
+       "phrase": "You can offer someone room to finish",
+       "at": 52.678
+      },
+      {
+       "name": "s3_ask",
+       "phrase": "or ask briefly to finish your own point",
+       "at": 55.678
+      },
+      {
+       "name": "s3_giving",
+       "phrase": "Giving a turn away",
+       "at": 62.107
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c005",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 70.171,
+     "end": 85.95,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "t1": [
+       "o+act"
+      ],
+      "t2": [
+       "o+act"
+      ],
+      "tb": [
+       "o+act"
+      ],
+      "pNc": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c005",
+       "phrase": "keep a short reminder",
+       "at": 73.171
+      },
+      {
+       "name": "s3_let",
+       "phrase": "If you let the other person continue",
+       "at": 70.171
+      },
+      {
+       "name": "s3_otherwise",
+       "phrase": "Otherwise, an intended return",
+       "at": 76.6
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c006",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 85.95,
+     "end": 101.3,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "pNc": [
+       "o+act"
+      ],
+      "park": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c006",
+       "phrase": "preserve what remains unfinished",
+       "at": 94.95
+      },
+      {
+       "name": "s3_priv",
+       "phrase": "Privately identify the immediate need",
+       "at": 85.95
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.h101",
+     "kind": "hold",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 101.3,
+     "end": 109.3,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c007",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 109.3,
+     "end": 123.364,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragL": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c007",
+       "phrase": "what each actually accomplishes",
+       "at": 121.3
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c008",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 123.364,
+     "end": 137,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c008",
+       "phrase": "not as approval of the idea itself",
+       "at": 133.65
+      },
+      {
+       "name": "s3_peer",
+       "phrase": "The peer replies are written possibilities",
+       "at": 123.364
+      }
+     ]
+    },
+    {
+     "id": "L07.I02.gate",
+     "kind": "gate",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 137,
+     "end": 138.2,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.d301",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "C",
+     "start": 138.2,
+     "end": 146.693,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d301",
+       "phrase": "I'd like to finish my point",
+       "at": 139.914
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d302",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "C",
+     "start": 146.693,
+     "end": 154.757,
+     "speaker": "noah",
+     "tokens": {
+      "fragN": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "nFull": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d302",
+       "phrase": "then use that to introduce ourselves",
+       "at": 151.836
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.f301",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": "C",
+     "start": 154.757,
+     "end": 171.393,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "nFull": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_f301",
+       "phrase": "the phrase alone does not complete it",
+       "at": 164.186
+      },
+      {
+       "name": "sC_room",
+       "phrase": "This gives Noah room",
+       "at": 154.757
+      },
+      {
+       "name": "sC_still",
+       "phrase": "The learner still needs to make that return",
+       "at": 160.757
+      },
+      {
+       "name": "sC_hear",
+       "phrase": "Hearing the proposal is not deciding",
+       "at": 167.186
+      }
+     ]
+    },
+    {
+     "id": "L07.I02.ready",
+     "kind": "ready",
+     "block": "L07.S03.B02",
+     "branch": "C",
+     "start": 171.393,
+     "end": 171.393,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "park": [
+       "o+act"
+      ],
+      "nFull": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c010",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 171.393,
+     "end": 188.029,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "park": [
+       "o+act"
+      ],
+      "nFull": [
+       "o+act"
+      ],
+      "st0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c010",
+       "phrase": "a decision about speaking order",
+       "at": 178.679
+      },
+      {
+       "name": "s3_shared",
+       "phrase": "The shared principle",
+       "at": 171.393
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c011",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 188.029,
+     "end": 205.093,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "o+act"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "st0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "steps"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c011",
+       "phrase": "has already been understood",
+       "at": 203.029
+      },
+      {
+       "name": "s3_offerT",
+       "phrase": "If you offer someone the turn",
+       "at": 188.029
+      },
+      {
+       "name": "s3_listen",
+       "phrase": "listen to what follows",
+       "at": 190.6
+      },
+      {
+       "name": "s3_then",
+       "phrase": "You can then connect your point",
+       "at": 193.172
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c012",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 205.093,
+     "end": 214.014,
+     "speaker": "coach",
+     "tokens": {
+      "st0": [
+       "o+act"
+      ],
+      "st1": [
+       "o+act"
+      ],
+      "st2": [
+       "o+act"
+      ],
+      "rr": [
+       "o+act"
+      ],
+      "ex": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c012",
+       "phrase": "the learner’s complete point",
+       "at": 208.522
+      },
+      {
+       "name": "s3_sep",
+       "phrase": "In a separate example",
+       "at": 205.093
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d003",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 214.014,
+     "end": 219.935,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ],
+      "pend": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "plim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d003",
+       "phrase": "one question about the weekly drawing group",
+       "at": 216.585
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c013",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 219.935,
+     "end": 235.714,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "aims": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ],
+      "pend": [
+       "x+w+h+fs+o"
+      ],
+      "plim": [
+       "o+act"
+      ],
+      "tlim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "src"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c013",
+       "phrase": "even after the turn is clear",
+       "at": 232.792
+      },
+      {
+       "name": "s3_adds",
+       "phrase": "That adds a possible question-forming step",
+       "at": 219.935
+      },
+      {
+       "name": "s3_notYet",
+       "phrase": "It does not yet tell newcomers",
+       "at": 222.935
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c014",
+     "kind": "line",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 235.714,
+     "end": 251.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "aims": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "ex": [
+       "o+act"
+      ],
+      "pend": [
+       "o+act"
+      ],
+      "tlim": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c014",
+       "phrase": "preserve the other point",
+       "at": 243.428
+      },
+      {
+       "name": "s3_return",
+       "phrase": "Return privately to the original",
+       "at": 235.714
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.h102",
+     "kind": "hold",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 251.064,
+     "end": 259.064,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c015",
+     "kind": "line",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 259.064,
+     "end": 274.843,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c015",
+       "phrase": "without pretending the discussion is settled",
+       "at": 264.635
+      },
+      {
+       "name": "s3_check",
+       "phrase": "Check what your chosen move",
+       "at": 259.064
+      },
+      {
+       "name": "s3_next",
+       "phrase": "Next, we will consider",
+       "at": 267.207
+      }
+     ]
+    }
+   ]
+  },
+  "practice:skip": {
+   "durationSeconds": 241.65,
+   "steps": [
+    {
+     "id": "L07.S03.c001",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "aims": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "frame": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c001",
+       "phrase": "Start a fresh excerpt",
+       "at": 0
+      },
+      {
+       "name": "s3_aims",
+       "phrase": "The group still needs one activity",
+       "at": 3.857
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c002",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 17.064,
+     "end": 32.843,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "o+act"
+      ],
+      "aims": [
+       "o+act"
+      ],
+      "frame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fHead": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "silent": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lhP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lhN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bound": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c002",
+       "phrase": "whether it was deliberate",
+       "at": 30.778
+      },
+      {
+       "name": "s3_begins",
+       "phrase": "The learner begins to connect",
+       "at": 17.064
+      },
+      {
+       "name": "s3_before",
+       "phrase": "Before that point is finished",
+       "at": 21.778
+      },
+      {
+       "name": "s3_lanes",
+       "phrase": "The two lanes show this brief overlap",
+       "at": 25.635
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d001",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 32.843,
+     "end": 35.693,
+     "speaker": "learner",
+     "tokens": {
+      "bound": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "zone"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d001",
+       "phrase": "pairs could",
+       "at": 34.129
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d002",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 35.693,
+     "end": 38.614,
+     "speaker": "noah",
+     "tokens": {
+      "fragL": [
+       "act"
+      ],
+      "fragN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "zone": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d002",
+       "phrase": "draw or write",
+       "at": 36.979
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c003",
+     "kind": "line",
+     "block": "L07.S03.B01",
+     "branch": null,
+     "start": 38.614,
+     "end": 52.678,
+     "speaker": "coach",
+     "tokens": {
+      "contL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "contN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "t1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "cont"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c003",
+       "phrase": "not a complete comparison of ideas",
+       "at": 40.757
+      },
+      {
+       "name": "s3_two",
+       "phrase": "We have two unfinished turns",
+       "at": 38.614
+      },
+      {
+       "name": "s3_small",
+       "phrase": "A small repair can decide",
+       "at": 43.328
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c004",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 52.678,
+     "end": 70.171,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "frame": [
+       "o+act"
+      ],
+      "fHead": [
+       "o+act"
+      ],
+      "silent": [
+       "o+act"
+      ],
+      "lhP": [
+       "o+act"
+      ],
+      "lhN": [
+       "o+act"
+      ],
+      "fragL": [
+       "o+act",
+       "x+w+h+fs+o"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "zone": [
+       "o+act"
+      ],
+      "contL": [
+       "o+act"
+      ],
+      "contN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "t1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "t2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tb": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c004",
+       "phrase": "does not mean agreeing",
+       "at": 63.821
+      },
+      {
+       "name": "s3_offer",
+       "phrase": "You can offer someone room to finish",
+       "at": 52.678
+      },
+      {
+       "name": "s3_ask",
+       "phrase": "or ask briefly to finish your own point",
+       "at": 55.678
+      },
+      {
+       "name": "s3_giving",
+       "phrase": "Giving a turn away",
+       "at": 62.107
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c005",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 70.171,
+     "end": 85.95,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "t1": [
+       "o+act"
+      ],
+      "t2": [
+       "o+act"
+      ],
+      "tb": [
+       "o+act"
+      ],
+      "pNc": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "park": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c005",
+       "phrase": "keep a short reminder",
+       "at": 73.171
+      },
+      {
+       "name": "s3_let",
+       "phrase": "If you let the other person continue",
+       "at": 70.171
+      },
+      {
+       "name": "s3_otherwise",
+       "phrase": "Otherwise, an intended return",
+       "at": 76.6
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c006",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 85.95,
+     "end": 101.3,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "pNc": [
+       "o+act"
+      ],
+      "park": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c006",
+       "phrase": "preserve what remains unfinished",
+       "at": 94.95
+      },
+      {
+       "name": "s3_priv",
+       "phrase": "Privately identify the immediate need",
+       "at": 85.95
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.h101",
+     "kind": "hold",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 101.3,
+     "end": 109.3,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c007",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 109.3,
+     "end": 123.364,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragL": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c007",
+       "phrase": "what each actually accomplishes",
+       "at": 121.3
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c008",
+     "kind": "line",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 123.364,
+     "end": 137,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c008",
+       "phrase": "not as approval of the idea itself",
+       "at": 133.65
+      },
+      {
+       "name": "s3_peer",
+       "phrase": "The peer replies are written possibilities",
+       "at": 123.364
+      }
+     ]
+    },
+    {
+     "id": "L07.I02.gate",
+     "kind": "gate",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 137,
+     "end": 138.2,
+     "speaker": null,
+     "tokens": {
+      "fragL": [
+       "x+w+h+fs+o+tag"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.I02.skip",
+     "kind": "skip",
+     "block": "L07.S03.B02",
+     "branch": null,
+     "start": 138.2,
+     "end": 138.2,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c010",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 138.2,
+     "end": 154.836,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "fragN": [
+       "o+act",
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "st0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c010",
+       "phrase": "a decision about speaking order",
+       "at": 145.486
+      },
+      {
+       "name": "s3_shared",
+       "phrase": "The shared principle",
+       "at": 138.2
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c011",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 154.836,
+     "end": 171.9,
+     "speaker": "coach",
+     "tokens": {
+      "fragL": [
+       "o+act"
+      ],
+      "fragN": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "st0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "steps"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c011",
+       "phrase": "has already been understood",
+       "at": 169.836
+      },
+      {
+       "name": "s3_offerT",
+       "phrase": "If you offer someone the turn",
+       "at": 154.836
+      },
+      {
+       "name": "s3_listen",
+       "phrase": "listen to what follows",
+       "at": 157.407
+      },
+      {
+       "name": "s3_then",
+       "phrase": "You can then connect your point",
+       "at": 159.979
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c012",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 171.9,
+     "end": 180.821,
+     "speaker": "coach",
+     "tokens": {
+      "st0": [
+       "o+act"
+      ],
+      "st1": [
+       "o+act"
+      ],
+      "st2": [
+       "o+act"
+      ],
+      "rr": [
+       "o+act"
+      ],
+      "ex": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c012",
+       "phrase": "the learner’s complete point",
+       "at": 175.329
+      },
+      {
+       "name": "s3_sep",
+       "phrase": "In a separate example",
+       "at": 171.9
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.d003",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 180.821,
+     "end": 186.742,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "pend": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "plim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L07_S03_d003",
+       "phrase": "one question about the weekly drawing group",
+       "at": 183.392
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c013",
+     "kind": "line",
+     "block": "L07.S03.B03",
+     "branch": null,
+     "start": 186.742,
+     "end": 202.521,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "aims": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag"
+      ],
+      "ex": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "pend": [
+       "x+w+h+fs+o"
+      ],
+      "plim": [
+       "o+act"
+      ],
+      "tlim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "src"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c013",
+       "phrase": "even after the turn is clear",
+       "at": 199.599
+      },
+      {
+       "name": "s3_adds",
+       "phrase": "That adds a possible question-forming step",
+       "at": 186.742
+      },
+      {
+       "name": "s3_notYet",
+       "phrase": "It does not yet tell newcomers",
+       "at": 189.742
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.c014",
+     "kind": "line",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 202.521,
+     "end": 217.871,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "aims": [
+       "o+act"
+      ],
+      "fragL": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "fragN": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "ex": [
+       "o+act"
+      ],
+      "pend": [
+       "o+act"
+      ],
+      "tlim": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c014",
+       "phrase": "preserve the other point",
+       "at": 210.235
+      },
+      {
+       "name": "s3_return",
+       "phrase": "Return privately to the original",
+       "at": 202.521
+      }
+     ]
+    },
+    {
+     "id": "L07.S03.h102",
+     "kind": "hold",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 217.871,
+     "end": 225.871,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L07.S03.c015",
+     "kind": "line",
+     "block": "L07.S03.B04",
+     "branch": null,
+     "start": 225.871,
+     "end": 241.65,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L07_S03_c015",
+       "phrase": "without pretending the discussion is settled",
+       "at": 231.442
+      },
+      {
+       "name": "s3_check",
+       "phrase": "Check what your chosen move",
+       "at": 225.871
+      },
+      {
+       "name": "s3_next",
+       "phrase": "Next, we will consider",
+       "at": 234.014
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "frame",
+  "contL",
+  "contN",
+  "pNc",
+  "blank",
+  "caseL",
+  "aims",
+  "fHead",
+  "silent",
+  "lhP",
+  "lhN",
+  "fragL",
+  "fragN",
+  "zone",
+  "bound",
+  "t1",
+  "t2",
+  "tb",
+  "park",
+  "chNote",
+  "sHead",
+  "nFull",
+  "turn",
+  "merge",
+  "st0",
+  "st1",
+  "st2",
+  "rr",
+  "ex",
+  "pend",
+  "plim",
+  "tlim",
+  "next",
+  "opt.A",
+  "opt.B",
+  "opt.C",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

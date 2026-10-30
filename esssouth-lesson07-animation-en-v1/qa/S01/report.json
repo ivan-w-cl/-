@@ -1,6 +1,6 @@
 {
  "section": "S01",
- "ranAt": "2026-10-30T02:09:11.904Z",
+ "ranAt": "2026-10-30T04:00:00.198Z",
  "environment": {
   "os": "linux 6.18.44-fc-v185",
   "browser": "Chromium 153.0.8010.12",
@@ -76,7 +76,7 @@
    "detail": null
   },
   {
-   "name": "every character line shows its exact words in a visible bubble near its end",
+   "name": "every character line shows its exact words in a visible bubble (or, for an illustrated overlap, an exact lane card) near its end",
    "pass": true,
    "detail": []
   },
@@ -119,24 +119,24 @@
    "detail": []
   },
   {
-   "name": "rate 1×: clock advances at 1× (measured 0.992)",
+   "name": "rate 1×: clock advances at 1× (measured 0.995)",
    "pass": true,
-   "detail": 0.9922671821878697
+   "detail": 0.9945344264480738
   },
   {
-   "name": "rate 1.25×: clock advances at 1.25× (measured 1.245)",
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.237)",
    "pass": true,
-   "detail": 1.245333644423724
+   "detail": 1.2371700879766159
   },
   {
-   "name": "rate 1.5×: clock advances at 1.5× (measured 1.486)",
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.495)",
    "pass": true,
-   "detail": 1.4864027194561327
+   "detail": 1.4951006532462108
   },
   {
-   "name": "rate 2×: clock advances at 2× (measured 1.993)",
+   "name": "rate 2×: clock advances at 2× (measured 1.983)",
    "pass": true,
-   "detail": 1.9928009598719865
+   "detail": 1.982536825968016
   },
   {
    "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
@@ -153,7 +153,7 @@
    "name": "restart returns to the section start and plays",
    "pass": true,
    "detail": {
-    "t": 0.1950999999999767,
+    "t": 0.2000999999999767,
     "playing": true,
     "gate": "none",
     "choice": null
