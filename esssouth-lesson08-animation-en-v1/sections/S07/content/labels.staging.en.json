@@ -1,0 +1,19 @@
+{
+ "schema": "esssouth.l08.staging-labels/1",
+ "sectionId": "L08.S07",
+ "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or the transfer scenario (T02-T04). No meeting time, place or item is invented. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+ "labels": {
+  "x.pM": "Maya: meeting details at the top",
+  "x.pN": "Noah: a short checklist from the existing list",
+  "x.by.maya": "Maya",
+  "x.by.noah": "Noah",
+  "x.shared": "Shared direction (private note)",
+  "x.check": "Practical check (private note)",
+  "x.m1": "Ownership",
+  "x.m2": "Support scope",
+  "x.m3": "Connection",
+  "x.m4": "Open check",
+  "x.next": "The group's actual reply (not yet given)",
+  "x.priv": "Your summary or wording change (private, blank)"
+ }
+}

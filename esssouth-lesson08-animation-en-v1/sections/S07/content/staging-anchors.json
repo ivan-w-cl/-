@@ -1,0 +1,83 @@
+{
+ "schema": "esssouth.l08.staging-anchors/1",
+ "sectionId": "L08.S07",
+ "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+ "anchors": {
+  "s7_task": {
+   "cue": "L08.S07.c001",
+   "phrase": "The task can change"
+  },
+  "s7_here": {
+   "cue": "L08.S07.c001",
+   "phrase": "Here is a fresh example"
+  },
+  "s7_no": {
+   "cue": "L08.S07.c001",
+   "phrase": "We are no longer arranging"
+  },
+  "s7_maya": {
+   "cue": "L08.S07.c002",
+   "phrase": "Maya wants the meeting details at the top"
+  },
+  "s7_noah": {
+   "cue": "L08.S07.c002",
+   "phrase": "Noah proposes a short checklist"
+  },
+  "s7_details": {
+   "cue": "L08.S07.c002",
+   "phrase": "The details themselves are supplied"
+  },
+  "s7_keep": {
+   "cue": "L08.S07.c002",
+   "phrase": "Keep them as labelled content blocks"
+  },
+  "s7_conn": {
+   "cue": "L08.S07.c003",
+   "phrase": "The contributions can be connected"
+  },
+  "s7_not": {
+   "cue": "L08.S07.c003",
+   "phrase": "That does not mean every possible layout fits"
+  },
+  "s7_exact": {
+   "cue": "L08.S07.c003",
+   "phrase": "The exact content length"
+  },
+  "s7_model": {
+   "cue": "L08.S07.c004",
+   "phrase": "This model reports the supported direction"
+  },
+  "s7_doesnt": {
+   "cue": "L08.S07.c004",
+   "phrase": "It does not say that the page"
+  },
+  "s7_if": {
+   "cue": "L08.S07.c004",
+   "phrase": "If the content does not fit"
+  },
+  "s7_notice": {
+   "cue": "L08.S07.c005",
+   "phrase": "Notice what transferred"
+  },
+  "s7_changed": {
+   "cue": "L08.S07.c005",
+   "phrase": "The content and the relevant constraint changed"
+  },
+  "s7_before": {
+   "cue": "L08.S07.c006",
+   "phrase": "Before your next group summary"
+  },
+  "s7_q1": {
+   "cue": "L08.S07.c006",
+   "phrase": "Am I reporting what was said?"
+  },
+  "s7_q2": {
+   "cue": "L08.S07.c006",
+   "phrase": "Have I turned a condition into agreement?"
+  },
+  "s7_q3": {
+   "cue": "L08.S07.c006",
+   "phrase": "Is my next step proposed or already decided?"
+  }
+ }
+}
