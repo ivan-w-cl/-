@@ -1,0 +1,88 @@
+{
+  "schema": "esssouth.timing-estimate/1",
+  "sectionId": "L08.S05",
+  "wordsPerMinute": 140,
+  "cues": {
+    "L08.S05.c001": {
+      "seconds": 20.921,
+      "wordCount": 48,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.c002": {
+      "seconds": 18.35,
+      "wordCount": 42,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.d001": {
+      "seconds": 17.064,
+      "wordCount": 39,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.c003": {
+      "seconds": 22.207,
+      "wordCount": 51,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.c004": {
+      "seconds": 21.779,
+      "wordCount": 50,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.d002": {
+      "seconds": 6.35,
+      "wordCount": 14,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.c005": {
+      "seconds": 18.779,
+      "wordCount": 43,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.d003": {
+      "seconds": 11.064,
+      "wordCount": 25,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.c006": {
+      "seconds": 19.636,
+      "wordCount": 45,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.c007": {
+      "seconds": 21.35,
+      "wordCount": 49,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.c008": {
+      "seconds": 20.493,
+      "wordCount": 47,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.d004": {
+      "seconds": 8.493,
+      "wordCount": 19,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.c009": {
+      "seconds": 14.921,
+      "wordCount": 34,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.c010": {
+      "seconds": 21.779,
+      "wordCount": 50,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L08.S05.c011": {
+      "seconds": 20.493,
+      "wordCount": 47,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    }
+  },
+  "holds": {
+    "L08.S05.h101": 8,
+    "L08.S05.h102": 12
+  },
+  "watchThinkingHolds": {},
+  "practiceWaiting": "Unbounded; not part of fixed runtime."
+}

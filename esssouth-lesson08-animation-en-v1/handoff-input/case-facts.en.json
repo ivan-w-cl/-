@@ -1,0 +1,108 @@
+{
+  "lessonId": "L08",
+  "status": "Author-created fixed scenario and explicitly named support snapshots.",
+  "scenario": {
+    "id": "L08.CASE01",
+    "kind": "Original fictional discussion-training case with explicitly named snapshots",
+    "caseLabel": "Fictional practice case",
+    "sourcePrompt": "A community book club wants a 30-minute taster activity for new readers. Help them try discussing a short text and find out how the weekly club works. Your group should recommend one coherent activity and explain how it serves both aims. Use the main room, the supplied one-page text and club information sheet, and existing paper and pens; do not buy anything. Leave at least five minutes within the session for visitors' questions.",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "The task is one coherent 30-minute taster activity, serving both trying a short-text discussion and learning how the weekly club works."
+      },
+      {
+        "id": "F02",
+        "text": "The main room, one supplied one-page text, a club information sheet, paper and pens are available. No purchases are allowed. At least five minutes for questions is included within the thirty minutes."
+      },
+      {
+        "id": "F03",
+        "text": "Maya proposes: Pairs could compare one line from the short text before we share anything with the whole group."
+      },
+      {
+        "id": "F04",
+        "text": "Noah proposes: A short demonstration could show newcomers what it means to give an interpretation and a reason."
+      },
+      {
+        "id": "F05",
+        "text": "The participant proposes: I suggest keeping time for questions about the club, using the information sheet for anything it actually answers."
+      },
+      {
+        "id": "F06",
+        "text": "Maya states partial support: I support showing an example, but I don't want it to take away the pair discussion."
+      },
+      {
+        "id": "F07",
+        "text": "Noah states partial support: I support some pair discussion. I still want us to decide how short the demonstration should be."
+      },
+      {
+        "id": "F08",
+        "text": "The participant states: I support protecting the question time. We still need a workable sequence within thirty minutes."
+      },
+      {
+        "id": "F09",
+        "text": "No complete sequence, stage durations or demonstration leader has been agreed. No taster has happened and no visitor result has been measured."
+      }
+    ],
+    "unknowns": [
+      "The exact stage durations and whether an eventual detailed schedule fits",
+      "Who is willing and able to give the example",
+      "Which visitor questions the supplied information sheet will answer",
+      "Visitors' number, needs, preferences and willingness to share",
+      "Whether the group will adopt a complete proposal",
+      "How the activity would work in practice"
+    ],
+    "snapshots": {
+      "baseline": {
+        "sections": [
+          "S01",
+          "S02",
+          "S03",
+          "S04"
+        ],
+        "availableFacts": [
+          "F01",
+          "F02",
+          "F03",
+          "F04",
+          "F05",
+          "F06",
+          "F07",
+          "F08",
+          "F09"
+        ],
+        "meaning": "All three proposals and the three explicit support statements are available as attributed source cards. The whole proposal remains open. Branch replies never become baseline facts."
+      },
+      "proposal_check": {
+        "section": "S05",
+        "proposal": "We could begin with a brief example, use the same text in pairs, share one idea, and keep at least five minutes for club questions. Can we check the timing and who would give the example before we decide?",
+        "mayaReply": "I support that sequence if the demonstration stays brief and the pair task remains.",
+        "noahReply": "I support starting with an example and keeping question time. I am not ready to agree on the full sequence until we check the timings.",
+        "meaning": "A labelled later authored check adds exactly these replies. Maya supports the sequence conditionally; Noah supports two elements and withholds support for the whole sequence pending timing. This does not establish a final group decision."
+      },
+      "rehearsal": {
+        "section": "S06",
+        "sourceSnapshot": "proposal_check",
+        "meaning": "Use the explicit S05 proposal and replies as a frozen reference board, not as new speech to the learner. A private summary remains blank; the optional model is separate."
+      }
+    },
+    "state": {
+      "fictional": true,
+      "proposalAdopted": false,
+      "activityRun": false,
+      "outcomesMeasured": false,
+      "agreementInferredFromSilence": false,
+      "realLearnerSpeechCaptured": false
+    },
+    "boundaries": [
+      "Partial support attaches to a named element or condition; do not promote it to unconditional whole-group agreement.",
+      "No majority rule, unanimous decision procedure, assigned leader or final authority is supplied.",
+      "Thirty minutes is the activity duration, not a learner speaking limit or discussion deadline. The five-minute minimum is included, not added after thirty minutes.",
+      "At most twenty-five minutes remain for all other stages and transitions together, and fewer if question time exceeds five. This is a bound, not an agreed schedule.",
+      "A proposed demonstration leader is an unresolved dependency; do not assign Maya, Noah or an invisible facilitator without an authored decision.",
+      "The information sheet exists, but its complete contents are not supplied. Mark an unanswered question for checking; do not invent its answer.",
+      "Branch continuations and later model replies are authored examples, not observed real learner behaviour.",
+      "A coherent candidate can still need timing, accessibility and participation checks. Do not guarantee that a courteous summary wins agreement."
+    ]
+  }
+}

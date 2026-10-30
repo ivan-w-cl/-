@@ -1,0 +1,60 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L08.S07",
+  "anchors": {
+    "a_L08_S07_c001": {
+      "cueId": "L08.S07.c001",
+      "phrase": "no earlier proposal or agreement",
+      "estimatedSeconds": 17.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S07_c002": {
+      "cueId": "L08.S07.c002",
+      "phrase": "instead of inventing",
+      "estimatedSeconds": 17.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S07_d001": {
+      "cueId": "L08.S07.d001",
+      "phrase": "keeping the checklist",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S07_d002": {
+      "cueId": "L08.S07.d002",
+      "phrase": "readable on one page",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S07_c003": {
+      "cueId": "L08.S07.c003",
+      "phrase": "every possible layout fits",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S07_d003": {
+      "cueId": "L08.S07.d003",
+      "phrase": "before choosing the layout",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S07_c004": {
+      "cueId": "L08.S07.c004",
+      "phrase": "a test",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S07_c005": {
+      "cueId": "L08.S07.c005",
+      "phrase": "The content and the relevant constraint changed",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S07_c006": {
+      "cueId": "L08.S07.c006",
+      "phrase": "let the group",
+      "estimatedSeconds": 17.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "lessonId": "L08",
+  "title": "Bring Contributions Together into a Shared Proposal",
+  "status": "New proposed complete production script under the requested series continuation; not a recovered historical approval.",
+  "date": "2026-10-30",
+  "editorialTargetSeconds": 1800,
+  "estimatedWatchSeconds": 1917.616,
+  "measuredRuntimeSeconds": null,
+  "continuity": "L08 follows the earlier work on shared discussion, reasons, listening, constructive disagreement, preparing a first contribution, personal experience and repairing a stalled exchange. It now combines several contributions into a faithful shared proposal and summary.",
+  "boundaries": [
+    "Seven independent sections of one lesson. Watch and Practice are modes, not separate courses.",
+    "The main case is fictional; S01–S04 use the baseline, S05 supplies a clearly labelled later proposal check, and S06 rehearses from that updated snapshot.",
+    "Alternative branch replies reset and never become facts on all paths.",
+    "Explicit support must retain its person, element and condition; silence does not supply consent.",
+    "No voting rule, leader authority, adopted full schedule or guaranteed result is supplied.",
+    "Thirty minutes is the activity length; at least five minutes for questions belongs inside that total.",
+    "The supplied information sheet may not answer every question; its full contents are not supplied.",
+    "Practice is private and unrecorded; model viewing does not verify speech or group agreement.",
+    "Final real audio and any later localization are separate downstream work."
+  ],
+  "sections": [
+    {
+      "sectionId": "L08.S01",
+      "title": "Map the Contributions before Combining Them",
+      "budgetSeconds": 210,
+      "spokenCueCount": 13,
+      "watchCueCount": 13,
+      "watchWords": 507,
+      "estimatedWatchSeconds": 241.837,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 241.837,
+      "interactions": [],
+      "learningOutcome": "Map proposals, reasons, limits and open questions without changing their ownership or support status."
+    },
+    {
+      "sectionId": "L08.S02",
+      "title": "Separate Shared Ground from Open Questions",
+      "budgetSeconds": 270,
+      "spokenCueCount": 21,
+      "watchCueCount": 15,
+      "watchWords": 602,
+      "estimatedWatchSeconds": 291.248,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 250.485,
+      "interactions": [
+        "L08.I01"
+      ],
+      "learningOutcome": "Represent explicit and conditional support accurately while preserving open questions and avoiding consent inferred from silence."
+    },
+    {
+      "sectionId": "L08.S03",
+      "title": "Combine Compatible Contributions",
+      "budgetSeconds": 270,
+      "spokenCueCount": 21,
+      "watchCueCount": 15,
+      "watchWords": 643,
+      "estimatedWatchSeconds": 308.823,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 259.058,
+      "interactions": [
+        "L08.I02"
+      ],
+      "learningOutcome": "Construct a coherent candidate from compatible contributions while retaining time limits, task aims and unresolved dependencies."
+    },
+    {
+      "sectionId": "L08.S04",
+      "title": "Explain a Trade-off against Shared Criteria",
+      "budgetSeconds": 270,
+      "spokenCueCount": 13,
+      "watchCueCount": 13,
+      "watchWords": 587,
+      "estimatedWatchSeconds": 276.12,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 276.12,
+      "interactions": [],
+      "learningOutcome": "Explain the purpose and cost of a candidate arrangement against the same criteria without inventing outcome evidence or an agreed timetable."
+    },
+    {
+      "sectionId": "L08.S05",
+      "title": "Present a Combined Proposal and Check Its Status",
+      "budgetSeconds": 270,
+      "spokenCueCount": 15,
+      "watchCueCount": 15,
+      "watchWords": 603,
+      "estimatedWatchSeconds": 283.679,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 283.679,
+      "interactions": [],
+      "learningOutcome": "Present a combined candidate, ask a focused support check and update only the status actually supported by the authored replies."
+    },
+    {
+      "sectionId": "L08.S06",
+      "title": "Rehearse a Faithful Summary and Next Step",
+      "budgetSeconds": 330,
+      "spokenCueCount": 14,
+      "watchCueCount": 14,
+      "watchWords": 663,
+      "estimatedWatchSeconds": 344.044,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 254.851,
+      "interactions": [
+        "L08.I03"
+      ],
+      "learningOutcome": "Privately rehearse a bounded summary from the supplied evidence and review a separate authored model without inferring speaking, agreement or success."
+    },
+    {
+      "sectionId": "L08.S07",
+      "title": "Transfer the Synthesis to a New Task",
+      "budgetSeconds": 180,
+      "spokenCueCount": 9,
+      "watchCueCount": 9,
+      "watchWords": 347,
+      "estimatedWatchSeconds": 171.865,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 171.865,
+      "interactions": [],
+      "learningOutcome": "Transfer accurate synthesis to a new constrained task, keeping source support, practical checks and proposal status distinct."
+    }
+  ]
+}

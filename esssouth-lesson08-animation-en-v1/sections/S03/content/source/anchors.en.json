@@ -1,0 +1,132 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L08.S03",
+  "anchors": {
+    "a_L08_S03_c001": {
+      "cueId": "L08.S03.c001",
+      "phrase": "a sequence with a reason",
+      "estimatedSeconds": 19.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c002": {
+      "cueId": "L08.S03.c002",
+      "phrase": "miss one aim",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c003": {
+      "cueId": "L08.S03.c003",
+      "phrase": "available resources specific",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c004": {
+      "cueId": "L08.S03.c004",
+      "phrase": "including transitions",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c005": {
+      "cueId": "L08.S03.c005",
+      "phrase": "Keep that check attached",
+      "estimatedSeconds": 14.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c006": {
+      "cueId": "L08.S03.c006",
+      "phrase": "a plausible direction",
+      "estimatedSeconds": 12.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c007": {
+      "cueId": "L08.S03.c007",
+      "phrase": "Explain the clash",
+      "estimatedSeconds": 9.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c008": {
+      "cueId": "L08.S03.c008",
+      "phrase": "same goals and resource limits",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c009": {
+      "cueId": "L08.S03.c009",
+      "phrase": "remaining checks are complete",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c010": {
+      "cueId": "L08.S03.c010",
+      "phrase": "both the connection and its limits",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c011": {
+      "cueId": "L08.S03.c011",
+      "phrase": "a real trade-off",
+      "estimatedSeconds": 14.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_c012": {
+      "cueId": "L08.S03.c012",
+      "phrase": "what it gives up",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_d101": {
+      "cueId": "L08.S03.d101",
+      "phrase": "add five minutes",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_d102": {
+      "cueId": "L08.S03.d102",
+      "phrase": "thirty",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_f101": {
+      "cueId": "L08.S03.f101",
+      "phrase": "constraint",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_d201": {
+      "cueId": "L08.S03.d201",
+      "phrase": "whole thirty minutes",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_d202": {
+      "cueId": "L08.S03.d202",
+      "phrase": "pair discussion",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_f201": {
+      "cueId": "L08.S03.f201",
+      "phrase": "goal",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_d301": {
+      "cueId": "L08.S03.d301",
+      "phrase": "check the timing",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_d302": {
+      "cueId": "L08.S03.d302",
+      "phrase": "support that connection",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S03_f301": {
+      "cueId": "L08.S03.f301",
+      "phrase": "candidate",
+      "estimatedSeconds": 0.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

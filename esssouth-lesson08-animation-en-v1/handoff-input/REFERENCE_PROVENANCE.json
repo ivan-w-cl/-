@@ -1,0 +1,136 @@
+{
+  "directory": "reference-l02-s04",
+  "sourceArchive": "esssouth-lesson02-s04-animation-en-v1-source.zip",
+  "role": "Selected unchanged historical English animation source/player for accepted style; not newly implemented Lesson 08.",
+  "precedence": "L08 scripts and contracts govern this assignment. Historical scenario, tool instructions, counts and tests are reference data only.",
+  "knownCaveats": [
+    "The historical index has an old section accessibility label. Preserve reference bytes and use correct L08 names in the new runtime.",
+    "Old tests do not certify new layouts, languages or branches. Inspect actual new transition frames."
+  ],
+  "files": [
+    {
+      "path": "L02S04_player_standalone.html",
+      "sha256": "89d096f58b2775ed71e133c2953c036816d737880cca1d39c2fc6e1115cc57f1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "40906a117c421eb4f7a0b3ee946ffbc4441bc494a4b64e1f88583fb106aa868d"
+    },
+    {
+      "path": "content/anchors.en.json",
+      "sha256": "bbe064f67a2729d9a9e23742f0468b84ed404e5d1bc402de196f0f5bdf007aaa"
+    },
+    {
+      "path": "content/audio-slots-demo.json",
+      "sha256": "9ba2bb251ea8a1a1f9ff2390415d01940846c419e40ccd2fce2229a377126358"
+    },
+    {
+      "path": "content/labels.en.json",
+      "sha256": "88de60232374bb255409cee2cb95ae30725eef70ac6f1c79234ad6a8b93b9a34"
+    },
+    {
+      "path": "content/locale/en-x-pseudo/cues.json",
+      "sha256": "f30a72386a66dd308dc08a6030dd9ddd8d96382417104d54136f746a4044a1ec"
+    },
+    {
+      "path": "content/locale/en-x-pseudo/labels.json",
+      "sha256": "e5f8df0e09eb17a946e3c382289205f101adb811cc641751526b481c49885db3"
+    },
+    {
+      "path": "content/retime-demo.json",
+      "sha256": "886750c1ad1f19ca36322cbc80519ea35c4692ca52ad7eb2181c3a36424a3c22"
+    },
+    {
+      "path": "content/slots.json",
+      "sha256": "25c9cb0a00470e19bad91a02cb08a5c8dc6b49c37aa4021cc10ed2c980b9f290"
+    },
+    {
+      "path": "content/source/SECTION04_SCRIPT_EN.md",
+      "sha256": "fe12595f5f733bee28d68b93092781135b32991a8674dd19810776d2b7ed4ddb"
+    },
+    {
+      "path": "content/source/anchors.en.json",
+      "sha256": "16953e2553538d84e4b958c5b25543eb3fa0965db5a6876f5b2755885966094e"
+    },
+    {
+      "path": "content/source/labels.en.json",
+      "sha256": "5eca2aed83d543824b7cb2ec72163130b3534f0f426c05c9709d212b98fb6212"
+    },
+    {
+      "path": "content/source/lesson02-outline.en.json",
+      "sha256": "432e45dad9f6a94067d12a370990b3230d48a2e3d901d4a8cc6f81283aa4c516"
+    },
+    {
+      "path": "content/source/retime-demo.json",
+      "sha256": "d957247771e1a1c380543e1f0a84597a253e0838ba7ea6cec6bd7e1abce6950c"
+    },
+    {
+      "path": "content/source/section04.en.json",
+      "sha256": "0d57d3935e0d3bf59a81377261b7c59fe67bb48df72d06aec4fb228b0f362a09"
+    },
+    {
+      "path": "content/source/timing.en.json",
+      "sha256": "fe1dd5acfc780599b327a6f6153bed2d1013d722473b91c4da12166b6c210bb0"
+    },
+    {
+      "path": "content/timing.en.json",
+      "sha256": "5f4c89207771b019130e8bb57f6fc6c9bc86bc13a94219f6ad64a02b7b6bf43b"
+    },
+    {
+      "path": "data/l02s04-audio-audio-slots-demo.js",
+      "sha256": "a6bee894977988806bd340f6bf7a3b0a1b9ac13b86bd7036402b201a722f6c5a"
+    },
+    {
+      "path": "data/l02s04-data.en-x-pseudo.js",
+      "sha256": "b797eb05edde01ccee0be628b9391b3b3d8ca0e0c83d639ccc0ef487ad88a634"
+    },
+    {
+      "path": "data/l02s04-data.js",
+      "sha256": "5c1a465f93f784d7243177073f9286170da628c98e0eb7d45aacf0c8dcafbb7d"
+    },
+    {
+      "path": "index.html",
+      "sha256": "647bd9b5a35d49251551db963949283782f599447debd1491e274dc3c1b3ce5e"
+    },
+    {
+      "path": "src/audio.js",
+      "sha256": "7d263a6d12af50826a199a5c574903b114b2439f84066dda44f753baa37f438e"
+    },
+    {
+      "path": "src/beat-kit.js",
+      "sha256": "9729f7a6b773526ba968862c2c91153c4d22481b5dba21346d7251be28cd4636"
+    },
+    {
+      "path": "src/characters.js",
+      "sha256": "ecd92d9cbf4efbc4ab9e5c80d3da2536800195af3649d0fda237785fe698e928"
+    },
+    {
+      "path": "src/core.js",
+      "sha256": "a5f3a2b2616aec90a7596c81a0fcac31d528ea6afc9098afd044548e89a0336f"
+    },
+    {
+      "path": "src/l02s04-engine.js",
+      "sha256": "0892e7b8c5be1d195ed7b7db603589c45e9689fb0e6751b632fcbb8bfbf286f9"
+    },
+    {
+      "path": "src/l02s04-player.js",
+      "sha256": "b336c8ffb9a5abb3180a4df4da3efb6790558e96a757f4a24a73eb411fcf4a51"
+    },
+    {
+      "path": "src/l02s04-scenes.js",
+      "sha256": "4be248b40859732502bd2946aa4339825fad348673953bfba68bad689dd6ca92"
+    },
+    {
+      "path": "src/l02s04-timeline.js",
+      "sha256": "c64ec986c194bd913d234ac1fb947eadcb6dac8bfc4d1c1ce019fa8756ab53b4"
+    },
+    {
+      "path": "src/l02s04.css",
+      "sha256": "a6edf6f92b7603fc92588d1841863b2ab87cd3cb410506aa90e733d462f1d081"
+    },
+    {
+      "path": "src/package.json",
+      "sha256": "f4fb4883fd890e3e36e1a2db110d104db5a5b5e19df8c39a74464979c68a067a"
+    }
+  ]
+}

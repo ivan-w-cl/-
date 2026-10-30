@@ -1,0 +1,631 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L08.S02",
+  "title": "Separate Shared Ground from Open Questions",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 08 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Represent explicit and conditional support accurately while preserving open questions and avoiding consent inferred from silence.",
+  "scenario": {
+    "id": "L08.CASE01",
+    "kind": "Original fictional discussion-training case with explicitly named snapshots",
+    "caseLabel": "Fictional practice case",
+    "sourcePrompt": "A community book club wants a 30-minute taster activity for new readers. Help them try discussing a short text and find out how the weekly club works. Your group should recommend one coherent activity and explain how it serves both aims. Use the main room, the supplied one-page text and club information sheet, and existing paper and pens; do not buy anything. Leave at least five minutes within the session for visitors' questions.",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "The task is one coherent 30-minute taster activity, serving both trying a short-text discussion and learning how the weekly club works."
+      },
+      {
+        "id": "F02",
+        "text": "The main room, one supplied one-page text, a club information sheet, paper and pens are available. No purchases are allowed. At least five minutes for questions is included within the thirty minutes."
+      },
+      {
+        "id": "F03",
+        "text": "Maya proposes: Pairs could compare one line from the short text before we share anything with the whole group."
+      },
+      {
+        "id": "F04",
+        "text": "Noah proposes: A short demonstration could show newcomers what it means to give an interpretation and a reason."
+      },
+      {
+        "id": "F05",
+        "text": "The participant proposes: I suggest keeping time for questions about the club, using the information sheet for anything it actually answers."
+      },
+      {
+        "id": "F06",
+        "text": "Maya states partial support: I support showing an example, but I don't want it to take away the pair discussion."
+      },
+      {
+        "id": "F07",
+        "text": "Noah states partial support: I support some pair discussion. I still want us to decide how short the demonstration should be."
+      },
+      {
+        "id": "F08",
+        "text": "The participant states: I support protecting the question time. We still need a workable sequence within thirty minutes."
+      },
+      {
+        "id": "F09",
+        "text": "No complete sequence, stage durations or demonstration leader has been agreed. No taster has happened and no visitor result has been measured."
+      }
+    ],
+    "unknowns": [
+      "The exact stage durations and whether an eventual detailed schedule fits",
+      "Who is willing and able to give the example",
+      "Which visitor questions the supplied information sheet will answer",
+      "Visitors' number, needs, preferences and willingness to share",
+      "Whether the group will adopt a complete proposal",
+      "How the activity would work in practice"
+    ],
+    "snapshots": {
+      "baseline": {
+        "sections": [
+          "S01",
+          "S02",
+          "S03",
+          "S04"
+        ],
+        "availableFacts": [
+          "F01",
+          "F02",
+          "F03",
+          "F04",
+          "F05",
+          "F06",
+          "F07",
+          "F08",
+          "F09"
+        ],
+        "meaning": "All three proposals and the three explicit support statements are available as attributed source cards. The whole proposal remains open. Branch replies never become baseline facts."
+      },
+      "proposal_check": {
+        "section": "S05",
+        "proposal": "We could begin with a brief example, use the same text in pairs, share one idea, and keep at least five minutes for club questions. Can we check the timing and who would give the example before we decide?",
+        "mayaReply": "I support that sequence if the demonstration stays brief and the pair task remains.",
+        "noahReply": "I support starting with an example and keeping question time. I am not ready to agree on the full sequence until we check the timings.",
+        "meaning": "A labelled later authored check adds exactly these replies. Maya supports the sequence conditionally; Noah supports two elements and withholds support for the whole sequence pending timing. This does not establish a final group decision."
+      },
+      "rehearsal": {
+        "section": "S06",
+        "sourceSnapshot": "proposal_check",
+        "meaning": "Use the explicit S05 proposal and replies as a frozen reference board, not as new speech to the learner. A private summary remains blank; the optional model is separate."
+      }
+    },
+    "state": {
+      "fictional": true,
+      "proposalAdopted": false,
+      "activityRun": false,
+      "outcomesMeasured": false,
+      "agreementInferredFromSilence": false,
+      "realLearnerSpeechCaptured": false
+    },
+    "boundaries": [
+      "Partial support attaches to a named element or condition; do not promote it to unconditional whole-group agreement.",
+      "No majority rule, unanimous decision procedure, assigned leader or final authority is supplied.",
+      "Thirty minutes is the activity duration, not a learner speaking limit or discussion deadline. The five-minute minimum is included, not added after thirty minutes.",
+      "At most twenty-five minutes remain for all other stages and transitions together, and fewer if question time exceeds five. This is a bound, not an agreed schedule.",
+      "A proposed demonstration leader is an unresolved dependency; do not assign Maya, Noah or an invisible facilitator without an authored decision.",
+      "The information sheet exists, but its complete contents are not supplied. Mark an unanswered question for checking; do not invent its answer.",
+      "Branch continuations and later model replies are authored examples, not observed real learner behaviour.",
+      "A coherent candidate can still need timing, accessibility and participation checks. Do not guarantee that a courteous summary wins agreement."
+    ]
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Participant",
+    "maya": "Maya",
+    "noah": "Noah",
+    "prompt_reader": "Prompt reader"
+  },
+  "blocks": [
+    {
+      "id": "L08.S02.B01",
+      "title": "Support Has a Scope",
+      "family": "support_ledger",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L08.S02.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S02.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S02.c003"
+        },
+        {
+          "kind": "hold",
+          "id": "L08.S02.h101"
+        }
+      ]
+    },
+    {
+      "id": "L08.S02.B02",
+      "title": "Do Not Use Silence as a Signature",
+      "family": "status_distinctions",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L08.S02.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S02.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S02.c006"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S02.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S02.c008"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S02.c009"
+        },
+        {
+          "kind": "interaction",
+          "id": "L08.I01"
+        }
+      ]
+    },
+    {
+      "id": "L08.S02.B03",
+      "title": "Keep the Remaining Decision Visible",
+      "family": "summary_check",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L08.S02.c010"
+        },
+        {
+          "kind": "hold",
+          "id": "L08.S02.h102"
+        }
+      ]
+    },
+    {
+      "id": "L08.S02.B04",
+      "title": "Move Forward without Closing Too Early",
+      "family": "next_decision",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L08.S02.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S02.c012"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L08.S02.c001": {
+      "id": "L08.S02.c001",
+      "speaker": "coach",
+      "text": "A shared summary is more than a list of suggestions. It says what people support, how far that support goes, and what is still unresolved. Those are separate claims. If one person supports an example, that is not the same as supporting its length, its place in the session or the complete plan.",
+      "visualEn": "Open formal ledger with person, supported element, condition, and open question. Avoid a group consensus badge.",
+      "anchorHint": "how far that support goes",
+      "screenLabelIds": [
+        "section.title",
+        "support.scope"
+      ],
+      "audioId": "L08.S02.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c002": {
+      "id": "L08.S02.c002",
+      "speaker": "coach",
+      "text": "Return to the taster proposals. The following support statements are available in this baseline. Read their qualifications as carefully as their positive words. A condition is part of the contribution; it is not a small detail to delete when you shorten the summary.",
+      "visualEn": "Show exact F06–F08 as attributed reference cards, including the but/remaining-question clauses.",
+      "anchorHint": "A condition is part",
+      "screenLabelIds": [
+        "baseline.maya",
+        "baseline.noah",
+        "baseline.participant",
+        "snapshot.label"
+      ],
+      "audioId": "L08.S02.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c003": {
+      "id": "L08.S02.c003",
+      "speaker": "coach",
+      "text": "Maya supports showing an example, while protecting pair discussion. Noah supports some pair discussion and still wants a decision about the example's length. These positions have a useful connection, but the connection is not yet a fully timed agreement.",
+      "visualEn": "Connect shared elements with thin lines; keep conditions attached to their named owners.",
+      "anchorHint": "not yet a fully timed agreement",
+      "screenLabelIds": [
+        "maya.support",
+        "noah.support"
+      ],
+      "audioId": "L08.S02.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c004": {
+      "id": "L08.S02.c004",
+      "speaker": "coach",
+      "text": "A person who has not replied has not supplied a view you can report. Nodding, looking at the board or letting a summary pass might have several meanings. If the status matters, ask a focused question and leave room for a correction or a request for more time.",
+      "visualEn": "Display No stated view separately from Supports and Does not support. Neutral character gestures never move a status card.",
+      "anchorHint": "has not supplied a view",
+      "screenLabelIds": [
+        "silence.status",
+        "check.invite"
+      ],
+      "audioId": "L08.S02.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c005": {
+      "id": "L08.S02.c005",
+      "speaker": "coach",
+      "text": "You can also overcorrect. Saying nothing is agreed can erase a real point of support. Keep agreement at the level where it exists: a named person's support for a named element, with the words that limit it. A complete group decision requires more evidence than a tidy diagram.",
+      "visualEn": "Zoom by card movement, not camera, from whole-plan label to individual supported elements. Use status text as well as colour.",
+      "anchorHint": "at the level where it exists",
+      "screenLabelIds": [
+        "support.level",
+        "whole.open"
+      ],
+      "audioId": "L08.S02.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c006": {
+      "id": "L08.S02.c006",
+      "speaker": "coach",
+      "text": "The prompt gives a firm constraint: at least five minutes for questions within thirty. That is not something you have to infer from a person's reaction. Separate the task requirement from the group's preferences so the summary can preserve both without calling them the same kind of agreement.",
+      "visualEn": "Use a distinct fixed requirements rail beneath the support ledger.",
+      "anchorHint": "Separate the task requirement",
+      "screenLabelIds": [
+        "constraint.notvote",
+        "time.included"
+      ],
+      "audioId": "L08.S02.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c007": {
+      "id": "L08.S02.c007",
+      "speaker": "coach",
+      "text": "A useful summary can therefore contain a positive connection and an open question together. It need not sound indecisive. Saying what is supported gives the group a base to work from; saying what remains open tells them what their next decision actually concerns.",
+      "visualEn": "Build an accurate-summary card from Supported elements plus Remaining decision; do not fill the learner response field.",
+      "anchorHint": "a positive connection and an open question",
+      "screenLabelIds": [
+        "summary.parts"
+      ],
+      "audioId": "L08.S02.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c008": {
+      "id": "L08.S02.c008",
+      "speaker": "coach",
+      "text": "Now compare three possible accounts of this same baseline. Judge each against the actual statements, not just against how confident or friendly it sounds. The question is whether the account changes the scope of support or discards useful information.",
+      "visualEn": "Prepare three neutral option cards; all keep the same ledger visible.",
+      "anchorHint": "the scope of support",
+      "screenLabelIds": [
+        "choice.focus"
+      ],
+      "audioId": "L08.S02.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c009": {
+      "id": "L08.S02.c009",
+      "speaker": "coach",
+      "text": "Choose the account you could defend by pointing back to the source. Afterward, notice whether a peer's reply confirms only their own position or settles something wider. A reply from one person is still one person's reply.",
+      "visualEn": "Hold the source names beside the choice area; no winning colour before selection.",
+      "anchorHint": "one person is still one person",
+      "screenLabelIds": [
+        "reply.scope"
+      ],
+      "audioId": "L08.S02.c009",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c010": {
+      "id": "L08.S02.c010",
+      "speaker": "coach",
+      "text": "On any path, return to the scope of the claim. The baseline supports keeping useful elements in consideration, and it leaves decisions about their arrangement and timing open. A summary is ready for use when another person can see what to confirm, qualify or correct.",
+      "visualEn": "Common rejoin is valid after A/B/C or Skip. Reset to the source ledger, without importing a branch correction as universal evidence.",
+      "anchorHint": "confirm, qualify or correct",
+      "screenLabelIds": [
+        "check.actions"
+      ],
+      "audioId": "L08.S02.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c011": {
+      "id": "L08.S02.c011",
+      "speaker": "coach",
+      "text": "Use accurate status words when they help: proposed, supported with a condition, or still open. You do not need to recite labels in every sentence. Their job is to stop a provisional idea from becoming a decision simply because it has been repeated.",
+      "visualEn": "Three status cards remain visually distinct with words and border styles.",
+      "anchorHint": "simply because it has been repeated",
+      "screenLabelIds": [
+        "status.proposed",
+        "status.partial",
+        "status.open"
+      ],
+      "audioId": "L08.S02.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.c012": {
+      "id": "L08.S02.c012",
+      "speaker": "coach",
+      "text": "Once the shared ground is clear, the group can test whether the elements fit together. That is a different question from whether they all sound attractive. The next section looks at the connections and constraints that make a combined proposal worth developing.",
+      "visualEn": "Carry the accurately scoped cards into an unfinished candidate-sequence frame.",
+      "anchorHint": "whether the elements fit together",
+      "screenLabelIds": [
+        "next.fit"
+      ],
+      "audioId": "L08.S02.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.d101": {
+      "id": "L08.S02.d101",
+      "speaker": "learner",
+      "text": "We all agree on the complete plan: demonstration, pair discussion and questions.",
+      "visualEn": "Show only this proposed summary in the Participant bubble, under the fixed baseline. Never mark an unsupported summary as fact.",
+      "anchorHint": "complete plan",
+      "screenLabelIds": [
+        "choice.A.status"
+      ],
+      "audioId": "L08.S02.d101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L08.S02.d102": {
+      "id": "L08.S02.d102",
+      "speaker": "noah",
+      "text": "We haven't decided how short the demonstration should be. I supported some pair discussion, not the complete plan.",
+      "visualEn": "Noah responds only within this branch. Restore baseline on Retry; his reply is not inherited by another path.",
+      "anchorHint": "decided",
+      "screenLabelIds": [],
+      "audioId": "L08.S02.d102",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L08.S02.f101": {
+      "id": "L08.S02.f101",
+      "speaker": "coach",
+      "text": "This account promotes partial support into a whole-plan decision. The correction matters even though its list contains useful ideas. Keep the supported elements, but remove the claim that everyone has agreed to their final arrangement.",
+      "visualEn": "Return to the evidence board and compare this summary with F06–F08; no score, correct-answer trophy or learner-performance claim.",
+      "anchorHint": "support",
+      "screenLabelIds": [
+        "feedback.A"
+      ],
+      "audioId": "L08.S02.f101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.d201": {
+      "id": "L08.S02.d201",
+      "speaker": "learner",
+      "text": "There is support for an example and pair discussion, but their timing and the whole sequence are still open. Question time must stay within the thirty minutes.",
+      "visualEn": "Show only this proposed summary in the Participant bubble, under the fixed baseline. Never mark an unsupported summary as fact.",
+      "anchorHint": "timing and the whole sequence",
+      "screenLabelIds": [
+        "choice.B.status"
+      ],
+      "audioId": "L08.S02.d201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L08.S02.d202": {
+      "id": "L08.S02.d202",
+      "speaker": "noah",
+      "text": "Yes, I still want us to decide how short the demonstration should be.",
+      "visualEn": "Noah responds only within this branch. Restore baseline on Retry; his reply is not inherited by another path.",
+      "anchorHint": "how short",
+      "screenLabelIds": [],
+      "audioId": "L08.S02.d202",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L08.S02.f201": {
+      "id": "L08.S02.f201",
+      "speaker": "coach",
+      "text": "This summary preserves support for elements while keeping the timing open. Noah confirms his own unresolved question here. That reply does not certify Maya's view, complete the schedule or establish a whole-group decision.",
+      "visualEn": "Return to the evidence board and compare this summary with F06–F08; no score, correct-answer trophy or learner-performance claim.",
+      "anchorHint": "support",
+      "screenLabelIds": [
+        "feedback.B"
+      ],
+      "audioId": "L08.S02.f201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S02.d301": {
+      "id": "L08.S02.d301",
+      "speaker": "learner",
+      "text": "No one has agreed to anything, so we should start again with completely new ideas.",
+      "visualEn": "Show only this proposed summary in the Participant bubble, under the fixed baseline. Never mark an unsupported summary as fact.",
+      "anchorHint": "completely new ideas",
+      "screenLabelIds": [
+        "choice.C.status"
+      ],
+      "audioId": "L08.S02.d301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L08.S02.d302": {
+      "id": "L08.S02.d302",
+      "speaker": "noah",
+      "text": "I did say I support some pair discussion. The timing is the part I still want us to decide.",
+      "visualEn": "Noah responds only within this branch. Restore baseline on Retry; his reply is not inherited by another path.",
+      "anchorHint": "some pair discussion",
+      "screenLabelIds": [],
+      "audioId": "L08.S02.d302",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L08.S02.f301": {
+      "id": "L08.S02.f301",
+      "speaker": "coach",
+      "text": "This account loses support that is already available. Uncertainty about a complete plan does not make every contribution unusable. Keep the partial support and name the particular question, rather than resetting the discussion without a reason.",
+      "visualEn": "Return to the evidence board and compare this summary with F06–F08; no score, correct-answer trophy or learner-performance claim.",
+      "anchorHint": "already available",
+      "screenLabelIds": [
+        "feedback.C"
+      ],
+      "audioId": "L08.S02.f301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L08.S02.h101": {
+      "kind": "hold",
+      "id": "L08.S02.h101",
+      "seconds": 8,
+      "purpose": "Privately identify a supported element and the condition or question that limits it.",
+      "visualEn": "Leave two small private note slots blank; keep exact source statements accessible.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L08.S02.h102": {
+      "kind": "hold",
+      "id": "L08.S02.h102",
+      "seconds": 12,
+      "purpose": "Privately rewrite one overbroad agreement claim with a narrower supported scope.",
+      "visualEn": "Display the overbroad statement as an example to revise; private rewrite stays blank. No automatic feedback.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {
+    "L08.I01": {
+      "kind": "choice",
+      "prompt": "Which account preserves the support that has been stated without turning it into a complete decision?",
+      "watchChoice": "B",
+      "watchThinkSeconds": 8,
+      "baseline": "Use F01–F09 and the three exact support statements F06–F08. These statements concern elements and conditions, not an agreed whole plan. Before every alternative restore this same baseline. A peer correction is an authored branch continuation, not a newly established group decision.",
+      "skipNote": "No response selected. Continue to checking the scope of a summary.",
+      "rejoinCue": "L08.S02.c010",
+      "options": [
+        {
+          "id": "A",
+          "label": "We all agree on the complete plan: demonstration, pair discussion and questions.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L08.S02.d101"
+            },
+            {
+              "kind": "line",
+              "id": "L08.S02.d102"
+            },
+            {
+              "kind": "line",
+              "id": "L08.S02.f101"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "label": "There is support for an example and pair discussion, but their timing and the whole sequence are still open. Question time must stay within the thirty minutes.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L08.S02.d201"
+            },
+            {
+              "kind": "line",
+              "id": "L08.S02.d202"
+            },
+            {
+              "kind": "line",
+              "id": "L08.S02.f201"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "label": "No one has agreed to anything, so we should start again with completely new ideas.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L08.S02.d301"
+            },
+            {
+              "kind": "line",
+              "id": "L08.S02.d302"
+            },
+            {
+              "kind": "line",
+              "id": "L08.S02.f301"
+            }
+          ]
+        }
+      ],
+      "id": "L08.I01",
+      "practiceTimeout": null,
+      "autoSelect": false,
+      "skipIsUnanswered": true,
+      "score": null,
+      "stateStorage": "memory only",
+      "branchOutcome": "Authored fictional continuation, not a prediction or universal reaction."
+    }
+  },
+  "boundary": "Use formal explanation and short explicitly fictional excerpts. Partial support, open questions, candidate proposals and adopted decisions stay distinct. A summary does not create consent. Models are separate authored examples, not captured learner speech."
+}

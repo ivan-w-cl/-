@@ -1,0 +1,84 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L08.S01",
+  "anchors": {
+    "a_L08_S01_c001": {
+      "cueId": "L08.S01.c001",
+      "phrase": "what remains unsettled",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_c002": {
+      "cueId": "L08.S01.c002",
+      "phrase": "inside the thirty minutes",
+      "estimatedSeconds": 18.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_c003": {
+      "cueId": "L08.S01.c003",
+      "phrase": "shorter notes",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_d001": {
+      "cueId": "L08.S01.d001",
+      "phrase": "compare one line",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_c004": {
+      "cueId": "L08.S01.c004",
+      "phrase": "your own interpretation",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_d002": {
+      "cueId": "L08.S01.d002",
+      "phrase": "an interpretation and a reason",
+      "estimatedSeconds": 4.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_c005": {
+      "cueId": "L08.S01.c005",
+      "phrase": "a possible connection",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_d003": {
+      "cueId": "L08.S01.d003",
+      "phrase": "anything it actually answers",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_c006": {
+      "cueId": "L08.S01.c006",
+      "phrase": "different rows",
+      "estimatedSeconds": 16.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_c007": {
+      "cueId": "L08.S01.c007",
+      "phrase": "cannot promise",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_c008": {
+      "cueId": "L08.S01.c008",
+      "phrase": "keep different conditions",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_c009": {
+      "cueId": "L08.S01.c009",
+      "phrase": "a material distinction",
+      "estimatedSeconds": 19.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S01_c010": {
+      "cueId": "L08.S01.c010",
+      "phrase": "something concrete to correct",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

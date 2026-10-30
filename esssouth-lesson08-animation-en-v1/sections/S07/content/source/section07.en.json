@@ -1,0 +1,296 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L08.S07",
+  "title": "Transfer the Synthesis to a New Task",
+  "budgetSeconds": 180,
+  "status": "New proposed Lesson 08 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Transfer accurate synthesis to a new constrained task, keeping source support, practical checks and proposal status distinct.",
+  "scenario": {
+    "id": "L08.TRANSFER01",
+    "kind": "Independent fictional transfer case",
+    "caseLabel": "New practice case",
+    "sourcePrompt": "A volunteer walking group needs a one-page printed notice that tells newcomers where and when to meet and what to bring. Recommend how to arrange the supplied confirmed meeting details and existing bring-list on that one page. Do not add a second page or assume a website link can replace printed essentials.",
+    "facts": [
+      {
+        "id": "T01",
+        "text": "The required output is one printed page with confirmed meeting details and an existing bring-list. Their exact contents are not supplied."
+      },
+      {
+        "id": "T02",
+        "text": "Maya proposes putting meeting details at the top so a newcomer can find them quickly."
+      },
+      {
+        "id": "T03",
+        "text": "Noah proposes a short checklist for what to bring, using the existing list."
+      },
+      {
+        "id": "T04",
+        "text": "Maya explicitly supports keeping the checklist. Noah supports prominent meeting details but asks whether both will remain readable on one page."
+      },
+      {
+        "id": "T05",
+        "text": "No final layout has been checked or adopted. No notice has been distributed."
+      }
+    ],
+    "unknowns": [
+      "Actual length of the supplied details and bring-list",
+      "Whether a proposed layout is readable on one page",
+      "A final group decision",
+      "Any effect on attendance"
+    ],
+    "state": {
+      "proposalAdopted": false,
+      "layoutVerified": false,
+      "noticeDistributed": false,
+      "agreementInferredFromSilence": false
+    }
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Participant",
+    "maya": "Maya",
+    "noah": "Noah",
+    "prompt_reader": "Prompt reader"
+  },
+  "blocks": [
+    {
+      "id": "L08.S07.B01",
+      "title": "Change the Task, Keep the Distinctions",
+      "family": "transfer_source",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L08.S07.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S07.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S07.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S07.d002"
+        },
+        {
+          "kind": "hold",
+          "id": "L08.S07.h101"
+        }
+      ]
+    },
+    {
+      "id": "L08.S07.B02",
+      "title": "Join the Purposes without Inventing a Result",
+      "family": "transfer_model",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L08.S07.c003"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S07.d003"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S07.c004"
+        },
+        {
+          "kind": "hold",
+          "id": "L08.S07.h102"
+        }
+      ]
+    },
+    {
+      "id": "L08.S07.B03",
+      "title": "Use the Method without Forcing a Formula",
+      "family": "transfer_review",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L08.S07.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L08.S07.c006"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L08.S07.c001": {
+      "id": "L08.S07.c001",
+      "speaker": "coach",
+      "text": "The task can change while the need for an accurate shared account remains. Here is a fresh example: a walking group needs one printed notice with meeting details and a bring-list. We are no longer arranging a taster session, and no earlier proposal or agreement carries into this case.",
+      "visualEn": "Visible new-case reset. Remove book-club cards, minutes and roles before introducing a one-page notice outline.",
+      "anchorHint": "no earlier proposal or agreement",
+      "screenLabelIds": [
+        "section.title",
+        "transfer.reset",
+        "transfer.prompt"
+      ],
+      "audioId": "L08.S07.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S07.c002": {
+      "id": "L08.S07.c002",
+      "speaker": "coach",
+      "text": "Maya wants the meeting details at the top. Noah proposes a short checklist using the existing bring-list. The details themselves are supplied to that fictional group, but their length is not given here. Keep them as labelled content blocks instead of inventing a meeting time, place or required item.",
+      "visualEn": "Show neutral Meeting details and Existing bring-list placeholders. Do not put specific times, places or equipment into them.",
+      "anchorHint": "instead of inventing",
+      "screenLabelIds": [
+        "notice.details",
+        "notice.list",
+        "notice.limit"
+      ],
+      "audioId": "L08.S07.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S07.d001": {
+      "id": "L08.S07.d001",
+      "speaker": "maya",
+      "text": "I support keeping the checklist. I would still put the meeting details at the top.",
+      "visualEn": "Maya states her exact support within the new fictional case.",
+      "anchorHint": "keeping the checklist",
+      "screenLabelIds": [
+        "maya.transfer"
+      ],
+      "audioId": "L08.S07.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L08.S07.d002": {
+      "id": "L08.S07.d002",
+      "speaker": "noah",
+      "text": "I support making the meeting details prominent. Can we check that both parts stay readable on one page?",
+      "visualEn": "Noah supports prominence with a readability question, not a finished layout.",
+      "anchorHint": "readable on one page",
+      "screenLabelIds": [
+        "noah.transfer"
+      ],
+      "audioId": "L08.S07.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L08.S07.c003": {
+      "id": "L08.S07.c003",
+      "speaker": "coach",
+      "text": "The contributions can be connected because the page needs both kinds of information. That does not mean every possible layout fits. The exact content length and readability still need checking. A compact summary can preserve the shared direction while leaving that practical question open.",
+      "visualEn": "Two source cards move into a one-page candidate wireframe with an unresolved readability tag; no realistic final document is fabricated.",
+      "anchorHint": "every possible layout fits",
+      "screenLabelIds": [
+        "connection.purpose",
+        "check.readability"
+      ],
+      "audioId": "L08.S07.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S07.d003": {
+      "id": "L08.S07.d003",
+      "speaker": "learner",
+      "text": "There is support for prominent meeting details and a checklist. We could try them on one page, then check readability before choosing the layout.",
+      "visualEn": "Participant gives a provisional synthesis; no peer reply or layout-test result follows.",
+      "anchorHint": "before choosing the layout",
+      "screenLabelIds": [
+        "transfer.model"
+      ],
+      "audioId": "L08.S07.d003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L08.S07.c004": {
+      "id": "L08.S07.c004",
+      "speaker": "coach",
+      "text": "This model reports the supported direction and proposes a test. It does not say that the page has been laid out, checked or approved. If the content does not fit, the group would need a revision that preserves the essential printed information, not an unsupported claim that a link solves the problem.",
+      "visualEn": "Separate Proposed test from Verified result; both status labels remain distinct.",
+      "anchorHint": "a test",
+      "screenLabelIds": [
+        "test.proposed",
+        "result.unknown"
+      ],
+      "audioId": "L08.S07.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S07.c005": {
+      "id": "L08.S07.c005",
+      "speaker": "coach",
+      "text": "Notice what transferred: keep ownership clear, retain the scope of support, connect compatible purposes and name what still needs checking. The content and the relevant constraint changed. You did not need to copy the book-club sequence or force time calculations onto a page-layout task.",
+      "visualEn": "Compare method headings across the two tasks without replaying earlier scenes or importing old facts.",
+      "anchorHint": "The content and the relevant constraint changed",
+      "screenLabelIds": [
+        "transfer.method",
+        "transfer.changed"
+      ],
+      "audioId": "L08.S07.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L08.S07.c006": {
+      "id": "L08.S07.c006",
+      "speaker": "coach",
+      "text": "Before your next group summary, choose one question to ask yourself. Am I reporting what was said? Have I turned a condition into agreement? Is my next step proposed or already decided? Use the question that fits the moment, then let the group's actual reply determine what changes.",
+      "visualEn": "End on optional self-review questions and an open next-turn space. No score, certificate, automatic course jump or purchase call to action.",
+      "anchorHint": "let the group",
+      "screenLabelIds": [
+        "review.truth",
+        "review.condition",
+        "review.action"
+      ],
+      "audioId": "L08.S07.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L08.S07.h101": {
+      "kind": "hold",
+      "id": "L08.S07.h101",
+      "seconds": 8,
+      "purpose": "Privately separate the shared direction from the unresolved practical check in this new case.",
+      "visualEn": "Blank two-part private note. The two quotes remain available.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L08.S07.h102": {
+      "kind": "hold",
+      "id": "L08.S07.h102",
+      "seconds": 12,
+      "purpose": "Privately form a short summary of this new case or choose one wording change to the authored model.",
+      "visualEn": "Keep private response blank, with optional source reference. Do not show a simulated learner answer.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {},
+  "boundary": "Use formal explanation and short explicitly fictional excerpts. Partial support, open questions, candidate proposals and adopted decisions stay distinct. A summary does not create consent. Models are separate authored examples, not captured learner speech."
+}

@@ -1,0 +1,156 @@
+{
+  "sectionId": "L08.S02",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L08.S02.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L08.S02.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c009"
+    },
+    {
+      "kind": "watch_hold",
+      "id": "L08.I01.watchThink",
+      "seconds": 8
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.d201"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.d202"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.f201"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L08.S02.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c012"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L08.S02.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L08.S02.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c009"
+    },
+    {
+      "kind": "gate",
+      "id": "L08.I01",
+      "seconds": null
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L08.S02.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S02.c012"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L08.S02",
+    "title": "Separate Shared Ground from Open Questions",
+    "budgetSeconds": 270,
+    "spokenCueCount": 21,
+    "watchCueCount": 15,
+    "watchWords": 602,
+    "estimatedWatchSeconds": 291.248,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 250.485,
+    "interactions": [
+      "L08.I01"
+    ],
+    "learningOutcome": "Represent explicit and conditional support accurately while preserving open questions and avoiding consent inferred from silence."
+  }
+}

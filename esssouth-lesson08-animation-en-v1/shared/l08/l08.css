@@ -1,0 +1,35 @@
+/* esssouth Lesson 08 · player additions on top of shared/toolkit/style.css (the approved stylesheet, unchanged).
+   Stage art is unchanged except the speaker-aware bubble tail. Everything else here is page chrome outside the stage. */
+/* bubble tail toward the speaking seat in the side layout (room x 40, scale 0.56: Maya 281, You 578, Noah 874; bubble x 70) */
+.tok:has(> .t2.spk-noah) .ttail { left: 588px; } /* bubble x 274 (kit.js): Noah's seat at stage x 874 */
+.tok:has(> .t2.spk-maya) .ttail { left: 199px; }
+.head .tag.silent { background: #EEF2F8; }
+.modes { display: inline-flex; border: 1px solid #C9D0DA; border-radius: 8px; overflow: hidden; }
+.modes button { font: inherit; font-size: 14px; border: 0; padding: 8px 14px; min-height: 44px; background: #fff; color: var(--ink); cursor: pointer; }
+.modes button[aria-pressed="true"] { background: var(--blue); color: #fff; }
+.controls button, .controls select { min-height: 44px; }
+.controls label.tg { min-height: 44px; display: inline-flex; align-items: center; gap: 6px; }
+.controls input[type=checkbox] { width: 20px; height: 20px; }
+.modes button:focus-visible, .ipanel button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.ipanel { margin-top: 12px; padding: 14px 16px; border-radius: 10px; background: #fff; border: 1px solid #DDE2EA; }
+.ipanel[hidden] { display: none; }
+.ipanel .iprompt { margin: 0 0 10px; font-size: 18px; font-weight: 650; line-height: 1.35; }
+.ipanel .istatus { margin: 0 0 10px; font-size: 15px; color: var(--muted); }
+.ipanel .irow { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.ipanel .irow.opts { flex-direction: column; }
+.ipanel button { font: inherit; font-size: 15px; text-align: left; min-height: 44px; padding: 10px 14px; border-radius: 10px; border: 1px solid #C9D0DA; background: #fff; color: var(--ink); cursor: pointer; line-height: 1.35; }
+.ipanel button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+.ipanel button.opt[aria-pressed="true"] { border-color: var(--blue); box-shadow: inset 0 0 0 2px var(--blue); background: var(--pale); }
+.ipanel button:disabled { opacity: .55; cursor: default; }
+.domcap { display: block; }
+body.export .ipanel, body.export .domcap { display: none; }
+html, body { overflow-x: hidden; }
+
+/* Lesson 08: the fictional case ledger, readable outside the stage */
+.casefacts { margin-top: 12px; padding: 10px 14px; border-radius: 10px; background: #fff; border: 1px solid #DDE2EA; font-size: 15px; line-height: 1.45; }
+.casefacts summary { cursor: pointer; font-weight: 650; min-height: 32px; display: flex; align-items: center; }
+.casefacts ol { margin: 8px 0 0; padding-left: 22px; }
+body.export .casefacts { display: none; }
+
+/* Lesson 08: an unusually long model line may use the full 1040 px bubble width (same border, radius, shadow, tail) */
+.t2.bubble.wide { max-width: none; }

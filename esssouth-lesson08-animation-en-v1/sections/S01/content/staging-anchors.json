@@ -1,0 +1,127 @@
+{
+ "schema": "esssouth.l08.staging-anchors/1",
+ "sectionId": "L08.S01",
+ "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+ "anchors": {
+  "s1_several": {
+   "cue": "L08.S01.c001",
+   "phrase": "Several useful contributions"
+  },
+  "s1_first": {
+   "cue": "L08.S01.c001",
+   "phrase": "First find out"
+  },
+  "s1_good": {
+   "cue": "L08.S01.c001",
+   "phrase": "A good summary"
+  },
+  "s1_group": {
+   "cue": "L08.S01.c002",
+   "phrase": "Our practice group"
+  },
+  "s1_newcomers": {
+   "cue": "L08.S01.c002",
+   "phrase": "It should let newcomers"
+  },
+  "s1_main": {
+   "cue": "L08.S01.c002",
+   "phrase": "The main room"
+  },
+  "s1_atleast": {
+   "cue": "L08.S01.c002",
+   "phrase": "At least five minutes"
+  },
+  "s1_three": {
+   "cue": "L08.S01.c003",
+   "phrase": "Now look at three proposals"
+  },
+  "s1_keep": {
+   "cue": "L08.S01.c003",
+   "phrase": "Keep each person"
+  },
+  "s1_label": {
+   "cue": "L08.S01.c003",
+   "phrase": "A label such as pairs"
+  },
+  "s1_that": {
+   "cue": "L08.S01.c004",
+   "phrase": "That is a proposal about"
+  },
+  "s1_ask": {
+   "cue": "L08.S01.c004",
+   "phrase": "We can ask why"
+  },
+  "s1_keep2": {
+   "cue": "L08.S01.c004",
+   "phrase": "Keep an offered action distinct"
+  },
+  "s1_noah": {
+   "cue": "L08.S01.c005",
+   "phrase": "Noah offers a short example"
+  },
+  "s1_purpose": {
+   "cue": "L08.S01.c005",
+   "phrase": "That purpose may connect"
+  },
+  "s1_qt": {
+   "cue": "L08.S01.c006",
+   "phrase": "Question time is not merely"
+  },
+  "s1_req": {
+   "cue": "L08.S01.c006",
+   "phrase": "The prompt requires"
+  },
+  "s1_contrast": {
+   "cue": "L08.S01.c006",
+   "phrase": "By contrast"
+  },
+  "s1_rows": {
+   "cue": "L08.S01.c006",
+   "phrase": "Put these on different rows"
+  },
+  "s1_sheet": {
+   "cue": "L08.S01.c007",
+   "phrase": "The available information sheet"
+  },
+  "s1_full": {
+   "cue": "L08.S01.c007",
+   "phrase": "Its full contents"
+  },
+  "s1_note": {
+   "cue": "L08.S01.c007",
+   "phrase": "A useful note"
+  },
+  "s1_tempt": {
+   "cue": "L08.S01.c008",
+   "phrase": "It is tempting"
+  },
+  "s1_remove": {
+   "cue": "L08.S01.c008",
+   "phrase": "Remove duplicate wording"
+  },
+  "s1_two": {
+   "cue": "L08.S01.c008",
+   "phrase": "Two people can favour"
+  },
+  "s1_before": {
+   "cue": "L08.S01.c009",
+   "phrase": "Before combining anything"
+  },
+  "s1_have": {
+   "cue": "L08.S01.c009",
+   "phrase": "Have you kept"
+  },
+  "s1_next": {
+   "cue": "L08.S01.c010",
+   "phrase": "The next step is not"
+  },
+  "s1_ask2": {
+   "cue": "L08.S01.c010",
+   "phrase": "It is to ask which parts"
+  },
+  "s1_clear": {
+   "cue": "L08.S01.c010",
+   "phrase": "A clear map"
+  }
+ }
+}

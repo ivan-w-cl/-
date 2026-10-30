@@ -1,0 +1,84 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L08.S04",
+  "anchors": {
+    "a_L08_S04_c001": {
+      "cueId": "L08.S04.c001",
+      "phrase": "the same questions",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_c002": {
+      "cueId": "L08.S04.c002",
+      "phrase": "possible cost",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_c003": {
+      "cueId": "L08.S04.c003",
+      "phrase": "The total stays the same",
+      "estimatedSeconds": 16.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_c004": {
+      "cueId": "L08.S04.c004",
+      "phrase": "names its limitation",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_d001": {
+      "cueId": "L08.S04.d001",
+      "phrase": "shows the reasoning clearly",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_c005": {
+      "cueId": "L08.S04.c005",
+      "phrase": "this candidate might fit this task",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_d002": {
+      "cueId": "L08.S04.d002",
+      "phrase": "include a reason",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_c006": {
+      "cueId": "L08.S04.c006",
+      "phrase": "what must survive",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_c007": {
+      "cueId": "L08.S04.c007",
+      "phrase": "not evidence that five minutes will answer everything",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_c008": {
+      "cueId": "L08.S04.c008",
+      "phrase": "preserving its purpose in a different form",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_c009": {
+      "cueId": "L08.S04.c009",
+      "phrase": "which assumption it depends on",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_c010": {
+      "cueId": "L08.S04.c010",
+      "phrase": "without presenting it as the group",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S04_c011": {
+      "cueId": "L08.S04.c011",
+      "phrase": "the support that matters",
+      "estimatedSeconds": 4.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

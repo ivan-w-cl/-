@@ -1,0 +1,29 @@
+{
+ "schema": "esssouth.l08.staging-labels/1",
+ "sectionId": "L08.S01",
+ "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or content/case-facts.en.json (F02-F09, the 25-minute bound). Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+ "labels": {
+  "x.c.maya": "Maya's proposal",
+  "x.c.noah": "Noah's proposal",
+  "x.c.part": "Participant's proposal",
+  "x.by.maya": "Maya",
+  "x.by.noah": "Noah",
+  "x.by.part": "Participant",
+  "x.note.demo": "Example: interpretation + reason",
+  "x.note.q": "Question time; sheet where it answers",
+  "x.rest": "All other stages and transitions: at most 25",
+  "x.sheetOnly": "Sheet: only for what it actually answers",
+  "x.rail.fixed": "Fixed by the prompt",
+  "x.rail.prop": "Proposed sequence",
+  "x.st.ex": "Example",
+  "x.st.pairs": "Pairs",
+  "x.st.share": "Sharing",
+  "x.unans": "A visitor question the sheet may not answer",
+  "x.fav.maya": "Maya: supports an example, if pair discussion stays",
+  "x.fav.noah": "Noah: proposed it, to show interpretation + reason",
+  "x.ph.timing": "Timing: open",
+  "x.ph.leader": "Example leader: open",
+  "x.ph.support": "Whole-plan support: open",
+  "x.qspace": "An open question to keep visible"
+ }
+}

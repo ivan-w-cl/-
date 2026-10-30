@@ -1,0 +1,118 @@
+{
+  "sectionId": "L08.S06",
+  "status": "Empty future audio slots. This review must remain silent.",
+  "slots": {
+    "L08.S06.c001": {
+      "audioId": "L08.S06.c001",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.c002": {
+      "audioId": "L08.S06.c002",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.c003": {
+      "audioId": "L08.S06.c003",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.c004": {
+      "audioId": "L08.S06.c004",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.c005": {
+      "audioId": "L08.S06.c005",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.c006": {
+      "audioId": "L08.S06.c006",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.c007": {
+      "audioId": "L08.S06.c007",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.c008": {
+      "audioId": "L08.S06.c008",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.c009": {
+      "audioId": "L08.S06.c009",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.c010": {
+      "audioId": "L08.S06.c010",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.c011": {
+      "audioId": "L08.S06.c011",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.d101": {
+      "audioId": "L08.S06.d101",
+      "speaker": "learner",
+      "lang": "en",
+      "localizationRole": "keep_english",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.d102": {
+      "audioId": "L08.S06.d102",
+      "speaker": "noah",
+      "lang": "en",
+      "localizationRole": "keep_english",
+      "path": null,
+      "durationSeconds": null
+    },
+    "L08.S06.f101": {
+      "audioId": "L08.S06.f101",
+      "speaker": "coach",
+      "lang": "en",
+      "localizationRole": "coach_explanation",
+      "path": null,
+      "durationSeconds": null
+    }
+  }
+}

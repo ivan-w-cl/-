@@ -1,0 +1,140 @@
+{
+  "sectionId": "L08.S01",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L08.S01.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.d003"
+    },
+    {
+      "kind": "hold",
+      "id": "L08.S01.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c008"
+    },
+    {
+      "kind": "hold",
+      "id": "L08.S01.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c010"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L08.S01.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.d003"
+    },
+    {
+      "kind": "hold",
+      "id": "L08.S01.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c008"
+    },
+    {
+      "kind": "hold",
+      "id": "L08.S01.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L08.S01.c010"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L08.S01",
+    "title": "Map the Contributions before Combining Them",
+    "budgetSeconds": 210,
+    "spokenCueCount": 13,
+    "watchCueCount": 13,
+    "watchWords": 507,
+    "estimatedWatchSeconds": 241.837,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 241.837,
+    "interactions": [],
+    "learningOutcome": "Map proposals, reasons, limits and open questions without changing their ownership or support status."
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L08.S02",
+  "anchors": {
+    "a_L08_S02_c001": {
+      "cueId": "L08.S02.c001",
+      "phrase": "how far that support goes",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c002": {
+      "cueId": "L08.S02.c002",
+      "phrase": "A condition is part",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c003": {
+      "cueId": "L08.S02.c003",
+      "phrase": "not yet a fully timed agreement",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c004": {
+      "cueId": "L08.S02.c004",
+      "phrase": "has not supplied a view",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c005": {
+      "cueId": "L08.S02.c005",
+      "phrase": "at the level where it exists",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c006": {
+      "cueId": "L08.S02.c006",
+      "phrase": "Separate the task requirement",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c007": {
+      "cueId": "L08.S02.c007",
+      "phrase": "a positive connection and an open question",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c008": {
+      "cueId": "L08.S02.c008",
+      "phrase": "the scope of support",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c009": {
+      "cueId": "L08.S02.c009",
+      "phrase": "one person is still one person",
+      "estimatedSeconds": 12.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c010": {
+      "cueId": "L08.S02.c010",
+      "phrase": "confirm, qualify or correct",
+      "estimatedSeconds": 17.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c011": {
+      "cueId": "L08.S02.c011",
+      "phrase": "simply because it has been repeated",
+      "estimatedSeconds": 15.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_c012": {
+      "cueId": "L08.S02.c012",
+      "phrase": "whether the elements fit together",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_d101": {
+      "cueId": "L08.S02.d101",
+      "phrase": "complete plan",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_d102": {
+      "cueId": "L08.S02.d102",
+      "phrase": "decided",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_f101": {
+      "cueId": "L08.S02.f101",
+      "phrase": "support",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_d201": {
+      "cueId": "L08.S02.d201",
+      "phrase": "timing and the whole sequence",
+      "estimatedSeconds": 4.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_d202": {
+      "cueId": "L08.S02.d202",
+      "phrase": "how short",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_f201": {
+      "cueId": "L08.S02.f201",
+      "phrase": "support",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_d301": {
+      "cueId": "L08.S02.d301",
+      "phrase": "completely new ideas",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_d302": {
+      "cueId": "L08.S02.d302",
+      "phrase": "some pair discussion",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S02_f301": {
+      "cueId": "L08.S02.f301",
+      "phrase": "already available",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

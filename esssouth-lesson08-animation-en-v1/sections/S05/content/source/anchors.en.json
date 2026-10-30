@@ -1,0 +1,96 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L08.S05",
+  "anchors": {
+    "a_L08_S05_c001": {
+      "cueId": "L08.S05.c001",
+      "phrase": "something to inspect",
+      "estimatedSeconds": 12.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_c002": {
+      "cueId": "L08.S05.c002",
+      "phrase": "new statements",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_d001": {
+      "cueId": "L08.S05.d001",
+      "phrase": "before we decide",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_c003": {
+      "cueId": "L08.S05.c003",
+      "phrase": "connected stages",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_c004": {
+      "cueId": "L08.S05.c004",
+      "phrase": "an element or a condition",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_d002": {
+      "cueId": "L08.S05.d002",
+      "phrase": "if the demonstration stays brief",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_c005": {
+      "cueId": "L08.S05.c005",
+      "phrase": "with conditions",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_d003": {
+      "cueId": "L08.S05.d003",
+      "phrase": "not ready to agree on the full sequence",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_c006": {
+      "cueId": "L08.S05.c006",
+      "phrase": "that mixed position",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_c007": {
+      "cueId": "L08.S05.c007",
+      "phrase": "still not a final group decision",
+      "estimatedSeconds": 3.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_c008": {
+      "cueId": "L08.S05.c008",
+      "phrase": "an offer rather than a command",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_d004": {
+      "cueId": "L08.S05.d004",
+      "phrase": "including transitions",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_c009": {
+      "cueId": "L08.S05.c009",
+      "phrase": "remains an offer",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_c010": {
+      "cueId": "L08.S05.c010",
+      "phrase": "the conditions disappear",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S05_c011": {
+      "cueId": "L08.S05.c011",
+      "phrase": "actual position",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

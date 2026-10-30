@@ -1,0 +1,40 @@
+{
+  "id": "L08.TRANSFER01",
+  "kind": "Independent fictional transfer case",
+  "caseLabel": "New practice case",
+  "sourcePrompt": "A volunteer walking group needs a one-page printed notice that tells newcomers where and when to meet and what to bring. Recommend how to arrange the supplied confirmed meeting details and existing bring-list on that one page. Do not add a second page or assume a website link can replace printed essentials.",
+  "facts": [
+    {
+      "id": "T01",
+      "text": "The required output is one printed page with confirmed meeting details and an existing bring-list. Their exact contents are not supplied."
+    },
+    {
+      "id": "T02",
+      "text": "Maya proposes putting meeting details at the top so a newcomer can find them quickly."
+    },
+    {
+      "id": "T03",
+      "text": "Noah proposes a short checklist for what to bring, using the existing list."
+    },
+    {
+      "id": "T04",
+      "text": "Maya explicitly supports keeping the checklist. Noah supports prominent meeting details but asks whether both will remain readable on one page."
+    },
+    {
+      "id": "T05",
+      "text": "No final layout has been checked or adopted. No notice has been distributed."
+    }
+  ],
+  "unknowns": [
+    "Actual length of the supplied details and bring-list",
+    "Whether a proposed layout is readable on one page",
+    "A final group decision",
+    "Any effect on attendance"
+  ],
+  "state": {
+    "proposalAdopted": false,
+    "layoutVerified": false,
+    "noticeDistributed": false,
+    "agreementInferredFromSilence": false
+  }
+}

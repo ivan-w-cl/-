@@ -1,0 +1,90 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L08.S06",
+  "anchors": {
+    "a_L08_S06_c001": {
+      "cueId": "L08.S06.c001",
+      "phrase": "the current snapshot",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_c002": {
+      "cueId": "L08.S06.c002",
+      "phrase": "those checks must not disappear",
+      "estimatedSeconds": 16.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_c003": {
+      "cueId": "L08.S06.c003",
+      "phrase": "not identical signatures",
+      "estimatedSeconds": 18.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_c004": {
+      "cueId": "L08.S06.c004",
+      "phrase": "affect the next decision",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_c005": {
+      "cueId": "L08.S06.c005",
+      "phrase": "make support conditional",
+      "estimatedSeconds": 18.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_c006": {
+      "cueId": "L08.S06.c006",
+      "phrase": "ordinary wording",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_c007": {
+      "cueId": "L08.S06.c007",
+      "phrase": "a separate example",
+      "estimatedSeconds": 15.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_c008": {
+      "cueId": "L08.S06.c008",
+      "phrase": "review any summary",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_c009": {
+      "cueId": "L08.S06.c009",
+      "phrase": "shorten the repetition rather than the condition",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_c010": {
+      "cueId": "L08.S06.c010",
+      "phrase": "use the actual reply",
+      "estimatedSeconds": 11.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_c011": {
+      "cueId": "L08.S06.c011",
+      "phrase": "one small focus",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_d101": {
+      "cueId": "L08.S06.d101",
+      "phrase": "Noah supports the example and question time",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_d102": {
+      "cueId": "L08.S06.d102",
+      "phrase": "haven't agreed to the full sequence",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L08_S06_f101": {
+      "cueId": "L08.S06.f101",
+      "phrase": "with their limits",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "sectionId": "L08.S01",
+  "status": "Isolated test fixture, not production timing.",
+  "durationMultipliers": {
+    "L08.S01.c001": 1.35,
+    "L08.S01.d001": 1.35
+  },
+  "fixedHolds": {
+    "L08.S01.h101": 8,
+    "L08.S01.h102": 12
+  },
+  "invariants": [
+    "Cue order and all reachable branch edges unchanged",
+    "Shared and Watch-only hold lengths unchanged",
+    "Drawing paths, gestures and easing durations unchanged",
+    "Settled states extend; no accelerated motion to fill the longer clip"
+  ]
+}
