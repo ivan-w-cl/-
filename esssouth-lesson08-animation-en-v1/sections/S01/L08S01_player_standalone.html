@@ -1501,7 +1501,9 @@ window.L08Slots = {
       X.say(c, hls, wait, opts.bubble); Rx.speak(S, c, pose, c.speakerId); return c;
     };
     X.roomOut = (t) => { S.roomTo(t, 'off'); S.hide(['bubL'], t); };
-    X.hold = (id, label) => { const H = X.cue(id); S.hold(H, label || L('hold.' + H.id)); return H; };
+    // a reflection hold always shows the ordinary pause hint (Lesson 08 fix: after a gate, the gate's "Think first…" text
+    // used to stay on the shared hint token in later holds)
+    X.hold = (id, label) => { const H = X.cue(id); S.set('holdHint', H.start + 0.1, 0, { text: L('ui.pauseMore') }); S.hold(H, label || L('hold.' + H.id)); return H; };
     X.clearAll = (t, keep) => { const k = new Set(['kick', 'ttl'].concat(keep || [])); S.hide([...S.vis].filter((id) => !k.has(id) && id !== 'room'), t); };
     // the gate presentation, the same in every route up to the gate end: prompt + hint in the caption band, neutral options
     X.gate = (opts) => {

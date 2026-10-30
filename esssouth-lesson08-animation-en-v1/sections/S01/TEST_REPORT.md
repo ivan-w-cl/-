@@ -1,6 +1,6 @@
 # L08.S01 · test report (actual run)
 
-Run: 2026-10-30T06:50:06.704Z · Chromium 153.0.8010.12 via Playwright 1.63.0 · linux 6.18.44-fc-v185 · Node v22.22.0
+Run: 2026-10-30T06:59:43.826Z · Chromium 153.0.8010.12 via Playwright 1.63.0 · linux 6.18.44-fc-v185 · Node v22.22.0
 
 Fonts: Inter installed (first in the stack); the approved reference frames were rendered with Segoe UI. Viewports are emulated, not physical devices. Command: `node tools/qa.cjs S01` (raw: `qa/S01/report.json`).
 
@@ -32,8 +32,8 @@ Compiled routes (s): `watch` 241.837 · `practice:main` 241.837
 | PASS | reduced motion: no partially faded tokens mid-transition (motions cut at their start) |
 | PASS | rate 1×: clock advances at 1× (measured 0.999) |
 | PASS | rate 1.25×: clock advances at 1.25× (measured 1.244) |
-| PASS | rate 1.5×: clock advances at 1.5× (measured 1.488) |
-| PASS | rate 2×: clock advances at 2× (measured 1.997) |
+| PASS | rate 1.5×: clock advances at 1.5× (measured 1.486) |
+| PASS | rate 2×: clock advances at 2× (measured 1.994) |
 | PASS | mode switch at common content keeps cue and offset (watch → practice → watch) |
 | PASS | restart returns to the section start and plays |
 | PASS | keyboard: Space plays and pauses |

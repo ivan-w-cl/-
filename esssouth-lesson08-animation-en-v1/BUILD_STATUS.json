@@ -44,8 +44,8 @@
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
     "PASS rate 1×: clock advances at 1× (measured 0.999)",
     "PASS rate 1.25×: clock advances at 1.25× (measured 1.244)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.488)",
-    "PASS rate 2×: clock advances at 2× (measured 1.997)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.486)",
+    "PASS rate 2×: clock advances at 2× (measured 1.994)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -78,7 +78,7 @@
     "L08.S01.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S01/report.json (2026-10-30T06:50:06.704Z, Chromium 153.0.8010.12, 44 checks, 0 failed)",
+   "qaReport": "qa/S01/report.json (2026-10-30T06:59:43.826Z, Chromium 153.0.8010.12, 44 checks, 0 failed)",
    "routeSeconds": {
     "watch": 241.837,
     "practice:main": 241.837
@@ -89,9 +89,9 @@
     "content/labels.staging.en.json": "0b852ff7231d35886eee7b798c0cecdc5c9a1849b7c0aa327f55d2ae8289873e",
     "data/l08s01-data.js": "229b059a24e438d5b0a5649bbb19fbff0d883c64863ea6f73cc60878607df409",
     "index.html": "a310ef1033e6e73f3d9889c85336da5bce1b77658b3a8cc794592b882a9c9e23",
-    "L08S01_player_standalone.html": "365432a7592e7080b39b2ea0ee849dbaee8f52ebb60c1cd579c8f6f1b5de4b24"
+    "L08S01_player_standalone.html": "619d9259ab66121016641c0dbd6658246e18ffec3dcb2154964817f6be4a406c"
    },
-   "updatedAt": "2026-10-30T06:54:38.503Z"
+   "updatedAt": "2026-10-30T07:00:16.029Z"
   },
   {
    "id": "L08.S02",
@@ -245,7 +245,7 @@
     "index.html": "88c89f0d2fcd71978459a88abae2fd1e5b29d45cfcd0137aba7997259c6f0746",
     "L08S02_player_standalone.html": "aa1d9b603c56606515e449e84638b464691ad5f524cadf42df73b01faa7f46ec"
    },
-   "updatedAt": "2026-10-30T06:54:38.507Z"
+   "updatedAt": "2026-10-30T07:00:16.034Z"
   },
   {
    "id": "L08.S03",
@@ -400,7 +400,7 @@
     "index.html": "0c6921eac35c5f5de2ba5e6081a1a42e94f6658fc03b1138697e3a50a2483d17",
     "L08S03_player_standalone.html": "bb4ed1f0ce6af1faaa08655c140055ba98740f2c7e72b2f4b992d377e85fb542"
    },
-   "updatedAt": "2026-10-30T06:54:38.510Z"
+   "updatedAt": "2026-10-30T07:00:16.039Z"
   },
   {
    "id": "L08.S04",
@@ -490,7 +490,7 @@
     "index.html": "102278cf2bbd3cfdbf603fa9a4e5c8b8c7e265a98afff285b857a811b33cf749",
     "L08S04_player_standalone.html": "fbea441f8ffa9f615e7a9089805be1f106449525a4fe0cd8c9b856535644b8bc"
    },
-   "updatedAt": "2026-10-30T06:54:38.511Z"
+   "updatedAt": "2026-10-30T07:00:16.040Z"
   },
   {
    "id": "L08.S05",
@@ -582,7 +582,7 @@
     "index.html": "c82a170ed7d234c08d9db0babb18e520a75773a05d14e395a0bea1c9d8f0f09b",
     "L08S05_player_standalone.html": "511c852b4c0595e0eb98e0ee684bc1fcdbe7d683df88fe85e3d03100090a8659"
    },
-   "updatedAt": "2026-10-30T06:54:38.513Z"
+   "updatedAt": "2026-10-30T07:00:16.042Z"
   },
   {
    "id": "L08.S06",
@@ -703,7 +703,7 @@
     "index.html": "ef01225132a69fcc2ecbbabe74a2d3b983ab3f1718943ef0587bbaff431887cf",
     "L08S06_player_standalone.html": "2d4e3ae7deae0a9c3f24bedf26ed9ae918bf02ff167a527fd991362af3446f76"
    },
-   "updatedAt": "2026-10-30T06:54:38.514Z"
+   "updatedAt": "2026-10-30T07:00:16.044Z"
   },
   {
    "id": "L08.S07",
@@ -789,7 +789,7 @@
     "index.html": "af6e00262ba9359e380d8b31a6a1ec0a1c9508676e90a79dbc857e56798933f3",
     "L08S07_player_standalone.html": "bff84a884407c9d1599afe664fef90d5bf8af3ae4c1b8c5bd7e2721873b5ea66"
    },
-   "updatedAt": "2026-10-30T06:54:38.514Z"
+   "updatedAt": "2026-10-30T07:00:16.045Z"
   }
  ],
  "combinedEntryStatus": "not_started",

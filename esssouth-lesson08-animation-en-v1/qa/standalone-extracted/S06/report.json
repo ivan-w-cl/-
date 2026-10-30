@@ -1,0 +1,1246 @@
+{
+ "section": "S06",
+ "ranAt": "2026-10-30T06:57:48.716Z",
+ "environment": {
+  "os": "linux 6.18.44-fc-v185",
+  "browser": "Chromium 153.0.8010.12",
+  "playwright": "1.63.0",
+  "node": "v22.22.0",
+  "fonts": "Inter installed (first in the stack); the approved reference frames were rendered with Segoe UI",
+  "viewportsAreEmulated": true
+ },
+ "checks": [
+  {
+   "name": "page loads without errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no layout / overflow warnings from the engine (all routes, settled states)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no remote requests (offline)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "silent: no media elements, no microphone request",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "stage accessible name names Lesson 08 and this section",
+   "pass": true,
+   "detail": "Lesson 08, Section 8.6, Rehearse a Faithful Summary and Next Step: animation stage"
+  },
+  {
+   "name": "captions reproduce exact cue words (every route)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every supplied cue is reachable in some route",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L08.S06.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L08.S06.h102 lasts 12 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:model: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:model: L08.S06.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:model: L08.S06.h102 lasts 12 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:skip: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:skip: L08.S06.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:skip: L08.S06.h102 lasts 12 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every character line shows its exact words in a visible bubble (or, for an illustrated overlap, an exact lane card) near its end",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every prompt-reader line shows its exact words on a visible card, with no avatar bubble",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every reflection hold shows the ordinary pause hint (no leftover gate hint)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:model: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "deterministic: same frame after different seek histories",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "rate 1×: clock advances at 1× (measured 0.995)",
+   "pass": true,
+   "detail": 0.9948676931279182
+  },
+  {
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.238)",
+   "pass": true,
+   "detail": 1.2377516331158154
+  },
+  {
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.496)",
+   "pass": true,
+   "detail": 1.496200253316166
+  },
+  {
+   "name": "rate 2×: clock advances at 2× (measured 1.988)",
+   "pass": true,
+   "detail": 1.9884015464608427
+  },
+  {
+   "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
+   "pass": true,
+   "detail": {
+    "a": "L08.S06.c004",
+    "off1": 2,
+    "b": "L08.S06.c004",
+    "off2": 2,
+    "mode": "watch"
+   }
+  },
+  {
+   "name": "restart returns to the section start and plays",
+   "pass": true,
+   "detail": {
+    "t": 0.19089999999990687,
+    "playing": true,
+    "gate": "none",
+    "choice": null
+   }
+  },
+  {
+   "name": "keyboard: Space plays and pauses",
+   "pass": true,
+   "detail": {
+    "k1": true,
+    "k2": false
+   }
+  },
+  {
+   "name": "keyboard: Tab reaches mode and playback controls with a visible focus outline",
+   "pass": true,
+   "detail": [
+    {
+     "tag": "BUTTON",
+     "id": "watch",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "practice",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "play",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "restart",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "scrub",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "cap",
+     "outline": true
+    }
+   ]
+  },
+  {
+   "name": "captions toggle hides the stage caption; DOM caption carries the current words",
+   "pass": true,
+   "detail": {
+    "on": 1,
+    "off": 0,
+    "dom": "CoachUse the current snapshot of the book-club discussion,"
+   }
+  },
+  {
+   "name": "case facts panel lists the exact fact ledger",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 9,
+    "exact": 9,
+    "facts": 9,
+    "laterShown": 3,
+    "laterAll": 3,
+    "rehearsesFrom": true,
+    "lrn": "Participant",
+    "capName": "Participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "case panel follows the active snapshot (later proposal-check statements listed)",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 9,
+    "exact": 9,
+    "facts": 9,
+    "laterShown": 3,
+    "laterAll": 3,
+    "rehearsesFrom": true,
+    "lrn": "Participant",
+    "capName": "Participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "the learner-side speaker is labelled from the graph (caption and seat), not as \"You\"",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 9,
+    "exact": 9,
+    "facts": 9,
+    "laterShown": 3,
+    "laterAll": 3,
+    "rehearsesFrom": true,
+    "lrn": "Participant",
+    "capName": "Participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "no runtime errors during transport tests",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: while waiting, no caption from the next cue; the DOM line shows the prompt",
+   "pass": true,
+   "detail": {
+    "stage": 0,
+    "dom": "Privately rehearse a faithful summary of the current candidate: what has explicit support, what is still open, and one possible next check. You may speak in English or make brief private notes.",
+    "prompt": "Privately rehearse a faithful summary of the current candidate: what has explicit support, what is still open, and one possible next check. You may speak in English or make brief private notes."
+   }
+  },
+  {
+   "name": "practice: playback stops and waits at the gate (awaiting_choice)",
+   "pass": true,
+   "detail": {
+    "t": 155.646,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.I03.gate"
+   }
+  },
+  {
+   "name": "practice: the waiting frame keeps everything that was settled just before it (nothing from the next step leaks in or out)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: Play, Space, a rate change and 36.5 s of wall time do not choose (still waiting beyond the 35 s Watch hold)",
+   "pass": true,
+   "detail": {
+    "t": 155.646,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.I03.gate"
+   }
+  },
+  {
+   "name": "practice model: first selection wins; branch plays on its own route",
+   "pass": true,
+   "detail": {
+    "t": 155.65955000000025,
+    "gate": "branch_playing",
+    "route": "practice:model",
+    "choice": "model",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.S06.d101"
+   }
+  },
+  {
+   "name": "practice model: scrubber is branch-local",
+   "pass": true,
+   "detail": [
+    155.65099999999998,
+    209.83899999999997
+   ]
+  },
+  {
+   "name": "practice model: seek beyond the branch stays inside it (branch_ready, no common cue)",
+   "pass": true,
+   "detail": {
+    "t": 209.83899999999997,
+    "gate": "branch_ready",
+    "route": "practice:model",
+    "choice": "model",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": true,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.S06.f101"
+   }
+  },
+  {
+   "name": "practice model: branch end waits for Continue",
+   "pass": true,
+   "detail": {
+    "t": 209.83899999999997,
+    "gate": "branch_ready",
+    "route": "practice:model",
+    "choice": "model",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": true,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.S06.f101"
+   }
+  },
+  {
+   "name": "practice model: viewing sets modelViewed only (responseText null; speakingObserved, completionAssumed, groupAgreementVerified, proposalAdopted stay false)",
+   "pass": true,
+   "detail": {
+    "responseText": null,
+    "modelViewed": true,
+    "speakingObserved": false,
+    "completionAssumed": false,
+    "groupAgreementVerified": false,
+    "proposalAdopted": false
+   }
+  },
+  {
+   "name": "practice model: Try again restores the gate baseline (state + identical stage)",
+   "pass": true,
+   "detail": {
+    "s": {
+     "t": 155.646,
+     "gate": "awaiting",
+     "route": "practice:skip",
+     "choice": null,
+     "playing": false,
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "groupAgreementVerified": false,
+      "proposalAdopted": false
+     },
+     "step": "L08.I03.gate"
+    },
+    "same": true
+   }
+  },
+  {
+   "name": "practice model: Continue rejoins L08.S06.c008 once",
+   "pass": true,
+   "detail": {
+    "t": 210.29640000000012,
+    "gate": "resolved",
+    "route": "practice:model",
+    "choice": "model",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": true,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.S06.c008"
+   }
+  },
+  {
+   "name": "practice model: flags after Continue still claim nothing",
+   "pass": true,
+   "detail": {
+    "responseText": null,
+    "modelViewed": true,
+    "speakingObserved": false,
+    "completionAssumed": false,
+    "groupAgreementVerified": false,
+    "proposalAdopted": false
+   }
+  },
+  {
+   "name": "practice model: no branch words in the common continuation caption",
+   "pass": true,
+   "detail": "Use the source statements to review any summary,"
+  },
+  {
+   "name": "practice model: seek before the gate resets the attempt",
+   "pass": true,
+   "detail": {
+    "t": 151.451,
+    "gate": "before",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.S06.c007"
+   }
+  },
+  {
+   "name": "practice model: seek to the gate stops there",
+   "pass": true,
+   "detail": {
+    "t": 155.646,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.I03.gate"
+   }
+  },
+  {
+   "name": "practice: Skip enters the common continuation once, unanswered, no assessment",
+   "pass": true,
+   "detail": {
+    "t": 155.9356999999997,
+    "gate": "resolved",
+    "route": "practice:skip",
+    "choice": "skip",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.S06.c008"
+   }
+  },
+  {
+   "name": "practice rehearsal: Continue without the model rejoins once (modelViewed stays false)",
+   "pass": true,
+   "detail": {
+    "t": 155.93854999999957,
+    "gate": "resolved",
+    "route": "practice:skip",
+    "choice": "skip",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.S06.c008"
+   }
+  },
+  {
+   "name": "practice: seek forward across an unvisited gate stops at the gate",
+   "pass": true,
+   "detail": {
+    "t": 155.646,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.I03.gate"
+   }
+  },
+  {
+   "name": "practice: after Skip, seeking within the continuation is allowed",
+   "pass": true,
+   "detail": {
+    "t": 252.051,
+    "gate": "resolved",
+    "route": "practice:skip",
+    "choice": "skip",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.S06.c011"
+   }
+  },
+  {
+   "name": "mode switch at the gate: Watch restarts at its thinking hold",
+   "pass": true,
+   "detail": {
+    "t": 154.451,
+    "gate": "none",
+    "route": "watch",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.I03.watchThink"
+   }
+  },
+  {
+   "name": "mode switch at the gate: Practice returns to awaiting_choice",
+   "pass": true,
+   "detail": {
+    "t": 155.646,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.I03.gate"
+   }
+  },
+  {
+   "name": "mode switch inside a branch: Watch restarts at its thinking hold (no branch carried over)",
+   "pass": true,
+   "detail": {
+    "t": 154.451,
+    "gate": "none",
+    "route": "watch",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.I03.watchThink"
+   }
+  },
+  {
+   "name": "watch: no waiting at the gate; the declared path (model) follows the 35 s thinking hold",
+   "pass": true,
+   "detail": {
+    "t": 191.18920000000017,
+    "gate": "none",
+    "route": "watch",
+    "choice": null,
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "groupAgreementVerified": false,
+     "proposalAdopted": false
+    },
+    "step": "L08.S06.d101"
+   }
+  },
+  {
+   "name": "practice: no runtime errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: Watch duration changes by the expected clip delta (17.250 s)",
+   "pass": true,
+   "detail": {
+    "prod": 344.04400000000004,
+    "retimed": 361.2940000000001
+   }
+  },
+  {
+   "name": "retime: step order unchanged in every route",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: holds keep their fixture length; think holds unchanged",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+   "pass": true,
+   "detail": [
+    {
+     "name": "a_L08_S06_c001",
+     "zero": false,
+     "ratio": 1.3499999999999999,
+     "m": 1.35
+    },
+    {
+     "name": "a_L08_S06_d101",
+     "zero": false,
+     "ratio": 1.349996464682175,
+     "m": 1.35
+    },
+    {
+     "name": "s6_now",
+     "zero": true,
+     "ratio": 1,
+     "m": 1.35
+    },
+    {
+     "name": "s6_use",
+     "zero": false,
+     "ratio": 1.3500583430571762,
+     "m": 1.35
+    },
+    {
+     "name": "s6_job",
+     "zero": false,
+     "ratio": 1.3500175008750437,
+     "m": 1.35
+    }
+   ]
+  },
+  {
+   "name": "retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: no layout warnings",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 193,
+    "domcapFs": 16,
+    "panel": true
+   }
+  },
+  {
+   "name": "tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 193,
+    "domcapFs": 16,
+    "panel": true
+   }
+  },
+  {
+   "name": "tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 193,
+    "domcapFs": 16,
+    "panel": true
+   }
+  },
+  {
+   "name": "desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 193,
+    "domcapFs": 16,
+    "panel": true
+   }
+  }
+ ],
+ "failures": [],
+ "notes": [
+  "Text expansion is a stress report, not a pass/fail gate: overflow at ×1.3/×1.6 is reported by the fitter (never clipped silently) and needs layout work in the localization pass where it occurs."
+ ],
+ "routes": {
+  "watch": 344.044,
+  "practice:model": 310.244,
+  "practice:skip": 256.051
+ },
+ "anchors": [
+  {
+   "name": "a_L08_S06_c001",
+   "cue": "L08.S06.c001",
+   "phrase": "the current snapshot",
+   "localSec": 3,
+   "suppliedSec": 3,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_c002",
+   "cue": "L08.S06.c002",
+   "phrase": "those checks must not disappear",
+   "localSec": 16.714,
+   "suppliedSec": 16.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_c003",
+   "cue": "L08.S06.c003",
+   "phrase": "not identical signatures",
+   "localSec": 18,
+   "suppliedSec": 18,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_c004",
+   "cue": "L08.S06.c004",
+   "phrase": "affect the next decision",
+   "localSec": 10.286,
+   "suppliedSec": 10.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_c005",
+   "cue": "L08.S06.c005",
+   "phrase": "make support conditional",
+   "localSec": 18,
+   "suppliedSec": 18,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_c006",
+   "cue": "L08.S06.c006",
+   "phrase": "ordinary wording",
+   "localSec": 11.143,
+   "suppliedSec": 11.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_c007",
+   "cue": "L08.S06.c007",
+   "phrase": "a separate example",
+   "localSec": 15.429,
+   "suppliedSec": 15.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_c008",
+   "cue": "L08.S06.c008",
+   "phrase": "review any summary",
+   "localSec": 2.143,
+   "suppliedSec": 2.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_c009",
+   "cue": "L08.S06.c009",
+   "phrase": "shorten the repetition rather than the condition",
+   "localSec": 13.286,
+   "suppliedSec": 13.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_c010",
+   "cue": "L08.S06.c010",
+   "phrase": "use the actual reply",
+   "localSec": 11.571,
+   "suppliedSec": 11.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_c011",
+   "cue": "L08.S06.c011",
+   "phrase": "one small focus",
+   "localSec": 2.143,
+   "suppliedSec": 2.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_d101",
+   "cue": "L08.S06.d101",
+   "phrase": "Noah supports the example and question time",
+   "localSec": 14.143,
+   "suppliedSec": 14.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_d102",
+   "cue": "L08.S06.d102",
+   "phrase": "haven't agreed to the full sequence",
+   "localSec": 3,
+   "suppliedSec": 3,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L08_S06_f101",
+   "cue": "L08.S06.f101",
+   "phrase": "with their limits",
+   "localSec": 4.286,
+   "suppliedSec": 4.286,
+   "source": "supplied semantic anchor"
+  }
+ ],
+ "layoutAudit": {
+  "watch": [],
+  "practice:model": [],
+  "practice:skip": []
+ },
+ "stills": [
+  "S06_watch_B01-open_t1.20.jpg",
+  "S06_watch_B01-mid_t35.81.jpg",
+  "S06_watch_B01-end_t71.32.jpg",
+  "S06_watch_B02-open_t72.82.jpg",
+  "S06_watch_B02-mid_t157.63.jpg",
+  "S06_watch_B02-end_t243.34.jpg",
+  "S06_watch_B03-open_t244.84.jpg",
+  "S06_watch_B03-mid_t272.28.jpg",
+  "S06_watch_B03-end_t300.62.jpg",
+  "S06_watch_B04-open_t302.12.jpg",
+  "S06_watch_B04-mid_t322.48.jpg",
+  "S06_watch_B04-end_t343.74.jpg",
+  "S06_watch_trans-c002_t22.13.jpg",
+  "S06_watch_trans-c003_t42.62.jpg",
+  "S06_watch_trans-h101_t63.97.jpg",
+  "S06_watch_trans-c004_t71.97.jpg",
+  "S06_watch_trans-c005_t94.61.jpg",
+  "S06_watch_trans-c006_t114.24.jpg",
+  "S06_watch_trans-c007_t133.45.jpg",
+  "S06_watch_trans-watchThink_t154.80.jpg",
+  "S06_watch_trans-d101_t189.80.jpg",
+  "S06_watch_trans-d102_t218.01.jpg",
+  "S06_watch_trans-f101_t224.36.jpg",
+  "S06_watch_trans-c008_t243.99.jpg",
+  "S06_watch_trans-c009_t266.63.jpg",
+  "S06_watch_trans-h102_t289.27.jpg",
+  "S06_watch_trans-c010_t301.27.jpg",
+  "S06_watch_trans-c011_t321.33.jpg",
+  "S06_practice-model_B02-open_t156.85.jpg",
+  "S06_practice-model_B02-mid_t182.75.jpg",
+  "S06_practice-model_B02-end_t209.54.jpg",
+  "S06_practice-model_trans-d101_t156.00.jpg",
+  "S06_practice-model_settled-d101_t183.56.jpg",
+  "S06_practice-model_trans-d102_t184.21.jpg",
+  "S06_practice-model_settled-d102_t189.91.jpg",
+  "S06_practice-model_trans-f101_t190.56.jpg",
+  "S06_practice-model_settled-f101_t209.54.jpg",
+  "S06_practice-model_trans-ready_t210.19.jpg",
+  "S06_practice-model_settled-ready_t209.54.jpg",
+  "S06_practice-skip_B02-open_t72.82.jpg",
+  "S06_practice-skip_B02-mid_t113.64.jpg",
+  "S06_practice-skip_B02-end_t155.35.jpg",
+  "S06_reduced-motion_t154.75.jpg",
+  "S06_practice_gate-awaiting.jpg",
+  "S06_practice_model_branch-ready.jpg",
+  "S06_retime-demo_c001-end_t28.78.jpg",
+  "S06_retime-demo_d101-end_t234.41.jpg",
+  "S06_text-x1.3_t154.05.jpg",
+  "S06_text-x1.6_t154.05.jpg",
+  "S06_text-long_t154.05.jpg",
+  "S06_viewport-390x844.png",
+  "S06_viewport-820x1180.png",
+  "S06_viewport-1180x820.png",
+  "S06_viewport-1366x768.png"
+ ],
+ "textExpansion": {
+  "x1.3": {
+   "warnings": 1,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "mineH",
+     "score": "watch",
+     "t": 266.68,
+     "text": "Your own wording (private, blank) Your own wording"
+    }
+   ],
+   "errors": []
+  },
+  "x1.6": {
+   "warnings": 8,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "snap",
+     "score": "watch",
+     "t": 2.57,
+     "text": "Current snapshot after the proposal check Current snapshot after the"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "tin",
+     "score": "watch",
+     "t": 34.49,
+     "text": "Question time is inside 30 minutes Question time is inside"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 228.69,
+     "text": "Accurate scope matters more than matching the words Accurate scope matters more "
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "dist",
+     "score": "watch",
+     "t": 58.56,
+     "text": "Related positions, different scope Related positions, different"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.hold",
+     "token": "holdTxt",
+     "score": "watch",
+     "t": 154.5,
+     "text": "Privately rehearse a faithful summary of the current candidate: what has explici"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.quoteLong",
+     "token": "bubL",
+     "score": "watch",
+     "t": 190.4,
+     "text": "Our candidate links a brief example, pair discussion and sharing, with at least "
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.idea",
+     "token": "narrow",
+     "score": "watch",
+     "t": 271.54,
+     "text": "“Maya supports the sequence if the example stays brief; Noah wants the timings c"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "mineH",
+     "score": "watch",
+     "t": 266.68,
+     "text": "Your own wording (private, blank) Your own wording (private,"
+    }
+   ],
+   "errors": []
+  },
+  "long": {
+   "warnings": 16,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "snap",
+     "score": "watch",
+     "t": 2.57,
+     "text": "Current snapshot after Unbreakablelongtokenforlayoutchecking the proposal check"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "st0",
+     "score": "watch",
+     "t": 21.78,
+     "text": "Brief example Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "st1",
+     "score": "watch",
+     "t": 22.08,
+     "text": "Pairs Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "st2",
+     "score": "watch",
+     "t": 22.38,
+     "text": "Sharing Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "st3",
+     "score": "watch",
+     "t": 22.68,
+     "text": "Club questions: Unbreakablelongtokenforlayoutchecking at least 5"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "tin",
+     "score": "watch",
+     "t": 34.49,
+     "text": "Question time is Unbreakablelongtokenforlayoutchecking inside 30 minutes"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 228.69,
+     "text": "Accurate scope matters more Unbreakablelongtokenforlayoutchecking than matching "
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "stM",
+     "score": "watch",
+     "t": 43.07,
+     "text": "Conditional support Unbreakablelongtokenforlayoutchecking for the sequence"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "dist",
+     "score": "watch",
+     "t": 58.56,
+     "text": "Related positions, Unbreakablelongtokenforlayoutchecking different scope"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.hold",
+     "token": "holdTxt",
+     "score": "watch",
+     "t": 154.5,
+     "text": "Privately rehearse a faithful summary of the current candidate: what has explici"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "sep",
+     "score": "watch",
+     "t": 146.82,
+     "text": "The model Unbreakablelongtokenforlayoutchecking stays separate"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "mHead",
+     "score": "watch",
+     "t": 224.16,
+     "text": "Authored model, Unbreakablelongtokenforlayoutchecking not your response"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.idea",
+     "token": "an1",
+     "score": "watch",
+     "t": 226.65,
+     "text": "Two support statements, Unbreakablelongtokenforlayoutchecking with their limits"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "exH",
+     "score": "watch",
+     "t": 266.28,
+     "text": "An authored example to Unbreakablelongtokenforlayoutchecking revise (not your re"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.idea",
+     "token": "narrow",
+     "score": "watch",
+     "t": 271.54,
+     "text": "“Maya supports the sequence if the example Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "mineH",
+     "score": "watch",
+     "t": 266.68,
+     "text": "Your own Unbreakablelongtokenforlayoutchecking wording (private, blank)"
+    }
+   ],
+   "errors": []
+  }
+ },
+ "viewports": [
+  {
+   "viewport": "phone 390x844",
+   "hscroll": false,
+   "small": [],
+   "domcap": 193,
+   "domcapFs": 16,
+   "panel": true
+  },
+  {
+   "viewport": "tablet 820x1180",
+   "hscroll": false,
+   "small": [],
+   "domcap": 193,
+   "domcapFs": 16,
+   "panel": true
+  },
+  {
+   "viewport": "tablet landscape 1180x820",
+   "hscroll": false,
+   "small": [],
+   "domcap": 193,
+   "domcapFs": 16,
+   "panel": true
+  },
+  {
+   "viewport": "desktop 1366x768",
+   "hscroll": false,
+   "small": [],
+   "domcap": 193,
+   "domcapFs": 16,
+   "panel": true
+  }
+ ],
+ "summary": {
+  "checks": 71,
+  "failed": 0,
+  "stills": 54
+ }
+}
