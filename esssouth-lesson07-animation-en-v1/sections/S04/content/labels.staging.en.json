@@ -1,0 +1,24 @@
+{
+  "schema": "esssouth.l07.staging-labels/1",
+  "sectionId": "L07.S04",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or content/case-facts.en.json. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.caseLabel": "Practice example",
+    "x.prior": "Earlier proposal, not adopted",
+    "x.curQ": "Current question",
+    "x.obs1": "Who has commented on it?",
+    "x.obs2": "What contribution would help?",
+    "x.ref": "Source prompt (reference)",
+    "x.open": "Open invitation (to everyone)",
+    "x.named": "Named invitation (if there is a natural opening)",
+    "x.c.contrib": "Contribute",
+    "x.c.pass": "Pass",
+    "x.c.later": "Come in later",
+    "x.illus": "Separate illustrative phrases",
+    "x.want": "Points toward a wanted answer",
+    "x.room": "Leaves room for a different view",
+    "x.later": "A later contribution (if offered)",
+    "x.brief": "A brief observation",
+    "x.longer": "A point that needs explanation"
+  }
+}
