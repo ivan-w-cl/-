@@ -1,0 +1,1635 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<script src="team-preview-data.js"></script>
+<script src="team-preview.js"></script>
+<script src="team-preview-demo.js"></script>
+<style>.team-preview-badge{position:fixed;right:16px;bottom:16px;z-index:80;border:1px solid var(--line,#ddd);border-radius:24px;padding:9px 14px;background:var(--surface,#fff);color:var(--muted,#696970);font:12px system-ui;box-shadow:0 3px 16px #0001;cursor:pointer}@media(max-width:700px){.team-preview-badge{bottom:calc(76px + env(safe-area-inset-bottom));right:10px;font-size:11px}}</style>
+<meta charset="utf-8">
+<title>综评国本备考院 · esssouth</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="stylesheet" href="platform.css">
+<link rel="stylesheet" href="experience.css">
+<link rel="stylesheet" href="question-library.css">
+<link rel="stylesheet" href="discussion-layer.css">
+<style>
+/* Layout: left rail (today / practice / courses / mocks / records + my schools) and one calm content column.
+   Practice, lessons, live rooms and mocks open as a full-screen focus layer instead of windows. */
+:root{
+  --bg:#F2F2EF; --surface:#FFFFFF; --tile:#E8E8E4; --tile2:#F7F7F4; --ink:#1A1A1C; --muted:#696970; --faint:#9B9BA0; --line:#E1E1DC;
+  --accent:#DD5636; --accent-ink:#FFFFFF; --accent-soft:#FBE8E2;
+  --xj:#2B8494; --xj-soft:#E2F0F2; --cu:#B44E68; --cu-soft:#F6E5EA; --gray:#8A8A90; --gray-soft:#EDEDEA;
+  --ok:#2E8656; --ok-soft:#E3F2E9; --warn:#A86E14; --warn-soft:#F8EEDB;
+  --stage:#121315; --stage-2:#1C1D20; --stage-ink:#ECECEC; --stage-muted:#9C9CA2;
+  --overlay:rgba(24,24,26,.42); --shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(0,0,0,.07);
+  --f-body:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1C1C1F; --tile:#26262A; --tile2:#202023; --ink:#F1F1EF; --muted:#A3A3A9; --faint:#6F6F75; --line:#2E2E33;
+  --accent:#EC6A4A; --accent-ink:#FFFFFF; --accent-soft:#3B231D;
+  --xj:#55B2C2; --xj-soft:#173135; --cu:#DA7A93; --cu-soft:#3A2028; --gray:#9A9AA0; --gray-soft:#2A2A2E;
+  --ok:#5CBF86; --ok-soft:#18301F; --warn:#E0A84A; --warn-soft:#352A16;
+  --overlay:rgba(0,0,0,.62); --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1C1C1F; --tile:#26262A; --tile2:#202023; --ink:#F1F1EF; --muted:#A3A3A9; --faint:#6F6F75; --line:#2E2E33;
+  --accent:#EC6A4A; --accent-ink:#FFFFFF; --accent-soft:#3B231D;
+  --xj:#55B2C2; --xj-soft:#173135; --cu:#DA7A93; --cu-soft:#3A2028; --gray:#9A9AA0; --gray-soft:#2A2A2E;
+  --ok:#5CBF86; --ok-soft:#18301F; --warn:#E0A84A; --warn-soft:#352A16;
+  --overlay:rgba(0,0,0,.62); --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35); color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none;padding:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+h1,h2,h3{margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+.ic{flex:none;display:block}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)} .faint{color:var(--faint)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* shell */
+.shell{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100%}
+.rail{position:sticky;top:0;height:100vh;padding:22px 14px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:20px;overflow-y:auto}
+.brand{display:flex;align-items:center;gap:10px;padding:0 8px}
+.brand-mark{width:30px;height:30px;border-radius:9px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:900;font-size:15px}
+.brand{flex:none}.brand b{font-size:16px;font-weight:900;letter-spacing:.02em;white-space:nowrap}
+.brand small{display:block;font-size:11px;color:var(--faint);line-height:1.2}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:500}
+.nav a:hover{background:var(--tile2);color:var(--ink)}
+.nav a.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.nav a .n{margin-left:auto;font-size:11px;background:var(--accent);color:var(--accent-ink);border-radius:20px;padding:0 7px;font-weight:700}
+.rail-h{font-size:11px;letter-spacing:.12em;color:var(--faint);padding:0 10px;margin-bottom:4px;font-weight:700}
+.dot{width:8px;height:8px;border-radius:50%;flex:none;background:var(--gray)}
+.dot.si{background:#786193}.chip.si{background:color-mix(in srgb,#786193 13%,var(--surface));color:var(--ink)}.school-h .bar.si{background:#786193}
+.dot.xj{background:var(--xj)} .dot.cu{background:var(--cu)}
+.rail-foot{margin-top:auto;display:flex;flex-direction:column;gap:2px}
+.rail-foot button{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:10px;color:var(--muted);font-size:13px;text-align:left}
+.rail-foot button:hover{background:var(--tile2);color:var(--ink)}
+.demo-clock{font-size:11px;color:var(--faint);padding:0 10px}
+
+.main{padding-block:36px 120px;padding-inline:clamp(16px,4vw,56px);min-width:0}
+.wrap{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+.page-h{display:flex;flex-direction:column;gap:6px}
+.eyebrow{font-size:12px;color:var(--muted);letter-spacing:.04em}
+.page-h h1{font-size:clamp(26px,3.2vw,34px);font-weight:900;line-height:1.25}
+.page-h p{color:var(--muted);max-width:60ch}
+.sec{display:flex;flex-direction:column;gap:14px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sec-h h2{font-size:18px;font-weight:700}
+.sec-h .aside{font-size:13px;color:var(--muted)}
+.link{color:var(--muted);font-size:13px;display:inline-flex;align-items:center;gap:4px;text-decoration:none}
+.link:hover{color:var(--ink)}
+
+/* tiles & cards */
+.tile{background:var(--tile);border-radius:var(--r);padding:18px 20px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.tile .k{font-size:12px;color:var(--muted)}
+.tile .v{font-size:28px;font-weight:900;line-height:1.1}
+.tile .v small{font-size:13px;font-weight:500;color:var(--muted);margin-left:4px}
+.tile.accent{background:var(--accent);color:var(--accent-ink)}
+.tile.accent .k{color:var(--accent-ink);opacity:.85}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);min-width:0}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 16px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:700;font-size:14px;white-space:nowrap}
+.btn:hover{opacity:.88}
+.btn.sm{height:32px;padding:0 13px;font-size:13px}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.ghost:hover{background:var(--tile2);opacity:1}
+.btn.soft{background:var(--tile);color:var(--ink)}
+.btn.light{background:var(--accent-ink);color:var(--accent)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+
+.chip{display:inline-flex;align-items:center;gap:5px;height:22px;padding:0 9px;border-radius:999px;font-size:12px;background:var(--tile);color:var(--muted);white-space:nowrap;font-weight:500}
+.chip.free{background:var(--ok-soft);color:var(--ok)}
+.chip.paid{background:var(--warn-soft);color:var(--warn)}
+.chip.live{background:var(--accent-soft);color:var(--accent)}
+.chip.xj{background:var(--xj-soft);color:var(--xj)} .chip.cu{background:var(--cu-soft);color:var(--cu)}
+.chip.line{background:transparent;box-shadow:inset 0 0 0 1px var(--line)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+
+/* today */
+.today-top{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:12px}
+.next{padding:24px 26px;gap:14px;justify-content:space-between;min-height:210px}
+.next .lbl{font-size:12px;letter-spacing:.1em;font-weight:700;opacity:.85}
+.next h2{font-size:26px;font-weight:900;line-height:1.3}
+.next p{opacity:.9;max-width:46ch}
+.next .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.stack{display:flex;flex-direction:column;gap:12px}
+.live-strip{display:flex;align-items:center;gap:14px;padding:12px 16px;flex-wrap:wrap}
+.pulse{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 50%,transparent)}100%{box-shadow:0 0 0 10px transparent}}
+
+.sched{display:flex;flex-direction:column}
+.srow{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:16px;align-items:center;padding:14px 18px;border-top:1px solid var(--line)}
+.srow:first-child{border-top:0}
+.srow .when b{display:block;font-size:14px}
+.srow .when span{font-size:12px;color:var(--muted)}
+.srow .what{display:flex;flex-direction:column;gap:3px;min-width:0}
+.srow .what b{font-weight:500}
+.empty{padding:22px;color:var(--muted);font-size:14px;text-align:center}
+
+.school-card{padding:18px 20px;display:flex;flex-direction:column;gap:14px;text-decoration:none}
+.school-card:hover{box-shadow:var(--shadow)}
+.sc-h{display:flex;align-items:center;gap:10px}
+.sc-h b{font-size:17px}
+.sc-h .chip{margin-left:auto}
+.pathbar{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.pathbar div{display:flex;flex-direction:column;gap:6px;font-size:12px;color:var(--muted)}
+.pathbar i{display:block;height:5px;border-radius:5px;background:var(--tile)}
+.pathbar i.half{background:linear-gradient(90deg,var(--ink) 50%,var(--tile) 50%)}
+.pathbar i.full{background:var(--ink)}
+
+/* item rows */
+.items{display:flex;flex-direction:column}
+.irow{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:14px;align-items:center;padding:13px 16px;border-top:1px solid var(--line)}
+.irow:first-child{border-top:0}
+.irow .ico{width:40px;height:40px;border-radius:11px;background:var(--tile2);display:grid;place-items:center;color:var(--muted)}
+.irow .t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.irow .t b{font-weight:500}
+.irow .t span{font-size:13px;color:var(--muted)}
+.irow .act{display:flex;gap:8px;align-items:center}
+
+/* school page */
+.school-h{display:flex;gap:18px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.school-h .bar{width:36px;height:4px;border-radius:4px;background:var(--gray);margin-bottom:12px}
+.school-h .bar.xj{background:var(--xj)} .school-h .bar.cu{background:var(--cu)}
+.format{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.format .tile .v{font-size:20px}
+.path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:st}
+.stage{display:flex;flex-direction:column;gap:10px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);min-width:0}
+.stage-h{display:flex;align-items:center;gap:8px}
+.stage-h .num{width:22px;height:22px;border-radius:50%;background:var(--tile);display:grid;place-items:center;font-size:12px;font-weight:700}
+.stage-h .num.done{background:var(--ink);color:var(--bg)}
+.stage-h b{font-size:15px}
+.stage p{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini{display:flex;flex-direction:column;gap:6px}
+.mini a,.mini button{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:10px;background:var(--tile2);text-decoration:none;text-align:left;width:100%}
+.mini a:hover,.mini button:hover{background:var(--tile)}
+.mini b{font-size:13.5px;font-weight:500;line-height:1.4}
+.mini span{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+
+.tasks .irow{grid-template-columns:28px minmax(0,1fr) auto}
+.cbox{width:22px;height:22px;border-radius:7px;box-shadow:inset 0 0 0 1.5px var(--faint);display:grid;place-items:center;color:var(--bg)}
+.cbox.on{background:var(--ink);box-shadow:none}
+.date-in{height:32px;border-radius:9px;border:1px solid var(--line);background:var(--surface);padding:0 8px;font-size:13px}
+.notice{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;background:var(--tile2);border-radius:var(--r);font-size:14px;color:var(--muted)}
+.notice b{color:var(--ink);font-weight:500}
+
+/* filters */
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{height:32px;padding:0 13px;border-radius:999px;font-size:13px;color:var(--muted);box-shadow:inset 0 0 0 1px var(--line)}
+.filters button.on{background:var(--ink);color:var(--bg);box-shadow:none}
+.pcard{padding:18px;display:flex;flex-direction:column;gap:12px}
+.pcard h3{font-size:16px;font-weight:700}
+.pcard p{font-size:13px;color:var(--muted)}
+.pcard .foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;flex-wrap:wrap}
+
+/* course detail */
+.lessons .irow .ico{font-family:var(--f-mono);font-size:13px}
+.buybox{padding:20px;display:flex;flex-direction:column;gap:12px}
+.two{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px;align-items:start}
+
+/* mock stepper */
+.stepper{display:flex;gap:0;align-items:center;flex-wrap:wrap;row-gap:8px}
+.stepper span{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--faint)}
+.stepper span.on{color:var(--ink);font-weight:700}
+.stepper span.done{color:var(--muted)}
+.stepper span+span::before{content:"";width:22px;height:1px;background:var(--line);margin:0 8px}
+.seat{font-size:12px;color:var(--muted)}
+
+/* review */
+.quote{border-left:3px solid var(--line);padding:2px 0 2px 12px;color:var(--muted);font-size:14px}
+.fb{display:flex;flex-direction:column;gap:10px}
+.fb li{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.fb ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.mark{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;flex:none;margin-top:2px}
+.mark.g{background:var(--ok-soft);color:var(--ok)} .mark.i{background:var(--warn-soft);color:var(--warn)}
+.transcript{display:flex;flex-direction:column;gap:12px;padding:18px}
+.tline{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;font-size:14px}
+.tline .who{font-size:12px;color:var(--muted);padding-top:2px}
+.tline.me .who{color:var(--ink);font-weight:700}
+.tline.me .txt{font-weight:500}
+
+/* focus layer */
+.focus{position:fixed;inset:0;z-index:40;background:var(--bg);display:flex;flex-direction:column;animation:rise .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.f-top{display:flex;align-items:center;gap:14px;padding:calc(12px + env(safe-area-inset-top,0px)) clamp(16px,3vw,28px) 12px;border-bottom:1px solid var(--line);background:var(--surface)}
+.f-title{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.f-title b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.f-title .chip{flex:none}
+.f-timer{font-family:var(--f-mono);font-size:15px;padding:4px 10px;border-radius:8px;background:var(--tile2)}
+.f-body{flex:1;overflow-y:auto;padding:clamp(20px,4vw,48px) clamp(16px,4vw,48px) 40px}
+.f-col{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+.f-col.wide{max-width:1120px}
+.topic{padding:24px 26px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.topic .over{font-size:12px;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.topic h2{font-size:clamp(20px,2.6vw,26px);font-weight:700;line-height:1.35}
+.stage-steps{display:flex;gap:6px;flex-wrap:wrap}
+.stage-steps span{font-size:12px;padding:3px 10px;border-radius:999px;background:var(--tile);color:var(--muted)}
+.stage-steps span.on{background:var(--ink);color:var(--bg)}
+.stage-steps span.done{background:var(--tile2);color:var(--faint);text-decoration:line-through}
+textarea.in{width:100%;min-height:150px;resize:vertical;border-radius:12px;border:1px solid var(--line);background:var(--surface);padding:14px 16px;line-height:1.7;font-size:15px}
+textarea.in:focus{outline:2px solid var(--ink);outline-offset:-1px}
+.countdown{font-family:var(--f-mono);font-size:56px;font-weight:500;line-height:1;letter-spacing:-.02em}
+.center{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:20px 0}
+.members{display:flex;gap:8px;flex-wrap:wrap}
+.member{display:flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:13px}
+.av{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--tile);color:var(--ink);flex:none}
+.av.me{background:var(--ink);color:var(--bg)}
+.av.talk{box-shadow:0 0 0 2px var(--accent)}
+
+.chat{display:flex;flex-direction:column;gap:14px}
+.msg{display:flex;gap:10px;align-items:flex-start;max-width:640px}
+.msg .bubble{background:var(--surface);border:1px solid var(--line);border-radius:4px 14px 14px 14px;padding:10px 14px;font-size:14.5px;line-height:1.6}
+.msg .name{font-size:12px;color:var(--muted);margin-bottom:3px}
+.msg.me{align-self:flex-end;flex-direction:row-reverse}
+.msg.me .bubble{background:var(--ink);color:var(--bg);border-color:var(--ink);border-radius:14px 4px 14px 14px}
+.msg.me .name{text-align:right}
+.msg.sys{align-self:center;max-width:none}
+.msg.sys .bubble{background:transparent;border:0;color:var(--muted);font-size:13px;padding:0}
+.typing{display:inline-flex;gap:4px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--faint);animation:bl 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bl{0%,100%{opacity:.25}50%{opacity:1}}
+.composer{position:sticky;bottom:0;background:var(--bg);padding-top:12px;display:flex;flex-direction:column;gap:10px}
+.moves{display:flex;gap:6px;flex-wrap:wrap}
+.moves button{font-size:12.5px;height:28px;padding:0 11px;border-radius:999px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);color:var(--muted)}
+.moves button:hover{color:var(--ink)}
+.cin{display:flex;gap:8px;align-items:flex-end}
+.cin textarea{flex:1;min-height:48px;max-height:160px;resize:none;border-radius:14px;border:1px solid var(--line);background:var(--surface);padding:12px 14px;font-size:15px;line-height:1.5}
+.micbtn{width:48px;height:48px;border-radius:50%;background:var(--tile);display:grid;place-items:center;color:var(--muted);flex:none}
+.hint{font-size:12px;color:var(--faint)}
+
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:12px;align-items:center;padding:13px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);text-align:left;font-size:15px}
+.opt:hover{border-color:var(--faint)}
+.opt .l{width:26px;height:26px;border-radius:8px;background:var(--tile);display:grid;place-items:center;font-size:13px;font-weight:700;flex:none}
+.opt.pick{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.opt.right{border-color:var(--ok);box-shadow:inset 0 0 0 1px var(--ok)} .opt.right .l{background:var(--ok);color:#fff}
+.opt.wrong{border-color:var(--accent)} .opt.wrong .l{background:var(--accent);color:#fff}
+.explain{padding:14px 16px;border-radius:12px;background:var(--tile2);font-size:14px;color:var(--muted)}
+
+/* player */
+.player{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}
+.screen{aspect-ratio:16/9;max-width:100%;border-radius:var(--r);background:var(--stage);color:var(--stage-ink);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.screen.demo-screen{display:block;background:#141416}
+.demo-screen video{display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:contain}
+.demo-screen .livechip{pointer-events:none}
+.demo-credit{font-size:12px;line-height:1.7;color:var(--muted)}
+.demo-credit a{text-decoration:underline;text-underline-offset:3px}
+.screen .bigt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:8%;gap:10px}
+.screen .bigt small{color:var(--stage-muted);font-size:13px;letter-spacing:.08em}
+.screen .bigt b{font-size:clamp(20px,3vw,32px);font-weight:900;line-height:1.3;max-width:18ch}
+.screen .sub{position:absolute;left:0;right:0;bottom:64px;text-align:center;font-size:14px;color:var(--stage-ink);padding:0 10%}
+.screen .sub span{background:rgba(0,0,0,.55);padding:3px 10px;border-radius:6px}
+.ctrl{position:relative;display:flex;align-items:center;gap:12px;padding:12px 16px;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+.ctrl button{color:var(--stage-ink);width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.12)}
+.prog{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.2);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--stage-ink);width:0}
+.ctrl .mono{font-size:12px;color:var(--stage-muted)}
+.lockscreen{position:absolute;inset:0;background:rgba(10,10,12,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:20px}
+.livechip{position:absolute;top:14px;left:14px;display:flex;gap:8px;align-items:center;font-size:12px;background:rgba(0,0,0,.45);padding:4px 10px;border-radius:999px}
+.side{display:flex;flex-direction:column;gap:12px;min-width:0}
+.side .card{padding:14px}
+.chatlog{display:flex;flex-direction:column;gap:8px;max-height:340px;overflow-y:auto;font-size:13.5px}
+.chatlog p b{font-weight:500;color:var(--muted);margin-right:6px}
+.chatlog p.t b{color:var(--accent)}
+.lessonlist button{display:flex;gap:10px;align-items:center;padding:9px 10px;border-radius:9px;width:100%;text-align:left;font-size:13.5px}
+.lessonlist button:hover{background:var(--tile2)}
+.lessonlist button.on{background:var(--tile)}
+.lessonlist .mono{font-size:12px;color:var(--faint);width:20px}
+
+/* mock room */
+.room{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:760px;width:100%;margin:0 auto}
+.cand{aspect-ratio:4/3;border-radius:12px;background:var(--stage-2);color:var(--stage-ink);display:flex;align-items:flex-end;padding:10px;font-size:12.5px;position:relative}
+.cand.me{box-shadow:inset 0 0 0 2px var(--stage-ink)}
+.cand.talk{box-shadow:inset 0 0 0 2px var(--accent)}
+.cand .ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--stage-muted)}
+.cand.empty{background:var(--tile2);color:var(--faint)}
+.checks{display:flex;flex-direction:column;gap:10px;width:100%;max-width:420px}
+.checks div{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+
+/* sheet */
+.scrim{position:fixed;inset:0;background:var(--overlay);z-index:60;display:flex;align-items:center;justify-content:center;padding:16px;animation:fade .2s}
+@keyframes fade{from{opacity:0}}
+.sheet{background:var(--surface);border-radius:20px;width:min(560px,100%);max-height:88vh;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow);animation:rise .25s}
+.sheet.wide{width:min(860px,100%)}
+.sheet-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.sheet-h h2{font-size:20px;font-weight:900}
+.xbtn{width:32px;height:32px;border-radius:50%;background:var(--tile2);display:grid;place-items:center;color:var(--muted);flex:none}
+.slot{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:12px;border:1px solid var(--line);width:100%;text-align:left;gap:10px}
+.slot.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.slot[disabled]{opacity:.45;cursor:not-allowed}
+.demo-note{font-size:12px;color:var(--warn);background:var(--warn-soft);padding:8px 12px;border-radius:9px}
+
+/* onboarding */
+.onb{min-height:100%;display:flex;justify-content:center;padding-block:56px 80px;padding-inline:16px}
+.onb-in{width:min(760px,100%);display:flex;flex-direction:column;gap:24px}
+.onb h1{font-size:clamp(28px,4vw,40px);font-weight:900;line-height:1.2}
+.searchbox{display:flex;align-items:center;gap:10px;height:46px;padding:0 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.searchbox input{flex:1;border:0;background:transparent;outline:none;height:100%;color:var(--ink);min-width:0}
+.pick{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:14px;align-items:center;padding:13px 16px;border-top:1px solid var(--line);width:100%;text-align:left}
+.pick:first-child{border-top:0}
+.pick .t b{font-weight:700}
+.pick .t span{display:block;font-size:12.5px;color:var(--muted)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{height:40px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font-size:14px}
+.seg button.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);font-weight:700}
+.onb-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;position:sticky;bottom:0;padding:14px 0;background:var(--bg)}
+
+/* dock */
+.dock{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.dock button{display:flex;align-items:center;gap:10px;padding:8px 8px 8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);font-size:13px}
+.dock button .go{background:var(--ink);color:var(--bg);border-radius:999px;padding:3px 11px;font-weight:700}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;z-index:80;animation:rise .2s;max-width:calc(100% - 32px)}
+
+/* design notes */
+.ia{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.ia div{background:var(--tile2);border-radius:12px;padding:12px;font-size:13px;display:flex;flex-direction:column;gap:4px}
+.ia b{font-size:14px}
+.notes-list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--muted)}
+.notes-list b{color:var(--ink);font-weight:500}
+table.cmp{width:100%;border-collapse:collapse;font-size:13.5px}
+table.cmp td,table.cmp th{padding:8px 10px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+table.cmp th{font-size:12px;color:var(--muted);font-weight:500}
+
+/* ---------- motion & richer visuals ---------- */
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(.7);opacity:0}70%{transform:scale(1.05);opacity:1}100%{transform:scale(1)}}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes grow{from{transform:scaleY(0)}}
+@keyframes growx{from{transform:scaleX(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes conf{to{transform:translate(var(--x),var(--y)) rotate(var(--r));opacity:0}}
+@keyframes ringin{from{stroke-dashoffset:var(--c)}}
+@keyframes eq{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(10%,-8%) scale(1.18)}}
+@keyframes slidein{from{opacity:0;transform:translateX(-8px)}}
+@keyframes talkring{0%,100%{box-shadow:0 0 0 2px var(--accent)}50%{box-shadow:0 0 0 7px color-mix(in srgb,var(--accent) 22%,transparent)}}
+@keyframes toastin{from{opacity:0;transform:translate(-50%,12px) scale(.96)}}
+@keyframes sheetin{from{opacity:0;transform:translateY(20px) scale(.98)}}
+@keyframes scan{0%,100%{top:10px}50%{top:166px}}
+.anim .wrap>*{animation:up .55s cubic-bezier(.2,.8,.2,1) both}
+.anim .wrap>*:nth-child(2){animation-delay:.06s}.anim .wrap>*:nth-child(3){animation-delay:.12s}.anim .wrap>*:nth-child(4){animation-delay:.18s}.anim .wrap>*:nth-child(5){animation-delay:.24s}.anim .wrap>*:nth-child(n+6){animation-delay:.3s}
+.anim .stagger>*{animation:up .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*60ms + .15s)}
+.card,.tile,.btn,.opt,.slot,.mini a,.mini button,.ftab{transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s,background .2s,border-color .2s,opacity .15s}
+a.card:hover,.pcard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.btn:active,.opt:active,.slot:active{transform:scale(.97)}
+.btn .ic{transition:transform .2s}.btn:hover .ic{transform:translateX(2px)}
+.mini a:hover,.mini button:hover{transform:translateX(3px)}
+.deco svg{width:100%;height:100%;display:block}
+.ring{display:block;flex:none}
+.ring .track{stroke:var(--tile)}
+.ring .val{transition:stroke-dashoffset .9s cubic-bezier(.2,.8,.2,1)}
+.anim .ring .val,.fcard .ring .val{animation:ringin 1.3s cubic-bezier(.2,.8,.2,1) both .25s}
+.ring text{font-family:var(--f-mono);font-size:11px;fill:var(--ink)}
+.next{position:relative;overflow:hidden;isolation:isolate}
+.next .deco{position:absolute;right:-70px;top:-70px;width:300px;height:300px;z-index:-1;opacity:.24;animation:spin 60s linear infinite}
+.next .deco2{position:absolute;right:60px;bottom:-110px;width:220px;height:220px;border-radius:50%;background:var(--accent-ink);opacity:.09;z-index:-1;animation:drift 9s ease-in-out infinite}
+.bars{display:flex;align-items:flex-end;gap:6px;height:58px;margin-top:8px}
+.bars div{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
+.bars i{display:block;width:100%;min-height:4px;border-radius:4px 4px 2px 2px;background:var(--faint);opacity:.4;transform-origin:bottom}
+.bars i.on{background:var(--ink);opacity:1}
+.bars i.today{background:var(--accent);opacity:1}
+.bars span{font-size:10px;color:var(--faint);line-height:1}
+.anim .bars i{animation:grow .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*70ms + .25s)}
+.heat{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,14px);grid-auto-columns:14px;gap:4px}
+.heat i{border-radius:4px;background:var(--tile)}
+.heat i.l1{background:color-mix(in srgb,var(--ink) 30%,var(--tile))}.heat i.l2{background:color-mix(in srgb,var(--ink) 62%,var(--tile))}.heat i.l3{background:var(--ink)}.heat i.now{box-shadow:0 0 0 2px var(--accent)}
+.anim .heat i{animation:pop .4s both;animation-delay:calc(var(--i)*14ms + .2s)}
+.legend{display:flex;gap:4px;align-items:center;font-size:11px;color:var(--faint)}
+.legend i{width:11px;height:11px;border-radius:3px;background:var(--tile)}
+.wave{display:block;width:100%;height:70px}
+.av.talk{animation:talkring 1.2s ease-in-out infinite}
+.chat .msg:last-child,.mw-chat .msg{animation:up .35s cubic-bezier(.2,.8,.2,1) both}
+.caret{display:inline-block;width:2px;height:1em;background:var(--accent);vertical-align:-2px;margin-left:2px;animation:bl 1s infinite}
+.msg.cut .bubble{border-style:dashed}
+.tag{font-size:10.5px;padding:1px 7px;border-radius:7px;margin-left:4px;font-weight:700;vertical-align:1px}
+.tag.ai{background:var(--accent-soft);color:var(--accent)}.tag.hu{background:var(--tile);color:var(--muted)}
+.seats .irow{grid-template-columns:40px minmax(0,1fr) auto}
+.segs{display:flex;padding:3px;border-radius:11px;background:var(--tile)}
+.segs button{height:30px;padding:0 12px;border-radius:8px;font-size:12.5px;color:var(--muted)}
+.segs button.on{background:var(--surface);color:var(--ink);font-weight:700;box-shadow:var(--shadow)}
+.cdring{position:relative;width:170px;height:170px;display:grid;place-items:center}
+.cdring svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.cdring .val{transition:stroke-dashoffset 1s linear}
+.cdring .countdown{font-size:40px}
+.opt.right{animation:pop .4s}
+.opt.wrong{animation:shake .4s}
+.confetti{position:fixed;width:8px;height:12px;border-radius:2px;z-index:90;pointer-events:none;animation:conf 1.1s cubic-bezier(.1,.7,.3,1) forwards}
+.perf{display:flex;flex-direction:column;gap:12px}
+.perf>div{display:grid;grid-template-columns:52px minmax(0,1fr) 64px;gap:12px;align-items:center;font-size:13px}
+.perf .tr{height:8px;border-radius:8px;background:var(--tile);overflow:hidden}
+.perf .tr i{display:block;height:100%;border-radius:8px;background:var(--faint);transform-origin:left;animation:growx 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*90ms + .2s)}
+.perf .tr i.hi{background:var(--ink)}
+.perf .st{font-size:12px;color:var(--muted);text-align:right}
+.screen .blob{position:absolute;width:60%;aspect-ratio:1;border-radius:50%;filter:blur(42px);opacity:.38;animation:drift 12s ease-in-out infinite;pointer-events:none}
+.screen .b1{background:var(--xj);left:-10%;top:-25%}.screen .b2{background:var(--accent);right:-15%;bottom:-35%;animation-delay:-6s;opacity:.26}
+.screen.paused .blob{animation-play-state:paused}
+.cand{transition:box-shadow .3s}
+.cand.join{animation:pop .45s both}
+.eqbars{position:absolute;top:10px;right:10px;display:flex;gap:2px;align-items:flex-end;height:14px}
+.eqbars i{width:3px;height:100%;background:var(--accent);border-radius:2px;transform-origin:bottom;animation:eq .7s ease-in-out infinite}
+.eqbars i:nth-child(2){animation-delay:-.2s}.eqbars i:nth-child(3){animation-delay:-.45s}
+.chatlog p{animation:slidein .3s both}
+.checks .spin{width:16px;height:16px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--ink);animation:spin .7s linear infinite}
+.toast{animation:toastin .35s cubic-bezier(.2,.8,.2,1)}
+.sheet{animation:sheetin .38s cubic-bezier(.2,.9,.25,1.1)}
+.dock button{animation:pop .4s both}
+.sc-ring{display:flex;align-items:center;gap:12px}
+
+/* ---------- landing ---------- */
+.lp{min-height:100%;overflow-x:clip}
+.lp-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;display:flex;align-items:center;gap:16px;padding:14px clamp(16px,4vw,56px);background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.lp-nav.scrolled{border-bottom-color:var(--line)}
+.lp-links{display:flex;gap:24px;margin-left:20px}
+.lp-links a{text-decoration:none;color:var(--muted);font-size:14px}
+.lp-links a:hover{color:var(--ink)}
+.lp-nav .right{margin-left:auto;display:flex;gap:8px;align-items:center}
+.lp-sec{padding-block:clamp(64px,9vw,120px);padding-inline:clamp(16px,4vw,56px)}
+.lp-sec.alt{background:var(--surface);border-block:1px solid var(--line)}
+.lp-in{max-width:1160px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+.lp-h{display:flex;flex-direction:column;gap:12px;max-width:640px}
+.lp-h .kicker{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.lp-h h2{font-size:clamp(28px,4vw,46px);font-weight:900;line-height:1.15;letter-spacing:-.02em}
+.lp-h p{color:var(--muted);font-size:17px}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px);align-items:center;max-width:1160px;margin:0 auto;padding:clamp(36px,6vw,80px) clamp(16px,4vw,56px) clamp(36px,5vw,64px)}
+.hero h1{font-size:clamp(40px,6.2vw,78px);font-weight:900;line-height:1.06;letter-spacing:-.035em;isolation:isolate;margin-top:18px}
+.hero h1 .hl{position:relative;white-space:nowrap}
+.hero h1 .hl::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:.04em;height:.2em;background:var(--accent);opacity:.85;border-radius:4px;z-index:-1;transform-origin:left;animation:growx .9s cubic-bezier(.2,.8,.2,1) .55s both}
+.lede{font-size:clamp(16px,1.5vw,19px);color:var(--muted);max-width:30ch;margin-top:20px}
+.ctas{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
+.btn.lg{height:52px;padding:0 24px;font-size:16px}
+.btn.accentb{background:var(--accent);color:var(--accent-ink)}
+.hero-meta{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px;font-size:13px;color:var(--muted)}
+.hero-meta span{display:flex;gap:6px;align-items:center}
+.hero-meta .ic{color:var(--ok)}
+.hero-copy>*{animation:up .7s cubic-bezier(.2,.8,.2,1) both}
+.hero-copy>*:nth-child(2){animation-delay:.08s}.hero-copy>*:nth-child(3){animation-delay:.16s}.hero-copy>*:nth-child(4){animation-delay:.24s}.hero-copy>*:nth-child(5){animation-delay:.32s}
+.stage3d{position:relative;height:clamp(460px,46vw,560px);perspective:1400px;--mx:0;--my:0}
+.mockwin{position:absolute;inset:28px 5% 52px 9%;background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:0 40px 90px -24px rgba(0,0,0,.25);display:flex;flex-direction:column;overflow:hidden;transform:rotateY(calc(var(--mx)*-8deg)) rotateX(calc(var(--my)*7deg));transition:transform .5s cubic-bezier(.2,.8,.2,1);animation:up .9s cubic-bezier(.2,.8,.2,1) .2s both}
+.mw-top{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);font-size:13px}
+.mw-top .lights{display:flex;gap:6px;margin-right:6px}.mw-top .lights i{width:10px;height:10px;border-radius:50%;background:var(--tile)}
+.mw-body{flex:1;padding:16px 18px 10px;display:flex;flex-direction:column;gap:12px;min-height:0}
+.mw-topic{font-weight:700;font-size:15px;line-height:1.4}
+.mw-chat{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;overflow:hidden;min-height:0}
+.mw-chat .msg{max-width:88%}
+.mw-chat .msg .bubble{font-size:13px;padding:8px 12px}
+.mw-chat .av{width:24px;height:24px;font-size:11px}
+.fcard{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 44px -14px rgba(0,0,0,.25);padding:14px 16px;font-size:13px;display:flex;flex-direction:column;gap:6px;transform:translate(calc(var(--mx)*var(--d)*1px),calc(var(--my)*var(--d)*1px));transition:transform .5s cubic-bezier(.2,.8,.2,1);animation:pop .7s cubic-bezier(.2,.8,.2,1) both,float 7s ease-in-out infinite}
+.fcard.a{left:0;bottom:0;--d:24;background:var(--accent);color:var(--accent-ink);border-color:transparent;animation-delay:.8s,0s;width:236px}
+.fcard.b{right:0;top:0;--d:-20;animation-delay:1s,-2s;flex-direction:row;align-items:center;gap:12px}
+.fcard.c{right:-1%;bottom:84px;--d:32;animation-delay:1.2s,-4s;width:250px}
+.lp-schools{display:flex;flex-direction:column;gap:14px;padding-bottom:28px}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee .track{display:flex;gap:12px;width:max-content;animation:marquee 36s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.mq{display:flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:var(--surface);border:1px solid var(--line);white-space:nowrap;font-size:14px}
+.mq small{color:var(--faint)}
+.feat{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:28px;align-items:stretch}
+.ftabs{display:flex;flex-direction:column;gap:8px}
+.ftab{display:flex;flex-direction:column;gap:6px;text-align:left;padding:18px 20px 22px;border-radius:16px;position:relative;overflow:hidden;color:var(--muted)}
+.ftab:hover{background:var(--tile2)}
+.ftab b{color:var(--ink);font-size:17px;display:flex;align-items:center;gap:10px}
+.ftab p{font-size:14px;max-height:0;opacity:0;overflow:hidden;transition:max-height .45s,opacity .3s}
+.ftab.on{background:var(--bg)}
+.ftab.on p{max-height:90px;opacity:1}
+.ftab .pbar{position:absolute;left:20px;right:20px;bottom:10px;height:2px;background:var(--line);border-radius:2px;overflow:hidden;opacity:0}
+.ftab.on .pbar{opacity:1}
+.ftab.on .pbar i{display:block;height:100%;background:var(--accent);transform-origin:left;animation:growx 6s linear both}
+.fpanel{background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,3vw,32px);min-height:420px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.fpanel>.inner{animation:up .5s cubic-bezier(.2,.8,.2,1) both}
+.fpanel>.inner>*{animation:up .5s cubic-bezier(.2,.8,.2,1) both}
+.fpanel>.inner>*:nth-child(2){animation-delay:.08s}.fpanel>.inner>*:nth-child(3){animation-delay:.16s}.fpanel>.inner>*:nth-child(4){animation-delay:.24s}
+.steps4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative}
+.steps4 .line{position:absolute;left:12.5%;right:12.5%;top:27px;height:2px;background:var(--line);overflow:hidden}
+.steps4 .line i{display:block;height:100%;background:var(--ink);transform-origin:left;animation:growx 2.4s cubic-bezier(.4,0,.2,1) .4s both}
+.step4{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.step4 .bub{width:56px;height:56px;border-radius:50%;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;box-shadow:var(--shadow);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.step4:hover .bub{transform:translateY(-4px) scale(1.08)}
+.step4 b{font-size:17px}
+.step4 p{font-size:13.5px;color:var(--muted);max-width:22ch}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.stats .tile{padding:22px}
+.stats .tile .v{font-size:clamp(34px,4vw,48px)}
+.trust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.trust .card{padding:26px;display:flex;flex-direction:column;gap:12px}
+.trust .card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.trust .ico{width:44px;height:44px;border-radius:12px;background:var(--tile2);display:grid;place-items:center}
+.trust b{font-size:17px}
+.trust p{color:var(--muted);font-size:14.5px}
+.price{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.price .card{padding:30px;display:flex;flex-direction:column;gap:16px}
+.price h3{font-size:22px;font-weight:900}
+.price ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.price li{display:flex;gap:10px;align-items:flex-start}
+.price li .ic{color:var(--ok);margin-top:4px}
+.price .card.hl{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.faq{display:flex;flex-direction:column;gap:8px;max-width:820px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 20px;transition:border-color .2s}
+.faq details[open]{border-color:var(--faint)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ic{transition:transform .3s}
+.faq details[open] summary .ic{transform:rotate(45deg)}
+.faq details p{padding-bottom:18px;color:var(--muted);font-size:14.5px;animation:up .35s both}
+.cta-band{border-radius:28px;background:var(--ink);color:var(--bg);padding:clamp(36px,6vw,72px);display:flex;flex-direction:column;align-items:flex-start;gap:18px;position:relative;overflow:hidden;isolation:isolate}
+.cta-band h2{font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.15;max-width:15ch}
+.cta-band p{opacity:.72;max-width:44ch}
+.cta-band .deco{position:absolute;right:-90px;top:-90px;width:380px;height:380px;opacity:.16;z-index:-1;animation:spin 80s linear infinite}
+.cta-band .btn.inv{background:var(--bg);color:var(--ink)}
+.cta-band .btn.ghostinv{background:transparent;color:var(--bg);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--bg) 35%,transparent)}
+.lp-foot{padding:36px clamp(16px,4vw,56px) 48px;color:var(--faint);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1160px;margin:0 auto}
+/* Content stays readable even if viewport observation or animation is unavailable.
+   Do not bind opacity to a scroll timeline: Safari can leave it at the first frame. */
+.lp .reveal{opacity:1;transform:none}
+.lp .reveal.reveal-entered{animation:up .55s cubic-bezier(.2,.8,.2,1) backwards}
+.lp .motion-paused,.lp .motion-paused *{animation-play-state:paused!important}
+/* auth */
+.auth-tabs{display:flex;gap:4px;padding:4px;background:var(--tile2);border-radius:12px}
+.auth-tabs button{flex:1;height:36px;border-radius:9px;font-size:14px;color:var(--muted)}
+.auth-tabs button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow);font-weight:700}
+.field{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted)}
+.field input{height:46px;border-radius:12px;border:1px solid var(--line);background:var(--surface);padding:0 14px;font-size:16px;color:var(--ink);font-family:var(--f-mono)}
+.field input:focus{outline:2px solid var(--ink);outline-offset:-1px}
+.row-in{display:flex;gap:8px}.row-in input{flex:1;min-width:0}
+.qr{width:180px;height:180px;margin:0 auto;display:grid;grid-template-columns:repeat(21,1fr);gap:1px;padding:10px;background:#FFFFFF;border-radius:14px;border:1px solid var(--line);position:relative}
+.qr i{background:#111111;border-radius:1px}.qr i.o{background:transparent}
+.qr .scan{position:absolute;left:8px;right:8px;height:2px;background:var(--accent);box-shadow:0 0 12px var(--accent);animation:scan 2.2s ease-in-out infinite}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);text-align:left}
+.agree .cbox{flex:none;margin-top:1px}
+
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:sticky;top:0;z-index:20;height:auto;flex-direction:row;align-items:center;padding:10px 16px;gap:10px;border-right:0;border-bottom:1px solid var(--line);background:var(--bg);overflow-x:auto}
+  .rail .rail-schools,.rail .rail-foot,.brand small,.demo-clock{display:none}
+  .nav{flex-direction:row}
+  .nav a{padding:6px 10px;white-space:nowrap}
+  .today-top,.two,.player{grid-template-columns:1fr}
+  .path{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ia{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .f-top{flex-wrap:wrap}.f-title{flex-basis:100%}
+  .g2,.g3,.path{grid-template-columns:1fr}
+  .srow{grid-template-columns:1fr;gap:6px}
+  .irow{grid-template-columns:40px minmax(0,1fr)}
+  .irow .act{grid-column:2}
+  .room{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){.hero,.feat{grid-template-columns:1fr}.lp-links{display:none}.stats,.steps4{grid-template-columns:repeat(2,minmax(0,1fr))}.steps4{row-gap:28px}.steps4 .line{display:none}.trust{grid-template-columns:1fr}}
+@media (max-width:560px){.price{grid-template-columns:1fr}.fcard.c,.fcard.b{display:none}.mockwin{inset:12px 0 70px 0}.lp-nav .right .ghost{display:none}.stage3d{height:440px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* Admissions Academy: existing colours, cards and motion, with three lead schools. */
+.academy-brand{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--muted)}
+.academy-focus{font-size:clamp(16px,1.7vw,20px);font-weight:700;line-height:1.6;margin-top:24px}
+.hero .academy-focus+.lede{margin-top:12px}
+.academy-note{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6}
+.academy-schools-in{width:100%;box-sizing:border-box;padding:36px clamp(16px,4vw,56px) 0;gap:24px}
+.academy-schools{grid-template-columns:repeat(3,minmax(0,1fr))}
+.academy-schools .school-card{gap:12px;min-width:0}
+.academy-schools h3{font-size:22px}
+.academy-schools p{font-size:14px;line-height:1.7}
+.academy-schools .chip{align-self:flex-start;white-space:normal}
+.academy-select{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.academy-more{display:flex;flex-direction:column;gap:6px;margin-top:16px}
+.academy-more h3{font-size:17px}
+#lp-schools{scroll-margin-top:90px}
+@media(max-width:420px){.lp-nav .brand b{font-size:14px}.lp-nav .right .btn{padding-inline:10px}.lp-nav{gap:10px}}
+@media(max-width:700px){.academy-schools{grid-template-columns:minmax(0,1fr)}.academy-schools-in{padding-top:24px}.academy-focus{margin-top:20px}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="focus"></div>
+<div id="dock" class="dock"></div>
+<div id="sheet"></div>
+
+<script src="room-core.js"></script>
+<script src="admissions-data.js"></script>
+<script src="question-library.js"></script>
+<script>
+/* ---------- helpers ---------- */
+const KEY='zp-redesign-v1';
+let NOW=Date.now(); setInterval(()=>{NOW=Date.now()},30e3); // real clock
+const D=(m,d,h=0,mi=0)=>new Date(2026,m-1,d,h,mi).getTime();
+const WD='日一二三四五六';
+const dayKey=t=>{const d=new Date(t);return new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()};
+const fmtD=t=>{const d=new Date(t);const diff=Math.round((dayKey(t)-dayKey(NOW))/864e5);const rel=diff===0?'今天':diff===1?'明天':diff===2?'后天':'';return `${d.getMonth()+1}月${d.getDate()}日 周${WD[d.getDay()]}`+(rel?` · ${rel}`:'')};
+const fmtT=t=>{const d=new Date(t);return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')};
+const mmss=s=>{s=Math.max(0,Math.round(s));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Math.random().toString(36).slice(2,9);
+
+const I={
+ home:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/>',
+ pen:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>',
+ play:'<path d="M8 5.5v13l10.5-6.5z"/>',
+ users:'<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2c3 .1 5.5 2.6 5.5 5.8"/>',
+ clock:'<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+ plus:'<path d="M12 5v14M5 12h14"/>',
+ search:'<circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/>',
+ check:'<path d="m5 12.5 4.5 4.5L19 7.5"/>',
+ x:'<path d="M6 6l12 12M18 6 6 18"/>',
+ arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',
+ back:'<path d="M19 12H5M11 6l-6 6 6 6"/>',
+ ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
+ lock:'<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+ bell:'<path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/>',
+ live:'<circle cx="12" cy="12" r="2.2"/><path d="M8 8a5.6 5.6 0 0 0 0 8M16 8a5.6 5.6 0 0 1 0 8M5.2 5.2a9.6 9.6 0 0 0 0 13.6M18.8 5.2a9.6 9.6 0 0 1 0 13.6"/>',
+ mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/>',
+ info:'<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/>',
+ pause:'<path d="M8.5 5.5v13M15.5 5.5v13"/>',
+ video:'<rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/>',
+ talk:'<path d="M4 5h16v11H9l-5 4z"/>',
+ map:'<path d="M4 6h10M4 12h16M4 18h7"/>',
+ reset:'<path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"/>',
+};
+const ic=(n,s=18)=>`<svg class="ic" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]||''}</svg>`;
+
+/* ---------- content ---------- */
+const SCHOOLS={
+ xjtlu:{short:'西浦',name:'西交利物浦大学',city:'苏州',level:'full',color:'xj',url:'https://www.xjtlu.edu.cn',
+   format:[['小组讨论','英文 · 无领导'],['个人表达','英文问答']],note:'按往届考生描述整理。时长、人数和题目以学校当届通知为准。'},
+ silc:{short:'上悉 4+0',name:'上海大学悉尼工商学院',city:'上海',level:'full',color:'si',url:'https://silcadmission.shu.edu.cn/',format:[['英语笔试','听力 · 语法 · 阅读 · 写作'],['英语口试','口头表达'],['数学笔试','中文数学']],note:'按学校 2026 年官方样题说明整理。这里的练习题是我们原创的，不是学校真题；考试安排以学校当届通知为准。'},
+ cuhksz:{short:'港中深',name:'香港中文大学（深圳）',city:'深圳',level:'full',color:'cu',url:'https://www.cuhk.edu.cn',
+   format:[['文理基础','笔试'],['英文口试','面试'],['写作','中英文']],note:'题库里的题都可以直接练，每道题都标了来源。'},
+ uic:{short:'北师港浸大',name:'北师香港浸会大学',city:'珠海',level:'info',url:'https://www.uic.edu.cn'},
+ smbu:{short:'深北莫',name:'深圳北理莫斯科大学',city:'深圳',level:'info',url:'https://www.smbu.edu.cn'},
+ njfu:{short:'南林大',name:'南京林业大学',city:'南京',level:'info',url:'https://www.njfu.edu.cn'},
+ dku:{short:'昆山杜克',name:'昆山杜克大学',city:'昆山',level:'listed'},
+ nyush:{short:'上纽大',name:'上海纽约大学',city:'上海',level:'listed'},
+ sustech:{short:'南科大',name:'南方科技大学',city:'深圳',level:'listed'},
+ unnc:{short:'宁诺',name:'宁波诺丁汉大学',city:'宁波',level:'listed'},
+ wku:{short:'温州肯恩',name:'温州肯恩大学',city:'温州',level:'listed'},
+ gtiit:{short:'广以',name:'广东以色列理工学院',city:'汕头',level:'listed'},
+};
+const LEVEL={full:['课程 · AI 练习 · 题库 · 一对一辅导','课程 + 练习'],info:['课程 · 一对一辅导','课程 + 辅导'],listed:['课程 · 一对一辅导','课程 + 辅导']};
+const sc=id=>SCHOOLS[id]||{short:'通用',name:'适用所有学校',color:''};
+const colorOf=id=>(SCHOOLS[id]&&SCHOOLS[id].color)||'';
+
+const ITEMS={
+ 'xj-group':{kind:'practice',mode:'group',school:'xjtlu',title:'AI 小组讨论',sub:'和同学或 AI 组员一起，全程用英文讨论',min:10,skill:'小组讨论'},
+ 'xj-indiv':{kind:'practice',mode:'oral',school:'xjtlu',title:'个人表达 · 英文问答',sub:'回答一道题，再回答一个追问',min:5,skill:'个人表达',
+   qs:['Why do you want to study at an English-medium university like XJTLU?','Tell us about a time you worked with others to solve a problem.','What is a global issue you care about, and what can young people do about it?'],
+   fus:['You said "{q}". Can you give one specific example?','What would you do differently if you faced that situation again?','How does this connect to the subject you want to study?']},
+ 'xj-drill':{kind:'practice',mode:'oral',school:'xjtlu',title:'专项 · 回应与澄清',sub:'听一句组员发言，练习接话',min:5,skill:'小组讨论',
+   qs:['Leo says: "Online learning is always worse than classroom learning." Respond to him and ask one clarifying question.','Mia says: "Let\'s just vote and move on." Suggest another way for the group to decide.','Sam has not spoken for five minutes. Invite him into the discussion naturally.'],
+   fus:['Now say it again in under 20 words.','Add one reason that the group has not mentioned yet.','How would you respond if he disagreed with you?']},
+ 'cu-oral':{kind:'practice',mode:'oral',school:'cuhksz',title:'英文口试',sub:'听题、作答、回答追问',min:6,skill:'英文口试',
+   qs:['Describe a book or film that changed the way you think.','Some people say teenagers spend too much time online. Do you agree?','If you could add one course to your high school, what would it be and why?'],
+   fus:['You mentioned "{q}". Why does that matter to you?','Can you think of an argument against your view?','What did you learn from that experience?']},
+ 'cu-math':{kind:'practice',mode:'mcq',school:'cuhksz',title:'文理基础 · 数学',sub:'3 道练习题，做完看解析',min:8,skill:'文理基础',
+   qs:[{q:'函数 f(x) = x² − 4x + 3 在区间 [0, 3] 上的最小值是？',o:['−2','−1','0','3'],a:1,e:'f(x) = (x − 2)² − 1，对称轴 x = 2 在区间内，最小值为 f(2) = −1。'},
+       {q:'从 1 到 9 中任取 2 个不同的数，它们的和为偶数的概率是？',o:['1/2','4/9','5/9','1/3'],a:1,e:'和为偶数要求同奇或同偶：C(5,2) + C(4,2) = 16，总数 C(9,2) = 36，概率 16/36 = 4/9。'},
+       {q:'log₂8 + log₃9 = ？',o:['5','6','4','17'],a:0,e:'log₂8 = 3，log₃9 = 2，和为 5。'}]},
+ 'cu-write':{kind:'practice',mode:'write',school:'cuhksz',title:'中文写作',sub:'约 400 字，写完看反馈',min:20,skill:'写作',
+   prompt:'有人说：“独立思考比合作更重要。”请结合你的经历，谈谈你的看法。'},
+
+ 'open-intro':{kind:'recorded',school:'all',title:'西浦、港中深、上悉怎么准备',sub:'公开课 · 3 讲 · 免费',free:true,
+   lessons:[['综评和高考是什么关系',18],['三所学校的准备有什么不同',24],['从现在到校测怎么安排',16]]},
+ 'xj-course':{kind:'recorded',school:'xjtlu',title:'西浦小组讨论：从开口到推进',sub:'系统课 · 6 讲 · 第 1 讲可试看',skill:'小组讨论',trial:1,
+   lessons:[['小组讨论在考什么',14],['第一次开口：观点加理由',22],['回应与澄清',20],['邀请别人发言',18],['推进讨论与控时',21],['30 秒总结',17]]},
+ 'cu-course':{kind:'recorded',school:'cuhksz',title:'文理基础 · 数学专题',sub:'系统课 · 8 讲 · 第 1 讲可试看',skill:'文理基础',trial:1,
+   lessons:[['函数与图像',26],['二次函数最值',24],['数列',25],['计数与概率',28],['指数与对数',22],['三角函数',27],['平面几何',24],['历年题型串讲',30]]},
+ 'live-now':{kind:'live',school:'all',title:'答疑直播：报名前要准备什么',sub:'观看型直播 · 可以文字提问',free:true,start:D(10,12,18,30),dur:90,teacher:'教研老师（示例）'},
+ 'live-xj':{kind:'live',school:'xjtlu',title:'西浦小组讨论：常见失分点',sub:'直播公开课 · 免费 · 有回放',free:true,start:D(10,14,19,30),dur:60,teacher:'林老师（示例）'},
+ 'live-cu':{kind:'live',school:'cuhksz',title:'港中深英文口试直播精讲',sub:'直播课 · 有回放',start:D(10,17,10,0),dur:90,teacher:'周老师（示例）',skill:'英文口试'},
+ 'coach-1v1':{kind:'coach',school:'all',title:'老师一对一模拟面试',sub:'45 分钟 · 腾讯会议 · 可附上你的练习记录',
+   teachers:[['林老师','西浦小组讨论方向'],['周老师','英文口试方向']],slots:[D(10,15,20),D(10,16,19),D(10,19,20),D(10,20,19)]},
+ 'coach-group':{kind:'coach',school:'all',title:'小班辅导（4 人）',sub:'60 分钟 · 腾讯会议 · 按学校分班',
+   teachers:[['林老师','西浦小组讨论方向']],slots:[D(10,17,15),D(10,24,15)]},
+ 'mock-xj':{kind:'mock',school:'xjtlu',title:'西浦小组面试模拟',sub:'和同学或 AI 组员一起，按校测流程完整走一遍',
+   sessions:[[D(10,18,14),2],[D(10,25,14),4],[D(11,1,14),6]],cap:6,
+   topic:'Should universities replace final exams with project-based assessment?'},
+ 'mock-cu':{kind:'mock',school:'cuhksz',title:'港中深英文口试 · 线上模考',sub:'考官一对一，多人线上轮候，结束后出评分报告',
+   sessions:[[D(10,19,9,30),5],[D(10,26,9,30),11]],cap:12,
+   topic:'Describe a decision you made that others disagreed with.'},
+};
+const KIND={practice:['练习','pen'],recorded:['录播课','video'],live:['直播','live'],coach:['老师辅导','talk'],mock:['小组面试模拟','users']};
+const isFree=it=>it.kind==='practice'||!!it.free;
+const priceChip=it=>isFree(it)?'<span class="chip free">免费</span>':(S.owned[idOf(it)]?'<span class="chip line">已开通</span>':'<span class="chip paid">付费</span>');
+const idOf=it=>Object.keys(ITEMS).find(k=>ITEMS[k]===it);
+
+const PATH={
+ xjtlu:[['了解','了解考核形式与内容',['open-intro','live-xj']],['学方法','学习各环节的作答方法',['xj-course']],['练','练习英文表达与讨论',['xj-group','xj-indiv','xj-drill']],['模拟','与同学或 AI 组员完成模拟讨论',['room','coach-1v1']]],
+ cuhksz:[['了解','了解考核形式与内容',['open-intro','live-cu']],['学方法','学习各环节的作答方法',['cu-course']],['练','免费练习，按题型练',['cu-math','cu-oral','cu-write']],['模拟','请老师一对一模拟',['coach-1v1']]],
+};
+const TASKS={
+ xjtlu:[['xj-t1','查看当届综评招生简章','official'],['xj-t2','在学校报名系统提交申请','official'],['xj-t3','写好个人陈述要点','plan'],['xj-t4','完成 3 次 AI 小组讨论','plan']],
+ cuhksz:[['cu-t1','查看当届综评招生简章','official'],['cu-t2','网上报名并提交材料','official'],['cu-t3','整理学考成绩','plan'],['cu-t4','准备 1 分钟英文自我介绍','plan']],
+};
+const tasksOf=id=>TASKS[id]||[[id+'-t1','查看当届招生简章','official'],[id+'-t2','在学校系统报名','official']];
+const NEXTSTEP={'小组讨论':[['xj-course',2,'回应与澄清'],['coach-1v1']],'个人表达':[['xj-course',1,'第一次开口：观点加理由'],['coach-1v1']],'英文口试':[['live-cu'],['coach-1v1']],'文理基础':[['cu-course',1,'二次函数最值'],['cu-course']],'写作':[['coach-1v1']]};
+
+/* ---------- state ---------- */
+function seed(){return{
+  v:2,signedIn:false,onboarded:true,schools:[],province:'',cohort:'',
+  sessions:{},
+  records:[],
+  owned:{},reminders:{},bookings:{},coach:[],progress:{},
+  taskDone:{},taskDate:{},notify:{},practiceFilter:'mine',courseTab:'all',focus:null,draftsLast:null
+};}
+let S;
+function load(){try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);if(o&&o.v===2)return o}}catch(e){}return seed()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S,(k,v)=>k==='_auth'||k==='_ltHover'?undefined:v))}catch(e){}}
+S=load();
+
+/* ---------- derived ---------- */
+const recsOf=itemId=>S.records.filter(r=>r.item===itemId);
+const recsSchool=sid=>S.records.filter(r=>(ITEMS[r.item]||{}).school===sid);
+function stageState(sid,i){ // 0 none,1 started,2 done
+  const st=PATH[sid][i];const ids=st[2];
+  if(i===0){const p=(S.progress['open-intro']||{}).done||[];const rem=ids.some(x=>S.reminders[x]);return p.length>=3?2:(p.length||rem)?1:0}
+  if(i===1){const c=ids[0];const p=(S.progress[c]||{}).done||[];return p.length>=ITEMS[c].lessons.length?2:p.length?1:0}
+  if(i===2){const n=ids.reduce((a,x)=>a+recsOf(x).length,0)+(ids.some(x=>S.sessions[x])?0.5:0);return n>=3?2:n>0?1:0}
+  if(ids[0]==='room'){const n=S.records.filter(r=>r.room).length;return n>=2?2:n?1:0}
+  return S.coach.some(c=>ids.includes(c.item))?1:0;
+}
+function weekCount(){const wk=dayKey(NOW)-6*864e5;return S.records.filter(r=>r.ts>=wk).length}
+function schedule(){
+  const out=[];
+  Object.keys(ITEMS).forEach(id=>{if(isLiveNow(ITEMS[id])&&!S.reminders[id])out.push({ts:ITEMS[id].start,id,type:'live'})});
+  Object.keys(S.reminders).forEach(id=>{if(S.reminders[id]&&ITEMS[id]&&ITEMS[id].start>=NOW-ITEMS[id].dur*6e4)out.push({ts:ITEMS[id].start,id,type:'live'})});
+  Object.entries(S.bookings).forEach(([id,b])=>{if(b.st!=='report'&&b.st!=='done')out.push({ts:ITEMS[id].sessions[b.si][0],id,type:'mock'})});
+  S.coach.forEach(c=>out.push({ts:c.ts,id:c.item,type:'coach',c}));
+  S.schools.forEach(sid=>tasksOf(sid).forEach(([tid,t,k])=>{const dt=S.taskDate[tid];if(k==='plan'&&dt&&!S.taskDone[tid]){const [y,m,d]=dt.split('-').map(Number);out.push({ts:new Date(y,m-1,d,21).getTime(),type:'task',tid,t,sid})}}));
+  return out.sort((a,b)=>a.ts-b.ts);
+}
+const isLiveNow=it=>it.kind==='live'&&NOW>=it.start&&NOW<it.start+it.dur*6e4;
+function nextAction(){
+  const paused=Object.keys(S.sessions).filter(k=>ITEMS[k]&&ITEMS[k].kind==='practice');
+  if(paused.length){const id=paused[0],it=ITEMS[id],s=S.sessions[id];
+    return{lbl:'继续练习',title:`继续${sc(it.school).short}${it.title}`,desc:`上次练到「${stageName(it,s)}」，已练 ${Math.max(1,Math.round(s.elapsed/60))} 分钟。可继续上次进度。`,btn:'继续练习',act:`data-a="open" data-id="${id}"`}}
+  const soon=Object.entries(S.bookings).find(([id,b])=>b.st==='booked');
+  if(soon){const it=ITEMS[soon[0]];return{lbl:'模考前',title:'检查面试设备',desc:`${it.title}在 ${fmtD(it.sessions[soon[1].si][0])} ${fmtT(it.sessions[soon[1].si][0])} 开始。请提前检查网络、麦克风和摄像头。`,btn:'现在检测',act:`data-a="mock-enter" data-id="${soon[0]}"`}}
+  if(S.schools.includes('xjtlu')&&!S.records.some(r=>r.room))return{lbl:'今天推荐',title:'西浦小组面试模拟',desc:'按校测流程走一遍：自我介绍、读题准备、小组讨论、总结。可以约同学一起，也可以和 AI 组员练，全程开口说。',btn:'开始模拟',act:'data-a="go-setup" data-id="mock"'};
+  const sid=S.schools.find(s=>PATH[s]);
+  if(sid){const pr=PATH[sid][2][2].map(id=>[id,recsOf(id).length]).sort((a,b)=>a[1]-b[1])[0][0];const it=ITEMS[pr];
+    return{lbl:'今天推荐',title:`${sc(sid).short} · ${it.title}`,desc:`${it.sub}。大约 ${it.min} 分钟，你在这一项练得最少。`,btn:'开始练习',act:`data-a="open" data-id="${pr}"`}}
+  return{lbl:'先从这里开始',title:'看一节公开课',desc:'西浦、港中深、上悉怎么准备，3 讲，免费。',btn:'去看看',act:'data-a="watch" data-id="open-intro"'};
+}
+function stageName(it,s){
+  if(it.mode==='group')return{brief:'读题',think:'独立思考',discuss:'小组讨论',summary:'总结'}[s.stage]||'读题';
+  if(it.mode==='oral'){if(s.audioError)return'题目没播完';if(s.voice===false&&s.stage==='answer')return'打字作答';if(s.voice===false&&s.stage==='follow')return'打字回答追问';return{pick:'选题',prep:'准备',listen:'听题',answer:s.cap==='review'?'检查回答':'作答',think:'等待追问',flisten:'听追问',follow:s.cap==='review'?'检查追问回答':'回答追问',feedback:'看反馈'}[s.stage]||'选题'}
+  if(it.mode==='mcq')return`第 ${(s.qi||0)+1} 题`;
+  if(it.mode==='write')return'写作';return'';
+}
+
+/* ---------- shell ---------- */
+const ROUTES=['today','practice','courses','mocks','records'];
+function route(){return (location.hash||'#today').slice(1)}
+function nav(){
+  const r=route();const libraryHistory=r.startsWith('library?')&&new URLSearchParams(r.split('?')[1]).get('history')==='1';const on=k=>r===k||r.startsWith(k.replace(/s$/,'')+'-')||(k==='courses'&&r.startsWith('course-'))||(k==='practice'&&(r==='mock-new'||(!libraryHistory&&window.QuestionLibrary?.handles(r))))||(k==='records'&&(r.startsWith('record-')||libraryHistory));
+  const liveN=Object.values(ITEMS).filter(isLiveNow).length;
+  const L=[['today','今天','home'],['practice','练习','pen'],['courses','课程','play',liveN?`<span class="n">直播中</span>`:''],['records','记录','clock']];
+  return `<aside class="rail">
+   <div class="brand"><div class="brand-mark">综</div><div><b>综评国本备考院</b><small>TEAM-V1 · 网页端</small></div></div>
+   <nav class="nav" aria-label="主导航">${L.map(([k,t,i,x])=>`<a href="#${k}" class="${on(k)?'on':''}">${ic(i)}${t}${x||''}</a>`).join('')}</nav>
+   <div class="rail-schools"><div class="rail-h">我的学校</div><nav class="nav">${S.schools.map(s=>`<a href="#school-${s}" class="${r==='school-'+s?'on':''}"><span class="dot ${colorOf(s)}"></span>${esc(sc(s).short)}${SCHOOLS[s].level!=='full'?'<span class="faint" style="margin-left:auto;font-size:11px">课程</span>':''}</a>`).join('')}
+     <a href="#" data-a="add-school">${ic('plus',16)}添加学校</a></nav></div>
+   <div class="rail-foot"><button data-a="more">${ic('map',16)}更多</button></div>
+  </aside>`;
+}
+let lastRoute=null;
+function render(){
+  const app=document.getElementById('app');
+  if(!S.signedIn&&route().startsWith('join-')){lastRoute='join';stopLanding();app.innerHTML=viewJoin(route().slice(5));renderDock();return}
+  const publicCourse=route()==='courses'||route().startsWith('course-');
+  if((!S.signedIn&&!publicCourse)||route()==='home'){const first=lastRoute!=='landing';lastRoute='landing';if(first||!app.querySelector('.lp')){app.innerHTML=viewLanding();initLanding()}renderDock();return}
+  stopLanding();
+  if(!S.onboarded&&!publicCourse){lastRoute='onb';app.innerHTML=viewOnboard();renderDock();return}
+  const r=route();let body;const anim=r!==lastRoute;lastRoute=r;
+  if(r==='today')body=viewToday();
+  else if(r==='practice')body=viewPractice();
+  else if(window.QuestionLibrary?.handles(r))body=QuestionLibrary.view(r);
+  else if(r==='courses')body=viewCourses();
+  else if(r==='mocks')body=viewPractice();
+  else if(r==='records')body=viewRecords();
+  else if(r.startsWith('school-'))body=viewSchool(r.slice(7));
+  else if(r.startsWith('course-'))body=viewCourse(r.slice(7));
+  else if(r.startsWith('record-'))body=viewRecord(r.slice(7));
+  else if(r==='mock-new')body=viewSetup();
+  else if(r.startsWith('join-'))body=viewJoin(r.slice(5));
+  else if(r==='weights')body=viewWeights();
+  else body=viewToday();
+  app.innerHTML=`<div class="shell">${nav()}<main class="main ${anim?'anim':''}"><div class="wrap">${body}</div></main></div>`;
+  if(window.QuestionLibrary?.handles(r))QuestionLibrary.mount(app);
+  if(anim)countUps(app);
+  renderDock();
+}
+
+/* ---------- views ---------- */
+const BANK_SCHOOLS=['xjtlu','cuhksz','silc'];
+function bankEntry(sid,records=false){
+  if(sid&&!BANK_SCHOOLS.includes(sid))return '';
+  const href=records?'#library?history=1':`#library${sid?'?school='+sid:''}`;
+  const title=records?'题库 · 我的作答':sid?`${esc(sc(sid).short)} · 题库`:'题库';
+  const sub=records?'接着写没写完的，或回看做过的题。':sid==='silc'?'这里是我们原创的练习题；官方样题请看学校发布的原文。':'选一道题，写下你的答案，再对照参考思路。每道题都标了来源。';
+  return `<section class="sec"><div class="card items"><div class="irow"><div class="ico">${ic(records?'clock':'pen')}</div><div class="t"><b>${title}</b><span>${sub}</span></div><div class="act"><a class="btn sm" href="${href}">${records?'查看作答':'去选题'} ${ic('arrow',14)}</a></div></div></div></section>`;
+}
+function itemRow(id,opts={}){
+  const it=ITEMS[id];const k=KIND[it.kind];let sub=it.sub,act='';
+  if(it.kind==='practice'){const n=recsOf(id).length;sub=`${it.min} 分钟 · ${it.skill}${n?` · 已练 ${n} 次`:''}`;act=S.sessions[id]?`<button class="btn sm" data-a="open" data-id="${id}">继续</button>`:`<button class="btn sm ghost" data-a="open" data-id="${id}">开始</button>`}
+  else if(it.kind==='recorded'){const p=(S.progress[id]||{}).done||[];sub=`${it.lessons.length} 讲${p.length?` · 已看 ${p.length} 讲`:''}`;act=`<a class="btn sm ghost" href="#course-${id}">查看</a>`}
+  else if(it.kind==='live'){sub=isLiveNow(it)?'正在直播':`${fmtD(it.start)} ${fmtT(it.start)}`;act=isLiveNow(it)?`<button class="btn sm" data-a="live" data-id="${id}">进入</button>`:`<a class="btn sm ghost" href="#course-${id}">${S.reminders[id]?'已预约':'预约'}</a>`}
+  else if(it.kind==='coach'){sub=it.sub;act=`<a class="btn sm ghost" href="#course-${id}">预约</a>`}
+  else if(it.kind==='mock'){const b=S.bookings[id];sub=b?`已报名 · ${fmtD(it.sessions[b.si][0])}`:`下一场 ${fmtD(it.sessions[0][0])}`;act=`<a class="btn sm ghost" href="#mocks">${b?'查看':'报名'}</a>`}
+  return `<div class="irow"><div class="ico">${ic(k[1])}</div><div class="t"><b>${esc(it.title)}</b><span>${esc(sub)}</span></div><div class="act">${opts.noPrice?'':priceChip(it)}${act}</div></div>`;
+}
+function viewToday(){
+  const n=nextAction();const sch=schedule().filter(x=>x.ts>=dayKey(NOW));
+  return `
+  <header class="page-h"><div class="eyebrow">10月12日 周一 · ${esc(S.cohort)} · ${esc(S.province)}</div><h1>备考概览</h1></header>
+  ${bankEntry()}
+  <div class="tile accent next"><div class="deco">${DECO}</div><span class="deco2"></span><div class="lbl">${esc(n.lbl)}</div><div class="stack" style="gap:8px"><h2>${esc(n.title)}</h2><p>${esc(n.desc)}</p></div>
+    <div class="row"><button class="btn light" ${n.act}>${esc(n.btn)} ${ic('arrow',16)}</button></div></div>
+  <section class="sec"><div class="sec-h"><h2>接下来</h2></div>
+    <div class="card sched">${sch.length?sch.slice(0,5).map(schedRow).join(''):'<div class="empty">还没有安排。预约的直播、辅导和你自己定的日子会出现在这里。</div>'}</div></section>
+  <section class="sec"><div class="sec-h"><h2>我的学校</h2><a class="link" href="#" data-a="add-school">${ic('plus',14)}添加学校</a></div>
+    <div class="grid g2">${S.schools.map(schoolCard).join('')}</div></section>`;
+}
+function schedRow(x){
+  let title,chip,act;
+  if(x.type==='task'){title=x.t;chip=`<span class="chip ${colorOf(x.sid)}">${esc(sc(x.sid).short)}</span><span class="chip line">我定的日子</span>`;act=`<a class="btn sm ghost" href="#school-${x.sid}">查看</a>`}
+  else{const it=ITEMS[x.id];title=it.title;chip=`${isLiveNow(it)?'<span class="chip live">● 直播中</span>':`<span class="chip">${KIND[it.kind][0]}</span>`}${it.school!=='all'?`<span class="chip ${colorOf(it.school)}">${esc(sc(it.school).short)}</span>`:''}`;
+    if(x.type==='live')act=isLiveNow(it)?`<button class="btn sm" data-a="live" data-id="${x.id}">进入</button>`:`<a class="btn sm ghost" href="#course-${x.id}">详情</a>`;
+    else if(x.type==='mock')act=`<button class="btn sm ghost" data-a="mock-enter" data-id="${x.id}">${S.bookings[x.id].st==='checked'?'进入候场':'设备检测'}</button>`;
+    else act=`<button class="btn sm ghost" data-a="join-meeting" data-cid="${x.c.id}">入会方式</button>`;}
+  return `<div class="srow"><div class="when"><b>${fmtD(x.ts).split(' · ')[0]}</b><span>${fmtD(x.ts).split(' · ')[1]||''} ${x.type==='task'?'当天':fmtT(x.ts)}</span></div><div class="what"><b>${esc(title)}</b><div class="chips">${chip}</div></div><div>${act}</div></div>`;
+}
+function schoolCard(sid){
+  const s=SCHOOLS[sid];
+  const w=typeof admShare==='function'?admShare(sid):0;
+  const wchip=w?`<span class="chip">面试 / 校测占 ${w}%</span>`:'';
+  if(s.level!=='full'){const done=tasksOf(sid).filter(t=>S.taskDone[t[0]]).length;return `<a class="card school-card" href="#school-${sid}"><div class="sc-h"><span class="dot"></span><b>${esc(s.short)}</b><span class="chip">${LEVEL[s.level][1]}</span></div><div class="chips">${wchip}<span class="muted" style="font-size:13px">报名事项 ${done}/${tasksOf(sid).length}</span></div></a>`}
+  const st=[0,1,2,3].map(i=>stageState(sid,i));
+  const next=PATH[sid].findIndex((_,i)=>st[i]<2);
+  return `<a class="card school-card" href="#school-${sid}"><div class="sc-h"><span class="dot ${s.color}"></span><b>${esc(s.short)}</b>${wchip}</div>
+   <div class="pathbar">${PATH[sid].map((p,i)=>`<div><i class="${st[i]===2?'full':st[i]?'half':''}"></i>${p[0]}</div>`).join('')}</div>
+   <div class="muted" style="font-size:13px">已练 ${recsSchool(sid).length} 次 · 下一步：${next<0?'保持练习':PATH[sid][next][0]}</div></a>`;
+}
+function viewSchool(sid){
+  const s=SCHOOLS[sid];if(!s)return viewToday();
+  const mine=S.schools.includes(sid);
+  const head=`<header class="school-h"><div class="page-h"><div class="bar ${s.color||''}"></div><div class="eyebrow">${esc(s.name)} · ${esc(s.city)}</div><h1>${esc(s.short)}</h1><div class="chips"><span class="chip ${s.color||''}">${LEVEL[s.level][0]}</span></div></div>
+    <div class="chips">${sid==='xjtlu'&&mine?`<button class="btn" data-a="go-setup" data-id="mock">开始小组面试模拟</button>`:''}${s.url?`<a class="btn sm ghost" href="${s.url}" target="_blank" rel="noopener">学校官网 ${ic('ext',14)}</a>`:''}${mine?`<button class="btn sm ghost" data-a="unfollow" data-id="${sid}">不再关注</button>`:`<button class="btn sm" data-a="follow" data-id="${sid}">加入我的学校</button>`}</div></header>`;
+  const tasks=`<section class="sec"><div class="sec-h"><h2>报名事项</h2><span class="aside">报名材料请通过学校官方系统提交</span></div><div class="card items tasks">${tasksOf(sid).map(taskRow).join('')}</div></section>`;
+  if(s.level!=='full'){
+    return head+bankEntry(sid)+`<div class="notice">${ic('info')}<div><b>AI 互动训练还在准备中。</b> ${BANK_SCHOOLS.includes(sid)?'资料题库的可练与待整理状态见上方入口。':'现在可以用报名提醒和公开课。'}<div style="margin-top:10px"><button class="btn sm ${S.notify[sid]?'ghost':''}" data-a="notify" data-id="${sid}">${S.notify[sid]?'已开启上线提醒':'AI 训练上线时提醒我'}</button></div></div></div>`+schoolInfo(sid)+tasks+
+      `<section class="sec"><div class="sec-h"><h2>现在可以看的</h2></div><div class="card items">${itemRow('open-intro')}${itemRow('live-now')}</div></section>`;
+  }
+  const st=[0,1,2,3].map(i=>stageState(sid,i));
+  return head+`
+  ${bankEntry(sid)}
+  ${schoolInfo(sid)}
+  <section class="sec"><div class="sec-h"><h2>备考路径</h2><span class="aside">从左到右做，免费训练随时可以开始</span></div>
+    <div class="path">${PATH[sid].map((p,i)=>`<div class="stage"><div class="stage-h"><span class="num ${st[i]===2?'done':''}">${st[i]===2?ic('check',13):i+1}</span><b>${p[0]}</b></div><p>${p[1]}</p>
+      <div class="mini">${p[2].map(id=>miniItem(id)).join('')}</div></div>`).join('')}</div></section>
+  ${tasks}`;
+}
+function miniItem(id){
+  if(id==='room')return `<button data-a="go-setup" data-id="mock"><b>小组面试模拟</b><span><span class="chip">练习</span><span class="chip free">免费</span><span>· 真人 + AI</span></span></button>`;
+  const it=ITEMS[id];let meta=`<span class="chip">${KIND[it.kind][0]}</span>`+(isFree(it)?'<span class="chip free">免费</span>':S.owned[id]?'<span class="chip line">已开通</span>':'<span class="chip paid">付费</span>');
+  if(it.kind==='practice'){const n=recsOf(id).length;meta+=S.sessions[id]?'<span>· 进行中</span>':n?`<span>· 已练 ${n} 次</span>`:'';return `<button data-a="open" data-id="${id}"><b>${esc(it.title)}</b><span>${meta}</span></button>`}
+  if(it.kind==='live')meta+=`<span>· ${isLiveNow(it)?'直播中':fmtD(it.start).split(' · ')[0]}</span>`;
+  if(it.kind==='mock'&&S.bookings[id])meta+='<span>· 已报名</span>';
+  return `<a href="${it.kind==='mock'?'#mocks':'#course-'+id}"><b>${esc(it.title)}</b><span>${meta}</span></a>`;
+}
+function taskRow([tid,t,k]){
+  const done=!!S.taskDone[tid];
+  const right=k==='official'?`<span class="chip line">官方日期待公布</span>`:`<input class="date-in" type="date" id="d-${tid}" data-in="taskDate" data-id="${tid}" value="${S.taskDate[tid]||''}" aria-label="我定的日子">`;
+  return `<div class="irow"><button class="cbox ${done?'on':''}" data-a="task" data-id="${tid}" aria-label="标记完成">${done?ic('check',14):''}</button><div class="t"><b style="${done?'text-decoration:line-through;color:var(--muted)':''}">${esc(t)}</b><span>${k==='official'?'以学校官网公布为准':'设一个日子，到时在「今天」提醒'}</span></div><div class="act">${right}</div></div>`;
+}
+function viewPractice(){
+  const ids=Object.keys(ITEMS).filter(k=>ITEMS[k].kind==='practice'&&k!=='xj-group'&&S.schools.includes(ITEMS[k].school));
+  const hasXj=S.schools.includes('xjtlu');
+  const waiting=S.schools.filter(id=>SCHOOLS[id].level!=='full');
+  return `<header class="page-h"><div class="eyebrow">练习 · 全部免费</div><h1>专项练习</h1></header>
+  ${bankEntry()}
+  ${hasXj?`<div class="tile accent next" style="min-height:0"><div class="deco">${DECO}</div><div class="lbl">西浦 · 小组面试模拟</div><div class="stack" style="gap:6px"><h2>和同学或 AI 组队，按真实流程走一遍</h2><p>自我介绍、读题准备、无领导讨论、总结，最后按四个方面给你评价。全程用说的。</p></div>
+    <div class="row"><button class="btn light" data-a="go-setup" data-id="mock">开始</button><button class="btn" style="background:transparent;color:var(--accent-ink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.55)" data-a="go-setup" data-id="practice">只练讨论 · 7 分钟</button></div></div>`:''}
+  ${ids.length?`<section class="sec"><div class="sec-h"><h2>互动训练 · 示例题</h2><span class="aside">口语可开麦；更多资料题在上方题库中自练</span></div><div class="card items">${ids.map(id=>prow(id)).join('')}</div></section>`:''}
+  ${waiting.length?`<div class="notice">${ic('info')}<div><b>${waiting.map(id=>esc(sc(id).short)).join('、')}提供课程和老师一对一辅导。</b> 在课程页选择对应学校。</div></div>`:''}`;
+}
+function prow(id){const it=ITEMS[id];const n=recsOf(id).length;
+  return `<div class="irow"><div class="ico">${ic(it.mode==='mcq'?'check':it.mode==='write'?'pen':'mic')}</div><div class="t"><b>${esc(sc(it.school).short)} · ${esc(it.title)}</b><span>${it.min} 分钟${n?` · 已练 ${n} 次`:''}${it.mode==='write'?' · 写作题用写的':''}</span></div><div class="act"><button class="btn sm ${S.sessions[id]?'':'ghost'}" data-a="open" data-id="${id}">${S.sessions[id]?'继续':'开始'}</button></div></div>`}
+function pcard(id,i=0){const it=ITEMS[id];const n=recsOf(id).length;const s=S.sessions[id];
+  return `<div class="card pcard" style="--i:${i}"><div class="chips"><span class="chip">${it.skill}</span><span class="chip line mono">${it.min} 分钟</span></div><h3>${esc(it.title)}</h3><p>${esc(it.sub)}</p>
+  <div class="foot"><span class="muted" style="font-size:12.5px">${s?`进行中 · ${stageName(it,s)}`:n?`已练 ${n} 次`:'还没练过'}</span><button class="btn sm ${s?'':'ghost'}" data-a="open" data-id="${id}">${s?'继续':'开始'}</button></div></div>`}
+function viewCourses(){
+  const tab=S.courseTab;const kinds={all:['recorded','live','coach'],recorded:['recorded'],live:['live'],coach:['coach']}[tab];
+  const list=Object.keys(ITEMS).filter(k=>kinds.includes(ITEMS[k].kind));
+  const mine=Object.keys(ITEMS).filter(k=>['recorded','live','coach'].includes(ITEMS[k].kind)&&(S.owned[k]||(S.progress[k]&&S.progress[k].done.length)||S.reminders[k]));
+  return `<header class="page-h"><div class="eyebrow">课程</div><h1>课程与辅导</h1><p>按院校选择录播课、直播课或一对一辅导。正式公开课包与一对一服务包按学校分别开通。</p></header>
+  ${mine.length?`<section class="sec"><div class="sec-h"><h2>我的课程</h2></div><div class="card items">${mine.map(id=>itemRow(id)).join('')}</div></section>`:''}
+  <section class="sec"><div class="filters">${[['all','全部'],['recorded','录播课'],['live','直播'],['coach','教师辅导']].map(([k,t])=>`<button class="${tab===k?'on':''}" data-a="ctab" data-id="${k}">${t}</button>`).join('')}</div>
+  <div class="grid g3 stagger">${list.map((id,i)=>courseCard(id,i)).join('')}</div></section>
+  <div class="notice">${ic('info')}<div><b>直播课和辅导的区别：</b>直播课是看老师讲、用文字提问，老师看不到你；一对一和小班辅导在腾讯会议里进行，可以开麦、共享屏幕。</div></div>`;
+}
+function courseCard(id,i=0){const it=ITEMS[id];let meta='';
+  if(it.kind==='recorded')meta=`${it.lessons.length} 讲 · 共 ${it.lessons.reduce((a,l)=>a+l[1],0)} 分钟`;
+  if(it.kind==='live')meta=isLiveNow(it)?'<span style="color:var(--accent);font-weight:700">● 正在直播</span>':`${fmtD(it.start)} ${fmtT(it.start)}`;
+  if(it.kind==='coach')meta=`可约 ${it.slots.length} 个时段`;
+  return `<a class="card pcard" href="#course-${id}" style="text-decoration:none;--i:${i}"><div class="chips"><span class="chip">${ic(KIND[it.kind][1],13)}${KIND[it.kind][0]}</span>${it.school!=='all'?`<span class="chip ${colorOf(it.school)}">${esc(sc(it.school).short)}</span>`:'<span class="chip line">通用</span>'}</div>
+  <h3>${esc(it.title)}</h3><p>${esc(it.sub)}</p><div class="foot"><span class="muted" style="font-size:12.5px">${meta}</span>${priceChip(it)}</div></a>`}
+function viewCourse(id){
+  const it=ITEMS[id];if(!it)return viewCourses();
+  const head=`<a class="link" href="#courses">${ic('back',14)}课程</a><header class="page-h"><div class="chips"><span class="chip">${KIND[it.kind][0]}</span>${it.school!=='all'?`<span class="chip ${colorOf(it.school)}">${esc(sc(it.school).short)}</span>`:''}${priceChip(it)}</div><h1>${esc(it.title)}</h1><p>${esc(it.sub)}</p></header>`;
+  const owned=isFree(it)||S.owned[id];
+  if(it.kind==='recorded'){const done=(S.progress[id]||{}).done||[];
+    return head+`<div class="two"><section class="card items lessons">${it.lessons.map((l,i)=>{const open=owned||i<(it.trial||0);return `<div class="irow"><div class="ico">${done.includes(i)?ic('check',16):String(i+1).padStart(2,'0')}</div><div class="t"><b>${esc(l[0])}</b><span>${l[1]} 分钟${!owned&&i<(it.trial||0)?' · 可试看':''}</span></div><div class="act">${open?`<button class="btn sm ${done.includes(i)?'ghost':''}" data-a="watch" data-id="${id}" data-l="${i}">${done.includes(i)?'重看':'播放'}</button>`:`<span class="faint">${ic('lock',16)}</span>`}</div></div>`}).join('')}</section>
+    <aside class="card buybox">${owned?`<b>${done.length}/${it.lessons.length} 讲已看完</b><p class="muted" style="font-size:13px">看完一讲，就去练对应的那一项。课里讲的和练习里的反馈用同一套说法。</p><button class="btn" data-a="watch" data-id="${id}" data-l="${Math.min(done.length,it.lessons.length-1)}">${done.length?'继续看':'从第 1 讲开始'}</button>`:
+      `<b>开通后可以看全部 ${it.lessons.length} 讲</b><p class="muted" style="font-size:13px">第 1 讲可以先试看。价格待团队确定。</p><button class="btn" data-a="buy" data-id="${id}">开通课程</button><button class="btn ghost" data-a="watch" data-id="${id}" data-l="0">试看第 1 讲</button>`}
+      ${it.skill?`<p class="muted" style="font-size:13px">配套免费练习：${Object.keys(ITEMS).filter(k=>ITEMS[k].kind==='practice'&&ITEMS[k].skill===it.skill).map(k=>`<a href="#" data-a="open" data-id="${k}">${ITEMS[k].title}</a>`).join('、')}</p>`:''}</aside></div>`}
+  if(it.kind==='live'){const now=isLiveNow(it);
+    return head+`<div class="two"><div class="card buybox"><div class="grid g2"><div class="tile"><div class="k">开始</div><div class="v" style="font-size:20px">${fmtD(it.start).split(' · ')[0]}</div><div class="k">${fmtT(it.start)} · ${it.dur} 分钟</div></div><div class="tile"><div class="k">老师</div><div class="v" style="font-size:20px">${esc(it.teacher)}</div><div class="k">观看型直播</div></div></div>
+      <p class="muted" style="font-size:14px">直播里可以看老师讲解、用文字提问。老师看不到你的画面，你也不用开麦。结束后可以看回放。</p></div>
+      <aside class="card buybox">${now?`<b style="color:var(--accent)">● 正在直播</b><button class="btn" data-a="live" data-id="${id}">进入直播</button>`:owned?`<b>${S.reminders[id]?'已预约，开播前提醒你':'预约后会出现在「今天」'}</b><button class="btn ${S.reminders[id]?'ghost':''}" data-a="remind" data-id="${id}">${S.reminders[id]?'取消预约':'预约直播'}</button>`:`<b>开通后可以看直播和回放</b><button class="btn" data-a="buy" data-id="${id}">开通</button>`}<button class="btn ghost" data-a="live" data-id="${id}">预览直播演示</button></aside></div>`}
+  // coach
+  const sel=S._slot||{};
+  return head+`<div class="two"><section class="sec"><div class="sec-h"><h2>选老师和时间</h2><span class="aside">老师均为示例</span></div>
+    ${it.teachers.map(([n,d],ti)=>`<div class="card" style="padding:16px;display:flex;flex-direction:column;gap:12px"><div style="display:flex;gap:12px;align-items:center"><div class="av">${n[0]}</div><div><b>${n}（示例）</b><div class="muted" style="font-size:13px">${d}</div></div></div>
+     <div class="grid g2">${it.slots.map((t,si)=>{const taken=S.coach.some(c=>c.ts===t&&c.teacher===n);return `<button class="slot ${sel.id===id&&sel.t===ti&&sel.s===si?'on':''}" data-a="slot" data-id="${id}" data-t="${ti}" data-s="${si}" ${taken?'disabled':''}><span>${fmtD(t).split(' · ')[0]}</span><span class="mono">${fmtT(t)}</span></button>`}).join('')}</div></div>`).join('')}</section>
+    <aside class="card buybox"><b>怎么上课</b><p class="muted" style="font-size:13px">预约后，在「今天」能看到这次辅导。到时间点「入会方式」，用腾讯会议上课，可以开麦、共享屏幕。</p>
+     <label class="muted" style="font-size:13px" for="attach">带一次练习给老师看（可选）</label>
+     <select id="attach" class="date-in" style="height:38px" data-in="attach">${['<option value="">不附带</option>'].concat(S.records.filter(r=>!r.pending).map(r=>`<option value="${r.id}" ${S._attach===r.id?'selected':''}>${esc(ITEMS[r.item].title)} · ${fmtD(r.ts).split(' · ')[0]}</option>`)).join('')}</select>
+     <button class="btn" data-a="book-coach" ${sel.id===id?'':'disabled'}>${sel.id===id?'确认预约':'先选一个时间'}</button>
+     ${S.coach.filter(c=>c.item===id).map(c=>`<div class="notice" style="padding:10px 12px">${ic('check',16)}<div>已约 ${c.teacher} · ${fmtD(c.ts).split(' · ')[0]} ${fmtT(c.ts)}${c.attach?' · 附带了练习记录':''}</div></div>`).join('')}</aside></div>`;
+}
+function viewMocks(){
+  const ids=Object.keys(ITEMS).filter(k=>ITEMS[k].kind==='mock');
+  const mine=ids.filter(id=>S.bookings[id]);
+  return `<header class="page-h"><div class="eyebrow">线上模考</div><h1>和真实考生，走一遍校测。</h1><p>按学校的考试流程排好时间，几位同学同时在线，老师主考。结束后拿到一份评分报告，知道该回去练哪一项。</p></header>
+  <div class="tile accent" style="padding:22px 24px;gap:12px"><span class="k">西浦小组面试 · 实时模拟</span><b style="font-size:22px;line-height:1.35">真人同学和 AI 混合组队，按真实流程走一遍</b><span style="opacity:.9;max-width:52ch">自我介绍 → 读题准备 → 无领导讨论 → 小组总结 → 四个方面的评价。全程用说的，AI 组员实时接话，你一开口它就停。</span>
+    <div class="chips"><button class="btn light" data-a="go-setup" data-id="mock">组队开始</button><button class="btn" style="background:transparent;color:var(--accent-ink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)" data-a="go-setup" data-id="practice">先和 AI 练短的</button></div></div>
+  <div class="grid g4">${[['报名','选一个场次'],['设备检测','网络、麦克风、摄像头'],['候场','提前 15 分钟进入'],['考试与报告','老师评分后出报告']].map((s,i)=>`<div class="tile"><div class="k mono">${i+1}</div><div style="font-weight:700">${s[0]}</div><div class="k">${s[1]}</div></div>`).join('')}</div>
+  ${mine.length?`<section class="sec"><div class="sec-h"><h2>我报名的</h2></div>${mine.map(mockMine).join('')}</section>`:''}
+  <section class="sec"><div class="sec-h"><h2>可以报名的场次</h2><span class="aside">场次和名额为示例</span></div>
+  ${ids.filter(id=>!S.bookings[id]).map(id=>{const it=ITEMS[id];return `<div class="card" style="padding:18px 20px;display:flex;flex-direction:column;gap:14px">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div class="stack" style="gap:4px"><div class="chips"><span class="chip ${colorOf(it.school)}">${esc(sc(it.school).short)}</span>${priceChip(it)}</div><h3 style="font-size:17px">${esc(it.title)}</h3><p class="muted" style="font-size:13px">${esc(it.sub)}</p></div></div>
+    <div class="grid g3">${it.sessions.map(([t,left],si)=>`<button class="slot" data-a="book-mock" data-id="${id}" data-s="${si}"><span><b>${fmtD(t).split(' · ')[0]}</b> <span class="mono">${fmtT(t)}</span></span><span class="seat">剩 ${left}/${it.cap}</span></button>`).join('')}</div></div>`}).join('')||'<div class="card empty">都报名了。</div>'}</section>`;
+}
+function mockMine(id){const it=ITEMS[id],b=S.bookings[id];const t=it.sessions[b.si][0];
+  const steps=['已报名','设备检测','候场','考试','报告'];const cur={booked:1,checked:2,done:4,report:5}[b.st];
+  const rec=S.records.find(r=>r.id===b.rec);
+  let act=b.st==='booked'?`<button class="btn sm" data-a="mock-enter" data-id="${id}">设备检测</button>`:b.st==='checked'?`<button class="btn sm" data-a="mock-enter" data-id="${id}">进入候场</button>`:b.st==='done'?`<button class="btn sm ghost" data-a="reveal" data-id="${b.rec}">演示：老师评完了</button>`:`<a class="btn sm" href="#record-${b.rec}">看报告</a>`;
+  return `<div class="card" style="padding:18px 20px;display:flex;flex-direction:column;gap:14px"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center"><div><div class="chips"><span class="chip ${colorOf(it.school)}">${esc(sc(it.school).short)}</span><span class="muted" style="font-size:13px">${fmtD(t)} ${fmtT(t)}</span></div><h3 style="font-size:17px;margin-top:6px">${esc(it.title)}</h3></div><div class="chips">${act}</div></div>
+   <div class="stepper">${steps.map((s,i)=>`<span class="${i<cur?'done':i===cur?'on':''}">${i<cur?ic('check',13):''}${s}</span>`).join('')}</div>
+   ${b.st==='done'?'<p class="muted" style="font-size:13px">老师正在评分，正式版预计 48 小时内出报告。</p>':''}${rec&&b.st==='report'?'':''}</div>`}
+function viewRecords(){
+  const recs=[...S.records].sort((a,b)=>b.ts-a.ts);
+  const mins=recs.reduce((a,r)=>a+(r.mins||0),0);
+  return `<header class="page-h"><div class="eyebrow">记录</div><h1>练习记录</h1><p>你的原话和反馈都会保存。可以回看，也可以发给辅导老师。</p></header>
+  ${bankEntry(null,true)}
+  <div class="card" style="padding:18px 20px;display:flex;gap:24px;align-items:center;flex-wrap:wrap"><div class="stack" style="gap:4px;min-width:150px"><b>最近 5 周 · ${recs.length} 次</b><span class="muted" style="font-size:13px">每一格是一天，颜色越深练得越多</span><div class="legend">少<i></i><i style="background:color-mix(in srgb,var(--ink) 30%,var(--tile))"></i><i style="background:color-mix(in srgb,var(--ink) 62%,var(--tile))"></i><i style="background:var(--ink)"></i>多</div></div><div style="overflow-x:auto">${heat()}</div></div>
+  <div class="card items">${recs.map(r=>{const it=ITEMS[r.item];return `<div class="irow"><div class="ico">${ic(KIND[it.kind][1])}</div><div class="t"><b>${esc(it.title)}${r.sample?' <span class="chip line">示例</span>':''}</b><span>${esc(sc(it.school).short)} · ${fmtD(r.ts).split(' · ')[0]} ${fmtT(r.ts)}${r.score?` · 答对 ${r.score[0]}/${r.score[1]}`:''}${r.pending?' · 老师评分中':''}</span></div><div class="act"><a class="btn sm ghost" href="#record-${r.id}">${r.pending?'查看':'复盘'}</a></div></div>`}).join('')||'<div class="empty">还没有记录</div>'}</div>`;
+}
+function viewRecord(rid){
+  const r=S.records.find(x=>x.id===rid);if(!r)return viewRecords();const it=ITEMS[r.item];
+  if(r.room)return `<a class="link" href="#records">${ic('back',14)}记录</a><header class="page-h"><div class="eyebrow">西浦 · 小组面试模拟 · ${r.room.size} 人（${r.room.humans} 位真人）· ${fmtD(r.ts)}</div><h1>${esc((r.room.topic&&r.room.topic.en)||'小组面试')}</h1></header>
+    <div class="two"><section class="stack" style="gap:12px">${rmReportHTML(r.room.report,false)}<div><button class="btn" data-a="go-setup" data-id="mock">再来一场</button></div></section>
+    <aside class="card transcript" style="max-height:640px;overflow-y:auto"><b>完整记录</b>${(r.room.lines||[]).map(l=>`<div class="tline ${l.me?'me':''}"><div class="who">${esc(l.who)}</div><div class="txt">${esc(l.text)}</div></div>`).join('')}</aside></div>`;
+  const fb=r.ai?{good:(r.ai.good||[]).map(esc),improve:[...(r.ai.improve||[]).map(esc),r.ai.next?'下一步：'+esc(r.ai.next):''].filter(Boolean)}:feedback(r);
+  let body='';
+  if(r.msgs){body=`<div class="card transcript">${r.msgs.filter(m=>!m.typing).map(m=>`<div class="tline ${m.who==='me'?'me':''}"><div class="who">${m.who==='me'?'你':esc(m.who)}</div><div class="txt">${esc(m.text)}</div></div>`).join('')}</div>`}
+  else if(r.lines){body=`<div class="card transcript">${r.lines.map(l=>`<div class="tline"><div class="who">考官</div><div class="txt muted">${esc(l.q)}</div></div><div class="tline me"><div class="who">你</div><div class="txt">${esc(l.a||'（没有作答）')}</div></div>`).join('')}</div>`}
+  else if(r.score){body=`<div class="card items">${it.qs.map((q,i)=>`<div class="irow"><div class="ico">${r.picks[i]===q.a?ic('check',16):ic('x',16)}</div><div class="t"><b>${esc(q.q)}</b><span>你选 ${'ABCD'[r.picks[i]]??'—'}，正确 ${'ABCD'[q.a]}。${esc(q.e)}</span></div></div>`).join('')}</div>`}
+  else if(r.text!=null){body=`<div class="card" style="padding:18px"><p class="muted" style="font-size:13px;margin-bottom:8px">${esc(it.prompt)}</p><p style="white-space:pre-wrap">${esc(r.text||'（没有作答）')}</p></div>`}
+  const ns=(NEXTSTEP[it.skill]||[]);
+  if(r.pending){return `<a class="link" href="#records">${ic('back',14)}记录</a><header class="page-h"><div class="eyebrow">${esc(sc(it.school).short)} · ${fmtD(r.ts)}</div><h1>${esc(it.title)}</h1></header>
+   <div class="notice">${ic('clock')}<div><b>老师正在评分。</b>正式版预计 48 小时内出报告，出结果后在「今天」提醒你。<div style="margin-top:10px"><button class="btn sm" data-a="reveal" data-id="${r.id}">演示：老师评完了</button></div></div></div>
+   <section class="sec"><div class="sec-h"><h2>你在模考里说的</h2></div>${body}</section>`}
+  return `<a class="link" href="#records">${ic('back',14)}记录</a>
+  <header class="page-h"><div class="eyebrow">${esc(sc(it.school).short)} · ${fmtD(r.ts)} ${fmtT(r.ts)}${r.sample?' · 示例记录':''}</div><h1>${esc(it.title)}${r.score?` · 答对 ${r.score[0]}/${r.score[1]}`:''}</h1></header>
+  ${r.report?`<section class="sec"><div class="sec-h"><h2>老师评分</h2><span class="aside">演示：按规则生成；正式版由主考老师评</span></div><div class="grid g3">${r.report.map(([k,v])=>`<div class="tile"><div class="k">${k}</div><div class="v" style="font-size:18px">${v}</div></div>`).join('')}</div></section>`:''}
+  ${perfCard(r)}<div class="two"><section class="sec"><div class="sec-h"><h2>反馈</h2><span class="aside">${r.ai?'AI 生成 · 依据你的原话，仅供练习参考':'自动生成 · 仅供练习参考'}</span></div>
+    <div class="card" style="padding:18px"><div class="fb"><ul>${fb.good.map(g=>`<li><span class="mark g">${ic('check',12)}</span><div>${g}</div></li>`).join('')}${fb.improve.map(g=>`<li><span class="mark i">${ic('arrow',12)}</span><div>${g}</div></li>`).join('')}</ul></div></div>
+    <div class="sec-h" style="margin-top:8px"><h2>原话</h2></div>${body}</section>
+  <aside class="stack"><div class="tile accent" style="gap:12px"><div class="k">下一步</div><b style="font-size:17px">根据反馈重新作答</b><div><button class="btn light" data-a="open" data-id="${r.item}">再练一次</button></div></div>
+    ${ns.map(([cid,l,lt])=>{const c=ITEMS[cid];return `<div class="card" style="padding:16px;display:flex;flex-direction:column;gap:8px"><span class="chips"><span class="chip">${KIND[c.kind][0]}</span>${priceChip(c)}</span><b>${lt?`${esc(c.title)} · 第 ${l+1} 讲「${esc(lt)}」`:esc(c.title)}</b>${c.kind==='recorded'?`<button class="btn sm ghost" data-a="watch" data-id="${cid}" data-l="${l||0}">去看</button>`:c.kind==='mock'?`<button class="btn sm ghost" data-a="go-setup" data-id="mock">开始一场</button>`:`<a class="btn sm ghost" href="#course-${cid}">查看</a>`}</div>`}).join('')}
+    <div class="card" style="padding:16px;display:flex;flex-direction:column;gap:8px"><span class="chips"><span class="chip">老师辅导</span>${priceChip(ITEMS['coach-1v1'])}</span><b>请老师看这次回答</b><p class="muted" style="font-size:13px">预约一对一辅导时附上这条记录，老师上课前能看到你的原话。</p><button class="btn sm ghost" data-a="coach-with" data-id="${r.id}">预约并附上</button></div></aside></div>`;
+}
+function feedback(r){
+  const it=ITEMS[r.item];const good=[],imp=[];
+  if(r.score){if(r.score[0]===r.score[1])good.push('全部答对。下一组可以试试限时。');else imp.push(`错了 ${r.score[1]-r.score[0]} 题。看一下解析，再做一遍同类题。`);good.push('每道题都看了解析。');return{good,improve:imp}}
+  const mine=r.msgs?r.msgs.filter(m=>m.who==='me').map(m=>m.text):r.lines?r.lines.map(l=>l.a||''):[r.text||''];
+  const all=mine.join(' ');const q=s=>`「${esc((s.match(/[^.!?。！？]+[.!?。！？]?/)||[s])[0].trim().slice(0,70))}」`;
+  if(it.mode==='write'){const n=all.replace(/\s/g,'').length;n>=300?good.push(`写了 ${n} 字，篇幅够了。`):imp.push(`写了 ${n} 字，目标约 400 字。先把观点、理由、经历三段写完整。`);
+    /因为|所以|例如|比如/.test(all)?good.push('用了「因为」「比如」这样的连接词，论证有层次。'):imp.push('加一个具体经历，用「比如」引出来。');return{good,improve:imp}}
+  const words=all.trim().split(/\s+/).filter(Boolean).length;
+  const find=re=>{for(const m of mine){const ss=m.match(/[^.!?。！？]+[.!?。！？]?/g)||[m];const hit=ss.find(x=>re.test(x));if(hit)return hit.trim()}return null};
+  let s;
+  if((s=find(/\bbecause\b|\bsince\b|\bso that\b/i)))good.push(`有理由：${q(s)}`);else imp.push('加一句理由，比如「I think …, because …」。');
+  if((s=find(/for example|for instance|last (year|summer|month)|when i/i)))good.push(`有具体例子：${q(s)}`);else imp.push('加一个具体例子：时间、地点、你做了什么。');
+  if(r.msgs){
+    if((s=find(/\bagree\b|\bdisagree\b|your point|as .* said/i)))good.push(`回应了组员：${q(s)}`);else imp.push('先回应上一位同学，比如「I agree with Mia that …, but …」。');
+    if((s=find(/what do you think|how about you|would you|\?/i)))good.push(`把话题交给了别人：${q(s)}`);else imp.push('邀请一位还没说话的组员，比如「Sam, what do you think?」');
+    if(r.summary)good.push(`做了总结：${q(r.summary)}`);
+  }
+  if(words<30)imp.push(`这次说了 ${words} 个词，还可以展开。试着把观点、理由、例子都说出来。`);else good.push(`这次说了 ${words} 个词，内容比较完整。`);
+  return{good,improve:imp};
+}
+
+/* ---------- onboarding ---------- */
+function viewOnboard(){
+  const o=S._onb||(S._onb={step:1,pick:[],q:'',prov:'',cohort:'2027 届'});
+  if(o.step===1){
+    const list=Object.keys(SCHOOLS).filter(k=>!o.q||(SCHOOLS[k].short+SCHOOLS[k].name).includes(o.q));
+    const order={full:0,info:1,listed:2};list.sort((a,b)=>order[SCHOOLS[a].level]-order[SCHOOLS[b].level]);
+    return `<div class="onb"><div class="onb-in"><div class="brand"><div class="brand-mark">综</div><div><b>综评国本备考院</b></div></div>
+    <div class="page-h"><div class="eyebrow">第 1 步，共 2 步</div><h1>你在准备哪几所学校？</h1><p>支持多选，之后可在「我的学校」中调整。</p></div>
+    <label class="searchbox">${ic('search')}<input id="onb-q" data-in="onbq" placeholder="搜学校名称，比如 西浦" value="${esc(o.q)}"><span class="sr">搜索学校</span></label>
+    <div class="card">${list.map(k=>{const s=SCHOOLS[k],on=o.pick.includes(k);return `<button class="pick" data-a="onb-pick" data-id="${k}"><span class="cbox ${on?'on':''}">${on?ic('check',14):''}</span><span class="t"><b>${esc(s.short)}</b><span>${esc(s.name)} · ${esc(s.city)}</span></span><span class="chip ${s.level==='full'?(s.color||''):''}">${LEVEL[s.level][1]}</span></button>`}).join('')||'<div class="empty">没有找到这所学校。我们会陆续加入更多学校。</div>'}</div>
+    <p class="muted" style="font-size:13px">西浦、港中深、上悉 4+0 有课程、AI 练习和题库；其他学校提供课程和老师一对一辅导。</p>
+    <div class="onb-foot"><span class="muted">已选 ${o.pick.length} 所</span><button class="btn" data-a="onb-next" ${o.pick.length?'':'disabled'}>下一步 ${ic('arrow',16)}</button></div></div></div>`;
+  }
+  return `<div class="onb"><div class="onb-in"><div class="brand"><div class="brand-mark">综</div><div><b>综评国本备考院</b></div></div>
+  <div class="page-h"><div class="eyebrow">第 2 步，共 2 步</div><h1>你在哪个省参加高考？</h1><p>用于展示对应省份与届次的报名事项。具体日期以学校通知为准。</p></div>
+  <div class="stack"><b>高考报名省份</b><div class="seg">${['广东','江苏','浙江','其他省份'].map(p=>`<button class="${o.prov===p?'on':''}" data-a="onb-prov" data-id="${p}">${p}</button>`).join('')}</div></div>
+  <div class="stack"><b>届次</b><div class="seg">${['2026 届','2027 届','2028 届'].map(p=>`<button class="${o.cohort===p?'on':''}" data-a="onb-cohort" data-id="${p}">${p}</button>`).join('')}</div></div>
+  ${o.prov==='其他省份'?'<div class="notice">'+ic('info')+'<div>报名提醒目前覆盖广东和江苏。其他省份可以先用课程和练习，提醒会陆续补上。</div></div>':''}
+  <div class="onb-foot"><button class="btn ghost" data-a="onb-back">${ic('back',16)}上一步</button><button class="btn" data-a="onb-done" ${o.prov?'':'disabled'}>开始备考</button></div></div></div>`;
+}
+
+/* ---------- focus layer ---------- */
+const AI_OPEN=[{who:'Leo',text:"I'll start. I think phones should be allowed, but with clear rules. They help with research and with contacting parents."},{who:'Mia',text:"I partly agree with Leo, but phones are a big distraction in class. Maybe schools could keep them in lockers during lessons?"}];
+const AI_NEXT=[
+  q=>({who:'Sam',text:`Can I ask what we mean by "bring"? Bringing a phone to school is different from using it in class. You said "${q}" — does that cover breaks too?`}),
+  q=>({who:'Mia',text:`I like the point "${q}". But how would teachers check that phones are only used for study?`}),
+  q=>({who:'Leo',text:"We have about three minutes left. Shall we try to agree on one recommendation?"}),
+  q=>({who:'Sam',text:'So most of us support "bring it, but keep it away during lessons". Would you like to sum up for the group?'}),
+];
+const MOVES=[['提出观点','I believe that '],['回应','I agree with Mia that '],['澄清','Do you mean that '],['邀请','Sam, what do you think about '],['总结','So far, we have agreed that ']];
+const MOCK_CANDS=['1 号','2 号','3 号','4 号（你）','5 号','6 号'];
+const MOCK_LINES=[['1 号','I\'d like to start. Projects show real skills better than a final exam, like teamwork and research.'],['3 号','But projects take a lot of time, and some students may rely on their teammates.'],['6 号','Maybe we could combine them? Keep a shorter exam and add one project.']];
+const MOCK_NEXT=[q=>['2 号',`4 号 made a good point: "${q}". I would add that teachers need clear marking rules.`],q=>['5 号','We have five minutes left. Could someone summarise where we are?'],q=>['考官','Time is up. Thank you, everyone. Please stop here.']];
+const LIVE_CHAT=[['同学 A','老师好，报名材料需要盖章吗？'],['老师','以当届简章为准。我们在「报名事项」里放了官网入口，简章发布后会更新。'],['同学 B','个人陈述写多长合适？'],['老师','先把三件事写清楚：为什么选这所学校、你做过什么、你想学什么。长度看学校要求。'],['同学 C','小组讨论一定要第一个发言吗？'],['老师','不一定。比抢第一个更重要的是接住别人的话。下周三的直播会专门讲。']];
+const SUBS=['先说结论，再给理由，最后举一个例子。','接住上一位同学的话，比重新开一个话题更加分。','总结时说出大家的共识和还没解决的分歧。','回答前停一秒，想好第一句再开口。'];
+
+let timers=[];
+function clearTimers(){timers.forEach(clearTimeout);timers=[]}
+function later(fn,ms){timers.push(setTimeout(fn,ms))}
+
+function openFocus(key){S.focus=key;save();renderFocus();renderDock()}
+function closeFocus(){if(S.focus==='room')rmCleanup();vbStop();clearTimers();S.focus=null;save();document.getElementById('focus').innerHTML='';render()}
+function sess(){return S.sessions[S.focus]}
+function fTop(title,schoolId,chip,extra=''){
+  return `<div class="f-top"><div class="f-title">${schoolId&&schoolId!=='all'?`<span class="dot ${colorOf(schoolId)}"></span><span class="muted">${esc(sc(schoolId).short)}</span>`:''}<b>${esc(title)}</b>${chip||''}</div>${extra}</div>`;
+}
+function renderFocus(){
+  const el=document.getElementById('focus');const key=S.focus;if(!key){el.innerHTML='';return}
+  const active=document.activeElement&&document.activeElement.id;const caret=document.activeElement&&document.activeElement.selectionStart;
+  let html='';
+  if(key==='room'){el.innerHTML=`<div class="focus rmode" role="dialog" aria-modal="true">${roomShell()}</div>`;if(RM.st)rmRenderAll();return}
+  if(key.startsWith('w:'))html=focusWatch(key.slice(2));
+  else if(key.startsWith('l:'))html=focusLive(key.slice(2));
+  else if(key.startsWith('m:'))html=focusMock(key.slice(2));
+  else{const it=ITEMS[key];const s=sess();
+    const top=fTop(it.title,it.school,`<span class="chip">${stageName(it,s)}</span>`,`<span class="f-timer" data-timer>${mmss(s.elapsed)}</span><button class="btn sm ghost" data-a="later">稍后继续</button><button class="btn sm" data-a="finish">结束并复盘</button>`);
+    html=top+`<div class="f-body">${it.mode==='group'?fGroup(it,s):it.mode==='oral'?fOral(it,s):it.mode==='mcq'?fMcq(it,s):fWrite(it,s)}</div>`;}
+  el.innerHTML=`<div class="focus" role="dialog" aria-modal="true">${html}</div>`;
+  bindDemoVideo();
+  if(active){const n=document.getElementById(active);if(n){n.focus();try{if(caret!=null)n.setSelectionRange(caret,caret)}catch(e){}}}
+  const log=el.querySelector('[data-scroll]');if(log)log.scrollTop=log.scrollHeight;
+  const fb=el.querySelector('.f-body');if(fb&&el.querySelector('.chat'))fb.scrollTop=fb.scrollHeight;
+}
+function steps(list,cur){const i=list.indexOf(cur);return `<div class="stage-steps">${list.map((s,j)=>`<span class="${j===i?'on':j<i?'done':''}">${s}</span>`).join('')}</div>`}
+
+function fGroup(it,s){
+  const names={brief:'读题',think:'独立思考',discuss:'小组讨论',summary:'总结'};
+  const st=steps(Object.values(names),names[s.stage]);
+  const topic=`<div class="topic"><div class="over">GROUP DISCUSSION · 本场议题</div><h2>Should students bring mobile phones to high school?</h2><p class="muted" style="font-size:14px">高中生是否应该带手机到学校？</p></div>`;
+  const seats=seatsOf(s);
+  const members=`<div class="members"><span class="member"><span class="av me">你</span>你</span>${seats.map(x=>`<span class="member"><span class="av ${s.talking===x.n?'talk':''}">${esc(x.n[0])}</span>${esc(x.n)}<span class="tag ${x.k==='human'?'hu':'ai'}">${x.k==='human'?'真人':'AI'}</span></span>`).join('')}</div>`;
+  if(s.stage==='brief')return `<div class="f-col">${st}${topic}${members}<canvas class="wave" data-level=".22"></canvas>
+    <div class="card seats"><div class="irow" style="grid-template-columns:minmax(0,1fr) auto"><div class="t"><b>座位 · ${seats.length+1} 人</b><span>每个座位都可以选真人或 AI。真人没来，开始后由 AI 补位。</span></div><span class="chip line mono">邀请码 XJ·4821</span></div>
+      <div class="irow"><span class="av me" style="width:40px;height:40px">你</span><div class="t"><b>你 · 房主</b><span>文字体验 · 未开启麦克风</span></div><span class="tag hu">真人</span></div>
+      ${seats.map((x,i)=>`<div class="irow"><span class="av" style="width:40px;height:40px">${esc(x.n[0])}</span><div class="t"><b>${esc(x.n)}</b><span>${x.k==='human'?(i===0?'同学 · 已加入（演示）':'同学 · 已发邀请（演示）'):PERSONA[i]}</span></div><div class="segs" role="group" aria-label="座位类型"><button class="${x.k==='human'?'on':''}" data-a="seat" data-i="${i}" data-k="human">真人</button><button class="${x.k==='ai'?'on':''}" data-a="seat" data-i="${i}" data-k="ai">AI</button></div></div>`).join('')}</div>
+    <div class="card" style="padding:18px;display:flex;flex-direction:column;gap:8px;font-size:14px"><b>流程</b><p class="muted">1 分钟独立思考 → 小组讨论 → 你来做 30 秒总结。全程英文。</p><p class="muted">这是文字体验：用打字参与讨论，其他组员的发言为预设内容，不会开启麦克风。</p></div>
+    <div><button class="btn" data-a="g-think">开始 · 独立思考 1 分钟</button></div></div>`;
+  if(s.stage==='think')return `<div class="f-col">${st}${topic}<div class="center">${cdRing(s.cd,60)}<p class="muted">先想清楚你的立场和一个理由。可以记几个词。</p></div>
+    <textarea class="in" id="g-notes" data-in="notes" placeholder="比如：allow, but rules / emergency / lockers in class" style="min-height:100px">${esc(s.notes||'')}</textarea><div><button class="btn" data-a="g-discuss">我想好了，开始讨论</button></div></div>`;
+  const chat=`<div class="chat">${s.msgs.map(m=>m.who==='sys'?`<div class="msg sys"><div class="bubble">${esc(m.text)}</div></div>`:`<div class="msg ${m.who==='me'?'me':''} ${m.cut?'cut':''}"><span class="av ${m.who==='me'?'me':''} ${s.talking===m.who&&(m.typing||m.streaming)?'talk':''}">${m.who==='me'?'你':esc(m.who[0])}</span><div><div class="name">${m.who==='me'?'你':esc(m.who)+(m.human?' · 真人':' · AI')}${m.cut?' · 被你打断':''}</div><div class="bubble" data-mi="${s.msgs.indexOf(m)}">${m.typing?'<span class="typing"><i></i><i></i><i></i></span>':esc(m.text)+(m.streaming?'<span class="caret"></span>':'')}</div></div></div>`).join('')}</div>`;
+  if(s.stage==='summary')return `<div class="f-col">${st}${chat}<div class="card" style="padding:18px;display:flex;flex-direction:column;gap:10px"><b>你的 30 秒总结</b><p class="muted" style="font-size:13px">说出大家的共识，以及还没解决的分歧。</p>
+    <textarea class="in" id="g-sum" data-in="summary" placeholder="So, to sum up, our group agrees that …">${esc(s.summary||'')}</textarea><div><button class="btn" data-a="finish">完成，去复盘</button></div></div></div>`;
+  const mine=s.msgs.filter(m=>m.who==='me').length;
+  return `<div class="f-col">${st}${members}${chat}
+   <div class="composer"><canvas class="wave" style="height:46px" data-level="${s.msgs.some(m=>m.typing||m.streaming)?.95:(s.draft?.45:.12)}"></canvas><div class="moves">${MOVES.map(([t,p])=>`<button data-a="move" data-p="${esc(p.replace('Sam',seats[seats.length-1].n).replace('Mia',seats[1]?seats[1].n:'Mia'))}">${t}</button>`).join('')}${mine>=2?'<button data-a="g-summary" style="color:var(--ink);font-weight:700">进入总结 →</button>':''}</div>
+    <div class="cin"><button class="micbtn" data-a="mic" aria-label="语音（演示中不可用）">${ic('mic')}</button><textarea id="g-in" data-in="draft" placeholder="用英文说你的想法…  Enter 发送" rows="1">${esc(s.draft||'')}</textarea><button class="btn" data-a="g-send" style="height:48px">发送</button></div>
+    <div class="hint">短语按钮会帮你起个头。说过 2 次以后可以进入总结。</div></div></div>`;
+}
+function fOral(it,s){
+  const names=['选题','准备','作答','追问'];const cur={pick:'选题',prep:'准备',answer:'作答',follow:'追问'}[s.stage];
+  if(s.stage==='pick')return `<div class="f-col">${steps(names,cur)}<div class="page-h"><h1 style="font-size:24px">选一道题</h1><p>每道题有 15 秒准备时间，答完还有一个追问。</p></div>
+    <div class="opts">${it.qs.map((q,i)=>`<button class="opt" data-a="o-pick" data-i="${i}"><span class="l">${i+1}</span><span>${esc(q)}</span></button>`).join('')}</div><div class="chips"><span class="chip line">表达练习题</span><span class="chip line">不代表当届考题</span></div></div>`;
+  const q=it.qs[s.qi];
+  const topic=`<div class="topic"><div class="over">${s.stage==='follow'?'FOLLOW-UP · 追问':'QUESTION'}</div><h2>${esc(s.stage==='follow'?s.fu:q)}</h2></div>`;
+  if(s.stage==='prep')return `<div class="f-col">${steps(names,cur)}${topic}<div class="center">${cdRing(s.cd,15)}<p class="muted">想好第一句话。</p><button class="btn" data-a="o-answer">直接开始作答</button></div></div>`;
+  const field=s.stage==='follow'?'fuAns':'ans';
+  return `<div class="f-col">${steps(names,cur)}${topic}<textarea class="in" id="o-${field}" data-in="${field}" placeholder="用英文写下你的回答">${esc(s[field]||'')}</textarea>
+   <div class="chips"><button class="btn" data-a="${s.stage==='follow'?'finish':'o-follow'}">${s.stage==='follow'?'完成，去复盘':'答完了'}</button><button class="btn ghost" data-a="mic">${ic('mic',16)}录音作答</button></div></div>`;
+}
+function fMcq(it,s){
+  const q=it.qs[s.qi];const picked=s.picks[s.qi];const checked=s.checked[s.qi];
+  return `<div class="f-col">${steps(it.qs.map((_,i)=>`第 ${i+1} 题`),`第 ${s.qi+1} 题`)}<div class="topic"><div class="over">文理基础 · 原创练习题</div><h2>${esc(q.q)}</h2></div>
+   <div class="opts">${q.o.map((o,i)=>{let c='';if(checked){if(i===q.a)c='right';else if(i===picked)c='wrong'}else if(i===picked)c='pick';return `<button class="opt ${c}" data-a="m-pick" data-i="${i}" ${checked?'disabled':''}><span class="l">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`}).join('')}</div>
+   ${checked?`<div class="explain"><b style="color:var(--ink)">${picked===q.a?'答对了。':'再看一下：'}</b>${esc(q.e)}</div>`:''}
+   <div class="chips">${!checked?`<button class="btn" data-a="m-check" ${picked==null?'disabled':''}>提交</button>`:s.qi<it.qs.length-1?`<button class="btn" data-a="m-next">下一题</button>`:`<button class="btn" data-a="finish">完成，去复盘</button>`}</div></div>`;
+}
+function fWrite(it,s){const n=(s.text||'').replace(/\s/g,'').length;
+  return `<div class="f-col"><div class="topic"><div class="over">写作 · 约 400 字</div><h2>${esc(it.prompt)}</h2></div><textarea class="in" id="w-text" data-in="text" style="min-height:320px" placeholder="先写观点，再写理由和你的经历。">${esc(s.text||'')}</textarea>
+  <div style="display:flex;justify-content:space-between;align-items:center"><span class="muted mono" data-count>${n} 字</span><button class="btn" data-a="finish">交卷，去复盘</button></div></div>`}
+
+/* One licensed demo asset for course previews, recorded lessons and simulated live streams. */
+const DEMO_VIDEO={src:'assets/course-demo.mp4',poster:'',duration:129.3};
+function demoVideo(key='',allowed=true,live=false){
+  return `<div class="screen demo-screen"><video ${allowed?`src="${DEMO_VIDEO.src}" controls`:''} poster="${DEMO_VIDEO.poster}" preload="metadata" playsinline data-demo-key="${esc(key)}" aria-label="两分钟课程演示视频">你的浏览器无法播放此视频。</video>${live?'<span class="livechip">直播演示 · 预录视频</span>':''}</div>`;
+}
+function demoCredit(live=false){return `<p class="demo-credit">${live?'直播窗口使用同一段预录视频展示效果，提问区为模拟互动。':'演示素材 · 2 分 09 秒，供体验播放器，不计入正式课程完成度。'}<br>Why Open Educational Resources Matter · Brendan Walsh · <a href="https://commons.wikimedia.org/wiki/File:Why_Open_Educational_Resources_Matter.webm" target="_blank" rel="noopener">素材来源</a> · <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>（仅转为 MP4，内容未改动）</p>`}
+function bindDemoVideo(){
+  const v=document.querySelector('#focus video[data-demo-key]');if(!v||!v.hasAttribute('src'))return;
+  const key=S.focus,session=S.sessions[key];if(!session)return;
+  const lesson=key.startsWith('w:')?session.l:'live';
+  session.demoPositions=session.demoPositions||{};
+  let lastSave=0;
+  const sync=()=>{if(S.sessions[key]!==session)return;session.demoPositions[lesson]=v.currentTime;session.playing=!v.paused&&!v.ended;const t=Date.now();if(t-lastSave>2000||v.paused||v.ended){lastSave=t;save()}};
+  v.addEventListener('loadedmetadata',()=>{const pos=Number(session.demoPositions[lesson])||0;if(pos>0&&pos<v.duration-.5)v.currentTime=pos;});
+  ['timeupdate','pause','seeked','ended'].forEach(e=>v.addEventListener(e,sync));
+  v.addEventListener('play',()=>{document.querySelectorAll('video').forEach(other=>{if(other!==v)other.pause()});sync()});
+  v.addEventListener('error',()=>{if(v.isConnected)toast('演示视频加载失败，请刷新页面重试')});
+}
+function paintLiveChat(){const s=sess(),log=document.querySelector('#focus [data-live-chat]');if(!s||!log)return;log.innerHTML=s.chat.map(([w,t])=>`<p class="${w==='老师'?'t':''}"><b>${esc(w)}</b>${esc(t)}</p>`).join('');log.scrollTop=log.scrollHeight;}
+
+function focusWatch(id){
+  const it=ITEMS[id];const s=S.sessions['w:'+id];const L=it.lessons[s.l];const owned=isFree(it)||S.owned[id]||s.l<(it.trial||0);
+  return fTop(it.title,it.school,'<span class="chip">录播 · 演示素材</span>',`<button class="btn sm" data-a="close-focus">关闭</button>`)+
+  `<div class="f-body"><div class="f-col wide"><div class="player"><div class="stack"><div style="position:relative">${demoVideo('w:'+id+':'+s.l,owned)}
+    ${owned?'':`<div class="lockscreen" style="border-radius:var(--r)"><b style="font-size:18px">这一讲需要开通课程</b><p style="color:var(--stage-muted);font-size:14px">第 1 讲可以试看。</p><button class="btn light" data-a="buy" data-id="${id}">开通课程</button></div>`}</div>
+    <div class="chips"><span class="chip">第 ${s.l+1} 讲</span><b>${esc(L[0])}</b></div>${demoCredit()}
+    <label class="stack" style="gap:6px"><b>笔记</b><textarea class="in" id="w-note" data-in="wnote" style="min-height:90px" placeholder="记下这一讲你想练的点">${esc((S.progress[id]||{}).note||'')}</textarea></label></div>
+   <div class="side"><div class="card"><b style="font-size:14px">目录</b><div class="lessonlist" style="margin-top:8px">${it.lessons.map((l,i)=>{const lk=!(isFree(it)||S.owned[id]||i<(it.trial||0));const dn=((S.progress[id]||{}).done||[]).includes(i);return `<button class="${i===s.l?'on':''}" data-a="w-lesson" data-l="${i}"><span class="mono">${dn?'✓':String(i+1).padStart(2,'0')}</span><span style="flex:1">${esc(l[0])}</span>${lk?ic('lock',14):''}</button>`}).join('')}</div></div>
+    ${it.skill?`<div class="card"><b style="font-size:14px">看完去练</b><div class="mini" style="margin-top:8px">${Object.keys(ITEMS).filter(k=>ITEMS[k].kind==='practice'&&ITEMS[k].skill===it.skill).map(k=>`<button data-a="open" data-id="${k}"><b>${esc(ITEMS[k].title)}</b><span>免费 · ${ITEMS[k].min} 分钟</span></button>`).join('')}</div></div>`:''}</div></div></div></div>`;
+}
+function focusLive(id){
+  const it=ITEMS[id];const s=S.sessions['l:'+id];
+  return fTop(it.title,it.school,'<span class="chip live">直播演示</span>',`<button class="btn sm" data-a="close-focus">离开直播</button>`)+
+  `<div class="f-body"><div class="f-col wide"><div class="player"><div class="stack">${demoVideo('l:'+id,true,true)}${demoCredit(true)}</div>
+   <div class="side"><div class="card"><b style="font-size:14px">提问区</b><div class="chatlog" data-live-chat data-scroll style="margin-top:8px">${s.chat.map(([w,t])=>`<p class="${w==='老师'?'t':''}"><b>${esc(w)}</b>${esc(t)}</p>`).join('')}</div>
+    <div class="cin" style="margin-top:10px"><textarea id="l-in" data-in="ldraft" placeholder="文字提问…" rows="1" style="min-height:40px">${esc(s.draft||'')}</textarea><button class="btn sm" data-a="l-send" style="height:40px">发送</button></div></div>
+    <div class="card"><b style="font-size:14px">想让老师听你说？</b><p class="muted" style="font-size:13px;margin:6px 0 10px">直播里老师看不到你。需要互动请约 1v1。</p><a class="btn sm ghost" href="#course-coach-1v1" data-a="close-focus-go" data-href="#course-coach-1v1">预约 1v1</a></div></div></div></div></div>`;
+}
+function focusMock(id){
+  const it=ITEMS[id];const s=S.sessions['m:'+id];const b=S.bookings[id];
+  const names=['设备检测','候场','读题','讨论','结束'];const cur={check:'设备检测',wait:'候场',read:'读题',discuss:'讨论',end:'结束'}[s.stage];
+  const top=fTop(it.title,it.school,`<span class="chip">${cur}</span>`,(s.stage==='read'||s.stage==='discuss')?`<span class="f-timer" data-cd>${mmss(s.cd)}</span>`:`<button class="btn sm ghost" data-a="close-focus">离开</button>`);
+  let body='';
+  if(s.stage==='check'){const items=['网络连接','麦克风','摄像头','浏览器版本'];
+    body=`<div class="center"><h2 style="font-size:24px">开考前，先检查设备</h2><p class="muted">演示：检测为模拟结果，不会打开你的麦克风或摄像头。</p><div class="checks">${items.map((t,i)=>`<div><span>${t}</span>${i<s.checks?`<span style="color:var(--ok);display:flex;gap:4px;align-items:center">${ic('check',16)}正常</span>`:i===s.checks?'<span class="spin"></span>':'<span class="faint">等待</span>'}</div>`).join('')}</div>
+    ${s.checks>=items.length?`<p class="muted">都正常。开考前 15 分钟可以进入候场。</p><div class="chips"><button class="btn" data-a="mk-wait">演示：现在进入候场</button><button class="btn ghost" data-a="mk-later">先回去</button></div>`:''}</div>`;}
+  else if(s.stage==='wait'){const joined=Math.min(6,2+Math.floor(s.t/2));const fresh=(s.seen||0)<joined?joined-1:-1;s.seen=joined;
+    body=`<div class="f-col"><div class="center" style="padding:0"><h2 style="font-size:22px">候场中，你是 4 号</h2><p class="muted">人到齐后老师宣布开始。讨论时请称呼号码，不说姓名和学校。</p><div class="countdown" data-cd>${mmss(s.cd)}</div></div>
+     <div class="room">${MOCK_CANDS.map((c,i)=>i===3?`<div class="cand me"><span class="ph">${ic('users',28)}</span>${c}</div>`:i<joined?`<div class="cand ${i===fresh?'join':''}"><span class="ph">${ic('users',28)}</span>${c}</div>`:`<div class="cand empty"><span class="ph">等待入场</span>${c}</div>`).join('')}</div>
+     <div class="chips" style="justify-content:center"><button class="btn ghost sm" data-a="mk-start">演示：跳过等待</button></div></div>`;}
+  else if(s.stage==='read'){body=`<div class="f-col">${steps(names,cur)}<div class="topic"><div class="over">考官 · 题目</div><h2>${esc(it.topic)}</h2></div><div class="center"><p class="muted">读题时间，所有人静音。</p><button class="btn ghost sm" data-a="mk-discuss">演示：跳过读题</button></div><textarea class="in" id="mk-notes" data-in="notes" placeholder="记几个关键词" style="min-height:90px">${esc(s.notes||'')}</textarea></div>`;}
+  else if(s.stage==='discuss'){const talking=(s.msgs[s.msgs.length-1]||{}).who;
+    body=`<div class="f-col wide"><div class="player"><div class="stack"><div class="room">${MOCK_CANDS.map((c,i)=>`<div class="cand ${i===3?'me':''} ${talking===c||(i===3&&talking==='me')?'talk':''}"><span class="ph">${ic('users',26)}</span>${talking===c||(i===3&&talking==='me')?'<span class="eqbars"><i></i><i></i><i></i></span>':''}${c}</div>`).join('')}</div>
+      <div class="topic" style="padding:16px 18px"><div class="over">题目</div><b>${esc(it.topic)}</b></div></div>
+     <div class="side"><div class="card"><b style="font-size:14px">讨论字幕</b><div class="chatlog" data-scroll style="margin-top:8px;max-height:300px">${s.msgs.map(m=>`<p class="${m.who==='考官'?'t':''}"><b>${m.who==='me'?'4 号（你）':esc(m.who)}</b>${m.typing?'<span class="typing"><i></i><i></i><i></i></span>':esc(m.text)}</p>`).join('')}</div>
+      <div class="cin" style="margin-top:10px"><textarea id="mk-in" data-in="draft" placeholder="轮到你时发言…" rows="2" style="min-height:56px">${esc(s.draft||'')}</textarea></div><div class="chips" style="margin-top:8px"><button class="btn sm" data-a="mk-send">发言</button><button class="btn sm ghost" data-a="mk-end">结束模考</button></div>
+      <p class="hint" style="margin-top:6px">演示：其他考生为脚本。正式版为真实考生实时音视频。</p></div></div></div></div>`;}
+  else body=`<div class="center"><h2 style="font-size:24px">模考结束</h2><p class="muted">你的发言已保存。老师评分后会出报告，正式版预计 48 小时内。</p><div class="chips"><button class="btn" data-a="mk-done">回到模考</button></div></div>`;
+  return top+`<div class="f-body">${body}</div>`;
+}
+
+/* ---------- dock ---------- */
+function renderDock(){
+  const el=document.getElementById('dock');
+  const list=Object.keys(S.sessions).filter(k=>ITEMS[k]&&ITEMS[k].kind==='practice'&&k!==S.focus);
+  if(!S.signedIn||!S.onboarded||S.focus||route()==='today'){el.innerHTML='';return}
+  el.innerHTML=list.slice(0,3).map(k=>`<button data-a="open" data-id="${k}"><span class="dot ${colorOf(ITEMS[k].school)}"></span><span>${esc(sc(ITEMS[k].school).short)} · ${esc(ITEMS[k].title)}</span><span class="muted mono">${mmss(S.sessions[k].elapsed)}</span><span class="go">继续</span></button>`).join('');
+}
+
+/* ---------- sheets ---------- */
+function sheet(html,wide){document.getElementById('sheet').innerHTML=`<div class="scrim" data-a="scrim"><div class="sheet ${wide?'wide':''}" role="dialog" aria-modal="true">${html}</div></div>`}
+function closeSheet(){document.getElementById('sheet').innerHTML=''}
+function toast(t){const d=document.createElement('div');d.className='toast';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),2200)}
+function sheetBuy(id,after){const it=ITEMS[id];S._after=after||null;
+  sheet(`<div class="sheet-h"><div><div class="eyebrow">${KIND[it.kind][0]}</div><h2>${esc(it.title)}</h2></div><button class="xbtn" data-a="close-sheet" aria-label="关闭">${ic('x',16)}</button></div>
+  <p class="muted">${esc(it.sub)}</p><div class="grid g2"><div class="tile"><div class="k">价格</div><div class="v" style="font-size:20px">待团队确定</div></div><div class="tile"><div class="k">开通后</div><div style="font-weight:700">${it.kind==='recorded'?'全部讲次 + 回看':it.kind==='live'?'直播 + 回放':it.kind==='mock'?'本场模考 + 评分报告':'本次辅导'}</div></div></div>
+  <div class="demo-note">演示：没有接入支付。点下面的按钮直接模拟开通。</div>
+  <div class="chips" style="justify-content:flex-end"><button class="btn ghost" data-a="close-sheet">再想想</button><button class="btn" data-a="buy-ok" data-id="${id}">模拟开通</button></div>`)}
+function sheetSchools(){const o=S._add||(S._add={q:''});
+  const list=Object.keys(SCHOOLS).filter(k=>!o.q||(SCHOOLS[k].short+SCHOOLS[k].name).includes(o.q));
+  sheet(`<div class="sheet-h"><div><h2>添加学校</h2><p class="muted" style="font-size:13px">选好的学校会出现在「我的学校」里。</p></div><button class="xbtn" data-a="close-sheet" aria-label="关闭">${ic('x',16)}</button></div>
+  <label class="searchbox">${ic('search')}<input id="add-q" data-in="addq" placeholder="搜学校名称" value="${esc(o.q)}"></label>
+  <div class="card" style="max-height:50vh;overflow-y:auto">${list.map(k=>{const s=SCHOOLS[k],on=S.schools.includes(k);return `<button class="pick" data-a="toggle-school" data-id="${k}"><span class="cbox ${on?'on':''}">${on?ic('check',14):''}</span><span class="t"><b>${esc(s.short)}</b><span>${esc(s.name)}</span></span><span class="chip">${LEVEL[s.level][1]}</span></button>`}).join('')}</div>
+  <div class="chips" style="justify-content:flex-end"><button class="btn" data-a="close-sheet">完成</button></div>`)}
+function sheetNotes(){
+  sheet(`<div class="sheet-h"><div><div class="eyebrow">给团队看的</div><h2>这一版改了什么</h2></div><button class="xbtn" data-a="close-sheet" aria-label="关闭">${ic('x',16)}</button></div>
+  <b>1. 产品结构：四类东西，一条路径</b>
+  <div class="ia"><div><b>练习</b><span class="muted">随时开始 · 免费 · AI 反馈</span></div><div><b>课程</b><span class="muted">录播随时看 · 直播按时进 · 付费</span></div><div><b>模考</b><span class="muted">按场次报名 · 多人同场 · 老师评分</span></div><div><b>辅导</b><span class="muted">预约老师 · 腾讯会议 · 付费</span></div></div>
+  <p class="muted" style="font-size:14px">每所学校的页面把这四类串成「了解 → 学方法 → 练 → 模考」。「今天」把所有带时间的东西（直播、模考、辅导、你定的日子）合成一条时间线，并只给一个「下一件事」。「记录」保存所有原话和报告，复盘页把下一步指向对应的课、模考或老师。</p>
+  <b>2. 和 V2.4 的对照</b>
+  <div style="overflow-x:auto"><table class="cmp"><tr><th>V2.4 桌面版</th><th>这一版</th></tr>
+   <tr><td>多窗口：拖动、缩放、并排、文件夹收起</td><td>一次只做一件事：练习、看课、直播、模考都在全屏专注层里打开</td></tr>
+   <tr><td>最小化窗口 + 右侧文件夹</td><td>「稍后继续」，右下角显示进行中的练习，「今天」第一张卡接着练</td></tr>
+   <tr><td>首页五张一样的学校卡</td><td>首次进入搜索选校，按「可以练 / 筹备中 / 仅信息」排序；之后学校在左侧，可扩到几十所</td></tr>
+   <tr><td>窗口标题 + 页内返回 + 浮动工具栏，三层导航</td><td>左侧一层导航，专注层只有「稍后继续」和「结束并复盘」</td></tr>
+   <tr><td>复盘后回桌面</td><td>复盘后：再练一次 / 对应讲次 / 报名模考 / 带着记录约老师</td></tr>
+   <tr><td>每屏都有免责声明</td><td>来源标在题目上（收录 / 预测 / 项目编写 / 待核对），学校页统一说明一次</td></tr></table></div>
+  <b>3. 演示里是模拟的</b>
+  <ul class="notes-list"><li><b>AI 组员、反馈和模考里的其他考生</b>是脚本和本地规则，不调用模型</li><li><b>语音</b>模拟版可用文字体验；录播和直播窗口统一播放 2 分 09 秒演示素材，直播不是实时授课</li><li><b>支付</b>没有接入，价格写「待定」；老师和场次是示例</li><li><b>时间</b>固定为 10 月 12 日周一 19:00，方便看到「直播中」</li><li>官方报名日期全部显示「待公布」，不按上一届推算</li><li>数据只存在这台电脑的浏览器里</li></ul>`,true)}
+
+/* ---------- actions ---------- */
+function newSession(id){const it=ITEMS[id];
+  if(it.mode==='group')return{stage:'brief',elapsed:0,msgs:[],ai:0,draft:'',notes:'',seats:[{n:HUMAN_POOL[0],k:'human'},{n:AI_POOL[1],k:'ai'},{n:AI_POOL[2],k:'ai'}]};
+  if(it.mode==='oral')return{stage:'pick',elapsed:0,qi:0,ans:'',fu:'',fuAns:''};
+  if(it.mode==='mcq')return{stage:'q',elapsed:0,qi:0,picks:{},checked:{}};
+  return{stage:'w',elapsed:0,text:''};
+}
+const SLOT=['Leo','Mia','Sam'],AI_POOL=['Leo','Mia','Sam'],HUMAN_POOL=['林可','周一鸣','陈雨'];
+const PERSONA=['AI · 爱先开口，观点鲜明','AI · 爱追问，会唱反调','AI · 话不多，爱补例子'];
+function seatsOf(s){return s.seats||AI_POOL.map(n=>({n,k:'ai'}))}
+function aiTurn(fn){const s=sess();if(!s)return;const key=S.focus;
+  const msg=fn();const slot=SLOT.indexOf(msg.who);const seat=slot>=0?seatsOf(s)[slot]:null;
+  const m={who:seat?seat.n:msg.who,typing:true,text:'',human:!!(seat&&seat.k==='human')};
+  s.talking=m.who;s.msgs.push(m);renderFocus();
+  const words=msg.text.split(' ');let i=0;
+  later(()=>{if(m.cut)return;m.typing=false;m.streaming=true;if(S.focus===key)renderFocus();
+    const step=()=>{const ss=S.sessions[key];if(!ss||m.cut)return;m.text=words.slice(0,++i).join(' ');
+      const b=S.focus===key&&document.querySelector(`[data-mi="${ss.msgs.indexOf(m)}"]`);
+      if(i<words.length){if(b)b.innerHTML=esc(m.text)+'<span class="caret"></span>';later(step,m.human?120:80)}
+      else{m.streaming=false;ss.talking=null;save();if(S.focus===key)renderFocus()}};step()},m.human?900:600);
+}
+function interruptAI(){const s=sess();if(!s||!s.msgs)return;const m=s.msgs.find(x=>(x.streaming||x.typing)&&!x.human);if(!m)return;
+  m.cut=true;m.streaming=false;if(m.typing){m.typing=false;m.text='…'}else m.text+=' —';s.talking=null;save();renderFocus();toast(`你一开口，${m.who} 就停下来听你说（正式版用语音检测）`)}
+function quoteOf(t){const c=t.trim().split(/[.,!?;]| because | but /i)[0].trim();return c.split(/\s+/).slice(0,9).join(' ')}
+function finishPractice(){
+  const id=S.focus;const it=ITEMS[id];const s=sess();
+  const r={id:uid(),item:id,ts:Date.now(),mins:Math.max(1,Math.round(s.elapsed/60))};
+  if(it.mode==='group'){r.msgs=s.msgs.filter(m=>!m.typing);r.summary=s.summary||'';if(r.summary)r.msgs.push({who:'me',text:r.summary})}
+  if(it.mode==='oral'){r.lines=[{q:it.qs[s.qi],a:s.ans}];if(s.fu)r.lines.push({q:s.fu,a:s.fuAns})}
+  if(it.mode==='mcq'){const c=it.qs.filter((q,i)=>s.picks[i]===q.a).length;r.score=[c,it.qs.length];r.picks=s.picks}
+  if(it.mode==='write')r.text=s.text;
+  if(s.ai)r.ai=s.ai;if(s.secs)r.secs=s.secs;
+  if(!S.signedIn){S._guestRec=r;delete S.sessions[id];clearTimers();S.focus=null;save();document.getElementById('focus').innerHTML='';sheetAuth('signup','注册后保存这次练习，并查看引用你原话的完整反馈。');return}
+  S.records.push(r);delete S.sessions[id];clearTimers();S.focus=null;save();
+  document.getElementById('focus').innerHTML='';location.hash='#record-'+r.id;render();
+}
+const ACT={
+  open(d){const id=d.id;closeSheet();if(!S.sessions[id])S.sessions[id]=newSession(id);openFocus(id);const s=sess();
+    if(ITEMS[id].mode==='group'&&s.stage==='discuss'&&!s.msgs.length)startDiscuss()},
+  later(){clearTimers();const s=sess();if(s)s.talking=null;S.msgs;const k=S.focus;S.focus=null;save();document.getElementById('focus').innerHTML='';render();toast('已保存，随时可以接着练')},
+  finish(){finishPractice()},
+  'g-think'(){const s=sess();s.stage='think';s.cd=60;save();renderFocus()},
+  'g-discuss'(){startDiscuss()},
+  'g-send'(){const s=sess();const t=(s.draft||'').trim();if(!t)return;s.msgs.push({who:'me',text:t});s.draft='';save();renderFocus();
+    if(s.ai<AI_NEXT.length){const q=quoteOf(t);const f=AI_NEXT[s.ai++];let named=(t.match(/\b(Leo|Mia|Sam)\b/)||[])[1];if(s.seats){let ti=-1,at=-1;s.seats.forEach((x,i)=>{const p=t.lastIndexOf(x.n);if(p>at){at=p;ti=i}});named=ti>=0?SLOT[ti]:null}later(()=>aiTurn(()=>{const m=f(q);if(named&&m.who!==named)m.who=named;return m}),500)}},
+  'g-summary'(){const s=sess();clearTimers();s.msgs=s.msgs.filter(m=>!m.typing);s.stage='summary';save();renderFocus()},
+  move(d){const s=sess();s.draft=(s.draft?s.draft.trim()+' ':'')+d.p;save();renderFocus();const n=document.getElementById('g-in');if(n){n.focus();n.setSelectionRange(n.value.length,n.value.length)}},
+  mic(){toast('当前是文字体验，请在输入框中写下你的发言。')},
+  'o-pick'(d){const s=sess();s.qi=+d.i;s.stage='prep';s.cd=15;save();renderFocus()},
+  'o-answer'(){const s=sess();s.stage='answer';save();renderFocus();document.getElementById('o-ans')?.focus()},
+  'o-follow'(){const s=sess();const it=ITEMS[S.focus];if(!(s.ans||'').trim()){toast('先写几句再提交');return}
+    s.fu=it.fus[s.qi%it.fus.length].replace('{q}',quoteOf(s.ans));s.stage='follow';save();renderFocus();document.getElementById('o-fuAns')?.focus()},
+  'm-pick'(d){const s=sess();s.picks[s.qi]=+d.i;save();renderFocus()},
+  'm-check'(){const s=sess();s.checked[s.qi]=true;save();renderFocus();const it=ITEMS[S.focus];if(s.picks[s.qi]===it.qs[s.qi].a){const el=document.querySelector('.opt.right');if(el)confetti(el)}},
+  'm-next'(){const s=sess();s.qi++;save();renderFocus()},
+  watch(d){const id=d.id;closeSheet();const k='w:'+id;const l=d.l!=null?+d.l:0;
+    if(!S.sessions[k]||S.sessions[k].l!==l)S.sessions[k]={l,pos:0,playing:false,elapsed:0};openFocus(k)},
+  'w-play'(){const s=sess();const it=ITEMS[S.focus.slice(2)];if(!(isFree(it)||S.owned[S.focus.slice(2)]||s.l<(it.trial||0)))return;const v=document.querySelector('#focus video');if(v){v.paused?v.play().catch(()=>toast('请点击视频中的播放按钮')):v.pause()}} ,
+  'w-lesson'(d){const s=sess();s.l=+d.l;s.pos=0;s.playing=false;renderFocus()},
+  live(d){closeSheet();const k='l:'+d.id;if(!S.sessions[k])S.sessions[k]={chat:LIVE_CHAT.slice(0,2),i:2,elapsed:0,draft:''};openFocus(k)},
+  'l-send'(){const s=sess();const t=(s.draft||'').trim();if(!t)return;s.chat.push(['我',t]);s.draft='';const input=document.getElementById('l-in');if(input)input.value='';paintLiveChat();later(()=>{if(!S.focus||!S.focus.startsWith('l:'))return;sess().chat.push(['老师','收到，这个问题我稍后统一回答。（演示）']);paintLiveChat()},2500)},
+  'close-focus'(){const k=S.focus;if(k&&(k.startsWith('l:')||k.startsWith('w:'))){const s=S.sessions[k];if(s)s.playing=false}closeFocus()},
+  'close-focus-go'(d,el,e){e.preventDefault();closeFocus();location.hash=d.href},
+  remind(d){S.reminders[d.id]=!S.reminders[d.id];save();render();toast(S.reminders[d.id]?'已预约，会出现在「今天」':'已取消预约')},
+  buy(d){sheetBuy(d.id)},
+  'buy-ok'(d){S.owned[d.id]=true;save();closeSheet();toast('已开通（演示）');if(S._after){const a=S._after;S._after=null;a()}render();if(S.focus)renderFocus()},
+  slot(d){S._slot={id:d.id,t:+d.t,s:+d.s};render()},
+  'book-coach'(){const sel=S._slot;if(!sel)return;const it=ITEMS[sel.id];
+    const go=()=>{S.coach.push({id:uid(),item:sel.id,ts:it.slots[sel.s],teacher:it.teachers[sel.t][0],attach:S._attach||null});S._slot=null;S._attach=null;save();render();toast('已预约，会出现在「今天」')};
+    if(!S.owned[sel.id]){sheetBuy(sel.id,go);return}go()},
+  'coach-with'(d){S._attach=d.id;location.hash='#course-coach-1v1'},
+  'join-meeting'(d){const c=S.coach.find(x=>x.id===d.cid);sheet(`<div class="sheet-h"><div><div class="eyebrow">教师辅导</div><h2>${esc(ITEMS[c.item].title)}</h2></div><button class="xbtn" data-a="close-sheet" aria-label="关闭">${ic('x',16)}</button></div>
+    <div class="grid g2"><div class="tile"><div class="k">时间</div><div style="font-weight:700">${fmtD(c.ts).split(' · ')[0]} ${fmtT(c.ts)}</div></div><div class="tile"><div class="k">老师</div><div style="font-weight:700">${esc(c.teacher)}（示例）</div></div></div>
+    <p class="muted">开课前 10 分钟，这里会出现腾讯会议的入会按钮和会议号。${c.attach?'你附上的练习记录老师已经能看到。':''}</p><div class="demo-note">演示：没有接入腾讯会议。正式版第一阶段为「一键进入腾讯会议」。</div>
+    <div class="chips" style="justify-content:flex-end"><button class="btn" data-a="close-sheet">知道了</button></div>`)},
+  'book-mock'(d){const id=d.id,si=+d.s;const go=()=>{S.bookings[id]={si,st:'booked'};save();render();toast('报名成功，记得开考前做设备检测')};
+    if(!S.owned[id]){sheetBuy(id,go);return}go()},
+  'mock-enter'(d){const id=d.id;const b=S.bookings[id];const k='m:'+id;
+    S.sessions[k]=b.st==='checked'?{stage:'wait',cd:600,t:0,msgs:[],ai:0,draft:'',notes:''}:{stage:'check',checks:0,t:0,msgs:[],ai:0,draft:''};openFocus(k)},
+  'mk-wait'(){const id=S.focus.slice(2);S.bookings[id].st='checked';const s=sess();s.stage='wait';s.cd=600;s.t=0;save();renderFocus()},
+  'mk-later'(){const id=S.focus.slice(2);S.bookings[id].st='checked';save();closeFocus();toast('设备正常。开考前 15 分钟来候场')},
+  'mk-start'(){const s=sess();s.stage='read';s.cd=120;renderFocus()},
+  'mk-discuss'(){mockDiscuss()},
+  'mk-send'(){const s=sess();const t=(s.draft||'').trim();if(!t)return;s.msgs.push({who:'me',text:t});s.draft='';renderFocus();
+    if(s.ai<MOCK_NEXT.length){const q=quoteOf(t);const f=MOCK_NEXT[s.ai++];later(()=>mockSay(f(q)),900);if(s.ai===MOCK_NEXT.length-1){}}},
+  'mk-end'(){endMock()},
+  'mk-done'(){closeFocus();location.hash='#mocks'},
+  reveal(d){const r=S.records.find(x=>x.id===d.id);if(!r)return;const mine=(r.msgs||[]).filter(m=>m.who==='me').map(m=>m.text).join(' ');
+    const lv=re=>re.test(mine)?'较好':'需要加强';r.pending=false;
+    r.report=[['观点清晰',lv(/because|think|believe/i)],['回应他人',lv(/agree|point|as .* said/i)],['推动讨论',lv(/\?|what do you think|shall we/i)],['语言表达',mine.split(/\s+/).length>40?'较好':'一般'],['总结',lv(/sum up|to sum|so far|overall/i)],['老师评语','先回应上一位再给观点，你的发言会更有分量。（示例）']];
+    const bk=Object.entries(S.bookings).find(([,b])=>b.rec===r.id);if(bk)bk[1].st='report';save();location.hash='#record-'+r.id;render()},
+  task(d){S.taskDone[d.id]=!S.taskDone[d.id];save();render()},
+  notify(d){S.notify[d.id]=!S.notify[d.id];save();render()},
+  follow(d){if(!S.schools.includes(d.id))S.schools.push(d.id);save();render()},
+  unfollow(d){S.schools=S.schools.filter(x=>x!==d.id);save();location.hash='#today';render();toast('已移出我的学校')},
+  'add-school'(d,el,e){e.preventDefault();S._add={q:''};sheetSchools()},
+  'toggle-school'(d){const i=S.schools.indexOf(d.id);i<0?S.schools.push(d.id):S.schools.splice(i,1);save();render();sheetSchools()},
+  pfilter(d){S.practiceFilter=d.id;save();render()},
+  ctab(d){S.courseTab=d.id;save();render()},
+  notes(){sheetNotes()},
+  more(){sheet(`<div class="sheet-h"><div><h2>更多</h2><p class="hint">演示时间：10月12日 周一 19:00</p></div><button class="xbtn" data-a="close-sheet" aria-label="关闭">${ic('x',16)}</button></div>
+    <div class="card items"><button class="irow" style="width:100%;text-align:left" data-a="notes"><div class="ico">${ic('map')}</div><div class="t"><b>设计说明</b><span>这一版改了什么</span></div></button>
+    <a class="irow" style="text-decoration:none" href="#weights" data-a="close-sheet"><div class="ico">${ic('school')}</div><div class="t"><b>各校录取怎么算</b><span>${typeof ADM!=='undefined'?ADM.schools.length:''} 所学校的综评折算比例</span></div></a>
+    <button class="irow" style="width:100%;text-align:left" data-a="logout"><div class="ico">${ic('back')}</div><div class="t"><b>退出登录</b><span>回到官网首页</span></div></button>
+    <button class="irow" style="width:100%;text-align:left" data-a="reset"><div class="ico">${ic('reset')}</div><div class="t"><b>重置演示数据</b><span>从官网首页重新体验</span></div></button></div>`)},
+  reset(){clearTimers();S=seed();lastRoute=null;save();history.replaceState(null,'',location.pathname);document.getElementById('focus').innerHTML='';render();scrollTo(0,0);toast('演示数据已重置')},
+  logout(){clearTimers();S.signedIn=false;S.focus=null;lastRoute=null;save();history.replaceState(null,'',location.pathname);document.getElementById('focus').innerHTML='';render();scrollTo(0,0)},
+  'onb-pick'(d){const o=S._onb;const i=o.pick.indexOf(d.id);i<0?o.pick.push(d.id):o.pick.splice(i,1);render()},
+  'onb-next'(){S._onb.step=2;render()},
+  'onb-back'(){S._onb.step=1;render()},
+  'onb-prov'(d){S._onb.prov=d.id;render()},
+  'onb-cohort'(d){S._onb.cohort=d.id;render()},
+  'onb-done'(){const o=S._onb;S.schools=o.pick;S.province=o.prov;S.cohort=o.cohort;S.onboarded=true;S._onb=null;const g=S._guestRec;S._guestRec=null;if(g)S.records.push(g);save();location.hash=g?'#record-'+g.id:'#today';render();toast(g?'已保存你刚才的练习':'好了。先看看「今天」')},
+  auth(d){sheetAuth(d.id)},
+  'auth-tab'(d){S._auth.tab=d.id;drawAuth()},
+  'auth-switch'(){S._auth.mode=S._auth.mode==='signup'?'login':'signup';drawAuth()},
+  'auth-agree'(d,el){S._auth.agree=!S._auth.agree;el.classList.toggle('on',S._auth.agree);el.innerHTML=S._auth.agree?ic('check',14):''},
+  'auth-send'(){const a=S._auth;if(!/^1\d{10}$/.test(a.phone)){toast('请输入以 1 开头的 11 位手机号');return}a.sent=60;toast('演示：没有真的发送短信。输入任意 6 位数字');
+    const tick=()=>{const b=document.getElementById('au-send');if(b){b.textContent=a.sent>0?a.sent+' 秒后重发':'重新获取';b.disabled=a.sent>0}};tick();const iv=setInterval(()=>{a.sent--;tick();if(a.sent<=0)clearInterval(iv)},1000);document.getElementById('au-code')?.focus()},
+  'auth-ok'(){const a=S._auth;if(!a)return;if(a.tab==='phone'){if(!/^1\d{10}$/.test(a.phone)){toast('手机号需要 11 位，以 1 开头');return}if(!/^\d{6}$/.test(a.code)){toast('验证码是 6 位数字');return}}
+    if(!a.agree){toast('请先勾选同意用户协议和隐私政策');const c=document.querySelector('.agree');if(c){c.style.animation='none';c.offsetWidth;c.style.animation='shake .4s'}return}
+    const g=S._guestRec;const mode=a.mode;closeSheet();clearTimers();lastRoute=null;
+    if(mode==='login'){S=seed();S.signedIn=true;if(g)S.records.push(g);save();scrollTo(0,0);if(g)location.hash='#record-'+g.id;else location.hash='#today';render();toast(g?'已登录，刚才的练习已保存':'欢迎回来（演示账号，带示例数据）')}
+    else{S=seed();Object.assign(S,{signedIn:true,onboarded:false,schools:[],records:[],sessions:{},reminders:{},progress:{},taskDone:{},taskDate:{},_guestRec:g||null,_onb:{step:1,pick:[],q:'',prov:'',cohort:'2027 届'}});save();scrollTo(0,0);render();toast('注册成功（演示）')}},
+  try(){if(!S._guestStarted||!S.sessions['xj-group']){S.sessions['xj-group']=newSession('xj-group');S._guestStarted=true}openFocus('xj-group')},
+  feat(d){setFeat(+d.id)},
+  scrollto(d){const el=document.getElementById(d.id);if(el)el.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})},
+  seat(d){const s=sess();const i=+d.i;if(!s.seats)s.seats=seatsOf(s).map(x=>({...x}));s.seats[i]=d.k==='human'?{n:HUMAN_POOL[i],k:'human'}:{n:AI_POOL[i],k:'ai'};save();renderFocus()},
+  'close-sheet'(){closeSheet()},
+  scrim(d,el,e){if(e.target===el)closeSheet()},
+};
+function startDiscuss(){const s=sess();s.stage='discuss';save();renderFocus();
+  if(!s.msgs.length){later(()=>aiTurn(()=>AI_OPEN[0]),600);later(()=>aiTurn(()=>AI_OPEN[1]),4400)}}
+function mockSay([who,text]){const s=sess();if(!s||!S.focus.startsWith('m:'))return;s.msgs.push({who,typing:true});renderFocus();
+  later(()=>{const ss=sess();if(!ss)return;const m=ss.msgs.find(x=>x.typing);if(m){m.typing=false;m.text=text}renderFocus();if(who==='考官'&&text.startsWith('Time'))later(endMock,1500)},1500)}
+function mockDiscuss(){const s=sess();s.stage='discuss';s.cd=720;s.msgs=[{who:'考官',text:'You may begin. Please speak in English and refer to each other by number.'}];renderFocus();
+  MOCK_LINES.forEach((l,i)=>later(()=>mockSay(l),1200+i*3400))}
+function endMock(){const k=S.focus;if(!k||!k.startsWith('m:'))return;const id=k.slice(2);const s=sess();clearTimers();
+  const r={id:uid(),item:id,ts:ITEMS[id].sessions[S.bookings[id].si][0],mins:Math.max(1,Math.round((720-s.cd)/60)),msgs:s.msgs.filter(m=>!m.typing),pending:true};
+  S.records.push(r);S.bookings[id].st='done';S.bookings[id].rec=r.id;s.stage='end';save();renderFocus()}
+
+/* ---------- visual helpers ---------- */
+const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const DECO=`<svg viewBox="0 0 200 200" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="100" cy="100" r="96" stroke-width="1.5" stroke-dasharray="2 6"/><circle cx="100" cy="100" r="70" stroke-width="1.5"/><circle cx="100" cy="100" r="44" stroke-width="1.5" stroke-dasharray="10 8"/><circle cx="100" cy="4" r="5" fill="currentColor"/><circle cx="170" cy="100" r="3.5" fill="currentColor"/></svg>`;
+function ring(p,size=56,sw=6,color='var(--ink)',label=''){
+  const r=(size-sw)/2,c=2*Math.PI*r,h=size/2;p=Math.max(0,Math.min(1,p));
+  return `<svg class="ring" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true"><circle class="track" cx="${h}" cy="${h}" r="${r}" fill="none" stroke-width="${sw}"/><circle class="val" cx="${h}" cy="${h}" r="${r}" fill="none" stroke="${color}" stroke-width="${sw}" stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${(c*(1-p)).toFixed(1)}" style="--c:${c.toFixed(1)}" transform="rotate(-90 ${h} ${h})"/>${label?`<text x="50%" y="50%" text-anchor="middle" dominant-baseline="central">${label}</text>`:''}</svg>`;
+}
+const CDC=2*Math.PI*78;
+function cdRing(cd,total){return `<div class="cdring"><svg viewBox="0 0 170 170" aria-hidden="true"><circle cx="85" cy="85" r="78" fill="none" stroke="var(--tile)" stroke-width="6"/><circle class="val" data-cdr="${total}" cx="85" cy="85" r="78" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" stroke-dasharray="${CDC.toFixed(1)}" stroke-dashoffset="${(CDC*(1-Math.max(0,cd)/total)).toFixed(1)}"/></svg><div class="countdown" data-cd>${mmss(cd)}</div></div>`}
+function weekBars(){
+  const out=[];for(let i=6;i>=0;i--){const d0=dayKey(NOW)-i*864e5;out.push([d0,S.records.filter(r=>dayKey(r.ts)===d0).length])}
+  const mx=Math.max(2,...out.map(x=>x[1]));
+  return `<div class="bars" aria-label="最近 7 天每天的练习次数">${out.map(([d,n],i)=>`<div title="${new Date(d).getMonth()+1}/${new Date(d).getDate()} · ${n} 次"><i class="${i===6?'today':n?'on':''}" style="height:${Math.max(8,n/mx*100)}%;--i:${i}"></i><span>${i===6?'今':WD[new Date(d).getDay()]}</span></div>`).join('')}</div>`;
+}
+function heat(){
+  const start=dayKey(NOW)-34*864e5;let out='';
+  for(let i=0;i<35;i++){const d=start+i*864e5;const n=S.records.filter(r=>dayKey(r.ts)===d).length;const dt=new Date(d);
+    out+=`<i class="${n>=3?'l3':n===2?'l2':n?'l1':''} ${d===dayKey(NOW)?'now':''}" style="--i:${i}" title="${dt.getMonth()+1}/${dt.getDate()} · ${n} 次"></i>`}
+  return `<div class="heat">${out}</div>`;
+}
+function metrics(r){
+  const it=ITEMS[r.item];if(r.score)return null;
+  const mine=r.msgs?r.msgs.filter(m=>m.who==='me').map(m=>m.text):r.lines?r.lines.map(l=>l.a||''):[r.text||''];const all=mine.join(' ');
+  if(it.mode==='write'){const n=all.replace(/\s/g,'').length;return[['篇幅',Math.min(1,n/400)],['论证',/因为|所以/.test(all)?.85:.3],['经历',/例如|比如|那次|有一次/.test(all)?.85:.25]]}
+  const words=all.split(/\s+/).filter(Boolean).length;const has=re=>mine.some(x=>re.test(x));
+  const m=[['理由',has(/\bbecause\b|\bsince\b|so that/i)?.85:.3],['例子',has(/for example|for instance|last (year|summer|month)|when i/i)?.85:.25],['篇幅',Math.min(1,words/90)]];
+  if(r.msgs)m.push(['回应',has(/\bagree\b|\bdisagree\b|your point/i)?.85:.25],['邀请',has(/what do you think|how about you|\?/i)?.85:.2]);
+  return m;
+}
+function perfCard(r){
+  const m=metrics(r);if(!m||r.pending)return '';
+  return `<section class="sec"><div class="sec-h"><h2>这一次做到了什么</h2><span class="aside">演示：按关键词估算，用来和上一次比，不是分数</span></div>
+  <div class="card" style="padding:20px 22px"><div class="perf">${m.map(([k,v],i)=>`<div><span>${k}</span><span class="tr"><i class="${v>=.8?'hi':''}" style="width:${Math.max(6,Math.round(v*100))}%;--i:${i}"></i></span><span class="st">${v>=.8?'做到了':v>=.5?'还可以':'可以加强'}</span></div>`).join('')}</div></div></section>`;
+}
+function confetti(el){
+  if(REDUCE)return;const r=el.getBoundingClientRect();const cols=['var(--accent)','var(--ink)','var(--ok)','var(--faint)'];
+  for(let i=0;i<28;i++){const c=document.createElement('i');c.className='confetti';c.style.left=(r.left+30+Math.random()*60)+'px';c.style.top=(r.top+r.height/2)+'px';c.style.background=cols[i%4];
+    c.style.setProperty('--x',(Math.random()*320-40)+'px');c.style.setProperty('--y',(-Math.random()*200-30)+'px');c.style.setProperty('--r',(Math.random()*720-360)+'deg');c.style.animationDelay=(Math.random()*.08)+'s';
+    document.body.appendChild(c);setTimeout(()=>c.remove(),1300)}
+}
+function countUps(root){
+  if(REDUCE)return;root.querySelectorAll('[data-to]').forEach(el=>{const to=+el.dataset.to;if(!to)return;const t0=performance.now();
+    const step=t=>{const p=Math.min(1,(t-t0)/1100);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)});
+}
+function drawWaves(t){
+  const cvs=document.querySelectorAll('canvas.wave');
+  if(cvs.length){const cs=getComputedStyle(document.documentElement);const ink=cs.getPropertyValue('--ink').trim(),acc=cs.getPropertyValue('--accent').trim(),fnt=cs.getPropertyValue('--faint').trim();const tt=REDUCE?0:t;
+    cvs.forEach(cv=>{const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;const dpr=devicePixelRatio||1;if(cv.width!==Math.round(w*dpr)||cv.height!==Math.round(h*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr)}
+      const g=cv.getContext('2d');g.setTransform(dpr,0,0,dpr,0,0);g.clearRect(0,0,w,h);
+      const target=+(cv.dataset.level||.15);cv._lv=cv._lv==null?target:cv._lv+(target-cv._lv)*.06;const L=Math.max(.04,cv._lv);
+      [[fnt,.5,1.1,.8,1.2],[ink,.22,1.7,.65,1.2],[acc,1,2.3,1,2]].forEach(([col,al,f,amp,lw],k)=>{g.beginPath();g.strokeStyle=col;g.globalAlpha=al;g.lineWidth=lw;
+        for(let x=0;x<=w;x+=3){const n=x/w;const env=Math.pow(Math.sin(Math.PI*n),2);const y=h/2+Math.sin(n*Math.PI*4*f+tt/520*(1+k*.35)+k*1.7)*env*(h*.44)*L*amp*(0.75+0.25*Math.sin(tt/900+k));x?g.lineTo(x,y):g.moveTo(x,y)}
+        g.stroke()});g.globalAlpha=1})}
+  requestAnimationFrame(drawWaves);
+}
+requestAnimationFrame(drawWaves);
+
+/* ---------- landing ---------- */
+const HERO_SCRIPT=[['Leo','I think phones should be allowed, but with clear rules.'],['Mia','I partly agree. They are a big distraction in class, though.'],['me','I agree with Mia, because many students check messages in class. Sam, what do you think?'],['Sam','Good question. Maybe keep them in lockers during lessons?'],['Leo','So do we agree on "bring it, but not in class"?'],['me','To sum up: phones help with safety, but should stay away during lessons.']];
+const FEAT=[['AI 对练','pen','自主训练','练习英文表达、小组讨论与面试问答，回看作答和反馈。'],['系统课程','play','录播 + 直播','通过录播与直播，学习题型、解题思路和表达方法。'],['教师辅导','talk','一对一 · 多对一','围绕学生的具体问题安排训练，结合练习记录确定辅导重点。']];
+function featPanel(i){
+  if(i===0)return `<div class="inner stack" style="gap:14px"><div class="chips"><span class="chip xj">西浦</span><span class="chip">个人表达</span><span class="chip free">免费</span></div>
+   <div class="topic" style="padding:18px 20px"><div class="over">QUESTION</div><b style="font-size:17px;line-height:1.4">Tell us about a time you worked with others to solve a problem.</b></div>
+   <div class="card" style="padding:16px 18px"><div class="fb"><ul><li><span class="mark g">${ic('check',12)}</span><div>有理由：「because everyone had a clear task」</div></li><li><span class="mark g">${ic('check',12)}</span><div>有具体例子：「last summer we organised a charity sale」</div></li><li><span class="mark i">${ic('arrow',12)}</span><div>补充结果，以及这段经历带来的收获。</div></li></ul></div></div>
+   <div class="card" style="padding:16px 18px"><div class="perf">${[['理由',.85],['例子',.85],['篇幅',.55]].map(([k,v],j)=>`<div><span>${k}</span><span class="tr"><i class="${v>=.8?'hi':''}" style="width:${v*100}%;--i:${j}"></i></span><span class="st">${v>=.8?'做到了':'还可以'}</span></div>`).join('')}</div></div></div>`;
+  if(i===1)return `<div class="inner stack" style="gap:14px"><a href="lessons/lesson01/index.html?mode=watch" aria-label="观看完整第一课：看懂小组讨论，找到自己的参与方式" style="display:block;position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line)"><img src="lessons/discussion-preview/poster.png" alt="动画课堂中的英文小组讨论" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy"><span class="btn" style="position:absolute;left:18px;bottom:18px">${ic('play',16)}观看完整第一课</span></a><div class="card" style="padding:18px"><b>看懂小组讨论，找到自己的参与方式</b><p class="muted" style="font-size:13px;margin:6px 0 14px">第一课 · 7 个小节 · 29 分钟。中文讲解、英文示范，可连续观看或互动练习。</p><div class="chips"><a class="btn sm" href="lessons/lesson01/index.html?mode=watch">观看课程</a><a class="btn sm ghost" href="lessons/lesson01/index.html?mode=practice">互动练习</a><a class="link" href="lessons/discussion-preview/demo.html?scene=promo">90 秒试听</a></div></div></div>`;
+  return `<div class="inner stack" style="gap:14px"><div class="card" style="padding:16px;display:flex;gap:12px;align-items:center"><div class="av" style="width:40px;height:40px">林</div><div><b>林老师</b><div class="muted" style="font-size:13px">示例教师 · 45 分钟一对一</div></div></div>
+   <div class="grid g2">${[D(10,15,20),D(10,16,19),D(10,19,20),D(10,20,19)].map((t,j)=>`<div class="slot ${j===1?'on':''}"><span>${fmtD(t).split(' · ')[0]}</span><span class="mono">${fmtT(t)}</span></div>`).join('')}</div>
+   <div class="notice" style="padding:12px 14px">${ic('check',16)}<div>预约示例：可附上练习记录，供老师课前了解你的回答。</div></div>
+   <div><span class="btn">${ic('video',16)}进入腾讯会议</span></div></div>`;
+}
+function setFeat(i){S._lt=i;document.querySelectorAll('.ftab').forEach((b,j)=>{b.classList.toggle('on',j===i);b.setAttribute('aria-selected',j===i);const p=b.querySelector('.pbar');if(p)p.innerHTML=j===i?'<i></i>':''});const p=document.getElementById('fpanel');if(p)p.innerHTML=featPanel(i)}
+function viewLanding(){
+  const lt=Math.min(S._lt||0,FEAT.length-1);
+  const schools=Object.keys(SCHOOLS).filter(k=>!['xjtlu','cuhksz','silc'].includes(k)).map(k=>`<span class="mq"><span class="dot ${SCHOOLS[k].color||''}"></span>${esc(SCHOOLS[k].name)}<small>公开课 · 一对一</small></span>`).join('');
+  return `<div class="lp">
+  <header class="lp-nav"><div class="brand"><div class="brand-mark">综</div><b>综评国本备考院</b></div>
+   <nav class="lp-links" aria-label="官网导航">${[['features','教学服务'],['path','备考流程'],['schools','目标院校'],['faq','常见问题']].map(([id,t])=>`<a href="#" data-a="scrollto" data-id="lp-${id}">${t}</a>`).join('')}</nav>
+   <div class="right">${S.signedIn?'<a class="btn sm" href="#today">进入我的备考</a>':'<button class="btn sm ghost" data-a="preview-info">预览说明</button><a class="btn sm" href="#courses">浏览课程</a>'}</div></header>
+
+  <section class="hero"><div class="hero-copy">
+    <p class="academy-brand" lang="en">esssouth · Admissions Academy</p>
+    <h1 aria-label="综评国本备考院">综评国本<br><span class="hl">备考院</span></h1>
+    <p class="academy-focus">聚焦西浦、港中深与上悉 4+0</p>
+    <p class="lede">按目标院校组织课程与练习，结合 AI 对练和教师辅导，准备笔试与面试。</p>
+    <div class="ctas"><button class="btn lg accentb" data-a="scrollto" data-id="lp-schools">选择目标院校 ${ic('arrow',18)}</button><button class="btn lg ghost" data-a="landing-ai">${ic('play',16)}体验 AI 对练</button></div>
+    <div class="hero-meta"><span>${ic('check',15)}综合评价与国际本科</span><span>${ic('check',15)}自主训练免费</span></div>
+    <p class="academy-note">团队预览：第一课已开放；登录、预约、支付及实时 AI 暂未接入。 <a href="lessons/lesson01/index.html?mode=watch" style="color:var(--xj)">先看完整第一课 →</a></p>
+   </div>
+   <div class="stage3d" aria-hidden="true">
+    <div class="mockwin"><div class="mw-top"><span class="lights"><i></i><i></i><i></i></span><span class="dot xj"></span><b>西浦 · AI 小组讨论</b><span class="f-timer" style="margin-left:auto;font-size:12px">03:12</span></div>
+     <div class="mw-body"><div class="mw-topic">Should students bring mobile phones to high school?</div>
+      <div class="members" id="hero-members"><span class="member"><span class="av me" data-n="me">你</span>你</span>${['Leo','Mia','Sam'].map(n=>`<span class="member"><span class="av" data-n="${n}">${n[0]}</span>${n}</span>`).join('')}</div>
+      <div class="mw-chat" id="hero-chat"></div><canvas class="wave" id="hero-wave" data-level=".3" style="height:52px"></canvas></div></div>
+    <div class="fcard a"><span style="font-size:11px;letter-spacing:.1em;opacity:.85;font-weight:700">练习进度示例</span><b style="font-size:16px;line-height:1.35">西浦 AI 小组讨论</b><span style="opacity:.85">练习时长 · 3 分钟</span></div>
+    <div class="fcard b">${ring(.75,50,5,'var(--xj)','4/6')}<div><b>西浦小组讨论 · 系统课</b><div class="muted">进度示例 · 已看 4 / 6 讲</div></div></div>
+    <div class="fcard c"><span class="muted" style="font-size:12px">反馈示例 · 引用回答内容</span><div style="display:flex;gap:8px"><span class="mark g">${ic('check',12)}</span><span>回应了组员：「I agree with Mia, because…」</span></div><div style="display:flex;gap:8px"><span class="mark i">${ic('arrow',12)}</span><span>邀请尚未发言的组员参与讨论</span></div></div>
+   </div></section>
+
+  <section class="lp-schools" id="lp-schools" aria-labelledby="academy-schools-title"><div class="lp-in academy-schools-in"><div class="lp-h reveal"><span class="kicker">目标院校</span><h2 id="academy-schools-title">三所院校，专项准备</h2><p>查看对应的练习、课程与辅导，按你的目标安排备考。</p></div>
+    <div class="grid g3 academy-schools reveal">${[['xjtlu','英文小组讨论 · 个人表达'],['cuhksz','文理基础 · 英文口试 · 写作'],['silc','英语表达 · 原创专项训练']].map(([id,desc])=>`<article class="card school-card"><div class="chips"><span class="dot ${colorOf(id)}"></span><h3>${esc(sc(id).short)}</h3></div><p class="muted">${esc(sc(id).name)}</p><p>${desc}</p><span class="chip line">AI 对练 · 题库 · 课程辅导</span></article>`).join('')}</div>
+    <div class="academy-select"><button class="btn" data-a="${S.signedIn?'add-school':'auth'}" data-id="signup">${S.signedIn?'选择我的院校':'登录并选择院校'} ${ic('arrow',16)}</button><span class="hint">支持多选，之后可随时调整。</span></div>
+    <div class="academy-more"><h3>更多院校课程与辅导</h3><p class="hint">其他院校提供公开课与一对一辅导。</p><div><button class="btn sm ghost" data-a="pf-packages">查看院校与服务包 ${ic('arrow',14)}</button></div></div></div>
+    <div class="marquee"><div class="track">${schools}${schools}</div></div></section>
+
+  <section class="lp-sec alt" id="lp-features"><div class="lp-in"><div class="lp-h reveal"><span class="kicker">教学服务</span><h2>AI 对练、系统课程<br>与教师辅导</h2><p>自主练习、课程学习与教师指导，围绕目标院校的备考需要展开。</p></div>
+   <div class="feat reveal"><div class="ftabs" role="tablist">${FEAT.map((f,i)=>`<button class="ftab ${i===lt?'on':''}" role="tab" aria-selected="${i===lt}" data-a="feat" data-id="${i}"><b>${ic(f[1],20)}${f[0]} <span class="chip ${i===0?'free':'line'}">${f[2]}</span></b><p>${f[3]}</p><span class="pbar">${i===lt?'<i></i>':''}</span></button>`).join('')}</div>
+    <div class="fpanel" id="fpanel">${featPanel(lt)}</div></div><p class="hint">课程与教师辅导当前为体验示例，多对一的具体服务安排待公布。</p></div></section>
+
+  <section class="lp-sec" id="lp-path"><div class="lp-in"><div class="lp-h reveal"><span class="kicker">怎么用</span><h2>从目标院校开始</h2><p>选择院校后，查看对应的训练内容、课程和报名事项。课程与辅导目前为体验示例，正式安排以发布信息为准。</p></div>
+   <div class="steps4 reveal"><div class="line"><i></i></div>${[['school','了解','查看考核形式与报名要求'],['play','学方法','通过课程学习答题与表达方法'],['pen','练','练习表达、回应与论证'],['users','模拟','西浦可与同学或 AI 组员进行英文讨论']].map(([i2,t,p])=>`<div class="step4"><div class="bub">${ic(i2,22)}</div><b>${t}</b><p>${p}</p></div>`).join('')}</div>
+   <div class="stats reveal">${[[3,'所院校开放题库与 AI 训练'],[12,'所院校设有课程与辅导入口'],[3,'种上课方式：录播、直播、一对一'],[1,'个账号，同步作答与笔记']].map(([n,t],i)=>`<div class="tile ${i===1?'accent':''}"><div class="v mono" data-to="${n}">${n}</div><div class="k">${t}</div></div>`).join('')}</div>
+   <p class="hint" style="margin-top:-28px">题目注明来源与类型，包括官方样题、往届资料、考生回忆和原创训练；不代表当届考题。</p></div></section>
+
+
+  ${landingWeights()}
+
+  <section class="lp-sec alt" id="lp-faq"><div class="lp-in"><div class="lp-h reveal"><span class="kicker">常见问题</span><h2>使用前，你可能想了解</h2></div>
+   <div class="faq">${[['练习真的免费吗？','是的。AI 练习、反馈和练习记录都免费。AI 服务设有使用频率限制，达到上限时会显示提示。'],['题目和学校的考题一样吗？','题库包含官方样题、往届资料、考生回忆和原创训练，具体来源在题目详情中标注。可用于熟悉题型和练习表达，不代表当届考题。'],['需要下载 App 吗？','可以直接使用电脑或手机浏览器。登录后，已同步的作答、笔记和练习记录可跨设备查看；进行中的语音房间暂不支持跨端恢复。'],['报名材料要交给你们吗？','报名材料直接提交至学校官方系统。这里提供事项提醒与官方入口，不接收报名材料。'],['直播课和一对一辅导有什么不同？','直播课以教师讲授和答疑为主；一对一辅导围绕个人问题展开，可附上练习记录。计划通过腾讯会议授课，当前展示为流程体验，预约不会安排真实授课。']].map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${q}${ic('plus',18)}</summary><p>${a}</p></details>`).join('')}</div></div></section>
+
+  <section class="lp-sec"><div class="lp-in"><div class="cta-band reveal"><div class="deco">${DECO}</div><h2>体验 AI 对练</h2><p>登录后进入西浦小组讨论，练习英文表达、回应与总结。</p><div class="ctas" style="margin-top:6px"><button class="btn lg inv" data-a="landing-ai">${ic('play',16)}开始对练</button><button class="btn lg ghostinv" data-a="auth" data-id="signup">免费注册</button></div></div></div></section>
+
+  <footer class="lp-foot"><span>综评国本备考院 · esssouth</span><span>页面中的学校名称仅用于说明覆盖范围，与学校无官方合作关系。</span></footer>
+  </div>`;
+}
+let LT=[],LIO=[];
+function stopLanding(){LT.forEach(clearInterval);LT=[];LIO.forEach(io=>io.disconnect());LIO=[]}
+function landingInView(el){
+  if(!el||document.hidden)return false;
+  const r=el.getBoundingClientRect();return r.bottom>0&&r.top<window.innerHeight;
+}
+function initLandingMotion(){
+  if(REDUCE||!('IntersectionObserver' in window))return;
+  const reveal=new IntersectionObserver(entries=>{entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.classList.add('reveal-entered');reveal.unobserve(e.target);
+  })},{threshold:0,rootMargin:'0px 0px -24px 0px'});
+  LIO.push(reveal);document.querySelectorAll('.lp .reveal').forEach(el=>reveal.observe(el));
+  const motion=new IntersectionObserver(entries=>{entries.forEach(e=>{
+    e.target.classList.toggle('motion-paused',!e.isIntersecting);
+  })},{threshold:0});
+  LIO.push(motion);
+  document.querySelectorAll('.lp .hero,.lp .lp-schools,.lp .feat,.lp .steps4,.lp .cta-band').forEach(el=>{
+    el.classList.toggle('motion-paused',!landingInView(el));motion.observe(el);
+  });
+}
+function initLanding(){
+  stopLanding();initLandingMotion();let i=0;
+  const push=()=>{const chat=document.getElementById('hero-chat');if(!chat||(REDUCE&&i>0)||!landingInView(chat))return;const m=HERO_SCRIPT[i%HERO_SCRIPT.length];i++;
+    const d=document.createElement('div');d.className='msg'+(m[0]==='me'?' me':'');d.innerHTML=`<span class="av ${m[0]==='me'?'me':''}">${m[0]==='me'?'你':m[0][0]}</span><div><div class="bubble">${esc(m[1])}</div></div>`;
+    chat.appendChild(d);while(chat.children.length>4)chat.firstElementChild.remove();
+    const wv=document.getElementById('hero-wave');if(wv){wv.dataset.level=m[0]==='me'?.55:.95;setTimeout(()=>{wv.dataset.level=.2},1700)}
+    document.querySelectorAll('#hero-members .av').forEach(a=>a.classList.toggle('talk',a.dataset.n===m[0]))};
+  push();LT.push(setTimeout(push,700));LT.push(setInterval(push,2800));
+  LT.push(setInterval(()=>{if(REDUCE||S._ltHover||!landingInView(document.getElementById('fpanel'))||document.querySelector('#fpanel video')?.played.length)return;setFeat(((S._lt||0)+1)%FEAT.length)},6000));
+  const fe=document.querySelector('.feat');if(fe){fe.addEventListener('mouseenter',()=>{S._ltHover=true});fe.addEventListener('mouseleave',()=>{S._ltHover=false})}
+  const st=document.querySelector('.stage3d');
+  if(st&&!REDUCE){const hero=document.querySelector('.hero');hero.addEventListener('mousemove',e=>{const r=st.getBoundingClientRect();st.style.setProperty('--mx',Math.max(-.6,Math.min(.6,(e.clientX-r.left)/r.width-.5)).toFixed(3));st.style.setProperty('--my',Math.max(-.6,Math.min(.6,(e.clientY-r.top)/r.height-.5)).toFixed(3))});hero.addEventListener('mouseleave',()=>{st.style.setProperty('--mx',0);st.style.setProperty('--my',0)})}
+  const stats=document.querySelector('.stats');
+  if(stats&&'IntersectionObserver' in window){const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){countUps(stats);io.disconnect()}},{threshold:.4});LIO.push(io);io.observe(stats)}
+}
+
+/* ---------- auth (demo only: nothing is sent or stored) ---------- */
+function sheetAuth(mode,msg){S._auth={mode,tab:'phone',sent:0,phone:'',code:'',agree:false,msg:msg||''};drawAuth();setTimeout(()=>document.getElementById('au-phone')?.focus(),60)}
+function qrCells(){let h=7,out='';for(let y=0;y<21;y++)for(let x=0;x<21;x++){const f=(cx,cy)=>x>=cx&&x<cx+7&&y>=cy&&y<cy+7;let on;
+  if(f(0,0)||f(14,0)||f(0,14)){const fx=x>=14?x-14:x,fy=y>=14?y-14:y;on=fx===0||fx===6||fy===0||fy===6||(fx>=2&&fx<=4&&fy>=2&&fy<=4)}else{h=(h*1103515245+12345)&0x7fffffff;on=(h>>16)%2===0}
+  out+=`<i class="${on?'':'o'}"></i>`}return out}
+function drawAuth(){
+  const a=S._auth;const su=a.mode==='signup';
+  sheet(`<div class="sheet-h"><div><div class="eyebrow">${su?'免费注册':'欢迎回来'}</div><h2>${su?'注册，开始备考':'登录综评备考'}</h2>${a.msg?`<p class="muted" style="font-size:13px;margin-top:4px">${esc(a.msg)}</p>`:''}</div><button class="xbtn" data-a="close-sheet" aria-label="关闭">${ic('x',16)}</button></div>
+  <div class="auth-tabs" role="tablist"><button class="${a.tab==='phone'?'on':''}" data-a="auth-tab" data-id="phone">手机号</button><button class="${a.tab==='wx'?'on':''}" data-a="auth-tab" data-id="wx">微信扫码</button></div>
+  ${a.tab==='phone'?`<label class="field">手机号<input id="au-phone" data-in="auphone" inputmode="numeric" autocomplete="off" maxlength="11" placeholder="11 位手机号" value="${esc(a.phone)}"></label>
+   <div class="field"><label for="au-code">验证码</label><div class="row-in"><input id="au-code" data-in="aucode" inputmode="numeric" autocomplete="off" maxlength="6" placeholder="6 位数字" value="${esc(a.code)}"><button class="btn ghost" id="au-send" data-a="auth-send" style="height:46px" ${a.sent>0?'disabled':''}>${a.sent>0?a.sent+' 秒后重发':'获取验证码'}</button></div></div>`
+  :`<div class="qr" role="img" aria-label="演示用二维码">${qrCells()}<span class="scan"></span></div><p class="muted" style="text-align:center;font-size:13px">用微信扫一扫${su?'注册':'登录'}</p>`}
+  <div class="agree"><button class="cbox ${a.agree?'on':''}" data-a="auth-agree" aria-label="同意协议">${a.agree?ic('check',14):''}</button><span>我已阅读并同意《用户协议》和《隐私政策》（演示）</span></div>
+  <button class="btn lg" data-a="auth-ok">${a.tab==='wx'?'演示：模拟扫码成功':su?'注册':'登录'}</button>
+  <div class="demo-note">演示：不会发送短信，也不会保存手机号。输入任意 1 开头的 11 位号码和任意 6 位数字。${su?'注册后从选学校开始。':'登录后进入一个带示例数据的账号。'}</div>
+  <p class="muted" style="font-size:13px;text-align:center">${su?'已有账号？':'还没有账号？'}<a href="#" data-a="auth-switch">${su?'去登录':'免费注册'}</a></p>`);
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click',e=>{const t=e.target.closest('[data-a]');if(!t)return;const a=t.dataset.a;if(!ACT[a])return;
+  if(t.tagName==='A'&&a!=='close-focus-go'&&a!=='add-school'&&t.getAttribute('href')==='#')e.preventDefault();ACT[a](t.dataset,t,e)});
+document.addEventListener('input',e=>{const t=e.target;const k=t.dataset&&t.dataset.in;if(!k)return;
+  if(k==='auphone'){S._auth.phone=t.value.replace(/\D/g,'');return}
+  if(k==='aucode'){S._auth.code=t.value.replace(/\D/g,'');return}
+  if(k==='draft'){const w=document.querySelector('.composer .wave');if(w)w.dataset.level=t.value.trim()?.45:.12;const ss=sess();if(ss&&t.value.trim()&&ss.msgs&&ss.msgs.some(x=>(x.streaming||x.typing)&&!x.human)){ss.draft=t.value;interruptAI();return}}
+  if(k==='onbq'){S._onb.q=t.value.trim();const p=t.selectionStart;render();const n=document.getElementById('onb-q');n.focus();n.setSelectionRange(p,p);return}
+  if(k==='addq'){S._add.q=t.value.trim();const p=t.selectionStart;sheetSchools();const n=document.getElementById('add-q');n.focus();n.setSelectionRange(p,p);return}
+  if(k==='taskDate'){S.taskDate[t.dataset.id]=t.value;save();return}
+  if(k==='attach'){S._attach=t.value||null;return}
+  if(k==='wnote'){const id=S.focus.slice(2);(S.progress[id]=S.progress[id]||{done:[]}).note=t.value;save();return}
+  if(k==='ldraft'){sess().draft=t.value;return}
+  const s=sess();if(!s)return;s[k]=t.value;
+  if(k==='text'){const c=document.querySelector('[data-count]');if(c)c.textContent=t.value.replace(/\s/g,'').length+' 字'}
+  save();});
+document.addEventListener('change',e=>{if(e.target.dataset&&e.target.dataset.in==='taskDate')render()});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){const id=e.target.id;if(id==='g-in'){e.preventDefault();ACT['g-send']()}else if(id==='l-in'){e.preventDefault();ACT['l-send']()}else if(id==='mk-in'){e.preventDefault();ACT['mk-send']()}else if(id==='au-code'||id==='au-phone'){e.preventDefault();ACT['auth-ok']()}}
+  if(e.key==='Escape'&&document.getElementById('sheet').innerHTML)closeSheet()});
+window.addEventListener('hashchange',()=>{if(S.focus){if(S.focus==='room')rmCleanup();vbStop();Player.clear();clearTimers();S.focus=null;document.getElementById('focus').innerHTML=''}window.scrollTo(0,0);render()});
+
+/* ---------- clock ---------- */
+setInterval(()=>{
+  const k=S.focus;if(!k)return;const s=S.sessions[k];if(!s)return;
+  if(k.startsWith('w:'))return; // Progress comes from the media element, never a simulated timer.
+  if(k.startsWith('l:')){s.elapsed++;if(s.elapsed%5===0&&s.i<LIVE_CHAT.length){s.chat.push(LIVE_CHAT[s.i++]);paintLiveChat()}return}
+  if(k.startsWith('m:')){s.t++;
+    if(s.stage==='check'&&s.t%1===0&&s.checks<4){s.checks++;renderFocus();return}
+    if(s.stage==='wait'){s.cd--;if(s.t%2===0)renderFocus();else{const c=document.querySelector('[data-cd]');if(c)c.textContent=mmss(s.cd)}return}
+    if(s.stage==='read'||s.stage==='discuss'){s.cd--;if(s.cd<=0){s.stage==='read'?mockDiscuss():endMock();return}const c=document.querySelector('[data-cd]');if(c)c.textContent=mmss(s.cd)}
+    return}
+  s.elapsed++;const tm=document.querySelector('[data-timer]');if(tm)tm.textContent=mmss(s.elapsed);
+  if((s.stage==='think'||s.stage==='prep')&&s.cd!=null){s.cd--;const c=document.querySelector('[data-cd]');if(c)c.textContent=mmss(s.cd);const rv=document.querySelector('[data-cdr]');if(rv)rv.setAttribute('stroke-dashoffset',(CDC*(1-Math.max(0,s.cd)/+rv.dataset.cdr)).toFixed(1));
+    if(s.cd<=0){s.cd=null;if(s.stage==='think')startDiscuss();else{s.stage='answer';renderFocus()}}}
+  if(s.elapsed%10===0)save();
+},1000);
+
+/* ---------- boot ---------- */
+addEventListener('scroll',()=>{const n=document.querySelector('.lp-nav');if(n)n.classList.toggle('scrolled',scrollY>10)},{passive:true});
+S.focus=null;
+document.addEventListener('DOMContentLoaded',()=>render());
+</script>
+<script src="live.js"></script>
+<script src="team-web.js"></script>
+<script src="platform-client.js"></script>
+<script src="experience.js"></script>
+<script src="training-rubrics.js"></script>
+<script src="training-core.js"></script>
+<script src="training.js"></script>
+<script src="learning-client.js"></script>
+<script src="discussion-moves.js"></script>
+<script src="discussion-layer.js"></script>
+</body>
+</html>
