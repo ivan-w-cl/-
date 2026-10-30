@@ -1,0 +1,115 @@
+{
+ "lesson": "L06",
+ "title": "Explain Your Experience and Respond to Follow-Up Questions",
+ "note": "Durations are compiled from the silent estimated timing (140 wpm + 0.35 s tail + fixed holds). Practice excludes unlimited waiting; alternative branches are not summed.",
+ "watchTotalSeconds": 1752.667,
+ "chapters": [
+  {
+   "id": "L06.S01",
+   "num": "6.1",
+   "title": "Choose One Specific Experience",
+   "watchSeconds": 236.902,
+   "watchStartInCourse": 0,
+   "practice": {
+    "practice:main": 236.902
+   },
+   "gate": null,
+   "src": "players/L06S01_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L06.S02",
+   "num": "6.2",
+   "title": "Make Your Own Contribution Clear",
+   "watchSeconds": 259.741,
+   "watchStartInCourse": 236.902,
+   "practice": {
+    "practice:A": 240.513,
+    "practice:B": 252.941,
+    "practice:C": 246.941,
+    "practice:skip": 218.891
+   },
+   "gate": {
+    "id": "L06.I01",
+    "kind": "choice"
+   },
+   "src": "players/L06S02_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L06.S03",
+   "num": "6.3",
+   "title": "Explain Why You Made a Decision",
+   "watchSeconds": 269.092,
+   "watchStartInCourse": 496.643,
+   "practice": {
+    "practice:A": 253.722,
+    "practice:B": 262.292,
+    "practice:C": 262.292,
+    "practice:skip": 230.814
+   },
+   "gate": {
+    "id": "L06.I02",
+    "kind": "choice"
+   },
+   "src": "players/L06S03_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L06.S04",
+   "num": "6.4",
+   "title": "Describe Results Without Overclaiming",
+   "watchSeconds": 237.629,
+   "watchStartInCourse": 765.735,
+   "practice": {
+    "practice:main": 237.629
+   },
+   "gate": null,
+   "src": "players/L06S04_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L06.S05",
+   "num": "6.5",
+   "title": "Reflect and Answer the Question Asked",
+   "watchSeconds": 261.823,
+   "watchStartInCourse": 1003.364,
+   "practice": {
+    "practice:main": 261.823
+   },
+   "gate": null,
+   "src": "players/L06S05_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L06.S06",
+   "num": "6.6",
+   "title": "Rehearse a Truthful Account",
+   "watchSeconds": 315.33,
+   "watchStartInCourse": 1265.187,
+   "practice": {
+    "practice:model": 281.53,
+    "practice:skip": 219.194
+   },
+   "gate": {
+    "id": "L06.I03",
+    "kind": "private_rehearsal"
+   },
+   "src": "players/L06S06_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L06.S07",
+   "num": "6.7",
+   "title": "Adapt the Same Experience to a New Question",
+   "watchSeconds": 172.15,
+   "watchStartInCourse": 1580.517,
+   "practice": {
+    "practice:main": 172.15
+   },
+   "gate": null,
+   "src": "players/L06S07_player_standalone.html",
+   "built": true
+  }
+ ]
+}
