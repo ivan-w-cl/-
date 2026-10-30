@@ -1,0 +1,227 @@
+1
+00:00:00,000 --> 00:00:05,143
+Coach: Reflection is more useful when it connects to something specific that happened.
+
+2
+00:00:05,143 --> 00:00:09,857
+Coach: Instead of adding a broad claim about becoming a better person,
+
+3
+00:00:09,857 --> 00:00:15,857
+Coach: identify what you would keep or change and why it follows from the experience.
+
+4
+00:00:15,857 --> 00:00:20,143
+Coach: You do not need to claim a complete personal transformation.
+
+5
+00:00:20,493 --> 00:00:22,636
+Coach: In the fictional guide case,
+
+6
+00:00:22,636 --> 00:00:27,350
+Coach: the participant found different room names on the map and schedule.
+
+7
+00:00:27,350 --> 00:00:31,636
+Coach: The coordinator confirmed that they referred to the same room
+
+8
+00:00:31,636 --> 00:00:34,636
+Coach: and that its sign said Blue Room.
+
+9
+00:00:34,636 --> 00:00:37,636
+Coach: The participant then changed the map label.
+
+10
+00:00:37,636 --> 00:00:41,064
+Coach: Those actions have already happened within the story.
+
+11
+00:00:41,414 --> 00:00:43,128
+Coach: The reflection points forward:
+
+12
+00:00:43,128 --> 00:00:48,700
+Coach: next time, the participant would agree a shared list of room names earlier.
+
+13
+00:00:48,700 --> 00:00:53,843
+Coach: That could make the naming choice explicit before separate parts are prepared.
+
+14
+00:00:53,843 --> 00:00:55,986
+Coach: It remains a proposed change,
+
+15
+00:00:55,986 --> 00:01:00,700
+Coach: not a system the team has already introduced or proved effective.
+
+16
+00:01:09,050 --> 00:01:11,193
+Coach: In a later practice conversation,
+
+17
+00:01:11,193 --> 00:01:15,050
+Coach: Maya asks what the participant would change next time.
+
+18
+00:01:15,050 --> 00:01:20,622
+Coach: Focus on that question before deciding how much of the story to repeat.
+
+19
+00:01:20,622 --> 00:01:26,193
+Coach: The listener already has the setting; the useful new detail is the reflection.
+
+20
+00:01:26,543 --> 00:01:29,543
+Maya: What would you do differently next time?
+
+21
+00:01:29,893 --> 00:01:35,036
+You: Next time, I would agree a shared list of room names earlier,
+
+22
+00:01:35,036 --> 00:01:38,036
+You: before preparing separate parts of the guide.
+
+23
+00:01:38,386 --> 00:01:41,386
+Coach: This answers the future-change question directly.
+
+24
+00:01:41,386 --> 00:01:46,958
+Coach: It does not retell every action or turn a plan into an achievement.
+
+25
+00:01:46,958 --> 00:01:51,672
+Coach: Saying what you would do locates the idea in the future.
+
+26
+00:01:51,672 --> 00:01:54,243
+Coach: If the listener asks for more,
+
+27
+00:01:54,243 --> 00:01:57,672
+Coach: let that particular question guide the next detail.
+
+28
+00:01:58,022 --> 00:02:01,879
+Maya: Why does that change make sense in this experience?
+
+29
+00:02:02,229 --> 00:02:06,943
+You: The map and schedule used different names for the same room.
+
+30
+00:02:06,943 --> 00:02:12,515
+You: I would propose agreeing the names before preparing separate parts of the guide.
+
+31
+00:02:12,515 --> 00:02:15,943
+You: We have not put that change into practice.
+
+32
+00:02:16,293 --> 00:02:20,579
+Coach: This follow-up asks for the connection between the experience
+
+33
+00:02:20,579 --> 00:02:22,293
+Coach: and the proposed change.
+
+34
+00:02:22,293 --> 00:02:27,865
+Coach: The answer starts with the mismatch, then explains what would be done earlier.
+
+35
+00:02:27,865 --> 00:02:32,150
+Coach: It does not need to repeat the whole guide story,
+
+36
+00:02:32,150 --> 00:02:36,436
+Coach: or claim that the list has already prevented a problem.
+
+37
+00:02:36,786 --> 00:02:41,072
+Coach: Be careful about the cause you add to a reflection.
+
+38
+00:02:41,072 --> 00:02:45,786
+Coach: The two labels differed, but both referred to the same room.
+
+39
+00:02:45,786 --> 00:02:49,643
+Coach: The case does not show that Maya was careless
+
+40
+00:02:49,643 --> 00:02:52,643
+Coach: or that the team ignored an instruction.
+
+41
+00:02:52,643 --> 00:02:58,215
+Coach: Do not turn an information mismatch into an unsupported judgement about a person.
+
+42
+00:02:58,565 --> 00:03:02,851
+Coach: The proposed list might make the naming choice explicit earlier.
+
+43
+00:03:02,851 --> 00:03:05,851
+Coach: That is a reason to consider it,
+
+44
+00:03:05,851 --> 00:03:09,279
+Coach: not evidence that it will prevent every mismatch.
+
+45
+00:03:09,279 --> 00:03:13,137
+Coach: No later event in this case tests the idea.
+
+46
+00:03:13,137 --> 00:03:17,851
+Coach: You can explain a possible benefit while leaving its effectiveness unknown.
+
+47
+00:03:18,201 --> 00:03:23,344
+Coach: Try the original question privately: what would you do differently next time?
+
+48
+00:03:23,344 --> 00:03:28,916
+Coach: Use the fictional case, or reflect on a truthful experience of your own.
+
+49
+00:03:28,916 --> 00:03:31,916
+Coach: Answer the question before expanding the story.
+
+50
+00:03:31,916 --> 00:03:36,630
+Coach: Keep any future change separate from something you have already done.
+
+51
+00:03:48,980 --> 00:03:51,980
+You: I would agree the room names earlier
+
+52
+00:03:51,980 --> 00:03:55,837
+You: so that the separate parts have a common reference.
+
+53
+00:03:55,837 --> 00:04:02,694
+You: I have not tried that change yet, so I cannot say how well it would work.
+
+54
+00:04:03,044 --> 00:04:07,758
+Coach: A focused answer may be shorter than the story you prepared.
+
+55
+00:04:07,758 --> 00:04:12,044
+Coach: Respond to the question asked, add the detail that helps,
+
+56
+00:04:12,044 --> 00:04:14,616
+Coach: and stop before adding unsupported material.
+
+57
+00:04:14,616 --> 00:04:21,473
+Coach: A clear limit can be part of an answer, rather than a gap that needs disguising.

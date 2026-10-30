@@ -1,0 +1,272 @@
+{
+ "ranAt": "2026-10-30T01:10:51.131Z",
+ "method": "ffprobe streams + full decode (ffmpeg -f null) + PSNR of decoded frames vs a direct 1920×1080 player render at the same t",
+ "sections": {
+  "S01": {
+   "file": "dist/video/esssouth-L06S01-watch-SILENT.mp4",
+   "streams": [
+    {
+     "type": "video",
+     "codec": "h264",
+     "w": 1920,
+     "h": 1080,
+     "fps": "30/1",
+     "frames": 7107
+    }
+   ],
+   "durationSeconds": 236.9,
+   "bytes": 5381634,
+   "fullDecode": "ok",
+   "compiledSeconds": 236.90199999999996,
+   "samples": [
+    {
+     "name": "first",
+     "frame": 0,
+     "t": 0,
+     "psnrVsRender": "43.255796"
+    },
+    {
+     "name": "middle",
+     "frame": 3553,
+     "t": 118.433,
+     "psnrVsRender": "41.427775"
+    },
+    {
+     "name": "end",
+     "frame": 7106,
+     "t": 236.867,
+     "psnrVsRender": "40.684867"
+    }
+   ],
+   "pass": true
+  },
+  "S02": {
+   "file": "dist/video/esssouth-L06S02-watch-SILENT.mp4",
+   "streams": [
+    {
+     "type": "video",
+     "codec": "h264",
+     "w": 1920,
+     "h": 1080,
+     "fps": "30/1",
+     "frames": 7792
+    }
+   ],
+   "durationSeconds": 259.733333,
+   "bytes": 6697511,
+   "fullDecode": "ok",
+   "compiledSeconds": 259.74099999999993,
+   "samples": [
+    {
+     "name": "first",
+     "frame": 0,
+     "t": 0,
+     "psnrVsRender": "43.232106"
+    },
+    {
+     "name": "middle",
+     "frame": 3896,
+     "t": 129.867,
+     "psnrVsRender": "40.627472"
+    },
+    {
+     "name": "end",
+     "frame": 7791,
+     "t": 259.7,
+     "psnrVsRender": "40.829586"
+    }
+   ],
+   "pass": true
+  },
+  "S03": {
+   "file": "dist/video/esssouth-L06S03-watch-SILENT.mp4",
+   "streams": [
+    {
+     "type": "video",
+     "codec": "h264",
+     "w": 1920,
+     "h": 1080,
+     "fps": "30/1",
+     "frames": 8073
+    }
+   ],
+   "durationSeconds": 269.1,
+   "bytes": 7383938,
+   "fullDecode": "ok",
+   "compiledSeconds": 269.0919999999999,
+   "samples": [
+    {
+     "name": "first",
+     "frame": 0,
+     "t": 0,
+     "psnrVsRender": "42.861370"
+    },
+    {
+     "name": "middle",
+     "frame": 4036,
+     "t": 134.533,
+     "psnrVsRender": "40.509013"
+    },
+    {
+     "name": "end",
+     "frame": 8072,
+     "t": 269.067,
+     "psnrVsRender": "39.966003"
+    }
+   ],
+   "pass": true
+  },
+  "S04": {
+   "file": "dist/video/esssouth-L06S04-watch-SILENT.mp4",
+   "streams": [
+    {
+     "type": "video",
+     "codec": "h264",
+     "w": 1920,
+     "h": 1080,
+     "fps": "30/1",
+     "frames": 7129
+    }
+   ],
+   "durationSeconds": 237.633333,
+   "bytes": 5346586,
+   "fullDecode": "ok",
+   "compiledSeconds": 237.62899999999996,
+   "samples": [
+    {
+     "name": "first",
+     "frame": 0,
+     "t": 0,
+     "psnrVsRender": "42.940676"
+    },
+    {
+     "name": "middle",
+     "frame": 3564,
+     "t": 118.8,
+     "psnrVsRender": "41.827190"
+    },
+    {
+     "name": "end",
+     "frame": 7128,
+     "t": 237.6,
+     "psnrVsRender": "41.510013"
+    }
+   ],
+   "pass": true
+  },
+  "S05": {
+   "file": "dist/video/esssouth-L06S05-watch-SILENT.mp4",
+   "streams": [
+    {
+     "type": "video",
+     "codec": "h264",
+     "w": 1920,
+     "h": 1080,
+     "fps": "30/1",
+     "frames": 7855
+    }
+   ],
+   "durationSeconds": 261.833333,
+   "bytes": 6846694,
+   "fullDecode": "ok",
+   "compiledSeconds": 261.823,
+   "samples": [
+    {
+     "name": "first",
+     "frame": 0,
+     "t": 0,
+     "psnrVsRender": "42.947281"
+    },
+    {
+     "name": "middle",
+     "frame": 3927,
+     "t": 130.9,
+     "psnrVsRender": "38.987502"
+    },
+    {
+     "name": "end",
+     "frame": 7854,
+     "t": 261.8,
+     "psnrVsRender": "42.260197"
+    }
+   ],
+   "pass": true
+  },
+  "S06": {
+   "file": "dist/video/esssouth-L06S06-watch-SILENT.mp4",
+   "streams": [
+    {
+     "type": "video",
+     "codec": "h264",
+     "w": 1920,
+     "h": 1080,
+     "fps": "30/1",
+     "frames": 9460
+    }
+   ],
+   "durationSeconds": 315.333333,
+   "bytes": 7148173,
+   "fullDecode": "ok",
+   "compiledSeconds": 315.33,
+   "samples": [
+    {
+     "name": "first",
+     "frame": 0,
+     "t": 0,
+     "psnrVsRender": "43.199762"
+    },
+    {
+     "name": "middle",
+     "frame": 4730,
+     "t": 157.667,
+     "psnrVsRender": "41.510239"
+    },
+    {
+     "name": "end",
+     "frame": 9459,
+     "t": 315.3,
+     "psnrVsRender": "42.548931"
+    }
+   ],
+   "pass": true
+  },
+  "S07": {
+   "file": "dist/video/esssouth-L06S07-watch-SILENT.mp4",
+   "streams": [
+    {
+     "type": "video",
+     "codec": "h264",
+     "w": 1920,
+     "h": 1080,
+     "fps": "30/1",
+     "frames": 5164
+    }
+   ],
+   "durationSeconds": 172.133333,
+   "bytes": 5115610,
+   "fullDecode": "ok",
+   "compiledSeconds": 172.14999999999998,
+   "samples": [
+    {
+     "name": "first",
+     "frame": 0,
+     "t": 0,
+     "psnrVsRender": "42.926713"
+    },
+    {
+     "name": "middle",
+     "frame": 2582,
+     "t": 86.067,
+     "psnrVsRender": "39.458157"
+    },
+    {
+     "name": "end",
+     "frame": 5163,
+     "t": 172.1,
+     "psnrVsRender": "41.607297"
+    }
+   ],
+   "pass": true
+  }
+ }
+}

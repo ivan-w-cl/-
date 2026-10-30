@@ -1,0 +1,219 @@
+1
+00:00:00,000 --> 00:00:04,286
+Coach: An account of an experience often includes what happened afterwards.
+
+2
+00:00:04,286 --> 00:00:09,857
+Coach: The useful question is not how impressive you can make that result sound,
+
+3
+00:00:09,857 --> 00:00:12,000
+Coach: but what you actually know.
+
+4
+00:00:12,000 --> 00:00:15,429
+Coach: Separate the change you made, what you observed,
+
+5
+00:00:15,429 --> 00:00:18,429
+Coach: and conclusions that would need more evidence.
+
+6
+00:00:18,779 --> 00:00:21,779
+Coach: Return to our fictional visitor-guide example.
+
+7
+00:00:21,779 --> 00:00:27,779
+Coach: The participant changed the map label to Blue Room and told Maya and Noah.
+
+8
+00:00:27,779 --> 00:00:32,065
+Coach: Maya checked the schedule, and Noah assembled the updated guide.
+
+9
+00:00:32,065 --> 00:00:35,065
+Coach: These are completed actions in the case,
+
+10
+00:00:35,065 --> 00:00:38,065
+Coach: with different people responsible for different parts.
+
+11
+00:00:38,415 --> 00:00:41,844
+Coach: We also know one observation from the event:
+
+12
+00:00:41,844 --> 00:00:46,986
+Coach: the participant saw one visitor use the map to find Blue Room.
+
+13
+00:00:46,986 --> 00:00:50,843
+Coach: That supports describing this particular use of the map.
+
+14
+00:00:50,843 --> 00:00:54,700
+Coach: It is not a total count of people helped,
+
+15
+00:00:54,700 --> 00:00:58,129
+Coach: or a measure of the whole event’s success.
+
+16
+00:01:06,479 --> 00:01:10,765
+You: I changed the map label and told Maya and Noah.
+
+17
+00:01:10,765 --> 00:01:15,050
+You: Maya checked the schedule, and Noah assembled the updated guide.
+
+18
+00:01:15,050 --> 00:01:21,050
+You: During the event, I saw one visitor use the map to find Blue Room.
+
+19
+00:01:21,400 --> 00:01:25,257
+Coach: Notice the difference between I saw and everyone could.
+
+20
+00:01:25,257 --> 00:01:27,829
+Coach: The first reports the available observation.
+
+21
+00:01:27,829 --> 00:01:32,971
+Coach: The second would make a wider claim that this case cannot support.
+
+22
+00:01:32,971 --> 00:01:35,971
+Coach: Specific limits do not erase a contribution;
+
+23
+00:01:35,971 --> 00:01:39,400
+Coach: they help the listener understand its actual scope.
+
+24
+00:01:39,750 --> 00:01:44,464
+Coach: There was no visitor survey or total count of people helped.
+
+25
+00:01:44,464 --> 00:01:50,036
+Coach: Avoid turning the single observation into a percentage, an estimate of many visitors,
+
+26
+00:01:50,036 --> 00:01:53,036
+Coach: or a claim that nobody was confused.
+
+27
+00:01:53,036 --> 00:01:56,893
+Coach: None of those details is available in the example.
+
+28
+00:01:57,243 --> 00:02:01,957
+Coach: The label was changed before the observed visitor used the map.
+
+29
+00:02:01,957 --> 00:02:07,100
+Coach: But we do not know what would have happened without the change.
+
+30
+00:02:07,100 --> 00:02:10,529
+Coach: That visitor might have found the room anyway.
+
+31
+00:02:10,529 --> 00:02:15,672
+Coach: The case does not provide a comparison that can settle the question.
+
+32
+00:02:16,022 --> 00:02:18,593
+Coach: You can still explain the decision.
+
+33
+00:02:18,593 --> 00:02:20,736
+Coach: Conflicting labels could confuse visitors,
+
+34
+00:02:20,736 --> 00:02:25,022
+Coach: so the participant checked with the coordinator instead of guessing.
+
+35
+00:02:25,022 --> 00:02:28,022
+Coach: That is the reasoning behind the action.
+
+36
+00:02:28,022 --> 00:02:31,450
+Coach: It does not establish that confusion was measured,
+
+37
+00:02:31,450 --> 00:02:34,879
+Coach: or that the change prevented it for everyone.
+
+38
+00:02:35,229 --> 00:02:39,515
+You: I wanted the map label to match the door sign.
+
+39
+00:02:39,515 --> 00:02:44,229
+You: I saw one visitor use the map to find the room,
+
+40
+00:02:44,229 --> 00:02:48,943
+You: but I cannot say what would have happened without the change.
+
+41
+00:02:49,293 --> 00:02:51,436
+Coach: This account preserves the contribution
+
+42
+00:02:51,436 --> 00:02:55,293
+Coach: without making the participant responsible for the whole event.
+
+43
+00:02:55,293 --> 00:02:58,722
+Coach: It also leaves room for other people’s work.
+
+44
+00:02:58,722 --> 00:03:03,436
+Coach: You do not need an invented achievement to explain why checking
+
+45
+00:03:03,436 --> 00:03:07,722
+Coach: an ambiguous detail was a sensible action in this case.
+
+46
+00:03:08,072 --> 00:03:11,929
+Coach: Privately form a result sentence from the case facts,
+
+47
+00:03:11,929 --> 00:03:16,215
+Coach: or check one from a real experience of your own.
+
+48
+00:03:16,215 --> 00:03:20,501
+Coach: Which words report an observation, and which might claim more?
+
+49
+00:03:20,501 --> 00:03:25,644
+Coach: Keep anything unknown visible rather than filling the gap with a number
+
+50
+00:03:25,644 --> 00:03:27,358
+Coach: or a confident guess.
+
+51
+00:03:39,708 --> 00:03:42,279
+Coach: A precise result can be modest.
+
+52
+00:03:42,279 --> 00:03:46,136
+Coach: State what changed, give the observation you can support,
+
+53
+00:03:46,136 --> 00:03:48,279
+Coach: and distinguish any wider uncertainty.
+
+54
+00:03:48,279 --> 00:03:52,565
+Coach: These are useful checks when needed, not three compulsory sentences.
+
+55
+00:03:52,565 --> 00:03:57,279
+Coach: Next we will connect reflection to a specific follow-up question.

@@ -1,0 +1,143 @@
+1
+00:00:00,000 --> 00:00:05,571
+Coach: A follow-up can change what the listener needs without changing what happened.
+
+2
+00:00:05,571 --> 00:00:10,714
+Coach: Keep the same facts, then select the part that answers this question.
+
+3
+00:00:10,714 --> 00:00:17,571
+Coach: You do not need a fresh story for every question, or the whole story every time.
+
+4
+00:00:17,921 --> 00:00:23,064
+Coach: For the visitor-guide case, compare these questions: What did you contribute?
+
+5
+00:00:23,064 --> 00:00:25,635
+Coach: What would you change next time?
+
+6
+00:00:25,635 --> 00:00:28,207
+Coach: How much did the guide help?
+
+7
+00:00:28,207 --> 00:00:33,350
+Coach: They ask for an action, a proposed improvement, and evidence of impact.
+
+8
+00:00:33,350 --> 00:00:35,064
+Coach: Those are different requests.
+
+9
+00:00:43,414 --> 00:00:46,414
+Coach: For contribution, bring forward drawing the map,
+
+10
+00:00:46,414 --> 00:00:49,843
+Coach: checking the conflicting names, and changing its label.
+
+11
+00:00:49,843 --> 00:00:53,271
+Coach: Keep Maya and Noah beside their own work.
+
+12
+00:00:53,271 --> 00:01:00,557
+Coach: Shortening the account should not turn a shared task into a claim that one person did everything.
+
+13
+00:01:00,907 --> 00:01:06,050
+You: Next time, I would agree a shared list of room names earlier.
+
+14
+00:01:06,050 --> 00:01:11,621
+You: That could help us check the map and schedule before assembling the guide,
+
+15
+00:01:11,621 --> 00:01:15,050
+You: rather than noticing the mismatch the day before.
+
+16
+00:01:15,400 --> 00:01:17,971
+Coach: That answer stays in the future.
+
+17
+00:01:17,971 --> 00:01:21,400
+Coach: It connects the proposed change to the mismatch,
+
+18
+00:01:21,400 --> 00:01:24,828
+Coach: without claiming the new process has already worked.
+
+19
+00:01:24,828 --> 00:01:32,114
+Coach: Do not quietly move a good idea from the reflection card into the history of the event.
+
+20
+00:01:32,464 --> 00:01:37,178
+You: I saw one visitor use the map to find Blue Room.
+
+21
+00:01:37,178 --> 00:01:41,035
+You: We did not collect a total or survey visitors,
+
+22
+00:01:41,035 --> 00:01:45,321
+You: so I cannot say how much the guide helped overall.
+
+23
+00:01:45,671 --> 00:01:49,528
+Coach: This answers the impact question with the evidence available.
+
+24
+00:01:49,528 --> 00:01:55,957
+Coach: It does not prove that changing the label caused that visitor to find the room.
+
+25
+00:01:55,957 --> 00:01:59,385
+Coach: A precise limit can make an account clearer
+
+26
+00:01:59,385 --> 00:02:02,814
+Coach: than a confident statement the facts cannot support.
+
+27
+00:02:11,164 --> 00:02:16,307
+Coach: If you prepared your own account, try one different follow-up now.
+
+28
+00:02:16,307 --> 00:02:19,307
+Coach: Select relevant details you can honestly describe;
+
+29
+00:02:19,307 --> 00:02:21,878
+Coach: leave other details available for later.
+
+30
+00:02:21,878 --> 00:02:27,450
+Coach: If you are using the fictional case for language practice, keep that label.
+
+31
+00:02:27,450 --> 00:02:32,593
+Coach: A model gives you a way to practise, not a personal history.
+
+32
+00:02:32,943 --> 00:02:35,943
+Coach: Before answering, notice what is being asked.
+
+33
+00:02:35,943 --> 00:02:38,086
+Coach: Then make your contribution, reasoning,
+
+34
+00:02:38,086 --> 00:02:41,086
+Coach: evidence and uncertainty clear where they matter.
+
+35
+00:02:41,086 --> 00:02:47,514
+Coach: You can pause, clarify a question, or say that you do not remember a detail.
+
+36
+00:02:47,514 --> 00:02:51,800
+Coach: The aim is an understandable account you can stand behind.

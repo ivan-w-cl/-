@@ -27,7 +27,7 @@ for (const s of secs) {
   e.updatedAt = new Date().toISOString();
 }
 st.status = st.sections.every((x) => x.status === 'packaged') ? 'packaged' : st.sections.some((x) => x.status !== 'not_started') ? 'in_progress' : 'not_started';
-st.sharedHashes = Object.fromEntries(['shared/l06/compile.js', 'shared/l06/player.js', 'shared/l06/kit.js', 'shared/l06/l06.css', 'shared/l06/audio-hook.js', 'shared/l06/slots-l06.js', 'shared/l06/ui.en.json'].map((f) => [f, sha(path.join(ROOT, f))]));
+st.sharedHashes = Object.fromEntries(['shared/l06/compile.js', 'shared/l06/player.js', 'shared/l06/kit.js', 'shared/l06/l06.css', 'shared/l06/audio-hook.js', 'shared/l06/captions.js', 'shared/l06/slots-l06.js', 'shared/l06/ui.en.json'].map((f) => [f, sha(path.join(ROOT, f))]));
 st.resume = { build: 'node tools/build.mjs', qa: 'NODE_PATH=<dir containing playwright> node tools/qa.cjs <S0n>', status: 'node tools/status.mjs <S0n>' };
 fs.writeFileSync(F, JSON.stringify(st, null, 1) + '\n');
 console.log(st.sections.map((x) => `${x.id} ${x.status} watch=${x.measuredWatchSeconds}`).join('\n'));

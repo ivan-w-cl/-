@@ -1,0 +1,231 @@
+1
+00:00:00,000 --> 00:00:07,286
+Coach: An account of an action becomes more useful when the listener can understand the choice behind it.
+
+2
+00:00:07,286 --> 00:00:12,428
+Coach: Explain what you knew, what was uncertain and why that uncertainty mattered,
+
+3
+00:00:12,428 --> 00:00:16,714
+Coach: without turning a decision into proof of a successful outcome.
+
+4
+00:00:17,064 --> 00:00:21,350
+Coach: In the fictional guide case, the participant drew the map,
+
+5
+00:00:21,350 --> 00:00:24,778
+Coach: Maya listed times and Noah assembled the guide.
+
+6
+00:00:24,778 --> 00:00:26,921
+Coach: The day before the event,
+
+7
+00:00:26,921 --> 00:00:31,635
+Coach: the map said Studio B while the schedule said Blue Room.
+
+8
+00:00:31,635 --> 00:00:36,778
+Coach: The participant did not know whether those names meant the same room.
+
+9
+00:00:37,128 --> 00:00:40,557
+Coach: The participant asked the coordinator instead of guessing.
+
+10
+00:00:40,557 --> 00:00:41,842
+Coach: Confirmation came afterward:
+
+11
+00:00:41,842 --> 00:00:47,842
+Coach: both names referred to the same room, and the door sign said Blue Room.
+
+12
+00:00:47,842 --> 00:00:52,985
+Coach: The map label was then changed and the other volunteers were told.
+
+13
+00:00:53,335 --> 00:00:57,621
+Coach: The stated reasoning is that conflicting labels could confuse visitors.
+
+14
+00:00:57,621 --> 00:01:02,335
+Coach: Checking the door-sign name avoided choosing a label without verification.
+
+15
+00:01:02,335 --> 00:01:04,906
+Coach: This explains why the participant asked;
+
+16
+00:01:04,906 --> 00:01:09,192
+Coach: it does not measure how many visitors the change helped.
+
+17
+00:01:09,542 --> 00:01:12,542
+Coach: Keep the information in the right order.
+
+18
+00:01:12,542 --> 00:01:16,828
+Coach: Knowing the correct door-sign name after asking cannot be
+
+19
+00:01:16,828 --> 00:01:19,828
+Coach: treated as something the participant knew beforehand.
+
+20
+00:01:19,828 --> 00:01:23,256
+Coach: A clear account makes the original uncertainty visible.
+
+21
+00:01:23,606 --> 00:01:26,177
+Coach: Privately identify what made checking relevant.
+
+22
+00:01:26,177 --> 00:01:30,034
+Coach: Which inconsistency had been noticed, and what remained unknown?
+
+23
+00:01:30,034 --> 00:01:34,320
+Coach: Use the supplied facts rather than inventing an earlier complaint
+
+24
+00:01:34,320 --> 00:01:37,320
+Coach: or a visitor who was already lost.
+
+25
+00:01:45,670 --> 00:01:51,670
+Maya: Why did you ask the coordinator rather than choose one of the names yourself?
+
+26
+00:01:52,020 --> 00:01:53,734
+Coach: Compare three possible replies.
+
+27
+00:01:53,734 --> 00:01:58,449
+Coach: Look for a connection between the information available at the time
+
+28
+00:01:58,449 --> 00:02:00,592
+Coach: and the choice to check.
+
+29
+00:02:00,592 --> 00:02:06,163
+Coach: Naming the action again is not yet a full explanation of that choice.
+
+30
+00:02:06,513 --> 00:02:11,227
+Coach: Check whether each reply explains the choice or simply announces confidence.
+
+31
+00:02:11,227 --> 00:02:16,799
+Coach: A later outcome cannot replace the information available when the decision was made.
+
+32
+00:02:16,799 --> 00:02:21,513
+Coach: Keep that distinction in mind as you compare the three replies.
+
+33
+00:02:29,863 --> 00:02:35,863
+You: The labels differed, and I did not know whether they meant the same room.
+
+34
+00:02:35,863 --> 00:02:41,434
+You: I asked the coordinator so I would not choose a name by guessing.
+
+35
+00:02:41,784 --> 00:02:45,641
+Maya: How did the coordinator’s confirmation affect what you changed?
+
+36
+00:02:45,991 --> 00:02:50,277
+Coach: This reply explains the choice using the information available then.
+
+37
+00:02:50,277 --> 00:02:54,991
+Coach: It leaves the confirmation and later observation in their proper places.
+
+38
+00:02:54,991 --> 00:02:57,562
+Coach: A listener can examine the reasoning
+
+39
+00:02:57,562 --> 00:03:00,991
+Coach: without being asked to accept an invented achievement.
+
+40
+00:03:01,341 --> 00:03:04,770
+Coach: The shared facts support a simple decision explanation:
+
+41
+00:03:04,770 --> 00:03:07,770
+Coach: the labels conflicted, their relationship was uncertain,
+
+42
+00:03:07,770 --> 00:03:10,341
+Coach: and checking avoided an unverified choice.
+
+43
+00:03:10,341 --> 00:03:13,341
+Coach: The later confirmation allowed a specific update.
+
+44
+00:03:13,341 --> 00:03:17,627
+Coach: None of that establishes a measured improvement for all visitors.
+
+45
+00:03:17,977 --> 00:03:22,263
+Coach: A reason can include a concern about what might happen.
+
+46
+00:03:22,263 --> 00:03:26,548
+Coach: Say could confuse visitors when that is the stated concern.
+
+47
+00:03:26,548 --> 00:03:32,977
+Coach: Do not change it into visitors were confused unless the account actually contains that observation.
+
+48
+00:03:33,327 --> 00:03:35,041
+Coach: For a private attempt,
+
+49
+00:03:35,041 --> 00:03:40,613
+Coach: explain the decision in this labelled case or a truthful choice you remember.
+
+50
+00:03:40,613 --> 00:03:45,327
+Coach: Name the information that mattered and what you did not know.
+
+51
+00:03:45,327 --> 00:03:48,756
+Coach: You do not need the same sentence pattern.
+
+52
+00:03:49,106 --> 00:03:53,392
+Coach: If you cannot remember exactly why you made a choice,
+
+53
+00:03:53,392 --> 00:03:57,677
+Coach: acknowledge that limit instead of adding a persuasive reason afterwards.
+
+54
+00:03:57,677 --> 00:04:01,535
+Coach: You can choose another episode you remember more clearly,
+
+55
+00:04:01,535 --> 00:04:04,106
+Coach: or continue examining the supplied example.
+
+56
+00:04:12,456 --> 00:04:17,599
+Coach: If you formed a version, check its time order and its claims.
+
+57
+00:04:17,599 --> 00:04:22,742
+Coach: Did you explain the original uncertainty, or add something known only later?
+
+58
+00:04:22,742 --> 00:04:28,742
+Coach: Next, we will describe results with the same attention to what the evidence supports.

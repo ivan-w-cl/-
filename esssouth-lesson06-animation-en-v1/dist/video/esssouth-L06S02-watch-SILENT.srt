@@ -1,0 +1,243 @@
+1
+00:00:00,000 --> 00:00:03,000
+Coach: An experience may belong to a team
+
+2
+00:00:03,000 --> 00:00:06,000
+Coach: while particular actions belong to different people.
+
+3
+00:00:06,000 --> 00:00:09,428
+Coach: A clear account makes your own part visible
+
+4
+00:00:09,428 --> 00:00:12,000
+Coach: without taking credit for everyone’s work.
+
+5
+00:00:12,000 --> 00:00:15,857
+Coach: Neither I nor we is automatically the right choice.
+
+6
+00:00:16,207 --> 00:00:17,921
+Coach: In our fictional example,
+
+7
+00:00:17,921 --> 00:00:23,064
+Coach: three volunteers prepared a one-page guide for a community open afternoon.
+
+8
+00:00:23,064 --> 00:00:26,921
+Coach: The participant drew the map, Maya listed session times,
+
+9
+00:00:26,921 --> 00:00:29,064
+Coach: and Noah assembled the guide.
+
+10
+00:00:29,064 --> 00:00:32,921
+Coach: These role facts stay the same throughout the examples.
+
+11
+00:00:33,271 --> 00:00:35,414
+Coach: The day before the event,
+
+12
+00:00:35,414 --> 00:00:41,414
+Coach: the participant noticed Studio B on the map and Blue Room on the schedule.
+
+13
+00:00:41,414 --> 00:00:46,128
+Coach: They asked the coordinator whether the names meant the same room,
+
+14
+00:00:46,128 --> 00:00:49,128
+Coach: rather than selecting a name by guessing.
+
+15
+00:00:49,478 --> 00:00:56,335
+Coach: After confirmation that both names meant the same room and its door sign said Blue Room,
+
+16
+00:00:56,335 --> 00:01:00,621
+Coach: the participant changed the map label and told the others.
+
+17
+00:01:00,621 --> 00:01:02,335
+Coach: Maya checked the schedule.
+
+18
+00:01:02,335 --> 00:01:04,478
+Coach: Noah assembled the updated guide.
+
+19
+00:01:04,478 --> 00:01:09,192
+Coach: An individual action and a team result can be described together.
+
+20
+00:01:09,542 --> 00:01:12,970
+Coach: We prepared a guide describes the shared task.
+
+21
+00:01:12,970 --> 00:01:16,827
+Coach: I changed the map label describes the participant’s action.
+
+22
+00:01:16,827 --> 00:01:20,685
+Coach: The distinction is not about making one sound better;
+
+23
+00:01:20,685 --> 00:01:24,113
+Coach: it helps the listener understand who did what.
+
+24
+00:01:24,463 --> 00:01:29,177
+Coach: Privately separate one personal action from one contribution by someone else.
+
+25
+00:01:29,177 --> 00:01:31,320
+Coach: Use the supplied facts rather
+
+26
+00:01:31,320 --> 00:01:34,749
+Coach: than filling a gap with an impressive responsibility.
+
+27
+00:01:34,749 --> 00:01:39,892
+Coach: Nothing about the case establishes that the participant led the whole project.
+
+28
+00:01:48,242 --> 00:01:52,956
+Maya: What was your own part in preparing and updating the guide?
+
+29
+00:01:53,306 --> 00:01:56,735
+Coach: Compare three possible accounts of the same case.
+
+30
+00:01:56,735 --> 00:02:00,592
+Coach: Which answers Maya’s question while keeping everyone’s contribution accurate?
+
+31
+00:02:00,592 --> 00:02:02,735
+Coach: Listen for a personal action,
+
+32
+00:02:02,735 --> 00:02:08,306
+Coach: and notice whether the words also leave room for the other volunteers’ work.
+
+33
+00:02:08,656 --> 00:02:12,513
+Coach: One alternative deliberately claims more than the facts support.
+
+34
+00:02:12,513 --> 00:02:16,799
+Coach: Read it as wording to examine, not an added event.
+
+35
+00:02:16,799 --> 00:02:20,656
+Coach: The source facts, not the confidence of a reply,
+
+36
+00:02:20,656 --> 00:02:23,227
+Coach: decide whether its attribution is accurate.
+
+37
+00:02:31,577 --> 00:02:36,291
+You: I drew the map, checked the conflicting names with the coordinator,
+
+38
+00:02:36,291 --> 00:02:39,292
+You: and changed its label to Blue Room.
+
+39
+00:02:39,292 --> 00:02:41,863
+You: I then told the other volunteers.
+
+40
+00:02:42,213 --> 00:02:44,356
+Maya: That identifies the map work.
+
+41
+00:02:44,356 --> 00:02:49,070
+Maya: How did it connect with the schedule and the assembled guide?
+
+42
+00:02:49,420 --> 00:02:52,849
+Coach: This account names actions supported by the case
+
+43
+00:02:52,849 --> 00:02:55,420
+Coach: without taking over the other roles.
+
+44
+00:02:55,420 --> 00:02:59,706
+Coach: The surrounding explanation can add that Maya checked the schedule
+
+45
+00:02:59,706 --> 00:03:02,277
+Coach: and Noah assembled the updated guide.
+
+46
+00:03:02,277 --> 00:03:05,277
+Coach: Specific ownership does not require erasing collaboration.
+
+47
+00:03:05,627 --> 00:03:09,913
+Coach: The participant handled the map and checked its conflicting label;
+
+48
+00:03:09,913 --> 00:03:13,341
+Coach: Maya handled the schedule; Noah assembled the guide.
+
+49
+00:03:13,341 --> 00:03:18,912
+Coach: Keep that division clear when you put the account into your own words.
+
+50
+00:03:18,912 --> 00:03:22,341
+Coach: A shared result can include several distinct contributions.
+
+51
+00:03:22,691 --> 00:03:26,977
+Coach: Say enough about the others to make the work understandable,
+
+52
+00:03:26,977 --> 00:03:34,691
+Coach: but do not let a long team description hide your answer to a question about your own part.
+
+53
+00:03:34,691 --> 00:03:38,120
+Coach: The right balance depends on what was asked.
+
+54
+00:03:38,470 --> 00:03:40,613
+Coach: Privately explain the participant’s role,
+
+55
+00:03:40,613 --> 00:03:44,041
+Coach: or use a truthful experience of your own.
+
+56
+00:03:44,041 --> 00:03:47,041
+Coach: Where does we describe the team accurately,
+
+57
+00:03:47,041 --> 00:03:50,898
+Coach: and where would I make your own action clearer?
+
+58
+00:03:50,898 --> 00:03:56,041
+Coach: Try changing one sentence while keeping the ownership of every action intact.
+
+59
+00:04:04,391 --> 00:04:09,105
+Coach: If you formed a version, check who each action belongs to.
+
+60
+00:04:09,105 --> 00:04:13,820
+Coach: Do not borrow a responsibility to make the answer sound stronger.
+
+61
+00:04:13,820 --> 00:04:19,391
+Coach: Next, we will explain why the participant chose to check the room name.
