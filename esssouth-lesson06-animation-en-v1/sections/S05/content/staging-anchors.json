@@ -1,0 +1,33 @@
+{
+  "schema": "esssouth.l06.staging-anchors/1",
+  "sectionId": "L06.S05",
+  "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+  "anchors": {
+    "s5_useful":   { "cue": "L06.S05.c001", "phrase": "Reflection is more useful" },
+    "s5_keep":     { "cue": "L06.S05.c001", "phrase": "identify what you would keep or change" },
+    "s5_case":     { "cue": "L06.S05.c002", "phrase": "In the fictional guide case" },
+    "s5_conf":     { "cue": "L06.S05.c002", "phrase": "The coordinator confirmed" },
+    "s5_changed":  { "cue": "L06.S05.c002", "phrase": "The participant then changed the map label" },
+    "s5_forward":  { "cue": "L06.S05.c003", "phrase": "The reflection points forward" },
+    "s5_explicit": { "cue": "L06.S05.c003", "phrase": "That could make the naming choice explicit" },
+    "s5_later":    { "cue": "L06.S05.c004", "phrase": "In a later practice conversation" },
+    "s5_focus":    { "cue": "L06.S05.c004", "phrase": "Focus on that question" },
+    "s5_setting":  { "cue": "L06.S05.c004", "phrase": "The listener already has the setting" },
+    "s5_direct":   { "cue": "L06.S05.c005", "phrase": "This answers the future-change question directly" },
+    "s5_locates":  { "cue": "L06.S05.c005", "phrase": "Saying what you would do locates the idea in the future" },
+    "s5_mapSched": { "cue": "L06.S05.d004", "phrase": "The map and schedule used different names" },
+    "s5_propose":  { "cue": "L06.S05.d004", "phrase": "I would propose agreeing the names" },
+    "s5_asks":     { "cue": "L06.S05.c006", "phrase": "This follow-up asks for the connection" },
+    "s5_starts":   { "cue": "L06.S05.c006", "phrase": "The answer starts with the mismatch" },
+    "s5_noNeed":   { "cue": "L06.S05.c006", "phrase": "It does not need to repeat" },
+    "s5_careful":  { "cue": "L06.S05.c007", "phrase": "Be careful about the cause" },
+    "s5_differed": { "cue": "L06.S05.c007", "phrase": "The two labels differed" },
+    "s5_notShow":  { "cue": "L06.S05.c007", "phrase": "The case does not show" },
+    "s5_might":    { "cue": "L06.S05.c008", "phrase": "The proposed list might make" },
+    "s5_noLater":  { "cue": "L06.S05.c008", "phrase": "No later event in this case tests the idea" },
+    "s5_try":      { "cue": "L06.S05.c009", "phrase": "Try the original question privately" },
+    "s5_fiction":  { "cue": "L06.S05.c009", "phrase": "Use the fictional case" },
+    "s5_agree":    { "cue": "L06.S05.d005", "phrase": "I would agree the room names earlier" },
+    "s5_shorter":  { "cue": "L06.S05.c010", "phrase": "A focused answer may be shorter" }
+  }
+}

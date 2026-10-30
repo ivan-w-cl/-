@@ -1,0 +1,13 @@
+{
+  "schema": "esssouth.l06.staging-labels/1",
+  "sectionId": "L06.S05",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. 'Next time / Proposed' follows docs/CASE_AND_EVIDENCE_CONTRACT_EN.md. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.node.diff": "An established difficulty",
+    "x.node.future": "A possible future change",
+    "x.past": "Already happened",
+    "x.future": "Next time / Proposed",
+    "x.summary": "Summary, not the coordinator's exact words",
+    "x.unsupArea": "Unsupported interpretation"
+  }
+}
