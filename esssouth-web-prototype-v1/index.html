@@ -1,0 +1,663 @@
+<title>讨论语言与真人模拟</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the esssouth workspace shell (top bar · centred 1080px column · bottom tabs on phones). Tokens copied from web-demo/index.html. */
+:root{
+  --bg:#F2F2EF; --surface:#FFFFFF; --tile:#E8E8E4; --tile2:#F7F7F4; --ink:#1A1A1C; --muted:#696970; --faint:#9B9BA0; --line:#E1E1DC;
+  --accent:#DD5636; --accent-ink:#FFFFFF; --accent-soft:#FBE8E2;
+  --xj:#2B8494; --xj-soft:#E2F0F2; --ok:#2E8656; --ok-soft:#E3F2E9; --warn:#A86E14; --warn-soft:#F8EEDB;
+  --lesson:#356CC8; --lesson-soft:#E8EFFA;
+  --overlay:rgba(24,24,26,.42); --shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(0,0,0,.07);
+  --f-body:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --r:14px; --ease:cubic-bezier(.2,.8,.2,1);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1C1C1F; --tile:#26262A; --tile2:#202023; --ink:#F1F1EF; --muted:#A3A3A9; --faint:#6F6F75; --line:#2E2E33;
+  --accent:#EC6A4A; --accent-ink:#FFFFFF; --accent-soft:#3B231D; --xj:#55B2C2; --xj-soft:#173135; --ok:#5CBF86; --ok-soft:#18301F; --warn:#E0A84A; --warn-soft:#352A16;
+  --lesson:#7BA4EA; --lesson-soft:#1B2638; --overlay:rgba(0,0,0,.62); --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1C1C1F; --tile:#26262A; --tile2:#202023; --ink:#F1F1EF; --muted:#A3A3A9; --faint:#6F6F75; --line:#2E2E33;
+  --accent:#EC6A4A; --accent-ink:#FFFFFF; --accent-soft:#3B231D; --xj:#55B2C2; --xj-soft:#173135; --ok:#5CBF86; --ok-soft:#18301F; --warn:#E0A84A; --warn-soft:#352A16;
+  --lesson:#7BA4EA; --lesson-soft:#1B2638; --overlay:rgba(0,0,0,.62); --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--surface)}
+a{color:inherit}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.3}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.top-in{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:20px;height:56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;text-decoration:none;white-space:nowrap}
+.brand i{display:grid;place-items:center;width:26px;height:26px;border-radius:7px;background:var(--ink);color:var(--surface);font-style:normal;font-size:13px}
+.nav{display:flex;gap:4px}
+.nav a{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:14px}
+.nav a[aria-current="page"]{background:var(--tile);color:var(--ink);font-weight:500}
+.nav a .new{font-size:10px;padding:0 5px;border-radius:5px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+.proto{margin-left:auto;font-size:12px;color:var(--muted);border:1px dashed var(--line);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.tabs{display:none}
+
+main{max-width:1080px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.view{display:grid;gap:20px}
+.view[hidden]{display:none}
+.crumb{font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.crumb a{text-decoration:none}
+.crumb a:hover{color:var(--ink)}
+.eyebrow{font-size:12px;letter-spacing:.06em;color:var(--accent);font-weight:500}
+.h1{font-size:28px;font-weight:700}
+.lead{color:var(--muted);max-width:62ch}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:grid;gap:14px;min-width:0}
+.card.flat{background:var(--tile2)}
+.card h2{font-size:17px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.side{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px;align-items:start}
+
+.btn{display:inline-flex;align-items:center;gap:6px;justify-content:center;border:0;border-radius:999px;padding:9px 18px;background:var(--ink);color:var(--surface);font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;min-height:40px}
+.btn.accent{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.sm{padding:5px 12px;font-size:13px;min-height:32px}
+.btn:hover{filter:brightness(1.06)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:2px 10px;font-size:12.5px;border:1px solid var(--line);background:var(--surface);white-space:nowrap}
+.chip.move{border-color:transparent;background:var(--lesson-soft);color:var(--lesson);font-weight:500}
+.chip.ok{border-color:transparent;background:var(--ok-soft);color:var(--ok)}
+.chip.warn{border-color:transparent;background:var(--warn-soft);color:var(--warn)}
+.chip.xj{border-color:transparent;background:var(--xj-soft);color:var(--xj)}
+.chip.sel{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+button.chip{cursor:pointer;min-height:32px}
+
+.lesson-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--lesson);text-decoration:none;border-bottom:1px solid transparent}
+.lesson-link:hover{border-bottom-color:var(--lesson)}
+.lesson-link .mono{font-size:11.5px}
+
+/* home */
+.flows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.flow{display:grid;gap:12px}
+.flow ol{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--muted)}
+.flow ol li::marker{font-family:var(--f-mono);color:var(--faint)}
+.loop{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px}
+.loop .step{padding:6px 12px;border-radius:10px;background:var(--tile2);border:1px solid var(--line)}
+.loop .arr{color:var(--faint)}
+.loop .step.paid{background:var(--accent-soft);border-color:transparent;color:var(--accent);font-weight:500}
+
+/* transcript */
+.tx{display:grid;gap:10px}
+.turn{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:start}
+.av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--tile);color:var(--muted)}
+.turn.me .av{background:var(--ink);color:var(--surface)}
+.bub{background:var(--tile2);border:1px solid var(--line);border-radius:12px;padding:8px 12px;display:grid;gap:6px}
+.turn.me .bub{background:var(--surface)}
+.turn.flag-ok .bub{border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
+.turn.flag-warn .bub{border-color:color-mix(in srgb,var(--warn) 55%,var(--line))}
+.who{font-size:12px;color:var(--muted)}
+.en{font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.fb{display:grid;gap:10px;padding:14px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.fb.ok{border-left:4px solid var(--ok)}
+.fb.warn{border-left:4px solid var(--warn)}
+.fb q{font-style:normal;quotes:"“" "”";color:var(--ink)}
+.try{font-size:14px;background:var(--tile2);border-radius:10px;padding:8px 12px}
+.try b{font-weight:500}
+.count{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.count div{background:var(--tile2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:2px}
+.count .n{font-family:var(--f-mono);font-size:20px;font-variant-numeric:tabular-nums}
+.note{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+
+/* glossary */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.word{display:grid;gap:8px;align-content:start}
+.word .ex{font-size:14px;background:var(--tile2);border-radius:10px;padding:8px 10px}
+.word .seen{font-size:12.5px;color:var(--muted)}
+
+/* lesson end + drill */
+.stage{aspect-ratio:16/9;max-width:100%;border-radius:12px;background:linear-gradient(180deg,#F6F7F9,#EEF1F6);border:1px solid var(--line);position:relative;overflow:hidden;display:grid;place-items:center;color:#202632}
+.stage .end{background:#FFFFFF;border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);display:grid;gap:10px;max-width:min(520px,88%);text-align:left}
+.stage .end h3{font-size:17px}
+.stage .end .chip.move{background:#E8EFFA;color:#356CC8}
+.stage .end .muted{color:#5D6878}
+.stage .btn{background:#202632;color:#FFFFFF}
+.stage .bar{position:absolute;left:0;right:0;bottom:0;height:4px;background:#356CC8}
+.src{display:grid;gap:8px}
+.src .q{background:var(--tile2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px}
+.src .q b{font-weight:500;font-size:12px;color:var(--muted);display:block}
+textarea{width:100%;min-height:96px;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:10px 12px;resize:vertical}
+input[type=text]{width:100%;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:8px 12px;min-height:40px}
+label.field{display:grid;gap:6px;font-size:14px}
+
+/* mock */
+.offer{display:grid;gap:10px;align-content:start}
+.offer .price{font-size:13px;color:var(--muted)}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 16px;font-size:14px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ok)}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;background:var(--tile2);border:1px solid var(--line)}
+.list li .t{display:grid;gap:2px;min-width:0}
+.toggle{display:flex;gap:10px;align-items:flex-start;font-size:14px;cursor:pointer}
+.toggle input{margin-top:4px;width:18px;height:18px;accent-color:var(--accent)}
+.seg{display:inline-flex;background:var(--tile);border-radius:999px;padding:3px}
+.seg a{padding:5px 14px;border-radius:999px;text-decoration:none;font-size:13.5px;color:var(--muted)}
+.seg a[aria-current="true"]{background:var(--surface);color:var(--ink);font-weight:500;box-shadow:var(--shadow)}
+.timeline{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.timeline li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;padding-bottom:16px;position:relative}
+.timeline li::before{content:"";position:absolute;left:10px;top:20px;bottom:0;width:2px;background:var(--line)}
+.timeline li:last-child::before{display:none}
+.timeline .dot{width:22px;height:22px;border-radius:50%;background:var(--tile);border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line);margin-top:2px}
+.timeline .dot.paid{background:var(--accent)}
+.timeline .dot.ai{background:var(--lesson)}
+.timeline .dot.course{background:var(--xj)}
+.timeline .body{display:grid;gap:4px;min-width:0}
+.empty{font-size:14px;color:var(--muted);padding:12px;border:1px dashed var(--line);border-radius:12px}
+
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);opacity:0;background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:999px;font-size:14px;transition:opacity .28s var(--ease),transform .28s var(--ease);pointer-events:none;z-index:40;max-width:calc(100% - 32px)}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (max-width:900px){.side,.grid2,.flows{grid-template-columns:minmax(0,1fr)}.grid3{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:720px){
+  .nav,.proto{display:none}
+  .top-in{height:52px}
+  .tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+  .tabs a{flex:1;display:grid;place-items:center;gap:2px;padding:8px 0;min-height:52px;text-decoration:none;font-size:11.5px;color:var(--muted)}
+  .tabs a[aria-current="page"]{color:var(--accent);font-weight:500}
+  .tabs a span{font-size:16px;line-height:1}
+  main{padding-block:20px 96px}
+  .h1{font-size:23px}
+  .card{padding:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#home"><i>综</i>综评国本备考院</a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#home" data-nav="home">今天</a>
+      <a href="#course-end" data-nav="course">课程</a>
+      <a href="#practice-review" data-nav="practice">练习</a>
+      <a href="#mock" data-nav="mock">模拟 <span class="new">新</span></a>
+      <a href="#records" data-nav="me">我的</a>
+    </nav>
+    <span class="proto">原型 · 示例数据 · 不连接后端</span>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ 今天：原型导览 ============ -->
+<section class="view" data-view="home">
+  <div class="grid" style="display:grid;gap:8px">
+    <span class="eyebrow">西浦试点 · 可点击原型</span>
+    <h1 class="h1">课程、AI 练习和真人模拟，用同一套讨论语言连起来</h1>
+    <p class="lead">这个原型演示两件事：AI 练习的反馈直接使用课程里教过的讨论动作，并指回对应的小节；真人模拟在预约后生成准备卡，结束后老师写复盘，再把学生带回练习。页面里的人物、对话、老师和时间都是示例。</p>
+  </div>
+  <div class="card">
+    <h2>学生在西浦试点里的一条完整路径</h2>
+    <div class="loop" aria-label="学习循环">
+      <span class="step">看课：学一个讨论动作</span><span class="arr">→</span>
+      <span class="step">AI 练习：马上用这个动作</span><span class="arr">→</span>
+      <span class="step">反馈：用同一个词指回课程</span><span class="arr">→</span>
+      <span class="step paid">真人模拟：准备卡 → 复盘卡</span><span class="arr">→</span>
+      <span class="step">回到推荐练习</span>
+    </div>
+    <p class="small muted">珊瑚色那一步是未来按学校收费的部分；测试期全部免费。</p>
+  </div>
+  <div class="flows">
+    <div class="card flow">
+      <span class="chip move" style="justify-self:start">原型 1</span>
+      <h2>课程和 AI 用同一套讨论语言</h2>
+      <ol>
+        <li>课程小节结束时，看到"本节学到的讨论动作"，一键去练</li>
+        <li>5 分钟专项练习：写一句总结，马上看到它有没有保留条件</li>
+        <li>AI 小组讨论复盘：每句发言标上讨论动作，不打分</li>
+        <li>讨论语言表：每个动作的意思、例句、出自哪一课</li>
+      </ol>
+      <div class="row"><a class="btn" href="#course-end">从课程结尾开始</a><a class="btn ghost" href="#practice-review">直接看讨论复盘</a></div>
+    </div>
+    <div class="card flow">
+      <span class="chip ok" style="justify-self:start">原型 3</span>
+      <h2>真人模拟的准备卡和复盘卡</h2>
+      <ol>
+        <li>在"模拟"里选老师主持的场次，选时间</li>
+        <li>预约后自动生成准备卡：根据最近练习，列出重点</li>
+        <li>切换到老师视图，填写复盘</li>
+        <li>学生收到复盘卡，带着推荐练习回到工具里</li>
+      </ol>
+      <div class="row"><a class="btn" href="#mock">从预约开始</a><a class="btn ghost" href="#records">看我的记录</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 课程：小节结尾 ============ -->
+<section class="view" data-view="course-end" hidden>
+  <div class="crumb"><a href="#home">今天</a><span>/</span><span>课程</span><span>/</span><span>第 8 课 · 第 2 节</span></div>
+  <div class="side">
+    <div class="card">
+      <div class="stage" role="img" aria-label="课程播放器（示意）：本节已播完">
+        <div class="end">
+          <span class="small muted">本节结束 · 第 8 课 第 2 节 · 区分共识和待定问题</span>
+          <h3>本节学到的讨论动作</h3>
+          <div class="tags"><span class="chip move">有条件的支持</span><span class="chip move">把待定问题留着</span></div>
+          <p class="small muted">总结时，保留"谁支持了哪一部分、带着什么条件"，还没定的问题单独说出来。</p>
+          <div class="row"><a class="btn sm" href="#drill">马上练这个动作 · 5 分钟</a><a class="btn sm ghost" style="background:#FFFFFF;color:#202632;border-color:#B9C5D6" href="#course-end" data-toast="原型：这里接下一节">下一节</a></div>
+        </div>
+        <div class="bar"></div>
+      </div>
+      <p class="small muted">播放器区域为示意。课程录入后，这张"本节动作"卡会出现在每一节的结尾，内容来自课程数据，不需要单独维护。</p>
+    </div>
+    <div class="card flat">
+      <h2>为什么放在小节结尾</h2>
+      <p class="small">学生刚看完一个动作，记忆最新。马上用 5 分钟练一次，比"以后再练"更容易留住人。</p>
+      <p class="small">动作名称和 AI 反馈里用的是同一个词，学生在反馈里看到它时，知道回哪一节复习。</p>
+      <a class="lesson-link" href="#words">查看全部讨论动作 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 练习：5 分钟专项 ============ -->
+<section class="view" data-view="drill" hidden>
+  <div class="crumb"><a href="#home">今天</a><span>/</span><a href="#course-end">第 8 课 · 第 2 节</a><span>/</span><span>专项练习</span></div>
+  <div style="display:grid;gap:6px">
+    <span class="eyebrow">专项 · 有条件的支持</span>
+    <h1 class="h1">用一两句英文，总结这两个人的立场</h1>
+    <p class="lead">只读下面两句原话。总结时保留每个人的条件，还没定的事情单独说出来。</p>
+  </div>
+  <div class="side">
+    <div class="card">
+      <div class="src">
+        <div class="q"><b>Maya</b>I support that sequence if the demonstration stays brief and the pair task remains.</div>
+        <div class="q"><b>Noah</b>I support starting with an example and keeping question time. I am not ready to agree on the full sequence until we check the timings.</div>
+      </div>
+      <label class="field" for="drill-in">你的总结（不录音，不保存）
+        <textarea id="drill-in" placeholder="例如：Maya supports … if … Noah supports … but …"></textarea>
+      </label>
+      <div class="row"><button class="btn" id="drill-go" type="button">看反馈</button><button class="btn ghost" id="drill-sample" type="button">填入一个示例</button></div>
+      <div id="drill-out" class="tx" aria-live="polite"></div>
+    </div>
+    <div class="card flat">
+      <h2>这里的反馈是怎么来的</h2>
+      <p class="small">原型里只用简单规则检查几个关键词，演示反馈的样子。正式版由 AI 根据你写的文字生成，用同样的讨论动作来描述。</p>
+      <p class="small">不打分，也不判断你的英语水平，只说这句总结有没有保留条件、有没有把待定的事说成已经同意。</p>
+      <a class="lesson-link" href="#course-end"><span class="mono">L08·S02</span>回看本节</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 练习：AI 小组讨论复盘 ============ -->
+<section class="view" data-view="practice-review" hidden>
+  <div class="crumb"><a href="#home">今天</a><span>/</span><span>练习</span><span>/</span><span>西浦 AI 小组讨论 · 复盘</span></div>
+  <div style="display:grid;gap:6px">
+    <div class="row"><span class="chip xj">西浦</span><span class="chip">AI 小组讨论 · 10 分钟</span><span class="chip">示例数据</span></div>
+    <h1 class="h1">Should students bring mobile phones to high school?</h1>
+    <p class="lead">每一句你的发言，都用课程里的讨论动作来描述。没有分数，只说这一句起了什么作用，以及下次可以怎么做。</p>
+  </div>
+  <div class="card">
+    <h2>这次讨论里你用到的动作</h2>
+    <div class="count">
+      <div><span class="n">1</span><span class="small">接住别人的话</span></div>
+      <div><span class="n">1</span><span class="small">邀请发言</span></div>
+      <div><span class="n">1</span><span class="small">忠实总结</span></div>
+      <div><span class="n">2</span><span class="small muted">可以再试</span></div>
+    </div>
+  </div>
+  <div class="side">
+    <div class="card">
+      <h2>逐句回看</h2>
+      <div class="tx" id="transcript"></div>
+    </div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <div class="card">
+        <h2>做到了</h2>
+        <div id="fb-ok" style="display:grid;gap:10px"></div>
+      </div>
+      <div class="card">
+        <h2>可以再试</h2>
+        <div id="fb-warn" style="display:grid;gap:10px"></div>
+        <p class="note">这是练习反馈，不是评分。AI 根据你提交的文字整理，可能有误；有疑问可以在真人模拟时请老师看。</p>
+      </div>
+      <a class="btn accent" href="#mock">想让老师当面帮你练？预约真人模拟</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 讨论语言表 ============ -->
+<section class="view" data-view="words" hidden>
+  <div class="crumb"><a href="#home">今天</a><span>/</span><span>讨论语言</span></div>
+  <div style="display:grid;gap:6px">
+    <span class="eyebrow">课程 · AI 反馈 · 老师复盘共用</span>
+    <h1 class="h1">讨论语言</h1>
+    <p class="lead">课程里教的每一个讨论动作。AI 反馈和老师复盘都用这些词，所以你在任何地方看到同一个词，都能回到同一节课。</p>
+  </div>
+  <div class="words" id="words"></div>
+  <p class="small muted">课程链接为暂定位置，按已完成的课程标题暂译。录入全部 10 课后，这张表从课程数据自动生成。</p>
+</section>
+
+<!-- ============ 模拟：选场次 ============ -->
+<section class="view" data-view="mock" hidden>
+  <div class="crumb"><a href="#home">今天</a><span>/</span><span>模拟</span></div>
+  <div style="display:grid;gap:6px">
+    <div class="row"><span class="chip xj">西浦</span><span class="chip">老师主持 · 腾讯会议</span></div>
+    <h1 class="h1">真人模拟</h1>
+    <p class="lead">网站负责排课和组队，模拟在腾讯会议里进行。预约后你会拿到一张准备卡；结束后老师会写复盘，放进你的记录里。</p>
+  </div>
+  <div class="grid2">
+    <div class="card offer">
+      <h2>一对一模拟 · 个人表达</h2>
+      <p class="small muted">45 分钟 · 老师提问并追问，结束后写复盘</p>
+      <span class="price">测试期免费 · 未来包含在西浦一对一服务包内</span>
+      <div class="slots" role="radiogroup" aria-label="选择时间" id="slots-1"></div>
+      <button class="btn" type="button" data-book="1v1">预约这个时间</button>
+    </div>
+    <div class="card offer">
+      <h2>小组讨论模拟 · 老师主持</h2>
+      <p class="small muted">60 分钟 · 4 人一组，老师全程主持，只显示昵称</p>
+      <span class="price">测试期免费 · 满 4 人开场；人数不够时会提前通知你</span>
+      <div class="slots" role="radiogroup" aria-label="选择场次" id="slots-g"></div>
+      <button class="btn" type="button" data-book="group">报名这一场</button>
+    </div>
+  </div>
+  <div class="card flat">
+    <h2>和工具里的练习怎么连起来</h2>
+    <p class="small">准备卡会读取你最近的练习记录（需要你同意），老师上课前就知道你常卡在哪里；复盘卡里推荐的练习，可以直接点开去做。本工具提供练习与反馈，不对考试结果作任何承诺。</p>
+  </div>
+</section>
+
+<!-- ============ 模拟：准备卡 / 老师视图 / 复盘卡 ============ -->
+<section class="view" data-view="mock-prep" hidden>
+  <div class="crumb"><a href="#home">今天</a><span>/</span><a href="#mock">模拟</a><span>/</span><span>准备卡</span></div>
+  <div class="row" style="justify-content:space-between">
+    <div style="display:grid;gap:4px"><span class="eyebrow">预约已确认（示例）</span><h1 class="h1" id="prep-title">一对一模拟 · 个人表达</h1></div>
+    <div class="seg" role="group" aria-label="切换视角"><a href="#mock-prep" aria-current="true">学生视图</a><a href="#mock-teacher">老师视图</a></div>
+  </div>
+  <div class="side">
+    <div style="display:grid;gap:14px">
+      <div class="card">
+        <h2>根据你最近 3 次练习</h2>
+        <ul class="list">
+          <li><span class="t"><span><span class="chip warn">把有条件的支持说成了全体同意</span></span><span class="small muted">出现 2 次 · 最近一次在 10 月 28 日的 AI 小组讨论</span></span><a class="lesson-link" href="#course-end"><span class="mono">L08·S02</span>回看</a></li>
+          <li><span class="t"><span><span class="chip warn">话题跑偏后没有拉回</span></span><span class="small muted">出现 1 次</span></span><a class="lesson-link" href="#words"><span class="mono">L07·S05</span>回看</a></li>
+          <li><span class="t"><span><span class="chip ok">邀请发言</span></span><span class="small muted">做到 3 次，可以继续保持</span></span><a class="lesson-link" href="#words"><span class="mono">L07·S04</span>回看</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>这次建议重点练</h2>
+        <div class="tags"><span class="chip move">有条件的支持</span><span class="chip move">拉回任务</span></div>
+        <label class="field" for="prep-note">我最想练的（会给老师看）
+          <textarea id="prep-note" placeholder="例如：别人跑题时，我不知道怎么礼貌地拉回来。"></textarea>
+        </label>
+        <label class="toggle" for="prep-share"><input type="checkbox" id="prep-share" checked><span>同意老师在上课前查看我最近的练习记录（只看动作和原话，不看其他信息；可以随时关闭）</span></label>
+      </div>
+    </div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <div class="card">
+        <h2>上课信息</h2>
+        <dl class="kv">
+          <dt>时间</dt><dd class="mono" id="prep-time">11月2日 周日 19:00</dd>
+          <dt>老师</dt><dd>林老师 · 西浦小组讨论方向（示例）</dd>
+          <dt>方式</dt><dd>腾讯会议 · 会议号在开始前 15 分钟显示</dd>
+          <dt>状态</dt><dd><span class="status">已确认</span></dd>
+        </dl>
+        <button class="btn ghost" type="button" data-toast="原型：开始前 15 分钟这里会出现「进入腾讯会议」">进入腾讯会议</button>
+      </div>
+      <div class="card flat">
+        <h2>上课须知</h2>
+        <ul class="small" style="margin:0;padding-left:18px;display:grid;gap:4px">
+          <li>会议里只用昵称，不交换联系方式</li>
+          <li>未经双方同意不录音录像；未满 18 岁需监护人同意</li>
+          <li>本工具提供练习与反馈，不对考试结果作任何承诺</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="view" data-view="mock-teacher" hidden>
+  <div class="crumb"><a href="#home">今天</a><span>/</span><a href="#mock">模拟</a><span>/</span><span>老师视图</span></div>
+  <div class="row" style="justify-content:space-between">
+    <div style="display:grid;gap:4px"><span class="eyebrow">林老师 · 课后复盘</span><h1 class="h1">学生「小周」的一对一模拟</h1></div>
+    <div class="seg" role="group" aria-label="切换视角"><a href="#mock-prep">学生视图</a><a href="#mock-teacher" aria-current="true">老师视图</a></div>
+  </div>
+  <div class="side">
+    <div class="card">
+      <h2>写复盘（约 3 分钟）</h2>
+      <div class="field"><span>这次做得好的动作</span><div class="tags" id="t-good"></div></div>
+      <label class="field" for="t-quote">学生的一句原话（可选）<input type="text" id="t-quote" value="Leo supports phones with rules, and Sam suggested lockers. Could we check that?"></label>
+      <div class="field"><span>下次重点</span><div class="tags" id="t-next"></div></div>
+      <label class="field" for="t-drill">推荐练习
+        <select id="t-drill" style="border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:8px 12px;min-height:40px">
+          <option value="drill">专项 · 有条件的支持（5 分钟）</option>
+          <option value="group">西浦 AI 小组讨论（10 分钟）</option>
+          <option value="clarify">专项 · 回应与澄清（5 分钟）</option>
+        </select>
+      </label>
+      <label class="field" for="t-comment">一句话给学生
+        <textarea id="t-comment">今天总结时第一次主动保留了 Leo 的条件，很好。下次别人跑题时，试着先接一句再拉回任务。</textarea>
+      </label>
+      <div class="row"><button class="btn accent" type="button" id="t-send">提交复盘，发给学生</button></div>
+    </div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <div class="card flat">
+        <h2>学生的准备卡</h2>
+        <ul class="list">
+          <li><span class="t"><span class="chip warn">把有条件的支持说成了全体同意</span><span class="small muted">最近 3 次练习中出现 2 次</span></span></li>
+          <li><span class="t"><span class="chip warn">话题跑偏后没有拉回</span><span class="small muted">出现 1 次</span></span></li>
+        </ul>
+        <div class="field small"><span class="muted">学生最想练的</span><span id="t-studentnote" class="try">别人跑题时，我不知道怎么礼貌地拉回来。</span></div>
+      </div>
+      <div class="card flat">
+        <h2>老师端说明</h2>
+        <p class="small">复盘用的动作词和课程、AI 反馈是同一套，老师点选即可，不需要每次从头写。学生授权后，老师才看得到练习原话。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="view" data-view="mock-review" hidden>
+  <div class="crumb"><a href="#home">今天</a><span>/</span><a href="#records">我的记录</a><span>/</span><span>复盘卡</span></div>
+  <div style="display:grid;gap:6px">
+    <span class="eyebrow">林老师的复盘 · 11月2日</span>
+    <h1 class="h1">一对一模拟 · 个人表达</h1>
+  </div>
+  <div class="side">
+    <div class="card" id="review-card"></div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <div class="card flat">
+        <h2>接下来</h2>
+        <p class="small">推荐练习做完后，会出现在你的记录里。下次预约时，准备卡会把这次的复盘一起带上。</p>
+        <a class="btn" href="#records">看我的记录</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 我的记录 ============ -->
+<section class="view" data-view="records" hidden>
+  <div class="crumb"><a href="#home">今天</a><span>/</span><span>我的</span><span>/</span><span>记录</span></div>
+  <div style="display:grid;gap:6px">
+    <h1 class="h1">我的记录</h1>
+    <p class="lead">课程、AI 练习和真人模拟在一条时间线上。每一条都用同样的讨论动作描述，方便你看出自己哪里在进步。</p>
+  </div>
+  <div class="card">
+    <ul class="timeline" id="timeline"></ul>
+  </div>
+</section>
+
+</main>
+
+<nav class="tabs" aria-label="主导航（手机）">
+  <a href="#home" data-nav="home"><span>⌂</span>今天</a>
+  <a href="#course-end" data-nav="course"><span>▷</span>课程</a>
+  <a href="#practice-review" data-nav="practice"><span>✎</span>练习</a>
+  <a href="#mock" data-nav="mock"><span>☺</span>模拟</a>
+  <a href="#records" data-nav="me"><span>◎</span>我的</a>
+</nav>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, el = document) => el.querySelector(s);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  /* The shared discussion vocabulary. Lesson references are provisional (titles translated from the finished lessons);
+     after the lessons are entered this table comes from the course data. */
+  const MOVES = {
+    build:   { name: '接住别人的话', what: '先回应刚才那句，再加上自己的内容。', ex: 'I agree with Mia, because …', ref: 'L01·S04', lesson: '第 1 课 · 第 4 节 接住别人的话', seen: 1 },
+    propose: { name: '提出建议', what: '给出一个具体做法，让大家有东西可以讨论。', ex: 'What if we keep phones in lockers during lessons?', ref: 'L01·S03', lesson: '第 1 课 · 第 3 节 判断一句话的作用', seen: 0 },
+    invite:  { name: '邀请发言', what: '给别人一个可以接、也可以不接的机会。', ex: 'Sam, what do you think? It\'s fine to pass.', ref: 'L07·S04', lesson: '第 7 课 · 第 4 节 邀请发言但不施压', seen: 1 },
+    yield:   { name: '先让对方说完', what: '两人同时开口时，让出话轮，并记下自己要说的点。', ex: 'Go ahead. Afterwards I\'d like to finish my point.', ref: 'L07·S03', lesson: '第 7 课 · 第 3 节 同时开口时怎么办', seen: 0 },
+    back:    { name: '拉回任务', what: '承认这个话题，再把讨论带回还没解决的问题。', ex: 'That\'s interesting. Could we get back to the rules for class time?', ref: 'L07·S05', lesson: '第 7 课 · 第 5 节 把跑题拉回任务', seen: 0 },
+    cond:    { name: '有条件的支持', what: '转述别人的支持时，把条件一起带上。', ex: 'Leo supports phones, but only with clear rules.', ref: 'L08·S02', lesson: '第 8 课 · 第 2 节 区分共识和待定问题', seen: 0 },
+    open:    { name: '把待定问题留着', what: '还没定的事单独说出来，不当成已经同意。', ex: 'The emergency question is still open.', ref: 'L08·S02', lesson: '第 8 课 · 第 2 节 区分共识和待定问题', seen: 1 },
+    summary: { name: '忠实总结', what: '说清楚谁支持了什么、还剩什么要决定。', ex: 'We have support for rules in class; emergencies are still open.', ref: 'L08·S06', lesson: '第 8 课 · 第 6 节 练习忠实的总结', seen: 1 }
+  };
+  const link = (k) => `<a class="lesson-link" href="#course-end"><span class="mono">${MOVES[k].ref}</span>回看 ${esc(MOVES[k].lesson.split(' ').slice(4).join(' '))}</a>`;
+  const moveChip = (k) => `<span class="chip move">${esc(MOVES[k].name)}</span>`;
+
+  /* Sample AI group discussion (Leo, Mia and Sam are the AI members already used on the homepage). */
+  const TURNS = [
+    { who: 'Leo', t: 'I think phones should be allowed, but with clear rules.' },
+    { who: 'Mia', t: 'I partly agree. They are a big distraction in class, though.' },
+    { who: '你', me: true, t: 'I agree with Mia, because many students check messages in class. Sam, what do you think?', ok: ['build', 'invite'] },
+    { who: 'Sam', t: 'Good question. Maybe keep them in lockers during lessons?' },
+    { who: '你', me: true, t: 'So we all agree phones should be banned.', warn: 'cond' },
+    { who: 'Leo', t: 'Wait, I didn\'t say ban them. I said clear rules.' },
+    { who: 'Mia', t: 'What about emergencies? Parents may need to reach students.' },
+    { who: '你', me: true, t: 'My phone has a really good camera. I took great photos last week.', warn: 'back' },
+    { who: 'Sam', t: 'Nice, but are we still talking about school rules?' },
+    { who: '你', me: true, t: 'Right. So we have support for rules during lessons, and the emergency question is still open.', ok: ['summary', 'open'] }
+  ];
+  const FB_OK = [
+    { k: 'build', q: TURNS[2].t, why: '你先回应了 Mia，再给出理由，讨论因此接得上。' },
+    { k: 'invite', q: 'Sam, what do you think?', why: '你给了 Sam 一个开口的机会。下次可以加一句「也可以先不说」，让邀请更轻松。' },
+    { k: 'summary', q: TURNS[9].t, why: '你说清楚了已经有支持的部分，也把紧急情况单独留成待定问题。' }
+  ];
+  const FB_WARN = [
+    { k: 'cond', q: TURNS[4].t, why: 'Leo 支持的是「有规则地带手机」，Sam 提的是「上课时放柜子」，都不是「禁止」。这句把有条件的支持说成了全体同意。', tryit: 'Leo supports phones with clear rules, and Sam suggested lockers during lessons. Could we check if lockers could be one of the rules?' },
+    { k: 'back', q: TURNS[7].t, why: '这个话题和任务关系不大，之后是 Sam 把大家拉了回来。', tryit: 'Sorry, that\'s off topic. Back to the rules: what should happen in emergencies?' }
+  ];
+
+  function renderReview() {
+    $('#transcript').innerHTML = TURNS.map((x) => {
+      const cls = x.me ? (x.warn ? 'me flag-warn' : x.ok ? 'me flag-ok' : 'me') : '';
+      const tags = x.ok ? x.ok.map((k) => `<span class="chip ok">${esc(MOVES[k].name)}</span>`).join('') : x.warn ? `<span class="chip warn">可以再试 · ${esc(MOVES[x.warn].name)}</span>` : '';
+      return `<div class="turn ${cls}"><span class="av">${esc(x.me ? '你' : x.who[0])}</span><div class="bub"><span class="who">${esc(x.who)}${x.me ? '' : ' · AI 组员'}</span><span class="en">${esc(x.t)}</span>${tags ? `<span class="tags">${tags}</span>` : ''}</div></div>`;
+    }).join('');
+    $('#fb-ok').innerHTML = FB_OK.map((f) => `<div class="fb ok"><div class="row">${moveChip(f.k)}</div><q>${esc(f.q)}</q><p class="small">${esc(f.why)}</p>${link(f.k)}</div>`).join('');
+    $('#fb-warn').innerHTML = FB_WARN.map((f) => `<div class="fb warn"><div class="row">${moveChip(f.k)}</div><q>${esc(f.q)}</q><p class="small">${esc(f.why)}</p><p class="try"><b>可以试试：</b>${esc(f.tryit)}</p><div class="row">${link(f.k)}${f.k === 'cond' ? '<a class="btn sm ghost" href="#drill">专项练一次 · 5 分钟</a>' : ''}</div></div>`).join('');
+  }
+
+  function renderWords() {
+    $('#words').innerHTML = Object.values(MOVES).map((m) => `<div class="card word"><span class="chip move" style="justify-self:start">${esc(m.name)}</span><p class="small">${esc(m.what)}</p><p class="ex" lang="en">${esc(m.ex)}</p><a class="lesson-link" href="#course-end"><span class="mono">${m.ref}</span>${esc(m.lesson)}</a><span class="seen">${m.seen ? `在你最近的练习里出现 ${m.seen} 次` : '还没在你的练习里出现'}</span></div>`).join('');
+  }
+
+  /* 5-minute drill: a deliberately simple keyword rule, labelled as such on the page. */
+  function drillFeedback(text) {
+    const t = ' ' + text.toLowerCase() + ' ';
+    const hasCond = /\b(if|as long as|provided|only if|on condition)\b/.test(t);
+    const hasOpen = /(not (yet )?ready|still open|not agreed|until|check the timing|haven't agreed|hasn't agreed|not yet)/.test(t);
+    const overclaim = /(we all agree|everyone agrees|all agreed|agreed on the (full|whole) sequence|both agree)/.test(t);
+    const out = [];
+    if (!text.trim()) return '<p class="empty">先写一两句，再看反馈。</p>';
+    if (overclaim) out.push(['warn', 'cond', '这句话把两个人说成了完全同意。Noah 还没有同意整个顺序。']);
+    out.push(hasCond ? ['ok', 'cond', '你保留了 Maya 的条件（例子要短、两人讨论要保留）。'] : ['warn', 'cond', 'Maya 的支持是有条件的，总结里好像没有出现「if」之类的条件。']);
+    out.push(hasOpen ? ['ok', 'open', '你把 Noah 还没同意的部分单独说了出来。'] : ['warn', 'open', 'Noah 说要先核对时间才同意整个顺序，这一点可以单独说出来。']);
+    return out.map(([c, k, msg]) => `<div class="fb ${c}"><div class="row">${moveChip(k)}<span class="chip ${c}">${c === 'ok' ? '做到了' : '可以再试'}</span></div><p class="small">${esc(msg)}</p></div>`).join('') + '<p class="note">原型：这里用的是关键词规则，只为演示反馈的形式。</p>';
+  }
+
+  /* booking + review state (in memory only) */
+  const SLOTS1 = ['11月1日 周六 10:00', '11月1日 周六 15:00', '11月2日 周日 19:00'];
+  const SLOTSG = ['11月2日 周日 14:00 · 已报 3/4', '11月8日 周六 10:00 · 已报 1/4'];
+  const S = { kind: '1v1', slot: SLOTS1[2], good: ['cond', 'invite'], next: ['back'], sent: false };
+  function slotChips(id, list, kind) {
+    $(id).innerHTML = list.map((s, i) => `<button class="chip ${kind === '1v1' && s === S.slot ? 'sel' : ''}" type="button" role="radio" aria-checked="${kind === '1v1' && s === S.slot}" data-slot="${esc(s)}" data-kind="${kind}">${esc(s)}</button>`).join('');
+  }
+  function pickChips(id, keys, sel) {
+    $(id).innerHTML = keys.map((k) => `<button class="chip ${sel.includes(k) ? 'sel' : ''}" type="button" aria-pressed="${sel.includes(k)}" data-pick="${k}">${esc(MOVES[k].name)}</button>`).join('');
+  }
+  function renderTeacher() {
+    pickChips('#t-good', ['build', 'invite', 'cond', 'open', 'summary'], S.good);
+    pickChips('#t-next', ['back', 'yield', 'propose', 'cond'], S.next);
+    const n = $('#prep-note').value.trim(); if (n) $('#t-studentnote').textContent = n;
+  }
+  function renderReviewCard() {
+    const drill = $('#t-drill'); const dLabel = drill.options[drill.selectedIndex].text; const dHref = drill.value === 'drill' ? '#drill' : '#practice-review';
+    const q = $('#t-quote').value.trim(); const c = $('#t-comment').value.trim();
+    $('#review-card').innerHTML = `
+      <h2>老师的话</h2><p>${esc(c || '（老师没有填写）')}</p>
+      <div class="field"><span class="small muted">这次做得好的</span><div class="tags">${S.good.map((k) => `<span class="chip ok">${esc(MOVES[k].name)}</span>`).join('') || '<span class="small muted">未选择</span>'}</div></div>
+      ${q ? `<div class="fb ok"><span class="small muted">你在模拟中说的一句</span><q lang="en">${esc(q)}</q></div>` : ''}
+      <div class="field"><span class="small muted">下次重点</span><div class="tags">${S.next.map(moveChip).join('') || '<span class="small muted">未选择</span>'}</div>${S.next.map((k) => link(k)).join('')}</div>
+      <div class="fb"><span class="small muted">老师推荐的练习</span><div class="row" style="justify-content:space-between"><b style="font-weight:500">${esc(dLabel)}</b><a class="btn sm" href="${dHref}">去练</a></div></div>
+      <p class="note">复盘只记录练习情况，不是评分，也不预测考试结果。</p>`;
+  }
+  function renderTimeline() {
+    const items = [
+      { d: 'course', when: '10月26日', title: '看完 第 8 课 · 第 2 节', body: `学到 ${moveChip('cond')} ${moveChip('open')}` },
+      { d: 'ai', when: '10月26日', title: '专项练习 · 有条件的支持', body: `<span class="chip warn">可以再试 · 有条件的支持</span>` },
+      { d: 'ai', when: '10月28日', title: '西浦 AI 小组讨论', body: `<span class="chip ok">接住别人的话</span> <span class="chip ok">邀请发言</span> <span class="chip ok">忠实总结</span> <span class="chip warn">2 处可以再试</span> <a class="lesson-link" href="#practice-review">看复盘</a>` },
+      { d: 'paid', when: S.slot.split(' ').slice(0, 3).join(' '), title: S.kind === '1v1' ? '一对一模拟 · 个人表达（林老师）' : '小组讨论模拟 · 老师主持', body: S.sent ? `老师已写复盘 <a class="lesson-link" href="#mock-review">看复盘卡</a>` : `已预约 <a class="lesson-link" href="#mock-prep">看准备卡</a>` }
+    ];
+    if (S.sent) items.push({ d: 'ai', when: '下一步', title: '老师推荐的练习', body: `${S.next.map(moveChip).join(' ')} <a class="lesson-link" href="#drill">去练</a>` });
+    $('#timeline').innerHTML = items.map((x) => `<li><span class="dot ${x.d}" aria-hidden="true"></span><div class="body"><span class="small muted mono">${esc(x.when)}</span><b style="font-weight:500">${esc(x.title)}</b><div class="row small">${x.body}</div></div></li>`).join('');
+  }
+
+  /* router */
+  const NAV = { home: 'home', 'course-end': 'course', drill: 'course', 'practice-review': 'practice', words: 'practice', mock: 'mock', 'mock-prep': 'mock', 'mock-teacher': 'mock', 'mock-review': 'me', records: 'me' };
+  function show() {
+    let v = location.hash.slice(1); if (!NAV[v]) v = 'home';
+    document.querySelectorAll('[data-view]').forEach((s) => { s.hidden = s.dataset.view !== v; });
+    document.querySelectorAll('[data-nav]').forEach((a) => { if (a.dataset.nav === NAV[v]) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+    if (v === 'mock-teacher') renderTeacher();
+    if (v === 'mock-review') renderReviewCard();
+    if (v === 'records') renderTimeline();
+    if (v === 'mock-prep') { $('#prep-time').textContent = S.slot.replace(/ · .*/, ''); $('#prep-title').textContent = S.kind === '1v1' ? '一对一模拟 · 个人表达' : '小组讨论模拟 · 老师主持'; }
+    window.scrollTo(0, 0);
+  }
+  let toastT = 0;
+  function toast(m) { const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 2600); }
+
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-toast],[data-slot],[data-book],[data-pick],#drill-go,#drill-sample,#t-send');
+    if (!el) return;
+    if (el.dataset.toast) { e.preventDefault(); toast(el.dataset.toast); return; }
+    if (el.dataset.slot) {
+      const kind = el.dataset.kind; S.kind = kind; S.slot = el.dataset.slot;
+      document.querySelectorAll('[data-slot]').forEach((b) => { const on = b === el; b.classList.toggle('sel', on); b.setAttribute('aria-checked', on); });
+      return;
+    }
+    if (el.dataset.book) {
+      if (el.dataset.book === 'group' && !SLOTSG.includes(S.slot)) { S.kind = 'group'; S.slot = SLOTSG[0]; }
+      if (el.dataset.book === '1v1' && !SLOTS1.includes(S.slot)) { S.kind = '1v1'; S.slot = SLOTS1[2]; }
+      S.sent = false; location.hash = '#mock-prep'; toast('已预约（示例）。准备卡已生成。'); return;
+    }
+    if (el.dataset.pick) {
+      const list = el.closest('#t-good') ? S.good : S.next; const k = el.dataset.pick; const i = list.indexOf(k);
+      if (i >= 0) list.splice(i, 1); else list.push(k); renderTeacher(); return;
+    }
+    if (el.id === 'drill-sample') { $('#drill-in').value = 'Maya supports the sequence if the example stays brief and pairs remain. Noah supports the example and question time, but he is not ready to agree on the full sequence until we check the timings.'; return; }
+    if (el.id === 'drill-go') { $('#drill-out').innerHTML = drillFeedback($('#drill-in').value); return; }
+    if (el.id === 't-send') { S.sent = true; location.hash = '#mock-review'; toast('复盘已发给学生（示例）'); }
+  });
+
+  slotChips('#slots-1', SLOTS1, '1v1'); slotChips('#slots-g', SLOTSG, 'group');
+  renderReview(); renderWords();
+  window.addEventListener('hashchange', show); show();
+})();
+</script>
