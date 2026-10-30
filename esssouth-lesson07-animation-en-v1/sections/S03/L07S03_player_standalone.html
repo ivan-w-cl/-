@@ -1685,7 +1685,8 @@ window.L07_DATA = {"sectionId":"L07.S03","num":"7.3","graph":{"schema":"esssouth
       S.to('fragL', tf + 0.2, G.fL, { tag: 'x.unfinished' }); S.to('park', tf + 0.25, G.fPark); S.to('nFull', tf + 0.3, G.fNfull);
       S.pulseOn(['park'], at('sC_still'), 1.2); S.title(a('f301') - 0.2, 'branch.c.note'); }
     // ---- B03 · c010: every path rejoins on the two common fragments only ----
-    t = X0('c010'); X.roomOut(t); S.hide(['nFull'], t, 0.01); X.clearAll(t, ['nFull']); S.head(t, B(3), null); // the branch-only F05 card leaves at once (no fade into the common rejoin) S.title(t, null);
+    // the branch-only F05 card leaves at once (no fade into the common rejoin)
+    t = X0('c010'); X.roomOut(t); S.hide(['nFull'], t, 0.01); X.clearAll(t, ['nFull']); S.head(t, B(3), null); S.title(t, null);
     S.rise('fragL', at('s3_shared'), G.jL, { tag: 'x.unfinished' }); S.rise('fragN', at('s3_shared') + 0.2, G.jN, { tag: 'x.unfinished' }); S.title(a('c010') - 0.2, 'shared.principle');
     // ---- c011: offer → listen → return (no branch content) ----
     t = X0('c011'); S.title(t, null); S.hide(['fragL', 'fragN'], t);

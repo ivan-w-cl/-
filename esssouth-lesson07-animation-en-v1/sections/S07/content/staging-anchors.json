@@ -1,0 +1,23 @@
+{
+  "schema": "esssouth.l07.staging-anchors/1",
+  "sectionId": "L07.S07",
+  "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+  "anchors": {
+    "s7_try":     { "cue": "L07.S07.c001", "phrase": "Try the same judgement" },
+    "s7_team":    { "cue": "L07.S07.c001", "phrase": "A team is comparing" },
+    "s7_need":    { "cue": "L07.S07.c001", "phrase": "They need to compare" },
+    "s7_clean":   { "cue": "L07.S07.c002", "phrase": "Cleaning may sound like a side topic" },
+    "s7_return":  { "cue": "L07.S07.c002", "phrase": "Return to the actual task" },
+    "s7_here":    { "cue": "L07.S07.c002", "phrase": "Here, the question is relevant" },
+    "s7_asked":   { "cue": "L07.S07.c003", "phrase": "Maya has asked for thinking time" },
+    "s7_consider": { "cue": "L07.S07.c003", "phrase": "Consider a response" },
+    "s7_take":    { "cue": "L07.S07.d003", "phrase": "Take your time" },
+    "s7_stays":   { "cue": "L07.S07.c004", "phrase": "The question stays available" },
+    "s7_small":   { "cue": "L07.S07.c004", "phrase": "This is a small next move" },
+    "s7_fin":     { "cue": "L07.S07.c005", "phrase": "Is someone still finishing a point?" },
+    "s7_time":    { "cue": "L07.S07.c005", "phrase": "Has a person asked for time?" },
+    "s7_rel":     { "cue": "L07.S07.c005", "phrase": "Is a new topic relevant to the task?" },
+    "s7_wait":    { "cue": "L07.S07.c005", "phrase": "sometimes waiting is the useful choice" },
+    "s7_tryOne":  { "cue": "L07.S07.c006", "phrase": "Try one small move" }
+  }
+}

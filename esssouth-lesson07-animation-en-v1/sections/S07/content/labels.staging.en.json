@@ -1,0 +1,15 @@
+{
+  "schema": "esssouth.l07.staging-labels/1",
+  "sectionId": "L07.S07",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue or its visual direction. The exact transfer prompt is read from the graph's scenario.sourcePrompt, not restated here. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.ref": "Source prompt (reference)",
+    "x.o1": "Unfinished point",
+    "x.o2": "Requested time",
+    "x.o3": "Task relevance",
+    "x.nextMove": "Next move",
+    "x.f1": "Observe",
+    "x.f2": "Make a small move",
+    "x.f3": "Listen"
+  }
+}
