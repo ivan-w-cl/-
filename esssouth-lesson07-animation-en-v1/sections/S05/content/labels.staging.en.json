@@ -1,0 +1,16 @@
+{
+  "schema": "esssouth.l07.staging-labels/1",
+  "sectionId": "L07.S05",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or content/case-facts.en.json. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.caseLabel": "Practice example",
+    "x.ref": "Source prompt (reference)",
+    "x.newTopic": "A new topic",
+    "x.aim.meet": "Aim: meet one another",
+    "x.aim.find": "Aim: find out about the drawing group",
+    "x.noLink": "No link explained: the activity stays undefined",
+    "x.paperPens": "Existing paper and pens only",
+    "x.activity": "The proposed welcome activity",
+    "x.discussion": "This discussion"
+  }
+}

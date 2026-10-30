@@ -1,0 +1,30 @@
+{
+  "schema": "esssouth.l07.staging-anchors/1",
+  "sectionId": "L07.S05",
+  "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+  "anchors": {
+    "s5_drift":    { "cue": "L07.S05.c001", "phrase": "A discussion can drift" },
+    "s5_before":   { "cue": "L07.S05.c001", "phrase": "Before calling the new topic irrelevant" },
+    "s5_fresh":    { "cue": "L07.S05.c002", "phrase": "This is a fresh excerpt" },
+    "s5_still":    { "cue": "L07.S05.c002", "phrase": "The group still needs one activity" },
+    "s5_none":     { "cue": "L07.S05.c002", "phrase": "No activity has been chosen" },
+    "s5_concerns": { "cue": "L07.S05.c003", "phrase": "That question concerns the sign" },
+    "s5_notHeard": { "cue": "L07.S05.c003", "phrase": "We have not yet heard" },
+    "s5_chance":   { "cue": "L07.S05.c004", "phrase": "This question gives the idea a chance" },
+    "s5_without":  { "cue": "L07.S05.c004", "phrase": "Without that link" },
+    "s5_keep":     { "cue": "L07.S05.c004", "phrase": "Keep the task" },
+    "s5_example":  { "cue": "L07.S05.c005", "phrase": "For example, legibility might matter" },
+    "s5_redesign": { "cue": "L07.S05.c005", "phrase": "Redesigning the centre" },
+    "s5_alt":      { "cue": "L07.S05.c006", "phrase": "Alternatively, if the connection is still unclear" },
+    "s5_settle":   { "cue": "L07.S05.c006", "phrase": "You do not have to settle" },
+    "s5_specific": { "cue": "L07.S05.c007", "phrase": "The return is specific" },
+    "s5_simply":   { "cue": "L07.S05.c007", "phrase": "Simply saying focus" },
+    "s5_remember": { "cue": "L07.S05.c008", "phrase": "Remember what the twenty minutes means" },
+    "s5_limits":   { "cue": "L07.S05.c008", "phrase": "It limits the welcome activity" },
+    "s5_point":    { "cue": "L07.S05.c008", "phrase": "You can point to an unfinished task" },
+    "s5_return":   { "cue": "L07.S05.c009", "phrase": "Return to the moment just after" },
+    "s5_choose":   { "cue": "L07.S05.c009", "phrase": "Privately choose a next line" },
+    "s5_check":    { "cue": "L07.S05.c010", "phrase": "Check whether your line uses" },
+    "s5_creative": { "cue": "L07.S05.c010", "phrase": "A creative idea may become relevant" }
+  }
+}
