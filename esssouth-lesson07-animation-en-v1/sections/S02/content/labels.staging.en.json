@@ -1,0 +1,25 @@
+{
+  "schema": "esssouth.l07.staging-labels/1",
+  "sectionId": "L07.S02",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction, the interaction baseline or content/case-facts.en.json. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.unadopted": "Proposal, not adopted",
+    "x.openLink": "Open: how would newcomers find out about the drawing group?",
+    "x.interval": "Chosen illustration interval: 4 s",
+    "x.unk.cause": "Cause of the pause: unknown",
+    "x.unk.view": "Noah's view: not yet expressed",
+    "x.opt.space": "Allow more thinking space",
+    "x.opt.speak": "Speak: explore an open point",
+    "x.knownH": "Known",
+    "x.unknownH": "Not known",
+    "x.f.reason": "Why the pause occurred",
+    "x.f.accept": "Whether the others accept the idea",
+    "x.paused": "Pause · Noah has not replied yet",
+    "x.opt.think": "Time to think",
+    "x.opt.pass": "Pass",
+    "x.opt.later": "Contribute later",
+    "x.need.cmp": "Another proposal: compare",
+    "x.need.clar": "A question: clarify",
+    "x.need.space": "Continued silence: more space"
+  }
+}
