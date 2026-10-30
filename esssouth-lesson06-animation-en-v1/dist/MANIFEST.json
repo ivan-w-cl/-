@@ -1,0 +1,65 @@
+{
+ "note": "Sizes and SHA-256 of the delivered files. Every ZIP is below 20,000,000 bytes.",
+ "files": {
+  "esssouth-L06-lesson-bundle.zip": {
+   "bytes": 393690,
+   "sha256": "36e417cac3179d153ac4a30ebdef7865b8ca0ab4a8ac9d9ba7c1508a46a9a0fe"
+  },
+  "esssouth-L06S01-playable.zip": {
+   "bytes": 60691,
+   "sha256": "650d59c5168bcf477d12ef5ff1c7c4cf4a9945926f2592ba4b405107f9143ebe"
+  },
+  "esssouth-L06S01-source.zip": {
+   "bytes": 2181416,
+   "sha256": "cf92ba936837011d509a2276b333761098fa3461b8b3c73111eca72856ad03d8"
+  },
+  "esssouth-L06S02-playable.zip": {
+   "bytes": 65102,
+   "sha256": "f73184882711d552e70009e2dab445c8235e6fc71345f5dd04ea959c04ceb3c4"
+  },
+  "esssouth-L06S02-source.zip": {
+   "bytes": 5151426,
+   "sha256": "1bc4b4893ec308d686d04c0b00d9daa7e73e094873aa5cfe9a9daef8c6d8552d"
+  },
+  "esssouth-L06S03-playable.zip": {
+   "bytes": 66090,
+   "sha256": "9e46f0e89998f6c2d4a19fa260500c000d2cda4d60ff4cb2b4b701d7cb31619f"
+  },
+  "esssouth-L06S03-source.zip": {
+   "bytes": 5499332,
+   "sha256": "87369c82e35cb7d0a60f732a845799bb22600089e59c44233fb57e3db04753d6"
+  },
+  "esssouth-L06S04-playable.zip": {
+   "bytes": 59110,
+   "sha256": "626e1aed7e21545e9ecf4b99a0144e7cab3082d3d36784d46482c0ef7e490906"
+  },
+  "esssouth-L06S04-source.zip": {
+   "bytes": 2051145,
+   "sha256": "0edcba26baacb85b5b05bbdae1f730154eb04b7d02785535990a9a547e7aca3c"
+  },
+  "esssouth-L06S05-playable.zip": {
+   "bytes": 60037,
+   "sha256": "c058ae12ddd6b95a6f4a29184e64b8de9d83c686757fb3205cb83446d7fc993e"
+  },
+  "esssouth-L06S05-source.zip": {
+   "bytes": 2271930,
+   "sha256": "a030311216b8570e0a7ea28b662089e7f2e8a7aa514681b1c490ec9d03ef46ab"
+  },
+  "esssouth-L06S06-playable.zip": {
+   "bytes": 61926,
+   "sha256": "620c61843d848378e085053eb2d768d4ec9fa520b4c0cc2a33df9b17c7eb6358"
+  },
+  "esssouth-L06S06-source.zip": {
+   "bytes": 3618013,
+   "sha256": "582ed51c20cf3460bc2d99cae912e48c9171db622cc36b97299cb1e8f71e9b8c"
+  },
+  "esssouth-L06S07-playable.zip": {
+   "bytes": 58092,
+   "sha256": "6d636ffc87aeb8a5ec63a792d116927fabec227fadee0667f6bfc9f460a33b83"
+  },
+  "esssouth-L06S07-source.zip": {
+   "bytes": 2252410,
+   "sha256": "acee69ccc8fc97edabc0bd3e5fd17320d70920a76e88cd04896c68f98944c387"
+  }
+ }
+}

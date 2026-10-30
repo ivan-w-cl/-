@@ -1,0 +1,755 @@
+{
+ "section": "S05",
+ "ranAt": "2026-10-30T00:22:40.132Z",
+ "environment": {
+  "os": "linux 6.18.44-fc-v185",
+  "browser": "Chromium 153.0.8010.12",
+  "playwright": "1.63.0",
+  "node": "v22.22.0",
+  "fonts": "Inter installed (first in the stack); the approved reference frames were rendered with Segoe UI",
+  "viewportsAreEmulated": true
+ },
+ "checks": [
+  {
+   "name": "page loads without errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no layout / overflow warnings from the engine (all routes, settled states)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no remote requests (offline)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "silent: no media elements, no microphone request",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "stage accessible name names Lesson 06 and this section",
+   "pass": true,
+   "detail": "Lesson 06, Section 6.5, Reflect and Answer the Question Asked: animation stage"
+  },
+  {
+   "name": "captions reproduce exact cue words (every route)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every supplied cue is reachable in some route",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L06.S05.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L06.S05.h102 lasts 12 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L06.S05.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L06.S05.h102 lasts 12 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every character line shows its exact words in a visible bubble near its end",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 1 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 1 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "deterministic: same frame after different seek histories",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "rate 1×: clock advances at 1× (measured 0.999)",
+   "pass": true,
+   "detail": 0.9991349480970096
+  },
+  {
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.244)",
+   "pass": true,
+   "detail": 1.2435850439885026
+  },
+  {
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.482)",
+   "pass": true,
+   "detail": 1.4817353117303793
+  },
+  {
+   "name": "rate 2×: clock advances at 2× (measured 1.983)",
+   "pass": true,
+   "detail": 1.9832033593286296
+  },
+  {
+   "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
+   "pass": true,
+   "detail": {
+    "a": "L06.S05.c004",
+    "off1": 2,
+    "b": "L06.S05.c004",
+    "off2": 2,
+    "mode": "watch"
+   }
+  },
+  {
+   "name": "restart returns to the section start and plays",
+   "pass": true,
+   "detail": {
+    "t": 0.1858000000002794,
+    "playing": true,
+    "gate": "none",
+    "choice": null
+   }
+  },
+  {
+   "name": "keyboard: Space plays and pauses",
+   "pass": true,
+   "detail": {
+    "k1": true,
+    "k2": false
+   }
+  },
+  {
+   "name": "keyboard: Tab reaches mode and playback controls with a visible focus outline",
+   "pass": true,
+   "detail": [
+    {
+     "tag": "BUTTON",
+     "id": "watch",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "practice",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "play",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "restart",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "scrub",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "cap",
+     "outline": true
+    }
+   ]
+  },
+  {
+   "name": "captions toggle hides the stage caption; DOM caption carries the current words",
+   "pass": true,
+   "detail": {
+    "on": 1,
+    "off": 0,
+    "dom": "CoachReflection is more useful when it connects to something specific that happened."
+   }
+  },
+  {
+   "name": "case facts panel lists the exact fictional fact ledger",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 9,
+    "facts": 9,
+    "lrn": "Case participant",
+    "capName": "Case participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Case participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "the model speaker is labelled from the graph (caption and seat), not as the learner",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 9,
+    "facts": 9,
+    "lrn": "Case participant",
+    "capName": "Case participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Case participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "no runtime errors during transport tests",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: shared reflection route identical to Watch (no gate in this section)",
+   "pass": true,
+   "detail": {
+    "route": "practice:main",
+    "same": true
+   }
+  },
+  {
+   "name": "retime: Watch duration changes by the expected clip delta (8.100 s)",
+   "pass": true,
+   "detail": {
+    "prod": 261.823,
+    "retimed": 269.923
+   }
+  },
+  {
+   "name": "retime: step order unchanged in every route",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: holds keep their fixture length; think holds unchanged",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+   "pass": true,
+   "detail": [
+    {
+     "name": "a_L06_S05_c001",
+     "zero": false,
+     "ratio": 1.3499562554680664,
+     "m": 1.35
+    },
+    {
+     "name": "a_L06_S05_d001",
+     "zero": false,
+     "ratio": 1.3499766682221186,
+     "m": 1.35
+    },
+    {
+     "name": "s5_useful",
+     "zero": true,
+     "ratio": 1,
+     "m": 1.35
+    },
+    {
+     "name": "s5_keep",
+     "zero": false,
+     "ratio": 1.3500050725372832,
+     "m": 1.35
+    }
+   ]
+  },
+  {
+   "name": "retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: no layout warnings",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 68,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 68,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 68,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 68,
+    "domcapFs": 16,
+    "panel": false
+   }
+  }
+ ],
+ "failures": [],
+ "notes": [
+  "Text expansion is a stress report, not a pass/fail gate: overflow at ×1.3/×1.6 is reported by the fitter (never clipped silently) and needs layout work in the localization pass where it occurs."
+ ],
+ "routes": {
+  "watch": 261.823,
+  "practice:main": 261.823
+ },
+ "anchors": [
+  {
+   "name": "a_L06_S05_c001",
+   "cue": "L06.S05.c001",
+   "phrase": "something specific that happened",
+   "localSec": 3.429,
+   "suppliedSec": 3.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_c002",
+   "cue": "L06.S05.c002",
+   "phrase": "Those actions have already happened",
+   "localSec": 17.143,
+   "suppliedSec": 17.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_c003",
+   "cue": "L06.S05.c003",
+   "phrase": "It remains a proposed change",
+   "localSec": 12.429,
+   "suppliedSec": 12.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_c004",
+   "cue": "L06.S05.c004",
+   "phrase": "the useful new detail",
+   "localSec": 14.143,
+   "suppliedSec": 14.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_d001",
+   "cue": "L06.S05.d001",
+   "phrase": "next time",
+   "localSec": 2.143,
+   "suppliedSec": 2.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_d002",
+   "cue": "L06.S05.d002",
+   "phrase": "Next time, I would",
+   "localSec": 0,
+   "suppliedSec": 0,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_c005",
+   "cue": "L06.S05.c005",
+   "phrase": "that particular question",
+   "localSec": 16.286,
+   "suppliedSec": 16.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_d003",
+   "cue": "L06.S05.d003",
+   "phrase": "in this experience",
+   "localSec": 2.571,
+   "suppliedSec": 2.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_d004",
+   "cue": "L06.S05.d004",
+   "phrase": "We have not put that change into practice",
+   "localSec": 10.286,
+   "suppliedSec": 10.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_c006",
+   "cue": "L06.S05.c006",
+   "phrase": "the connection between the experience and the proposed change",
+   "localSec": 2.143,
+   "suppliedSec": 2.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_c007",
+   "cue": "L06.S05.c007",
+   "phrase": "an unsupported judgement about a person",
+   "localSec": 18.857,
+   "suppliedSec": 18.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_c008",
+   "cue": "L06.S05.c008",
+   "phrase": "leaving its effectiveness unknown",
+   "localSec": 17.571,
+   "suppliedSec": 17.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_c009",
+   "cue": "L06.S05.c009",
+   "phrase": "before expanding the story",
+   "localSec": 12,
+   "suppliedSec": 12,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_d005",
+   "cue": "L06.S05.d005",
+   "phrase": "I have not tried that change yet",
+   "localSec": 6.857,
+   "suppliedSec": 6.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S05_c010",
+   "cue": "L06.S05.c010",
+   "phrase": "A clear limit can be part of an answer",
+   "localSec": 11.571,
+   "suppliedSec": 11.571,
+   "source": "supplied semantic anchor"
+  }
+ ],
+ "layoutAudit": {
+  "watch": [],
+  "practice:main": []
+ },
+ "stills": [
+  "S05_watch_B01-open_t1.20.jpg",
+  "S05_watch_B01-mid_t34.53.jpg",
+  "S05_watch_B01-end_t68.75.jpg",
+  "S05_watch_B02-open_t70.25.jpg",
+  "S05_watch_B02-mid_t93.54.jpg",
+  "S05_watch_B02-end_t117.72.jpg",
+  "S05_watch_B03-open_t119.22.jpg",
+  "S05_watch_B03-mid_t158.11.jpg",
+  "S05_watch_B03-end_t197.90.jpg",
+  "S05_watch_B04-open_t199.40.jpg",
+  "S05_watch_B04-mid_t230.01.jpg",
+  "S05_watch_B04-end_t261.52.jpg",
+  "S05_watch_trans-c002_t20.84.jpg",
+  "S05_watch_trans-c003_t41.76.jpg",
+  "S05_watch_trans-h101_t61.40.jpg",
+  "S05_watch_trans-c004_t69.40.jpg",
+  "S05_watch_trans-d001_t86.89.jpg",
+  "S05_watch_trans-d002_t90.24.jpg",
+  "S05_watch_trans-c005_t98.74.jpg",
+  "S05_watch_trans-d003_t118.37.jpg",
+  "S05_watch_trans-d004_t122.58.jpg",
+  "S05_watch_trans-c006_t136.64.jpg",
+  "S05_watch_trans-c007_t157.14.jpg",
+  "S05_watch_trans-c008_t178.91.jpg",
+  "S05_watch_trans-c009_t198.55.jpg",
+  "S05_watch_trans-h102_t217.33.jpg",
+  "S05_watch_trans-d005_t229.33.jpg",
+  "S05_watch_trans-c010_t243.39.jpg",
+  "S05_reduced-motion_t118.32.jpg",
+  "S05_retime-demo_c001-end_t27.04.jpg",
+  "S05_retime-demo_d001-end_t97.49.jpg",
+  "S05_text-x1.3_t117.62.jpg",
+  "S05_text-x1.6_t117.62.jpg",
+  "S05_text-long_t117.62.jpg",
+  "S05_viewport-390x844.png",
+  "S05_viewport-820x1180.png",
+  "S05_viewport-1180x820.png",
+  "S05_viewport-1366x768.png"
+ ],
+ "textExpansion": {
+  "x1.3": {
+   "warnings": 0,
+   "sample": [],
+   "errors": []
+  },
+  "x1.6": {
+   "warnings": 4,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "diff",
+     "score": "watch",
+     "t": 21.19,
+     "text": "Map: Studio B; schedule: Blue Room Map: Studio B; schedule:"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "cH",
+     "score": "watch",
+     "t": 69.25,
+     "text": "Later practice conversation Later practice conversation"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.quote",
+     "token": "bubL",
+     "score": "watch",
+     "t": 122.43,
+     "text": "The map and schedule used different names for the same room. I would propose agr"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "uH",
+     "score": "watch",
+     "t": 165.69,
+     "text": "Unsupported interpretation Unsupported interpretation"
+    }
+   ],
+   "errors": []
+  },
+  "long": {
+   "warnings": 18,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 3.23,
+     "text": "Specific experience → Unbreakablelongtokenforlayoutchecking considered next step"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 138.24,
+     "text": "Experience → reason Unbreakablelongtokenforlayoutchecking for a future proposal"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 254.42,
+     "text": "Answer the focus; Unbreakablelongtokenforlayoutchecking keep the evidence bounda"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "caseL",
+     "score": "watch",
+     "t": 20.49,
+     "text": "Fictional Unbreakablelongtokenforlayoutchecking worked example"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hP",
+     "score": "watch",
+     "t": 20.89,
+     "text": "Already happened Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "diff",
+     "score": "watch",
+     "t": 21.19,
+     "text": "Map: Studio B; Unbreakablelongtokenforlayoutchecking schedule: Blue Room"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "conf",
+     "score": "watch",
+     "t": 27.35,
+     "text": "Coordinator confirmed the same Unbreakablelongtokenforlayoutchecking room and do"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hF",
+     "score": "watch",
+     "t": 41.41,
+     "text": "Next time Unbreakablelongtokenforlayoutchecking / Proposed"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "fut",
+     "score": "watch",
+     "t": 203.84,
+     "text": "Agree a shared room-name Unbreakablelongtokenforlayoutchecking list earlier next"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "cH",
+     "score": "watch",
+     "t": 69.25,
+     "text": "Later Unbreakablelongtokenforlayoutchecking practice conversation"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "role",
+     "score": "watch",
+     "t": 69.65,
+     "text": "Follow-up Unbreakablelongtokenforlayoutchecking partner here"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "bound",
+     "score": "watch",
+     "t": 80.62,
+     "text": "Looking back Unbreakablelongtokenforlayoutchecking on the experience"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.question",
+     "token": "qF",
+     "score": "watch",
+     "t": 88.39,
+     "text": "Next time: Unbreakablelongtokenforlayoutchecking what would change?"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.question",
+     "token": "qR",
+     "score": "watch",
+     "t": 120.29,
+     "text": "Why this change, Unbreakablelongtokenforlayoutchecking given this experience?"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "aB",
+     "score": "watch",
+     "t": 122.73,
+     "text": "Different labels for Unbreakablelongtokenforlayoutchecking the same room"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "aP",
+     "score": "watch",
+     "t": 127.44,
+     "text": "Agree names Unbreakablelongtokenforlayoutchecking before separate preparation"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "uH",
+     "score": "watch",
+     "t": 165.69,
+     "text": "Unsupported interpretation Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "fReason",
+     "score": "watch",
+     "t": 179.26,
+     "text": "May make the Unbreakablelongtokenforlayoutchecking naming choice explicit earlie"
+    }
+   ],
+   "errors": []
+  }
+ },
+ "viewports": [
+  {
+   "viewport": "phone 390x844",
+   "hscroll": false,
+   "small": [],
+   "domcap": 68,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet 820x1180",
+   "hscroll": false,
+   "small": [],
+   "domcap": 68,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet landscape 1180x820",
+   "hscroll": false,
+   "small": [],
+   "domcap": 68,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "desktop 1366x768",
+   "hscroll": false,
+   "small": [],
+   "domcap": 68,
+   "domcapFs": 16,
+   "panel": false
+  }
+ ],
+ "summary": {
+  "checks": 41,
+  "failed": 0,
+  "stills": 38
+ }
+}
