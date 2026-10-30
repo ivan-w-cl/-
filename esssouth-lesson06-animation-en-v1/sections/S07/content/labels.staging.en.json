@@ -1,0 +1,18 @@
+{
+  "schema": "esssouth.l06.staging-labels/1",
+  "sectionId": "L06.S07",
+  "note": "Short fact-card and column labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Each fact card keeps its case-ledger ID (content/case-facts.en.json) and shortens that fact's wording without changing it; F02 is shown as three role cards so each person stays beside their own work. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.f02p": "F02 · Drew the map",
+    "x.f02m": "F02 · Maya: schedule",
+    "x.f02n": "F02 · Noah: assembled the guide",
+    "x.f04": "F04 · Asked the coordinator about the two names",
+    "x.f06": "F06 · Changed the map label; told Maya and Noah",
+    "x.f07": "F07 · Saw one visitor use the map to find Blue Room",
+    "x.f08": "F08 · No survey or total count",
+    "x.f09": "F09 · Would agree a shared list of room names earlier next time",
+    "x.col.q": "Question",
+    "x.col.f": "Relevant facts",
+    "x.col.l": "Honest limits"
+  }
+}

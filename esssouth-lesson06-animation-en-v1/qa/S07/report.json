@@ -1,0 +1,752 @@
+{
+ "section": "S07",
+ "ranAt": "2026-10-30T00:15:37.816Z",
+ "environment": {
+  "os": "linux 6.18.44-fc-v185",
+  "browser": "Chromium 153.0.8010.12",
+  "playwright": "1.63.0",
+  "node": "v22.22.0",
+  "fonts": "Inter installed (first in the stack); the approved reference frames were rendered with Segoe UI",
+  "viewportsAreEmulated": true
+ },
+ "checks": [
+  {
+   "name": "page loads without errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no layout / overflow warnings from the engine (all routes, settled states)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no remote requests (offline)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "silent: no media elements, no microphone request",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "stage accessible name names Lesson 06 and this section",
+   "pass": true,
+   "detail": "Lesson 06, Section 6.7, Adapt the Same Experience to a New Question: animation stage"
+  },
+  {
+   "name": "captions reproduce exact cue words (every route)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every supplied cue is reachable in some route",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L06.S07.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L06.S07.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L06.S07.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L06.S07.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every character line shows its exact words in a visible bubble near its end",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "deterministic: same frame after different seek histories",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "rate 1×: clock advances at 1× (measured 0.996)",
+   "pass": true,
+   "detail": 0.9959338754833623
+  },
+  {
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.239)",
+   "pass": true,
+   "detail": 1.239002199559933
+  },
+  {
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.496)",
+   "pass": true,
+   "detail": 1.4956008798238953
+  },
+  {
+   "name": "rate 2×: clock advances at 2× (measured 1.988)",
+   "pass": true,
+   "detail": 1.9877349686709052
+  },
+  {
+   "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
+   "pass": true,
+   "detail": {
+    "a": "L06.S07.d001",
+    "off1": 2,
+    "b": "L06.S07.d001",
+    "off2": 2,
+    "mode": "watch"
+   }
+  },
+  {
+   "name": "restart returns to the section start and plays",
+   "pass": true,
+   "detail": {
+    "t": 0.189,
+    "playing": true,
+    "gate": "none",
+    "choice": null
+   }
+  },
+  {
+   "name": "keyboard: Space plays and pauses",
+   "pass": true,
+   "detail": {
+    "k1": true,
+    "k2": false
+   }
+  },
+  {
+   "name": "keyboard: Tab reaches mode and playback controls with a visible focus outline",
+   "pass": true,
+   "detail": [
+    {
+     "tag": "BUTTON",
+     "id": "watch",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "practice",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "play",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "restart",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "scrub",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "cap",
+     "outline": true
+    }
+   ]
+  },
+  {
+   "name": "captions toggle hides the stage caption; DOM caption carries the current words",
+   "pass": true,
+   "detail": {
+    "on": 1,
+    "off": 0,
+    "dom": "CoachA follow-up can change what the listener needs without changing what happened."
+   }
+  },
+  {
+   "name": "case facts panel lists the exact fictional fact ledger",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 9,
+    "facts": 9,
+    "lrn": "Case participant",
+    "capName": "Case participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Case participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "the model speaker is labelled from the graph (caption and seat), not as the learner",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 9,
+    "facts": 9,
+    "lrn": "Case participant",
+    "capName": "Case participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Case participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "no runtime errors during transport tests",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: shared reflection route identical to Watch (no gate in this section)",
+   "pass": true,
+   "detail": {
+    "route": "practice:main",
+    "same": true
+   }
+  },
+  {
+   "name": "retime: Watch duration changes by the expected clip delta (11.100 s)",
+   "pass": true,
+   "detail": {
+    "prod": 172.14999999999998,
+    "retimed": 183.25
+   }
+  },
+  {
+   "name": "retime: step order unchanged in every route",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: holds keep their fixture length; think holds unchanged",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+   "pass": true,
+   "detail": [
+    {
+     "name": "a_L06_S07_c001",
+     "zero": false,
+     "ratio": 1.3499999999999999,
+     "m": 1.35
+    },
+    {
+     "name": "a_L06_S07_d001",
+     "zero": false,
+     "ratio": 1.3500269251480883,
+     "m": 1.35
+    },
+    {
+     "name": "s7_select",
+     "zero": false,
+     "ratio": 1.3500129634430904,
+     "m": 1.35
+    }
+   ]
+  },
+  {
+   "name": "retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: no layout warnings",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 74,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 74,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 74,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 74,
+    "domcapFs": 16,
+    "panel": false
+   }
+  }
+ ],
+ "failures": [],
+ "notes": [
+  "Text expansion is a stress report, not a pass/fail gate: overflow at ×1.3/×1.6 is reported by the fitter (never clipped silently) and needs layout work in the localization pass where it occurs."
+ ],
+ "routes": {
+  "watch": 172.15,
+  "practice:main": 172.15
+ },
+ "anchors": [
+  {
+   "name": "a_L06_S07_c001",
+   "cue": "L06.S07.c001",
+   "phrase": "the same facts",
+   "localSec": 6,
+   "suppliedSec": 6,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S07_c002",
+   "cue": "L06.S07.c002",
+   "phrase": "different requests",
+   "localSec": 16.286,
+   "suppliedSec": 16.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S07_c003",
+   "cue": "L06.S07.c003",
+   "phrase": "their own work",
+   "localSec": 8.571,
+   "suppliedSec": 8.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S07_d001",
+   "cue": "L06.S07.d001",
+   "phrase": "could help",
+   "localSec": 5.571,
+   "suppliedSec": 5.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S07_c004",
+   "cue": "L06.S07.c004",
+   "phrase": "stays in the future",
+   "localSec": 0.857,
+   "suppliedSec": 0.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S07_d002",
+   "cue": "L06.S07.d002",
+   "phrase": "cannot say",
+   "localSec": 9.429,
+   "suppliedSec": 9.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S07_c005",
+   "cue": "L06.S07.c005",
+   "phrase": "does not prove",
+   "localSec": 4.286,
+   "suppliedSec": 4.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S07_c006",
+   "cue": "L06.S07.c006",
+   "phrase": "not a personal history",
+   "localSec": 19.714,
+   "suppliedSec": 19.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S07_c007",
+   "cue": "L06.S07.c007",
+   "phrase": "what is being asked",
+   "localSec": 1.286,
+   "suppliedSec": 1.286,
+   "source": "supplied semantic anchor"
+  }
+ ],
+ "layoutAudit": {
+  "watch": [],
+  "practice:main": []
+ },
+ "stills": [
+  "S07_watch_B01-open_t1.20.jpg",
+  "S07_watch_B01-mid_t21.71.jpg",
+  "S07_watch_B01-end_t43.11.jpg",
+  "S07_watch_B02-open_t44.61.jpg",
+  "S07_watch_B02-mid_t67.94.jpg",
+  "S07_watch_B02-end_t92.16.jpg",
+  "S07_watch_B03-open_t93.66.jpg",
+  "S07_watch_B03-mid_t111.81.jpg",
+  "S07_watch_B03-end_t130.86.jpg",
+  "S07_watch_B04-open_t132.36.jpg",
+  "S07_watch_B04-mid_t151.66.jpg",
+  "S07_watch_B04-end_t171.85.jpg",
+  "S07_watch_trans-c002_t18.27.jpg",
+  "S07_watch_trans-h101_t35.76.jpg",
+  "S07_watch_trans-c003_t43.76.jpg",
+  "S07_watch_trans-d001_t61.26.jpg",
+  "S07_watch_trans-c004_t75.75.jpg",
+  "S07_watch_trans-d002_t92.81.jpg",
+  "S07_watch_trans-c005_t106.02.jpg",
+  "S07_watch_trans-h102_t123.51.jpg",
+  "S07_watch_trans-c006_t131.51.jpg",
+  "S07_watch_trans-c007_t153.29.jpg",
+  "S07_reduced-motion_t75.70.jpg",
+  "S07_retime-demo_c001-end_t23.57.jpg",
+  "S07_retime-demo_d001-end_t86.00.jpg",
+  "S07_text-x1.3_t75.00.jpg",
+  "S07_text-x1.6_t75.00.jpg",
+  "S07_text-long_t75.00.jpg",
+  "S07_viewport-390x844.png",
+  "S07_viewport-820x1180.png",
+  "S07_viewport-1180x820.png",
+  "S07_viewport-1366x768.png"
+ ],
+ "textExpansion": {
+  "x1.3": {
+   "warnings": 1,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f09",
+     "score": "watch",
+     "t": 7.54,
+     "text": "F09 · Would agree a shared list of room names earlier next time F09 · Would agre"
+    }
+   ],
+   "errors": []
+  },
+  "x1.6": {
+   "warnings": 8,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "caseL",
+     "score": "watch",
+     "t": 141.88,
+     "text": "Fictional worked example Fictional worked"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f04",
+     "score": "watch",
+     "t": 7.06,
+     "text": "F04 · Asked the coordinator about the two names F04 · Asked the coordinator abou"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f06",
+     "score": "watch",
+     "t": 7.18,
+     "text": "F06 · Changed the map label; told Maya and Noah F06 · Changed the map label;"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f07",
+     "score": "watch",
+     "t": 7.3,
+     "text": "F07 · Saw one visitor use the map to find Blue Room F07 · Saw one visitor use th"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f09",
+     "score": "watch",
+     "t": 7.54,
+     "text": "F09 · Would agree a shared list of room names earlier next time F09 · Would agre"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hTeam",
+     "score": "watch",
+     "t": 43.71,
+     "text": "Teammates’ contributions Teammates’ contributions"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.quote",
+     "token": "bubL",
+     "score": "watch",
+     "t": 61.86,
+     "text": "Next time, I would agree a shared list of room names earlier. That could help us"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "pBlank",
+     "score": "watch",
+     "t": 142.28,
+     "text": "Use your own details, or keep the example labelled fictional Use your own detail"
+    }
+   ],
+   "errors": []
+  },
+  "long": {
+   "warnings": 25,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "caseL",
+     "score": "watch",
+     "t": 6.4,
+     "text": "Fictional Unbreakablelongtokenforlayoutchecking worked example"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f02p",
+     "score": "watch",
+     "t": 123.66,
+     "text": "F02 · Unbreakablelongtokenforlayoutchecking Drew the map"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f02m",
+     "score": "watch",
+     "t": 6.82,
+     "text": "F02 · Unbreakablelongtokenforlayoutchecking Maya: schedule"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f02n",
+     "score": "watch",
+     "t": 6.94,
+     "text": "F02 · Noah: Unbreakablelongtokenforlayoutchecking assembled the guide"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f04",
+     "score": "watch",
+     "t": 7.06,
+     "text": "F04 · Asked the Unbreakablelongtokenforlayoutchecking coordinator about the two "
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f06",
+     "score": "watch",
+     "t": 7.18,
+     "text": "F06 · Changed the map Unbreakablelongtokenforlayoutchecking label; told Maya and"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f07",
+     "score": "watch",
+     "t": 7.3,
+     "text": "F07 · Saw one visitor use Unbreakablelongtokenforlayoutchecking the map to find "
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f08",
+     "score": "watch",
+     "t": 7.42,
+     "text": "F08 · No Unbreakablelongtokenforlayoutchecking survey or total count"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "f09",
+     "score": "watch",
+     "t": 7.54,
+     "text": "F09 · Would agree a shared Unbreakablelongtokenforlayoutchecking list of room na"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.question",
+     "token": "q1",
+     "score": "watch",
+     "t": 21.35,
+     "text": "What did Unbreakablelongtokenforlayoutchecking you contribute?"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.question",
+     "token": "q2",
+     "score": "watch",
+     "t": 23.06,
+     "text": "What would you Unbreakablelongtokenforlayoutchecking change next time?"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.question",
+     "token": "q3",
+     "score": "watch",
+     "t": 25.64,
+     "text": "How much did Unbreakablelongtokenforlayoutchecking the guide help?"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "lA",
+     "score": "watch",
+     "t": 29.49,
+     "text": "Action Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "lF",
+     "score": "watch",
+     "t": 30.35,
+     "text": "Proposed change Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "lI",
+     "score": "watch",
+     "t": 32.06,
+     "text": "Impact evidence Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hTeam",
+     "score": "watch",
+     "t": 43.71,
+     "text": "Teammates’ contributions Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hOwn",
+     "score": "watch",
+     "t": 43.97,
+     "text": "My contribution Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hPast",
+     "score": "watch",
+     "t": 75.7,
+     "text": "What happened Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hNext",
+     "score": "watch",
+     "t": 76.26,
+     "text": "What I Unbreakablelongtokenforlayoutchecking would try next"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "lim",
+     "score": "watch",
+     "t": 101.89,
+     "text": "Overall impact Unbreakablelongtokenforlayoutchecking not measured"
+    }
+   ],
+   "errors": []
+  }
+ },
+ "viewports": [
+  {
+   "viewport": "phone 390x844",
+   "hscroll": false,
+   "small": [],
+   "domcap": 74,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet 820x1180",
+   "hscroll": false,
+   "small": [],
+   "domcap": 74,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet landscape 1180x820",
+   "hscroll": false,
+   "small": [],
+   "domcap": 74,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "desktop 1366x768",
+   "hscroll": false,
+   "small": [],
+   "domcap": 74,
+   "domcapFs": 16,
+   "panel": false
+  }
+ ],
+ "summary": {
+  "checks": 41,
+  "failed": 0,
+  "stills": 32
+ }
+}

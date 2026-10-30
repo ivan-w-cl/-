@@ -1,0 +1,31 @@
+{
+  "schema": "esssouth.l06.staging-anchors/1",
+  "sectionId": "L06.S07",
+  "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+  "anchors": {
+    "s7_select":   { "cue": "L06.S07.c001", "phrase": "select the part that answers this question" },
+    "s7_q1":       { "cue": "L06.S07.c002", "phrase": "What did you contribute?" },
+    "s7_q2":       { "cue": "L06.S07.c002", "phrase": "What would you change next time?" },
+    "s7_q3":       { "cue": "L06.S07.c002", "phrase": "How much did the guide help?" },
+    "s7_action":   { "cue": "L06.S07.c002", "phrase": "an action" },
+    "s7_prop":     { "cue": "L06.S07.c002", "phrase": "a proposed improvement" },
+    "s7_impact":   { "cue": "L06.S07.c002", "phrase": "evidence of impact" },
+    "s7_bring":    { "cue": "L06.S07.c003", "phrase": "bring forward drawing the map" },
+    "s7_check":    { "cue": "L06.S07.c003", "phrase": "checking the conflicting names" },
+    "s7_label":    { "cue": "L06.S07.c003", "phrase": "changing its label" },
+    "s7_keepMN":   { "cue": "L06.S07.c003", "phrase": "Keep Maya and Noah" },
+    "s7_connects": { "cue": "L06.S07.c004", "phrase": "It connects the proposed change" },
+    "s7_quietly":  { "cue": "L06.S07.c004", "phrase": "Do not quietly move" },
+    "s7_saw":      { "cue": "L06.S07.d002", "phrase": "I saw one visitor" },
+    "s7_noTotal":  { "cue": "L06.S07.d002", "phrase": "We did not collect a total" },
+    "s7_answers":  { "cue": "L06.S07.c005", "phrase": "This answers the impact question" },
+    "s7_precise":  { "cue": "L06.S07.c005", "phrase": "A precise limit" },
+    "s7_try":      { "cue": "L06.S07.c006", "phrase": "try one different follow-up" },
+    "s7_fiction":  { "cue": "L06.S07.c006", "phrase": "If you are using the fictional case" },
+    "s7_model":    { "cue": "L06.S07.c006", "phrase": "A model gives you a way to practise" },
+    "s7_notice":   { "cue": "L06.S07.c007", "phrase": "Before answering, notice" },
+    "s7_make":     { "cue": "L06.S07.c007", "phrase": "make your contribution" },
+    "s7_pause":    { "cue": "L06.S07.c007", "phrase": "You can pause" },
+    "s7_aim":      { "cue": "L06.S07.c007", "phrase": "The aim is" }
+  }
+}
