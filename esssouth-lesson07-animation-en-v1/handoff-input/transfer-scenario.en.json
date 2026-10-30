@@ -1,0 +1,38 @@
+{
+  "id": "L07.TRANSFER01",
+  "kind": "Original fictional transfer discussion, independent of the welcome activity",
+  "caseLabel": "New practice example",
+  "sourcePrompt": "A team is comparing two ways to reduce disposable cups in a shared workspace: bringing a personal mug, or borrowing a reusable mug from a shared shelf. Compare the options and identify one practical question to check before making a recommendation.",
+  "facts": [
+    {
+      "id": "T01",
+      "text": "The task is to compare two options and identify one practical question before making a recommendation."
+    },
+    {
+      "id": "T02",
+      "text": "Noah asks who would wash the shared mugs. Cleaning arrangements are not supplied."
+    },
+    {
+      "id": "T03",
+      "text": "Maya says she would like a moment to think about that question. She has not rejected either option or agreed to a recommendation."
+    },
+    {
+      "id": "T04",
+      "text": "No recommendation has been adopted. A question recorded for checking is still unanswered."
+    }
+  ],
+  "unknowns": [
+    "Cleaning arrangements",
+    "Storage capacity",
+    "Costs",
+    "Participant preferences",
+    "Which option would be selected",
+    "Actual environmental effect"
+  ],
+  "state": {
+    "recommendationAdopted": false,
+    "cleaningQuestionAnswered": false,
+    "motiveInferredBeyondSpokenWords": false
+  },
+  "boundary": "This is a new scenario, not another episode at the community centre. No real workplace policy or measured environmental claim is made."
+}

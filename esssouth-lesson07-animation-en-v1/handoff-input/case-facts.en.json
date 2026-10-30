@@ -1,0 +1,93 @@
+{
+  "lessonId": "L07",
+  "status": "Author-created main scenario and resettable excerpts for S01 through S06; S07 uses the separate transfer scenario.",
+  "scenario": {
+    "id": "L07.CASE01",
+    "kind": "Original fictional discussion training with independent resettable excerpts",
+    "caseLabel": "Practice example",
+    "sourcePrompt": "A community centre wants a 20-minute welcome activity for new members. Help them meet one another and find out about its weekly drawing group. Your group should recommend one activity and explain how it serves both aims. Use the main room and existing paper and pens; do not buy anything.",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "The required output is one recommended welcome activity and an explanation of how it serves both aims."
+      },
+      {
+        "id": "F02",
+        "text": "The welcome activity lasts 20 minutes, in the main room, using existing paper and pens without purchases."
+      },
+      {
+        "id": "F03",
+        "text": "The aims are helping new members meet one another and find out about the weekly drawing group."
+      },
+      {
+        "id": "F04",
+        "text": "Maya's initial proposal is: We could start in pairs and exchange names and interests."
+      },
+      {
+        "id": "F05",
+        "text": "Noah's separate proposal is: We could each draw or write one thing we'd like to try, then use that to introduce ourselves."
+      },
+      {
+        "id": "F06",
+        "text": "No option has been adopted and no activity has taken place. Proposal replies do not establish agreement or successful results."
+      },
+      {
+        "id": "F07",
+        "text": "Each section declares a fresh excerpt or reset. A pause, overlap, invitation or sidetrack in one excerpt is not evidence that a character has a fixed personality."
+      }
+    ],
+    "unknowns": [
+      "Why any participant pauses or speaks less",
+      "Whether an overlap is deliberate",
+      "What participants privately agree with",
+      "How many new members will attend",
+      "The drawing group's specific programme beyond its weekly occurrence",
+      "Which proposal the group will eventually adopt",
+      "Whether either activity would succeed"
+    ],
+    "episodes": {
+      "pause": {
+        "section": "S02",
+        "baseline": "Maya has just offered F04. A short pause follows. Noah has not yet responded to that proposal. The cause of the pause is unknown.",
+        "silenceSeconds": 4,
+        "timingMeaning": "A chosen illustration interval, not a universal threshold for intervening."
+      },
+      "overlap": {
+        "section": "S03",
+        "baseline": "Fresh excerpt. The learner begins to connect paired introductions to the weekly drawing group. Noah begins F05 before the learner finishes. Only the start of that proposal is presented in the overlap baseline; its full content becomes available if a branch invites him to continue.",
+        "pendingLearnerPoint": "After exchanging names, pairs could identify one question about the weekly drawing group.",
+        "clipDesign": "The silent review shows an explicitly marked two-lane overlap illustration. Do not infer speech interruption from silence or fake audio. Later voice production must deliberately verify any overlap timing and intelligibility."
+      },
+      "invitation": {
+        "section": "S04",
+        "baseline": "Fresh excerpt with F04 and F05 available as unadopted proposals. Maya has not yet commented on their comparison. The learner can offer an open invitation with permission to pass; no private motive is assigned."
+      },
+      "sidetrack": {
+        "section": "S05",
+        "baseline": "Fresh excerpt. While discussing the welcome activity, Noah asks: The centre's old sign looks dated. Which lettering style would be better? This is an authored side topic, not a verified fact about a real centre.",
+        "boundary": "A design topic is not inherently irrelevant. Ask whether it helps the stated welcome task; do not infer laziness or assign blame."
+      },
+      "rehearsal": {
+        "section": "S06",
+        "baseline": "Fresh excerpt. Maya offers F04; a brief pause follows and no one has linked the idea to the weekly drawing group yet. Rehearse one possible next move, not a final recommendation.",
+        "boundary": "Any model peer reply is separately authored and does not respond to the learner's unheard speech."
+      }
+    },
+    "state": {
+      "fictional": true,
+      "proposalAdopted": false,
+      "agreementInferredFromSilence": false,
+      "motiveInferred": false,
+      "realLearnerSpeechCaptured": false
+    },
+    "boundaries": [
+      "No universal silence duration, speaking quota, obligatory leader role or guaranteed polite-phrase effect.",
+      "A pause may be useful; an overlap may be accidental. Use observable words and timing, not mind-reading.",
+      "An invitation allows passing or later participation; do not force a quiet participant to explain themselves.",
+      "Repair one immediate difficulty, then leave space and respond to what actually follows.",
+      "No live speech detection, microphone, scoring, emotion detection or automatic evaluation.",
+      "The 20-minute activity is a scenario constraint, not the discussion time limit or the course runtime.",
+      "Short scenario dialogue is subordinate to formal animated explanation; no permanent three-person skit."
+    ]
+  }
+}

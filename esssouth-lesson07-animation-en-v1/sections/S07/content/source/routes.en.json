@@ -1,0 +1,108 @@
+{
+  "sectionId": "L07.S07",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L07.S07.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S07.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S07.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.c006"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L07.S07.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S07.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S07.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S07.c006"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L07.S07",
+    "title": "Choose the Next Move in a New Discussion",
+    "budgetSeconds": 180,
+    "spokenCueCount": 9,
+    "watchCueCount": 9,
+    "watchWords": 296,
+    "estimatedWatchSeconds": 146.007,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 146.007,
+    "interactions": [],
+    "learningOutcome": "Choose a context-sensitive next move in a fresh task, using explicit words and relevance rather than a memorised intervention or guessed motive."
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "sectionId": "L07.S04",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L07.S04.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S04.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c009"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S04.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c010"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L07.S04.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S04.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c009"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S04.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S04.c010"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L07.S04",
+    "title": "Invite a Contribution Without Pressure",
+    "budgetSeconds": 270,
+    "spokenCueCount": 13,
+    "watchCueCount": 13,
+    "watchWords": 461,
+    "estimatedWatchSeconds": 224.123,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 224.123,
+    "interactions": [],
+    "learningOutcome": "Offer a relevant invitation that leaves the other person free to contribute, pass or come in later, without inferring motives or assigning equal speaking quotas."
+  }
+}

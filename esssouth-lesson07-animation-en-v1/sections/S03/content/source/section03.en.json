@@ -1,0 +1,709 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L07.S03",
+  "title": "Handle Overlapping Turns",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 07 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Resolve an overlap by making room for a turn and preserving an unfinished point, without assuming hostile intent, treating turn-taking permission as agreement or combining proposals before they are understood.",
+  "scenario": {
+    "id": "L07.CASE01",
+    "kind": "Original fictional discussion training with independent resettable excerpts",
+    "caseLabel": "Practice example",
+    "sourcePrompt": "A community centre wants a 20-minute welcome activity for new members. Help them meet one another and find out about its weekly drawing group. Your group should recommend one activity and explain how it serves both aims. Use the main room and existing paper and pens; do not buy anything.",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "The required output is one recommended welcome activity and an explanation of how it serves both aims."
+      },
+      {
+        "id": "F02",
+        "text": "The welcome activity lasts 20 minutes, in the main room, using existing paper and pens without purchases."
+      },
+      {
+        "id": "F03",
+        "text": "The aims are helping new members meet one another and find out about the weekly drawing group."
+      },
+      {
+        "id": "F04",
+        "text": "Maya's initial proposal is: We could start in pairs and exchange names and interests."
+      },
+      {
+        "id": "F05",
+        "text": "Noah's separate proposal is: We could each draw or write one thing we'd like to try, then use that to introduce ourselves."
+      },
+      {
+        "id": "F06",
+        "text": "No option has been adopted and no activity has taken place. Proposal replies do not establish agreement or successful results."
+      },
+      {
+        "id": "F07",
+        "text": "Each section declares a fresh excerpt or reset. A pause, overlap, invitation or sidetrack in one excerpt is not evidence that a character has a fixed personality."
+      }
+    ],
+    "unknowns": [
+      "Why any participant pauses or speaks less",
+      "Whether an overlap is deliberate",
+      "What participants privately agree with",
+      "How many new members will attend",
+      "The drawing group's specific programme beyond its weekly occurrence",
+      "Which proposal the group will eventually adopt",
+      "Whether either activity would succeed"
+    ],
+    "episodes": {
+      "pause": {
+        "section": "S02",
+        "baseline": "Maya has just offered F04. A short pause follows. Noah has not yet responded to that proposal. The cause of the pause is unknown.",
+        "silenceSeconds": 4,
+        "timingMeaning": "A chosen illustration interval, not a universal threshold for intervening."
+      },
+      "overlap": {
+        "section": "S03",
+        "baseline": "Fresh excerpt. The learner begins to connect paired introductions to the weekly drawing group. Noah begins F05 before the learner finishes. Only the start of that proposal is presented in the overlap baseline; its full content becomes available if a branch invites him to continue.",
+        "pendingLearnerPoint": "After exchanging names, pairs could identify one question about the weekly drawing group.",
+        "clipDesign": "The silent review shows an explicitly marked two-lane overlap illustration. Do not infer speech interruption from silence or fake audio. Later voice production must deliberately verify any overlap timing and intelligibility."
+      },
+      "invitation": {
+        "section": "S04",
+        "baseline": "Fresh excerpt with F04 and F05 available as unadopted proposals. Maya has not yet commented on their comparison. The learner can offer an open invitation with permission to pass; no private motive is assigned."
+      },
+      "sidetrack": {
+        "section": "S05",
+        "baseline": "Fresh excerpt. While discussing the welcome activity, Noah asks: The centre's old sign looks dated. Which lettering style would be better? This is an authored side topic, not a verified fact about a real centre.",
+        "boundary": "A design topic is not inherently irrelevant. Ask whether it helps the stated welcome task; do not infer laziness or assign blame."
+      },
+      "rehearsal": {
+        "section": "S06",
+        "baseline": "Fresh excerpt. Maya offers F04; a brief pause follows and no one has linked the idea to the weekly drawing group yet. Rehearse one possible next move, not a final recommendation.",
+        "boundary": "Any model peer reply is separately authored and does not respond to the learner's unheard speech."
+      }
+    },
+    "state": {
+      "fictional": true,
+      "proposalAdopted": false,
+      "agreementInferredFromSilence": false,
+      "motiveInferred": false,
+      "realLearnerSpeechCaptured": false
+    },
+    "boundaries": [
+      "No universal silence duration, speaking quota, obligatory leader role or guaranteed polite-phrase effect.",
+      "A pause may be useful; an overlap may be accidental. Use observable words and timing, not mind-reading.",
+      "An invitation allows passing or later participation; do not force a quiet participant to explain themselves.",
+      "Repair one immediate difficulty, then leave space and respond to what actually follows.",
+      "No live speech detection, microphone, scoring, emotion detection or automatic evaluation.",
+      "The 20-minute activity is a scenario constraint, not the discussion time limit or the course runtime.",
+      "Short scenario dialogue is subordinate to formal animated explanation; no permanent three-person skit."
+    ]
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Participant",
+    "maya": "Maya",
+    "noah": "Noah",
+    "prompt_reader": "Prompt reader"
+  },
+  "blocks": [
+    {
+      "id": "L07.S03.B01",
+      "title": "Set up a Fresh Overlap",
+      "family": "fresh_context_and_two_lane_illustration",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S03.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.d002"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.c003"
+        }
+      ]
+    },
+    {
+      "id": "L07.S03.B02",
+      "title": "Separate Turn Order from Agreement",
+      "family": "turn_management_without_hierarchy",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S03.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.c005"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.c006"
+        },
+        {
+          "kind": "hold",
+          "id": "L07.S03.h101"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.c008"
+        },
+        {
+          "kind": "interaction",
+          "id": "L07.I02"
+        }
+      ]
+    },
+    {
+      "id": "L07.S03.B03",
+      "title": "Return without Assuming an Agreement",
+      "family": "shared_analysis_and_new_example",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S03.c010"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.c011"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.c012"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.d003"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.c013"
+        }
+      ]
+    },
+    {
+      "id": "L07.S03.B04",
+      "title": "Practise a Small Repair",
+      "family": "private_rehearsal_and_bridge",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S03.c014"
+        },
+        {
+          "kind": "hold",
+          "id": "L07.S03.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S03.c015"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L07.S03.c001": {
+      "id": "L07.S03.c001",
+      "speaker": "coach",
+      "text": "Start a fresh excerpt from the welcome-activity discussion. The group still needs one activity that helps people meet and find out about the weekly drawing group, within twenty minutes in the main room using existing paper and pens.",
+      "visualEn": "Reset all prior pause-branch outcomes. Restore Practice example, the task and unadopted proposals. The 20-minute constraint belongs to the welcome activity, not discussion time.",
+      "anchorHint": "Start a fresh excerpt",
+      "screenLabelIds": [
+        "section.title",
+        "case.label",
+        "task.aims"
+      ],
+      "audioId": "L07.S03.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c002": {
+      "id": "L07.S03.c002",
+      "speaker": "coach",
+      "text": "The learner begins to connect paired introductions to the drawing group. Before that point is finished, Noah starts another idea. The two lanes show this brief overlap; they do not tell us whether it was deliberate.",
+      "visualEn": "Use an explicitly labelled two-lane timing illustration. The silent review shows designed visual order only: no fake audio, microphone, speech detection or claimed acoustic test. Later voice production must separately verify any overlap and intelligibility.",
+      "anchorHint": "whether it was deliberate",
+      "screenLabelIds": [
+        "overlap.label",
+        "overlap.boundary"
+      ],
+      "audioId": "L07.S03.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.d001": {
+      "id": "L07.S03.d001",
+      "speaker": "learner",
+      "text": "After exchanging names, pairs could—",
+      "visualEn": "Show only this unfinished learner fragment in its lane. Do not reveal the rest of the pending point yet. The trailing dash denotes an unfinished turn, not a sound to synthesize. Keep the turn visibly unfinished when the next lane begins.",
+      "anchorHint": "pairs could",
+      "screenLabelIds": [
+        "overlap.learner"
+      ],
+      "audioId": "L07.S03.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S03.d002": {
+      "id": "L07.S03.d002",
+      "speaker": "noah",
+      "text": "We could each draw or write—",
+      "visualEn": "Show only the exact opening fragment of F05 in Noah’s second lane, beginning while the learner lane is marked unfinished. Do not expose the full proposal in subtitles, a hidden label or a completed diagram before a branch supplies it. The silent illustration must not claim audible overlap verification.",
+      "anchorHint": "draw or write",
+      "screenLabelIds": [
+        "overlap.noah"
+      ],
+      "audioId": "L07.S03.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S03.c003": {
+      "id": "L07.S03.c003",
+      "speaker": "coach",
+      "text": "We have two unfinished turns, not a complete comparison of ideas. A small repair can decide who continues while keeping the other point available. It need not decide which proposal is better.",
+      "visualEn": "Freeze the two fragments beside two neutral continuation places. No idea is adopted, rejected or fully revealed, and no intent or hostility is assigned.",
+      "anchorHint": "not a complete comparison of ideas",
+      "screenLabelIds": [
+        "repair.purpose"
+      ],
+      "audioId": "L07.S03.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c004": {
+      "id": "L07.S03.c004",
+      "speaker": "coach",
+      "text": "You can offer someone room to finish, or ask briefly to finish your own point. The useful choice depends on the moment. Giving a turn away does not mean agreeing, and finishing a turn is not a claim to leadership.",
+      "visualEn": "Present two legitimate turn-order moves with equal weight. Neither receives a moral ranking, permanent leader role or agreement badge.",
+      "anchorHint": "does not mean agreeing",
+      "screenLabelIds": [
+        "turn.choice",
+        "turn.boundary"
+      ],
+      "audioId": "L07.S03.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c005": {
+      "id": "L07.S03.c005",
+      "speaker": "coach",
+      "text": "If you let the other person continue, keep a short reminder of your unfinished point. Otherwise, an intended return can be lost. The reminder should preserve the point without competing with the next speaker’s whole explanation.",
+      "visualEn": "Show a small parked-point marker, not the hidden full learner sentence. Leave Noah’s full idea unavailable; no simultaneous full paragraphs or permanent transcript clutter.",
+      "anchorHint": "keep a short reminder",
+      "screenLabelIds": [
+        "park.rule"
+      ],
+      "audioId": "L07.S03.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c006": {
+      "id": "L07.S03.c006",
+      "speaker": "coach",
+      "text": "Privately identify the immediate need here. Is it to choose a final activity, or to make the next turn hearable and preserve what remains unfinished? Keep the task decision separate from this turn-taking repair.",
+      "visualEn": "Retain the two short fragments and a blank private planning area. Do not reveal full proposals or invite a premature vote.",
+      "anchorHint": "preserve what remains unfinished",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L07.S03.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c007": {
+      "id": "L07.S03.c007",
+      "speaker": "coach",
+      "text": "Compare these next turns. One asks to finish, one tries to settle the activity too early, and one makes room while keeping a point to return to. Examine what each actually accomplishes.",
+      "visualEn": "Reveal equal neutral alternatives after the source fragments. Do not preselect a move or portray yielding as universally superior.",
+      "anchorHint": "what each actually accomplishes",
+      "screenLabelIds": [
+        "choice.prompt"
+      ],
+      "audioId": "L07.S03.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c008": {
+      "id": "L07.S03.c008",
+      "speaker": "coach",
+      "text": "The peer replies are written possibilities. A polite request still needs attention to the answer. Treat permission to continue as permission for a turn, not as approval of the idea itself.",
+      "visualEn": "Maintain the practice-example frame and separate turn permission from proposal state. No applause, complete-agreement symbol or claimed learner speech evaluation.",
+      "anchorHint": "not as approval of the idea itself",
+      "screenLabelIds": [
+        "choice.note"
+      ],
+      "audioId": "L07.S03.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c010": {
+      "id": "L07.S03.c010",
+      "speaker": "coach",
+      "text": "The shared principle is to make the next turn clear while protecting an unfinished point. This is a decision about speaking order. It does not settle whether an idea fits the task or whether anyone agrees with it.",
+      "visualEn": "All branches and Skip rejoin from the two common unfinished-turn facts only. Clear branch-specific full proposals and permissions. Keep the task undecided.",
+      "anchorHint": "a decision about speaking order",
+      "screenLabelIds": [
+        "shared.principle"
+      ],
+      "audioId": "L07.S03.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c011": {
+      "id": "L07.S03.c011",
+      "speaker": "coach",
+      "text": "If you offer someone the turn, listen to what follows before returning. You can then connect your point to what was said, or explain why it still needs attention. Do not assume your parked point has already been understood.",
+      "visualEn": "Show a general offer-listen-return relationship without inserting the content of an unplayed branch. Avoid a guaranteed smooth outcome or compulsory exact phrase.",
+      "anchorHint": "has already been understood",
+      "screenLabelIds": [
+        "return.rule"
+      ],
+      "audioId": "L07.S03.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c012": {
+      "id": "L07.S03.c012",
+      "speaker": "coach",
+      "text": "In a separate example, we can now see the learner’s complete point about linking the introductions to the drawing group.",
+      "visualEn": "Reset to a clearly labelled Separate worked example before the full learner sentence. This new common premise is valid after every branch or Skip; no prior agreed turn is implied.",
+      "anchorHint": "the learner’s complete point",
+      "screenLabelIds": [
+        "common.example"
+      ],
+      "audioId": "L07.S03.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.d003": {
+      "id": "L07.S03.d003",
+      "speaker": "learner",
+      "text": "After exchanging names, pairs could identify one question about the weekly drawing group.",
+      "visualEn": "Reveal this exact supplied pending point as the new worked example. Keep it unadopted. Identifying a question does not by itself provide accurate programme information; its answer source remains unresolved.",
+      "anchorHint": "one question about the weekly drawing group",
+      "screenLabelIds": [
+        "pending.full",
+        "pending.limit"
+      ],
+      "audioId": "L07.S03.d003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S03.c013": {
+      "id": "L07.S03.c013",
+      "speaker": "coach",
+      "text": "That adds a possible question-forming step. It does not yet tell newcomers the answer or identify where reliable group information will come from. The task connection still needs development, even after the turn is clear.",
+      "visualEn": "Connect the question-forming proposal to an unresolved answer/source card. Do not invent a helper, programme, confirmed facts or evidence that the second aim is achieved.",
+      "anchorHint": "even after the turn is clear",
+      "screenLabelIds": [
+        "task.limit"
+      ],
+      "audioId": "L07.S03.c013",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c014": {
+      "id": "L07.S03.c014",
+      "speaker": "coach",
+      "text": "Return privately to the original two unfinished turns. Choose a short way to arrange the next turn and preserve the other point. You may ask to finish or offer room. Pause if you want longer.",
+      "visualEn": "Restore only the original fragments for private rehearsal. Hide full branch replies and the later shared worked example; leave the private response area blank and both turn-order choices available.",
+      "anchorHint": "preserve the other point",
+      "screenLabelIds": [
+        "private.prompt"
+      ],
+      "audioId": "L07.S03.c014",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.c015": {
+      "id": "L07.S03.c015",
+      "speaker": "coach",
+      "text": "Check what your chosen move would leave unfinished. A useful repair makes space without pretending the discussion is settled. Next, we will consider inviting a contribution while leaving the person free to pass or join later.",
+      "visualEn": "End with a neutral self-check and fresh-excerpt invitation-section title. No completed real attempt, adoption or universal ranking of turn-taking styles.",
+      "anchorHint": "without pretending the discussion is settled",
+      "screenLabelIds": [
+        "review.question",
+        "next.title"
+      ],
+      "audioId": "L07.S03.c015",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.d101": {
+      "id": "L07.S03.d101",
+      "speaker": "learner",
+      "text": "Could I finish this point first?",
+      "visualEn": "Authored alternative A from the two unfinished fragments. Keep it as a legitimate request, not a demand to dominate or a rejection of Noah’s idea.",
+      "anchorHint": "finish this point first",
+      "screenLabelIds": [
+        "branch.a.label"
+      ],
+      "audioId": "L07.S03.d101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S03.d102": {
+      "id": "L07.S03.d102",
+      "speaker": "noah",
+      "text": "Yes, please finish your point.",
+      "visualEn": "Noah grants turn-taking space in this authored continuation. Do not reveal his full F05 proposal or infer support for the learner’s proposal. The learner’s full point is not yet spoken within this branch.",
+      "anchorHint": "finish your point",
+      "screenLabelIds": [],
+      "audioId": "L07.S03.d102",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S03.f101": {
+      "id": "L07.S03.f101",
+      "speaker": "coach",
+      "text": "This is a reasonable way to protect an unfinished turn. It does not fulfil the specific aim of letting Noah go first, and he would still need room afterward. His yes concerns the speaking order, not the proposal.",
+      "visualEn": "Keep the source fragments and turn-order marker, with both ideas unadopted. No universal judgement against direct requests to finish.",
+      "anchorHint": "His yes concerns the speaking order",
+      "screenLabelIds": [
+        "branch.a.note"
+      ],
+      "audioId": "L07.S03.f101",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.d201": {
+      "id": "L07.S03.d201",
+      "speaker": "learner",
+      "text": "We both have ideas, so let's do both activities.",
+      "visualEn": "Authored alternative B. Show a proposed merge as unconfirmed wording, never a chosen plan. Keep both incomplete ideas visibly incomplete.",
+      "anchorHint": "let's do both activities",
+      "screenLabelIds": [
+        "branch.b.label"
+      ],
+      "audioId": "L07.S03.d201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S03.d202": {
+      "id": "L07.S03.d202",
+      "speaker": "noah",
+      "text": "I haven't finished explaining my suggestion.",
+      "visualEn": "Noah points to the observable unfinished turn. Do not reveal his full proposal or assign annoyance, hostility or opposition to combining ideas.",
+      "anchorHint": "haven't finished explaining",
+      "screenLabelIds": [],
+      "audioId": "L07.S03.d202",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S03.f201": {
+      "id": "L07.S03.f201",
+      "speaker": "coach",
+      "text": "Combining useful parts may eventually produce one coherent activity. Here the ideas have not been heard fully, and their fit with both aims remains open. A turn-taking difficulty has been bypassed with an unsupported decision.",
+      "visualEn": "Separate the possibility of a coherent future combination from the premature merge. Do not impose a ban on multiple connected steps or show any activity as adopted.",
+      "anchorHint": "one coherent activity",
+      "screenLabelIds": [
+        "branch.b.note"
+      ],
+      "audioId": "L07.S03.f201",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S03.d301": {
+      "id": "L07.S03.d301",
+      "speaker": "learner",
+      "text": "Go ahead, Noah. Afterwards, I'd like to finish my point about linking the paired introductions to the drawing group.",
+      "visualEn": "Authored alternative C. Offer the next turn and park only the named topic. Do not reveal the learner’s entire pending sentence or imply agreement with Noah’s still-unheard idea.",
+      "anchorHint": "I'd like to finish my point",
+      "screenLabelIds": [
+        "branch.c.label"
+      ],
+      "audioId": "L07.S03.d301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S03.d302": {
+      "id": "L07.S03.d302",
+      "speaker": "noah",
+      "text": "We could each draw or write one thing we'd like to try, then use that to introduce ourselves.",
+      "visualEn": "Now and only now in this branch reveal the exact complete F05 proposal in one clear speaking lane. The earlier overlap fragment is replaced, not repeated as a second full simultaneous paragraph. The proposal remains unadopted and does not supply the drawing group’s programme information.",
+      "anchorHint": "then use that to introduce ourselves",
+      "screenLabelIds": [
+        "branch.c.noah"
+      ],
+      "audioId": "L07.S03.d302",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S03.f301": {
+      "id": "L07.S03.f301",
+      "speaker": "coach",
+      "text": "This gives Noah room to explain and keeps a visible point to return to. The learner still needs to make that return; the phrase alone does not complete it. Hearing the proposal is not deciding to adopt it.",
+      "visualEn": "Retain the small parked-topic marker alongside Noah’s unadopted proposal. No completed return, agreement or successful activity is invented.",
+      "anchorHint": "the phrase alone does not complete it",
+      "screenLabelIds": [
+        "branch.c.note"
+      ],
+      "audioId": "L07.S03.f301",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L07.S03.h101": {
+      "kind": "hold",
+      "id": "L07.S03.h101",
+      "seconds": 8,
+      "purpose": "Privately distinguish the turn-taking need from choosing an activity.",
+      "visualEn": "Keep both fragments unfinished and the private area blank. The hold is learner reflection, not a continued real interruption or measured silence.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L07.S03.h102": {
+      "kind": "hold",
+      "id": "L07.S03.h102",
+      "seconds": 8,
+      "purpose": "Privately rehearse one proportionate turn-taking repair.",
+      "visualEn": "Keep the private area blank. Do not infer speaking, evaluate timing, record audio or decide the task on the viewer’s behalf.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {
+    "L07.I02": {
+      "kind": "choice",
+      "prompt": "Which move lets Noah explain his idea while preserving the learner’s unfinished point for a return?",
+      "watchChoice": "C",
+      "watchThinkSeconds": 8,
+      "rejoinCue": "L07.S03.c010",
+      "options": [
+        {
+          "id": "A",
+          "label": "Could I finish this point first?",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L07.S03.d101"
+            },
+            {
+              "kind": "line",
+              "id": "L07.S03.d102"
+            },
+            {
+              "kind": "line",
+              "id": "L07.S03.f101"
+            }
+          ]
+        },
+        {
+          "id": "B",
+          "label": "We both have ideas, so let's do both activities.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L07.S03.d201"
+            },
+            {
+              "kind": "line",
+              "id": "L07.S03.d202"
+            },
+            {
+              "kind": "line",
+              "id": "L07.S03.f201"
+            }
+          ]
+        },
+        {
+          "id": "C",
+          "label": "Go ahead, Noah. Afterwards, I'd like to finish my point about linking the paired introductions to the drawing group.",
+          "events": [
+            {
+              "kind": "line",
+              "id": "L07.S03.d301"
+            },
+            {
+              "kind": "line",
+              "id": "L07.S03.d302"
+            },
+            {
+              "kind": "line",
+              "id": "L07.S03.f301"
+            }
+          ]
+        }
+      ],
+      "skipNote": "Comparison skipped. Continue to the shared turn-taking explanation without assuming either full proposal was heard or any speaking order was agreed.",
+      "baseline": "Fresh S03 excerpt: learner fragment After exchanging names, pairs could— remains unfinished when Noah begins only We could each draw or write—. These are deliberately staged visual lanes in the silent review, not measured live speech. Intent is unknown. Full F05 is available only in branch C; A grants the learner a turn without completing either idea, and B does not finish Noah’s proposal. Retry removes all full-proposal reveals, turn permissions, parked topics and branch reactions, restoring only the two source fragments. Watch demonstrates C only after eight seconds. Practice waits indefinitely. Continue or Skip rejoins c010 once; common teaching cannot assume any proposal, granted turn or agreement from a branch.",
+      "id": "L07.I02",
+      "practiceTimeout": null,
+      "autoSelect": false,
+      "skipIsUnanswered": true,
+      "score": null,
+      "stateStorage": "memory only",
+      "branchOutcome": "Authored fictional continuation, not a prediction or universal reaction."
+    }
+  },
+  "boundary": "Use formal explanation and short explicitly fictional excerpts. A pause does not establish consent or a motive. Model replies are authored possibilities, not observed student speech or guaranteed effects."
+}

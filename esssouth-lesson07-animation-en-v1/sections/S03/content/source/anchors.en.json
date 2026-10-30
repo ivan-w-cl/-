@@ -1,0 +1,162 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L07.S03",
+  "anchors": {
+    "a_L07_S03_c001": {
+      "cueId": "L07.S03.c001",
+      "phrase": "Start a fresh excerpt",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c002": {
+      "cueId": "L07.S03.c002",
+      "phrase": "whether it was deliberate",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_d001": {
+      "cueId": "L07.S03.d001",
+      "phrase": "pairs could",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_d002": {
+      "cueId": "L07.S03.d002",
+      "phrase": "draw or write",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c003": {
+      "cueId": "L07.S03.c003",
+      "phrase": "not a complete comparison of ideas",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c004": {
+      "cueId": "L07.S03.c004",
+      "phrase": "does not mean agreeing",
+      "estimatedSeconds": 11.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c005": {
+      "cueId": "L07.S03.c005",
+      "phrase": "keep a short reminder",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c006": {
+      "cueId": "L07.S03.c006",
+      "phrase": "preserve what remains unfinished",
+      "estimatedSeconds": 9.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c007": {
+      "cueId": "L07.S03.c007",
+      "phrase": "what each actually accomplishes",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c008": {
+      "cueId": "L07.S03.c008",
+      "phrase": "not as approval of the idea itself",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c010": {
+      "cueId": "L07.S03.c010",
+      "phrase": "a decision about speaking order",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c011": {
+      "cueId": "L07.S03.c011",
+      "phrase": "has already been understood",
+      "estimatedSeconds": 15.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c012": {
+      "cueId": "L07.S03.c012",
+      "phrase": "the learner’s complete point",
+      "estimatedSeconds": 3.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_d003": {
+      "cueId": "L07.S03.d003",
+      "phrase": "one question about the weekly drawing group",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c013": {
+      "cueId": "L07.S03.c013",
+      "phrase": "even after the turn is clear",
+      "estimatedSeconds": 12.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c014": {
+      "cueId": "L07.S03.c014",
+      "phrase": "preserve the other point",
+      "estimatedSeconds": 7.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_c015": {
+      "cueId": "L07.S03.c015",
+      "phrase": "without pretending the discussion is settled",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_d101": {
+      "cueId": "L07.S03.d101",
+      "phrase": "finish this point first",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_d102": {
+      "cueId": "L07.S03.d102",
+      "phrase": "finish your point",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_f101": {
+      "cueId": "L07.S03.f101",
+      "phrase": "His yes concerns the speaking order",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_d201": {
+      "cueId": "L07.S03.d201",
+      "phrase": "let's do both activities",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_d202": {
+      "cueId": "L07.S03.d202",
+      "phrase": "haven't finished explaining",
+      "estimatedSeconds": 0.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_f201": {
+      "cueId": "L07.S03.f201",
+      "phrase": "one coherent activity",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_d301": {
+      "cueId": "L07.S03.d301",
+      "phrase": "I'd like to finish my point",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_d302": {
+      "cueId": "L07.S03.d302",
+      "phrase": "then use that to introduce ourselves",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S03_f301": {
+      "cueId": "L07.S03.f301",
+      "phrase": "the phrase alone does not complete it",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

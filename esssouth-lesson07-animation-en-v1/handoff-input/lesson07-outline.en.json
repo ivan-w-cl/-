@@ -1,0 +1,113 @@
+{
+  "lessonId": "L07",
+  "title": "Keep the Discussion Moving When It Gets Stuck",
+  "status": "New proposed complete Lesson07 production script, continuing the accepted visual and delivery conventions.",
+  "date": "2026-10-30",
+  "editorialTargetSeconds": 1800,
+  "estimatedWatchSeconds": 1680.791,
+  "measuredRuntimeSeconds": null,
+  "continuity": "L01 introduced shared discussion; L02 developed reasons; L03 listening and connected responses; L04 constructive disagreement; L05 task interpretation; L06 personal experience and follow-ups. L07 now practises restoring useful discussion when a pause, overlap, unbalanced participation or sidetrack needs attention.",
+  "boundaries": [
+    "Seven independently editable sections, not seven additional lessons.",
+    "Observe the immediate conversation before choosing a small useful intervention; waiting can be appropriate.",
+    "No universal silence threshold, compulsory leader, equal-turn quota or formula that guarantees a response.",
+    "Independent excerpts reset; behaviour in one example does not define a character personality.",
+    "A question about an activity is not evidence that participants have learned its answer.",
+    "20 minutes is the fictional welcome activity length, not a speaking, discussion or course deadline.",
+    "Silent overlap illustrations do not test hearing or detect real interruptions.",
+    "Practice remains authored and unrecorded. Model viewing cannot establish speech, repair success or consensus.",
+    "Final localized explanation, recorded English dialogue, overlap mixing and measured audio alignment belong to the later pass."
+  ],
+  "sections": [
+    {
+      "sectionId": "L07.S01",
+      "title": "Notice What the Discussion Needs",
+      "budgetSeconds": 210,
+      "spokenCueCount": 14,
+      "watchCueCount": 14,
+      "watchWords": 490,
+      "estimatedWatchSeconds": 230.9,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 230.9,
+      "interactions": [],
+      "learningOutcome": "Use observable words and turn-taking to identify a small next need; distinguish an unfinished task connection from assumed agreement, ignorance, hostility or a permanent participant trait."
+    },
+    {
+      "sectionId": "L07.S02",
+      "title": "Restart After a Pause",
+      "budgetSeconds": 270,
+      "spokenCueCount": 22,
+      "watchCueCount": 16,
+      "watchWords": 499,
+      "estimatedWatchSeconds": 247.459,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 207.552,
+      "interactions": [
+        "L07.I01"
+      ],
+      "learningOutcome": "Use a pause after a proposal as a context to observe and respond to, without inferring agreement or a motive; compare a focused open question with a premature decision or pressured invitation."
+    },
+    {
+      "sectionId": "L07.S03",
+      "title": "Handle Overlapping Turns",
+      "budgetSeconds": 270,
+      "spokenCueCount": 26,
+      "watchCueCount": 20,
+      "watchWords": 584,
+      "estimatedWatchSeconds": 281.643,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 240.45,
+      "interactions": [
+        "L07.I02"
+      ],
+      "learningOutcome": "Resolve an overlap by making room for a turn and preserving an unfinished point, without assuming hostile intent, treating turn-taking permission as agreement or combining proposals before they are understood."
+    },
+    {
+      "sectionId": "L07.S04",
+      "title": "Invite a Contribution Without Pressure",
+      "budgetSeconds": 270,
+      "spokenCueCount": 13,
+      "watchCueCount": 13,
+      "watchWords": 461,
+      "estimatedWatchSeconds": 224.123,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 224.123,
+      "interactions": [],
+      "learningOutcome": "Offer a relevant invitation that leaves the other person free to contribute, pass or come in later, without inferring motives or assigning equal speaking quotas."
+    },
+    {
+      "sectionId": "L07.S05",
+      "title": "Bring a Sidetrack Back to the Task",
+      "budgetSeconds": 270,
+      "spokenCueCount": 13,
+      "watchCueCount": 13,
+      "watchWords": 489,
+      "estimatedWatchSeconds": 234.122,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 234.122,
+      "interactions": [],
+      "learningOutcome": "Check whether a side topic contributes to the stated task, then redirect to a specific unresolved issue without dismissing creative ideas or inventing a discussion deadline."
+    },
+    {
+      "sectionId": "L07.S06",
+      "title": "Rehearse a Small Repair",
+      "budgetSeconds": 330,
+      "spokenCueCount": 15,
+      "watchCueCount": 15,
+      "watchWords": 591,
+      "estimatedWatchSeconds": 316.537,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 241.916,
+      "interactions": [
+        "L07.I03"
+      ],
+      "learningOutcome": "Privately rehearse one task-linked next move after a brief pause, leaving space for the actual reply and avoiding claims that the plan or discussion is already resolved."
+    },
+    {
+      "sectionId": "L07.S07",
+      "title": "Choose the Next Move in a New Discussion",
+      "budgetSeconds": 180,
+      "spokenCueCount": 9,
+      "watchCueCount": 9,
+      "watchWords": 296,
+      "estimatedWatchSeconds": 146.007,
+      "practiceCommonSecondsExcludingBranchesAndWaiting": 146.007,
+      "interactions": [],
+      "learningOutcome": "Choose a context-sensitive next move in a fresh task, using explicit words and relevance rather than a memorised intervention or guessed motive."
+    }
+  ]
+}

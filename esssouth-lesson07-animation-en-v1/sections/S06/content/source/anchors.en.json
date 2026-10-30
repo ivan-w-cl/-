@@ -1,0 +1,96 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L07.S06",
+  "anchors": {
+    "a_L07_S06_c001": {
+      "cueId": "L07.S06.c001",
+      "phrase": "what the moment needs",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_c002": {
+      "cueId": "L07.S06.c002",
+      "phrase": "Both aims still matter",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_d001": {
+      "cueId": "L07.S06.d001",
+      "phrase": "exchange names and interests",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_c003": {
+      "cueId": "L07.S06.c003",
+      "phrase": "a particular gap to consider",
+      "estimatedSeconds": 11.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_c004": {
+      "cueId": "L07.S06.c004",
+      "phrase": "you must take over",
+      "estimatedSeconds": 18.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_c005": {
+      "cueId": "L07.S06.c005",
+      "phrase": "the proposal already offered",
+      "estimatedSeconds": 7.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_c006": {
+      "cueId": "L07.S06.c006",
+      "phrase": "instead of immediately answering your own question",
+      "estimatedSeconds": 16.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_c007": {
+      "cueId": "L07.S06.c007",
+      "phrase": "continues automatically",
+      "estimatedSeconds": 4.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_c008": {
+      "cueId": "L07.S06.c008",
+      "phrase": "If you did not make an attempt",
+      "estimatedSeconds": 7.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_c009": {
+      "cueId": "L07.S06.c009",
+      "phrase": "rather than forcing your prepared follow-up",
+      "estimatedSeconds": 9.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_c010": {
+      "cueId": "L07.S06.c010",
+      "phrase": "leave a useful problem unresolved",
+      "estimatedSeconds": 16.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_c011": {
+      "cueId": "L07.S06.c011",
+      "phrase": "does not settle that wider decision",
+      "estimatedSeconds": 14.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_d101": {
+      "cueId": "L07.S06.d101",
+      "phrase": "How could they also help",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_d102": {
+      "cueId": "L07.S06.d102",
+      "phrase": "where the answers would come from",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S06_f101": {
+      "cueId": "L07.S06.f101",
+      "phrase": "an answer source still needs checking",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

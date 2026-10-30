@@ -1,0 +1,60 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L07.S07",
+  "anchors": {
+    "a_L07_S07_c001": {
+      "cueId": "L07.S07.c001",
+      "phrase": "They have not chosen",
+      "estimatedSeconds": 15.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S07_d001": {
+      "cueId": "L07.S07.d001",
+      "phrase": "wash the shared mugs",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S07_c002": {
+      "cueId": "L07.S07.c002",
+      "phrase": "its answer is still missing",
+      "estimatedSeconds": 12.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S07_d002": {
+      "cueId": "L07.S07.d002",
+      "phrase": "a moment to think",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S07_c003": {
+      "cueId": "L07.S07.c003",
+      "phrase": "more information than silence alone",
+      "estimatedSeconds": 3.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S07_d003": {
+      "cueId": "L07.S07.d003",
+      "phrase": "before we decide",
+      "estimatedSeconds": 5.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S07_c004": {
+      "cueId": "L07.S07.c004",
+      "phrase": "the contribution that follows",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S07_c005": {
+      "cueId": "L07.S07.c005",
+      "phrase": "what you can observe",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S07_c006": {
+      "cueId": "L07.S07.c006",
+      "phrase": "make room and check",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

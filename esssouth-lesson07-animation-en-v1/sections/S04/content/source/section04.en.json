@@ -1,0 +1,435 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L07.S04",
+  "title": "Invite a Contribution Without Pressure",
+  "budgetSeconds": 270,
+  "status": "New proposed Lesson 07 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Offer a relevant invitation that leaves the other person free to contribute, pass or come in later, without inferring motives or assigning equal speaking quotas.",
+  "scenario": {
+    "id": "L07.CASE01",
+    "kind": "Original fictional discussion training with independent resettable excerpts",
+    "caseLabel": "Practice example",
+    "sourcePrompt": "A community centre wants a 20-minute welcome activity for new members. Help them meet one another and find out about its weekly drawing group. Your group should recommend one activity and explain how it serves both aims. Use the main room and existing paper and pens; do not buy anything.",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "The required output is one recommended welcome activity and an explanation of how it serves both aims."
+      },
+      {
+        "id": "F02",
+        "text": "The welcome activity lasts 20 minutes, in the main room, using existing paper and pens without purchases."
+      },
+      {
+        "id": "F03",
+        "text": "The aims are helping new members meet one another and find out about the weekly drawing group."
+      },
+      {
+        "id": "F04",
+        "text": "Maya's initial proposal is: We could start in pairs and exchange names and interests."
+      },
+      {
+        "id": "F05",
+        "text": "Noah's separate proposal is: We could each draw or write one thing we'd like to try, then use that to introduce ourselves."
+      },
+      {
+        "id": "F06",
+        "text": "No option has been adopted and no activity has taken place. Proposal replies do not establish agreement or successful results."
+      },
+      {
+        "id": "F07",
+        "text": "Each section declares a fresh excerpt or reset. A pause, overlap, invitation or sidetrack in one excerpt is not evidence that a character has a fixed personality."
+      }
+    ],
+    "unknowns": [
+      "Why any participant pauses or speaks less",
+      "Whether an overlap is deliberate",
+      "What participants privately agree with",
+      "How many new members will attend",
+      "The drawing group's specific programme beyond its weekly occurrence",
+      "Which proposal the group will eventually adopt",
+      "Whether either activity would succeed"
+    ],
+    "episodes": {
+      "pause": {
+        "section": "S02",
+        "baseline": "Maya has just offered F04. A short pause follows. Noah has not yet responded to that proposal. The cause of the pause is unknown.",
+        "silenceSeconds": 4,
+        "timingMeaning": "A chosen illustration interval, not a universal threshold for intervening."
+      },
+      "overlap": {
+        "section": "S03",
+        "baseline": "Fresh excerpt. The learner begins to connect paired introductions to the weekly drawing group. Noah begins F05 before the learner finishes. Only the start of that proposal is presented in the overlap baseline; its full content becomes available if a branch invites him to continue.",
+        "pendingLearnerPoint": "After exchanging names, pairs could identify one question about the weekly drawing group.",
+        "clipDesign": "The silent review shows an explicitly marked two-lane overlap illustration. Do not infer speech interruption from silence or fake audio. Later voice production must deliberately verify any overlap timing and intelligibility."
+      },
+      "invitation": {
+        "section": "S04",
+        "baseline": "Fresh excerpt with F04 and F05 available as unadopted proposals. Maya has not yet commented on their comparison. The learner can offer an open invitation with permission to pass; no private motive is assigned."
+      },
+      "sidetrack": {
+        "section": "S05",
+        "baseline": "Fresh excerpt. While discussing the welcome activity, Noah asks: The centre's old sign looks dated. Which lettering style would be better? This is an authored side topic, not a verified fact about a real centre.",
+        "boundary": "A design topic is not inherently irrelevant. Ask whether it helps the stated welcome task; do not infer laziness or assign blame."
+      },
+      "rehearsal": {
+        "section": "S06",
+        "baseline": "Fresh excerpt. Maya offers F04; a brief pause follows and no one has linked the idea to the weekly drawing group yet. Rehearse one possible next move, not a final recommendation.",
+        "boundary": "Any model peer reply is separately authored and does not respond to the learner's unheard speech."
+      }
+    },
+    "state": {
+      "fictional": true,
+      "proposalAdopted": false,
+      "agreementInferredFromSilence": false,
+      "motiveInferred": false,
+      "realLearnerSpeechCaptured": false
+    },
+    "boundaries": [
+      "No universal silence duration, speaking quota, obligatory leader role or guaranteed polite-phrase effect.",
+      "A pause may be useful; an overlap may be accidental. Use observable words and timing, not mind-reading.",
+      "An invitation allows passing or later participation; do not force a quiet participant to explain themselves.",
+      "Repair one immediate difficulty, then leave space and respond to what actually follows.",
+      "No live speech detection, microphone, scoring, emotion detection or automatic evaluation.",
+      "The 20-minute activity is a scenario constraint, not the discussion time limit or the course runtime.",
+      "Short scenario dialogue is subordinate to formal animated explanation; no permanent three-person skit."
+    ]
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Participant",
+    "maya": "Maya",
+    "noah": "Noah",
+    "prompt_reader": "Prompt reader"
+  },
+  "blocks": [
+    {
+      "id": "L07.S04.B01",
+      "title": "Notice an Opportunity, Not a Personality",
+      "family": "fresh_comparison_excerpt",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S04.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S04.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S04.c003"
+        },
+        {
+          "kind": "hold",
+          "id": "L07.S04.h101"
+        }
+      ]
+    },
+    {
+      "id": "L07.S04.B02",
+      "title": "Make the Invitation Easy to Accept or Decline",
+      "family": "brief_authored_invitation",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S04.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S04.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S04.d002"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S04.d003"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S04.c005"
+        }
+      ]
+    },
+    {
+      "id": "L07.S04.B03",
+      "title": "Avoid Turning Inclusion Into Control",
+      "family": "invitation_boundary",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S04.c006"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S04.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S04.c008"
+        }
+      ]
+    },
+    {
+      "id": "L07.S04.B04",
+      "title": "Try an Invitation for the Starting Moment",
+      "family": "private_retrieval",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S04.c009"
+        },
+        {
+          "kind": "hold",
+          "id": "L07.S04.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S04.c010"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L07.S04.c001": {
+      "id": "L07.S04.c001",
+      "speaker": "coach",
+      "text": "An invitation can make space for another view. It should not turn a quieter moment into a test that someone has to pass. Start with what you can observe: who has commented on the current question, and what contribution would help the discussion.",
+      "visualEn": "Begin on a formal comparison board with a current-question space. Do not show personality labels, confidence meters or a ranking of speaking time.",
+      "anchorHint": "what you can observe",
+      "screenLabelIds": [
+        "section.title",
+        "invitation.purpose"
+      ],
+      "audioId": "L07.S04.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S04.c002": {
+      "id": "L07.S04.c002",
+      "speaker": "coach",
+      "text": "This is a fresh excerpt. Maya’s paired introductions and Noah’s drawing or writing suggestion are both available, but neither has been chosen. Maya has not yet commented on their comparison. That tells us nothing certain about her reasons or what she privately prefers.",
+      "visualEn": "Explicit reset label: Fresh excerpt · comparing two unadopted proposals. Display F04/F05 exactly as prior proposal cards, not new speech from Maya during this current comparison. Clear all earlier pause and overlap states.",
+      "anchorHint": "nothing certain about her reasons",
+      "screenLabelIds": [
+        "excerpt.reset",
+        "proposal.maya",
+        "proposal.noah",
+        "comparison.status",
+        "maya.observable"
+      ],
+      "audioId": "L07.S04.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S04.c003": {
+      "id": "L07.S04.c003",
+      "speaker": "coach",
+      "text": "Keep the task in view. The activity should help new members meet one another and find out about the weekly drawing group. An invitation can ask about that connection, rather than demand a complete new plan or ask why someone has been quiet.",
+      "visualEn": "Keep the exact source prompt available in a legible reference panel. Show the two aims as shared comparison questions; the 20 minutes belongs to the welcome activity, not speaking turns.",
+      "anchorHint": "rather than demand a complete new plan",
+      "screenLabelIds": [
+        "prompt.exact",
+        "goal.meet",
+        "goal.group",
+        "invitation.focus"
+      ],
+      "audioId": "L07.S04.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S04.c004": {
+      "id": "L07.S04.c004",
+      "speaker": "coach",
+      "text": "You could offer the question to everyone, or invite Maya if there is a natural opening. Keep it narrow enough to answer, and leave a genuine option to pass. A polite phrase is not enough if the person is still expected to justify declining.",
+      "visualEn": "Show optional Open invitation and Named invitation cards, with neither marked mandatory. A pass option is visible as a real choice, not a negative result.",
+      "anchorHint": "a genuine option to pass",
+      "screenLabelIds": [
+        "invitation.options",
+        "invitation.choice"
+      ],
+      "audioId": "L07.S04.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S04.d001": {
+      "id": "L07.S04.d001",
+      "speaker": "learner",
+      "text": "Maya, would you like to add anything about how these ideas could connect to the drawing group? It is fine to pass or come in later.",
+      "visualEn": "Brief authored learner invitation. Keep both proposals and the task visible. Maya’s expression stays neutral; do not animate expected compliance.",
+      "anchorHint": "fine to pass or come in later",
+      "screenLabelIds": [
+        "model.invitation"
+      ],
+      "audioId": "L07.S04.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S04.d002": {
+      "id": "L07.S04.d002",
+      "speaker": "maya",
+      "text": "I will listen for now.",
+      "visualEn": "Authored example response only, not a personality trait or an explanation of her private motive. Do not display agreement with either proposal.",
+      "anchorHint": "listen for now",
+      "screenLabelIds": [
+        "model.pass"
+      ],
+      "audioId": "L07.S04.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S04.d003": {
+      "id": "L07.S04.d003",
+      "speaker": "learner",
+      "text": "Of course.",
+      "visualEn": "A small acknowledgement, followed by space. No repeated prompt, why-question, praise, disappointment or pressure to speak.",
+      "anchorHint": "Of course",
+      "screenLabelIds": [
+        "model.acknowledge"
+      ],
+      "audioId": "L07.S04.d003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S04.c005": {
+      "id": "L07.S04.c005",
+      "speaker": "coach",
+      "text": "The invitation has been declined for now. Accept that response and return to the subject. Do not ask for a reason, announce that Maya lacks confidence, or treat her choice as agreement with either activity. She can decide whether to contribute later.",
+      "visualEn": "Return to the formal board, retaining No position inferred. Do not place a later Maya contribution on the timeline or imply that the invitation caused future participation.",
+      "anchorHint": "treat her choice as agreement",
+      "screenLabelIds": [
+        "pass.response",
+        "pass.meaning"
+      ],
+      "audioId": "L07.S04.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S04.c006": {
+      "id": "L07.S04.c006",
+      "speaker": "coach",
+      "text": "An invitation can also hide an attempt to obtain approval. Maya, you agree with me, right, points toward the answer the speaker wants. Asking what she would add or question leaves room for a different view. The distinction is about the choice you actually offer.",
+      "visualEn": "Show the leading question as an explicitly separate illustrative phrase, never a historical quote from the current excerpt. Contrast desired approval with an open contribution.",
+      "anchorHint": "a different view",
+      "screenLabelIds": [
+        "contrast.leading",
+        "contrast.open"
+      ],
+      "audioId": "L07.S04.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S04.c007": {
+      "id": "L07.S04.c007",
+      "speaker": "coach",
+      "text": "Do not keep returning to the same person after they have passed. Give space to the discussion and attend to a later attempt to join. Supporting participation includes making room when someone offers a point, not merely choosing who should speak next.",
+      "visualEn": "Show a neutral open discussion space and an optional later contribution marker with no predicted speaker or guaranteed event. No automatic summons or repeated highlight on Maya.",
+      "anchorHint": "making room when someone offers a point",
+      "screenLabelIds": [
+        "participation.space",
+        "participation.limit"
+      ],
+      "audioId": "L07.S04.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S04.c008": {
+      "id": "L07.S04.c008",
+      "speaker": "coach",
+      "text": "Equal speaking time is not a rule for every group discussion. Someone might make a brief useful observation; another point may need explanation. Stay attentive to access and relevance without counting compulsory turns or taking authority to allocate everyone’s words.",
+      "visualEn": "Use differently sized contribution cards without timers, quotas, leader badges or a universal balanced-turn target.",
+      "anchorHint": "without counting compulsory turns",
+      "screenLabelIds": [
+        "participation.check",
+        "participation.not"
+      ],
+      "audioId": "L07.S04.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S04.c009": {
+      "id": "L07.S04.c009",
+      "speaker": "coach",
+      "text": "Return to the comparison before any invitation was made. Privately form a brief invitation that relates to the task and allows passing. You could address the group rather than one person. Do not rehearse another request after Maya has already said she wants to listen.",
+      "visualEn": "Explicitly reset to the initial S04 comparison state. Hide the authored invitation and pass exchange. Keep prior proposal cards and a blank private area.",
+      "anchorHint": "before any invitation was made",
+      "screenLabelIds": [
+        "reflection.reset",
+        "reflection.prompt"
+      ],
+      "audioId": "L07.S04.c009",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S04.c010": {
+      "id": "L07.S04.c010",
+      "speaker": "coach",
+      "text": "Check what your wording asks for and whether declining is genuinely possible. After an invitation, leave room for an answer, a pass, or continued thinking. The aim is an opening the person can use, not a promise that they will speak.",
+      "visualEn": "Finish with optional self-checks. No speaking-success badge or claim that the discussion has been repaired.",
+      "anchorHint": "not a promise that they will speak",
+      "screenLabelIds": [
+        "review.focus",
+        "review.choice",
+        "recap"
+      ],
+      "audioId": "L07.S04.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L07.S04.h101": {
+      "kind": "hold",
+      "id": "L07.S04.h101",
+      "seconds": 8,
+      "purpose": "Privately distinguish the observable lack of a comparison comment from unknown motives.",
+      "visualEn": "Keep the task and observable statement readable. Do not invent a thought bubble or fill the private response area.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L07.S04.h102": {
+      "kind": "hold",
+      "id": "L07.S04.h102",
+      "seconds": 12,
+      "purpose": "Privately form an invitation from the fresh starting moment.",
+      "visualEn": "Keep the private area blank; no simulated contribution or inferred completion.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {},
+  "boundary": "Use formal explanation and short explicitly fictional excerpts. A pause does not establish consent or a motive. Model replies are authored possibilities, not observed student speech or guaranteed effects."
+}

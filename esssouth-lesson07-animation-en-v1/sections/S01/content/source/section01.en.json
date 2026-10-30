@@ -1,0 +1,450 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L07.S01",
+  "title": "Notice What the Discussion Needs",
+  "budgetSeconds": 210,
+  "status": "New proposed Lesson 07 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Use observable words and turn-taking to identify a small next need; distinguish an unfinished task connection from assumed agreement, ignorance, hostility or a permanent participant trait.",
+  "scenario": {
+    "id": "L07.CASE01",
+    "kind": "Original fictional discussion training with independent resettable excerpts",
+    "caseLabel": "Practice example",
+    "sourcePrompt": "A community centre wants a 20-minute welcome activity for new members. Help them meet one another and find out about its weekly drawing group. Your group should recommend one activity and explain how it serves both aims. Use the main room and existing paper and pens; do not buy anything.",
+    "facts": [
+      {
+        "id": "F01",
+        "text": "The required output is one recommended welcome activity and an explanation of how it serves both aims."
+      },
+      {
+        "id": "F02",
+        "text": "The welcome activity lasts 20 minutes, in the main room, using existing paper and pens without purchases."
+      },
+      {
+        "id": "F03",
+        "text": "The aims are helping new members meet one another and find out about the weekly drawing group."
+      },
+      {
+        "id": "F04",
+        "text": "Maya's initial proposal is: We could start in pairs and exchange names and interests."
+      },
+      {
+        "id": "F05",
+        "text": "Noah's separate proposal is: We could each draw or write one thing we'd like to try, then use that to introduce ourselves."
+      },
+      {
+        "id": "F06",
+        "text": "No option has been adopted and no activity has taken place. Proposal replies do not establish agreement or successful results."
+      },
+      {
+        "id": "F07",
+        "text": "Each section declares a fresh excerpt or reset. A pause, overlap, invitation or sidetrack in one excerpt is not evidence that a character has a fixed personality."
+      }
+    ],
+    "unknowns": [
+      "Why any participant pauses or speaks less",
+      "Whether an overlap is deliberate",
+      "What participants privately agree with",
+      "How many new members will attend",
+      "The drawing group's specific programme beyond its weekly occurrence",
+      "Which proposal the group will eventually adopt",
+      "Whether either activity would succeed"
+    ],
+    "episodes": {
+      "pause": {
+        "section": "S02",
+        "baseline": "Maya has just offered F04. A short pause follows. Noah has not yet responded to that proposal. The cause of the pause is unknown.",
+        "silenceSeconds": 4,
+        "timingMeaning": "A chosen illustration interval, not a universal threshold for intervening."
+      },
+      "overlap": {
+        "section": "S03",
+        "baseline": "Fresh excerpt. The learner begins to connect paired introductions to the weekly drawing group. Noah begins F05 before the learner finishes. Only the start of that proposal is presented in the overlap baseline; its full content becomes available if a branch invites him to continue.",
+        "pendingLearnerPoint": "After exchanging names, pairs could identify one question about the weekly drawing group.",
+        "clipDesign": "The silent review shows an explicitly marked two-lane overlap illustration. Do not infer speech interruption from silence or fake audio. Later voice production must deliberately verify any overlap timing and intelligibility."
+      },
+      "invitation": {
+        "section": "S04",
+        "baseline": "Fresh excerpt with F04 and F05 available as unadopted proposals. Maya has not yet commented on their comparison. The learner can offer an open invitation with permission to pass; no private motive is assigned."
+      },
+      "sidetrack": {
+        "section": "S05",
+        "baseline": "Fresh excerpt. While discussing the welcome activity, Noah asks: The centre's old sign looks dated. Which lettering style would be better? This is an authored side topic, not a verified fact about a real centre.",
+        "boundary": "A design topic is not inherently irrelevant. Ask whether it helps the stated welcome task; do not infer laziness or assign blame."
+      },
+      "rehearsal": {
+        "section": "S06",
+        "baseline": "Fresh excerpt. Maya offers F04; a brief pause follows and no one has linked the idea to the weekly drawing group yet. Rehearse one possible next move, not a final recommendation.",
+        "boundary": "Any model peer reply is separately authored and does not respond to the learner's unheard speech."
+      }
+    },
+    "state": {
+      "fictional": true,
+      "proposalAdopted": false,
+      "agreementInferredFromSilence": false,
+      "motiveInferred": false,
+      "realLearnerSpeechCaptured": false
+    },
+    "boundaries": [
+      "No universal silence duration, speaking quota, obligatory leader role or guaranteed polite-phrase effect.",
+      "A pause may be useful; an overlap may be accidental. Use observable words and timing, not mind-reading.",
+      "An invitation allows passing or later participation; do not force a quiet participant to explain themselves.",
+      "Repair one immediate difficulty, then leave space and respond to what actually follows.",
+      "No live speech detection, microphone, scoring, emotion detection or automatic evaluation.",
+      "The 20-minute activity is a scenario constraint, not the discussion time limit or the course runtime.",
+      "Short scenario dialogue is subordinate to formal animated explanation; no permanent three-person skit."
+    ]
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Participant",
+    "maya": "Maya",
+    "noah": "Noah",
+    "prompt_reader": "Prompt reader"
+  },
+  "blocks": [
+    {
+      "id": "L07.S01.B01",
+      "title": "Notice before Intervening",
+      "family": "task_context_and_observation",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S01.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S01.c002"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S01.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S01.d002"
+        }
+      ]
+    },
+    {
+      "id": "L07.S01.B02",
+      "title": "Describe What the Words Establish",
+      "family": "observable_content_and_open_task",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S01.c003"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S01.c004"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S01.c005"
+        },
+        {
+          "kind": "hold",
+          "id": "L07.S01.h101"
+        }
+      ]
+    },
+    {
+      "id": "L07.S01.B03",
+      "title": "Do Not Read Motives from a Moment",
+      "family": "unknown_motive_and_timing",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S01.c006"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S01.c007"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S01.c008"
+        }
+      ]
+    },
+    {
+      "id": "L07.S01.B04",
+      "title": "Choose a Small Move with a Purpose",
+      "family": "repair_scope_and_limits",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S01.c009"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S01.c010"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S01.c011"
+        },
+        {
+          "kind": "hold",
+          "id": "L07.S01.h102"
+        }
+      ]
+    },
+    {
+      "id": "L07.S01.B05",
+      "title": "Respond to What Actually Follows",
+      "family": "neutral_bridge",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S01.c012"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L07.S01.c001": {
+      "id": "L07.S01.c001",
+      "speaker": "coach",
+      "text": "When a discussion slows down, the next useful move is not always to speak more. First notice what is happening and what the group still needs. A short pause, an unfinished explanation and two overlapping turns call for different judgements.",
+      "visualEn": "Open with three separate schematic excerpts: a pause, an unfinished link and two turn lanes. Label them examples rather than a simultaneous real event. Keep the formal teaching board dominant.",
+      "anchorHint": "different judgements",
+      "screenLabelIds": [
+        "section.title",
+        "observation.focus"
+      ],
+      "audioId": "L07.S01.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.c002": {
+      "id": "L07.S01.c002",
+      "speaker": "coach",
+      "text": "Use this practice task. The activity’s twenty-minute limit is a condition of the plan, not a timer for the discussion. No recommendation has been adopted and no activity has taken place.",
+      "visualEn": "Establish Practice example before the source prompt. Show a planning-time card, not a discussion countdown, and leave the selected activity empty.",
+      "anchorHint": "not a timer for the discussion",
+      "screenLabelIds": [
+        "case.label",
+        "case.state"
+      ],
+      "audioId": "L07.S01.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.d001": {
+      "id": "L07.S01.d001",
+      "speaker": "prompt_reader",
+      "text": "A community centre wants a 20-minute welcome activity for new members. Help them meet one another and find out about its weekly drawing group. Your group should recommend one activity and explain how it serves both aims. Use the main room and existing paper and pens; do not buy anything.",
+      "visualEn": "Display the exact full source prompt with phrase-aligned emphasis. The reader is offstage, with no examiner artwork. Preserve wording and punctuation. This English prompt remains an unvoiced reading slot in the silent handoff and stays English in later localization.",
+      "anchorHint": "explain how it serves both aims",
+      "localizationRole": "keep_english",
+      "screenLabelIds": [
+        "source.prompt"
+      ],
+      "audioId": "L07.S01.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice."
+    },
+    "L07.S01.d002": {
+      "id": "L07.S01.d002",
+      "speaker": "maya",
+      "text": "We could start in pairs and exchange names and interests.",
+      "visualEn": "Introduce a fresh excerpt: Maya offers only the exact initial proposal. Keep it as an unadopted idea and do not show successful new-member outcomes or Noah’s separate proposal.",
+      "anchorHint": "exchange names and interests",
+      "screenLabelIds": [
+        "proposal.maya"
+      ],
+      "audioId": "L07.S01.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S01.c003": {
+      "id": "L07.S01.c003",
+      "speaker": "coach",
+      "text": "Maya has offered paired introductions. Exchanging names and interests could provide a way for people to meet. Her sentence has not yet explained how newcomers would find out about the weekly drawing group. That link remains open.",
+      "visualEn": "Connect the proposal conditionally to meeting people. Leave a separate find-out-about-the-group link visibly unresolved. Do not require one opening sentence to solve the entire brief.",
+      "anchorHint": "That link remains open",
+      "screenLabelIds": [
+        "proposal.possible",
+        "task.open"
+      ],
+      "audioId": "L07.S01.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.c004": {
+      "id": "L07.S01.c004",
+      "speaker": "coach",
+      "text": "An open link is something to develop, not proof that the idea is poor or its speaker is unprepared. A useful next contribution might explore that connection instead of replacing the whole proposal.",
+      "visualEn": "Keep Maya’s idea intact while opening one task-link space. No red cross, character judgement, competence score or invented diagnosis.",
+      "anchorHint": "not proof that the idea is poor",
+      "screenLabelIds": [
+        "repair.target"
+      ],
+      "audioId": "L07.S01.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.c005": {
+      "id": "L07.S01.c005",
+      "speaker": "coach",
+      "text": "Privately separate a fact from an interpretation. What has Maya actually suggested, and what question does the task still leave us to examine? Stay with the words and the shared aim.",
+      "visualEn": "Retain the exact proposal and both source aims beside a blank private note. No choice, motive or answer is automatically assigned.",
+      "anchorHint": "separate a fact from an interpretation",
+      "screenLabelIds": [
+        "reflection.prompt"
+      ],
+      "audioId": "L07.S01.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.c006": {
+      "id": "L07.S01.c006",
+      "speaker": "coach",
+      "text": "A pause does not tell you whether others agree, are thinking, have missed a point or prefer another idea. Those are possibilities. Unless someone provides more information, the cause of that pause remains unknown.",
+      "visualEn": "Show one pause with several neutral possible explanations outside the known-facts area. Do not depict a thought bubble as a character’s actual internal state.",
+      "anchorHint": "the cause of that pause remains unknown",
+      "screenLabelIds": [
+        "pause.boundary"
+      ],
+      "audioId": "L07.S01.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.c007": {
+      "id": "L07.S01.c007",
+      "speaker": "coach",
+      "text": "Likewise, beginning at the same moment does not by itself establish hostility. One person speaking less in a short excerpt does not make them the quiet member of the group. Describe the moment rather than assigning a personality.",
+      "visualEn": "Use separate timing lanes and a bounded excerpt frame. No angry acting, persistent quiet-person badge or inferred intent.",
+      "anchorHint": "rather than assigning a personality",
+      "screenLabelIds": [
+        "traits.boundary"
+      ],
+      "audioId": "L07.S01.c007",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.c008": {
+      "id": "L07.S01.c008",
+      "speaker": "coach",
+      "text": "Sometimes leaving a little space is useful. Sometimes a focused question helps. There is no single pause length after which someone must take charge, and no need to appoint yourself the leader to make a small contribution.",
+      "visualEn": "Keep waiting and a focused question as context-dependent options. Do not introduce a universal seconds threshold, speaking quota or leader hierarchy.",
+      "anchorHint": "no single pause length",
+      "screenLabelIds": [
+        "timing.rule",
+        "role.rule"
+      ],
+      "audioId": "L07.S01.c008",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.c009": {
+      "id": "L07.S01.c009",
+      "speaker": "coach",
+      "text": "Ask what your next words would make easier: understanding an idea, finishing a turn, connecting a proposal to the task, or hearing another view. Choose the immediate need rather than trying to manage everything at once.",
+      "visualEn": "Display four optional repair purposes around the open task link. Do not number them as a compulsory sequence or select one for the viewer.",
+      "anchorHint": "Choose the immediate need",
+      "screenLabelIds": [
+        "repair.resources"
+      ],
+      "audioId": "L07.S01.c009",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.c010": {
+      "id": "L07.S01.c010",
+      "speaker": "coach",
+      "text": "For this proposal, asking how it could introduce the drawing group would bring attention to a missing link. The question would not supply the programme details or prove that the activity works. Those still need to be worked out.",
+      "visualEn": "Use a question card pointing to the unresolved find-out aim. Keep programme information and its source unknown; do not invent a facilitator, answer sheet or confirmed programme.",
+      "anchorHint": "would not supply the programme details",
+      "screenLabelIds": [
+        "repair.possible",
+        "repair.limit"
+      ],
+      "audioId": "L07.S01.c010",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.c011": {
+      "id": "L07.S01.c011",
+      "speaker": "coach",
+      "text": "Privately choose one small move for the excerpt. You may leave space or form a focused question. Think about what it would help the group do next, rather than how it would make you appear.",
+      "visualEn": "Keep the same excerpt unchanged and a blank private next-move area. No recording, default intervention, performance score or invented response.",
+      "anchorHint": "what it would help the group do next",
+      "screenLabelIds": [
+        "private.prompt"
+      ],
+      "audioId": "L07.S01.c011",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S01.c012": {
+      "id": "L07.S01.c012",
+      "speaker": "coach",
+      "text": "After a small move, leave room and attend to the reply. Its usefulness depends on what happens next, not just on a polite phrase. We will start with one fresh example of a pause after a proposal.",
+      "visualEn": "Settle the task-link board, then label the next section as a fresh excerpt. No successful result, adopted plan or character state is carried forward.",
+      "anchorHint": "attend to the reply",
+      "screenLabelIds": [
+        "next.title"
+      ],
+      "audioId": "L07.S01.c012",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L07.S01.h101": {
+      "kind": "hold",
+      "id": "L07.S01.h101",
+      "seconds": 8,
+      "purpose": "Privately identify the offered idea and one open task connection.",
+      "visualEn": "Keep the private area blank. Retain only the supplied proposal and task, without inserting a model answer or marking a completed attempt.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L07.S01.h102": {
+      "kind": "hold",
+      "id": "L07.S01.h102",
+      "seconds": 8,
+      "purpose": "Privately choose one proportionate next move without assuming another person’s motive.",
+      "visualEn": "Leave the response blank. Viewers may pause for longer; no model becomes their answer and no participation is inferred.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {},
+  "boundary": "Use formal explanation and short explicitly fictional excerpts. A pause does not establish consent or a motive. Model replies are authored possibilities, not observed student speech or guaranteed effects."
+}

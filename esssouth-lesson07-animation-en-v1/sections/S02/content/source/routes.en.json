@@ -1,0 +1,172 @@
+{
+  "sectionId": "L07.S02",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L07.S02.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.d001"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S02.h001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S02.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c008"
+    },
+    {
+      "kind": "watch_hold",
+      "id": "L07.I01.watchThink",
+      "seconds": 8
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.d201"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.d202"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.f201"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c012"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S02.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c013"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L07.S02.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.d001"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S02.h001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S02.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c008"
+    },
+    {
+      "kind": "gate",
+      "id": "L07.I01",
+      "seconds": null
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c011"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c012"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S02.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S02.c013"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L07.S02",
+    "title": "Restart After a Pause",
+    "budgetSeconds": 270,
+    "spokenCueCount": 22,
+    "watchCueCount": 16,
+    "watchWords": 499,
+    "estimatedWatchSeconds": 247.459,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 207.552,
+    "interactions": [
+      "L07.I01"
+    ],
+    "learningOutcome": "Use a pause after a proposal as a context to observe and respond to, without inferring agreement or a motive; compare a focused open question with a premature decision or pressured invitation."
+  }
+}

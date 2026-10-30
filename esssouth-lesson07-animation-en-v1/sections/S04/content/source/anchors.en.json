@@ -1,0 +1,84 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L07.S04",
+  "anchors": {
+    "a_L07_S04_c001": {
+      "cueId": "L07.S04.c001",
+      "phrase": "what you can observe",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_c002": {
+      "cueId": "L07.S04.c002",
+      "phrase": "nothing certain about her reasons",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_c003": {
+      "cueId": "L07.S04.c003",
+      "phrase": "rather than demand a complete new plan",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_c004": {
+      "cueId": "L07.S04.c004",
+      "phrase": "a genuine option to pass",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_d001": {
+      "cueId": "L07.S04.d001",
+      "phrase": "fine to pass or come in later",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_d002": {
+      "cueId": "L07.S04.d002",
+      "phrase": "listen for now",
+      "estimatedSeconds": 0.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_d003": {
+      "cueId": "L07.S04.d003",
+      "phrase": "Of course",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_c005": {
+      "cueId": "L07.S04.c005",
+      "phrase": "treat her choice as agreement",
+      "estimatedSeconds": 11.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_c006": {
+      "cueId": "L07.S04.c006",
+      "phrase": "a different view",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_c007": {
+      "cueId": "L07.S04.c007",
+      "phrase": "making room when someone offers a point",
+      "estimatedSeconds": 12.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_c008": {
+      "cueId": "L07.S04.c008",
+      "phrase": "without counting compulsory turns",
+      "estimatedSeconds": 12.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_c009": {
+      "cueId": "L07.S04.c009",
+      "phrase": "before any invitation was made",
+      "estimatedSeconds": 1.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S04_c010": {
+      "cueId": "L07.S04.c010",
+      "phrase": "not a promise that they will speak",
+      "estimatedSeconds": 14.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

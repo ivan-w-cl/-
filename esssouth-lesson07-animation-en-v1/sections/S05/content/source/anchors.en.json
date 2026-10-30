@@ -1,0 +1,84 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L07.S05",
+  "anchors": {
+    "a_L07_S05_c001": {
+      "cueId": "L07.S05.c001",
+      "phrase": "what connection it has to the decision",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_c002": {
+      "cueId": "L07.S05.c002",
+      "phrase": "a different design question appears",
+      "estimatedSeconds": 14.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_d001": {
+      "cueId": "L07.S05.d001",
+      "phrase": "Which lettering style would be better?",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_c003": {
+      "cueId": "L07.S05.c003",
+      "phrase": "a missing connection to examine",
+      "estimatedSeconds": 9.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_d002": {
+      "cueId": "L07.S05.d002",
+      "phrase": "help new members meet",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_c004": {
+      "cueId": "L07.S05.c004",
+      "phrase": "A clear link could change your judgement",
+      "estimatedSeconds": 4.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_c005": {
+      "cueId": "L07.S05.c005",
+      "phrase": "a possible task-related design question",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_c006": {
+      "cueId": "L07.S05.c006",
+      "phrase": "if the connection is still unclear",
+      "estimatedSeconds": 0.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_d003": {
+      "cueId": "L07.S05.d003",
+      "phrase": "We still need that link",
+      "estimatedSeconds": 6.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_c007": {
+      "cueId": "L07.S05.c007",
+      "phrase": "without deciding the answer for everyone",
+      "estimatedSeconds": 16.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_c008": {
+      "cueId": "L07.S05.c008",
+      "phrase": "not each person’s turn",
+      "estimatedSeconds": 5.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_c009": {
+      "cueId": "L07.S05.c009",
+      "phrase": "Leave room to hear what follows",
+      "estimatedSeconds": 14.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S05_c010": {
+      "cueId": "L07.S05.c010",
+      "phrase": "when its purpose is explained",
+      "estimatedSeconds": 9.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

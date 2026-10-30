@@ -1,0 +1,90 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L07.S01",
+  "anchors": {
+    "a_L07_S01_c001": {
+      "cueId": "L07.S01.c001",
+      "phrase": "different judgements",
+      "estimatedSeconds": 16.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c002": {
+      "cueId": "L07.S01.c002",
+      "phrase": "not a timer for the discussion",
+      "estimatedSeconds": 6.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_d001": {
+      "cueId": "L07.S01.d001",
+      "phrase": "explain how it serves both aims",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_d002": {
+      "cueId": "L07.S01.d002",
+      "phrase": "exchange names and interests",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c003": {
+      "cueId": "L07.S01.c003",
+      "phrase": "That link remains open",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c004": {
+      "cueId": "L07.S01.c004",
+      "phrase": "not proof that the idea is poor",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c005": {
+      "cueId": "L07.S01.c005",
+      "phrase": "separate a fact from an interpretation",
+      "estimatedSeconds": 0.429,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c006": {
+      "cueId": "L07.S01.c006",
+      "phrase": "the cause of that pause remains unknown",
+      "estimatedSeconds": 11.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c007": {
+      "cueId": "L07.S01.c007",
+      "phrase": "rather than assigning a personality",
+      "estimatedSeconds": 14.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c008": {
+      "cueId": "L07.S01.c008",
+      "phrase": "no single pause length",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c009": {
+      "cueId": "L07.S01.c009",
+      "phrase": "Choose the immediate need",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c010": {
+      "cueId": "L07.S01.c010",
+      "phrase": "would not supply the programme details",
+      "estimatedSeconds": 8.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c011": {
+      "cueId": "L07.S01.c011",
+      "phrase": "what it would help the group do next",
+      "estimatedSeconds": 8.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S01_c012": {
+      "cueId": "L07.S01.c012",
+      "phrase": "attend to the reply",
+      "estimatedSeconds": 3.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

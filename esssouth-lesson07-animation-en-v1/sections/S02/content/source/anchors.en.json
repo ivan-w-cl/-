@@ -1,0 +1,138 @@
+{
+  "schema": "esssouth.semantic-anchors/1",
+  "sectionId": "L07.S02",
+  "anchors": {
+    "a_L07_S02_c001": {
+      "cueId": "L07.S02.c001",
+      "phrase": "Begin a fresh excerpt",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_d001": {
+      "cueId": "L07.S02.d001",
+      "phrase": "exchange names and interests",
+      "estimatedSeconds": 2.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c002": {
+      "cueId": "L07.S02.c002",
+      "phrase": "That is all the excerpt establishes",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c003": {
+      "cueId": "L07.S02.c003",
+      "phrase": "what the group still needs to explore",
+      "estimatedSeconds": 4.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c004": {
+      "cueId": "L07.S02.c004",
+      "phrase": "no one has confirmed",
+      "estimatedSeconds": 13.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c005": {
+      "cueId": "L07.S02.c005",
+      "phrase": "whether the others accept the idea",
+      "estimatedSeconds": 11.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c006": {
+      "cueId": "L07.S02.c006",
+      "phrase": "leaving opinions unassumed",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c007": {
+      "cueId": "L07.S02.c007",
+      "phrase": "what each opening asks others to do",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c008": {
+      "cueId": "L07.S02.c008",
+      "phrase": "not agreement to adopt it",
+      "estimatedSeconds": 10.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c010": {
+      "cueId": "L07.S02.c010",
+      "phrase": "what remains open in the task",
+      "estimatedSeconds": 6.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c011": {
+      "cueId": "L07.S02.c011",
+      "phrase": "cannot guarantee progress",
+      "estimatedSeconds": 13.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c012": {
+      "cueId": "L07.S02.c012",
+      "phrase": "or choose to wait",
+      "estimatedSeconds": 4.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_c013": {
+      "cueId": "L07.S02.c013",
+      "phrase": "check what it assumes",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_d101": {
+      "cueId": "L07.S02.d101",
+      "phrase": "No one has objected",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_d102": {
+      "cueId": "L07.S02.d102",
+      "phrase": "I haven't said whether I agree",
+      "estimatedSeconds": 0.0,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_f101": {
+      "cueId": "L07.S02.f101",
+      "phrase": "in place of confirmation",
+      "estimatedSeconds": 7.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_d201": {
+      "cueId": "L07.S02.d201",
+      "phrase": "find out about the weekly drawing group",
+      "estimatedSeconds": 3.857,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_d202": {
+      "cueId": "L07.S02.d202",
+      "phrase": "draw or write one thing",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_f201": {
+      "cueId": "L07.S02.f201",
+      "phrase": "so that work remains",
+      "estimatedSeconds": 14.571,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_d301": {
+      "cueId": "L07.S02.d301",
+      "phrase": "Tell us what you think now",
+      "estimatedSeconds": 2.143,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_d302": {
+      "cueId": "L07.S02.d302",
+      "phrase": "a moment to think",
+      "estimatedSeconds": 1.286,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    },
+    "a_L07_S02_f301": {
+      "cueId": "L07.S02.f301",
+      "phrase": "leave room to think, pass or contribute later",
+      "estimatedSeconds": 10.714,
+      "status": "Estimated phrase onset; replace with measured alignment after final narration."
+    }
+  }
+}

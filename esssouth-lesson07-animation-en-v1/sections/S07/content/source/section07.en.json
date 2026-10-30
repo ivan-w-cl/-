@@ -1,0 +1,293 @@
+{
+  "schema": "esssouth.section-graph-review/1",
+  "sectionId": "L07.S07",
+  "title": "Choose the Next Move in a New Discussion",
+  "budgetSeconds": 180,
+  "status": "New proposed Lesson 07 production script, 2026-10-30. No new animation or narration in this handoff.",
+  "learningOutcome": "Choose a context-sensitive next move in a fresh task, using explicit words and relevance rather than a memorised intervention or guessed motive.",
+  "scenario": {
+    "id": "L07.TRANSFER01",
+    "kind": "Original fictional transfer discussion, independent of the welcome activity",
+    "caseLabel": "New practice example",
+    "sourcePrompt": "A team is comparing two ways to reduce disposable cups in a shared workspace: bringing a personal mug, or borrowing a reusable mug from a shared shelf. Compare the options and identify one practical question to check before making a recommendation.",
+    "facts": [
+      {
+        "id": "T01",
+        "text": "The task is to compare two options and identify one practical question before making a recommendation."
+      },
+      {
+        "id": "T02",
+        "text": "Noah asks who would wash the shared mugs. Cleaning arrangements are not supplied."
+      },
+      {
+        "id": "T03",
+        "text": "Maya says she would like a moment to think about that question. She has not rejected either option or agreed to a recommendation."
+      },
+      {
+        "id": "T04",
+        "text": "No recommendation has been adopted. A question recorded for checking is still unanswered."
+      }
+    ],
+    "unknowns": [
+      "Cleaning arrangements",
+      "Storage capacity",
+      "Costs",
+      "Participant preferences",
+      "Which option would be selected",
+      "Actual environmental effect"
+    ],
+    "state": {
+      "recommendationAdopted": false,
+      "cleaningQuestionAnswered": false,
+      "motiveInferredBeyondSpokenWords": false
+    },
+    "boundary": "This is a new scenario, not another episode at the community centre. No real workplace policy or measured environmental claim is made."
+  },
+  "participants": {
+    "coach": "Coach",
+    "learner": "Participant",
+    "maya": "Maya",
+    "noah": "Noah",
+    "prompt_reader": "Prompt reader"
+  },
+  "blocks": [
+    {
+      "id": "L07.S07.B01",
+      "title": "Start from a new task",
+      "family": "task and live-question map",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S07.c001"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S07.d001"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S07.c002"
+        }
+      ]
+    },
+    {
+      "id": "L07.S07.B02",
+      "title": "Use what was actually said",
+      "family": "short exchange to observation board",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S07.d002"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S07.c003"
+        },
+        {
+          "kind": "hold",
+          "id": "L07.S07.h101"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S07.d003"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S07.c004"
+        }
+      ]
+    },
+    {
+      "id": "L07.S07.B03",
+      "title": "Choose the smallest useful next move",
+      "family": "compact transfer board",
+      "steps": [
+        {
+          "kind": "line",
+          "id": "L07.S07.c005"
+        },
+        {
+          "kind": "hold",
+          "id": "L07.S07.h102"
+        },
+        {
+          "kind": "line",
+          "id": "L07.S07.c006"
+        }
+      ]
+    }
+  ],
+  "cues": {
+    "L07.S07.c001": {
+      "id": "L07.S07.c001",
+      "speaker": "coach",
+      "text": "Try the same judgement in a different discussion. A team is comparing personal mugs with reusable mugs borrowed from a shared shelf. They need to compare the options and identify one practical question before making a recommendation. They have not chosen yet.",
+      "visualEn": "Reset the entire stage with New practice example. Show two option cards and the exact source prompt in an accessible panel. Remove all welcome-activity props, pending lines, decisions and colour associations. No environmental impact figures.",
+      "anchorHint": "They have not chosen",
+      "screenLabelIds": [
+        "s07.new",
+        "s07.personal",
+        "s07.shared",
+        "s07.task"
+      ],
+      "audioId": "L07.S07.c001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S07.d001": {
+      "id": "L07.S07.d001",
+      "speaker": "noah",
+      "text": "Who would wash the shared mugs?",
+      "visualEn": "Brief example. Noah asks an open practical question; no accusation, answer card or washing rota is invented. Keep both options unselected.",
+      "anchorHint": "wash the shared mugs",
+      "screenLabelIds": [
+        "s07.question"
+      ],
+      "audioId": "L07.S07.d001",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S07.c002": {
+      "id": "L07.S07.c002",
+      "speaker": "coach",
+      "text": "Cleaning may sound like a side topic, but it affects how the shared-mug option could work. Return to the actual task before redirecting. Here, the question is relevant, and its answer is still missing. A quick move back to choosing would leave that issue unresolved.",
+      "visualEn": "Return to formal board. Link Cleaning? to Shared mug practicality with a conditional explanatory link. Keep Question to check visible; no check mark or selected option. Do not carry over the sign-design judgement from S05.",
+      "anchorHint": "its answer is still missing",
+      "screenLabelIds": [
+        "s07.relevant",
+        "s07.open"
+      ],
+      "audioId": "L07.S07.c002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S07.d002": {
+      "id": "L07.S07.d002",
+      "speaker": "maya",
+      "text": "I would like a moment to think about that.",
+      "visualEn": "Maya speaks with a neutral thinking pose. Her request is explicit evidence; do not add embarrassment, disagreement or inability labels. Keep the ongoing question visible.",
+      "anchorHint": "a moment to think",
+      "screenLabelIds": [
+        "s07.request"
+      ],
+      "audioId": "L07.S07.d002",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S07.c003": {
+      "id": "L07.S07.c003",
+      "speaker": "coach",
+      "text": "Maya has asked for thinking time. That gives you more information than silence alone. You do not need to press her for an immediate opinion or interpret the pause as agreement. Consider a response that leaves the question open and gives her room.",
+      "visualEn": "Analyse only the exact request. Show Observable request → Allow space; do not animate a psychological diagnosis or a countdown to forced intervention. All cast idle movement settles.",
+      "anchorHint": "more information than silence alone",
+      "screenLabelIds": [
+        "s07.observed",
+        "s07.space"
+      ],
+      "audioId": "L07.S07.c003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S07.d003": {
+      "id": "L07.S07.d003",
+      "speaker": "learner",
+      "text": "Take your time. We can note cleaning as a question to check before we decide.",
+      "visualEn": "Show One possible response. The cleaning card moves to Questions to check, retaining its question mark. Maya is not forced to nod, answer or approve an option.",
+      "anchorHint": "before we decide",
+      "screenLabelIds": [
+        "s07.possible",
+        "s07.park"
+      ],
+      "audioId": "L07.S07.d003",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.",
+      "localizationRole": "keep_english"
+    },
+    "L07.S07.c004": {
+      "id": "L07.S07.c004",
+      "speaker": "coach",
+      "text": "The question stays available; nobody has answered it or agreed on an option. This is a small next move, not a finished repair. What happens next depends on the contribution that follows. If it introduces useful information, listen to it rather than repeating your prepared line.",
+      "visualEn": "Keep all outcome fields open. The model reply card settles; no success glow, progress score, vote or automatic reply appears. Return from the cast to the task/question board.",
+      "anchorHint": "the contribution that follows",
+      "screenLabelIds": [
+        "s07.next",
+        "s07.unresolved"
+      ],
+      "audioId": "L07.S07.c004",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S07.c005": {
+      "id": "L07.S07.c005",
+      "speaker": "coach",
+      "text": "Across these examples, start with what you can observe. Is someone still finishing a point? Has a person asked for time? Is a new topic relevant to the task? The same sentence will not fit every situation, and sometimes waiting is the useful choice.",
+      "visualEn": "Three observation cards appear one at a time: Unfinished point / Requested time / Task relevance. Keep action choices contextual, not an automatic flowchart with fixed time limits.",
+      "anchorHint": "what you can observe",
+      "screenLabelIds": [
+        "s07.observe",
+        "s07.wait"
+      ],
+      "audioId": "L07.S07.c005",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    },
+    "L07.S07.c006": {
+      "id": "L07.S07.c006",
+      "speaker": "coach",
+      "text": "Try one small move, then make room and check what actually follows. You can return to a missed point, invite a contribution, or bring attention back to the shared task. You do not have to take charge of every turn to help a discussion continue.",
+      "visualEn": "Close with Observe → Make a small move → Listen, using ordinary neutral connectors. This is a flexible reminder, not a universal recipe. End on normal replay/section navigation without rewards or automatic participation assessment.",
+      "anchorHint": "make room and check",
+      "screenLabelIds": [
+        "s07.end"
+      ],
+      "audioId": "L07.S07.c006",
+      "lang": "en",
+      "textStatus": "Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.",
+      "delivery": "Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.",
+      "localizationRole": "coach_explanation"
+    }
+  },
+  "holds": {
+    "L07.S07.h101": {
+      "kind": "hold",
+      "id": "L07.S07.h101",
+      "seconds": 8,
+      "purpose": "Privately consider one response to the stated request; no answer or performance is inferred.",
+      "visualEn": "Settle request and unanswered cleaning card. This is a teaching reflection hold, not a depiction of exactly how long Maya needs.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    },
+    "L07.S07.h102": {
+      "kind": "hold",
+      "id": "L07.S07.h102",
+      "seconds": 8,
+      "purpose": "Choose an observation and a small next move from any example; optional private reflection.",
+      "visualEn": "Keep the three observation cards and a blank Next move area. No recording control, completed-attempt flag or fabricated learner answer.",
+      "modes": [
+        "watch",
+        "practice"
+      ],
+      "recordedResponse": false
+    }
+  },
+  "interactions": {},
+  "boundary": "Use formal explanation and short explicitly fictional excerpts. A pause does not establish consent or a motive. Model replies are authored possibilities, not observed student speech or guaranteed effects."
+}

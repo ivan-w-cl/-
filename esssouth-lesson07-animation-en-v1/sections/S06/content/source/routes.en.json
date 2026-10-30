@@ -1,0 +1,164 @@
+{
+  "sectionId": "L07.S06",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L07.S06.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.d001"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S06.h100"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S06.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c007"
+    },
+    {
+      "kind": "watch_hold",
+      "id": "L07.I03.watchThink",
+      "seconds": 35
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.d101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.d102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.f101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S06.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c011"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L07.S06.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.d001"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S06.h100"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S06.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c007"
+    },
+    {
+      "kind": "gate",
+      "id": "L07.I03",
+      "seconds": null
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c010"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S06.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S06.c011"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L07.S06",
+    "title": "Rehearse a Small Repair",
+    "budgetSeconds": 330,
+    "spokenCueCount": 15,
+    "watchCueCount": 15,
+    "watchWords": 591,
+    "estimatedWatchSeconds": 316.537,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 241.916,
+    "interactions": [
+      "L07.I03"
+    ],
+    "learningOutcome": "Privately rehearse one task-linked next move after a brief pause, leaving space for the actual reply and avoiding claims that the plan or discussion is already resolved."
+  }
+}

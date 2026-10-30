@@ -1,0 +1,140 @@
+{
+  "sectionId": "L07.S05",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L07.S05.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S05.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c009"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S05.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c010"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L07.S05.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c003"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S05.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c005"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.d003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c009"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S05.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S05.c010"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L07.S05",
+    "title": "Bring a Sidetrack Back to the Task",
+    "budgetSeconds": 270,
+    "spokenCueCount": 13,
+    "watchCueCount": 13,
+    "watchWords": 489,
+    "estimatedWatchSeconds": 234.122,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 234.122,
+    "interactions": [],
+    "learningOutcome": "Check whether a side topic contributes to the stated task, then redirect to a specific unresolved issue without dismissing creative ideas or inventing a discussion deadline."
+  }
+}

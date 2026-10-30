@@ -1,0 +1,148 @@
+{
+  "sectionId": "L07.S01",
+  "status": "Derived authoring routes; not compiled runtime or a browser test.",
+  "watch": [
+    {
+      "kind": "line",
+      "id": "L07.S01.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S01.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c011"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S01.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c012"
+    }
+  ],
+  "practiceCommon": [
+    {
+      "kind": "line",
+      "id": "L07.S01.c001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.d001"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.d002"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c003"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c004"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c005"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S01.h101"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c006"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c007"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c008"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c009"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c010"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c011"
+    },
+    {
+      "kind": "hold",
+      "id": "L07.S01.h102"
+    },
+    {
+      "kind": "line",
+      "id": "L07.S01.c012"
+    }
+  ],
+  "estimates": {
+    "sectionId": "L07.S01",
+    "title": "Notice What the Discussion Needs",
+    "budgetSeconds": 210,
+    "spokenCueCount": 14,
+    "watchCueCount": 14,
+    "watchWords": 490,
+    "estimatedWatchSeconds": 230.9,
+    "practiceCommonSecondsExcludingBranchesAndWaiting": 230.9,
+    "interactions": [],
+    "learningOutcome": "Use observable words and turn-taking to identify a small next need; distinguish an unfinished task connection from assumed agreement, ignorance, hostility or a permanent participant trait."
+  }
+}

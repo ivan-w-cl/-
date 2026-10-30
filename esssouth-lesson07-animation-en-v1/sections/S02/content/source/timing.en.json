@@ -1,0 +1,126 @@
+{
+  "schema": "esssouth.timing-estimate/1",
+  "sectionId": "L07.S02",
+  "wordsPerMinute": 140,
+  "cues": {
+    "L07.S02.c001": {
+      "seconds": 16.636,
+      "wordCount": 38,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.d001": {
+      "seconds": 4.636,
+      "wordCount": 10,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c002": {
+      "seconds": 16.636,
+      "wordCount": 38,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c003": {
+      "seconds": 14.921,
+      "wordCount": 34,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c004": {
+      "seconds": 15.35,
+      "wordCount": 35,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c005": {
+      "seconds": 14.493,
+      "wordCount": 33,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c006": {
+      "seconds": 15.779,
+      "wordCount": 36,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c007": {
+      "seconds": 14.493,
+      "wordCount": 33,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c008": {
+      "seconds": 12.779,
+      "wordCount": 29,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c010": {
+      "seconds": 15.779,
+      "wordCount": 36,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c011": {
+      "seconds": 15.35,
+      "wordCount": 35,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c012": {
+      "seconds": 13.207,
+      "wordCount": 30,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.c013": {
+      "seconds": 17.493,
+      "wordCount": 40,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.d101": {
+      "seconds": 4.636,
+      "wordCount": 10,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.d102": {
+      "seconds": 5.493,
+      "wordCount": 12,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.f101": {
+      "seconds": 14.921,
+      "wordCount": 34,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.d201": {
+      "seconds": 7.207,
+      "wordCount": 16,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.d202": {
+      "seconds": 8.064,
+      "wordCount": 18,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.f201": {
+      "seconds": 16.636,
+      "wordCount": 38,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.d301": {
+      "seconds": 5.064,
+      "wordCount": 11,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.d302": {
+      "seconds": 3.35,
+      "wordCount": 7,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    },
+    "L07.S02.f301": {
+      "seconds": 17.493,
+      "wordCount": 40,
+      "status": "Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."
+    }
+  },
+  "holds": {
+    "L07.S02.h001": 4,
+    "L07.S02.h101": 8,
+    "L07.S02.h102": 8
+  },
+  "watchThinkingHolds": {
+    "L07.I01": 8
+  },
+  "practiceWaiting": "Unbounded; not part of fixed runtime."
+}
