@@ -83,12 +83,15 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l07; const pos = (n) => [n.
   // bubble text = exact cue text for every character line (rendered)
   const bubbleChecks = [];
   for (const [k, r] of Object.entries(info.routes)) for (const s of r.steps.filter((s) => s.kind === 'line' && !/^.*\.c\d+$|\.f\d+$/.test(s.id) && s.speakerId !== 'prompt_reader')) {
-    const txt = await p.evaluate(([t, k]) => { window.__l07.renderAt(t, k); const b = document.querySelector('#stage .tok[data-token="bubL"]'); return { o: +b.style.opacity, text: b.querySelector('.tx').textContent }; }, [s.end - 0.2, k]);
-    bubbleChecks.push({ route: k, id: s.id, ok: txt.o > 0.9 && txt.text === info.routes[k] && true || txt.o > 0.9, text: txt.text, o: txt.o });
+    const txt = await p.evaluate(([t, k, id]) => { window.__l07.renderAt(t, k); const b = document.querySelector('#stage .tok[data-token="bubL"]'); const want = window.L07_DATA.graph.cues[id].text;
+      // L07 S03: the two overlap fragments are shown in labelled turn lanes (no avatars), so an exact visible lane card also counts
+      const lane = [...document.querySelectorAll('#stage .tok')].some((n) => n !== b && +n.style.opacity > 0.9 && n.querySelector('.tx') && n.querySelector('.tx').textContent === want);
+      return { o: +b.style.opacity, text: b.querySelector('.tx').textContent, lane }; }, [s.end - 0.2, k, s.id]);
+    bubbleChecks.push({ route: k, id: s.id, text: txt.text, o: txt.o, lane: txt.lane });
   }
   const cueText = await p.evaluate(() => Object.fromEntries(Object.entries(window.L07_DATA.graph.cues).map(([k, c]) => [k, c.text])));
-  const badBub = bubbleChecks.filter((b) => !(b.o > 0.9 && b.text === cueText[b.id]));
-  ok('every character line shows its exact words in a visible bubble near its end', badBub.length === 0, badBub);
+  const badBub = bubbleChecks.filter((b) => !((b.o > 0.9 && b.text === cueText[b.id]) || (b.lane && b.o < 0.05)));
+  ok('every character line shows its exact words in a visible bubble (or, for an illustrated overlap, an exact lane card) near its end', badBub.length === 0, badBub);
   // L07: the offstage prompt reader has no avatar or bubble; its exact words are shown on a visible card instead
   const promptChecks = [];
   for (const [k, r] of Object.entries(info.routes)) for (const s of r.steps.filter((s) => s.kind === 'line' && s.speakerId === 'prompt_reader')) {
@@ -97,6 +100,18 @@ const AUDIT_AT = ([t, k, A]) => { const L = window.__l07; const pos = (n) => [n.
     promptChecks.push(Object.assign({ route: k, id: s.id }, vis));
   }
   ok('every prompt-reader line shows its exact words on a visible card, with no avatar bubble', promptChecks.every((c) => c.card && c.bubble < 0.05), promptChecks);
+
+  // L07: a branch-only reveal (a label branch.<k>.noah, e.g. Noah's full F05) is never on stage outside its own branch steps
+  const reveal = await p.evaluate(() => { const Lb = window.L07_DATA.labels.labels; return Object.keys(Lb).filter((k) => /^branch\.[a-c]\.noah$/.test(k)).map((k) => ({ key: k.split('.')[1].toUpperCase(), text: Lb[k] })); });
+  if (reveal.length) {
+    const leaks = [];
+    for (const [k, r] of Object.entries(info.routes)) for (let t = 0; t < r.duration; t += 0.25) {
+      const st = r.steps.find((x) => t >= x.start && t < x.end) || r.steps[r.steps.length - 1];
+      const seen = await p.evaluate(([t, k, texts]) => { window.__l07.renderAt(t, k); return texts.filter((x) => [...document.querySelectorAll('#stage .tok')].some((n) => +n.style.opacity > 0.02 && n.querySelector('.tx') && n.querySelector('.tx').textContent.includes(x))); }, [t, k, reveal.map((x) => x.text)]);
+      seen.forEach((x) => { const own = reveal.find((y) => y.text === x).key; if (!(st.branch === own)) leaks.push({ route: k, t, step: st.id, key: own }); });
+    }
+    ok('branch-only reveal (' + reveal.map((x) => x.key).join() + ') is visible only inside its own branch, on every route', leaks.length === 0, leaks.slice(0, 10));
+  }
 
   // ---------- 2 · determinism + layout audit over every route ----------
   const audit = {}, det = []; const step = QUICK ? 1.0 : 0.25;

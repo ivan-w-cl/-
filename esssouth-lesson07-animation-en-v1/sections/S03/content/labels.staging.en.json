@@ -1,0 +1,21 @@
+{
+  "schema": "esssouth.l07.staging-labels/1",
+  "sectionId": "L07.S03",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or the interaction baseline. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+  "labels": {
+    "x.lane.p": "Participant",
+    "x.lane.n": "Noah",
+    "x.silent": "Silent illustration: drawn order, not recorded speech",
+    "x.unfinished": "Unfinished turn",
+    "x.overlapZone": "Overlap",
+    "x.t.offer": "Offer room to finish",
+    "x.t.ask": "Ask to finish your own point",
+    "x.park": "Return to: linking pairs to the drawing group",
+    "x.unadopted": "Proposal, not adopted",
+    "x.turnNext": "Next turn: Participant (speaking order only)",
+    "x.merge": "“Do both”: an unconfirmed merge",
+    "x.s.offer": "Offer the turn",
+    "x.s.listen": "Listen to what follows",
+    "x.s.return": "Return explicitly"
+  }
+}

@@ -1671,7 +1671,7 @@ window.L07_DATA = {"sectionId":"L07.S02","num":"7.2","graph":{"schema":"esssouth
     tf = branch('d301', 'd302', 'f301', 'branch.c.label', 'ask:noah', 'ask:learner', ['Tell us what you think now'], ['a moment to think']);
     if (tf != null) { S.rise('u0', tf + 0.4, G.fUnk); ['fo0', 'fo1', 'fo2'].forEach((id, i) => S.rise(id, at('sC_room') + 0.4 + i * 0.4, G.fOpt[i])); S.title(a('f301') - 0.2, 'branch.c.note'); }
     // ---- B04 · c010: every path rejoins on the common pause, proposal and open task point only ----
-    t = X0('c010'); X.roomOut(t); X.clearAll(t); S.head(t, B(4), null); S.title(t, null);
+    t = X0('c010'); X.roomOut(t); S.hide(['nProp'], t, 0.01); X.clearAll(t, ['nProp']); S.head(t, B(4), null); // the branch-only F05 card leaves at once (no fade into the common rejoin) S.title(t, null);
     S.rise('caseL', t + 0.2, G.eCase); S.rise('prop', at('s2_alone'), G.jProp, { tag: '' }); S.rise('pause', at('s2_alone') + 0.3, G.jPause); S.rise('open', at('s2_combine'), G.jOpen);
     S.title(a('c010') - 0.2, 'shared.check');
     // ---- c011: three possible subsequent needs (not one enacted conversation) ----
