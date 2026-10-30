@@ -1,0 +1,1980 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>esssouth · L08 · 6.6 Rehearse a Faithful Summary and Next Step (silent review)</title>
+<style>/* shared/toolkit/style.css */
+/* esssouth Lesson 02 · Section 05 (from the Lesson 01 · Section 01 stylesheet). Starts from the accepted Section 03 stylesheet (via Sections 04–06): same palette, type and stage, plus the S05/S06 card kinds and the S01 additions. */
+:root { --bg:#F6F7F9; --surface:#FFFFFF; --ink:#202632; --muted:#5D6878; --blue:#356CC8; --teal:#30766D; --line:#B9C5D6; --pale:#E8EFFA; --green:#E6F2EF;
+  --font: Inter, 'Segoe UI', 'Noto Sans', 'Noto Sans Symbols', 'Noto Sans CJK SC', 'Noto Sans Arabic', 'Noto Sans Devanagari', system-ui, sans-serif; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #E9ECF1; color: var(--ink); font-family: var(--font); }
+.page { max-width: max(760px, min(1320px, calc((100vh - 200px) * 16 / 9 + 32px))); margin: 0 auto; padding: 18px 16px 40px; } /* the stage also fits short desktop windows, with the controls in view */
+.head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; align-items: baseline; margin-bottom: 10px; }
+.head h1 { font-size: 19px; margin: 0; font-weight: 650; }
+.head .tag { font-size: 12.5px; color: #8A4B12; background: #FBEFD9; border-radius: 6px; padding: 3px 8px; }
+.viewport { position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; border-radius: 10px; background: var(--bg); box-shadow: 0 1px 2px rgba(20,30,50,.08), 0 8px 30px rgba(20,30,50,.10); }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; margin-top: 12px; font-size: 14px; }
+.controls button { font: inherit; font-size: 14px; padding: 8px 12px; border-radius: 8px; border: 1px solid #C9D0DA; background: #fff; color: var(--ink); cursor: pointer; min-height: 40px; }
+.controls button.primary { background: var(--ink); color: #fff; border-color: var(--ink); min-width: 92px; }
+.controls button:disabled { opacity: .45; cursor: default; }
+.controls select { font: inherit; font-size: 14px; min-height: 40px; padding: 4px 8px; border-radius: 8px; border: 1px solid #C9D0DA; background: #fff; color: var(--ink); cursor: pointer; }
+.controls select:disabled { opacity: .45; cursor: default; }
+.controls input[type=range] { flex: 1 1 260px; accent-color: var(--blue); }
+.seg { display: inline-flex; border: 1px solid #C9D0DA; border-radius: 8px; overflow: hidden; }
+.controls .seg button { border: 0; border-radius: 0; min-height: 38px; }
+.controls .seg button[aria-pressed="true"] { background: var(--blue); color: #fff; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.time { font-variant-numeric: tabular-nums; color: var(--muted); min-width: 140px; }
+.badge { font-size: 12.5px; color: var(--muted); background: #fff; border: 1px solid #DDE2EA; border-radius: 6px; padding: 3px 8px; }
+label.tg { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+.cueline { margin-top: 8px; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.notes { margin-top: 10px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+.notes .err { color: #9B2C2C; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+body.export { background: var(--bg); overflow: hidden; }
+body.export .page { max-width: none; padding: 0; margin: 0; }
+body.export .head, body.export .controls, body.export .notes, body.export .cueline { display: none; }
+body.export .viewport { width: 1920px; height: 1080px; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+
+/* stage */
+#stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; overflow: hidden; background: var(--bg); font-family: var(--font); }
+.layer { position: absolute; inset: 0; pointer-events: none; }
+.secchip { position: absolute; left: 96px; top: 52px; display: flex; gap: 14px; align-items: center; }
+.secchip .num { font-size: 22px; font-weight: 700; color: #fff; background: var(--ink); border-radius: 10px; padding: 6px 12px; }
+.secchip .t { font-size: 30px; font-weight: 600; white-space: nowrap; }
+.tchips { position: absolute; right: 96px; top: 54px; display: flex; gap: 10px; }
+.tchips span { height: 44px; padding: 0 16px; border-radius: 22px; font-size: 21px; font-weight: 600; display: flex; align-items: center; border: 2px solid #CBD3DE; background: var(--surface); white-space: nowrap; }
+.kicker { position: absolute; }
+.lbl2 { position: absolute; line-height: 1.22; overflow-wrap: anywhere; }
+.lbl2.mini { font-size: 20px; font-weight: 650; letter-spacing: .03em; color: #5D7FB8; text-transform: uppercase; }
+.lbl2.mini.center { text-align: center; }
+.lbl2.skipped { font-size: 21px; color: var(--muted); text-align: right; }
+.bx { position: absolute; border-radius: 22px; border: 2px solid #D5DBE4; background: var(--surface); }
+.bx.soft { background: #EEF1F6; border-color: transparent; }
+.bx.emph { background: var(--pale); border-color: #9DB6E0; }
+.bx.hypo { background: rgba(250,252,255,.7); border: 3px dashed #9DB6E0; }
+.bx.bar { border-radius: 4px; border: 0; background: #E1E5EB; }
+.hypoframe { position: absolute; left: 40px; top: 124px; width: 1840px; height: 752px; border: 3px dashed #9DB6E0; border-radius: 30px; background: rgba(232,239,250,.18); }
+.qmark { position: absolute; width: 40px; font-size: 30px; font-weight: 700; color: var(--blue); text-align: center; }
+.cnum { position: absolute; width: 54px; height: 54px; border-radius: 50%; background: var(--pale); color: var(--blue); font-size: 24px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.hl { color: var(--blue); font-weight: 650; }
+
+/* room */
+.room { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform-origin: 0 0; }
+.room svg { position: absolute; inset: 0; }
+.room-ov { position: absolute; inset: 0; }
+.bubble { position: absolute; max-width: 760px; background: var(--surface); border: 2px solid #D5DBE4; border-radius: 24px; padding: 16px 26px 18px; font-size: 40px; line-height: 1.26; font-weight: 500; box-shadow: 0 2px 12px rgba(20,30,50,.07); }
+.bubble .who { display: block; font-size: 20px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 4px; }
+.bubble .row { display: block; }
+.bubble .tail { position: absolute; bottom: -13px; width: 24px; height: 24px; background: inherit; border: inherit; border-top: 0; border-left: 0; transform: rotate(45deg); }
+
+/* captions */
+.capbar { position: absolute; left: 96px; right: 96px; top: 884px; height: 140px; background: var(--surface); border: 2px solid #E1E5EB; border-radius: 22px; display: flex; align-items: center; gap: 28px; padding: 0 40px; }
+.capbar .who { display: flex; align-items: center; gap: 10px; font-size: 24px; font-weight: 700; min-width: 120px; white-space: nowrap; }
+.capbar .who i { width: 14px; height: 14px; border-radius: 50%; }
+.capbar .ctext { flex: 1; font-size: 42px; line-height: 1.24; max-height: 106px; overflow: hidden; }
+
+/* persistent objects (tokens) */
+.tok { position: absolute; }
+.tok.measure { position: absolute; }
+.t2 { position: absolute; inset: 0; display: flex; align-items: center; gap: .5em; border-radius: 16px; border: 2px solid #D5DBE4; background: var(--surface); padding: 0 .7em; font-weight: 600; color: var(--ink); line-height: 1.2; overflow: hidden; }
+.t2 .lt { flex: none; width: 1.55em; height: 1.55em; border-radius: 50%; border: 2px solid #8592A6; display: none; align-items: center; justify-content: center; font-size: .82em; font-weight: 700; color: #5D6878; }
+.t2.showlt .lt { display: flex; }
+.t2 .who { display: none; font-size: .58em; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+.t2 .tx { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.t2.showwho { flex-direction: column; align-items: flex-start; justify-content: center; gap: .12em; }
+.t2.showwho .who { display: block; }
+.t2.showwho .tx { flex: none; }
+.ttag { position: absolute; left: 0; top: calc(100% + 6px); white-space: nowrap; font-size: 18px; font-weight: 650; color: #5D7FB8; background: #F4F7FC; border: 1.5px dashed #9DB6E0; border-radius: 10px; padding: 2px 10px; }
+.ttail { position: absolute; left: calc(50% - 12px); bottom: -11px; width: 22px; height: 22px; background: #fff; border-right: 2px solid #D5DBE4; border-bottom: 2px solid #D5DBE4; transform: rotate(45deg); }
+.t2.idea, .t2.goal, .t2.tour, .t2.q, .t2.ctx, .t2.cand, .t2.crit, .t2.direction, .t2.step, .t2.tool, .t2.turn { justify-content: center; text-align: center; }
+.t2.rail .tx, .t2.ctx .tx, .t2.tour .tx, .t2.tool .tx { white-space: nowrap; flex: none; }
+.t2.step .tx { flex: none; max-width: 100%; }
+.t2.open { border-style: dashed; border-color: #8FA8D6; }
+.t2.open .tx::after { content: ' ?'; color: var(--blue); }
+.t2.prop { box-shadow: 0 6px 16px rgba(20,30,50,.12); }
+.t2.goal { background: var(--green); border-color: #8FC2B8; }
+.t2.goal.flag, .t2.goal.q { border-style: dashed; border-color: #30766D; }
+.t2.goal.q { background: #F2F8F6; color: #1F5A52; }
+.t2.q { background: var(--pale); border-color: #9DB6E0; font-weight: 650; }
+.t2.q.rail { background: #FAFCFF; border-style: dashed; font-weight: 600; }
+.t2.q.title { background: transparent; border-color: transparent; justify-content: flex-start; text-align: left; font-weight: 700; padding: 0; }
+.t2.ctx { background: #F1F3F7; border-color: #E1E5EB; color: #4C5768; font-weight: 650; }
+.t2.ctx.frame { background: #F4F7FC; border: 2px dashed #9DB6E0; color: #3E62A6; }
+.t2.reply.card { font-weight: 550; }
+.t2.reply.quote { font-weight: 550; }
+.t2.bubble { border-radius: 24px; box-shadow: 0 2px 12px rgba(20,30,50,.07); font-weight: 500; padding: .35em .8em; }
+.t2.bubble.other { border-style: dashed; color: var(--muted); justify-content: center; box-shadow: none; }
+.t2.tour, .t2.proposal, .t2.check { border-style: dashed; border-color: #8FA8D6; background: #FAFCFF; color: #2F5BA8; }
+.t2.check { border-color: #C7A55B; background: #FFFBF0; color: #6E5214; }
+.t2.quote { font-weight: 550; padding: 0 1.1em; }
+.t2.quote.speaker { padding: .5em 1em; }
+.t2.col { flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: .7em .8em; gap: .45em; border-radius: 22px; font-weight: 650; }
+.t2.col .tx { flex: none; }
+.t2.col.key { border-color: #9DB6E0; background: #F4F8FE; }
+.t2.tool { background: #F1F3F7; border-color: #C9D0DA; color: #3B4556; border-radius: 30px; }
+.t2.cand { font-weight: 650; }
+.t2.cand.tour { color: #2F5BA8; }
+.t2.crit { background: #F7F8FA; border-color: #D5DBE4; font-weight: 600; }
+.t2.crit.tentative { border-style: dashed; border-color: #C7A55B; }
+.t2.direction { border-style: dashed; border-color: #8FA8D6; color: #2F5BA8; }
+.t2.step { background: #F7F8FA; border-color: #CBD3DE; font-weight: 650; }
+.t2.step.tentative { border-style: dashed; border-color: #C7A55B; background: #FFFBF0; }
+.t2.step.gap { border-style: dashed; border-color: #9AA6B8; color: #8592A6; background: transparent; }
+.t2.rowhl { background: rgba(53,108,200,.07); border-color: #B9CDEE; }
+.t2.turn { background: #F7F8FA; border-color: #CBD3DE; font-weight: 600; }
+.t2.line { background: var(--surface); border-color: #CBD3DE; font-weight: 550; padding: 0 1em; }
+.t2.line.empty { border-style: dashed; background: transparent; }
+.t2.line.filled { border-color: transparent; background: transparent; }
+.t2.active { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(53,108,200,.28); }
+.t2.goal.active { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(48,118,109,.28); }
+.t2.rowhl.active { box-shadow: none; }
+/* practice controls inside the stage */
+.layer.ui { pointer-events: none; }
+.sbtn { position: absolute; pointer-events: auto; font: inherit; font-size: 26px; font-weight: 600; border-radius: 12px; border: 2px solid #C9D0DA; background: #fff; color: var(--ink); cursor: pointer; }
+.sbtn.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+.sbtn.link { background: transparent; border-color: transparent; color: var(--blue); text-decoration: underline; text-underline-offset: 4px; }
+.sbtn.card { background: transparent; border-color: transparent; border-radius: 16px; }
+.sbtn.card:hover { border-color: #9DB6E0; background: rgba(53,108,200,.05); }
+.sbtn:focus-visible { outline: 4px solid var(--blue); outline-offset: 3px; }
+/* review aid: outline every text slot, red where text overflows (?debug=slots) */
+body.debug-slots .lbl2 { outline: 1px dashed rgba(53,108,200,.5); }
+body.debug-slots .overflow { outline: 3px solid #C0392B !important; } /* review aid only; never shown in normal playback */
+.t2.ctx.replay { background: #EAF0FA; border-color: #9DB6E0; color: #2F5BA8; justify-content: flex-start; }
+.t2.ctx.replay .tx::before { content: '\21BA\00a0\00a0'; font-weight: 700; }
+.watermark { position: absolute; right: 96px; bottom: 18px; font-size: 18px; font-weight: 700; letter-spacing: .08em; color: #8A4B12; background: #FBEFD9; border-radius: 6px; padding: 4px 10px; }
+
+/* ---- Section 04 object kinds ---- */
+.t2.hchip { border-radius: 22px; border: 2px solid #CBD3DE; background: var(--surface); justify-content: center; white-space: nowrap; font-weight: 600; padding: 0 .75em; }
+.t2.chipcard { border-radius: 22px; border: 2px solid #CBD3DE; background: var(--surface); justify-content: center; font-weight: 650; }
+.t2.tourcard { background: #F4F8FE; border-color: #9DB6E0; font-weight: 650; }
+.t2.concern { background: #FFF7EC; border: 2px solid #D9B178; color: #5B3D12; justify-content: center; text-align: center; font-weight: 650; }
+.t2.concern.ask .tx::after { content: ' ?'; color: var(--blue); }
+.t2.concern.quoteline { font-weight: 550; font-style: normal; }
+.t2.goal.open { border-style: dashed; }
+.t2.goal.open .tx::after { content: ' ?'; color: var(--blue); }
+.t2.proposal.open { border-style: dashed; color: #5D6878; }
+.t2.proposal.pending { border-style: dashed; border-color: #C7A55B; background: #FFFBF0; color: #6E5214; }
+.t2.mapcard { flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: .55em .8em; background: #F7FAF9; border-color: #A9CBC3; font-weight: 650; }
+.t2.mapcard.flat { justify-content: center; align-items: center; text-align: center; }
+.t2.placeholder { border: 2px dashed #B9C5D6; background: #F3F5F8; color: #8592A6; justify-content: center; font-weight: 600; }
+.t2.placeholder.faded { opacity: .55; text-decoration: line-through; text-decoration-color: rgba(133,146,166,.5); }
+.t2.tray { flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: .45em .8em; background: #FFFBF0; border: 2px dashed #C7A55B; color: #6E5214; font-weight: 700; }
+.t2.tray.open { background: #F7F8FA; border-color: #9AA6B8; color: #5D6878; }
+.t2.check { justify-content: center; text-align: center; }
+.t2.stagecard { background: #F4F8FE; border: 2px solid #9DB6E0; justify-content: center; text-align: center; font-weight: 650; }
+.t2.stagecard.hallcard { background: #EEF6F4; border-color: #8FC2B8; }
+.t2.namebubble { border-radius: 14px; border: 2px solid #9DB6E0; padding: 0;
+  background: radial-gradient(circle at 50% 38%, #B9CBEA 0 13%, transparent 14%), radial-gradient(ellipse 26% 20% at 50% 84%, #B9CBEA 0 97%, transparent 100%), #fff; }
+.t2.move { background: var(--surface); border-color: #CBD3DE; justify-content: center; font-weight: 650; }
+.t2.step.tall { flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: .55em; text-align: center; }
+.t2.bubble.neutral { background: #F1F3F7; border-color: #D5DBE4; color: #4C5768; justify-content: center; box-shadow: none; font-weight: 600; }
+.figdot { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: #8592A6; }
+.pin { position: absolute; width: 22px; height: 22px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #30766D; }
+.talkdots { position: absolute; width: 40px; height: 22px; border-radius: 11px; background: #E8EFFA; border: 2px solid #9DB6E0; }
+.talkdots::after { content: '…'; position: absolute; left: 9px; top: -9px; font-size: 22px; color: #356CC8; font-weight: 700; }
+.bx.bracket { border: 0; border-radius: 3px; background: #B9C5D6; }
+.lbl2.openlbl { font-style: italic; }
+.t2.mapcard .tx, .t2.tray .tx { flex: none; }
+.t2.proposal.next { border-style: dashed; border-color: #9DB6E0; background: #FAFCFF; color: #3E62A6; }
+
+/* ---- Section 05 additions ---- */
+.t2.kicker { background: transparent; border-color: transparent; justify-content: flex-start; text-align: left; color: #30766D; font-weight: 650; padding: 0; }
+.t2.move.blank { border-style: dashed; border-color: #B9C5D6; background: #F7F8FA; }
+.t2.move.active { border-color: var(--blue); }
+.t2.q { justify-content: center; text-align: center; }
+.t2.line.empty { border: 2px dashed #B9C5D6; background: #FAFBFD; }
+.t2.quote.speaker { background: var(--surface); border-color: #CBD3DE; border-radius: 22px; }
+.t2.idea { background: #F4F8FE; border-color: #9DB6E0; font-weight: 650; }
+.t2.tray.open .tx { color: #5D6878; }
+.lbl2.endui { pointer-events: none; }
+.hint { position: absolute; color: #5D6878; text-align: right; font-style: italic; pointer-events: none; }.t2.tray.neutral { background: #F7F8FA; border-color: #9AA6B8; color: #5D6878; }
+
+/* ---- Section 06 additions ---- */
+.t2.field { flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: .55em .8em; border: 2px dashed #9AA6B8; background: #FAFBFD; color: #5D6878; font-weight: 650; }
+.t2.field .tx { flex: none; }
+.t2.chip { border-radius: 22px; border: 2px solid #CBD3DE; background: var(--surface); justify-content: center; font-weight: 600; }
+.t2.chip.struck { border-style: dashed; border-color: #B0563F; color: #8A3A26; background: #FBF1EE; }
+.t2.chip.struck .tx { text-decoration: line-through; text-decoration-thickness: 2px; }
+.t2.chip.struck .tx::before { content: '\2715\00a0'; text-decoration: none; display: inline-block; }
+.t2.step.changed { border-color: #B0563F; background: #FBF1EE; color: #8A3A26; }
+.t2.check.selfcheck { color: #202632; background: #FFFDF6; }
+.bx.room { border: 2px dashed #9DB6E0; background: transparent; border-radius: 14px; }
+.reviewpanel { position: absolute; background: #FFFFFF; border: 2px solid #CBD3DE; border-radius: 20px; box-shadow: 0 6px 20px rgba(20,30,50,.10); }
+.lbl2.rvitem::before { content: '\2022\00a0'; color: var(--blue); }
+.lbl2.rvnote { color: #5D6878; font-style: italic; }
+.lbl2.rvnote::before { content: ''; }
+textarea.privnotes { position: absolute; box-sizing: border-box; font: inherit; font-size: 22px; padding: 12px 16px; border: 2px solid #9AA6B8; border-radius: 14px; background: #fff; color: var(--ink); resize: none; }
+textarea.privnotes:focus-visible { outline: 4px solid var(--blue); outline-offset: 2px; }
+.lbl2.statusnote { font-style: italic; }
+
+/* ---- Section 01 additions ---- */
+.t2.brief { flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: .55em .8em; background: var(--surface); border: 2px solid #CBD3DE; border-radius: 22px; color: #5D6878; font-weight: 700; box-shadow: 0 6px 18px rgba(20,30,50,.08); }
+.t2.brief .tx { flex: none; }
+.t2.brief.board { background: #FBFCFE; border-color: #D5DBE4; box-shadow: none; }
+.t2.brief.ref { background: #FFFFFF; border-color: #9AA6B8; }
+.t2.phrase { background: transparent; border-color: transparent; padding: 0 .2em; font-weight: 550; color: var(--ink); }
+.t2.phrase .tx::before { content: '\2022\00a0\00a0'; color: #9AA6B8; }
+.t2.phrase.mark { color: var(--blue); }
+.t2.phrase.mark .tx { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 7px; }
+.t2.phrase.active { box-shadow: none; border-color: transparent; }
+.t2.colhead { background: transparent; border: 0; border-radius: 0; padding: 0; justify-content: flex-start; color: #5D7FB8; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; box-shadow: inset 0 -2px 0 #B9C5D6; }
+.t2.colhead.dashed { box-shadow: none; border-bottom: 2px dashed #C7A55B; color: #8A6A1E; }
+.t2.colhead.active { color: var(--blue); box-shadow: inset 0 -3px 0 var(--blue); }
+.t2.plan { background: var(--pale); border-color: #9DB6E0; font-weight: 700; justify-content: center; text-align: center; }
+.t2.chipcard.given { border-color: #5D6878; border-width: 3px; }
+.t2.field.amount { border-color: #9AA6B8; color: #5D6878; justify-content: center; font-style: italic; }
+.t2.strip { flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: .45em .8em; background: #FFFFFF; border: 2px solid #CBD3DE; border-radius: 18px; font-weight: 700; color: #5D6878; }
+.t2.strip .tx { flex: none; }
+.t2.seg { background: var(--pale); border-color: #9DB6E0; justify-content: center; text-align: center; font-weight: 650; color: #2F5BA8; }
+.t2.seg.gap { border-style: dashed; border-color: #9AA6B8; background: #F3F5F8; color: #4C5768; }
+.t2.res, .t2.iconlbl { background: transparent; border-color: transparent; justify-content: center; text-align: center; font-weight: 650; color: #3B4556; }
+.t2.iconlbl { color: #1F5A52; font-weight: 600; }
+.t2.idea.elaborate, .t2.idea.simple { flex-direction: column; align-items: flex-start; justify-content: flex-start; text-align: left; padding: .5em .8em; }
+.t2.idea.elaborate .tx, .t2.idea.simple .tx { flex: none; }
+.t2.panel { background: #FFFFFF; border: 2px solid #9AA6B8; border-radius: 22px; }
+.t2.panel.dashed { border-style: dashed; border-color: #C7A55B; background: #FFFDF6; }
+.t2.panel.neutral { border-style: solid; border-color: #E1E5EB; background: #FAFBFC; }
+.t2.cell { background: #FFFFFF; border-color: #CBD3DE; justify-content: center; text-align: center; font-weight: 600; }
+.t2.cell.open { border-style: dashed; border-color: #8FA8D6; background: #FAFCFF; color: #2F5BA8; }
+.t2.cell.link { border-color: #9DB6E0; background: #F4F8FE; color: #2F5BA8; }
+.t2.refrow { background: #F7F8FA; border-color: #E1E5EB; justify-content: flex-start; font-weight: 650; }
+.t2.check .tx::after { content: ''; }
+.bx.namebub { border: 2px dashed #9DB6E0; background: #FFFFFF; border-radius: 14px; }
+.bx.endq { border: 3px dashed #356CC8; background: #FFFFFF; border-radius: 50%; }
+.bx.daylight { border: 0; border-radius: 8px; background: linear-gradient(90deg, #FBEFD9, #FFF7E6 50%, #FBEFD9); }
+/* R01 retrieval exercise (Practice only) */
+.r01card { position: absolute; background: #FFFFFF; border: 2px solid #CBD3DE; border-radius: 20px; box-shadow: 0 4px 14px rgba(20,30,50,.07); pointer-events: none; }
+.r01card.mismatch { border-color: #B0563F; border-style: dashed; }
+.r01card.match { border-color: #30766D; }
+.sbtn.opt { font-weight: 600; border-radius: 14px; line-height: 1.15; padding: 0 14px; }
+.sbtn.opt[aria-pressed="true"] { background: var(--pale); border-color: var(--blue); color: #1F3F7A; box-shadow: inset 0 0 0 2px var(--blue); }
+.sbtn.opt[aria-pressed="true"]::before { content: '\25CF\00a0'; color: var(--blue); }
+.sbtn.opt[disabled] { cursor: default; }
+.sbtn.opt[disabled]:not([aria-pressed="true"]) { opacity: .55; }
+.sbtn:disabled { opacity: .45; cursor: default; }
+.lbl2.r01mark.match { color: #1F5A52; }
+.lbl2.r01mark.mismatch { color: #8A3A26; }.t2.chipcard { text-align: center; }
+.t2.chipcard .tx { flex: none; }
+.t2.cell.open .tx::after { content: ''; }
+.sbtn.opt[disabled][aria-pressed="true"] { opacity: 1; }
+
+/* ---- Section 01 additions ---- */
+.t2.board { background: #FFFFFF; border: 2px solid #D5DBE4; border-radius: 26px; box-shadow: 0 8px 24px rgba(20,30,50,.07); }
+.t2.tasktitle { background: transparent; border-color: transparent; justify-content: center; text-align: center; font-weight: 700; color: var(--ink); padding: 0; }
+.t2.tasktitle .tx { flex: none; }
+.t2.marker { border: 0; border-radius: 3px; background: var(--blue); padding: 0; }
+.t2.question { background: var(--pale); border-color: #9DB6E0; justify-content: center; text-align: center; font-weight: 650; }
+.t2.question.showwho { align-items: center; }
+.t2.question.shared { background: #F4F8FE; border-style: solid; border-color: var(--blue); color: #1F3F7A; }
+.t2.plan.open { border-style: dashed; border-color: #9DB6E0; background: #FAFCFF; color: #3E62A6; }
+.t2.plan.open .tx::after { content: ''; }
+.t2.idea.open .tx::after { content: ' ?'; color: var(--blue); }
+.t2.seq { background: #FFFFFF; border-color: #CBD3DE; justify-content: center; text-align: center; font-weight: 700; }
+.t2.option { border-style: dashed; border-color: #C7A55B; background: #FFFBF0; color: #6E5214; justify-content: center; text-align: center; font-weight: 600; }
+.t2.detail { background: #F7F8FA; border-color: #CBD3DE; justify-content: center; text-align: center; font-weight: 650; }
+.t2.detail.teams { background: #EEF6F4; border-color: #8FC2B8; color: #1F5A52; }
+.t2.note { flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: .55em .8em; border: 2px dashed #9AA6B8; background: #FAFBFD; color: #5D6878; font-weight: 650; }
+.t2.note .tx { flex: none; }
+.t2.stop { background: #FFFFFF; border-color: #CBD3DE; justify-content: center; text-align: center; font-weight: 650; }
+.t2.route { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: .4em; background: #FFFFFF; border-color: #D5DBE4; font-weight: 600; color: #3B4556; padding: .4em .6em; }
+.t2.route .tx { flex: none; }
+.t2.route .lt { border-color: #B9C5D6; color: #5D6878; }
+.t2.route.current { border-color: var(--blue); border-width: 3px; color: var(--ink); }
+.t2.route.current .lt { border-color: var(--blue); color: var(--blue); }
+.t2.route.next { border-color: #9DB6E0; border-style: dashed; color: var(--ink); }
+.t2.hint { background: transparent; border-color: transparent; padding: 0; justify-content: flex-start; text-align: left; color: #5D6878; font-style: italic; font-weight: 500; }
+.t2.hint.hold { color: #3B4556; font-weight: 600; font-style: normal; }
+.t2.bar { border: 0; border-radius: 3px; background: #9DB6E0; padding: 0; }
+.t2.colhead.quiet { box-shadow: none; }
+/* ---- Lesson 02 · Section 05 additions ---- */
+.t2.lines { background: repeating-linear-gradient(180deg, transparent 0 26px, #E1E5EB 26px 36px) 24px 22px / calc(100% - 48px) 70px no-repeat, #FFFFFF; border-color: #CBD3DE; }
+.t2.gap { border: 3px dashed #9DB6E0; background: #FAFCFF; }
+.t2.gap.active { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(53,108,200,.18); }
+.t2.idea { justify-content: center; text-align: center; }
+.t2.idea.vague { border-style: dashed; border-color: #B9C5D6; background: #F7F8FA; color: #5D6878; font-weight: 600; }
+.t2.idea.reason { background: #EEF6F4; border-color: #8FC2B8; color: #1F5A52; }
+.t2.idea.open { border-style: dashed; border-color: #8FA8D6; background: #FAFCFF; color: #2F5BA8; }
+.t2.idea.open .tx::after { content: ''; }
+.t2.example { background: #FFFFFF; border: 2px solid #9DB6E0; justify-content: center; text-align: center; font-weight: 650; color: #2F5BA8; }
+.t2.stop.next { border-color: var(--blue); border-style: dashed; }
+.bx.window { border: 0; border-radius: 3px; background: #B9CDEE; }
+.bx.table { border: 2px solid #B9C5D6; border-radius: 10px; background: #FFFFFF; }
+.bx.chair { border: 2px solid #CBD3DE; border-radius: 8px; background: #F3F5F8; }
+/* readable DOM caption line for narrow screens (the 1920×1080 stage caption is too small there) */
+.domcap { display: none; margin-top: 8px; padding: 8px 12px; border-radius: 8px; background: #fff; border: 1px solid #DDE2EA; font-size: 16px; line-height: 1.4; min-height: 3.2em; }
+.domcap b { margin-right: 6px; }
+@media (max-width: 760px) { .domcap { display: block; } .controls button, .controls .seg button, .controls select { min-height: 44px; } .head h1 { font-size: 16px; } }
+/* ---- Lesson 02 · Section 05 additions ---- */
+.t2.taskcard { background: #FFFFFF; border: 2px solid #CBD3DE; border-radius: 22px; justify-content: center; text-align: center; font-weight: 700; box-shadow: 0 6px 18px rgba(20,30,50,.07); }
+.t2.q.title.prompt { font-weight: 700; align-items: flex-start; }
+.t2.slot { border: 2px dashed #B9C5D6; background: #FAFBFD; }
+.t2.option { flex-direction: row; align-items: center; justify-content: flex-start; text-align: left; background: #FFFFFF; border: 2px solid #CBD3DE; color: var(--ink); font-weight: 550; padding: .5em .8em; }
+.t2.option .tx { flex: 1; }
+.t2.option.sel { border-color: #9DB6E0; background: #F4F8FE; }
+.t2.slot .lt, .t2.option .lt { display: flex; align-self: flex-start; border-color: #9DB6E0; color: #356CC8; }
+.t2.cat { background: #F7F8FA; border-color: #CBD3DE; justify-content: center; text-align: center; font-weight: 700; color: #3B4556; }
+.t2.cat.active { border-color: var(--blue); }
+.t2.fact { border-color: #8FC2B8; background: #EEF6F4; color: #1F5A52; justify-content: center; text-align: center; font-weight: 650; }
+.t2.goal.focus { background: #FFFFFF; border: 2px solid #30766D; color: #1F5A52; }
+.t2.excerpt { justify-content: flex-start; text-align: left; font-weight: 550; padding: 0 1em; }
+.t2.excerpt.proposed { border-style: dashed; border-color: #8FA8D6; background: #FAFCFF; color: #202632; }
+.t2.excerpt.fact { border-color: #8FC2B8; background: #EEF6F4; color: #202632; }
+.bx.doorframe { border: 4px solid #9AA6B8; border-bottom: 0; border-radius: 6px 6px 0 0; background: #F7F8FA; }
+.bx.doorknob { border: 0; border-radius: 7px; background: #9AA6B8; }
+
+.sbtn:disabled { opacity: .5; cursor: default; }
+/* Lesson 02 · Section 05: the imagined-example frame, flat event icons, the ghosted proposal tile */
+.bx.imagframe { border: 3px dashed #9DB6E0; border-radius: 22px; background: rgba(232,239,251,.35); }
+.bx.ghosttile { border: 2px dashed #9DB6E0; border-radius: 6px; background: rgba(250,252,255,.8); }
+.t2.framehead { background: #F4F8FE; border: 2px solid #9DB6E0; border-radius: 999px; color: #2F5BA8; font-weight: 700; justify-content: center; text-align: center; letter-spacing: .01em; }
+.t2.framehead.active { border-color: var(--blue); }
+.t2.step.plan { border-style: dashed; border-color: #B9C5D6; background: #FFFFFF; color: #5D6878; font-weight: 600; }
+.t2.chipcard.margin { opacity: .9; border-style: dashed; color: #5D6878; }
+/* Lesson 02 · Section 05 layout contract: status tags at the 22 px hypothetical-status minimum; the overclaim heading */
+.ttag { font-size: 22px; }
+.t2.claimhead { background: #FFF8EC; border: 2px solid #C7A55B; border-radius: 999px; color: #6E5214; font-weight: 700; justify-content: center; text-align: center; }
+.t2.excerpt.claim { border-style: solid; border-color: #C7A55B; background: #FFFCF5; color: #202632; }
+.t2.chipcard.mark { border-color: #C7A55B; border-style: dashed; color: #6E5214; background: #FFFCF5; }
+.t2.note.unobserved { border-color: #B9C5D6; background: #FAFBFD; }
+
+</style>
+<style>/* shared/l08/l08.css */
+/* esssouth Lesson 08 · player additions on top of shared/toolkit/style.css (the approved stylesheet, unchanged).
+   Stage art is unchanged except the speaker-aware bubble tail. Everything else here is page chrome outside the stage. */
+/* bubble tail toward the speaking seat in the side layout (room x 40, scale 0.56: Maya 281, You 578, Noah 874; bubble x 70) */
+.tok:has(> .t2.spk-noah) .ttail { left: 588px; } /* bubble x 274 (kit.js): Noah's seat at stage x 874 */
+.tok:has(> .t2.spk-maya) .ttail { left: 199px; }
+.head .tag.silent { background: #EEF2F8; }
+.modes { display: inline-flex; border: 1px solid #C9D0DA; border-radius: 8px; overflow: hidden; }
+.modes button { font: inherit; font-size: 14px; border: 0; padding: 8px 14px; min-height: 44px; background: #fff; color: var(--ink); cursor: pointer; }
+.modes button[aria-pressed="true"] { background: var(--blue); color: #fff; }
+.controls button, .controls select { min-height: 44px; }
+.controls label.tg { min-height: 44px; display: inline-flex; align-items: center; gap: 6px; }
+.controls input[type=checkbox] { width: 20px; height: 20px; }
+.modes button:focus-visible, .ipanel button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+.ipanel { margin-top: 12px; padding: 14px 16px; border-radius: 10px; background: #fff; border: 1px solid #DDE2EA; }
+.ipanel[hidden] { display: none; }
+.ipanel .iprompt { margin: 0 0 10px; font-size: 18px; font-weight: 650; line-height: 1.35; }
+.ipanel .istatus { margin: 0 0 10px; font-size: 15px; color: var(--muted); }
+.ipanel .irow { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.ipanel .irow.opts { flex-direction: column; }
+.ipanel button { font: inherit; font-size: 15px; text-align: left; min-height: 44px; padding: 10px 14px; border-radius: 10px; border: 1px solid #C9D0DA; background: #fff; color: var(--ink); cursor: pointer; line-height: 1.35; }
+.ipanel button.primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+.ipanel button.opt[aria-pressed="true"] { border-color: var(--blue); box-shadow: inset 0 0 0 2px var(--blue); background: var(--pale); }
+.ipanel button:disabled { opacity: .55; cursor: default; }
+.domcap { display: block; }
+body.export .ipanel, body.export .domcap { display: none; }
+html, body { overflow-x: hidden; }
+
+/* Lesson 08: the fictional case ledger, readable outside the stage */
+.casefacts { margin-top: 12px; padding: 10px 14px; border-radius: 10px; background: #fff; border: 1px solid #DDE2EA; font-size: 15px; line-height: 1.45; }
+.casefacts summary { cursor: pointer; font-weight: 650; min-height: 32px; display: flex; align-items: center; }
+.casefacts ol { margin: 8px 0 0; padding-left: 22px; }
+body.export .casefacts { display: none; }
+
+/* Lesson 08: an unusually long model line may use the full 1040 px bubble width (same border, radius, shadow, tail) */
+.t2.bubble.wide { max-width: none; }
+
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head"><h1 id="h1">Lesson 08 · 6.6 Rehearse a Faithful Summary and Next Step</h1><span class="tag silent" id="silent">Silent English animation review</span></div>
+  <div class="controls" role="group" aria-label="Mode">
+    <div class="modes"><button type="button" data-mode="watch" aria-pressed="true">Watch</button><button type="button" data-mode="practice" aria-pressed="false">Practice</button></div>
+  </div>
+  <div class="viewport" id="viewport"><div id="stage" role="img" aria-label="Animation stage"></div></div>
+  <div class="domcap" id="domcap" role="region" aria-label="Current caption"></div>
+  <div class="ipanel" id="ipanel" role="region" aria-label="Interaction" hidden></div>
+  <div class="controls" role="group" aria-label="Playback">
+    <button type="button" class="primary" id="play">Play</button>
+    <button type="button" id="restart">Restart section</button>
+    <input type="range" id="scrub" min="0" step="0.01" value="0" aria-label="Seek">
+    <span class="time" id="time"></span>
+    <span class="badge" id="badge"></span>
+    <label class="tg"><input type="checkbox" id="cap" checked> Captions</label>
+    <label class="tg"><input type="checkbox" id="rm"> Reduced motion</label>
+    <label class="tg">Speed <select id="rate" aria-label="Playback speed"><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label>
+  </div>
+  <details class="casefacts" id="casefacts" hidden><summary id="caseSummary">Case facts</summary><ol id="factlist"></ol></details>
+  <div class="cueline" id="cue"></div>
+  <div class="sr" id="live" role="status" aria-live="polite"></div>
+  <div class="notes" id="notes"></div>
+</div>
+<script>/* shared/toolkit/beat-kit.js */
+/*
+ * esssouth beat kit: shared pieces for clock-driven teaching beats (it is used by src/beat-open.js;
+ * src/beat-renderer.js, the first beat, predates the kit and keeps its own copies).
+ *  - math and DOM helpers
+ *  - poser: character keyframes (with prep/settle tweaks) blended over 0.45 s; amplitude mouth
+ *  - room: the seated characters in a scaled, clipped panel, plus bubbles and their placement
+ *  - captions: the baseline phrase segments
+ *  - tokens: one element that changes rect and content across scenes (shared elements)
+ *  - anchors: times taken from MEASURED silent runs in the decoded clips, with an explicit
+ *    estimated fallback. Each anchor records its source, and the page lists them.
+ * Every function is a pure function of t; nothing here schedules timers.
+ */
+(function (global) {
+  'use strict';
+  const NS = 'http://www.w3.org/2000/svg', W = 1920, H = 1080;
+  const clamp = (x, a = 0, b = 1) => (x < a ? a : x > b ? b : x);
+  const easeIO = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const F = (t, a, d) => (d <= 0 ? (t >= a ? 1 : 0) : easeIO(clamp((t - a) / d)));
+  const win = (t, a, b, fi, fo) => Math.min(F(t, a, fi), 1 - F(t, b - fo, fo));
+  const el = (tag, cls, p) => { const n = document.createElement(tag); if (cls) n.className = cls; if (p) p.appendChild(n); return n; };
+  const sv = (tag, a, p) => { const n = document.createElementNS(NS, tag); for (const k in a) n.setAttribute(k, a[k]); if (p) p.appendChild(n); return n; };
+  const rich = (n, s) => { n.textContent = ''; String(s).split(/\[\[(.+?)\]\]/).forEach((x, i) => { if (!x) return; if (i % 2) { const h = el('span', 'hl', n); h.textContent = x; } else n.appendChild(document.createTextNode(x)); }); return n; };
+  const op = (n, o) => { o = clamp(o); n.style.opacity = o.toFixed(3); n.style.visibility = o < 0.003 ? 'hidden' : 'visible'; };
+  const lr = (a, b, p) => { const o = {}; Object.keys(a).forEach((k) => (o[k] = typeof a[k] === 'number' && typeof b[k] === 'number' ? lerp(a[k], b[k], p) : p < 0.5 ? a[k] : b[k])); return o; };
+  const chain = (t, rects) => { // rects: [[t0, dur, rect], ...]; holds the first rect before t0 and blends each step
+    let r = rects[0][2]; for (let i = 1; i < rects.length; i++) { const [t0, d, to] = rects[i]; r = lr(r, to, F(t, t0, d)); } return r; };
+
+  // ---- timing: cues placed in order (gapBefore + measured clip + tail) ----
+  function placeCues(beat, clip) {
+    const cue = {}; let t = 0;
+    beat.cues.forEach((c) => {
+      const start = t + (c.gapBefore || 0), len = c.kind === 'hold' ? c.duration : clip[c.id];
+      const end = start + len + (c.kind === 'line' ? beat.audioTail : 0);
+      cue[c.id] = { id: c.id, start, speechEnd: start + len, end, clip: c.kind === 'line' ? len : null, segments: c.segments || [], speakerId: c.speakerId, kind: c.kind };
+      t = end;
+    });
+    return { cue, duration: t };
+  }
+  // anchors: runs[id] = measured silent runs [[a,b],...] within the clip (seconds from clip start)
+  function anchors(runs, cueTimes) {
+    const used = [];
+    const A = {
+      // k-th silent run (0-based) of a clip that contains the expected number of runs near expect
+      pause(id, near, fallback, label) {
+        const c = cueTimes[id], rs = (runs[id] || []).filter((r) => r[0] > 0.15 && r[1] < c.clip - 0.1);
+        let best = null; rs.forEach((r) => { if (!best || Math.abs(r[0] - near) < Math.abs(best[0] - near)) best = r; });
+        const ok = best && Math.abs(best[0] - near) < 0.8;
+        const v = ok ? { start: c.start + best[0], end: c.start + best[1], source: 'measured' } : { start: c.start + fallback, end: c.start + fallback + 0.15, source: 'estimated' };
+        used.push({ label, id, at: +(v.start - c.start).toFixed(2), source: v.source }); return v;
+      },
+      est(id, sec, label) { const c = cueTimes[id]; used.push({ label, id, at: +sec.toFixed(2), source: 'estimated' }); return c.start + sec; },
+      list: used
+    };
+    return A;
+  }
+
+  // ---- poser ----
+  function poser(RIG, chars, rmRef) {
+    function resolve(spec, c) {
+      const [name, look] = spec.split(':'), base = RIG.POSES[name] || RIG.POSES.neutral;
+      let dir = 0; if (look && chars[look] && look !== c.id) dir = Math.sign(chars[look].seatX - c.seatX);
+      const A = (k) => RIG.ARM[k] || RIG.ARM.rest, mir = (a) => [-a[0], a[1], -a[2], a[3]], nr = dir >= 0;
+      return { lean: base.lean, dir, tilt: base.tilt, nod: base.nod, shake: base.shake, brow: base.brow, inner: base.inner, mouth: base.mouth, turn: dir * 0.85,
+        gazeY: look === 'down' ? 1 : base.gazeY || 0, armR: nr ? A(base.near) : A(base.far), armL: nr ? mir(A(base.far)) : mir(A(base.near)) };
+    }
+    const rest = RIG.ARM.rest;
+    const tweaks = {
+      prep: (p) => Object.assign(p, { lean: p.lean - 1.2, brow: p.brow + 0.3, mouth: Math.min(p.mouth, 0.1) }),
+      settle: (p) => Object.assign(p, { lean: p.lean * 0.6, armR: p.armR.map((v, j) => lerp(v, rest[j], 0.6)), armL: p.armL.map((v, j) => lerp(v, j % 2 ? rest[j] : -rest[j], 0.6)) }),
+      down: (p) => Object.assign(p, { gazeY: 0.8 })
+    };
+    let keys = {};
+    const NUM = ['lean', 'dir', 'tilt', 'nod', 'shake', 'brow', 'inner', 'mouth', 'turn', 'gazeY'];
+    return {
+      set(spec) { keys = {}; Object.keys(spec).forEach((id) => (keys[id] = spec[id].slice().sort((a, b) => a[0] - b[0]).map(([t, s, tw]) => ({ t, pose: tw ? tweaks[tw](resolve(s, chars[id])) : resolve(s, chars[id]) })))); },
+      at(id, t) {
+        const k = keys[id]; let i = 0; while (i + 1 < k.length && k[i + 1].t <= t) i++;
+        const rm = rmRef(), cur = k[i], prev = i ? k[i - 1] : k[0], p = rm ? 1 : F(t, cur.t, 0.45), o = {};
+        NUM.forEach((n) => (o[n] = lerp(prev.pose[n], cur.pose[n], p)));
+        o.armL = cur.pose.armL.map((v, j) => lerp(prev.pose.armL[j], v, p)); o.armR = cur.pose.armR.map((v, j) => lerp(prev.pose.armR[j], v, p));
+        o.eyeTurn = lerp(prev.pose.turn, cur.pose.turn, rm ? 1 : F(t, cur.t - 0.12, 0.25));
+        const s = t - cur.t; o.nodNow = rm ? 0 : o.nod * clamp(1 - s / 1.6) * Math.sin(s * Math.PI * 2 * 1.4); o.shakeNow = 0;
+        return o;
+      }
+    };
+  }
+  function mouth(core, env, cueT, t, rm) {
+    if (!cueT) return 0; const u = t - cueT.start; if (u < 0 || u > cueT.clip) return 0;
+    if (env) { const a = core.envelopeAt(env, u); return a > 0 ? (rm ? 0.35 : 0.1 + 0.8 * a) : 0; }
+    return rm ? 0.35 : 0.25 + 0.5 * Math.abs(Math.sin(u * Math.PI * 4.6));
+  }
+
+  // ---- room ----
+  function room(stage, RIG, characters, tf) {
+    const box = el('div', 'room', stage);
+    const s = sv('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H }, box);
+    sv('rect', { x: 60, y: 150, width: 1800, height: 640, rx: 44, fill: '#ECEFF4' }, s);
+    const backs = sv('g', {}, s);
+    sv('rect', { x: 0, y: 744, width: W, height: 34, fill: '#D5DBE4' }, s); sv('rect', { x: 0, y: 778, width: W, height: 302, fill: '#E3E7ED' }, s);
+    const fronts = sv('g', {}, s);
+    characters.forEach((c) => { const tx = sv('text', { x: c.seatX, y: 810, 'text-anchor': 'middle', 'font-size': 28, 'font-weight': 650, fill: c.color, 'font-family': 'Inter, Segoe UI, Arial' }, s); tx.textContent = c.name; });
+    const rigs = characters.map((c) => RIG.create(c, backs, fronts));
+    const ov = el('div', 'room-ov', box);
+    const chars = {}; characters.forEach((c) => (chars[c.id] = c));
+    const toStage = (x, y) => ({ x: tf.x + x * tf.s, y: tf.y + y * tf.s });
+    const R = {
+      box, rigs, ov, tf, toStage,
+      bubble(speakerId, rows) { const b = el('div', 'bubble', ov), w = el('span', 'who', b); w.textContent = chars[speakerId].name; w.style.color = chars[speakerId].color; const rs = rows.map((r) => rich(el('span', 'row', b), r)); return { b, rs, tail: el('div', 'tail', b), speakerId }; },
+      placeBubble(x, warns) {
+        const c = chars[x.speakerId]; x.b.style.left = '0px';
+        const w = x.b.offsetWidth, h = x.b.offsetHeight, left = clamp(c.seatX - w / 2, 96, W - 96 - w);
+        x.b.style.left = left + 'px'; x.b.style.top = (300 - h) + 'px'; x.tail.style.left = clamp(c.seatX - left - 13, 24, w - 48) + 'px';
+        // Speech lives above the clipped room art. Flag the actual stage safe area,
+        // not the decorative panel's top edge. Keep very long text reviewable.
+        if (tf.y + (300 - h) * tf.s < 180) warns.push({ type: 'collision', key: 'bubble ' + x.speakerId, detail: 'speech overlaps the header safe area' });
+      },
+      rowRect(n) { const b = n.offsetParent; return { x: tf.x + (n.offsetLeft + b.offsetLeft) * tf.s, y: tf.y + (n.offsetTop + b.offsetTop) * tf.s, w: n.offsetWidth * tf.s, h: n.offsetHeight * tf.s }; },
+      show(o, dy) { op(box, o); box.style.transform = `translate(${tf.x}px, ${(tf.y + (dy || 0)).toFixed(1)}px) scale(${tf.s})`; s.style.clipPath = `inset(150px 60px ${tf.clipBottom || 220}px 60px round 44px)`; }
+    };
+    return R;
+  }
+
+  // ---- captions (baseline phrase segments) ----
+  function captions(stage) {
+    const cap = el('div', 'capbar', stage), cw = el('div', 'who', cap), dot = el('i', '', cw), name = el('span', '', cw), text = el('div', 'ctext', cap);
+    const names = { coach: ['Coach', '#356CC8'], learner: ['You', '#202632'], noah: ['Noah', '#7A6A9E'], maya: ['Maya', '#B5763F'] };
+    let key = null;
+    const fit = () => { text.style.fontSize = '42px'; let fs = 42; while (text.scrollHeight > 107 && fs > 32) { fs -= 2; text.style.fontSize = fs + 'px'; } return text.scrollHeight <= 107; };
+    return {
+      check(cues, warns) { Object.values(cues).forEach((c) => c.segments.forEach((s) => { text.textContent = s.text; if (!fit()) warns.push({ type: 'overflow', key: 'caption ' + c.id }); })); key = null; },
+      render(t, cues, show) {
+        let cur = null;
+        Object.values(cues).forEach((c) => c.segments.forEach((s) => { if (t >= c.start + s.start - 0.1 && t <= c.start + s.end + 0.25) cur = { c, s }; }));
+        if (!cur || show === false) { op(cap, 0); return; }
+        op(cap, 1); const k = cur.c.id + cur.s.start;
+        if (k !== key) { key = k; const nm = names[cur.c.speakerId]; name.textContent = nm[0]; dot.style.background = nm[1]; text.textContent = cur.s.text; fit(); }
+      }
+    };
+  }
+
+  // ---- tokens ----
+  function token(layer, cls) {
+    const n = el('div', cls ? 'tk ' + cls : 'tk', layer);
+    const T = { n, tl: el('div', 'tl', n), tb: el('div', 'tb', n), chip: el('div', 'chip', n) };
+    T.place = (r, o) => { n.style.left = r.x.toFixed(1) + 'px'; n.style.top = r.y.toFixed(1) + 'px'; n.style.width = r.w.toFixed(1) + 'px'; n.style.height = r.h.toFixed(1) + 'px'; n.style.transform = r.rot ? `rotate(${r.rot.toFixed(2)}deg)` : ''; op(n, o); };
+    // simple centred label, or label + body (card form)
+    T.text = (r, body, label, cardP, opts) => {
+      opts = opts || {};
+      T.tb.textContent = body || ''; T.tb.style.fontSize = r.fs.toFixed(1) + 'px';
+      const card = cardP || 0;
+      T.tb.style.textAlign = opts.align || (card > 0.5 ? 'left' : 'center'); T.tb.style.whiteSpace = card > 0.5 ? 'normal' : 'nowrap';
+      T.tb.style.top = (card > 0.5 ? r.h * (opts.bodyTop || 0.42) : (r.h - r.fs * 1.22) / 2).toFixed(1) + 'px';
+      T.tl.textContent = label || ''; T.tl.style.fontSize = Math.min(r.fs * 0.85, 34).toFixed(1) + 'px'; T.tl.style.top = (r.h * 0.12).toFixed(1) + 'px'; op(T.tl, label ? card : 0);
+      if (opts.chip) { T.chip.textContent = opts.chip[0]; T.chip.style.background = opts.chip[1]; T.chip.style.right = '18px'; T.chip.style.bottom = '14px'; op(T.chip, card); } else op(T.chip, 0);
+    };
+    return T;
+  }
+  function icon(kind, parent, x, y, size, color) {
+    const w = sv('svg', { viewBox: '0 0 100 100', width: size, height: size, style: `position:absolute;left:${x}px;top:${y}px;overflow:visible` }, parent);
+    const g = sv('g', { fill: 'none', stroke: color, 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, w), a = (t, v) => sv(t, v, g);
+    if (kind === 'people') { a('circle', { cx: 34, cy: 28, r: 13 }); a('circle', { cx: 70, cy: 34, r: 11 }); a('path', { d: 'M 9 79 C 9 49 59 49 59 79 M 60 56 C 77 48 91 61 91 81' }); }
+    else if (kind === 'map') { a('path', { d: 'M 8 24 L 34 12 L 65 25 L 92 12 L 92 78 L 65 91 L 34 78 L 8 91 Z M 34 12 L 34 78 M 65 25 L 65 91' }); a('circle', { cx: 52, cy: 49, r: 7 }); }
+    else if (kind === 'clock') { a('circle', { cx: 50, cy: 50, r: 38 }); a('path', { d: 'M 50 25 L 50 50 L 69 63' }); }
+    else if (kind === 'budget') { a('rect', { x: 10, y: 23, width: 80, height: 58, rx: 11 }); a('path', { d: 'M 12 36 L 90 36 M 68 51 L 89 51 L 89 68 L 68 68 Z' }); }
+    else if (kind === 'speech') { a('path', { d: 'M 13 12 H 87 V 68 H 46 L 23 88 V 68 H 13 Z' }); a('path', { d: 'M 30 31 H 70 M 30 46 H 57' }); }
+    else if (kind === 'question') { a('path', { d: 'M 29 31 C 31 6 76 8 77 34 C 77 52 50 50 50 68' }); a('circle', { cx: 50, cy: 85, r: 2, fill: color }); }
+    // Section 01 additions (resources and quiz formats)
+    else if (kind === 'box') { a('path', { d: 'M 12 32 L 50 14 L 88 32 L 88 72 L 50 90 L 12 72 Z M 12 32 L 50 50 L 88 32 M 50 50 L 50 90 M 31 23 L 69 41' }); }
+    else if (kind === 'venue') { a('path', { d: 'M 10 40 L 50 12 L 90 40 M 18 40 L 18 88 L 82 88 L 82 40 M 42 88 L 42 64 L 58 64 L 58 88 M 28 50 L 36 50 M 64 50 L 72 50' }); }
+    else if (kind === 'staff') { a('circle', { cx: 50, cy: 24, r: 14 }); a('path', { d: 'M 18 90 C 18 52 82 52 82 90 M 40 56 L 50 72 L 60 56' }); a('rect', { x: 56, y: 70, width: 16, height: 12, rx: 2 }); }
+    else if (kind === 'cards') { a('rect', { x: 14, y: 22, width: 52, height: 64, rx: 7 }); a('path', { d: 'M 34 14 L 80 14 Q 86 14 86 20 L 86 72' }); a('path', { d: 'M 26 42 L 54 42 M 26 56 L 48 56' }); }
+    // Lesson 02 · Section 05 additions (flat icons for the imagined event; no sound is implied by any of them)
+    else if (kind === 'person') { a('circle', { cx: 50, cy: 24, r: 14 }); a('path', { d: 'M 22 90 C 22 54 78 54 78 90' }); }
+    else if (kind === 'door') { a('path', { d: 'M 22 92 L 22 10 L 78 10 L 78 92 M 10 92 L 90 92' }); a('circle', { cx: 66, cy: 54, r: 3, fill: color }); }
+    else if (kind === 'phone') { a('rect', { x: 28, y: 8, width: 44, height: 84, rx: 9 }); a('path', { d: 'M 44 80 L 56 80' }); a('path', { d: 'M 36 24 H 64 V 42 H 46 L 38 50 V 42 H 36 Z' }); }
+    else if (kind === 'soundoff') { a('path', { d: 'M 12 38 H 30 L 52 20 V 80 L 30 62 H 12 Z' }); a('path', { d: 'M 64 36 L 90 64 M 90 36 L 64 64' }); }
+    else if (kind === 'prize') { a('circle', { cx: 50, cy: 36, r: 24 }); a('path', { d: 'M 36 56 L 28 90 L 42 82 L 50 94 L 54 60 M 64 56 L 72 90 L 58 82' }); }
+    return w;
+  }
+  function path(svg, d, attrs) { return sv('path', Object.assign({ d, fill: 'none', stroke: '#B9C5D6', 'stroke-width': 4, 'stroke-linecap': 'round', pathLength: 1 }, attrs || {}), svg); }
+  function draw(p, prog) { p.setAttribute('stroke-dasharray', `${clamp(prog).toFixed(4)} 2`); op(p, prog > 0.001 ? 1 : 0); }
+
+  global.EsssouthKit = { W, H, clamp, easeIO, lerp, F, win, el, sv, rich, op, lr, chain, placeCues, anchors, poser, mouth, room, captions, token, icon, path, draw };
+})(window);
+
+</script>
+<script>/* shared/toolkit/characters.js */
+/*
+ * esssouth v3: simple upper-body vector character rig (from v2; adds the "ask" pose, eyeTurn and a slight head turn).
+ * Each character is drawn in two SVG groups that share one body transform:
+ *   back  = torso, neck and head (drawn behind the table)
+ *   front = arms and hands (drawn in front of the table, so hands can rest on it)
+ * A pose is a small set of numbers. The renderer blends them, and the rig only draws them.
+ * Local origin is the base of the neck. The table top is at local y ~ 238.
+ */
+(function (global) {
+  'use strict';
+  const NS = 'http://www.w3.org/2000/svg';
+  function s(tag, attrs, parent) {
+    const n = document.createElementNS(NS, tag);
+    for (const k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+  const f = (v) => (+v).toFixed(2);
+
+  // Arm targets [elbowX, elbowY, handX, handY], written for the arm nearer the person
+  // being addressed, as if that person sat to the right (+x). The renderer mirrors them.
+  const ARM = {
+    rest:      [150, 182, 72, 238],
+    restIn:    [138, 196, 58, 236],
+    palmOut:   [178, 150, 252, 72],
+    palmSmall: [166, 168, 214, 128],
+    sweep:     [190, 146, 296, 156],
+    chest:     [138, 166, 34, 104],
+    chin:      [156, 140, 54, -40],
+    offer:     [176, 160, 236, 112],
+    raise:     [196, -10, 206, -158],
+    clasp:     [140, 192, 26, 218]
+  };
+
+  // Pose library. lean: degrees toward the person addressed (negative = back away).
+  // tilt: head tilt in degrees. nod/shake: oscillation amplitude in degrees.
+  // brow: -1 furrowed .. +1 raised. inner: 0..1 inner brows up (concern).
+  // mouth: -1 down .. +1 smile. gazeY: 0 level .. 1 looking down.
+  const POSES = {
+    neutral:     { lean: 0,  tilt: 0,  nod: 0, shake: 0, brow: 0,    inner: 0,   mouth: 0.15, near: 'rest',      far: 'rest' },
+    listen:      { lean: 1.5, tilt: 2, nod: 0, shake: 0, brow: 0.1,  inner: 0,   mouth: 0.2,  near: 'rest',      far: 'rest' },
+    wait:        { lean: 1,  tilt: 0,  nod: 0, shake: 0, brow: 0,    inner: 0,   mouth: -0.05, near: 'rest',     far: 'rest' },
+    speak:       { lean: 2,  tilt: 1,  nod: 0, shake: 0, brow: 0.3,  inner: 0,   mouth: 0.25, near: 'palmOut',   far: 'rest' },
+    abrupt:      { lean: 3,  tilt: -2, nod: 0, shake: 3, brow: -1,   inner: 0,   mouth: -0.55, near: 'sweep',    far: 'rest' },
+    stung:       { lean: -2, tilt: -3, nod: 0, shake: 0, brow: 0.8,  inner: 0.6, mouth: -0.2, near: 'rest',      far: 'rest' },
+    withdrawn:   { lean: -3, tilt: -6, nod: 0, shake: 0, brow: 0.15, inner: 1,   mouth: -0.4, near: 'clasp',     far: 'clasp', gazeY: 1 },
+    glance:      { lean: 0,  tilt: 2,  nod: 0, shake: 0, brow: 0.45, inner: 0.4, mouth: -0.1, near: 'rest',      far: 'rest' },
+    disengaged:  { lean: -1, tilt: 5,  nod: 0, shake: 0, brow: 0,    inner: 0.2, mouth: -0.2, near: 'restIn',    far: 'rest', gazeY: 1 },
+    think:       { lean: 0,  tilt: 4,  nod: 0, shake: 0, brow: 0.25, inner: 0.2, mouth: 0,    near: 'chin',      far: 'rest' },
+    acknowledge: { lean: 3,  tilt: 4,  nod: 3, shake: 0, brow: 0.4,  inner: 0,   mouth: 0.5,  near: 'palmOut',   far: 'rest' },
+    warm:        { lean: 2,  tilt: 4,  nod: 0, shake: 0, brow: 0.3,  inner: 0,   mouth: 0.6,  near: 'rest',      far: 'rest' },
+    explain:     { lean: 2,  tilt: 0,  nod: 0, shake: 0, brow: 0.2,  inner: 0.35, mouth: 0.15, near: 'chest',    far: 'rest' },
+    propose:     { lean: 3,  tilt: 2,  nod: 0, shake: 0, brow: 0.5,  inner: 0,   mouth: 0.4,  near: 'offer',     far: 'offer' },
+    consider:    { lean: 1,  tilt: 6,  nod: 0, shake: 0, brow: 0.3,  inner: 0.1, mouth: 0.2,  near: 'chin',      far: 'rest' },
+    agree:       { lean: 3,  tilt: 3,  nod: 5, shake: 0, brow: 0.3,  inner: 0,   mouth: 0.7,  near: 'palmSmall', far: 'rest' },
+    lean:        { lean: 4,  tilt: 2,  nod: 0, shake: 0, brow: 0.3,  inner: 0,   mouth: 0.3,  near: 'restIn',    far: 'restIn' },
+    question:    { lean: 4,  tilt: 4,  nod: 0, shake: 0, brow: 0.8,  inner: 0.2, mouth: 0.2,  near: 'raise',     far: 'rest' },
+    ask:         { lean: 3,  tilt: -4, nod: 0, shake: 0, brow: 0.7,  inner: 0.45, mouth: 0,   near: 'palmSmall', far: 'rest' }
+  };
+
+  function hairBack(g, r) {
+    if (r.hairStyle === 'bob') {
+      s('path', { d: 'M -86 -118 C -90 -196 90 -196 86 -118 L 90 -46 C 70 -34 50 -38 44 -50 L -44 -50 C -50 -38 -70 -34 -90 -46 Z', fill: r.hair }, g);
+    }
+  }
+  function hairFront(g, r) {
+    if (r.hairStyle === 'bob') {
+      s('path', { d: 'M -74 -126 C -84 -176 -40 -202 4 -202 C 52 -202 84 -174 78 -118 C 40 -128 2 -150 -14 -172 C -30 -146 -52 -132 -74 -126 Z', fill: r.hair }, g);
+    } else if (r.hairStyle === 'curls') {
+      const c = [[-62, -150, 26], [-38, -178, 28], [-6, -190, 30], [28, -184, 28], [56, -162, 26], [70, -136, 20], [-74, -124, 18]];
+      c.forEach(([x, y, rr]) => s('circle', { cx: x, cy: y, r: rr, fill: r.hair }, g));
+    } else {
+      s('path', { d: 'M -74 -118 C -84 -168 -48 -202 2 -202 C 54 -202 86 -168 74 -120 C 58 -146 28 -158 -6 -156 C -38 -154 -60 -140 -74 -118 Z', fill: r.hair }, g);
+    }
+  }
+  function neckline(g, r) {
+    if (r.neck === 'vneck') s('path', { d: 'M -44 -12 L 0 44 L 44 -12', fill: 'none', stroke: r.topShade, 'stroke-width': 8, 'stroke-linejoin': 'round' }, g);
+    if (r.neck === 'hood') s('path', { d: 'M -92 -4 C -70 40 70 40 92 -4', fill: 'none', stroke: r.topShade, 'stroke-width': 18, 'stroke-linecap': 'round' }, g);
+    if (r.neck === 'collar') {
+      s('path', { d: 'M -40 -14 L -6 30 L -48 18 Z', fill: '#F4F2EE' }, g);
+      s('path', { d: 'M 40 -14 L 6 30 L 48 18 Z', fill: '#F4F2EE' }, g);
+    }
+  }
+
+  function create(def, backParent, frontParent) {
+    const r = def.rig;
+    const back = s('g', {}, backParent);
+    const front = s('g', {}, frontParent);
+    const body = s('g', {}, back);
+    s('path', { d: 'M -154 70 C -154 14 -110 -10 -62 -14 L 62 -14 C 110 -10 154 14 154 70 L 168 420 L -168 420 Z', fill: r.top }, body);
+    neckline(body, r);
+    s('rect', { x: -22, y: -46, width: 44, height: 40, rx: 12, fill: r.skin }, body);
+    const head = s('g', {}, body);
+    hairBack(head, r);
+    const ears = s('g', {}, head);
+    const earL = s('ellipse', { cx: -68, cy: -108, rx: 12, ry: 18, fill: r.skin }, ears);
+    const earR = s('ellipse', { cx: 68, cy: -108, rx: 12, ry: 18, fill: r.skin }, ears);
+    s('ellipse', { cx: 0, cy: -112, rx: 68, ry: 80, fill: r.skin }, head);
+    const hairF = s('g', {}, head); hairFront(hairF, r);
+    const face = s('g', {}, head);
+    const eyes = [-25, 25].map((x) => s('ellipse', { cx: x, cy: -106, rx: 7, ry: 8.5, fill: '#1E2330' }, face));
+    const brows = [-1, 1].map(() => s('path', { fill: 'none', stroke: r.hair === '#6B4A2E' ? '#4A3220' : r.hair, 'stroke-width': 6, 'stroke-linecap': 'round' }, face));
+    s('path', { d: 'M 2 -96 Q 8 -84 0 -80', fill: 'none', stroke: 'rgba(60,30,20,.35)', 'stroke-width': 4, 'stroke-linecap': 'round' }, face);
+    const mouth = s('path', { stroke: '#6B3A30', 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, face);
+    let glasses = null;
+    if (r.glasses) {
+      glasses = s('g', { fill: 'none', stroke: '#2E3442', 'stroke-width': 4.5 }, face);
+      s('rect', { x: -46, y: -122, width: 40, height: 32, rx: 10 }, glasses);
+      s('rect', { x: 6, y: -122, width: 40, height: 32, rx: 10 }, glasses);
+      s('path', { d: 'M -6 -108 L 6 -108' }, glasses);
+    }
+    // arms (front group, same body transform)
+    const arms = s('g', {}, front);
+    const armPath = [0, 1].map(() => s('path', { fill: 'none', stroke: r.top, 'stroke-width': 50, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, arms));
+    const cuff = [0, 1].map(() => s('circle', { r: 25, fill: r.topShade }, arms));
+    const hand = [0, 1].map(() => s('circle', { r: 23, fill: r.skin }, arms));
+
+    function update(p) {
+      // body: lean toward the person addressed, pivoting at the hips; leaning in also drops it slightly
+      const rot = p.lean * p.dir * 0.9;
+      const bt = `translate(${f(def.seatX)} ${f(520 + p.lean * 1.6)}) rotate(${f(rot)} 0 420)`;
+      back.setAttribute('transform', bt); front.setAttribute('transform', bt);
+      // head: tilt + a small yaw-like lean toward the person addressed + nod/shake, pivot at the neck
+      const hr = p.tilt * (p.dir || 1) + p.turn * 2.5 + p.shakeNow;
+      head.setAttribute('transform', `translate(0 ${f(p.nodNow * 0.8)}) rotate(${f(hr)} 0 -40)`);
+      // turning: features slide toward the target; ears and hair counter-shift a little
+      const tx = p.turn * 16, gy = p.gazeY * 7 + p.nodNow * 0.6;
+      face.setAttribute('transform', `translate(${f(tx)} ${f(gy * 0.6)})`);
+      hairF.setAttribute('transform', `translate(${f(p.turn * 6)} 0)`);
+      earL.setAttribute('cx', f(-68 + Math.max(0, p.turn) * 8)); earR.setAttribute('cx', f(68 + Math.min(0, p.turn) * 8));
+      // eyes: pupils follow gaze (eyeTurn leads the head turn slightly), blink squashes them
+      const et = p.eyeTurn != null ? p.eyeTurn : p.turn;
+      eyes.forEach((e, i) => {
+        e.setAttribute('cx', f((i ? 25 : -25) + p.turn * 2 + et * 4));
+        e.setAttribute('cy', f(-106 + p.gazeY * 4));
+        e.setAttribute('ry', f(p.blink ? 1.4 : 8.5 - p.gazeY * 2.5));
+      });
+      // brows: lift with brow; inner ends rise with concern or drop with a furrow
+      brows.forEach((b, i) => {
+        const sgn = i ? 1 : -1;
+        const lift = -p.brow * 7;
+        const innerY = -134 + lift - p.inner * 8 + Math.max(0, -p.brow) * 9;
+        const outerY = -136 + lift + p.inner * 2;
+        b.setAttribute('d', `M ${f(sgn * 14)} ${f(innerY)} Q ${f(sgn * 26)} ${f((innerY + outerY) / 2 - 4)} ${f(sgn * 40)} ${f(outerY)}`);
+      });
+      // mouth: curve (smile/frown) + openness while speaking
+      const my = -74, c = p.mouth * 9, o = p.open * 16, w = 18 + Math.max(0, p.mouth) * 5;
+      if (o > 0.6) {
+        mouth.setAttribute('d', `M ${-w} ${my} Q 0 ${f(my + c)} ${w} ${my} Q 0 ${f(my + c + o)} ${-w} ${my} Z`);
+        mouth.setAttribute('fill', '#6B3A30');
+      } else {
+        mouth.setAttribute('d', `M ${-w} ${f(my - c * 0.3)} Q 0 ${f(my + c)} ${w} ${f(my - c * 0.3)}`);
+        mouth.setAttribute('fill', 'none');
+      }
+      // arms
+      [p.armL, p.armR].forEach((a, i) => {
+        const sx = i ? 118 : -118;
+        armPath[i].setAttribute('d', `M ${sx} 26 L ${f(a[0])} ${f(a[1])} L ${f(a[2])} ${f(a[3])}`);
+        cuff[i].setAttribute('cx', f(a[2] + (a[0] - a[2]) * 0.08)); cuff[i].setAttribute('cy', f(a[3] + (a[1] - a[3]) * 0.08));
+        hand[i].setAttribute('cx', f(a[2])); hand[i].setAttribute('cy', f(a[3]));
+      });
+    }
+    return { def, update, back, front };
+  }
+
+  global.EsssouthRig = { create, POSES, ARM };
+})(window);
+
+</script>
+<script>/* shared/toolkit/slots.js */
+/*
+ * esssouth animation style · text slots (copied from the approved Lesson 02 · Section 05 content/slots.json; lesson notes removed).
+ * fs = nominal px, minFs / minPx = the floor the fitter may shrink to, maxLines = lines allowed. Overflow is reported, never hidden.
+ * Layout contract: diagram labels 34 preferred / 26 min · dialogue 40 / 30 · captions 42 / 32 · titles 58 / 42 · status labels 26 / 22.
+ */
+window.EsssouthStyleSlots = {
+ "header.num": {
+  "bounds": {
+   "x": 96,
+   "y": 52,
+   "w": 60,
+   "h": 44
+  },
+  "fs": 22,
+  "minFs": 18,
+  "maxLines": 1
+ },
+ "header.section": {
+  "bounds": {
+   "x": 170,
+   "y": 52,
+   "w": 760,
+   "h": 44
+  },
+  "fs": 30,
+  "minFs": 24,
+  "maxLines": 1
+ },
+ "header.chip": {
+  "bounds": {
+   "x": 980,
+   "y": 54,
+   "w": 844,
+   "h": 44
+  },
+  "fs": 21,
+  "minFs": 17,
+  "maxLines": 1
+ },
+ "caption": {
+  "bounds": {
+   "x": 260,
+   "y": 884,
+   "w": 1560,
+   "h": 140
+  },
+  "fs": 42,
+  "minFs": 32,
+  "maxLines": 2
+ },
+ "bubble": {
+  "bounds": {
+   "x": 96,
+   "y": 116,
+   "w": 1060,
+   "h": 240
+  },
+  "fs": 40,
+  "minFs": 40,
+  "maxLines": 3
+ },
+ "token.default": {
+  "travelling": true,
+  "minScale": 0.8,
+  "maxLines": 2
+ },
+ "token.kicker": {
+  "travelling": true,
+  "minScale": 0.85,
+  "maxLines": 1
+ },
+ "token.title": {
+  "travelling": true,
+  "minScale": 0.75,
+  "maxLines": 2,
+  "minPx": 42
+ },
+ "token.chip": {
+  "travelling": true,
+  "minScale": 0.87,
+  "maxLines": 2,
+  "minPx": 26
+ },
+ "token.idea": {
+  "travelling": true,
+  "minScale": 0.87,
+  "maxLines": 2,
+  "minPx": 26
+ },
+ "token.question": {
+  "travelling": true,
+  "minScale": 0.87,
+  "maxLines": 3,
+  "minPx": 26
+ },
+ "token.note": {
+  "travelling": true,
+  "minScale": 0.87,
+  "maxLines": 2,
+  "minPx": 26
+ },
+ "token.step": {
+  "travelling": true,
+  "minScale": 0.87,
+  "maxLines": 3,
+  "minPx": 26
+ },
+ "token.colhead": {
+  "travelling": true,
+  "minScale": 0.87,
+  "maxLines": 1,
+  "minPx": 26
+ },
+ "token.quote": {
+  "travelling": true,
+  "minScale": 0.94,
+  "maxLines": 6,
+  "minPx": 30
+ },
+ "token.hold": {
+  "travelling": true,
+  "minScale": 0.8,
+  "maxLines": 2
+ },
+ "token.hint": {
+  "travelling": true,
+  "minScale": 0.85,
+  "maxLines": 2
+ },
+ "tag.small": {
+  "travelling": true,
+  "minScale": 1,
+  "maxLines": 1
+ },
+ "token.frame": {
+  "travelling": true,
+  "minScale": 0.85,
+  "maxLines": 2,
+  "minPx": 22
+ },
+ "token.hchip": {
+  "travelling": true,
+  "minScale": 0.8,
+  "maxLines": 1
+ }
+};
+window.EsssouthStyleContract = { diagram: [34, 26, 3], dialogue: [40, 30, 6], caption: [42, 32, 2], title: [58, 42, 2], status: [26, 22, 2], note: "[preferred px, minimum px, max lines]" };
+
+</script>
+<script>/* shared/toolkit/estimate.js */
+/*
+ * esssouth animation style · timing estimate for a SILENT build (browser and Node).
+ * The caption segmentation below is copied unchanged from the approved build's tools/text-segments.mjs.
+ * estimate(script) applies the approved reading profile: voiceSec = max(3, words × 60 / 145), captions and sentence spans
+ * spread by word weight over [lead 0.2 s, voiceSec − settle 0.15 s], 0.25 s tail after every line, no gap before a line,
+ * holds fixed in seconds. Everything it produces is an ESTIMATE until real narration replaces voiceSec.
+ *
+ * script = { blocks: [{ id, steps: [{ id, speaker, text } | { id, hold: seconds }] }] }
+ * returns { content, timing } in the formats timeline.js compiles.
+ */
+(function (root, factory) {
+  if (typeof module === 'object' && module.exports) module.exports = factory();
+  else root.EsssouthStyleEstimate = factory();
+})(typeof self !== 'undefined' ? self : this, function () {
+  'use strict';
+  // Caption segmentation shared by tools/estimate-timing.mjs (English) and tools/build.mjs --locale (any language).
+  // Captions are clause segments of the cue text: sentences; a sentence over 80 characters splits after a comma near the
+  // middle, else before a joining word (English list below; other languages fall back to commas, then to the word middle).
+  // Segment times are spread by word (or, for unspaced scripts, character) weight over [lead, voiceSec − settle].
+  // This is a starting point for a localized build, not a substitute for timing captions against the real recording.
+  const words = (s) => { const w = s.match(/[\p{L}\p{N}]+(?:['’-][\p{L}\p{N}]+)*/gu) || []; return /\s/.test(s.trim()) ? w.length : Math.max(1, Math.round(s.length / 2)); };
+  const sentences = (s) => (s.match(/[^.?!:;。？！：；]+(?:[.?!:;。？！：；]+["'”’」]?|$)\s*/g) || [s]).map((x) => x.trim()).filter(Boolean);
+  const JOIN = /^(because|and|or|but|so|than|while|without)$/;
+  function segments(text) {
+    const out = [];
+    sentences(text).forEach((s) => {
+      const prev = out[out.length - 1];
+      if (prev && (words(prev) <= 2 || /[:;]$/.test(prev)) && words(prev) + words(s) <= 14 && (prev + ' ' + s).length <= 80) { out[out.length - 1] += ' ' + s; return; }
+      if (s.length > 80) {
+        const ws = s.split(' '), mid = ws.length / 2, near = (a, b) => a < 0 || Math.abs(b - mid) < Math.abs(a - mid);
+        let best = -1; ws.forEach((w, i) => { if (/[,，、]$/.test(w) && i >= 3 && i < ws.length - 4 && near(best, i)) best = i; });
+        if (best < 0) ws.forEach((w, i) => { if (i > 2 && i < ws.length - 2 && JOIN.test(ws[i + 1] || '') && near(best, i)) best = i; });
+        if (best < 0 && s.length <= 110) { out.push(s); return; } // fits two caption lines; no clean clause boundary
+        if (ws.length < 2) { out.push(s); return; } // unspaced script: keep the sentence; the caption bar wraps it
+        if (best < 0) best = Math.floor(mid);
+        out.push(ws.slice(0, best + 1).join(' ')); out.push(ws.slice(best + 1).join(' '));
+      } else out.push(s);
+    });
+    return out;
+  }
+  function spread(parts, a, b) { const w = parts.map(words), tot = w.reduce((x, y) => x + y, 0); let t = a; return parts.map((p, i) => { const s = t, e = t + (b - a) * (w[i] / tot); t = e; return { text: p, start: +s.toFixed(3), end: +e.toFixed(3) }; }); }
+
+  const PROFILE = { wordsPerMinute: 145, minSec: 3, leadSec: 0.2, settleSec: 0.15, tailSec: 0.25 };
+  function estimate(script, profile) {
+    const P = Object.assign({}, PROFILE, profile || {}), cues = [], tcues = {}, holds = {}, blocks = [];
+    script.blocks.forEach((b) => { const steps = [];
+      b.steps.forEach((s) => {
+        if (s.hold != null) { holds[s.id] = { seconds: s.hold, source: 'authored fixed hold' }; steps.push({ id: s.id, kind: 'hold' }); return; }
+        const n = words(s.text), voiceSec = +Math.max(P.minSec, n * 60 / P.wordsPerMinute).toFixed(3);
+        cues.push({ id: s.id, speaker: s.speaker, text: s.text, audioId: s.id });
+        tcues[s.id] = { speaker: s.speaker, words: n, voiceSec, source: 'estimated reading profile (' + P.wordsPerMinute + ' wpm, minimum ' + P.minSec + ' s)', readHoldSec: 0,
+          sentences: spread(sentences(s.text), P.leadSec, voiceSec - P.settleSec).map(({ start, end }) => ({ start, end })), captions: spread(segments(s.text), P.leadSec, voiceSec - P.settleSec) };
+        steps.push({ id: s.id, kind: 'line' }); });
+      blocks.push({ id: b.id, steps }); });
+    const timing = { model: { wordsPerMinute: P.wordsPerMinute, leadSec: P.leadSec, settleSec: P.settleSec, tailSec: P.tailSec }, gaps: { default: 0, hold: 0, byCue: {} }, holds, cues: tcues };
+    return { content: { cues, sections: [{ blocks }] }, timing };
+  }
+  return { estimate, words, sentences, segments, spread, PROFILE };
+});
+</script>
+<script>/* shared/toolkit/engine.js */
+/*
+ * Lesson engine (Lesson 02 · Section 05 copy of the Section 06/05/04 engine, itself the accepted Section 03 engine with configurable header chips): deterministic, clock-free rendering of authored "scores".
+ *
+ *  - A TRACK (watch, practice main) is compiled by l02s05-timeline.js from the content
+ *    graph + the timing manifest. A SCORE is the choreography laid onto one track by l02s05-scenes.js.
+ *  - A score holds keyframes as PATCHES { field: value } with an authored motion duration, applied in
+ *    time order. Motion durations come from one table (MOTION in l02s05-scenes.js); cue lengths only
+ *    move WHEN a motion starts (through cue starts and semantic anchors), never how long it takes.
+ *  - render(trackKey, t, ctx) is a pure function: any cue or branch state can be reconstructed
+ *    directly, without playing earlier frames.
+ *  - Text never lives in geometry: every string comes from the label dictionary or a cue, and is
+ *    laid out inside a declared slot (content/slots.json). Overflow is reported, never hidden.
+ */
+(function (global) {
+  'use strict';
+  const K = global.EsssouthKit, { clamp, F, win, el, sv, op } = K;
+
+  function markup(text, hls) { // wrap the first occurrence of each evidence phrase in [[ ]]
+    let s = text; (hls || []).forEach((h) => { const i = s.indexOf(h); if (i >= 0) s = s.slice(0, i) + '[[' + h + ']]' + s.slice(i + h.length); });
+    return s;
+  }
+  const plain = (s) => String(s).replace(/\[\[|\]\]/g, '');
+  function rich(n, s) { n.textContent = ''; String(s).split(/\[\[(.+?)\]\]/).forEach((x, i) => { if (!x) return; if (i % 2) { const h = el('span', 'hl', n); h.textContent = x; } else n.appendChild(document.createTextNode(x)); }); }
+
+  function createEngine(stage, cfg) {
+    const E = { warnings: [], rm: !!cfg.reducedMotion, slots: cfg.slots, layers: {}, items: {}, tokens: {}, order: [] };
+    const SL = (id) => { const s = cfg.slots[id]; if (!s) throw new Error('unknown text slot ' + id); return s; };
+    E.label = (id) => { const l = cfg.labels[id]; if (!l) throw new Error('unknown label ' + id); return cfg.transformText ? cfg.transformText(l.text, id) : l.text; };
+    E.cueText = (id) => cfg.cueText(id);
+
+    // ---------- text fitting inside a slot ----------
+    // Policy (content/slots.json): keep the nominal size; if the text does not fit within maxLines
+    // and the slot width, step the size down to minFs; if it still does not fit, mark it and report.
+    function fitText(n, slot, key, w, widthOnly) {
+      const fs0 = slot.fs, min = slot.minFs || slot.fs, lh = slot.lineHeight || 1.22, lines = slot.maxLines || 1;
+      n.style.fontSize = fs0 + 'px'; n.classList.remove('overflow');
+      const fits = (fs) => { n.style.fontSize = fs + 'px'; const maxH = Math.ceil(lines * lh * fs) + 2; return n.scrollWidth <= (w || n.clientWidth) + 1 && (widthOnly || n.scrollHeight <= maxH); };
+      let fs = fs0; while (!fits(fs) && fs > min) fs = Math.max(min, fs - 1);
+      if (!fits(fs)) { n.classList.add('overflow'); E.warnings.push({ type: 'text-overflow', slot: key, text: n.textContent.slice(0, 80), atMinFs: min }); }
+      return fs;
+    }
+    E.fitText = fitText;
+
+    // ---------- header ----------
+    const head = el('div', 'layer stagehead', stage); // not 'head': the page header class is hidden in export mode
+    const sc = el('div', 'secchip', head); const num = el('span', 'num', sc), st = el('span', 't', sc);
+    // header chips: cfg.headerChips label ids; ids in cfg.tokenChips keep their header slot but are drawn by a
+    // persistent token (so the chip can leave the header and come back), measured by E.measureHeader()
+    const HC = cfg.headerChips || ['chip.task', 'chip.time', 'chip.budget'], TC = cfg.tokenChips || [];
+    const tch = el('div', 'tchips', head); const chips = HC.map((id) => { const s = el('span', '', tch); if (TC.includes(id)) s.style.visibility = 'hidden'; return s; });
+    function fillHeader() { num.textContent = E.label('section.num'); st.textContent = E.label('section.title'); HC.forEach((id, i) => (chips[i].textContent = E.label(id))); }
+    // the section title shares the header row with the chips: it shrinks to its slot minimum before it may touch them,
+    // and a remaining collision is reported (never clipped silently). Chips keep their measured positions.
+    function fitHeader() {
+      const s = cfg.slots['header.section'], gap = 16; let fs = s.fs; st.style.fontSize = fs + 'px';
+      const clash = () => sc.offsetLeft + sc.offsetWidth + gap > tch.offsetLeft;
+      while (clash() && fs > (s.minFs || s.fs)) { fs -= 1; st.style.fontSize = fs + 'px'; }
+      if (clash()) E.warnings.push({ type: 'text-overflow', slot: 'header.section', text: st.textContent.slice(0, 80), atMinFs: s.minFs, detail: 'section title reaches the header chips' });
+    }
+    E.measureHeader = () => { fillHeader(); const out = {}; HC.forEach((id, i) => { const c = chips[i]; out[id] = { x: tch.offsetLeft + c.offsetLeft, y: tch.offsetTop + c.offsetTop, w: c.offsetWidth, h: c.offsetHeight }; }); return out; };
+
+    // ---------- scene layers + items ----------
+    // stacking, back to front: header, scene layers, room, tokens, over-token text, captions, practice UI
+    const back = el('div', 'layer stack', stage);
+    E.layer = function (id, opts) {
+      const d = el('div', 'layer scene ' + ((opts && opts.cls) || ''), opts && opts.over ? E.front : back); d.dataset.layer = id;
+      const s = sv('svg', { viewBox: '0 0 1920 1080', width: 1920, height: 1080, style: 'position:absolute;inset:0;overflow:visible' }, d);
+      const L = { id, d, s, items: [] }; E.layers[id] = L; E.order.push(L); return L;
+    };
+    function reg(L, id, node, type) { if (!id) return node; if (E.items[id]) throw new Error('duplicate item ' + id); E.items[id] = { node, type: type || 'fade', L }; L.items.push(id); return node; }
+    // text bound to a label + slot (bounds come from the slot registry)
+    E.text = function (L, id, labelId, slotId, o) {
+      o = o || {}; const slot = SL(slotId), n = el('div', 'lbl2 ' + (o.cls || ''), L.d), b = Object.assign({}, slot.bounds, o.at || {});
+      Object.assign(n.style, { left: b.x + 'px', top: b.y + 'px', width: b.w + 'px', textAlign: slot.align || 'left', color: o.color || slot.color || '', fontWeight: o.weight || slot.weight || '', lineHeight: String(slot.lineHeight || 1.22) });
+      n.dataset.slot = slotId; n.dataset.label = labelId;
+      (E.texts = E.texts || []).push({ n, slot, slotId, labelId, b, marked: o.markup });
+      return reg(L, id, n);
+    };
+    E.box = (L, id, x, y, w, h, cls) => { const n = el('div', 'bx ' + (cls || ''), L.d); Object.assign(n.style, { left: x + 'px', top: y + 'px', width: w + 'px', height: h + 'px' }); return reg(L, id, n); };
+    E.path = (L, id, d, at) => reg(L, id, K.path(L.s, d, at), 'draw');
+    E.dashed = (L, id, d, color) => reg(L, id, sv('path', { d, fill: 'none', stroke: color || '#356CC8', 'stroke-width': 4, 'stroke-dasharray': '10 11', 'stroke-linecap': 'round' }, L.s));
+    E.arrowHead = (L, id, x, y, dir, color) => { const m = { down: `M ${x - 14} ${y - 18} L ${x} ${y} L ${x + 14} ${y - 18}`, right: `M ${x - 18} ${y - 14} L ${x} ${y} L ${x - 18} ${y + 14}`, up: `M ${x - 14} ${y + 18} L ${x} ${y} L ${x + 14} ${y + 18}`, left: `M ${x + 18} ${y - 14} L ${x} ${y} L ${x + 18} ${y + 14}` }[dir];
+      return reg(L, id, sv('path', { d: m, fill: 'none', stroke: color || '#B9C5D6', 'stroke-width': 5, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, L.s)); };
+    E.icon = (L, id, kind, x, y, size, color) => reg(L, id, K.icon(kind, L.d, x, y, size, color));
+    E.node = (L, id, n) => { if (!n.parentNode) L.d.appendChild(n); return reg(L, id, n); };
+
+    // ---------- room (characters), with speech above the clipped room art ----------
+    E.TF = { s: 0.8, x: 192, y: 150, clipBottom: 180 };
+    E.room = K.room(stage, global.EsssouthRig, cfg.characters, E.TF);
+    E.bubbles = {};
+    E.bubble = (id, speakerId, text, maxW) => { const b = E.room.bubble(speakerId, [text]); if (maxW) b.b.style.maxWidth = maxW + 'px'; E.bubbles[id] = b; return b; };
+
+    // ---------- tokens: persistent objects that move and change meaning ----------
+    const tl = el('div', 'layer tokens', stage);
+    E.token = function (id, letter) {
+      if (E.tokens[id]) throw new Error('duplicate token ' + id);
+      const n = el('div', 'tok', tl), b = el('div', 't2', n);
+      const T = { id, n, b, lt: el('span', 'lt', b), who: el('span', 'who', b), tx: el('span', 'tx', b), tag: el('div', 'ttag', n), tail: el('div', 'ttail', n), key: null, tagKey: null, spk: null };
+      T.lt.textContent = letter || ''; n.dataset.token = id; E.tokens[id] = T; return T;
+    };
+    E.front = el('div', 'layer stack', stage);
+    E.overLayer = (id) => E.layer(id, { cls: 'over', over: true }); // scene text that must sit above tokens
+    E.ui = el('div', 'layer ui', stage);
+    E.captions = K.captions(stage);
+
+    // ---------- scores ----------
+    E.Score = function (name, track, base) {
+      const S = { name, track, kf: {}, lay: {}, rev: {}, pose: { maya: [], learner: [], noah: [] }, bubs: {}, base, motions: [] };
+      S.set = (id, t, d, patch, why) => { if (!(id in base)) throw new Error('score ' + name + ': unknown object ' + id); (S.kf[id] = S.kf[id] || []).push([t, d, patch]); if (d > 0) S.motions.push({ id, t, d, why: why || '' }); };
+      S.all = (ids, t, d, f) => ids.forEach((id, i) => S.set(id, t, d, typeof f === 'function' ? f(id, i) : f));
+      S.show = (id, a, b, fi, fo) => { if (!E.layers[id]) throw new Error('unknown layer ' + id); (S.lay[id] = S.lay[id] || []).push([a, b == null ? 1e9 : b, fi == null ? 0.4 : fi, fo == null ? 0.3 : fo]); };
+      S.close = (id, t, fo) => { const w = S.lay[id] && S.lay[id][S.lay[id].length - 1]; if (w && w[1] >= 1e8) { w[3] = fo == null ? 0.3 : fo; w[1] = t + w[3]; } };
+      S.r = (id, t, d) => { if (!E.items[id]) throw new Error('unknown item ' + id); S.rev[id] = [t, d == null ? 0.45 : d]; };
+      S.revAll = (L, t) => E.layers[L].items.forEach((id) => (S.rev[id] = [t == null ? -1e9 : t, 0]));
+      S.p = (who, t, spec, tw) => S.pose[who].push([t, spec, tw]);
+      S.bub = (id, a, b) => (S.bubs[id] = S.bubs[id] || []).push([a, b]);
+      S.final = (id) => stateAt(S, id, 1e12);
+      return S;
+    };
+    function stateAt(S, id, t) {
+      const r = Object.assign({}, S.base[id]), k = S.kf[id]; if (!k) return r;
+      for (let i = 0; i < k.length; i++) {
+        const [t0, d, patch] = k[i]; if (t < t0) break;
+        const p = E.rm || d <= 0 ? 1 : F(t, t0, d);
+        for (const f in patch) { const v = patch[f]; r[f] = typeof v === 'number' && typeof r[f] === 'number' ? r[f] + (v - r[f]) * p : p >= 0.5 ? v : r[f]; }
+      }
+      return r;
+    }
+    E.stateAt = stateAt;
+    E.finish = function (S) {
+      Object.values(S.kf).forEach((k) => k.sort((x, y) => x[0] - y[0]));
+      S.poser = K.poser(global.EsssouthRig, cfg.charMap, () => E.rm);
+      const spec = {}; Object.keys(S.pose).forEach((w) => (spec[w] = S.pose[w].length ? S.pose[w] : [[-1e9, 'neutral:front']])); S.poser.set(spec);
+    };
+    const layerOp = (S, id, t) => { const ws = S.lay[id]; if (!ws) return 0; let o = 0; ws.forEach(([a0, b, fi, fo]) => (o = Math.max(o, win(t, a0, b, fi, fo)))); return o; };
+    const revP = (S, id, t) => { const r = S.rev[id]; if (!r) return 0; return E.rm ? (t >= r[0] ? 1 : 0) : F(t, r[0], r[1]); };
+    E.layerOp = layerOp; E.revP = revP;
+
+    // ---------- layout (fonts ready): fit static texts and bubbles ----------
+    E.layout = function () {
+      E.warnings = []; fillHeader(); fitHeader();
+      (E.texts || []).forEach((x) => { const s = E.label(x.labelId); if (x.marked) rich(x.n, markup(s, x.marked)); else x.n.textContent = s; x.fs = fitText(x.n, x.slot, x.slotId, x.b.w); });
+      Object.entries(E.bubbles).forEach(([id, b]) => { b.b.querySelector('.who'); E.room.placeBubble(b, E.warnings); fitBubble(b, id); });
+      return E.warnings;
+    };
+    function fitBubble(b, id) { const slot = SL('bubble'); const rows = b.rs; rows.forEach((r) => { r.style.fontSize = slot.fs + 'px'; }); if (b.b.offsetHeight > slot.bounds.h) E.warnings.push({ type: 'text-overflow', slot: 'bubble', text: id }); }
+
+    // token text fitting: measured per settled state (text, rect, kind) and cached
+    const meas = el('div', 'tok measure', stage), mb = el('div', 't2', meas), mlt = el('span', 'lt', mb), mwho = el('span', 'who', mb), mtx = el('span', 'tx', mb);
+    meas.style.visibility = 'hidden'; meas.style.left = '0px'; meas.style.top = '-2000px';
+    function tokenFit(s) {
+      const slotId = s.slot || 'token.default', slot = SL(slotId), key = [slotId, s.kind, s.text, Math.round(s.w), Math.round(s.h), s.fs, s.lt > 0.5, s.who > 0.5].join('|');
+      if (tokenFit.cache[key]) return tokenFit.cache[key];
+      meas.style.width = s.w + 'px'; meas.style.height = s.h + 'px'; mb.className = 't2 ' + s.kind + (s.lt > 0.5 ? ' showlt' : '') + (s.who > 0.5 ? ' showwho' : '');
+      mtx.textContent = plain(s.text);
+      // S05 layout contract: never shrink below the slot's absolute minimum (minPx); a nominal size already below it is reported
+      const min = Math.max(1, s.fs * (slot.minScale || 0.8), slot.minPx || 0), lines = slot.maxLines || 1, lh = slot.lineHeight || 1.2;
+      const ok = (fs) => { mb.style.fontSize = fs + 'px'; return mb.scrollWidth <= mb.clientWidth + 1 && mb.scrollHeight <= mb.clientHeight + 1 && mtx.offsetHeight <= Math.ceil(lines * lh * fs) + 2; };
+      let fs = Math.max(s.fs, slot.minPx || 0); while (!ok(fs) && fs > min) fs = Math.max(min, fs - 0.5);
+      const res = { fs, overflow: !ok(fs), belowContract: slot.minPx && s.fs < slot.minPx }; tokenFit.cache[key] = res; return res;
+    }
+    tokenFit.cache = {};
+    // check every settled token state of every score (used by layout validation and the expansion test)
+    E.checkTokens = function (scores) {
+      const out = [];
+      Object.values(scores).forEach((S) => Object.entries(S.kf).forEach(([id, k]) => { if (!E.tokens[id]) return;
+        k.forEach(([t0, d]) => { const s = stateAt(S, id, t0 + d + 1e-3); if (s.o < 0.05 || !s.text) return; const f = tokenFit(s); if (f.overflow) out.push({ type: 'text-overflow', slot: s.slot || 'token.default', token: id, score: S.name, t: +t0.toFixed(2), text: plain(s.text).slice(0, 80) }); if (f.belowContract) out.push({ type: 'below-contract-size', slot: s.slot, token: id, score: S.name, nominalPx: s.fs, minPx: SL(s.slot).minPx }); }); }));
+      const seen = new Set(); return out.filter((w) => { const k = w.token + '|' + w.text; if (seen.has(k)) return false; seen.add(k); return true; });
+    };
+
+    // ---------- render ----------
+    E.render = function (S, t, ctx) {
+      ctx = ctx || {};
+      E.order.forEach((L) => {
+        const o = layerOp(S, L.id, t); op(L.d, o); // items update even while hidden: the whole DOM is a function of t
+        L.items.forEach((iid) => { const it = E.items[iid], p = revP(S, iid, t);
+          if (it.type === 'draw') K.draw(it.node, p);
+          else { op(it.node, p); it.node.style.transform = E.rm || p >= 1 ? '' : `translateY(${((1 - p) * 12).toFixed(1)}px)`; } });
+      });
+      // room
+      const rs = stateAt(S, 'room', t); E.TF.s = rs.s; E.TF.x = rs.x; E.TF.y = rs.y; E.room.show(rs.o, 0);
+      Object.keys(E.bubbles).forEach((id) => { let o = 0; (S.bubs[id] || []).forEach(([a0, b]) => (o = Math.max(o, win(t, a0, b, 0.25, 0.25)))); const bb = E.bubbles[id].b; op(bb, o); bb.style.transform = o > 0 && o < 1 && !E.rm ? `translateY(${((1 - o) * 10).toFixed(1)}px)` : ''; });
+      const mouths = {};
+      E.room.rigs.forEach((rg, i) => {
+        const w = rg.def.id, p = S.poser.at(w, t);
+        const c = S.track.lines.find((x) => x.speakerId === w && t >= x.start && t <= x.speechEnd);
+        p.open = c && ctx.playing !== false ? cfg.mouth(c, t) : 0; mouths[w] = p.open;
+        p.blink = !E.rm && ((t + i * 1.1) % (3.7 + i * 0.6)) > (3.57 + i * 0.6); rg.update(p);
+      });
+      E.lastMouth = mouths;
+      // tokens
+      Object.values(E.tokens).forEach((T) => {
+        const s = stateAt(S, T.id, t);
+        const f = tokenFit(s);
+        T.n.style.left = s.x.toFixed(1) + 'px'; T.n.style.top = s.y.toFixed(1) + 'px'; T.n.style.width = s.w.toFixed(1) + 'px'; T.n.style.height = s.h.toFixed(1) + 'px';
+        T.n.style.transform = s.rot ? `rotate(${s.rot.toFixed(2)}deg)` : ''; T.b.style.fontSize = f.fs.toFixed(2) + 'px';
+        const cls = 't2 ' + s.kind + (s.act > 0.5 ? ' active' : '') + (s.lt > 0.5 ? ' showlt' : '') + (s.who > 0.5 ? ' showwho' : '') + (f.overflow ? ' overflow' : '');
+        if (T.b.className !== cls) T.b.className = cls;
+        // a fully hidden token carries no text at all (nothing for assistive technology or text search to find)
+        const shown = s.o >= 0.003, k = (shown ? s.text : '') + '|' + (s.hl > 0.5); if (T.key !== k) { T.key = k; if (!shown) T.tx.textContent = ''; else if (s.hl > 0.5) rich(T.tx, s.text); else T.tx.textContent = plain(s.text); }
+        if (T.spk !== s.spk) { T.spk = s.spk; const c = cfg.charMap[s.spk]; T.who.textContent = c ? c.name : ''; T.who.style.color = c ? c.color : ''; }
+        T.tail.style.display = / bubble/.test(' ' + s.kind) && !/other/.test(s.kind) ? '' : 'none';
+        const tg = s.tag && shown ? E.label(s.tag) : ''; if (T.tagKey !== tg) { T.tagKey = tg; T.tag.textContent = tg; T.tag.style.display = tg ? '' : 'none'; }
+        op(T.n, s.o);
+      });
+      E.captions.render(t, S.track.captionCues, ctx.captions !== false && !ctx.hideCaptions);
+    };
+    return E;
+  }
+  global.EsssouthStyleEngine = { createEngine, markup, plain };
+})(window);
+
+</script>
+<script>/* shared/toolkit/recipes.js */
+/*
+ * esssouth animation style · reusable motion recipes.
+ * Extracted from the approved Lesson 02 · Section 05 choreography (reference-media/approved-s05-source/l02s05-scenes.js,
+ * function helpers() and the constants above it). The bodies are kept as they were approved; only the lesson-specific
+ * geometry (G, FRAMES, HEAD, IMAGINED) became parameters, and speak() takes the speaker as an argument.
+ *
+ * Rules these recipes enforce (do not edit them per lesson; see references/MOTION_RECIPES.md):
+ *  - every movement lasts a MOTION duration; lessons choose only WHEN (cue starts and named anchors);
+ *  - a drawn/faded layer item keeps its FIRST reveal (S.revL), so showing a layer again never hides a connector;
+ *  - a labelled frame or quote heading arrives first and leaves last (frameTo/frameOff, claimTo/claimOff);
+ *  - the speech bubble waits for the room's layout move (say(..., WAIT)).
+ */
+(function (global) {
+  'use strict';
+  const MOTION = { travel: 0.75, cut: 0.3, enter: 0.4, rise: 0.45, focus: 0.25, draw: 0.6, layout: 0.8, morph: 0.5, link: 0.5, pulse: 0.8 };
+  const FULL = { s: 0.8, x: 192, y: 150 }, SIDE = { s: 0.56, x: 40, y: 250 }, ROOM = { full: FULL, side: SIDE };
+  const R = (x, y, w, h, fs) => (fs == null ? { x, y, w, h } : { x, y, w, h, fs });
+  const WAIT = MOTION.travel + 0.15; // a bubble enters after the room has finished sliding to the side layout
+
+  // Style geometry shared by every scene (1920 × 1080 stage). Lesson rects are chosen inside these columns.
+  const GEO = {
+    kick: R(110, 140, 1500, 36, 24), ttl: Object.assign(R(105, 182, 1715, 72, 52), { slot: 'token.title' }),
+    bubWide: R(70, 100, 1040, 256, 32),
+    holdTxt: R(260, 892, 1400, 72, 28), holdBar: R(260, 972, 1400, 6, 10), holdHint: R(260, 990, 1400, 34, 22),
+    claimHeadR: R(1140, 150, 690, 56, 26),             // a heading in the side column while the room is shown
+    sideChips: [R(1140, 236, 690, 70, 30), R(1140, 326, 690, 70, 30), R(1140, 416, 690, 70, 30)],
+    cols: { left: { x: 150, w: 800 }, right: { x: 1060, w: 710 }, side: { x: 1140, w: 690 }, wide: { x: 150, w: 1620 }, top: 290, bottom: 850 }
+  };
+
+  // The three-person cast (artwork lives in characters.js; seat X is in room coordinates).
+  const CAST = [
+    { id: 'maya', name: 'Maya', color: '#B5763F', seatX: 430, rig: { skin: '#E8B98F', hair: '#3B2A20', hairStyle: 'bob', top: '#B5763F', topShade: '#9A6233', neck: 'vneck' } },
+    { id: 'learner', name: 'You', color: '#202632', seatX: 960, rig: { skin: '#A8754E', hair: '#1F1A17', hairStyle: 'curls', top: '#2E3A52', topShade: '#232D41', neck: 'hood' } },
+    { id: 'noah', name: 'Noah', color: '#7A6A9E', seatX: 1490, rig: { skin: '#F1CFB0', hair: '#6B4A2E', hairStyle: 'short', glasses: true, top: '#7A6A9E', topShade: '#65578A', neck: 'collar' } }
+  ];
+
+  // opts: { G: lesson geometry merged over GEO, FRAMES: { layerId: [x, y, w, h] }, HEAD: { layerId: headingRect },
+  //         IMAGINED: token ids that live inside a frame, L: label lookup, Q: cue text lookup, markup }
+  function helpers(E, S, opts) {
+    const G = Object.assign({}, GEO, opts.G || {}), FRAMES = opts.FRAMES || {}, HEAD = opts.HEAD || {}, IMAGINED = opts.IMAGINED || [];
+    const L = opts.L, Q = opts.Q, markup = opts.markup;
+    S.vis = new Set(); S.open = []; S.cur = {}; S.frame = null;
+    S.put = (id, t, d, patch) => { if ('o' in patch) { if (patch.o > 0) S.vis.add(id); else S.vis.delete(id); } S.set(id, t, d, patch); };
+    S.hide = (ids, t, d) => ids.forEach((id) => { if (S.vis.has(id)) S.put(id, t, d == null ? MOTION.cut : d, { o: 0, act: 0 }); });
+    // an item keeps its FIRST reveal (a layer shown again later only fades in; re-revealing would hide it until the later time)
+    S.revL = (l, t, gap) => E.layers[l].items.forEach((id, i) => { if (!S.rev[id]) S.r(id, t + i * (gap || 0), E.items[id].type === 'draw' ? MOTION.draw : MOTION.enter); });
+    S.addLayer = (l, t, gap) => { if (!S.open.includes(l)) { S.show(l, t, null, MOTION.enter, MOTION.cut); S.open.push(l); S.revL(l, t, gap == null ? 0.1 : gap); } };
+    S.dropLayer = (l, t) => { if (S.open.includes(l)) { S.close(l, t); S.open = S.open.filter((x) => x !== l); } };
+    S.dropAll = (t, keep) => S.open.filter((l) => !(keep || []).includes(l) && !FRAMES[l]).forEach((l) => S.dropLayer(l, t));
+    S.roomTo = (t, mode, d) => { if (mode === 'off') { if (S.roomMode && S.roomMode !== 'off') S.set('room', t, MOTION.cut, { o: 0 }); } else if (S.roomMode === 'off' || S.roomMode == null) { S.set('room', t, 0, Object.assign({}, ROOM[mode], { o: 0 })); S.set('room', t + MOTION.cut, MOTION.enter, { o: 1 }); } else S.set('room', t, d || MOTION.layout, Object.assign({}, ROOM[mode], { o: 1 })); S.roomMode = mode; };
+    S.txt = (id, t, text, rect) => { const cur = S.cur[id];
+      if (text == null) { if (S.vis.has(id)) S.put(id, t, MOTION.cut, { o: 0 }); S.cur[id] = null; return; }
+      if (cur === text && S.vis.has(id)) { if (rect) S.put(id, t, MOTION.travel, Object.assign({}, rect)); return; }
+      if (S.vis.has(id)) { S.put(id, t, 0.15, { o: 0 }); S.set(id, t + 0.16, 0, Object.assign({}, rect || {}, { text })); S.put(id, t + 0.2, MOTION.enter, { o: 1 }); }
+      else { S.set(id, t - 1e-3, 0, Object.assign({}, rect || {}, { text, o: 0 })); S.put(id, t, MOTION.enter, { o: 1 }); }
+      S.cur[id] = text; };
+    S.head = (t, k, ti) => { S.txt('kick', t, k ? L(k) : null, G.kick); S.txt('ttl', t, ti ? L(ti) : null, G.ttl); };
+    S.title = (t, ti) => S.txt('ttl', t, ti ? L(ti) : null, G.ttl);
+    S.rise = (id, t, rect, extra) => { S.set(id, t - 1e-3, 0, Object.assign({}, rect, { y: rect.y + 14, o: 0 }, extra || {})); S.put(id, t, MOTION.rise, { y: rect.y, o: 1 }); };
+    S.to = (id, t, rect, extra, d) => S.put(id, t, d || MOTION.travel, Object.assign({}, rect, { o: 1 }, extra || {}));
+    S.place = (id, t, rect, extra) => (S.vis.has(id) ? S.to(id, t, rect, extra) : S.rise(id, t + 0.1, rect, extra));
+    S.say = (c, hls, wait) => { const s = c.start + (wait || 0), rect = G.bubWide; S.set('bubL', s - 0.16, 0, Object.assign({}, rect, { text: markup(Q(c.cueId), hls || []), hl: 0, y: rect.y + 12, o: 0 })); S.put('bubL', s - 0.15, MOTION.rise, { y: rect.y, o: 1 }); S.put('bubL', s + 0.1, MOTION.focus, { hl: 1 }); };
+    S.pulseOn = (ids, t, len) => { S.all(ids, t, MOTION.focus, { act: 1 }); S.all(ids, t + (len || MOTION.pulse), MOTION.focus, { act: 0 }); };
+    S.hold = (H, label) => { S.rise('holdTxt', H.start + 0.15, G.holdTxt, { text: label }); S.set('holdBar', H.start + 0.15, 0, Object.assign({}, G.holdBar, { w: 0, o: 1 })); S.vis.add('holdBar');
+      S.put('holdBar', H.start + 0.2, H.dur - 0.4, { w: G.holdBar.w }); S.rise('holdHint', H.start + 0.3, G.holdHint); S.hide(['holdTxt', 'holdBar', 'holdHint'], H.end, 0.2); };
+    // the imagined thumbnail frame: new frame before the old one leaves; the heading travels with it; contents leave before the heading
+    S.frameTo = (t, f) => { const old = S.frame; S.addLayer(f, t); if (S.vis.has('frameLbl')) S.to('frameLbl', t, HEAD[f]); else S.rise('frameLbl', t, HEAD[f]); if (old && old !== f) S.dropLayer(old, t + MOTION.travel + 0.1); S.frame = f; };
+    S.frameOff = (t) => { S.hide(IMAGINED, t); S.hide(['frameLbl'], t + MOTION.cut); if (S.frame) S.dropLayer(S.frame, t + MOTION.cut); S.frame = null; };
+    // a labelled quote never appears without its heading: the heading comes first and leaves last
+    S.claimTo = (t, headRect, quoteRect) => { S.place('claimHead', t, headRect); S.place('claimQ', t + 0.25, quoteRect, { kind: 'excerpt claim' }); };
+    S.claimOff = (t) => { S.hide(['claimQ'], t); S.hide(['claimHead'], t + MOTION.cut); };
+    return S;
+  }
+  // a character line: prep 0.38 s before the words, the gesture 0.15 s before, settle 0.2 s after; the others turn to listen
+  const speak = (S, c, pose, who) => { who = who || 'learner'; const others = CAST.map((x) => x.id).filter((x) => x !== who);
+    S.p(who, c.start - 0.38, pose, 'prep'); S.p(who, c.start - 0.15, pose); S.p(who, c.speechEnd + 0.2, pose, 'settle'); others.forEach((w, i) => S.p(w, c.start + 0.15 + i * 0.12, 'listen:' + who)); };
+  const neutral = (S, t) => CAST.forEach((c) => S.p(c.id, t, 'neutral:front'));
+  // the frame boxes of the imagined-example layers (drawings never stretch)
+  const frames = (E, FRAMES) => Object.entries(FRAMES).forEach(([id, [x, y, w, h]]) => E.box(E.layer(id), id + '.b', x, y, w, h, 'imagframe'));
+  // the S05 connector vocabulary
+  const dline = (E, Ly, id, d, color) => E.dashed(Ly, id, d, color || '#9DB6E0');
+  const head = (E, Ly, id, x, y, dir, color) => E.arrowHead(Ly, id, x, y, dir, color || '#356CC8');
+  const qmark = (E, Ly, id, x, y) => { const n = document.createElement('div'); n.className = 'qmark'; n.style.cssText = `left:${x - 20}px;top:${y - 20}px;`; n.textContent = '?'; E.node(Ly, id, n); };
+
+  global.EsssouthStyleRecipes = { MOTION, ROOM, R, WAIT, GEO, CAST, helpers, speak, neutral, frames, dline, head, qmark };
+})(window);
+
+</script>
+<script>/* shared/l08/slots-l08.js */
+/* esssouth Lesson 08 · extra text slots (same policy as shared/toolkit/slots.js; overflow is reported, never hidden). */
+window.L08Slots = {
+  "token.option": { "travelling": true, "minScale": 0.87, "maxLines": 3, "minPx": 26 },
+  "token.quoteLong": { "travelling": true, "minScale": 0.94, "maxLines": 9, "minPx": 30 },
+  "token.summary": { "travelling": true, "minScale": 0.9, "maxLines": 4, "minPx": 28 }
+};
+
+</script>
+<script>/* shared/l08/captions.js */
+/*
+ * esssouth Lesson 08 · caption bar with speaker names from the section graph (participants). The bar, its sizes, colours
+ * and timing rule are the approved beat-kit captions() unchanged; only the speaker-name table is now data, because
+ * Lesson 08 names the learner-side speaker "Participant" (an offstage "Prompt reader" name is kept for compatibility).
+ */
+(function (global) {
+  'use strict';
+  const K = global.EsssouthKit, { el, op } = K;
+  function captions(stage, names) {
+    const cap = el('div', 'capbar', stage), cw = el('div', 'who', cap), dot = el('i', '', cw), name = el('span', '', cw), text = el('div', 'ctext', cap);
+    let key = null;
+    const fit = () => { text.style.fontSize = '42px'; let fs = 42; while (text.scrollHeight > 107 && fs > 32) { fs -= 2; text.style.fontSize = fs + 'px'; } return text.scrollHeight <= 107; };
+    return {
+      check(cues, warns) { Object.values(cues).forEach((c) => c.segments.forEach((s) => { text.textContent = s.text; if (!fit()) warns.push({ type: 'overflow', key: 'caption ' + c.id }); })); key = null; },
+      render(t, cues, show) {
+        let cur = null;
+        Object.values(cues).forEach((c) => c.segments.forEach((s) => { if (t >= c.start + s.start - 0.1 && t <= c.start + s.end + 0.25) cur = { c, s }; }));
+        if (!cur || show === false) { op(cap, 0); return; }
+        op(cap, 1); const k = cur.c.id + cur.s.start;
+        if (k !== key) { key = k; const nm = names[cur.c.speakerId]; name.textContent = nm[0]; dot.style.background = nm[1]; text.textContent = cur.s.text; fit(); }
+      }
+    };
+  }
+  global.L08Captions = { captions };
+})(window);
+
+</script>
+<script>/* shared/l08/compile.js */
+/*
+ * esssouth Lesson 08 · graph compiler (UMD: browser and Node). NEW for Lesson 08: it is the explicit adapter from the
+ * supplied authoring graph (sections/SXX/content/source/sectionXX.en.json + timing.en.json + anchors.en.json) to the
+ * linear tracks the accepted engine renders. The historical Lesson 02 compilers are not used.
+ *
+ *  - One authoritative graph drives both modes. Blocks are flattened in authored order; cue ids are never sorted.
+ *  - A cue lasts voiceSec + tailSec. voiceSec comes from the supplied estimate (seconds − 0.35 s tail) unless a profile
+ *    replaces it (retime fixture multipliers, or measured audio durations later). Holds are fixed seconds.
+ *  - Anchors are phrase positions inside a cue: localSec = wordsBefore(phrase) / words(cue) × voiceSec. With the
+ *    production profile this reproduces the supplied estimatedSeconds exactly; when a clip is longer, the anchor keeps
+ *    its relative place in the sentence (semantic placement), while motion durations stay absolute (the engine's MOTION).
+ *  - Routes: 'watch' (declared path: think hold + one branch), and in a section with a gate, one Practice route per
+ *    option ('practice:A' …, or 'practice:model'), plus 'practice:skip'. Before the gate all routes are identical, so the
+ *    player can move between them at the gate without a visual jump. Sections without a gate have 'practice:main' = the
+ *    same steps as 'watch'.
+ */
+(function (root, factory) {
+  if (typeof module === 'object' && module.exports) module.exports = factory();
+  else root.L08Compile = factory();
+})(typeof self !== 'undefined' ? self : this, function () {
+  'use strict';
+  const WORD = /[\p{L}\p{N}_]+(?:['’][\p{L}\p{N}_]+)*/gu;
+  const words = (s) => (String(s).match(WORD) || []).length;
+  const TAIL = 0.35, GATE_PRESENT = 1.2; // GATE_PRESENT: the choice prompt and neutral options rise before Practice waits
+
+  // caption segments: the approved segmentation (shared/toolkit/estimate.js), spread by word weight over the voiced span
+  function captionSegments(text, voiceSec, seg) {
+    const parts = seg(text), w = parts.map((p) => Math.max(1, words(p))), tot = w.reduce((a, b) => a + b, 0); let t = 0;
+    return parts.map((p, i) => { const s = t, e = t + voiceSec * (w[i] / tot); t = e; return { text: p, start: +s.toFixed(3), end: +e.toFixed(3) }; });
+  }
+
+  function cueTiming(graph, timing, profile) {
+    const out = {}, P = profile || {}, mult = P.durationMultipliers || {}, measured = P.voiceSec || {};
+    Object.keys(graph.cues).forEach((id) => {
+      const est = timing.cues[id]; if (!est) throw new Error('timing: no estimate for ' + id);
+      let v = +(est.seconds - TAIL).toFixed(3), source = 'estimated reading (' + timing.wordsPerMinute + ' wpm + ' + TAIL + ' s tail)';
+      if (mult[id] != null) { v = +(v * mult[id]).toFixed(3); source = 'retime profile ×' + mult[id]; }
+      if (measured[id] != null) { v = +measured[id]; source = 'measured clip'; }
+      out[id] = { voiceSec: v, tailSec: TAIL, source };
+    });
+    return out;
+  }
+
+  // flatten the graph into route step lists ({ kind, id, branch })
+  function routeSteps(graph) {
+    const flat = []; graph.blocks.forEach((b) => b.steps.forEach((s) => flat.push(Object.assign({ block: b.id }, s))));
+    const ints = flat.filter((s) => s.kind === 'interaction');
+    if (ints.length > 1) throw new Error(graph.sectionId + ': more than one gate is not supported by this adapter');
+    const I = ints.length ? graph.interactions[ints[0].id] : null;
+    const R = {};
+    if (!I) { R.watch = flat.map((s) => ({ kind: s.kind, id: s.id, block: s.block })); R['practice:main'] = R.watch; return { routes: R, gate: null }; }
+    const gi = flat.findIndex((s) => s.kind === 'interaction'), pre = flat.slice(0, gi), post = flat.slice(gi + 1);
+    if (!post.length || post[0].id !== I.rejoinCue) throw new Error(graph.sectionId + ': rejoin cue ' + I.rejoinCue + ' is not the step after the gate');
+    const blk = flat[gi].block, P = (a) => a.map((s) => ({ kind: s.kind, id: s.id, block: s.block }));
+    const options = I.kind === 'choice' ? I.options.map((o) => ({ key: o.id, label: o.label, events: o.events })) : [{ key: 'model', label: null, events: I.model }];
+    const watchKey = I.kind === 'choice' ? I.watchChoice : 'model';
+    const ev = (o) => o.events.map((e) => ({ kind: e.kind, id: e.id, block: blk, branch: o.key }));
+    const wo = options.find((o) => o.key === watchKey);
+    R.watch = [].concat(P(pre), [{ kind: 'think', id: I.id + '.watchThink', block: blk, seconds: I.watchThinkSeconds, gate: I.id }], ev(wo), P(post));
+    options.forEach((o) => { R['practice:' + o.key] = [].concat(P(pre), [{ kind: 'gate', id: I.id + '.gate', block: blk, gate: I.id }], ev(o), [{ kind: 'ready', id: I.id + '.ready', block: blk, gate: I.id, branch: o.key }], P(post)); });
+    R['practice:skip'] = [].concat(P(pre), [{ kind: 'gate', id: I.id + '.gate', block: blk, gate: I.id }, { kind: 'skip', id: I.id + '.skip', block: blk, gate: I.id }], P(post));
+    return { routes: R, gate: { id: I.id, kind: I.kind, interaction: I, options, watchKey } };
+  }
+
+  function compile(input, opts) {
+    opts = opts || {};
+    const graph = input.graph, seg = opts.segments, profile = opts.profile || null;
+    const ct = cueTiming(graph, input.timing, profile);
+    const holdSec = (id) => { const h = graph.holds[id]; if (!h) throw new Error('unknown hold ' + id); return profile && profile.fixedHolds && profile.fixedHolds[id] != null ? profile.fixedHolds[id] : h.seconds; };
+    const text = (id) => (opts.cueText ? opts.cueText(id) : graph.cues[id].text);
+    // anchors: supplied semantic anchors (one per cue) + section staging anchors, both phrase-based
+    const A = {};
+    Object.entries(input.anchors.anchors).forEach(([n, a]) => (A[n] = { cue: a.cueId, phrase: a.phrase, supplied: a.estimatedSeconds, source: 'supplied semantic anchor' }));
+    Object.entries((input.staging && input.staging.anchors) || {}).forEach(([n, a]) => { if (A[n]) throw new Error('duplicate anchor ' + n); A[n] = Object.assign({ source: 'staging anchor' }, a); });
+    const localOf = (name) => {
+      const a = A[name]; if (!a) throw new Error('unknown anchor ' + name); const c = graph.cues[a.cue]; if (!c) throw new Error('anchor ' + name + ': unknown cue ' + a.cue);
+      const v = ct[a.cue].voiceSec, src = graph.cues[a.cue].text; // anchors are placed in the authoritative English line
+      if (a.frac != null) return a.frac * v;
+      const i = src.indexOf(a.phrase); if (i < 0) throw new Error('anchor ' + name + ': phrase not in ' + a.cue);
+      const before = words(src.slice(0, i)) + (a.end ? words(a.phrase) : 0), est = input.timing.cues[a.cue];
+      // the supplied reading rate (wordsBefore × 60 / wpm, as in anchors.en.json), scaled with the clip when a profile
+      // lengthens it; capped inside the voiced span
+      return Math.min(v, before * 60 / input.timing.wordsPerMinute * (v / (est.seconds - TAIL)));
+    };
+    const { routes, gate } = routeSteps(graph);
+    const tracks = {};
+    Object.entries(routes).forEach(([key, list]) => {
+      if (tracks[key]) return; let t = 0; const byId = {}, lines = [], captionCues = {}, steps = [];
+      list.forEach((st) => {
+        let dur, voice = null, speakerId = null;
+        if (st.kind === 'line') { const c = graph.cues[st.id]; if (!c) throw new Error(key + ': unknown cue ' + st.id); voice = ct[st.id].voiceSec; dur = voice + ct[st.id].tailSec; speakerId = c.speaker; }
+        else if (st.kind === 'hold') dur = holdSec(st.id);
+        else if (st.kind === 'think') dur = st.seconds;
+        else if (st.kind === 'gate') dur = GATE_PRESENT;
+        else dur = 0; // ready / skip markers
+        const s = Object.assign({}, st, { cueId: st.id, start: t, end: t + dur, dur, gapBefore: 0, speechEnd: voice != null ? t + voice : t + dur, voiceSec: voice, speakerId, common: !st.branch && !['think', 'gate', 'ready', 'skip'].includes(st.kind) });
+        if (byId[st.id]) throw new Error(key + ': step ' + st.id + ' occurs twice');
+        byId[st.id] = s; steps.push(s); t = s.end;
+        if (st.kind === 'line') { lines.push(s); captionCues[st.id] = { id: st.id, start: s.start, speakerId, segments: captionSegments(text(st.id), voice, seg) }; }
+      });
+      const tr = { key, steps, byId, lines, captionCues, duration: t, gate };
+      tr.cue = (id) => { if (!byId[id]) throw new Error(key + ': ' + id + ' not in this route'); return byId[id]; };
+      tr.has = (id) => !!byId[id];
+      tr.local = localOf;
+      tr.at = (name) => { const a = A[name]; if (!a) throw new Error('unknown anchor ' + name); return tr.cue(a.cue).start + localOf(name); };
+      tr.hasAnchor = (name) => !!A[name] && !!byId[A[name].cue];
+      tr.stepAt = (x) => { for (let i = steps.length - 1; i >= 0; i--) if (x >= steps[i].start && (x < steps[i].end || i === steps.length - 1 || steps[i].dur === 0 && x === steps[i].start)) return steps[i]; return steps[0]; };
+      if (gate) { const g = steps.find((s) => s.kind === 'gate' || s.kind === 'think'); tr.gateStep = g; const br = steps.filter((s) => s.branch); tr.branchStart = br.length ? br[0].start : null; tr.branchEnd = br.length ? br[br.length - 1].end : null; tr.readyStep = steps.find((s) => s.kind === 'ready') || null; }
+      tracks[key] = tr;
+    });
+    const anchorList = Object.entries(A).map(([name, a]) => ({ name, cue: a.cue, phrase: a.phrase, localSec: +localOf(name).toFixed(3), suppliedSec: a.supplied != null ? a.supplied : null, source: a.source }));
+    return { tracks, gate, cueTiming: ct, anchors: anchorList, holdSec, words };
+  }
+
+  // the common section position of route time x (the skip/main route is the common timeline: no branch, gate as a point)
+  function commonTime(C, route, x) {
+    const common = C.tracks[C.gate ? 'practice:skip' : 'practice:main'], s = route.stepAt(x);
+    if (common.has(s.id) && s.common) return common.cue(s.id).start + Math.min(x - s.start, s.dur);
+    if (C.gate) return common.gateStep.end; // inside the gate, a branch or the think hold: the gate's common position
+    return x;
+  }
+  return { compile, commonTime, words, TAIL, GATE_PRESENT };
+});
+
+</script>
+<script>/* shared/l08/kit.js */
+/*
+ * esssouth Lesson 08 · scene kit. Thin Lesson 08 layer over the approved recipes (shared/toolkit/recipes.js): every motion
+ * still uses the approved helpers and MOTION durations. What is new here is only bookkeeping for the L08 graph:
+ *  - base(E, ctx): chrome tokens first (kicker, title), the section's content tokens, then (finishTokens) the gate option
+ *    cards, the hold UI and the speech bubble on top, in the approved stacking order;
+ *  - helpers(E, S, tr, ctx): the approved recipe helpers bound to one route, plus cue/anchor lookups by short id,
+ *    a speaker-aware bubble (say), a character-line wrapper (line), the gate presentation (gate) and clearAll.
+ * Deliberate extension (recorded in STYLE_PROVENANCE.md): the bubble tail points at the speaking seat for Maya and Noah
+ * (CSS .spk-maya / .spk-noah); the approved build only had "You" speaking in the side layout.
+ */
+(function (global) {
+  'use strict';
+  function base(E, ctx) {
+    const Rx = ctx.Rx, R = Rx.R, L = E.label, DEF = { room: { s: Rx.ROOM.full.s, x: Rx.ROOM.full.x, y: Rx.ROOM.full.y, o: 0 } };
+    const GG = Object.assign({}, Rx.GEO);
+    const T0 = (r, kind, text, slot, extra) => Object.assign({ x: r.x, y: r.y, w: r.w, h: r.h, fs: r.fs, rot: 0, o: 0, act: 0, lt: 0, who: 0, hl: 0, kind, text, slot, tag: '', spk: 'learner' }, extra || {});
+    const tok = (id, r, kind, text, slot, extra, letter) => { E.token(id, letter); DEF[id] = T0(r, kind, text, slot, extra); return id; };
+    tok('kick', GG.kick, 'kicker', '', 'token.kicker'); tok('ttl', GG.ttl, 'q title', '', 'token.title');
+    const K = { DEF, tok, GG, L, R, Rx };
+    K.finishTokens = function (opts) {
+      opts = opts || {}; const gate = ctx.C.gate;
+      if (gate && gate.kind === 'choice') gate.options.forEach((o, i) => tok('opt.' + o.key, (opts.optRects || K.optRects)[i], 'option', L('gate.option.' + o.key), 'token.option', { lt: 1 }, o.key));
+      tok('holdTxt', GG.holdTxt, 'hint hold', '', 'token.hold'); tok('holdBar', Object.assign({}, GG.holdBar, { w: 0 }), 'bar', '', 'token.default'); tok('holdHint', GG.holdHint, 'hint', L('ui.pauseMore'), 'token.hint');
+      tok('bubL', GG.bubWide, 'bubble', '', 'token.quote', { who: 1, spk: 'learner' });
+    };
+    K.optRects = [R(150, 470, 1620, 104, 30), R(150, 594, 1620, 104, 30), R(150, 718, 1620, 104, 30)];
+    return K;
+  }
+
+  function helpers(E, S, tr, ctx) {
+    const Rx = ctx.Rx, MOTION = Rx.MOTION, D = ctx.D, L = E.label, markup = global.EsssouthStyleEngine.markup, P = D.sectionId + '.';
+    const GG = Object.assign({}, Rx.GEO, ctx.scene.G || {});
+    Rx.helpers(E, S, { G: GG, L, Q: E.cueText, markup, FRAMES: ctx.scene.FRAMES, HEAD: ctx.scene.HEAD, IMAGINED: ctx.scene.IMAGINED });
+    const X = { S, tr, L, MOTION, R: Rx.R, WAIT: Rx.WAIT, GG, neutral: Rx.neutral, speak: Rx.speak, dline: Rx.dline, head: Rx.head };
+    X.id = (s) => (s.indexOf('.') >= 0 && s.startsWith('L08') ? s : P + s);
+    X.has = (s) => tr.has(X.id(s));
+    X.cue = (s) => tr.cue(X.id(s));
+    X.X0 = (s) => X.cue(s).start;
+    X.end = (s) => X.cue(s).end;
+    X.sp = (s) => X.cue(s).speechEnd;
+    X.at = (n) => tr.at(n);
+    X.a = (s) => tr.at('a_' + X.id(s).replace(/\./g, '_')); // the supplied semantic anchor of a cue
+    X.stepsOf = (block) => tr.steps.filter((s) => s.block === X.id(block));
+    // speaker-aware bubble: exact cue text, key phrases blue 0.1 s after it rises (the approved say(), plus the speaker)
+    X.say = (c, hls, wait, rectOverride) => { // rectOverride: a taller bubble for an unusually long line (same width, style and tail)
+      const spk = c.speakerId;
+      // the approved .bubble rule caps the visible bubble at 760 px; Noah's bubble is placed so his seat (stage x 874) lies over
+      // it and the tail can reach him (Lesson 08 fix: in L03/L04 the Noah tail could sit beyond the 760 px edge)
+      const base = rectOverride || (spk === 'noah' ? Object.assign({}, GG.bubWide, { x: 274, w: 760 }) : GG.bubWide);
+      const s = c.start + (wait || 0), rect = base, extra = (rectOverride && rectOverride.cls) ? ' ' + rectOverride.cls : '';
+      if (S.vis.has('bubL')) S.put('bubL', c.start - 0.1, MOTION.focus, { o: 0, hl: 0 }); // the previous speaker's words leave as this line starts
+      S.set('bubL', s - 0.16, 0, Object.assign({}, rect, { text: markup(E.cueText(c.cueId), hls || []), hl: 0, y: rect.y + 12, o: 0, spk, kind: 'bubble spk-' + spk + extra, slot: (rectOverride && rectOverride.slot) || 'token.quote' }));
+      S.put('bubL', s - 0.15, MOTION.rise, { y: rect.y, o: 1 }); S.put('bubL', s + 0.1, MOTION.focus, { hl: 1 });
+    };
+    // a character line in the side layout: room in (once), speaker pose and listeners, bubble after the room settles
+    X.line = (id, pose, hls, opts) => {
+      opts = opts || {}; const c = X.cue(id), x0 = c.start; let wait;
+      if (S.roomMode !== 'side') { S.roomTo(x0 + 0.2, 'side'); Rx.neutral(S, x0); wait = Rx.WAIT + (opts.headFirst ? 0.2 : 0); } else wait = 0.35;
+      X.say(c, hls, wait, opts.bubble); Rx.speak(S, c, pose, c.speakerId); return c;
+    };
+    X.roomOut = (t) => { S.roomTo(t, 'off'); S.hide(['bubL'], t); };
+    // a reflection hold always shows the ordinary pause hint (Lesson 08 fix: after a gate, the gate's "Think first…" text
+    // used to stay on the shared hint token in later holds)
+    X.hold = (id, label) => { const H = X.cue(id); S.set('holdHint', H.start + 0.1, 0, { text: L('ui.pauseMore') }); S.hold(H, label || L('hold.' + H.id)); return H; };
+    X.clearAll = (t, keep) => { const k = new Set(['kick', 'ttl'].concat(keep || [])); S.hide([...S.vis].filter((id) => !k.has(id) && id !== 'room'), t); };
+    // the gate presentation, the same in every route up to the gate end: prompt + hint in the caption band, neutral options
+    X.gate = (opts) => {
+      opts = opts || {}; const g = tr.gateStep; if (!g) return null; const G = ctx.C.gate, t = g.start, think = g.kind === 'think';
+      const hintKey = G.kind === 'choice' ? (think ? 'ui.thinkHint' : 'ui.gateHint') : (think ? 'ui.thinkHint' : 'ui.rehearseHint');
+      S.rise('holdTxt', t + 0.05, GG.holdTxt, { text: L('gate.prompt') });
+      S.set('holdHint', t + 0.1, 0, { text: L(hintKey) }); S.rise('holdHint', t + 0.2, GG.holdHint);
+      if (think) { S.set('holdBar', t + 0.05, 0, Object.assign({}, GG.holdBar, { w: 0, o: 1 })); S.vis.add('holdBar'); S.put('holdBar', t + 0.1, g.dur - 0.4, { w: GG.holdBar.w }); }
+      const ids = G.kind === 'choice' ? G.options.map((o) => 'opt.' + o.key) : [];
+      ids.forEach((id, i) => S.rise(id, t + 0.25 + i * 0.15, (opts.optRects || ctx.scene.optRects)[i]));
+      if (think && G.kind === 'choice') S.put('opt.' + G.watchKey, g.end - 0.9, MOTION.morph, { kind: 'option sel', act: 1 });
+      // leaving the gate (watch: after thinking; practice: when the branch or the common route starts)
+      S.hide(['holdTxt', 'holdBar', 'holdHint'], g.end, 0.2);
+      return { start: t, end: g.end, ids };
+    };
+    return X;
+  }
+  global.L08Kit = { base, helpers };
+})(window);
+
+</script>
+<script>/* shared/l08/audio-hook.js */
+/*
+ * esssouth Lesson 08 · future-audio attachment hook. This review is SILENT: every slot in content/source/audio-slots.en.json
+ * has path = null, so create() returns null and nothing is loaded, decoded or played.
+ *
+ * When narration exists (downstream pass): fill each slot's path (relative to the section folder), durationSeconds
+ * (measured) and lang, e.g. with tools/attach-audio.mjs. Then:
+ *  - profile(D) returns { voiceSec: { cueId: measuredSeconds } }: the compiler replaces the reading estimate with the
+ *    measured clip; anchors keep their relative place in the line; holds, motion durations and branch order are unchanged.
+ *  - create(D, C) returns a binder that starts the clip of the cue under the visual clock at the right offset, follows the
+ *    same rate (preservesPitch = true) and is stopped by the player's single cancellation boundary (stop()). Audio never
+ *    runs past a waiting gate: start(track, t, rate, limit) only schedules clips that begin before `limit`.
+ * Missing or undecodable clips are listed in window.__l08audio.problems; they are never silently counted as attached.
+ */
+(function (global) {
+  'use strict';
+  function slotsWithAudio(D) { return Object.values((D.audioSlots && D.audioSlots.slots) || {}).filter((s) => s.path); }
+  function profile(D) {
+    const s = slotsWithAudio(D); if (!s.length) return null;
+    const voiceSec = {}; s.forEach((x) => { if (x.durationSeconds != null) voiceSec[x.audioId] = +x.durationSeconds; });
+    return { voiceSec, source: 'measured audio (' + (D.audioSlots.lang || 'en') + ')' };
+  }
+  function create(D) {
+    const slots = slotsWithAudio(D); if (!slots.length) return null;
+    const els = {}, problems = []; global.__l08audio = { problems, els };
+    slots.forEach((s) => { const a = new Audio(); a.preload = 'auto'; a.src = s.path; a.preservesPitch = true; a.addEventListener('error', () => problems.push({ audioId: s.audioId, path: s.path, error: 'load/decode failed' })); els[s.audioId] = a; });
+    let timers = [];
+    return {
+      start(track, t, rate, limit) {
+        this.stop();
+        track.lines.forEach((c) => { const a = els[c.cueId]; if (!a || c.start >= limit || c.speechEnd <= t) return;
+          const begin = () => { a.playbackRate = rate; a.currentTime = Math.max(0, t - c.start); a.play().catch((e) => problems.push({ audioId: c.cueId, error: String(e) })); };
+          if (c.start <= t) begin(); else timers.push(setTimeout(begin, (c.start - t) / rate * 1000)); });
+      },
+      stop() { timers.forEach(clearTimeout); timers = []; Object.values(els).forEach((a) => { if (!a.paused) a.pause(); }); }
+    };
+  }
+  global.L08Audio = { profile, create };
+})(window);
+
+</script>
+<script>/* sections/S06/data/l08s06-data.js */
+/* GENERATED by tools/build.mjs from content/source (+ content/staging-anchors.json, shared/l08/ui.en.json). Do not edit. */
+window.L08_DATA = {"sectionId":"L08.S06","num":"8.6","graph":{"schema":"esssouth.section-graph-review/1","sectionId":"L08.S06","title":"Rehearse a Faithful Summary and Next Step","budgetSeconds":330,"status":"New proposed Lesson 08 production script, 2026-10-30. No new animation or narration in this handoff.","learningOutcome":"Privately rehearse a bounded summary from the supplied evidence and review a separate authored model without inferring speaking, agreement or success.","scenario":{"id":"L08.CASE01","kind":"Original fictional discussion-training case with explicitly named snapshots","caseLabel":"Fictional practice case","sourcePrompt":"A community book club wants a 30-minute taster activity for new readers. Help them try discussing a short text and find out how the weekly club works. Your group should recommend one coherent activity and explain how it serves both aims. Use the main room, the supplied one-page text and club information sheet, and existing paper and pens; do not buy anything. Leave at least five minutes within the session for visitors' questions.","facts":[{"id":"F01","text":"The task is one coherent 30-minute taster activity, serving both trying a short-text discussion and learning how the weekly club works."},{"id":"F02","text":"The main room, one supplied one-page text, a club information sheet, paper and pens are available. No purchases are allowed. At least five minutes for questions is included within the thirty minutes."},{"id":"F03","text":"Maya proposes: Pairs could compare one line from the short text before we share anything with the whole group."},{"id":"F04","text":"Noah proposes: A short demonstration could show newcomers what it means to give an interpretation and a reason."},{"id":"F05","text":"The participant proposes: I suggest keeping time for questions about the club, using the information sheet for anything it actually answers."},{"id":"F06","text":"Maya states partial support: I support showing an example, but I don't want it to take away the pair discussion."},{"id":"F07","text":"Noah states partial support: I support some pair discussion. I still want us to decide how short the demonstration should be."},{"id":"F08","text":"The participant states: I support protecting the question time. We still need a workable sequence within thirty minutes."},{"id":"F09","text":"No complete sequence, stage durations or demonstration leader has been agreed. No taster has happened and no visitor result has been measured."}],"unknowns":["The exact stage durations and whether an eventual detailed schedule fits","Who is willing and able to give the example","Which visitor questions the supplied information sheet will answer","Visitors' number, needs, preferences and willingness to share","Whether the group will adopt a complete proposal","How the activity would work in practice"],"snapshots":{"baseline":{"sections":["S01","S02","S03","S04"],"availableFacts":["F01","F02","F03","F04","F05","F06","F07","F08","F09"],"meaning":"All three proposals and the three explicit support statements are available as attributed source cards. The whole proposal remains open. Branch replies never become baseline facts."},"proposal_check":{"section":"S05","proposal":"We could begin with a brief example, use the same text in pairs, share one idea, and keep at least five minutes for club questions. Can we check the timing and who would give the example before we decide?","mayaReply":"I support that sequence if the demonstration stays brief and the pair task remains.","noahReply":"I support starting with an example and keeping question time. I am not ready to agree on the full sequence until we check the timings.","meaning":"A labelled later authored check adds exactly these replies. Maya supports the sequence conditionally; Noah supports two elements and withholds support for the whole sequence pending timing. This does not establish a final group decision."},"rehearsal":{"section":"S06","sourceSnapshot":"proposal_check","meaning":"Use the explicit S05 proposal and replies as a frozen reference board, not as new speech to the learner. A private summary remains blank; the optional model is separate."}},"state":{"fictional":true,"proposalAdopted":false,"activityRun":false,"outcomesMeasured":false,"agreementInferredFromSilence":false,"realLearnerSpeechCaptured":false},"boundaries":["Partial support attaches to a named element or condition; do not promote it to unconditional whole-group agreement.","No majority rule, unanimous decision procedure, assigned leader or final authority is supplied.","Thirty minutes is the activity duration, not a learner speaking limit or discussion deadline. The five-minute minimum is included, not added after thirty minutes.","At most twenty-five minutes remain for all other stages and transitions together, and fewer if question time exceeds five. This is a bound, not an agreed schedule.","A proposed demonstration leader is an unresolved dependency; do not assign Maya, Noah or an invisible facilitator without an authored decision.","The information sheet exists, but its complete contents are not supplied. Mark an unanswered question for checking; do not invent its answer.","Branch continuations and later model replies are authored examples, not observed real learner behaviour.","A coherent candidate can still need timing, accessibility and participation checks. Do not guarantee that a courteous summary wins agreement."]},"participants":{"coach":"Coach","learner":"Participant","maya":"Maya","noah":"Noah","prompt_reader":"Prompt reader"},"blocks":[{"id":"L08.S06.B01","title":"Use the Current Snapshot","family":"rehearsal_source","steps":[{"kind":"line","id":"L08.S06.c001"},{"kind":"line","id":"L08.S06.c002"},{"kind":"line","id":"L08.S06.c003"},{"kind":"hold","id":"L08.S06.h101"}]},{"id":"L08.S06.B02","title":"Choose What the Listener Needs Next","family":"private_preparation","steps":[{"kind":"line","id":"L08.S06.c004"},{"kind":"line","id":"L08.S06.c005"},{"kind":"line","id":"L08.S06.c006"},{"kind":"line","id":"L08.S06.c007"},{"kind":"interaction","id":"L08.I03"}]},{"id":"L08.S06.B03","title":"Review the Meaning, Not a Performance Score","family":"rehearsal_review","steps":[{"kind":"line","id":"L08.S06.c008"},{"kind":"line","id":"L08.S06.c009"},{"kind":"hold","id":"L08.S06.h102"}]},{"id":"L08.S06.B04","title":"Leave the Next Turn Open","family":"handover_after_rehearsal","steps":[{"kind":"line","id":"L08.S06.c010"},{"kind":"line","id":"L08.S06.c011"}]}],"cues":{"L08.S06.c001":{"id":"L08.S06.c001","speaker":"coach","text":"Now practise bringing several contributions together. Use the current snapshot of the book-club discussion, after the explicit proposal check. Your job is to make the shared position clear enough for another person to respond. You are not announcing a final plan or trying to repeat every sentence in order.","visualEn":"Show the exact S05 proposal and replies as a source board under Current snapshot. No model speech appears yet.","anchorHint":"the current snapshot","screenLabelIds":["section.title","snapshot.current"],"audioId":"L08.S06.c001","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.c002":{"id":"L08.S06.c002","speaker":"coach","text":"The candidate links a brief example, pair discussion and sharing, with at least five minutes for club questions inside the thirty-minute total. The resource limits still apply. No exact stage lengths or demonstration leader have been settled, so those checks must not disappear from the summary.","visualEn":"Candidate sequence with original materials/total/minimum constraints. Keep duration and example-leader fields explicitly undecided.","anchorHint":"those checks must not disappear","screenLabelIds":["candidate.scope","time.inside"],"audioId":"L08.S06.c002","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.c003":{"id":"L08.S06.c003","speaker":"coach","text":"Maya supports the sequence if the example stays brief and the pair task remains. Noah supports starting with an example and keeping question time, but is not ready to agree to the full sequence before timing is checked. These are related positions, not identical signatures on a completed plan.","visualEn":"Present M5/N5 exactly as attributed source quotes beside short status labels; no signature or consensus icon.","anchorHint":"not identical signatures","screenLabelIds":["source.maya.reply","source.noah.reply","support.distinct"],"audioId":"L08.S06.c003","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.c004":{"id":"L08.S06.c004","speaker":"coach","text":"Think about what a listener needs to know now. Name the candidate without making it sound adopted. Include the support and the reservation that affect the next decision. Then offer a relevant check, such as working out stage lengths including transitions, rather than asking a vague question about whether everyone is happy.","visualEn":"Build three optional preparation headings: candidate, support/open point, next check. These are planning aids, not a compulsory verbal formula.","anchorHint":"affect the next decision","screenLabelIds":["prepare.candidate","prepare.support","prepare.next"],"audioId":"L08.S06.c004","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.c005":{"id":"L08.S06.c005","speaker":"coach","text":"You may speak in English or make a few private notes. Nothing is recorded here. Leave out a detail only when it does not change the meaning of the proposal or a person's position. In particular, do not lose the words that make support conditional.","visualEn":"One privacy note only. Keep private area blank, microphone absent, model collapsed.","anchorHint":"make support conditional","screenLabelIds":["practice.private","practice.focus"],"audioId":"L08.S06.c005","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.c006":{"id":"L08.S06.c006","speaker":"coach","text":"You do not have to sound like a formal chairperson. A short, clear summary can invite a correction and leave another person room to continue. Choose ordinary wording that you could explain if someone asked what you meant by agreed, supported or still open.","visualEn":"Neutral speaker-position illustration then return to source board; no assigned leader role.","anchorHint":"ordinary wording","screenLabelIds":["wording.clear"],"audioId":"L08.S06.c006","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.c007":{"id":"L08.S06.c007","speaker":"coach","text":"Take time to prepare your version. In Watch, a possible model follows the preparation pause. In Practice, continue when you are ready, look at the model if useful, or skip this rehearsal. The model will be a separate example, not a reply to words you may have said privately.","visualEn":"Prepare the private gate; options Show model, Continue and Skip remain clearly labelled. No automatic private text or learner avatar speech.","anchorHint":"a separate example","screenLabelIds":["model.separate"],"audioId":"L08.S06.c007","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.c008":{"id":"L08.S06.c008","speaker":"coach","text":"Use the source statements to review any summary, whether you rehearsed one, watched the model or moved on. Does it distinguish the candidate from a decision? Does it keep each person's condition or reservation? Is the proposed next check still presented as something to discuss, rather than an assigned or completed action?","visualEn":"Immediate common rejoin valid after model, retry, continue or skip. No claim that the student spoke or selected an answer.","anchorHint":"review any summary","screenLabelIds":["review.status","review.scope","review.next"],"audioId":"L08.S06.c008","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.c009":{"id":"L08.S06.c009","speaker":"coach","text":"If a phrase is too broad, revise that phrase. For example, replace everyone agrees with a more specific account of who supports which part. If your wording is accurate but long, shorten the repetition rather than the condition. The useful target is a clearer account, not a memorised version of the model.","visualEn":"Revise an authored example sentence, clearly outside the blank private response area. Keep the qualifier after shortening.","anchorHint":"shorten the repetition rather than the condition","screenLabelIds":["revision.focus"],"audioId":"L08.S06.c009","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.c010":{"id":"L08.S06.c010","speaker":"coach","text":"A summary can help the group see its next decision, but it does not make that decision for them. After offering a check, allow an answer and use the actual reply to update your account. Someone may qualify their support, disagree or ask for more information.","visualEn":"End with a proposed check and an unfilled reply slot; do not animate guaranteed acceptance.","anchorHint":"use the actual reply","screenLabelIds":["handover.reply"],"audioId":"L08.S06.c010","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.c011":{"id":"L08.S06.c011","speaker":"coach","text":"For your next discussion, choose one small focus: keep a condition beside its supported element, separate a proposal from a decision, or name the next unresolved check. Choose the one that would help your own summaries most. The final section uses a different task to see what these distinctions still help you notice.","visualEn":"Three optional focus cards with no selected default. Transition to a clearly different task, not automatic achievement.","anchorHint":"one small focus","screenLabelIds":["focus.condition","focus.status","focus.check"],"audioId":"L08.S06.c011","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"},"L08.S06.d101":{"id":"L08.S06.d101","speaker":"learner","text":"Our candidate links a brief example, pair discussion and sharing, with at least five minutes for club questions inside thirty minutes. Maya supports the sequence if the example stays brief and pairs remain. Noah supports the example and question time, but wants the timings checked before agreeing to the whole sequence. Could we check a complete schedule, including transitions, and who would give the example?","visualEn":"Separate authored model frame; preserve source ledger and open tags. Keep the learner private area blank. Use a taller/wider readable bubble for the exact English words, not clipped text.","anchorHint":"Noah supports the example and question time","screenLabelIds":["model.status"],"audioId":"L08.S06.d101","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.","localizationRole":"keep_english"},"L08.S06.d102":{"id":"L08.S06.d102","speaker":"noah","text":"Please keep my timing question open. I haven't agreed to the full sequence yet.","visualEn":"Noah reiterates only his supplied timing reservation in the model. No new agreement or outcome is created.","anchorHint":"haven't agreed to the full sequence","screenLabelIds":["model.reply"],"audioId":"L08.S06.d102","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Natural collaborative speech; restrained gesture, no exaggerated conflict or comic voice.","localizationRole":"keep_english"},"L08.S06.f101":{"id":"L08.S06.f101","speaker":"coach","text":"The model connects the elements, reports the two support statements with their limits, and offers a check. Noah's reply reinforces the open timing point. Nothing here adopts a schedule or proves the activity will work. You can use different wording while keeping those distinctions clear.","visualEn":"Coach analyses the source-to-summary links. The model does not receive a mastery tick and does not fill the private area.","anchorHint":"with their limits","screenLabelIds":["model.review"],"audioId":"L08.S06.f101","lang":"en","textStatus":"Original proposed exact script; not recorded audio, an observed learner answer, or an official assessment.","delivery":"Calm, concrete teaching; emphasis follows the semantic distinction, with natural pauses.","localizationRole":"coach_explanation"}},"holds":{"L08.S06.h101":{"kind":"hold","id":"L08.S06.h101","seconds":8,"purpose":"Privately inspect the two support statements and locate one condition you must preserve.","visualEn":"Keep source quotes readable; private note space remains blank.","modes":["watch","practice"],"recordedResponse":false},"L08.S06.h102":{"kind":"hold","id":"L08.S06.h102","seconds":12,"purpose":"Privately choose one precise change you would make to a summary: scope, condition or next-check wording.","visualEn":"Blank personal focus card. No stored completion, score or inferred mastery.","modes":["watch","practice"],"recordedResponse":false}},"interactions":{"L08.I03":{"kind":"private_rehearsal","prompt":"Privately rehearse a faithful summary of the current candidate: what has explicit support, what is still open, and one possible next check. You may speak in English or make brief private notes.","watchThinkSeconds":35,"practiceTimeout":null,"actions":["show_model","skip","retry","continue"],"baseline":{"responseText":null,"modelViewed":false,"speakingObserved":false,"completionAssumed":false,"groupAgreementVerified":false,"proposalAdopted":false},"skipNote":"No private answer has been captured. Continue to reviewing the scope of a summary.","rejoinCue":"L08.S06.c008","model":[{"kind":"line","id":"L08.S06.d101"},{"kind":"line","id":"L08.S06.d102"},{"kind":"line","id":"L08.S06.f101"}],"id":"L08.I03","recordAudio":false,"automaticAssessment":false,"stateStorage":"memory only","skipIsUnanswered":true}},"boundary":"Use formal explanation and short explicitly fictional excerpts. Partial support, open questions, candidate proposals and adopted decisions stay distinct. A summary does not create consent. Models are separate authored examples, not captured learner speech."},"labels":{"schema":"esssouth.labels/1","sectionId":"L08.S06","labels":{"lesson.title":"Bring Contributions Together into a Shared Proposal","section.title":"Rehearse a Faithful Summary and Next Step","snapshot.current":"Current snapshot after the proposal check","candidate.scope":"Connected stages; details still to check","time.inside":"Question time is inside 30 minutes","source.maya.reply":"I support that sequence if the demonstration stays brief and the pair task remains.","source.noah.reply":"I support starting with an example and keeping question time. I am not ready to agree on the full sequence until we check the timings.","support.distinct":"Related positions, different scope","prepare.candidate":"What is proposed?","prepare.support":"What support or reservation matters?","prepare.next":"What check would help next?","practice.private":"Private rehearsal; nothing recorded","practice.focus":"Keep the conditions that change meaning","wording.clear":"Use words you can explain","model.separate":"The model stays separate","review.status":"Candidate or decision?","review.scope":"Conditions preserved?","review.next":"Check proposed, assigned, or completed?","revision.focus":"Shorten repetition, keep the condition","handover.reply":"Leave room for the actual reply","focus.condition":"Keep a condition","focus.status":"Separate proposal and decision","focus.check":"Name the unresolved check","model.status":"Authored model, not your response","model.reply":"A limited authored follow-up","model.review":"Accurate scope matters more than matching the words","ui.watch":"Watch","ui.practice":"Practice","ui.play":"Play","ui.pause":"Pause","ui.restart":"Restart section","ui.captions":"Captions","ui.reduced":"Reduced motion","ui.silent":"Silent English animation review","ui.retry":"Try again","ui.continue":"Continue","ui.skip":"Skip","ui.model":"Show a possible reply","ui.speed":"Playback speed","ui.previous":"Previous section","ui.next":"Next section"}},"labelsStaging":{"schema":"esssouth.l08.staging-labels/1","sectionId":"L08.S06","note":"Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or the S05 proposal_check snapshot. The participant's S05 proposal is read verbatim from the graph's scenario snapshot, not restated here. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.","labels":{"x.by.part":"Participant · proposal","x.by.maya":"Maya","x.by.noah":"Noah","x.st.ex":"Brief example","x.st.pairs":"Pairs","x.st.share":"Sharing","x.st.q":"Club questions: at least 5","x.res":"Main room; supplied text and sheet; paper and pens; no purchases","x.dur":"Stage lengths: undecided","x.lead":"Example leader: undecided","x.ms":"Conditional support for the sequence","x.ns":"Two elements supported; full sequence open","x.a1":"Elements connected","x.a2":"Two support statements, with their limits","x.a3":"A check offered","x.noAdopt":"No schedule adopted","x.broad":"“Everyone agrees.”","x.narrow":"“Maya supports the sequence if the example stays brief; Noah wants the timings checked first.”","x.ex":"An authored example to revise (not your response)","x.check":"Could we check a complete schedule, including transitions?","x.mine":"Your own wording (private, blank)"}},"anchors":{"schema":"esssouth.semantic-anchors/1","sectionId":"L08.S06","anchors":{"a_L08_S06_c001":{"cueId":"L08.S06.c001","phrase":"the current snapshot","estimatedSeconds":3,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_c002":{"cueId":"L08.S06.c002","phrase":"those checks must not disappear","estimatedSeconds":16.714,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_c003":{"cueId":"L08.S06.c003","phrase":"not identical signatures","estimatedSeconds":18,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_c004":{"cueId":"L08.S06.c004","phrase":"affect the next decision","estimatedSeconds":10.286,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_c005":{"cueId":"L08.S06.c005","phrase":"make support conditional","estimatedSeconds":18,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_c006":{"cueId":"L08.S06.c006","phrase":"ordinary wording","estimatedSeconds":11.143,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_c007":{"cueId":"L08.S06.c007","phrase":"a separate example","estimatedSeconds":15.429,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_c008":{"cueId":"L08.S06.c008","phrase":"review any summary","estimatedSeconds":2.143,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_c009":{"cueId":"L08.S06.c009","phrase":"shorten the repetition rather than the condition","estimatedSeconds":13.286,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_c010":{"cueId":"L08.S06.c010","phrase":"use the actual reply","estimatedSeconds":11.571,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_c011":{"cueId":"L08.S06.c011","phrase":"one small focus","estimatedSeconds":2.143,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_d101":{"cueId":"L08.S06.d101","phrase":"Noah supports the example and question time","estimatedSeconds":14.143,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_d102":{"cueId":"L08.S06.d102","phrase":"haven't agreed to the full sequence","estimatedSeconds":3,"status":"Estimated phrase onset; replace with measured alignment after final narration."},"a_L08_S06_f101":{"cueId":"L08.S06.f101","phrase":"with their limits","estimatedSeconds":4.286,"status":"Estimated phrase onset; replace with measured alignment after final narration."}}},"timing":{"schema":"esssouth.timing-estimate/1","sectionId":"L08.S06","wordsPerMinute":140,"cues":{"L08.S06.c001":{"seconds":21.779,"wordCount":50,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.c002":{"seconds":20.493,"wordCount":47,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.c003":{"seconds":21.35,"wordCount":49,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.c004":{"seconds":22.636,"wordCount":52,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.c005":{"seconds":19.636,"wordCount":45,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.c006":{"seconds":19.207,"wordCount":44,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.c007":{"seconds":21.35,"wordCount":49,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.c008":{"seconds":22.636,"wordCount":52,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.c009":{"seconds":22.636,"wordCount":52,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.c010":{"seconds":20.064,"wordCount":46,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.c011":{"seconds":23.064,"wordCount":53,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.d101":{"seconds":28.207,"wordCount":65,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.d102":{"seconds":6.35,"wordCount":14,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."},"L08.S06.f101":{"seconds":19.636,"wordCount":45,"status":"Estimated English reading at 140 wpm plus 0.35 s tail; not measured speech."}},"holds":{"L08.S06.h101":8,"L08.S06.h102":12},"watchThinkingHolds":{"L08.I03":35},"practiceWaiting":"Unbounded; not part of fixed runtime."},"staging":{"schema":"esssouth.l08.staging-anchors/1","sectionId":"L08.S06","note":"Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.","anchors":{"s6_now":{"cue":"L08.S06.c001","phrase":"Now practise bringing"},"s6_use":{"cue":"L08.S06.c001","phrase":"Use the current snapshot"},"s6_job":{"cue":"L08.S06.c001","phrase":"Your job is to make"},"s6_cand":{"cue":"L08.S06.c002","phrase":"The candidate links a brief example"},"s6_res":{"cue":"L08.S06.c002","phrase":"The resource limits still apply"},"s6_no":{"cue":"L08.S06.c002","phrase":"No exact stage lengths"},"s6_maya":{"cue":"L08.S06.c003","phrase":"Maya supports the sequence"},"s6_noah":{"cue":"L08.S06.c003","phrase":"Noah supports starting with an example"},"s6_these":{"cue":"L08.S06.c003","phrase":"These are related positions"},"s6_think":{"cue":"L08.S06.c004","phrase":"Think about what a listener needs"},"s6_name":{"cue":"L08.S06.c004","phrase":"Name the candidate"},"s6_incl":{"cue":"L08.S06.c004","phrase":"Include the support and the reservation"},"s6_then":{"cue":"L08.S06.c004","phrase":"Then offer a relevant check"},"s6_may":{"cue":"L08.S06.c005","phrase":"You may speak in English"},"s6_nothing":{"cue":"L08.S06.c005","phrase":"Nothing is recorded here"},"s6_part":{"cue":"L08.S06.c005","phrase":"In particular, do not lose"},"s6_formal":{"cue":"L08.S06.c006","phrase":"You do not have to sound like"},"s6_choose":{"cue":"L08.S06.c006","phrase":"Choose ordinary wording"},"s6_take":{"cue":"L08.S06.c007","phrase":"Take time to prepare"},"s6_model":{"cue":"L08.S06.c007","phrase":"The model will be a separate example"},"s6_rev":{"cue":"L08.S06.c008","phrase":"Use the source statements to review"},"s6_q1":{"cue":"L08.S06.c008","phrase":"Does it distinguish the candidate"},"s6_q2":{"cue":"L08.S06.c008","phrase":"Does it keep each person"},"s6_q3":{"cue":"L08.S06.c008","phrase":"Is the proposed next check"},"s6_broad":{"cue":"L08.S06.c009","phrase":"If a phrase is too broad"},"s6_replace":{"cue":"L08.S06.c009","phrase":"For example, replace everyone agrees"},"s6_long":{"cue":"L08.S06.c009","phrase":"If your wording is accurate but long"},"s6_help":{"cue":"L08.S06.c010","phrase":"A summary can help the group"},"s6_after":{"cue":"L08.S06.c010","phrase":"After offering a check"},"s6_small":{"cue":"L08.S06.c011","phrase":"choose one small focus"},"s6_final":{"cue":"L08.S06.c011","phrase":"The final section uses a different task"},"sM_conn":{"cue":"L08.S06.f101","phrase":"The model connects the elements"},"sM_reports":{"cue":"L08.S06.f101","phrase":"reports the two support statements"},"sM_offers":{"cue":"L08.S06.f101","phrase":"and offers a check"},"sM_nothing":{"cue":"L08.S06.f101","phrase":"Nothing here adopts a schedule"}}},"audioSlots":{"sectionId":"L08.S06","status":"Empty future audio slots. This review must remain silent.","slots":{"L08.S06.c001":{"audioId":"L08.S06.c001","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.c002":{"audioId":"L08.S06.c002","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.c003":{"audioId":"L08.S06.c003","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.c004":{"audioId":"L08.S06.c004","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.c005":{"audioId":"L08.S06.c005","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.c006":{"audioId":"L08.S06.c006","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.c007":{"audioId":"L08.S06.c007","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.c008":{"audioId":"L08.S06.c008","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.c009":{"audioId":"L08.S06.c009","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.c010":{"audioId":"L08.S06.c010","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.c011":{"audioId":"L08.S06.c011","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null},"L08.S06.d101":{"audioId":"L08.S06.d101","speaker":"learner","lang":"en","localizationRole":"keep_english","path":null,"durationSeconds":null},"L08.S06.d102":{"audioId":"L08.S06.d102","speaker":"noah","lang":"en","localizationRole":"keep_english","path":null,"durationSeconds":null},"L08.S06.f101":{"audioId":"L08.S06.f101","speaker":"coach","lang":"en","localizationRole":"coach_explanation","path":null,"durationSeconds":null}}},"retimeDemo":{"sectionId":"L08.S06","status":"Isolated test fixture, not production timing.","durationMultipliers":{"L08.S06.c001":1.35,"L08.S06.d101":1.35},"fixedHolds":{"L08.S06.h101":8,"L08.S06.h102":12},"invariants":["Cue order and all reachable branch edges unchanged","Shared and Watch-only hold lengths unchanged","Drawing paths, gestures and easing durations unchanged","Settled states extend; no accelerated motion to fill the longer clip"]},"ui":{"schema":"esssouth.l08.runtime-ui/1","note":"Runtime interface strings added for the Lesson 08 player (not lesson content). Editable and localizable; the section labels.en.json files supply ui.watch, ui.practice, ui.play, ui.pause, ui.restart, ui.captions, ui.reduced, ui.silent, ui.retry, ui.continue, ui.skip, ui.model, ui.speed, ui.previous and ui.next.","strings":{"ui.pauseMore":"Pause if you want longer.","ui.thinkHint":"Think first. Watch then shows one authored possibility.","ui.gateHint":"Choose below, or skip. There is no timer.","ui.rehearseHint":"Take as long as you need. Nothing is recorded.","ui.awaitChoice":"Waiting for your choice. Play does not choose for you.","ui.awaitRehearsal":"Waiting. Rehearse privately, then show a possible reply, skip, or continue.","ui.branchPlaying":"Playing authored possibility","ui.branchReady":"This authored possibility has finished. Continue, or try again.","ui.modelReady":"The possible reply has finished. It is an authored example, not your response.","ui.skipped":"Skipped. Nothing was recorded or assessed.","ui.replay":"Replay","ui.end":"End of section. Nothing was recorded or assessed.","ui.watchPath":"Watch shows option","ui.option":"Option","ui.modeShared":"Both modes share this section's reflection route.","ui.modeReset":"Mode changed inside an interaction: returned to its start.","ui.backToGate":"Returned to the interaction. The earlier attempt was cleared.","ui.stoppedAtGate":"Stopped at the interaction. Choose or skip to continue.","ui.caseFacts":"case facts"}},"headerChips":[],"nav":{"prev":{"id":"L08.S05","href":"../S05/index.html","title":"Present a Combined Proposal and Check Its Status"},"next":{"id":"L08.S07","href":"../S07/index.html","title":"Transfer the Synthesis to a New Task"},"nextTitle":"Transfer the Synthesis to a New Task"}};
+
+</script>
+<script>/* sections/S06/scenes.js */
+/*
+ * L08.S06 · Rehearse a Faithful Summary and Next Step. Section adapter (tokens, rects, timing by cue starts and anchors).
+ * Frozen reference: the S05 proposal_check snapshot (the participant's proposal read verbatim from the graph; Maya's and
+ * Noah's replies as attributed quotes). Gate L08.I03 (private rehearsal): the private area is never filled; the model sits
+ * in its own "Authored model, not your response" frame with a wide bubble for its long exact line; Noah's model reply
+ * repeats only his timing reservation. Flags come from the interaction baseline (groupAgreementVerified and
+ * proposalAdopted stay false).
+ */
+(function (global) {
+  'use strict';
+  const R = (x, y, w, h, fs) => ({ x, y, w, h, fs });
+  const C4 = [150, 570, 990, 1410], C3 = [150, 700, 1250];
+  const G = {
+    snap: R(150, 290, 760, 50, 24), sP: R(150, 360, 1620, 120, 26), sM: R(150, 520, 1620, 76, 26), sN: R(150, 640, 1620, 100, 26),
+    stg: C4.map((x) => R(x, 330, 360, 84, 26)), res: R(150, 450, 1620, 66, 26), tin: R(150, 540, 760, 66, 26), dur: R(150, 640, 760, 66, 26), lead: R(1010, 640, 760, 66, 26),
+    qM: R(150, 330, 1000, 100, 26), qN: R(150, 480, 1000, 130, 26), stM: R(1180, 340, 590, 84, 26), stN: R(1180, 500, 590, 100, 26), dist: R(560, 660, 800, 56, 26),
+    hM: R(150, 340, 1000, 100, 26), hN: R(150, 490, 1000, 130, 26), hBl: R(1180, 340, 590, 380, 30),
+    prep: C3.map((x) => R(x, 400, 520, 100, 28)), prepN: C3.map((x) => R(x, 520, 520, 220, 30)),
+    priv: R(150, 330, 1620, 56, 26), board: R(150, 400, 1620, 300, 30), focus: R(560, 720, 800, 44, 22),
+    sep: R(560, 420, 800, 66, 26),
+    sFrame: R(1120, 132, 730, 650), sHead: R(1140, 148, 690, 54, 24), sOp: [R(1140, 220, 690, 66, 26), R(1140, 300, 690, 66, 26)], sRep: R(1140, 400, 690, 84, 26),
+    mFrame: R(150, 300, 1620, 500), mHead: R(190, 316, 820, 54, 26), mOp: [R(190, 640, 740, 66, 26), R(970, 640, 760, 66, 26)], mRep: R(970, 390, 760, 84, 26),
+    an: [R(190, 390, 740, 66, 26), R(190, 470, 740, 66, 26), R(190, 550, 740, 66, 26)], noA: R(970, 520, 760, 66, 26),
+    rv: C3.map((x) => R(x, 420, 520, 100, 28)),
+    exH: R(150, 330, 1000, 50, 24), broad: R(150, 400, 1000, 80, 30), narrow: R(150, 540, 1000, 120, 28), mineH: R(1200, 330, 570, 44, 26), mine: R(1200, 386, 570, 330, 30),
+    fBl: R(150, 400, 1620, 300, 30),
+    chk: R(150, 360, 1620, 90, 28), repH: R(150, 490, 1620, 44, 26), rep: R(150, 546, 1620, 200, 30),
+    fc: C3.map((x) => R(x, 440, 520, 100, 28))
+  };
+
+  function setup(E, ctx) {
+    const K = global.L08Kit.base(E, ctx), tok = K.tok, L = E.label, P = (ctx.D.graph.scenario.snapshots || {}).proposal_check || {};
+    tok('sFrame', G.sFrame, 'ctx frame', '', 'token.default'); tok('hBl', G.hBl, 'note', '', 'token.note'); tok('board', G.board, 'note', '', 'token.note');
+    [0, 1, 2].forEach((i) => tok('pn' + i, G.prepN[i], 'note', '', 'token.note')); tok('mine', G.mine, 'note', '', 'token.note'); tok('rep', G.rep, 'note', '', 'token.note'); // containers first
+    tok('snap', G.snap, 'framehead', L('snapshot.current'), 'token.frame');
+    tok('sP', G.sP, 'excerpt', P.proposal || '', 'token.step', { tag: 'x.by.part' });
+    tok('sM', G.sM, 'excerpt', L('source.maya.reply'), 'token.step', { tag: 'x.by.maya' }); tok('sN', G.sN, 'excerpt', L('source.noah.reply'), 'token.step', { tag: 'x.by.noah' });
+    ['x.st.ex', 'x.st.pairs', 'x.st.share', 'x.st.q'].forEach((k, i) => tok('st' + i, G.stg[i], i === 3 ? 'fact' : 'proposal', L(k), 'token.step'));
+    tok('res', G.res, 'fact', L('x.res'), 'token.step'); tok('tin', G.tin, 'chipcard', L('time.inside'), 'token.chip');
+    tok('dur', G.dur, 'step gap', L('x.dur'), 'token.step'); tok('lead', G.lead, 'step gap', L('x.lead'), 'token.step');
+    tok('stM', G.stM, 'step', L('x.ms'), 'token.step'); tok('stN', G.stN, 'step', L('x.ns'), 'token.step'); tok('dist', G.dist, 'chipcard margin', L('support.distinct'), 'token.chip');
+    ['prepare.candidate', 'prepare.support', 'prepare.next'].forEach((k, i) => tok('pr' + i, G.prep[i], 'question', L(k), 'token.question'));
+    tok('priv', G.priv, 'chipcard margin', L('practice.private'), 'token.chip'); tok('focus', G.focus, 'hint', L('practice.focus'), 'token.hint');
+    tok('sep', G.sep, 'chipcard margin', L('model.separate'), 'token.chip');
+    tok('mHead', G.sHead, 'framehead', L('model.status'), 'token.frame'); tok('mRep', G.sRep, 'step', L('model.reply'), 'token.step');
+    ['x.a1', 'x.a2', 'x.a3'].forEach((k, i) => tok('an' + i, G.an[i], 'idea', L(k), 'token.idea')); tok('noA', G.noA, 'step gap', L('x.noAdopt'), 'token.step');
+    ['review.status', 'review.scope', 'review.next'].forEach((k, i) => tok('rv' + i, G.rv[i], 'question', L(k), 'token.question'));
+    tok('exH', G.exH, 'framehead', L('x.ex'), 'token.frame'); tok('broad', G.broad, 'step changed', L('x.broad'), 'token.step'); tok('narrow', G.narrow, 'idea', L('x.narrow'), 'token.idea');
+    tok('mineH', G.mineH, 'colhead dashed', L('x.mine'), 'token.colhead');
+    tok('chk', G.chk, 'question', L('x.check'), 'token.question'); tok('repH', G.repH, 'colhead dashed', L('handover.reply'), 'token.colhead');
+    ['focus.condition', 'focus.status', 'focus.check'].forEach((k, i) => tok('fc' + i, G.fc[i], 'step plan', L(k), 'token.step'));
+    K.finishTokens();
+    const Rx = ctx.Rx, ly = (id) => E.overLayer(id);
+    let l = ly('seq'); [510, 930, 1350].forEach((x, i) => { Rx.dline(E, l, 'sq.' + i, `M ${x + 6} 372 L ${x + 44} 372`, '#9DB6E0'); Rx.head(E, l, 'sq.h' + i, x + 50, 372, 'right', '#9DB6E0'); });
+    l = ly('rv'); Rx.dline(E, l, 'rv.a', 'M 650 486 L 650 532', '#9DB6E0'); Rx.head(E, l, 'rv.h', 650, 536, 'down', '#9DB6E0');
+    return { DEF: K.DEF, G, optRects: K.optRects, lay };
+  }
+
+  function lay(S, tr, X) {
+    const { L } = X, at = X.at, a = X.a, X0 = X.X0, B = (n) => 'block.L08.S06.B0' + n, M = X.MOTION;
+    const ST = ['st0', 'st1', 'st2', 'st3'];
+    X.neutral(S, -1e9); S.roomMode = 'off';
+    // ---- B01 · c001: the S05 proposal and replies as a frozen source board ----
+    S.head(X0('c001') + 0.1, B(1), null); S.rise('snap', at('s6_use'), G.snap);
+    S.rise('sP', a('c001') + 0.8, G.sP); S.rise('sM', a('c001') + 1.2, G.sM); S.rise('sN', a('c001') + 1.6, G.sN);
+    // ---- c002: the candidate with its limits; durations and leader undecided ----
+    let t = X0('c002'); X.clearAll(t);
+    ST.forEach((id, i) => S.rise(id, at('s6_cand') + i * 0.3, G.stg[i])); S.addLayer('seq', at('s6_cand') + 1.2); S.rise('tin', a('c002') - 4, G.tin);
+    S.rise('res', at('s6_res'), G.res); S.rise('dur', at('s6_no'), G.dur); S.rise('lead', at('s6_no') + 0.5, G.lead); S.title(a('c002') - 0.2, 'candidate.scope');
+    // ---- c003: two attributed quotes with short status labels; no consensus icon ----
+    t = X0('c003'); S.title(t, null); X.clearAll(t); S.dropLayer('seq', t);
+    S.rise('sM', at('s6_maya'), G.qM); S.rise('stM', at('s6_maya') + 0.8, G.stM); S.rise('sN', at('s6_noah'), G.qN); S.rise('stN', at('s6_noah') + 1.0, G.stN); S.rise('dist', at('s6_these'), G.dist);
+    // ---- h101: the quotes beside a blank note ----
+    const H1 = X.cue('h101'); S.hide(['stM', 'stN', 'dist'], H1.start); S.to('sM', H1.start + 0.2, G.hM); S.to('sN', H1.start + 0.3, G.hN); S.rise('hBl', H1.start + 0.5, G.hBl, { text: '' });
+    X.hold('h101');
+    // ---- B02 · c004: three optional preparation headings over blank notes ----
+    t = X0('c004'); S.head(t, B(2), null); X.clearAll(t);
+    S.rise('pr0', at('s6_name'), G.prep[0]); S.rise('pr1', at('s6_incl'), G.prep[1]); S.rise('pr2', at('s6_then'), G.prep[2]);
+    [0, 1, 2].forEach((i) => S.rise('pn' + i, at('s6_then') + 0.6 + i * 0.1, G.prepN[i], { text: '' }));
+    // ---- c005: one privacy note; the private area blank ----
+    t = X0('c005'); X.clearAll(t);
+    S.rise('priv', at('s6_nothing'), G.priv); S.rise('board', at('s6_may') + 0.4, G.board, { text: '' }); S.rise('focus', at('s6_part'), G.focus);
+    // ---- c006: ordinary wording; back to the source board ----
+    t = X0('c006'); X.clearAll(t); S.title(at('s6_choose'), 'wording.clear');
+    S.rise('snap', t + 0.3, G.snap); S.rise('sP', t + 0.5, G.sP); S.rise('sM', t + 0.7, G.sM); S.rise('sN', t + 0.9, G.sN);
+    // ---- c007: the model stays separate ----
+    t = X0('c007'); S.title(t, null); X.clearAll(t); S.rise('sep', at('s6_model'), G.sep);
+    // ---- gate L08.I03 ----
+    X.gate();
+    // ---- model route: a separate authored frame; a wide bubble for the long exact line ----
+    if (X.has('d101')) {
+      t = X0('d101'); S.head(t, null, null); S.title(t, null); X.clearAll(t);
+      S.rise('sFrame', t + 0.3, G.sFrame); S.rise('mHead', t + 0.5, G.sHead); S.rise('dur', t + 0.7, G.sOp[0]); S.rise('lead', t + 0.8, G.sOp[1]);
+      X.line('d101', 'propose:maya', ['brief example', 'if the example stays brief', 'Noah supports the example and question time', 'Could we check'],
+        { headFirst: true, bubble: { x: 30, y: 92, w: 1090, h: 336, fs: 30, slot: 'token.quoteLong', cls: 'wide' } });
+      t = X0('d102'); X.line('d102', 'explain:learner', ["haven't agreed to the full sequence"]); S.rise('mRep', a('d102') + 0.3, G.sRep);
+      t = X0('f101'); X.roomOut(t); S.head(t + 0.1, B(2), null);
+      S.to('sFrame', t + 0.1, G.mFrame); S.to('mHead', t + 0.15, G.mHead); S.to('dur', t + 0.2, G.mOp[0]); S.to('lead', t + 0.25, G.mOp[1]); S.to('mRep', t + 0.3, G.mRep);
+      S.rise('an0', at('sM_conn') + 0.5, G.an[0]); S.rise('an1', at('sM_reports') + 0.5, G.an[1]); S.rise('an2', at('sM_offers') + 0.4, G.an[2]); S.rise('noA', at('sM_nothing'), G.noA);
+      S.title(a('f101') + 0.4, 'model.review');
+    }
+    // ---- B03 · c008: the same review for every route ----
+    t = X0('c008'); X.roomOut(t); S.hide(['sFrame', 'mHead', 'mRep', 'an0', 'an1', 'an2', 'noA'], t, 0.01); X.clearAll(t, ['sFrame', 'mHead', 'mRep', 'an0', 'an1', 'an2', 'noA']);
+    S.head(t, B(3), null); S.title(t, null);
+    S.rise('rv0', at('s6_q1'), G.rv[0]); S.rise('rv1', at('s6_q2'), G.rv[1]); S.rise('rv2', at('s6_q3'), G.rv[2]);
+    // ---- c009: revise an authored example (outside the blank private area) ----
+    t = X0('c009'); X.clearAll(t);
+    S.rise('exH', at('s6_broad'), G.exH); S.rise('broad', at('s6_replace'), G.broad); S.addLayer('rv', at('s6_replace') + 1.0); S.rise('narrow', at('s6_replace') + 1.4, G.narrow);
+    S.rise('mineH', at('s6_broad') + 0.4, G.mineH); S.rise('mine', at('s6_broad') + 0.6, G.mine, { text: '' }); S.title(a('c009') - 0.2, 'revision.focus');
+    // ---- h102: a blank personal focus card ----
+    const H2 = X.cue('h102'); S.title(H2.start, null); X.clearAll(H2.start); S.dropLayer('rv', H2.start); S.rise('board', H2.start + 0.4, G.fBl, { text: '' });
+    X.hold('h102');
+    // ---- B04 · c010: a proposed check and an unfilled reply slot ----
+    t = X0('c010'); S.head(t, B(4), null); X.clearAll(t);
+    S.rise('chk', at('s6_after'), G.chk); S.rise('repH', at('s6_after') + 0.6, G.repH); S.rise('rep', at('s6_after') + 0.8, G.rep, { text: '' });
+    // ---- c011: three optional focus cards, none selected ----
+    t = X0('c011'); X.clearAll(t); ['fc0', 'fc1', 'fc2'].forEach((id, i) => S.rise(id, at('s6_small') + 0.6 + i * 0.6, G.fc[i]));
+  }
+  global.L08Scenes = { setup };
+})(window);
+
+</script>
+<script>/* shared/l08/player.js */
+/*
+ * esssouth Lesson 08 · section player (silent review). NEW runtime for Lesson 08, built on the accepted engine
+ * (shared/toolkit/engine.js) and the approved transport pattern (one wall clock, one requestAnimationFrame loop,
+ * stop() as the single cancellation boundary, rates 1 / 1.25 / 1.5 / 2 scaling the whole timeline).
+ *
+ * Added for Lesson 08 (docs/MODE_CONTRACT_EN.md):
+ *  - Watch and Practice. Watch plays the declared path ('watch' route). Practice plays the common route and, at a gate,
+ *    WAITS without a timer: awaiting_choice → branch_playing → branch_ready → common continuation (Continue), or Skip.
+ *    Try again restores the gate baseline. Play / Space / rate changes / elapsed time never choose.
+ *  - Seek: forward across an unvisited gate stops at the gate; before it resets the attempt; inside a branch the scrubber
+ *    is branch-local. A mode switch inside a gate or branch resets to that mode's declared entry; outside, the common cue
+ *    and offset are kept.
+ *  - S06 private rehearsal: model playback sets only modelViewed = true. speakingObserved, completionAssumed and
+ *    proposalAdopted stay false. Nothing is stored, recorded or uploaded; no microphone is requested.
+ *  - Future audio: shared/l08/audio-hook.js binds clips to the SAME clock if slots carry paths (none in this review).
+ * URL: ?mode=practice ?t=<s> ?rm=1 ?nocap=1 ?rate=1.5 ?timing=retime-demo ?text=x1.3|x1.6|long ?debug=slots ?export=1
+ *      ?route=<key> (export/QA only: render a Practice route linearly)
+ */
+(function () {
+  'use strict';
+  const q = new URLSearchParams(location.search), $ = (id) => document.getElementById(id), D = window.L08_DATA, Rx = window.EsssouthStyleRecipes;
+  if (q.get('export') === '1') document.body.classList.add('export');
+  if (q.get('debug') === 'slots') document.body.classList.add('debug-slots');
+  // display names come from the section graph (L08: the learner-side speaker is "Participant", not "You"); artwork unchanged
+  const PN = (D.graph && D.graph.participants) || {};
+  const characters = Rx.CAST.map((c) => Object.assign({}, c, { name: PN[c.id] || c.name })), charMap = {}; characters.forEach((c) => (charMap[c.id] = c));
+  const note = (m, err) => { const d = document.createElement('div'); d.textContent = m; if (err) d.className = 'err'; $('notes').appendChild(d); };
+  const live = (m) => { $('live').textContent = ''; setTimeout(() => ($('live').textContent = m), 30); };
+
+  // ---- text expansion stress tests (review only) ----
+  const TX = q.get('text');
+  function expand(s, f) { const ws = String(s).split(' '); let out = String(s), i = 0; while (out.length < s.length * f) out += ' ' + ws[(i++) % ws.length]; return out; }
+  function longTok(s) { const ws = String(s).split(' '); if (ws.length < 3) return s + ' Unbreakablelongtokenforlayoutchecking'; ws.splice(Math.floor(ws.length / 2), 0, 'Unbreakablelongtokenforlayoutchecking'); return ws.join(' '); }
+  const xf = (s) => (!TX ? s : TX === 'long' ? longTok(s) : /^x[\d.]+$/.test(TX) ? expand(s, parseFloat(TX.slice(1))) : s);
+
+  async function boot() {
+    const g = D.graph, L = D.labels.labels, UIS = D.ui.strings;
+    const labels = {}; const add = (k, v) => (labels[k] = { text: v });
+    Object.entries(L).forEach(([k, v]) => add(k, v)); Object.entries(UIS).forEach(([k, v]) => { if (!labels[k]) add(k, v); });
+    Object.entries((D.labelsStaging && D.labelsStaging.labels) || {}).forEach(([k, v]) => { if (labels[k]) throw new Error('staging label collides: ' + k); add(k, v); });
+    g.blocks.forEach((b) => add('block.' + b.id, b.title));
+    add('section.num', D.num); (D.headerChips || []).forEach((v, i) => add('chip.' + i, v));
+    Object.values(g.holds).forEach((h) => add('hold.' + h.id, h.purpose));
+    Object.values(g.interactions || {}).forEach((I) => { add('gate.prompt', I.prompt); add('gate.skipNote', I.skipNote); (I.options || []).forEach((o) => add('gate.option.' + o.id, o.label)); });
+    const uiText = (k) => (labels[k] ? labels[k].text : k);
+    document.title = 'esssouth · L08 · ' + D.num + ' ' + L['section.title'] + ' (silent review)';
+    $('h1').textContent = L['lesson.title'] + ' · ' + D.num + ' ' + L['section.title'];
+    $('silent').textContent = uiText('ui.silent');
+    $('stage').setAttribute('aria-label', 'Lesson 08, Section ' + D.num + ', ' + L['section.title'] + ': animation stage');
+
+    const profile = q.get('timing') === 'retime-demo' ? D.retimeDemo : (window.L08Audio && window.L08Audio.profile(D)) || null;
+    const cueText = (id) => xf(g.cues[id].text);
+    const C = window.L08Compile.compile({ graph: g, timing: D.timing, anchors: D.anchors, staging: D.staging }, { segments: window.EsssouthStyleEstimate.segments, profile, cueText });
+    const E = window.EsssouthStyleEngine.createEngine($('stage'), { slots: Object.assign({}, window.EsssouthStyleSlots, window.L08Slots || {}), labels, characters, charMap, cueText,
+      mouth: () => 0, reducedMotion: q.get('rm') === '1', headerChips: (D.headerChips || []).map((v, i) => 'chip.' + i), tokenChips: [], transformText: (s) => xf(s) });
+    if (window.L08Captions) { // replace the caption bar with the same bar using the graph's speaker names
+      const old = $('stage').querySelector('.capbar'); if (old) old.remove();
+      E.captions = window.L08Captions.captions($('stage'), { coach: [PN.coach || 'Coach', '#356CC8'], learner: [charMap.learner.name, charMap.learner.color], maya: [charMap.maya.name, charMap.maya.color], noah: [charMap.noah.name, charMap.noah.color], prompt_reader: [PN.prompt_reader || 'Prompt reader', '#5A6378'] }); // prompt_reader: offstage, no avatar
+    }
+    // the fictional case ledger, readable outside the stage (docs/MODE_CONTRACT_EN.md)
+    const sc = g.scenario || {}; if (sc.facts && $('casefacts')) { $('casefacts').hidden = false; $('caseSummary').textContent = (sc.caseLabel || 'Case') + ': ' + uiText('ui.caseFacts');
+      sc.facts.forEach((f) => { const li = document.createElement('li'); li.textContent = f.text; li.dataset.fact = f.id; $('factlist').appendChild(li); });
+      // L08 snapshot contract: only a section that rehearses from a later snapshot lists that snapshot's statements (S06 uses
+      // the S05 proposal check); earlier sections never expose them, and S05 lets its own replies arrive in the scene
+      const SEC = (D.sectionId || '').split('.').pop(), snaps = sc.snapshots || {};
+      Object.values(snaps).filter((v) => v.section === SEC && v.sourceSnapshot && snaps[v.sourceSnapshot]).forEach((v) => { const src = snaps[v.sourceSnapshot];
+        [['Later proposal check · Participant', src.proposal], ['Later proposal check · Maya', src.mayaReply], ['Later proposal check · Noah', src.noahReply]].filter((x) => x[1]).forEach(([who, txt]) => {
+          const li = document.createElement('li'); li.textContent = who + ': ' + txt; li.dataset.snapshot = v.sourceSnapshot; $('factlist').appendChild(li); }); }); }
+    await (document.fonts && document.fonts.ready);
+    E.headerRects = E.measureHeader();
+    const scene = window.L08Scenes.setup(E, { D, C, Rx, labels });
+    const scores = {};
+    Object.entries(C.tracks).forEach(([key, tr]) => { if (Object.values(scores).some((s) => s.track === tr)) { scores[key] = Object.values(scores).find((s) => s.track === tr); return; }
+      const S = E.Score(key, tr, scene.DEF); const X = window.L08Kit.helpers(E, S, tr, { D, C, Rx, labels, scene }); scene.lay(S, tr, X); E.finish(S); scores[key] = S; });
+    const fit = () => { $('stage').style.transform = document.body.classList.contains('export') ? '' : `scale(${$('viewport').clientWidth / 1920})`; };
+    fit(); window.addEventListener('resize', fit);
+    E.layout(); E.warnings.push(...E.checkTokens(Object.fromEntries(Object.entries(scores).filter(([k, s], i, a) => a.findIndex((x) => x[1] === s) === i))));
+    Object.values(C.tracks).forEach((tr) => E.captions.check(tr.captionCues, E.warnings));
+
+    // ---------------- state ----------------
+    const GATE = C.gate, COMMON = C.tracks[GATE ? 'practice:skip' : 'practice:main'];
+    const ST = { mode: q.get('mode') === 'practice' ? 'practice' : 'watch', route: null, t: 0, playing: false, rate: 1, gate: 'none', choice: null,
+      flags: {}, log: [] };
+    let raf = null, clk = null;
+    const track = () => C.tracks[ST.route], score = () => scores[ST.route];
+    const baseRoute = () => (ST.mode === 'watch' ? 'watch' : GATE ? 'practice:skip' : 'practice:main');
+    const gEnd = () => (GATE ? COMMON.gateStep.end : Infinity), gStart = () => (GATE ? COMMON.gateStep.start : Infinity);
+    const EPS = 0.005; // waiting frames sit just before the next step, so its first keyframes (rise sets at t − 0.001) have not begun
+    const audio = window.L08Audio ? window.L08Audio.create(D, C) : null;
+
+    const BASE = Object.assign({ responseText: null, modelViewed: false, speakingObserved: false, completionAssumed: false }, (GATE && GATE.interaction.baseline) || {}); // the interaction's own private baseline (L08: groupAgreementVerified and proposalAdopted stay false)
+    function resetGate(why) { ST.gate = GATE && ST.mode === 'practice' ? 'before' : 'none'; ST.choice = null; ST.flags = Object.assign({}, BASE); if (why) ST.log.push(why); }
+    function setRoute(k) { ST.route = k; }
+    // ---------------- clock ----------------
+    const now = () => (clk ? clk.from + (performance.now() - clk.w0) / 1000 * ST.rate : ST.t);
+    const stop = () => { if (raf != null) cancelAnimationFrame(raf); raf = null; clk = null; if (audio) audio.stop(); }; // the single cancellation boundary
+    function limit() { // where the clock must stop on this route in this state
+      const tr = track();
+      if (ST.mode === 'practice' && GATE) {
+        if (ST.gate === 'before' || ST.gate === 'awaiting') return gEnd() - EPS;
+        if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') return tr.readyStep.start - EPS;
+      }
+      return tr.duration;
+    }
+    function tick() {
+      raf = null; const lim = limit(); ST.t = Math.min(lim, now());
+      if (ST.t >= lim - 1e-9) { ST.t = lim; ST.playing = false; stop(); arrive(); render(); return; }
+      render(); raf = requestAnimationFrame(tick);
+    }
+    function arrive() { // reached a stopping point
+      if (ST.mode === 'practice' && GATE) {
+        if (ST.gate === 'before') { ST.gate = 'awaiting'; live(uiText(GATE.kind === 'choice' ? 'ui.awaitChoice' : 'ui.awaitRehearsal')); return; }
+        if (ST.gate === 'branch_playing') { ST.gate = 'branch_ready'; if (ST.choice === 'model') ST.flags.modelViewed = true; live(uiText(ST.choice === 'model' ? 'ui.modelReady' : 'ui.branchReady')); return; }
+      }
+      if (ST.t >= track().duration - 1e-9) live(uiText('ui.end'));
+    }
+    function play() {
+      if (ST.mode === 'practice' && (ST.gate === 'awaiting' || ST.gate === 'branch_ready')) { render(); return; } // play never chooses or continues
+      stop(); if (ST.t >= track().duration - 1e-6) { restart(); return; }
+      ST.playing = true; clk = { from: ST.t, w0: performance.now() }; if (audio) audio.start(track(), ST.t, ST.rate, limit()); raf = requestAnimationFrame(tick); render();
+    }
+    function pause() { if (!ST.playing) return; ST.t = Math.min(limit(), now()); ST.playing = false; stop(); render(); }
+    function restart() { stop(); ST.playing = false; resetGate('restart'); setRoute(baseRoute()); ST.t = 0; play(); }
+
+    // ---------------- seeking ----------------
+    function seekCommon(x) { // practice with a gate: x is a position on the common timeline
+      const was = ST.playing; stop(); ST.playing = false;
+      if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') { // branch-local scrubber
+        const tr = track(); ST.t = Math.max(tr.branchStart, Math.min(tr.readyStep.start - EPS, x)); ST.gate = ST.t >= tr.readyStep.start - EPS - 1e-9 ? 'branch_ready' : 'branch_playing';
+        if (ST.gate === 'branch_ready' && ST.choice === 'model') ST.flags.modelViewed = true;
+        if (was && ST.gate === 'branch_playing') play(); else render(); return;
+      }
+      if (x < gStart()) { if (ST.gate !== 'before') { resetGate('seek before gate'); live(uiText('ui.backToGate')); } setRoute('practice:skip'); ST.gate = 'before'; ST.t = x; if (was) play(); else render(); return; }
+      if (ST.gate === 'resolved') { const s = COMMON.stepAt(x);
+        if (s.common) { const tr = track(); ST.t = tr.cue(s.id).start + (x - s.start); if (was) play(); else render(); return; } }
+      // crossing (or landing on) an unvisited gate stops there
+      resetGate(); setRoute('practice:skip'); ST.gate = 'awaiting'; ST.t = gEnd() - EPS; live(uiText('ui.stoppedAtGate')); render();
+    }
+    function seek(x) {
+      x = Math.max(0, x);
+      if (ST.mode === 'practice' && GATE) return seekCommon(x);
+      const was = ST.playing; stop(); ST.playing = false; ST.t = Math.min(track().duration, x); if (was && ST.t < track().duration) play(); else render();
+    }
+    const seekBy = (dx) => seek(scrubValue() + dx);
+
+    // ---------------- interaction actions ----------------
+    function choose(k) {
+      if (ST.mode !== 'practice' || ST.gate !== 'awaiting') return false; // first valid selection wins
+      stop(); ST.choice = k; setRoute('practice:' + k); ST.gate = 'branch_playing'; ST.t = gEnd(); ST.log.push('choose ' + k);
+      live(uiText('ui.branchPlaying') + (k === 'model' ? '' : ' ' + k)); play(); return true;
+    }
+    function cont() {
+      if (ST.mode !== 'practice' || ST.gate !== 'branch_ready') return false;
+      stop(); ST.gate = 'resolved'; ST.t = track().readyStep.end; ST.log.push('continue'); play(); return true;
+    }
+    function retry() {
+      if (ST.mode !== 'practice' || !['branch_playing', 'branch_ready', 'resolved'].includes(ST.gate)) return false;
+      stop(); ST.playing = false; resetGate('retry'); setRoute('practice:skip'); ST.gate = 'awaiting'; ST.t = gEnd() - EPS; live(uiText('ui.backToGate')); render(); return true;
+    }
+    function skip() {
+      if (ST.mode !== 'practice' || !['awaiting', 'branch_playing', 'branch_ready'].includes(ST.gate)) return false;
+      stop(); resetGate('skip');
+      ST.choice = 'skip'; setRoute('practice:skip'); ST.gate = 'resolved'; ST.t = gEnd(); live(uiText('ui.skipped')); play(); return true;
+    }
+    function setMode(m) {
+      if (m === ST.mode) return; const tr = track(), s = tr.stepAt(ST.t), was = ST.playing; stop(); ST.playing = false;
+      const inGate = GATE && !s.common && ['think', 'gate', 'ready', 'skip'].concat([]).includes(s.kind) || (GATE && s.branch) || (ST.mode === 'practice' && ['awaiting', 'branch_playing', 'branch_ready'].includes(ST.gate));
+      const off = ST.t - s.start; ST.mode = m; resetGate('mode ' + m);
+      if (window.parent !== window) window.parent.postMessage({ l08: 'modechanged', mode: m }, '*');
+      if (inGate) { // reset to the new mode's declared entry
+        if (m === 'practice') { setRoute('practice:skip'); ST.gate = 'awaiting'; ST.t = gEnd() - EPS; } else { setRoute('watch'); ST.t = C.tracks.watch.gateStep.start; }
+        live(uiText('ui.modeReset')); render(); return;
+      }
+      setRoute(baseRoute()); const nt = track();
+      if (m === 'practice' && GATE) { const pre = s.start < (tr.gateStep ? tr.gateStep.start : Infinity); ST.gate = pre ? 'before' : 'resolved'; }
+      ST.t = nt.has(s.id) ? nt.cue(s.id).start + off : Math.min(nt.duration, ST.t);
+      if (!GATE) live(uiText('ui.modeShared'));
+      if (was) play(); else render();
+    }
+    function setRate(r) { r = [1, 1.25, 1.5, 2].includes(+r) ? +r : 1; if (ST.playing) { ST.t = Math.min(limit(), now()); stop(); ST.rate = r; ST.playing = false; play(); } else { ST.rate = r; render(); } $('rate').value = String(r); }
+
+    // ---------------- view ----------------
+    function scrubValue() { if (ST.mode === 'practice' && GATE) { if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') return ST.t; return window.L08Compile.commonTime(C, track(), ST.t); } return ST.t; }
+    function scrubRange() { if (ST.mode === 'practice' && GATE) { if (ST.gate === 'branch_playing' || ST.gate === 'branch_ready') return [track().branchStart, track().readyStep.start - EPS]; return [0, COMMON.duration]; } return [0, track().duration]; }
+    const lastCap = { k: null };
+    function render() {
+      const tr = track(), S = score(), waiting = ST.mode === 'practice' && (ST.gate === 'awaiting' || ST.gate === 'branch_ready');
+      // while Practice waits, no caption of the next cue may appear (captions lead their segment by 0.1 s)
+      E.render(S, ST.t, { captions: $('cap').checked && !waiting, playing: ST.playing });
+      const [a, b] = scrubRange(), v = scrubValue(); $('scrub').min = String(a); $('scrub').max = String(b); $('scrub').value = String(v);
+      const branch = ST.mode === 'practice' && (ST.gate === 'branch_playing' || ST.gate === 'branch_ready');
+      $('time').textContent = branch ? `${ST.choice === 'model' ? uiText('ui.model') : uiText('ui.option') + ' ' + ST.choice} · ${(ST.t - a).toFixed(1)} / ${(b - a).toFixed(1)} s` : `${v.toFixed(1)} / ${b.toFixed(1)} s`;
+      const atEnd = ST.t >= tr.duration - 1e-6;
+      $('play').textContent = ST.playing ? uiText('ui.pause') : atEnd ? uiText('ui.replay') : uiText('ui.play');
+      $('play').disabled = ST.mode === 'practice' && (ST.gate === 'awaiting' || ST.gate === 'branch_ready');
+      const s = tr.stepAt(ST.t);
+      $('badge').textContent = (ST.mode === 'watch' ? uiText('ui.watch') : uiText('ui.practice')) + (ST.rate !== 1 ? ' · ' + ST.rate + '×' : '') + (s.kind === 'hold' ? ' · ' + s.dur + ' s reflection' + (ST.playing ? '' : ' (paused)') : '') + (s.kind === 'think' ? ' · ' + s.dur + ' s thinking time' : '');
+      $('cue').textContent = s.id + (s.branch ? ' · branch ' + s.branch : '');
+      document.querySelectorAll('[data-mode]').forEach((n) => n.setAttribute('aria-pressed', String(n.dataset.mode === ST.mode)));
+      renderPanel(s, atEnd); renderDomCap(tr, s);
+      document.body.dataset.gate = ST.gate; document.body.dataset.route = ST.route;
+    }
+    function renderDomCap(tr, s) {
+      let txt = '', who = '';
+      if (ST.mode === 'practice' && (ST.gate === 'awaiting' || ST.gate === 'branch_ready')) { const k = 'wait|' + ST.gate; if (lastCap.k === k) return; lastCap.k = k; $('domcap').textContent = uiText('gate.prompt'); return; }
+      Object.values(tr.captionCues).forEach((c) => c.segments.forEach((sg) => { if (ST.t >= c.start + sg.start - 0.1 && ST.t <= c.start + sg.end + 0.25) { txt = sg.text; who = (charMap[c.speakerId] || { name: 'Coach' }).name; } }));
+      if (!txt && s.kind === 'hold') { who = ''; txt = labels['hold.' + s.id].text + ' ' + uiText('ui.pauseMore'); }
+      if (!txt && (s.kind === 'think' || s.kind === 'gate')) { who = ''; txt = uiText('gate.prompt'); }
+      const k = who + '|' + txt; if (lastCap.k === k) return; lastCap.k = k;
+      const d = $('domcap'); d.textContent = ''; if (who) { const bb = document.createElement('b'); bb.textContent = who; d.appendChild(bb); } d.appendChild(document.createTextNode(txt));
+    }
+    // the interaction panel (DOM, outside the scaled stage so it stays readable on phones)
+    const P = $('ipanel');
+    function btn(label, cls, on, extra) { const b = document.createElement('button'); b.type = 'button'; b.className = cls || ''; b.textContent = label; b.addEventListener('click', on); if (extra) extra(b); return b; }
+    let panelKey = null;
+    function renderPanel(s, atEnd) {
+      const key = [ST.mode, ST.gate, ST.choice, atEnd, s.kind === 'think' ? 'think' : ''].join('|'); if (key === panelKey) return; panelKey = key;
+      P.textContent = ''; P.hidden = true;
+      const head = (t) => { const h = document.createElement('p'); h.className = 'iprompt'; h.textContent = t; P.appendChild(h); };
+      const stat = (t) => { const p = document.createElement('p'); p.className = 'istatus'; p.textContent = t; P.appendChild(p); };
+      const row = () => { const r = document.createElement('div'); r.className = 'irow'; P.appendChild(r); return r; };
+      if (GATE && ST.mode === 'watch' && s.kind === 'think') { P.hidden = false; head(uiText('gate.prompt')); stat(uiText('ui.watchPath') + ' ' + (GATE.kind === 'choice' ? GATE.watchKey : uiText('ui.model').toLowerCase()) + '.'); return; }
+      if (GATE && ST.mode === 'practice' && ST.gate !== 'before' && ST.gate !== 'resolved') {
+        P.hidden = false; head(uiText('gate.prompt'));
+        if (GATE.kind === 'choice') { const r = row(); r.classList.add('opts');
+          GATE.options.forEach((o) => r.appendChild(btn(o.key + '. ' + xf(o.label), 'opt', () => choose(o.key), (b) => { b.dataset.choice = o.key; b.setAttribute('aria-pressed', String(ST.choice === o.key)); b.disabled = ST.gate !== 'awaiting'; }))); }
+        const r2 = row();
+        if (ST.gate === 'awaiting') { stat(uiText(GATE.kind === 'choice' ? 'ui.awaitChoice' : 'ui.awaitRehearsal'));
+          if (GATE.kind !== 'choice') { r2.appendChild(btn(uiText('ui.model'), 'primary', () => choose('model'), (b) => (b.dataset.act = 'model'))); r2.appendChild(btn(uiText('ui.continue'), '', () => skip(), (b) => (b.dataset.act = 'continue'))); }
+          r2.appendChild(btn(uiText('ui.skip'), '', () => skip(), (b) => (b.dataset.act = 'skip'))); }
+        if (ST.gate === 'branch_playing') { stat(uiText('ui.branchPlaying') + (ST.choice === 'model' ? '' : ' ' + ST.choice) + '.'); r2.appendChild(btn(uiText('ui.retry'), '', () => retry(), (b) => (b.dataset.act = 'retry'))); r2.appendChild(btn(uiText('ui.skip'), '', () => skip(), (b) => (b.dataset.act = 'skip'))); }
+        if (ST.gate === 'branch_ready') { stat(uiText(ST.choice === 'model' ? 'ui.modelReady' : 'ui.branchReady')); r2.appendChild(btn(uiText('ui.continue'), 'primary', () => cont(), (b) => (b.dataset.act = 'continue'))); r2.appendChild(btn(uiText('ui.retry'), '', () => retry(), (b) => (b.dataset.act = 'retry'))); }
+        return;
+      }
+      if (atEnd) { P.hidden = false; stat(uiText('ui.end')); const r = row();
+        r.appendChild(btn(uiText('ui.replay'), '', () => restart(), (b) => (b.dataset.act = 'replay')));
+        if (D.nav && D.nav.prev) r.appendChild(btn(uiText('ui.previous'), '', () => nav(D.nav.prev), (b) => (b.dataset.act = 'prev')));
+        if (D.nav && D.nav.next) r.appendChild(btn(uiText('ui.next') + ': ' + D.nav.nextTitle, 'primary', () => nav(D.nav.next), (b) => (b.dataset.act = 'next'))); }
+    }
+    function nav(target) { // explicit user action only; never automatic
+      pause(); if (window.parent !== window) { window.parent.postMessage({ l08: 'nav', section: target.id }, '*'); return; }
+      const href = /_player_standalone\.html$/.test(location.pathname) ? target.id.replace('.', '') + '_player_standalone.html' : target.href; // standalone players sit side by side
+      location.href = href + (ST.mode === 'practice' ? '?mode=practice' : ''); }
+
+    // ---------------- wiring ----------------
+    $('play').addEventListener('click', () => (ST.playing ? pause() : play()));
+    $('restart').addEventListener('click', restart);
+    $('scrub').addEventListener('input', (e) => seek(parseFloat(e.target.value)));
+    $('cap').checked = q.get('nocap') !== '1'; $('cap').addEventListener('change', () => { lastCap.k = null; render(); });
+    $('rm').checked = E.rm; $('rm').addEventListener('change', (e) => { E.rm = e.target.checked; render(); });
+    $('rate').addEventListener('change', (e) => setRate(e.target.value));
+    document.querySelectorAll('[data-mode]').forEach((n) => n.addEventListener('click', () => setMode(n.dataset.mode)));
+    const onKey = (e) => { if (e.target.closest && e.target.closest('button,input,select,textarea,a')) return;
+      if (e.code === 'Space') { e.preventDefault(); ST.playing ? pause() : play(); } else if (e.code === 'ArrowRight') seekBy(5); else if (e.code === 'ArrowLeft') seekBy(-5); };
+    document.addEventListener('keydown', onKey);
+    const onVis = () => { if (document.hidden && ST.playing) pause(); }; document.addEventListener('visibilitychange', onVis);
+    window.addEventListener('message', (e) => { const m = e.data || {}; if (m.l08 === 'pause') pause(); if (m.l08 === 'mode') setMode(m.mode); });
+    window.addEventListener('pagehide', () => { stop(); });
+
+    // ---------------- start ----------------
+    resetGate(); setRoute(q.get('route') && C.tracks[q.get('route')] ? q.get('route') : baseRoute());
+    if (q.get('route')) { ST.gate = 'none'; ST.mode = q.get('route') === 'watch' ? 'watch' : 'practice'; ST.exportRoute = true; }
+    if (q.get('rate')) setRate(q.get('rate'));
+    const t0 = Math.max(0, parseFloat(q.get('t')) || 0); if (t0) { if (ST.exportRoute) ST.t = Math.min(track().duration, t0); else seek(t0); }
+    const dur = C.tracks.watch.duration;
+    note(`Silent English review · Watch ${dur.toFixed(3)} s` + (GATE ? ` · Practice common ${COMMON.duration.toFixed(3)} s + branch + unlimited waiting` : ' · Practice uses the same route') +
+      ` · ${profile ? 'timing profile: ' + (q.get('timing') || 'audio') : 'estimated reading timing (140 wpm + 0.35 s tail)'} · ${C.anchors.length} anchors.`);
+    if (E.warnings.length) note('Layout report: ' + E.warnings.length + ' item(s) · ' + JSON.stringify(E.warnings.slice(0, 12)), true);
+    render(); document.body.dataset.ready = '1';
+    if (window.parent !== window) { window.parent.postMessage({ l08: 'ready', section: D.sectionId }, '*');
+      let lastH = 0; const postH = () => { const h = document.documentElement.scrollHeight; if (Math.abs(h - lastH) > 2) { lastH = h; window.parent.postMessage({ l08: 'height', h }, '*'); } };
+      if (window.ResizeObserver) new ResizeObserver(postH).observe(document.body); postH(); }
+    window.__l08 = { E, C, scores, ST, get t() { return ST.t; }, get playing() { return ST.playing; }, play, pause, seek, restart, choose, cont, retry, skip, setMode, setRate,
+      scrubValue, scrubRange, warnings: E.warnings, uiText,
+      renderAt(x, route) { stop(); ST.playing = false; if (route) { setRoute(route); ST.exportRoute = true; ST.gate = 'none'; } ST.t = x; E.render(score(), x, { captions: $('cap').checked, playing: true }); return x; },
+      destroy() { stop(); document.removeEventListener('keydown', onKey); document.removeEventListener('visibilitychange', onVis); } };
+  }
+  boot().catch((e) => { console.error(e); note('Startup failed: ' + e.message, true); document.body.dataset.ready = 'error'; });
+})();
+
+</script>
+</body>
+</html>

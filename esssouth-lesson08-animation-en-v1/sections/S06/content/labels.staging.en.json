@@ -1,0 +1,28 @@
+{
+ "schema": "esssouth.l08.staging-labels/1",
+ "sectionId": "L08.S06",
+ "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or the S05 proposal_check snapshot. The participant's S05 proposal is read verbatim from the graph's scenario snapshot, not restated here. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+ "labels": {
+  "x.by.part": "Participant \u00b7 proposal",
+  "x.by.maya": "Maya",
+  "x.by.noah": "Noah",
+  "x.st.ex": "Brief example",
+  "x.st.pairs": "Pairs",
+  "x.st.share": "Sharing",
+  "x.st.q": "Club questions: at least 5",
+  "x.res": "Main room; supplied text and sheet; paper and pens; no purchases",
+  "x.dur": "Stage lengths: undecided",
+  "x.lead": "Example leader: undecided",
+  "x.ms": "Conditional support for the sequence",
+  "x.ns": "Two elements supported; full sequence open",
+  "x.a1": "Elements connected",
+  "x.a2": "Two support statements, with their limits",
+  "x.a3": "A check offered",
+  "x.noAdopt": "No schedule adopted",
+  "x.broad": "\u201cEveryone agrees.\u201d",
+  "x.narrow": "\u201cMaya supports the sequence if the example stays brief; Noah wants the timings checked first.\u201d",
+  "x.ex": "An authored example to revise (not your response)",
+  "x.check": "Could we check a complete schedule, including transitions?",
+  "x.mine": "Your own wording (private, blank)"
+ }
+}

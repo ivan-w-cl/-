@@ -1,0 +1,147 @@
+{
+ "schema": "esssouth.l08.staging-anchors/1",
+ "sectionId": "L08.S06",
+ "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+ "anchors": {
+  "s6_now": {
+   "cue": "L08.S06.c001",
+   "phrase": "Now practise bringing"
+  },
+  "s6_use": {
+   "cue": "L08.S06.c001",
+   "phrase": "Use the current snapshot"
+  },
+  "s6_job": {
+   "cue": "L08.S06.c001",
+   "phrase": "Your job is to make"
+  },
+  "s6_cand": {
+   "cue": "L08.S06.c002",
+   "phrase": "The candidate links a brief example"
+  },
+  "s6_res": {
+   "cue": "L08.S06.c002",
+   "phrase": "The resource limits still apply"
+  },
+  "s6_no": {
+   "cue": "L08.S06.c002",
+   "phrase": "No exact stage lengths"
+  },
+  "s6_maya": {
+   "cue": "L08.S06.c003",
+   "phrase": "Maya supports the sequence"
+  },
+  "s6_noah": {
+   "cue": "L08.S06.c003",
+   "phrase": "Noah supports starting with an example"
+  },
+  "s6_these": {
+   "cue": "L08.S06.c003",
+   "phrase": "These are related positions"
+  },
+  "s6_think": {
+   "cue": "L08.S06.c004",
+   "phrase": "Think about what a listener needs"
+  },
+  "s6_name": {
+   "cue": "L08.S06.c004",
+   "phrase": "Name the candidate"
+  },
+  "s6_incl": {
+   "cue": "L08.S06.c004",
+   "phrase": "Include the support and the reservation"
+  },
+  "s6_then": {
+   "cue": "L08.S06.c004",
+   "phrase": "Then offer a relevant check"
+  },
+  "s6_may": {
+   "cue": "L08.S06.c005",
+   "phrase": "You may speak in English"
+  },
+  "s6_nothing": {
+   "cue": "L08.S06.c005",
+   "phrase": "Nothing is recorded here"
+  },
+  "s6_part": {
+   "cue": "L08.S06.c005",
+   "phrase": "In particular, do not lose"
+  },
+  "s6_formal": {
+   "cue": "L08.S06.c006",
+   "phrase": "You do not have to sound like"
+  },
+  "s6_choose": {
+   "cue": "L08.S06.c006",
+   "phrase": "Choose ordinary wording"
+  },
+  "s6_take": {
+   "cue": "L08.S06.c007",
+   "phrase": "Take time to prepare"
+  },
+  "s6_model": {
+   "cue": "L08.S06.c007",
+   "phrase": "The model will be a separate example"
+  },
+  "s6_rev": {
+   "cue": "L08.S06.c008",
+   "phrase": "Use the source statements to review"
+  },
+  "s6_q1": {
+   "cue": "L08.S06.c008",
+   "phrase": "Does it distinguish the candidate"
+  },
+  "s6_q2": {
+   "cue": "L08.S06.c008",
+   "phrase": "Does it keep each person"
+  },
+  "s6_q3": {
+   "cue": "L08.S06.c008",
+   "phrase": "Is the proposed next check"
+  },
+  "s6_broad": {
+   "cue": "L08.S06.c009",
+   "phrase": "If a phrase is too broad"
+  },
+  "s6_replace": {
+   "cue": "L08.S06.c009",
+   "phrase": "For example, replace everyone agrees"
+  },
+  "s6_long": {
+   "cue": "L08.S06.c009",
+   "phrase": "If your wording is accurate but long"
+  },
+  "s6_help": {
+   "cue": "L08.S06.c010",
+   "phrase": "A summary can help the group"
+  },
+  "s6_after": {
+   "cue": "L08.S06.c010",
+   "phrase": "After offering a check"
+  },
+  "s6_small": {
+   "cue": "L08.S06.c011",
+   "phrase": "choose one small focus"
+  },
+  "s6_final": {
+   "cue": "L08.S06.c011",
+   "phrase": "The final section uses a different task"
+  },
+  "sM_conn": {
+   "cue": "L08.S06.f101",
+   "phrase": "The model connects the elements"
+  },
+  "sM_reports": {
+   "cue": "L08.S06.f101",
+   "phrase": "reports the two support statements"
+  },
+  "sM_offers": {
+   "cue": "L08.S06.f101",
+   "phrase": "and offers a check"
+  },
+  "sM_nothing": {
+   "cue": "L08.S06.f101",
+   "phrase": "Nothing here adopts a schedule"
+  }
+ }
+}
