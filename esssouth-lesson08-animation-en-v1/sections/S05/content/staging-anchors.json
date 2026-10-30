@@ -1,0 +1,119 @@
+{
+ "schema": "esssouth.l08.staging-anchors/1",
+ "sectionId": "L08.S05",
+ "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+ "anchors": {
+  "s5_comb": {
+   "cue": "L08.S05.c001",
+   "phrase": "A combined proposal should make"
+  },
+  "s5_show": {
+   "cue": "L08.S05.c001",
+   "phrase": "Show the main sequence"
+  },
+  "s5_giving": {
+   "cue": "L08.S05.c001",
+   "phrase": "You are giving people something"
+  },
+  "s5_later": {
+   "cue": "L08.S05.c002",
+   "phrase": "This is a later authored check"
+  },
+  "s5_earlier": {
+   "cue": "L08.S05.c002",
+   "phrase": "The earlier partial support"
+  },
+  "s5_next": {
+   "cue": "L08.S05.c002",
+   "phrase": "The next lines supply new statements"
+  },
+  "s5_same": {
+   "cue": "L08.S05.c003",
+   "phrase": "The proposed example and pair discussion use the same text"
+  },
+  "s5_sharing": {
+   "cue": "L08.S05.c003",
+   "phrase": "Sharing would draw on the pair task"
+  },
+  "s5_still": {
+   "cue": "L08.S05.c003",
+   "phrase": "The candidate still needs timing"
+  },
+  "s5_focused": {
+   "cue": "L08.S05.c004",
+   "phrase": "A focused check asks"
+  },
+  "s5_do": {
+   "cue": "L08.S05.c004",
+   "phrase": "Do you support this sequence"
+  },
+  "s5_leave": {
+   "cue": "L08.S05.c004",
+   "phrase": "Leave space for a limited"
+  },
+  "s5_now": {
+   "cue": "L08.S05.c005",
+   "phrase": "Maya has now supported the sequence"
+  },
+  "s5_record": {
+   "cue": "L08.S05.c005",
+   "phrase": "Record the whole statement"
+  },
+  "s5_dont": {
+   "cue": "L08.S05.c005",
+   "phrase": "Do not turn it into unconditional support"
+  },
+  "s5_notRej": {
+   "cue": "L08.S05.c006",
+   "phrase": "Noah's reply is not a rejection"
+  },
+  "s5_pres": {
+   "cue": "L08.S05.c006",
+   "phrase": "It preserves support for two elements"
+  },
+  "s5_moved": {
+   "cue": "L08.S05.c007",
+   "phrase": "The current record has moved forward"
+  },
+  "s5_useful": {
+   "cue": "L08.S05.c007",
+   "phrase": "A useful next step is to draft"
+  },
+  "s5_someone": {
+   "cue": "L08.S05.c007",
+   "phrase": "Someone also needs to check"
+  },
+  "s5_offer": {
+   "cue": "L08.S05.c008",
+   "phrase": "If you offer to make that draft"
+  },
+  "s5_nothing": {
+   "cue": "L08.S05.c008",
+   "phrase": "Nothing in this case appoints"
+  },
+  "s5_without": {
+   "cue": "L08.S05.c009",
+   "phrase": "An offer without a reply remains an offer"
+  },
+  "s5_other": {
+   "cue": "L08.S05.c009",
+   "phrase": "Otherwise, a proposed action"
+  },
+  "s5_helpful": {
+   "cue": "L08.S05.c010",
+   "phrase": "A helpful handover"
+  },
+  "s5_keep": {
+   "cue": "L08.S05.c010",
+   "phrase": "Keep it concise enough"
+  },
+  "s5_point": {
+   "cue": "L08.S05.c011",
+   "phrase": "The point of checking"
+  },
+  "s5_inNext": {
+   "cue": "L08.S05.c011",
+   "phrase": "In the next section"
+  }
+ }
+}
