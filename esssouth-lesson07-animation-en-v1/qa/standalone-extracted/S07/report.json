@@ -1,0 +1,613 @@
+{
+ "section": "S07",
+ "ranAt": "2026-10-30T04:09:35.590Z",
+ "environment": {
+  "os": "linux 6.18.44-fc-v185",
+  "browser": "Chromium 153.0.8010.12",
+  "playwright": "1.63.0",
+  "node": "v22.22.0",
+  "fonts": "Inter installed (first in the stack); the approved reference frames were rendered with Segoe UI",
+  "viewportsAreEmulated": true
+ },
+ "checks": [
+  {
+   "name": "page loads without errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no layout / overflow warnings from the engine (all routes, settled states)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no remote requests (offline)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "silent: no media elements, no microphone request",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "stage accessible name names Lesson 07 and this section",
+   "pass": true,
+   "detail": "Lesson 07, Section 7.7, Choose the Next Move in a New Discussion: animation stage"
+  },
+  {
+   "name": "captions reproduce exact cue words (every route)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every supplied cue is reachable in some route",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L07.S07.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L07.S07.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L07.S07.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L07.S07.h102 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every character line shows its exact words in a visible bubble (or, for an illustrated overlap, an exact lane card) near its end",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every prompt-reader line shows its exact words on a visible card, with no avatar bubble",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "deterministic: same frame after different seek histories",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "rate 1×: clock advances at 1× (measured 0.999)",
+   "pass": true,
+   "detail": 0.9993333777749699
+  },
+  {
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.244)",
+   "pass": true,
+   "detail": 1.2440007998933869
+  },
+  {
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.488)",
+   "pass": true,
+   "detail": 1.487502499500332
+  },
+  {
+   "name": "rate 2×: clock advances at 2× (measured 1.996)",
+   "pass": true,
+   "detail": 1.9957341864957858
+  },
+  {
+   "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
+   "pass": true,
+   "detail": {
+    "a": "L07.S07.c003",
+    "off1": 2,
+    "b": "L07.S07.c003",
+    "off2": 2,
+    "mode": "watch"
+   }
+  },
+  {
+   "name": "restart returns to the section start and plays",
+   "pass": true,
+   "detail": {
+    "t": 0.19410000000009314,
+    "playing": true,
+    "gate": "none",
+    "choice": null
+   }
+  },
+  {
+   "name": "keyboard: Space plays and pauses",
+   "pass": true,
+   "detail": {
+    "k1": true,
+    "k2": false
+   }
+  },
+  {
+   "name": "keyboard: Tab reaches mode and playback controls with a visible focus outline",
+   "pass": true,
+   "detail": [
+    {
+     "tag": "BUTTON",
+     "id": "watch",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "practice",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "play",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "restart",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "scrub",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "cap",
+     "outline": true
+    }
+   ]
+  },
+  {
+   "name": "captions toggle hides the stage caption; DOM caption carries the current words",
+   "pass": true,
+   "detail": {
+    "on": 1,
+    "off": 0,
+    "dom": "CoachTry the same judgement in a different discussion."
+   }
+  },
+  {
+   "name": "case facts panel lists the exact fictional fact ledger",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 4,
+    "facts": 4,
+    "lrn": "Participant",
+    "capName": "Participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "the learner-side speaker is labelled from the graph (caption and seat), not as \"You\"",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 4,
+    "facts": 4,
+    "lrn": "Participant",
+    "capName": "Participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "no runtime errors during transport tests",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: shared reflection route identical to Watch (no gate in this section)",
+   "pass": true,
+   "detail": {
+    "route": "practice:main",
+    "same": true
+   }
+  },
+  {
+   "name": "retime: Watch duration changes by the expected clip delta (7.200 s)",
+   "pass": true,
+   "detail": {
+    "prod": 146.00699999999998,
+    "retimed": 153.207
+   }
+  },
+  {
+   "name": "retime: step order unchanged in every route",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: holds keep their fixture length; think holds unchanged",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+   "pass": true,
+   "detail": [
+    {
+     "name": "a_L07_S07_c001",
+     "zero": false,
+     "ratio": 1.3500031531815602,
+     "m": 1.35
+    },
+    {
+     "name": "a_L07_S07_d001",
+     "zero": false,
+     "ratio": 1.3500583430571762,
+     "m": 1.35
+    },
+    {
+     "name": "s7_try",
+     "zero": true,
+     "ratio": 1,
+     "m": 1.35
+    },
+    {
+     "name": "s7_team",
+     "zero": false,
+     "ratio": 1.3499562554680664,
+     "m": 1.35
+    },
+    {
+     "name": "s7_need",
+     "zero": false,
+     "ratio": 1.3499840916321983,
+     "m": 1.35
+    }
+   ]
+  },
+  {
+   "name": "retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: no layout warnings",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 87,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 87,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 87,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 87,
+    "domcapFs": 16,
+    "panel": false
+   }
+  }
+ ],
+ "failures": [],
+ "notes": [
+  "Text expansion is a stress report, not a pass/fail gate: overflow at ×1.3/×1.6 is reported by the fitter (never clipped silently) and needs layout work in the localization pass where it occurs."
+ ],
+ "routes": {
+  "watch": 146.007,
+  "practice:main": 146.007
+ },
+ "anchors": [
+  {
+   "name": "a_L07_S07_c001",
+   "cue": "L07.S07.c001",
+   "phrase": "They have not chosen",
+   "localSec": 15.857,
+   "suppliedSec": 15.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S07_d001",
+   "cue": "L07.S07.d001",
+   "phrase": "wash the shared mugs",
+   "localSec": 0.857,
+   "suppliedSec": 0.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S07_c002",
+   "cue": "L07.S07.c002",
+   "phrase": "its answer is still missing",
+   "localSec": 12.857,
+   "suppliedSec": 12.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S07_d002",
+   "cue": "L07.S07.d002",
+   "phrase": "a moment to think",
+   "localSec": 1.286,
+   "suppliedSec": 1.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S07_c003",
+   "cue": "L07.S07.c003",
+   "phrase": "more information than silence alone",
+   "localSec": 3.857,
+   "suppliedSec": 3.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S07_d003",
+   "cue": "L07.S07.d003",
+   "phrase": "before we decide",
+   "localSec": 5.143,
+   "suppliedSec": 5.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S07_c004",
+   "cue": "L07.S07.c004",
+   "phrase": "the contribution that follows",
+   "localSec": 12,
+   "suppliedSec": 12,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S07_c005",
+   "cue": "L07.S07.c005",
+   "phrase": "what you can observe",
+   "localSec": 2.143,
+   "suppliedSec": 2.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S07_c006",
+   "cue": "L07.S07.c006",
+   "phrase": "make room and check",
+   "localSec": 2.143,
+   "suppliedSec": 2.143,
+   "source": "supplied semantic anchor"
+  }
+ ],
+ "layoutAudit": {
+  "watch": [],
+  "practice:main": []
+ },
+ "stills": [
+  "S07_watch_B01-open_t1.20.jpg",
+  "S07_watch_B01-mid_t20.67.jpg",
+  "S07_watch_B01-end_t41.04.jpg",
+  "S07_watch_B02-open_t42.54.jpg",
+  "S07_watch_B02-mid_t70.25.jpg",
+  "S07_watch_B02-end_t98.86.jpg",
+  "S07_watch_B03-open_t100.36.jpg",
+  "S07_watch_B03-mid_t122.59.jpg",
+  "S07_watch_B03-end_t145.71.jpg",
+  "S07_watch_trans-d001_t18.70.jpg",
+  "S07_watch_trans-c002_t21.62.jpg",
+  "S07_watch_trans-d002_t41.69.jpg",
+  "S07_watch_trans-c003_t45.89.jpg",
+  "S07_watch_trans-h101_t64.67.jpg",
+  "S07_watch_trans-d003_t72.67.jpg",
+  "S07_watch_trans-c004_t79.45.jpg",
+  "S07_watch_trans-c005_t99.51.jpg",
+  "S07_watch_trans-h102_t118.72.jpg",
+  "S07_watch_trans-c006_t126.72.jpg",
+  "S07_reduced-motion_t64.62.jpg",
+  "S07_retime-demo_c001-end_t24.15.jpg",
+  "S07_retime-demo_d001-end_t27.97.jpg",
+  "S07_text-x1.3_t63.92.jpg",
+  "S07_text-x1.6_t63.92.jpg",
+  "S07_text-long_t63.92.jpg",
+  "S07_viewport-390x844.png",
+  "S07_viewport-820x1180.png",
+  "S07_viewport-1180x820.png",
+  "S07_viewport-1366x768.png"
+ ],
+ "textExpansion": {
+  "x1.3": {
+   "warnings": 0,
+   "sample": [],
+   "errors": []
+  },
+  "x1.6": {
+   "warnings": 1,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "task",
+     "score": "watch",
+     "t": 9.43,
+     "text": "Compare, then identify a question to check Compare, then identify a question"
+    }
+   ],
+   "errors": []
+  },
+  "long": {
+   "warnings": 9,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "newL",
+     "score": "watch",
+     "t": 0.4,
+     "text": "New Unbreakablelongtokenforlayoutchecking practice example"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "task",
+     "score": "watch",
+     "t": 9.43,
+     "text": "Compare, then identify Unbreakablelongtokenforlayoutchecking a question to check"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "rel",
+     "score": "watch",
+     "t": 31.56,
+     "text": "Relevant to Unbreakablelongtokenforlayoutchecking the comparison"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "pos",
+     "score": "watch",
+     "t": 72.82,
+     "text": "One Unbreakablelongtokenforlayoutchecking possible response"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "park",
+     "score": "watch",
+     "t": 77.06,
+     "text": "Question Unbreakablelongtokenforlayoutchecking to check"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "o0",
+     "score": "watch",
+     "t": 103.02,
+     "text": "Unfinished point Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "o1",
+     "score": "watch",
+     "t": 105.59,
+     "text": "Requested time Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "o2",
+     "score": "watch",
+     "t": 108.16,
+     "text": "Task relevance Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "waitC",
+     "score": "watch",
+     "t": 115.45,
+     "text": "Waiting can Unbreakablelongtokenforlayoutchecking be useful"
+    }
+   ],
+   "errors": []
+  }
+ },
+ "viewports": [
+  {
+   "viewport": "phone 390x844",
+   "hscroll": false,
+   "small": [],
+   "domcap": 87,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet 820x1180",
+   "hscroll": false,
+   "small": [],
+   "domcap": 87,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet landscape 1180x820",
+   "hscroll": false,
+   "small": [],
+   "domcap": 87,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "desktop 1366x768",
+   "hscroll": false,
+   "small": [],
+   "domcap": 87,
+   "domcapFs": 16,
+   "panel": false
+  }
+ ],
+ "summary": {
+  "checks": 42,
+  "failed": 0,
+  "stills": 29
+ }
+}

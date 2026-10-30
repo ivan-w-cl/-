@@ -1,0 +1,783 @@
+{
+ "section": "S04",
+ "ranAt": "2026-10-30T04:07:32.317Z",
+ "environment": {
+  "os": "linux 6.18.44-fc-v185",
+  "browser": "Chromium 153.0.8010.12",
+  "playwright": "1.63.0",
+  "node": "v22.22.0",
+  "fonts": "Inter installed (first in the stack); the approved reference frames were rendered with Segoe UI",
+  "viewportsAreEmulated": true
+ },
+ "checks": [
+  {
+   "name": "page loads without errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no layout / overflow warnings from the engine (all routes, settled states)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no remote requests (offline)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "silent: no media elements, no microphone request",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "stage accessible name names Lesson 07 and this section",
+   "pass": true,
+   "detail": "Lesson 07, Section 7.4, Invite a Contribution Without Pressure: animation stage"
+  },
+  {
+   "name": "captions reproduce exact cue words (every route)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every supplied cue is reachable in some route",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L07.S04.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L07.S04.h102 lasts 12 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L07.S04.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:main: L07.S04.h102 lasts 12 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every character line shows its exact words in a visible bubble (or, for an illustrated overlap, an exact lane card) near its end",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every prompt-reader line shows its exact words on a visible card, with no avatar bubble",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "deterministic: same frame after different seek histories",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "rate 1×: clock advances at 1× (measured 0.999)",
+   "pass": true,
+   "detail": 0.999334043686579
+  },
+  {
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.245)",
+   "pass": true,
+   "detail": 1.244917344354009
+  },
+  {
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.489)",
+   "pass": true,
+   "detail": 1.4885015331289166
+  },
+  {
+   "name": "rate 2×: clock advances at 2× (measured 1.998)",
+   "pass": true,
+   "detail": 1.998
+  },
+  {
+   "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
+   "pass": true,
+   "detail": {
+    "a": "L07.S04.c004",
+    "off1": 2,
+    "b": "L07.S04.c004",
+    "off2": 2,
+    "mode": "watch"
+   }
+  },
+  {
+   "name": "restart returns to the section start and plays",
+   "pass": true,
+   "detail": {
+    "t": 0.22760000000009314,
+    "playing": true,
+    "gate": "none",
+    "choice": null
+   }
+  },
+  {
+   "name": "keyboard: Space plays and pauses",
+   "pass": true,
+   "detail": {
+    "k1": true,
+    "k2": false
+   }
+  },
+  {
+   "name": "keyboard: Tab reaches mode and playback controls with a visible focus outline",
+   "pass": true,
+   "detail": [
+    {
+     "tag": "BUTTON",
+     "id": "watch",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "practice",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "play",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "restart",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "scrub",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "cap",
+     "outline": true
+    }
+   ]
+  },
+  {
+   "name": "captions toggle hides the stage caption; DOM caption carries the current words",
+   "pass": true,
+   "detail": {
+    "on": 1,
+    "off": 0,
+    "dom": "CoachAn invitation can make space for another view."
+   }
+  },
+  {
+   "name": "case facts panel lists the exact fictional fact ledger",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 7,
+    "facts": 7,
+    "lrn": "Participant",
+    "capName": "Participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "the learner-side speaker is labelled from the graph (caption and seat), not as \"You\"",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 7,
+    "facts": 7,
+    "lrn": "Participant",
+    "capName": "Participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "no runtime errors during transport tests",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: shared reflection route identical to Watch (no gate in this section)",
+   "pass": true,
+   "detail": {
+    "route": "practice:main",
+    "same": true
+   }
+  },
+  {
+   "name": "retime: Watch duration changes by the expected clip delta (10.350 s)",
+   "pass": true,
+   "detail": {
+    "prod": 224.12299999999996,
+    "retimed": 234.47299999999996
+   }
+  },
+  {
+   "name": "retime: step order unchanged in every route",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: holds keep their fixture length; think holds unchanged",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+   "pass": true,
+   "detail": [
+    {
+     "name": "a_L07_S04_c001",
+     "zero": false,
+     "ratio": 1.3500093335822287,
+     "m": 1.35
+    },
+    {
+     "name": "a_L07_S04_d001",
+     "zero": false,
+     "ratio": 1.3499938597568464,
+     "m": 1.35
+    },
+    {
+     "name": "s4_inv",
+     "zero": true,
+     "ratio": 1,
+     "m": 1.35
+    },
+    {
+     "name": "s4_start",
+     "zero": false,
+     "ratio": 1.3500050725372832,
+     "m": 1.35
+    }
+   ]
+  },
+  {
+   "name": "retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: no layout warnings",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 78,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 78,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 78,
+    "domcapFs": 16,
+    "panel": false
+   }
+  },
+  {
+   "name": "desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 78,
+    "domcapFs": 16,
+    "panel": false
+   }
+  }
+ ],
+ "failures": [],
+ "notes": [
+  "Text expansion is a stress report, not a pass/fail gate: overflow at ×1.3/×1.6 is reported by the fitter (never clipped silently) and needs layout work in the localization pass where it occurs."
+ ],
+ "routes": {
+  "watch": 224.123,
+  "practice:main": 224.123
+ },
+ "anchors": [
+  {
+   "name": "a_L07_S04_c001",
+   "cue": "L07.S04.c001",
+   "phrase": "what you can observe",
+   "localSec": 10.714,
+   "suppliedSec": 10.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_c002",
+   "cue": "L07.S04.c002",
+   "phrase": "nothing certain about her reasons",
+   "localSec": 14.143,
+   "suppliedSec": 14.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_c003",
+   "cue": "L07.S04.c003",
+   "phrase": "rather than demand a complete new plan",
+   "localSec": 12.429,
+   "suppliedSec": 12.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_c004",
+   "cue": "L07.S04.c004",
+   "phrase": "a genuine option to pass",
+   "localSec": 10.286,
+   "suppliedSec": 10.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_d001",
+   "cue": "L07.S04.d001",
+   "phrase": "fine to pass or come in later",
+   "localSec": 8.143,
+   "suppliedSec": 8.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_d002",
+   "cue": "L07.S04.d002",
+   "phrase": "listen for now",
+   "localSec": 0.857,
+   "suppliedSec": 0.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_d003",
+   "cue": "L07.S04.d003",
+   "phrase": "Of course",
+   "localSec": 0,
+   "suppliedSec": 0,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_c005",
+   "cue": "L07.S04.c005",
+   "phrase": "treat her choice as agreement",
+   "localSec": 11.571,
+   "suppliedSec": 11.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_c006",
+   "cue": "L07.S04.c006",
+   "phrase": "a different view",
+   "localSec": 14.143,
+   "suppliedSec": 14.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_c007",
+   "cue": "L07.S04.c007",
+   "phrase": "making room when someone offers a point",
+   "localSec": 12,
+   "suppliedSec": 12,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_c008",
+   "cue": "L07.S04.c008",
+   "phrase": "without counting compulsory turns",
+   "localSec": 12.429,
+   "suppliedSec": 12.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_c009",
+   "cue": "L07.S04.c009",
+   "phrase": "before any invitation was made",
+   "localSec": 1.714,
+   "suppliedSec": 1.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L07_S04_c010",
+   "cue": "L07.S04.c010",
+   "phrase": "not a promise that they will speak",
+   "localSec": 14.571,
+   "suppliedSec": 14.571,
+   "source": "supplied semantic anchor"
+  }
+ ],
+ "layoutAudit": {
+  "watch": [],
+  "practice:main": []
+ },
+ "stills": [
+  "S04_watch_B01-open_t1.20.jpg",
+  "S04_watch_B01-mid_t32.17.jpg",
+  "S04_watch_B01-end_t64.04.jpg",
+  "S04_watch_B02-open_t65.54.jpg",
+  "S04_watch_B02-mid_t91.71.jpg",
+  "S04_watch_B02-end_t118.79.jpg",
+  "S04_watch_B03-open_t120.29.jpg",
+  "S04_watch_B03-mid_t146.83.jpg",
+  "S04_watch_B03-end_t174.27.jpg",
+  "S04_watch_B04-open_t175.77.jpg",
+  "S04_watch_B04-mid_t199.34.jpg",
+  "S04_watch_B04-end_t223.82.jpg",
+  "S04_watch_trans-c002_t19.13.jpg",
+  "S04_watch_trans-c003_t37.91.jpg",
+  "S04_watch_trans-h101_t56.69.jpg",
+  "S04_watch_trans-c004_t64.69.jpg",
+  "S04_watch_trans-d001_t83.89.jpg",
+  "S04_watch_trans-d002_t95.39.jpg",
+  "S04_watch_trans-d003_t98.24.jpg",
+  "S04_watch_trans-c005_t101.09.jpg",
+  "S04_watch_trans-c006_t119.44.jpg",
+  "S04_watch_trans-c007_t139.07.jpg",
+  "S04_watch_trans-c008_t157.42.jpg",
+  "S04_watch_trans-c009_t174.92.jpg",
+  "S04_watch_trans-h102_t194.55.jpg",
+  "S04_watch_trans-c010_t206.55.jpg",
+  "S04_reduced-motion_t98.19.jpg",
+  "S04_retime-demo_c001-end_t24.73.jpg",
+  "S04_retime-demo_d001-end_t104.89.jpg",
+  "S04_text-x1.3_t97.49.jpg",
+  "S04_text-x1.6_t97.49.jpg",
+  "S04_text-long_t97.49.jpg",
+  "S04_viewport-390x844.png",
+  "S04_viewport-820x1180.png",
+  "S04_viewport-1180x820.png",
+  "S04_viewport-1366x768.png"
+ ],
+ "textExpansion": {
+  "x1.3": {
+   "warnings": 2,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.question",
+     "token": "gG",
+     "score": "watch",
+     "t": 84.14,
+     "text": "Find out about the weekly drawing group Find out about"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "rReset",
+     "score": "watch",
+     "t": 174.57,
+     "text": "Return to the moment before the invitation Return to the"
+    }
+   ],
+   "errors": []
+  },
+  "x1.6": {
+   "warnings": 5,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.question",
+     "token": "gG",
+     "score": "watch",
+     "t": 84.14,
+     "text": "Find out about the weekly drawing group Find out about the weekly"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "focus",
+     "score": "watch",
+     "t": 46.99,
+     "text": "Ask about the task, not the silence Ask about the task, not"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "inv",
+     "score": "watch",
+     "t": 92.09,
+     "text": "A focused invitation with room to pass A focused invitation with"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "pn",
+     "score": "watch",
+     "t": 157.67,
+     "text": "No compulsory equal-turn quota No compulsory equal-turn"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "rReset",
+     "score": "watch",
+     "t": 174.57,
+     "text": "Return to the moment before the invitation Return to the moment before"
+    }
+   ],
+   "errors": []
+  },
+  "long": {
+   "warnings": 20,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "caseL",
+     "score": "watch",
+     "t": 18.78,
+     "text": "Practice example Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "reset",
+     "score": "watch",
+     "t": 18.98,
+     "text": "Fresh Unbreakablelongtokenforlayoutchecking excerpt: comparison"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "pM",
+     "score": "watch",
+     "t": 83.94,
+     "text": "We could start in pairs Unbreakablelongtokenforlayoutchecking and exchange names"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "status",
+     "score": "watch",
+     "t": 26.49,
+     "text": "Neither Unbreakablelongtokenforlayoutchecking proposal adopted"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.question",
+     "token": "gG",
+     "score": "watch",
+     "t": 84.14,
+     "text": "Find out about Unbreakablelongtokenforlayoutchecking the weekly drawing group"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "focus",
+     "score": "watch",
+     "t": 46.99,
+     "text": "Ask about the Unbreakablelongtokenforlayoutchecking task, not the silence"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "ch0",
+     "score": "watch",
+     "t": 74.19,
+     "text": "Contribute Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "ch1",
+     "score": "watch",
+     "t": 74.49,
+     "text": "Pass Unbreakablelongtokenforlayoutchecking"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "ch2",
+     "score": "watch",
+     "t": 74.79,
+     "text": "Come Unbreakablelongtokenforlayoutchecking in later"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "inv",
+     "score": "watch",
+     "t": 92.09,
+     "text": "A focused invitation Unbreakablelongtokenforlayoutchecking with room to pass"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "pass",
+     "score": "watch",
+     "t": 96.09,
+     "text": "Listen Unbreakablelongtokenforlayoutchecking for now"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.idea",
+     "token": "ack",
+     "score": "watch",
+     "t": 98.09,
+     "text": "Accept Unbreakablelongtokenforlayoutchecking the choice"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.idea",
+     "token": "resp",
+     "score": "watch",
+     "t": 101.54,
+     "text": "Accept the pass; Unbreakablelongtokenforlayoutchecking return to the task"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "illus",
+     "score": "watch",
+     "t": 119.09,
+     "text": "Separate Unbreakablelongtokenforlayoutchecking illustrative phrases"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "roomC",
+     "score": "watch",
+     "t": 133.23,
+     "text": "Leaves room for Unbreakablelongtokenforlayoutchecking a different view"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "spH",
+     "score": "watch",
+     "t": 143.87,
+     "text": "Leave room for Unbreakablelongtokenforlayoutchecking a later contribution"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "pn",
+     "score": "watch",
+     "t": 157.67,
+     "text": "No compulsory Unbreakablelongtokenforlayoutchecking equal-turn quota"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "brief",
+     "score": "watch",
+     "t": 161.79,
+     "text": "A Unbreakablelongtokenforlayoutchecking brief observation"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "pc",
+     "score": "watch",
+     "t": 166.93,
+     "text": "Access Unbreakablelongtokenforlayoutchecking and relevance"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "rReset",
+     "score": "watch",
+     "t": 174.57,
+     "text": "Return to the Unbreakablelongtokenforlayoutchecking moment before the invitation"
+    }
+   ],
+   "errors": []
+  }
+ },
+ "viewports": [
+  {
+   "viewport": "phone 390x844",
+   "hscroll": false,
+   "small": [],
+   "domcap": 78,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet 820x1180",
+   "hscroll": false,
+   "small": [],
+   "domcap": 78,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "tablet landscape 1180x820",
+   "hscroll": false,
+   "small": [],
+   "domcap": 78,
+   "domcapFs": 16,
+   "panel": false
+  },
+  {
+   "viewport": "desktop 1366x768",
+   "hscroll": false,
+   "small": [],
+   "domcap": 78,
+   "domcapFs": 16,
+   "panel": false
+  }
+ ],
+ "summary": {
+  "checks": 42,
+  "failed": 0,
+  "stills": 36
+ }
+}
