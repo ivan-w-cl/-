@@ -1,0 +1,22 @@
+{
+ "schema": "esssouth.l08.staging-labels/1",
+ "sectionId": "L08.S03",
+ "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. Wording comes from the cue, its visual direction or the case file. The A-branch sum is only arithmetic on the supplied numbers. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md.",
+ "labels": {
+  "x.st.ex": "Example",
+  "x.st.pairs": "Pairs",
+  "x.st.share": "Sharing",
+  "x.noClub": "Link to the club aim: not yet in this chain",
+  "x.unsup": "Video, outside room, new equipment: not supplied",
+  "x.reasonLine": "Purpose of the connection",
+  "x.tag.timing": "Timing: open",
+  "x.tag.leader": "Example leader: open",
+  "x.sum": "10 + 10 + 10 + 5 = 35 minutes; the limit is 30",
+  "x.noPairs": "Trying the discussion: no stage for it",
+  "x.condMaya": "Maya: supports the connection if the example leaves room for pairs",
+  "x.illus": "Illustrative allocation, not a chosen schedule",
+  "x.reason": "Reason: the example prepares the pair task",
+  "x.cost": "Cost: less time for another stage",
+  "x.boundary": "30-minute boundary"
+ }
+}

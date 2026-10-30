@@ -1,0 +1,167 @@
+{
+ "schema": "esssouth.l08.staging-anchors/1",
+ "sectionId": "L08.S03",
+ "note": "Choreography anchors: phrase onsets inside the exact cue text. Supplied semantic anchors (anchors.en.json) are used as well.",
+ "anchors": {
+  "s3_comb": {
+   "cue": "L08.S03.c001",
+   "phrase": "Combining contributions does not mean"
+  },
+  "s3_look": {
+   "cue": "L08.S03.c001",
+   "phrase": "Look for a connection"
+  },
+  "s3_ex": {
+   "cue": "L08.S03.c001",
+   "phrase": "An example might prepare"
+  },
+  "s3_share": {
+   "cue": "L08.S03.c001",
+   "phrase": "sharing might let the group compare"
+  },
+  "s3_aims": {
+   "cue": "L08.S03.c002",
+   "phrase": "The two aims still govern"
+  },
+  "s3_neat": {
+   "cue": "L08.S03.c002",
+   "phrase": "A plan can be neat"
+  },
+  "s3_keep": {
+   "cue": "L08.S03.c003",
+   "phrase": "Keep the available resources specific"
+  },
+  "s3_group": {
+   "cue": "L08.S03.c003",
+   "phrase": "The group has the supplied text"
+  },
+  "s3_dont": {
+   "cue": "L08.S03.c003",
+   "phrase": "Do not improve the candidate"
+  },
+  "s3_thirty": {
+   "cue": "L08.S03.c004",
+   "phrase": "Thirty minutes is the total activity time"
+  },
+  "s3_five": {
+   "cue": "L08.S03.c004",
+   "phrase": "At least five of those minutes"
+  },
+  "s3_leaves": {
+   "cue": "L08.S03.c004",
+   "phrase": "That leaves at most twenty-five"
+  },
+  "s3_limit": {
+   "cue": "L08.S03.c004",
+   "phrase": "Twenty-five is a limit to respect"
+  },
+  "s3_attr": {
+   "cue": "L08.S03.c005",
+   "phrase": "An attractive combination"
+  },
+  "s3_someone": {
+   "cue": "L08.S03.c005",
+   "phrase": "Here, someone would have to give the example"
+  },
+  "s3_notEst": {
+   "cue": "L08.S03.c005",
+   "phrase": "We have not established"
+  },
+  "s3_doesnot": {
+   "cue": "L08.S03.c006",
+   "phrase": "This does not mean you must solve"
+  },
+  "s3_propose": {
+   "cue": "L08.S03.c006",
+   "phrase": "You can propose a candidate"
+  },
+  "s3_diff": {
+   "cue": "L08.S03.c006",
+   "phrase": "The difference is between"
+  },
+  "s3_some": {
+   "cue": "L08.S03.c007",
+   "phrase": "Some ideas cannot be combined unchanged"
+  },
+  "s3_compete": {
+   "cue": "L08.S03.c007",
+   "phrase": "They may compete for the same minutes"
+  },
+  "s3_explain": {
+   "cue": "L08.S03.c007",
+   "phrase": "Explain the clash"
+  },
+  "s3_elem": {
+   "cue": "L08.S03.c007",
+   "phrase": "An element can be shortened"
+  },
+  "s3_compare": {
+   "cue": "L08.S03.c008",
+   "phrase": "Now compare three combinations"
+  },
+  "s3_lookC": {
+   "cue": "L08.S03.c009",
+   "phrase": "Look for the candidate"
+  },
+  "s3_whatever": {
+   "cue": "L08.S03.c010",
+   "phrase": "Whatever you chose"
+  },
+  "s3_parts": {
+   "cue": "L08.S03.c010",
+   "phrase": "The parts need related purposes"
+  },
+  "s3_whole": {
+   "cue": "L08.S03.c010",
+   "phrase": "the whole must respect the task"
+  },
+  "s3_unres": {
+   "cue": "L08.S03.c010",
+   "phrase": "unresolved checks should remain visible"
+  },
+  "s3_work": {
+   "cue": "L08.S03.c011",
+   "phrase": "A workable proposal is not a promise"
+  },
+  "s3_grows": {
+   "cue": "L08.S03.c011",
+   "phrase": "If one part grows"
+  },
+  "s3_make": {
+   "cue": "L08.S03.c011",
+   "phrase": "Make that consequence explicit"
+  },
+  "s3_next": {
+   "cue": "L08.S03.c012",
+   "phrase": "The next step is to explain"
+  },
+  "s3_gives": {
+   "cue": "L08.S03.c012",
+   "phrase": "and what it gives up"
+  },
+  "sA_ten": {
+   "cue": "L08.S03.f101",
+   "phrase": "Ten plus ten plus ten plus five"
+  },
+  "sA_short": {
+   "cue": "L08.S03.f101",
+   "phrase": "Shortening a stage"
+  },
+  "sB_watch": {
+   "cue": "L08.S03.f201",
+   "phrase": "A demonstration might help people begin"
+  },
+  "sC_jobs": {
+   "cue": "L08.S03.f301",
+   "phrase": "This candidate gives the contributions related jobs"
+  },
+  "sC_maya": {
+   "cue": "L08.S03.f301",
+   "phrase": "Maya's support remains conditional"
+  },
+  "sC_dur": {
+   "cue": "L08.S03.f301",
+   "phrase": "The durations and the person"
+  }
+ }
+}
