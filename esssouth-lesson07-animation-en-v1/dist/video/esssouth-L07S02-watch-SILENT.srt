@@ -1,0 +1,207 @@
+1
+00:00:00,000 --> 00:00:01,714
+Coach: Begin a fresh excerpt.
+
+2
+00:00:01,714 --> 00:00:07,714
+Coach: The group is still planning one twenty-minute welcome activity in the main room,
+
+3
+00:00:07,714 --> 00:00:10,714
+Coach: using existing paper and pens without purchases.
+
+4
+00:00:10,714 --> 00:00:16,286
+Coach: It should help newcomers meet and find out about the weekly drawing group.
+
+5
+00:00:16,636 --> 00:00:20,922
+Maya: We could start in pairs and exchange names and interests.
+
+6
+00:00:25,272 --> 00:00:27,415
+Coach: There is a short pause.
+
+7
+00:00:27,415 --> 00:00:29,558
+Coach: Noah has not replied yet.
+
+8
+00:00:29,558 --> 00:00:33,415
+Coach: That is all the excerpt establishes about his response.
+
+9
+00:00:33,415 --> 00:00:36,415
+Coach: Four seconds was chosen for this illustration;
+
+10
+00:00:36,415 --> 00:00:41,558
+Coach: it is not a rule for when a real discussion needs intervention.
+
+11
+00:00:41,908 --> 00:00:44,479
+Coach: You could allow more thinking space.
+
+12
+00:00:44,479 --> 00:00:49,622
+Coach: If you do speak, consider what the group still needs to explore.
+
+13
+00:00:49,622 --> 00:00:51,765
+Coach: The connection between paired introductions
+
+14
+00:00:51,765 --> 00:00:56,479
+Coach: and learning about the drawing group has not yet been explained.
+
+15
+00:00:56,829 --> 00:01:02,400
+Coach: An open question about that connection gives others something concrete to respond to.
+
+16
+00:01:02,400 --> 00:01:06,686
+Coach: It need not demand that one named person speak immediately,
+
+17
+00:01:06,686 --> 00:01:11,829
+Coach: and it should not announce a decision that no one has confirmed.
+
+18
+00:01:12,179 --> 00:01:16,465
+Coach: Privately identify what you know and what you do not.
+
+19
+00:01:16,465 --> 00:01:19,893
+Coach: You know the proposal and the two aims.
+
+20
+00:01:19,893 --> 00:01:26,322
+Coach: You do not know why the pause occurred or whether the others accept the idea.
+
+21
+00:01:34,672 --> 00:01:37,672
+Coach: Compare three next turns for this moment.
+
+22
+00:01:37,672 --> 00:01:41,529
+Coach: Think about which gives the group a useful opening
+
+23
+00:01:41,529 --> 00:01:43,244
+Coach: while leaving opinions unassumed.
+
+24
+00:01:43,244 --> 00:01:50,101
+Coach: A response that works after clear agreement may not fit a pause before anyone has responded.
+
+25
+00:01:50,451 --> 00:01:53,880
+Coach: The replies are possible continuations written for practice.
+
+26
+00:01:53,880 --> 00:01:57,737
+Coach: Look at what each opening asks others to do.
+
+27
+00:01:57,737 --> 00:02:02,023
+Coach: It does not tell us what every person would feel
+
+28
+00:02:02,023 --> 00:02:04,594
+Coach: or how every group would respond.
+
+29
+00:02:04,944 --> 00:02:06,658
+Coach: Keep the purpose small:
+
+30
+00:02:06,658 --> 00:02:12,230
+Coach: offer a next point, rather than secure a final decision in one sentence.
+
+31
+00:02:12,230 --> 00:02:17,373
+Coach: An invitation to discuss an idea is not agreement to adopt it.
+
+32
+00:02:25,723 --> 00:02:32,580
+You: How could the paired introductions also help new members find out about the weekly drawing group?
+
+33
+00:02:32,930 --> 00:02:38,073
+Noah: We could each draw or write one thing we'd like to try,
+
+34
+00:02:38,073 --> 00:02:40,644
+Noah: then use that to introduce ourselves.
+
+35
+00:02:40,994 --> 00:02:46,137
+Coach: The question makes an open part of the task available for discussion.
+
+36
+00:02:46,137 --> 00:02:49,137
+Coach: Noah offers another idea in this example.
+
+37
+00:02:49,137 --> 00:02:55,566
+Coach: Neither proposal yet tells us how accurate information about the drawing group will be provided,
+
+38
+00:02:55,566 --> 00:02:57,280
+Coach: so that work remains.
+
+39
+00:02:57,630 --> 00:03:01,487
+Coach: The pause alone does not choose the next move.
+
+40
+00:03:01,487 --> 00:03:06,202
+Coach: Combine what you observe with what remains open in the task.
+
+41
+00:03:06,202 --> 00:03:07,916
+Coach: You can leave space,
+
+42
+00:03:07,916 --> 00:03:13,059
+Coach: or offer a question that lets the group examine a specific point.
+
+43
+00:03:13,409 --> 00:03:18,552
+Coach: After speaking, make room for a reply and attend to its content.
+
+44
+00:03:18,552 --> 00:03:22,838
+Coach: Another proposal may need comparison; a question may need clarification;
+
+45
+00:03:22,838 --> 00:03:25,838
+Coach: continued silence may call for more space.
+
+46
+00:03:25,838 --> 00:03:28,409
+Coach: The phrase itself cannot guarantee progress.
+
+47
+00:03:28,759 --> 00:03:34,759
+Coach: Privately form one possible next turn for the original pause, or choose to wait.
+
+48
+00:03:34,759 --> 00:03:38,616
+Coach: Keep the purpose clear and the others’ views open.
+
+49
+00:03:38,616 --> 00:03:41,616
+Coach: Pause playback if you want more time.
+
+50
+00:03:49,966 --> 00:03:53,823
+Coach: If you formed a reply, check what it assumes.
+
+51
+00:03:53,823 --> 00:03:59,823
+Coach: Does it offer a task-related opening, or put words into someone else’s mouth?
+
+52
+00:03:59,823 --> 00:04:07,109
+Coach: Next, a fresh excerpt will examine what to do when two turns begin before either is finished.

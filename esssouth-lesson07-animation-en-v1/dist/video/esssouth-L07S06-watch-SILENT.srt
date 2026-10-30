@@ -1,0 +1,243 @@
+1
+00:00:00,000 --> 00:00:05,143
+Coach: You do not need to repair a whole discussion in one turn.
+
+2
+00:00:05,143 --> 00:00:09,000
+Coach: A useful next move can identify a missing link,
+
+3
+00:00:09,000 --> 00:00:13,286
+Coach: ask a manageable question, or give someone room to continue.
+
+4
+00:00:13,286 --> 00:00:19,286
+Coach: Choose what the moment needs instead of trying to demonstrate every technique at once.
+
+5
+00:00:19,636 --> 00:00:22,636
+Coach: This rehearsal starts from a fresh excerpt.
+
+6
+00:00:22,636 --> 00:00:28,208
+Coach: The group is considering the twenty-minute welcome activity in the main room,
+
+7
+00:00:28,208 --> 00:00:30,350
+Coach: using existing paper and pens.
+
+8
+00:00:30,350 --> 00:00:32,065
+Coach: Both aims still matter:
+
+9
+00:00:32,065 --> 00:00:36,779
+Coach: meeting one another and finding out about the weekly drawing group.
+
+10
+00:00:36,779 --> 00:00:38,922
+Coach: No proposal has been adopted.
+
+11
+00:00:39,272 --> 00:00:43,558
+Maya: We could start in pairs and exchange names and interests.
+
+12
+00:00:46,908 --> 00:00:48,622
+Coach: A brief pause follows.
+
+13
+00:00:48,622 --> 00:00:50,765
+Coach: We do not know why.
+
+14
+00:00:50,765 --> 00:00:57,194
+Coach: In this excerpt, nobody has yet connected the paired introduction to the weekly drawing group.
+
+15
+00:00:57,194 --> 00:01:00,622
+Coach: That gives you a particular gap to consider,
+
+16
+00:01:00,622 --> 00:01:07,051
+Coach: without needing to diagnose how anyone feels or decide that silence itself is a problem.
+
+17
+00:01:07,401 --> 00:01:12,544
+Coach: You could build on Maya’s idea by asking about that second aim.
+
+18
+00:01:12,544 --> 00:01:18,115
+Coach: You could also leave a little space if someone seems about to continue,
+
+19
+00:01:18,115 --> 00:01:20,687
+Coach: without claiming to know their intention.
+
+20
+00:01:20,687 --> 00:01:27,544
+Coach: There is no rule that a certain number of quiet seconds means you must take over.
+
+21
+00:01:27,894 --> 00:01:33,894
+Coach: For this rehearsal, prepare one short line that would help examine the missing link.
+
+22
+00:01:33,894 --> 00:01:37,323
+Coach: Keep it connected to the proposal already offered.
+
+23
+00:01:37,323 --> 00:01:42,894
+Coach: You are not choosing a final activity, making up the drawing group’s programme,
+
+24
+00:01:42,894 --> 00:01:47,180
+Coach: or promising that every new member will learn about it.
+
+25
+00:01:55,530 --> 00:01:57,673
+Coach: Try the line in English.
+
+26
+00:01:57,673 --> 00:02:02,816
+Coach: You can say it aloud, write it privately, or think it through.
+
+27
+00:02:02,816 --> 00:02:06,673
+Coach: This is private practice, with no recording or scoring.
+
+28
+00:02:06,673 --> 00:02:10,101
+Coach: Aim for something the group could respond to,
+
+29
+00:02:10,101 --> 00:02:15,244
+Coach: then leave a little space instead of immediately answering your own question.
+
+30
+00:02:15,594 --> 00:02:18,165
+Coach: Watch gives you thirty-five seconds,
+
+31
+00:02:18,165 --> 00:02:21,166
+Coach: then shows one example and continues automatically.
+
+32
+00:02:21,166 --> 00:02:25,880
+Coach: Practice waits for you to see the model or skip it.
+
+33
+00:02:25,880 --> 00:02:30,594
+Coach: In Practice, after the model you can try again or continue.
+
+34
+00:02:30,594 --> 00:02:34,880
+Coach: The example is one possibility, not the only useful response.
+
+35
+00:03:10,230 --> 00:03:13,230
+You: The paired introductions could help people meet.
+
+36
+00:03:13,230 --> 00:03:18,801
+You: How could they also help members find out about the weekly drawing group?
+
+37
+00:03:19,151 --> 00:03:22,579
+Noah: Pairs could write one question about the group.
+
+38
+00:03:22,579 --> 00:03:27,722
+Noah: We would still need to check where the answers would come from.
+
+39
+00:03:28,072 --> 00:03:34,072
+Coach: The next move picks up Maya’s idea and draws attention to the missing aim.
+
+40
+00:03:34,072 --> 00:03:37,501
+Coach: Noah’s suggestion makes the information question more specific.
+
+41
+00:03:37,501 --> 00:03:42,215
+Coach: Writing a question does not yet tell visitors about the group;
+
+42
+00:03:42,215 --> 00:03:44,787
+Coach: an answer source still needs checking.
+
+43
+00:03:44,787 --> 00:03:49,501
+Coach: The model leaves that work open rather than finishing the plan.
+
+44
+00:03:49,851 --> 00:03:54,565
+Coach: Check whether your next move responds to what was actually said
+
+45
+00:03:54,565 --> 00:03:57,565
+Coach: and gives the group a manageable question.
+
+46
+00:03:57,565 --> 00:04:02,708
+Coach: If you did not make an attempt, keep those checks for later.
+
+47
+00:04:02,708 --> 00:04:08,708
+Coach: You do not have to supply the final activity before making a useful contribution.
+
+48
+00:04:09,058 --> 00:04:12,058
+Coach: What comes next depends on the reply.
+
+49
+00:04:12,058 --> 00:04:17,201
+Coach: Someone might suggest a connection, ask for clarification, or still need time.
+
+50
+00:04:17,201 --> 00:04:21,915
+Coach: Attend to that response rather than forcing your prepared follow-up.
+
+51
+00:04:21,915 --> 00:04:25,773
+Coach: A question that sounds polite does not guarantee agreement
+
+52
+00:04:25,773 --> 00:04:27,487
+Coach: or a smooth continuation.
+
+53
+00:04:27,837 --> 00:04:30,837
+Coach: For another attempt, choose one small change:
+
+54
+00:04:30,837 --> 00:04:35,980
+Coach: name the missing aim more clearly, shorten a question with several demands,
+
+55
+00:04:35,980 --> 00:04:38,980
+Coach: or remove an assumption about the group.
+
+56
+00:04:38,980 --> 00:04:43,694
+Coach: Keep your line open enough for someone else to develop it.
+
+57
+00:04:43,694 --> 00:04:46,694
+Coach: You can leave a useful problem unresolved.
+
+58
+00:04:59,044 --> 00:05:03,330
+Coach: A small repair gives the group a place to continue.
+
+59
+00:05:03,330 --> 00:05:06,758
+Coach: Offer it, leave space, and notice what follows.
+
+60
+00:05:06,758 --> 00:05:12,330
+Coach: The eventual recommendation still needs to serve both aims within the activity’s conditions;
+
+61
+00:05:12,330 --> 00:05:16,187
+Coach: this short contribution does not settle that wider decision.

@@ -1,11 +1,11 @@
 {
  "lessonId": "L07",
- "status": "in_progress",
+ "status": "packaged",
  "note": "Updated by tools/status.mjs from the actual build and QA reports. Script readiness is not animation completion; see each section's testsActuallyRun and qa/<section>/report.json.",
  "sections": [
   {
    "id": "L07.S01",
-   "status": "verified",
+   "status": "packaged",
    "implementedCueIds": [
     "L07.S01.c001",
     "L07.S01.c002",
@@ -42,11 +42,11 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.995)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.237)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.495)",
-    "PASS rate 2×: clock advances at 2× (measured 1.983)",
-    "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
+    "PASS rate 1\u00d7: clock advances at 1\u00d7 (measured 0.995)",
+    "PASS rate 1.25\u00d7: clock advances at 1.25\u00d7 (measured 1.237)",
+    "PASS rate 1.5\u00d7: clock advances at 1.5\u00d7 (measured 1.495)",
+    "PASS rate 2\u00d7: clock advances at 2\u00d7 (measured 1.983)",
+    "PASS mode switch at common content keeps cue and offset (watch \u2192 practice \u2192 watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
     "PASS keyboard: Tab reaches mode and playback controls with a visible focus outline",
@@ -58,19 +58,27 @@
     "PASS retime: Watch duration changes by the expected clip delta (13.650 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time \u00d7 multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
-    "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt"
+    "PASS phone 390x844 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt"
    ],
    "measuredWatchSeconds": 230.9,
-   "sourceArchive": null,
-   "playableArchive": null,
-   "video": null,
-   "nextAction": "Packaging and optional MP4 export.",
+   "sourceArchive": "dist/esssouth-L07S01-source.zip",
+   "playableArchive": "dist/esssouth-L07S01-playable.zip",
+   "video": {
+    "mp4": "dist/video/esssouth-L07S01-watch-SILENT.mp4",
+    "srt": "dist/video/esssouth-L07S01-watch-SILENT.srt",
+    "verified": true,
+    "frames": 6927,
+    "durationSeconds": 230.9,
+    "audioStreams": 0,
+    "bytes": 6306532
+   },
+   "nextAction": "Downstream: localization, recorded narration (including any authored S03 overlap), measured alignment, integration (outside this assignment).",
    "scriptedButNotStaged": [],
    "holds": [
     "L07.S01.h101",
@@ -90,11 +98,13 @@
     "index.html": "aada8e92386c64e30f3ed6dd24dd73c569052574d2799dea251b94b1019f72f1",
     "L07S01_player_standalone.html": "ca0e49ffd5b8106b57d5c492f8669ef40217538aba0d584abaaeaffad7ecb329"
    },
-   "updatedAt": "2026-10-30T04:04:52.632Z"
+   "updatedAt": "2026-10-30T04:56:29.410Z",
+   "standalonePlayer": "sections/S01/L07S01_player_standalone.html",
+   "offlineAndRebuild": "Extracted playable ZIP re-tested (qa/standalone-extracted); source ZIP rebuilt alone, outputs byte-identical (qa/packaging.json)"
   },
   {
    "id": "L07.S02",
-   "status": "verified",
+   "status": "packaged",
    "implementedCueIds": [
     "L07.S02.c001",
     "L07.S02.d001",
@@ -155,11 +165,11 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.997)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.240)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.498)",
-    "PASS rate 2×: clock advances at 2× (measured 1.990)",
-    "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
+    "PASS rate 1\u00d7: clock advances at 1\u00d7 (measured 0.997)",
+    "PASS rate 1.25\u00d7: clock advances at 1.25\u00d7 (measured 1.240)",
+    "PASS rate 1.5\u00d7: clock advances at 1.5\u00d7 (measured 1.498)",
+    "PASS rate 2\u00d7: clock advances at 2\u00d7 (measured 1.990)",
+    "PASS mode switch at common content keeps cue and offset (watch \u2192 practice \u2192 watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
     "PASS keyboard: Tab reaches mode and playback controls with a visible focus outline",
@@ -210,19 +220,27 @@
     "PASS retime: Watch duration changes by the expected clip delta (7.200 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time \u00d7 multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
-    "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt"
+    "PASS phone 390x844 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt"
    ],
    "measuredWatchSeconds": 247.459,
-   "sourceArchive": null,
-   "playableArchive": null,
-   "video": null,
-   "nextAction": "Packaging and optional MP4 export.",
+   "sourceArchive": "dist/esssouth-L07S02-source.zip",
+   "playableArchive": "dist/esssouth-L07S02-playable.zip",
+   "video": {
+    "mp4": "dist/video/esssouth-L07S02-watch-SILENT.mp4",
+    "srt": "dist/video/esssouth-L07S02-watch-SILENT.srt",
+    "verified": true,
+    "frames": 7424,
+    "durationSeconds": 247.466667,
+    "audioStreams": 0,
+    "bytes": 6994642
+   },
+   "nextAction": "Downstream: localization, recorded narration (including any authored S03 overlap), measured alignment, integration (outside this assignment).",
    "scriptedButNotStaged": [
     "L07.S02.c007",
     "L07.S02.c008"
@@ -251,11 +269,13 @@
     "index.html": "f5f221d40bc03cbc5286e57927d2e402cc1bc8538f24decf249184d67df259ae",
     "L07S02_player_standalone.html": "520cc4ea61d0307e3bc626ff889fb45a902899800b7a09349f54d6ee3a6f3be7"
    },
-   "updatedAt": "2026-10-30T04:04:52.638Z"
+   "updatedAt": "2026-10-30T04:56:29.417Z",
+   "standalonePlayer": "sections/S02/L07S02_player_standalone.html",
+   "offlineAndRebuild": "Extracted playable ZIP re-tested (qa/standalone-extracted); source ZIP rebuilt alone, outputs byte-identical (qa/packaging.json)"
   },
   {
    "id": "L07.S03",
-   "status": "verified",
+   "status": "packaged",
    "implementedCueIds": [
     "L07.S03.c001",
     "L07.S03.c002",
@@ -317,11 +337,11 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.993)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.249)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.494)",
-    "PASS rate 2×: clock advances at 2× (measured 1.983)",
-    "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
+    "PASS rate 1\u00d7: clock advances at 1\u00d7 (measured 0.993)",
+    "PASS rate 1.25\u00d7: clock advances at 1.25\u00d7 (measured 1.249)",
+    "PASS rate 1.5\u00d7: clock advances at 1.5\u00d7 (measured 1.494)",
+    "PASS rate 2\u00d7: clock advances at 2\u00d7 (measured 1.983)",
+    "PASS mode switch at common content keeps cue and offset (watch \u2192 practice \u2192 watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
     "PASS keyboard: Tab reaches mode and playback controls with a visible focus outline",
@@ -372,19 +392,27 @@
     "PASS retime: Watch duration changes by the expected clip delta (6.725 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time \u00d7 multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
-    "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt"
+    "PASS phone 390x844 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt"
    ],
    "measuredWatchSeconds": 281.643,
-   "sourceArchive": null,
-   "playableArchive": null,
-   "video": null,
-   "nextAction": "Packaging and optional MP4 export.",
+   "sourceArchive": "dist/esssouth-L07S03-source.zip",
+   "playableArchive": "dist/esssouth-L07S03-playable.zip",
+   "video": {
+    "mp4": "dist/video/esssouth-L07S03-watch-SILENT.mp4",
+    "srt": "dist/video/esssouth-L07S03-watch-SILENT.srt",
+    "verified": true,
+    "frames": 8449,
+    "durationSeconds": 281.633333,
+    "audioStreams": 0,
+    "bytes": 6960440
+   },
+   "nextAction": "Downstream: localization, recorded narration (including any authored S03 overlap), measured alignment, integration (outside this assignment).",
    "scriptedButNotStaged": [],
    "holds": [
     "L07.S03.h101",
@@ -409,11 +437,14 @@
     "index.html": "3f4d6656c589cd0a4fd0fd8f7d818f7af15549a4bb49d7b79bc51e93e5c9b63a",
     "L07S03_player_standalone.html": "93cd2f78fb7022154185900cfb8c42132c3e01c9b175d0f534df12d33f8b8279"
    },
-   "updatedAt": "2026-10-30T04:04:52.643Z"
+   "updatedAt": "2026-10-30T04:56:29.422Z",
+   "standalonePlayer": "sections/S03/L07S03_player_standalone.html",
+   "offlineAndRebuild": "Extracted playable ZIP re-tested (qa/standalone-extracted); source ZIP rebuilt alone, outputs byte-identical (qa/packaging.json)",
+   "overlapTimingNote": "sections/S03/OVERLAP_TIMING_NOTE.md"
   },
   {
    "id": "L07.S04",
-   "status": "verified",
+   "status": "packaged",
    "implementedCueIds": [
     "L07.S04.c001",
     "L07.S04.c002",
@@ -449,11 +480,11 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.994)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.237)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.495)",
-    "PASS rate 2×: clock advances at 2× (measured 1.987)",
-    "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
+    "PASS rate 1\u00d7: clock advances at 1\u00d7 (measured 0.994)",
+    "PASS rate 1.25\u00d7: clock advances at 1.25\u00d7 (measured 1.237)",
+    "PASS rate 1.5\u00d7: clock advances at 1.5\u00d7 (measured 1.495)",
+    "PASS rate 2\u00d7: clock advances at 2\u00d7 (measured 1.987)",
+    "PASS mode switch at common content keeps cue and offset (watch \u2192 practice \u2192 watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
     "PASS keyboard: Tab reaches mode and playback controls with a visible focus outline",
@@ -465,19 +496,27 @@
     "PASS retime: Watch duration changes by the expected clip delta (10.350 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time \u00d7 multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
-    "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt"
+    "PASS phone 390x844 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt"
    ],
    "measuredWatchSeconds": 224.123,
-   "sourceArchive": null,
-   "playableArchive": null,
-   "video": null,
-   "nextAction": "Packaging and optional MP4 export.",
+   "sourceArchive": "dist/esssouth-L07S04-source.zip",
+   "playableArchive": "dist/esssouth-L07S04-playable.zip",
+   "video": {
+    "mp4": "dist/video/esssouth-L07S04-watch-SILENT.mp4",
+    "srt": "dist/video/esssouth-L07S04-watch-SILENT.srt",
+    "verified": true,
+    "frames": 6724,
+    "durationSeconds": 224.133333,
+    "audioStreams": 0,
+    "bytes": 6168845
+   },
+   "nextAction": "Downstream: localization, recorded narration (including any authored S03 overlap), measured alignment, integration (outside this assignment).",
    "scriptedButNotStaged": [],
    "holds": [
     "L07.S04.h101",
@@ -497,11 +536,13 @@
     "index.html": "8d4b5b46a3588f9cca7fb16d71bcf1dedb2190d1a503b0d2b6393bcd981d1cda",
     "L07S04_player_standalone.html": "86d4f670f6c317acaaa0b86ecf7dabb7e8f8cc2bd47546815ac17eeb86e2104a"
    },
-   "updatedAt": "2026-10-30T04:04:52.644Z"
+   "updatedAt": "2026-10-30T04:56:29.423Z",
+   "standalonePlayer": "sections/S04/L07S04_player_standalone.html",
+   "offlineAndRebuild": "Extracted playable ZIP re-tested (qa/standalone-extracted); source ZIP rebuilt alone, outputs byte-identical (qa/packaging.json)"
   },
   {
    "id": "L07.S05",
-   "status": "verified",
+   "status": "packaged",
    "implementedCueIds": [
     "L07.S05.c001",
     "L07.S05.c002",
@@ -537,11 +578,11 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.996)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.237)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.495)",
-    "PASS rate 2×: clock advances at 2× (measured 1.985)",
-    "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
+    "PASS rate 1\u00d7: clock advances at 1\u00d7 (measured 0.996)",
+    "PASS rate 1.25\u00d7: clock advances at 1.25\u00d7 (measured 1.237)",
+    "PASS rate 1.5\u00d7: clock advances at 1.5\u00d7 (measured 1.495)",
+    "PASS rate 2\u00d7: clock advances at 2\u00d7 (measured 1.985)",
+    "PASS mode switch at common content keeps cue and offset (watch \u2192 practice \u2192 watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
     "PASS keyboard: Tab reaches mode and playback controls with a visible focus outline",
@@ -553,19 +594,27 @@
     "PASS retime: Watch duration changes by the expected clip delta (8.100 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time \u00d7 multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
-    "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt"
+    "PASS phone 390x844 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt"
    ],
    "measuredWatchSeconds": 234.122,
-   "sourceArchive": null,
-   "playableArchive": null,
-   "video": null,
-   "nextAction": "Packaging and optional MP4 export.",
+   "sourceArchive": "dist/esssouth-L07S05-source.zip",
+   "playableArchive": "dist/esssouth-L07S05-playable.zip",
+   "video": {
+    "mp4": "dist/video/esssouth-L07S05-watch-SILENT.mp4",
+    "srt": "dist/video/esssouth-L07S05-watch-SILENT.srt",
+    "verified": true,
+    "frames": 7024,
+    "durationSeconds": 234.133333,
+    "audioStreams": 0,
+    "bytes": 5426882
+   },
+   "nextAction": "Downstream: localization, recorded narration (including any authored S03 overlap), measured alignment, integration (outside this assignment).",
    "scriptedButNotStaged": [],
    "holds": [
     "L07.S05.h101",
@@ -585,11 +634,13 @@
     "index.html": "90ae0a05e6f733fa14597997cb7bbed1e73fdb508928febf7b9e403e29c5f7f7",
     "L07S05_player_standalone.html": "e8e9ffa0f8bc5cd17bf71cab3dbdf91f80884a641dd8611b8913279afb678ed0"
    },
-   "updatedAt": "2026-10-30T04:04:52.645Z"
+   "updatedAt": "2026-10-30T04:56:29.423Z",
+   "standalonePlayer": "sections/S05/L07S05_player_standalone.html",
+   "offlineAndRebuild": "Extracted playable ZIP re-tested (qa/standalone-extracted); source ZIP rebuilt alone, outputs byte-identical (qa/packaging.json)"
   },
   {
    "id": "L07.S06",
-   "status": "verified",
+   "status": "packaged",
    "implementedCueIds": [
     "L07.S06.c001",
     "L07.S06.c002",
@@ -634,11 +685,11 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.992)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.248)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.493)",
-    "PASS rate 2×: clock advances at 2× (measured 1.983)",
-    "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
+    "PASS rate 1\u00d7: clock advances at 1\u00d7 (measured 0.992)",
+    "PASS rate 1.25\u00d7: clock advances at 1.25\u00d7 (measured 1.248)",
+    "PASS rate 1.5\u00d7: clock advances at 1.5\u00d7 (measured 1.493)",
+    "PASS rate 2\u00d7: clock advances at 2\u00d7 (measured 1.983)",
+    "PASS mode switch at common content keeps cue and offset (watch \u2192 practice \u2192 watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
     "PASS keyboard: Tab reaches mode and playback controls with a visible focus outline",
@@ -673,19 +724,27 @@
     "PASS retime: Watch duration changes by the expected clip delta (8.250 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time \u00d7 multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
-    "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt"
+    "PASS phone 390x844 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt"
    ],
    "measuredWatchSeconds": 316.537,
-   "sourceArchive": null,
-   "playableArchive": null,
-   "video": null,
-   "nextAction": "Packaging and optional MP4 export.",
+   "sourceArchive": "dist/esssouth-L07S06-source.zip",
+   "playableArchive": "dist/esssouth-L07S06-playable.zip",
+   "video": {
+    "mp4": "dist/video/esssouth-L07S06-watch-SILENT.mp4",
+    "srt": "dist/video/esssouth-L07S06-watch-SILENT.srt",
+    "verified": true,
+    "frames": 9496,
+    "durationSeconds": 316.533333,
+    "audioStreams": 0,
+    "bytes": 7213067
+   },
+   "nextAction": "Downstream: localization, recorded narration (including any authored S03 overlap), measured alignment, integration (outside this assignment).",
    "scriptedButNotStaged": [],
    "holds": [
     "L07.S06.h100",
@@ -709,11 +768,13 @@
     "index.html": "62fbc41ea7171d25e3e333b2c94f628180a066e4411f0ffa36c4b2313ed29886",
     "L07S06_player_standalone.html": "ea59cb55a407646928f48ee71280ddb7dbb63871b335475f6bca1a1f03809514"
    },
-   "updatedAt": "2026-10-30T04:04:52.646Z"
+   "updatedAt": "2026-10-30T04:56:29.425Z",
+   "standalonePlayer": "sections/S06/L07S06_player_standalone.html",
+   "offlineAndRebuild": "Extracted playable ZIP re-tested (qa/standalone-extracted); source ZIP rebuilt alone, outputs byte-identical (qa/packaging.json)"
   },
   {
    "id": "L07.S07",
-   "status": "verified",
+   "status": "packaged",
    "implementedCueIds": [
     "L07.S07.c001",
     "L07.S07.d001",
@@ -745,11 +806,11 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.998)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.242)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.497)",
-    "PASS rate 2×: clock advances at 2× (measured 1.989)",
-    "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
+    "PASS rate 1\u00d7: clock advances at 1\u00d7 (measured 0.998)",
+    "PASS rate 1.25\u00d7: clock advances at 1.25\u00d7 (measured 1.242)",
+    "PASS rate 1.5\u00d7: clock advances at 1.5\u00d7 (measured 1.497)",
+    "PASS rate 2\u00d7: clock advances at 2\u00d7 (measured 1.989)",
+    "PASS mode switch at common content keeps cue and offset (watch \u2192 practice \u2192 watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
     "PASS keyboard: Tab reaches mode and playback controls with a visible focus outline",
@@ -761,19 +822,27 @@
     "PASS retime: Watch duration changes by the expected clip delta (7.200 s)",
     "PASS retime: step order unchanged in every route",
     "PASS retime: holds keep their fixture length; think holds unchanged",
-    "PASS retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+    "PASS retime: anchors in a lengthened cue keep their relative place (local time \u00d7 multiplier; phrase-initial anchors stay at 0)",
     "PASS retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
     "PASS retime: no layout warnings",
-    "PASS phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
-    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt"
+    "PASS phone 390x844 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet 820x1180 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS tablet landscape 1180x820 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt",
+    "PASS desktop 1366x768 (emulated): no horizontal scroll, controls \u2265 44 px, readable DOM caption/prompt"
    ],
    "measuredWatchSeconds": 146.007,
-   "sourceArchive": null,
-   "playableArchive": null,
-   "video": null,
-   "nextAction": "Packaging and optional MP4 export.",
+   "sourceArchive": "dist/esssouth-L07S07-source.zip",
+   "playableArchive": "dist/esssouth-L07S07-playable.zip",
+   "video": {
+    "mp4": "dist/video/esssouth-L07S07-watch-SILENT.mp4",
+    "srt": "dist/video/esssouth-L07S07-watch-SILENT.srt",
+    "verified": true,
+    "frames": 4380,
+    "durationSeconds": 146,
+    "audioStreams": 0,
+    "bytes": 3493438
+   },
+   "nextAction": "Downstream: localization, recorded narration (including any authored S03 overlap), measured alignment, integration (outside this assignment).",
    "scriptedButNotStaged": [],
    "holds": [
     "L07.S07.h101",
@@ -793,10 +862,12 @@
     "index.html": "d65b5188c2f8a16e2459b1a90880c868143942c3c33542284a56e94f01268f1c",
     "L07S07_player_standalone.html": "647f415a90a17146f64427c4ff916b67bebbb3f70169645bbac8121381df705b"
    },
-   "updatedAt": "2026-10-30T04:04:52.646Z"
+   "updatedAt": "2026-10-30T04:56:29.425Z",
+   "standalonePlayer": "sections/S07/L07S07_player_standalone.html",
+   "offlineAndRebuild": "Extracted playable ZIP re-tested (qa/standalone-extracted); source ZIP rebuilt alone, outputs byte-identical (qa/packaging.json)"
   }
  ],
- "combinedEntryStatus": "not_started",
+ "combinedEntryStatus": "packaged: lesson/index.html (dev) and dist/esssouth-L07-lesson-bundle.zip; qa/lesson/report.json and bundle-extracted.json 21/21 pass",
  "sharedHashes": {
   "shared/l07/compile.js": "56b38ad3e5ea3360a267f069098eb1deb9482ee464d36053eb2bec4be5717b4a",
   "shared/l07/player.js": "c2e0dfb1d422d72fb5f19cb5be0b83f88b1c13535db93c10d9c1c7805a61044d",
@@ -811,5 +882,6 @@
   "build": "node tools/build.mjs",
   "qa": "NODE_PATH=<dir containing playwright> node tools/qa.cjs <S0n>",
   "status": "node tools/status.mjs <S0n>"
- }
+ },
+ "watchTotalSeconds": 1680.791
 }

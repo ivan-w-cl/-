@@ -1,0 +1,219 @@
+1
+00:00:00,000 --> 00:00:03,429
+Coach: A discussion can drift toward an interesting detail
+
+2
+00:00:03,429 --> 00:00:05,571
+Coach: while leaving its task unfinished.
+
+3
+00:00:05,571 --> 00:00:08,143
+Coach: Before calling the new topic irrelevant,
+
+4
+00:00:08,143 --> 00:00:11,571
+Coach: ask what connection it has to the decision.
+
+5
+00:00:11,571 --> 00:00:13,286
+Coach: Sometimes a detail matters;
+
+6
+00:00:13,286 --> 00:00:18,000
+Coach: sometimes the group needs to return to a more immediate question.
+
+7
+00:00:18,350 --> 00:00:22,636
+Coach: This is a fresh excerpt from the welcome-activity discussion.
+
+8
+00:00:22,636 --> 00:00:26,921
+Coach: The group still needs one activity that helps members meet
+
+9
+00:00:26,921 --> 00:00:30,350
+Coach: and find out about the weekly drawing group.
+
+10
+00:00:30,350 --> 00:00:32,493
+Coach: No activity has been chosen.
+
+11
+00:00:32,493 --> 00:00:35,064
+Coach: Now a different design question appears.
+
+12
+00:00:35,414 --> 00:00:37,985
+Noah: The centre's old sign looks dated.
+
+13
+00:00:37,985 --> 00:00:40,557
+Noah: Which lettering style would be better?
+
+14
+00:00:40,907 --> 00:00:43,478
+Coach: That question concerns the sign’s appearance.
+
+15
+00:00:43,478 --> 00:00:49,479
+Coach: We have not yet heard how choosing its lettering would help the welcome activity.
+
+16
+00:00:49,479 --> 00:00:52,479
+Coach: This is a missing connection to examine,
+
+17
+00:00:52,479 --> 00:00:59,336
+Coach: not evidence that Noah is careless or that every design question is a waste of time.
+
+18
+00:01:07,686 --> 00:01:11,543
+You: How would choosing the lettering help new members meet
+
+19
+00:01:11,543 --> 00:01:14,543
+You: or find out about the drawing group?
+
+20
+00:01:14,893 --> 00:01:19,607
+Coach: This question gives the idea a chance to earn its place.
+
+21
+00:01:19,607 --> 00:01:22,607
+Coach: A clear link could change your judgement.
+
+22
+00:01:22,607 --> 00:01:27,321
+Coach: Without that link, the group may spend its discussion comparing styles
+
+23
+00:01:27,321 --> 00:01:30,321
+Coach: while the required activity is still undefined.
+
+24
+00:01:30,321 --> 00:01:34,607
+Coach: Keep the task, rather than personal taste, as the reference.
+
+25
+00:01:34,957 --> 00:01:40,957
+Coach: For example, legibility might matter if an introduction activity uses names written on paper.
+
+26
+00:01:40,957 --> 00:01:44,386
+Coach: That is a possible task-related design question,
+
+27
+00:01:44,386 --> 00:01:47,386
+Coach: not a fact about the current proposal.
+
+28
+00:01:47,386 --> 00:01:54,243
+Coach: Redesigning the centre’s sign is a different issue unless someone explains how it serves this activity.
+
+29
+00:01:54,593 --> 00:01:57,593
+Coach: Alternatively, if the connection is still unclear,
+
+30
+00:01:57,593 --> 00:02:01,450
+Coach: suggest returning to an unresolved part of the task.
+
+31
+00:02:01,450 --> 00:02:06,165
+Coach: You do not have to settle every interesting side question now.
+
+32
+00:02:06,165 --> 00:02:10,451
+Coach: Leave room to reconsider the detail if it becomes useful,
+
+33
+00:02:10,451 --> 00:02:13,022
+Coach: without promising a separate design project.
+
+34
+00:02:13,372 --> 00:02:20,229
+You: Could we return to how the welcome activity would connect people with the weekly drawing group?
+
+35
+00:02:20,229 --> 00:02:24,086
+You: We still need that link before comparing design details.
+
+36
+00:02:24,436 --> 00:02:28,293
+Coach: The return is specific: it names the missing link.
+
+37
+00:02:28,293 --> 00:02:33,008
+Coach: Simply saying focus, or repeating that the group is off topic,
+
+38
+00:02:33,008 --> 00:02:36,436
+Coach: gives less help about what to do next.
+
+39
+00:02:36,436 --> 00:02:41,151
+Coach: A useful redirection makes the task easier to pick up again
+
+40
+00:02:41,151 --> 00:02:43,722
+Coach: without deciding the answer for everyone.
+
+41
+00:02:44,072 --> 00:02:46,643
+Coach: Remember what the twenty minutes means.
+
+42
+00:02:46,643 --> 00:02:49,644
+Coach: It limits the welcome activity being planned,
+
+43
+00:02:49,644 --> 00:02:54,358
+Coach: not each person’s turn or the time available for this discussion.
+
+44
+00:02:54,358 --> 00:02:59,072
+Coach: You can point to an unfinished task without inventing a countdown
+
+45
+00:02:59,072 --> 00:03:02,501
+Coach: or claiming that the group is already late.
+
+46
+00:03:02,851 --> 00:03:06,708
+Coach: Return to the moment just after the lettering question,
+
+47
+00:03:06,708 --> 00:03:09,708
+Coach: with no explanation of its relevance yet.
+
+48
+00:03:09,708 --> 00:03:11,851
+Coach: Privately choose a next line:
+
+49
+00:03:11,851 --> 00:03:17,422
+Coach: you might ask for the connection or suggest returning to a particular gap.
+
+50
+00:03:17,422 --> 00:03:22,565
+Coach: Leave room to hear what follows rather than delivering a final verdict.
+
+51
+00:03:34,915 --> 00:03:38,772
+Coach: Check whether your line uses the shared goals rather
+
+52
+00:03:38,772 --> 00:03:41,344
+Coach: than a judgement about the speaker.
+
+53
+00:03:41,344 --> 00:03:46,058
+Coach: A creative idea may become relevant when its purpose is explained.
+
+54
+00:03:46,058 --> 00:03:49,486
+Coach: For now, help the group find the connection
+
+55
+00:03:49,486 --> 00:03:53,772
+Coach: or return to the work it still needs to do.
