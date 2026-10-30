@@ -1,0 +1,5659 @@
+{
+ "sectionId": "L06.S02",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 259.741,
+   "steps": [
+    {
+     "id": "L06.S02.c001",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 0,
+     "end": 16.207,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "out": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "out"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c001",
+       "phrase": "Neither I nor we is automatically the right choice",
+       "at": 12
+      },
+      {
+       "name": "s2_team",
+       "phrase": "An experience may belong to a team",
+       "at": 0
+      },
+      {
+       "name": "s2_visible",
+       "phrase": "A clear account makes your own part visible",
+       "at": 6
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c002",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 16.207,
+     "end": 33.271,
+     "speaker": "coach",
+     "tokens": {
+      "out": [
+       "o+act"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "k0": [
+       "o+act"
+      ],
+      "k1": [
+       "o+act"
+      ],
+      "k2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rp": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "ro": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "sb": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c002",
+       "phrase": "These role facts stay the same",
+       "at": 29.064
+      },
+      {
+       "name": "s2_fiction",
+       "phrase": "In our fictional example",
+       "at": 16.207
+      },
+      {
+       "name": "s2_drew",
+       "phrase": "The participant drew the map",
+       "at": 23.064
+      },
+      {
+       "name": "s2_maya",
+       "phrase": "Maya listed session times",
+       "at": 25.207
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c003",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 33.271,
+     "end": 49.478,
+     "speaker": "coach",
+     "tokens": {
+      "rp": [
+       "o+act"
+      ],
+      "ro": [
+       "o+act"
+      ],
+      "sb": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "check": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "mm"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c003",
+       "phrase": "rather than selecting a name by guessing",
+       "at": 46.128
+      },
+      {
+       "name": "s2_dayBefore",
+       "phrase": "The day before the event",
+       "at": 33.271
+      },
+      {
+       "name": "s2_blue",
+       "phrase": "Blue Room on the schedule",
+       "at": 39.271
+      },
+      {
+       "name": "s2_asked",
+       "phrase": "They asked the coordinator",
+       "at": 41.414
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c004",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 49.478,
+     "end": 69.542,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "sb": [
+       "o+act"
+      ],
+      "sr": [
+       "o+act"
+      ],
+      "check": [
+       "o+act"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "we": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "upd"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c004",
+       "phrase": "An individual action and a team result",
+       "at": 64.478
+      },
+      {
+       "name": "s2_after",
+       "phrase": "After confirmation",
+       "at": 49.478
+      },
+      {
+       "name": "s2_changed",
+       "phrase": "the participant changed the map label",
+       "at": 56.335
+      },
+      {
+       "name": "s2_mayaC",
+       "phrase": "Maya checked the schedule",
+       "at": 60.621
+      },
+      {
+       "name": "s2_noahA",
+       "phrase": "Noah assembled the updated guide",
+       "at": 62.335
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c005",
+     "kind": "line",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 69.542,
+     "end": 84.463,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "out": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "am": [
+       "x+w+h+fs+o"
+      ],
+      "an": [
+       "x+w+h+fs+o"
+      ],
+      "we": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "iC": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "n1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "pron"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c005",
+       "phrase": "who did what",
+       "at": 82.828
+      },
+      {
+       "name": "s2_we",
+       "phrase": "We prepared a guide describes",
+       "at": 69.542
+      },
+      {
+       "name": "s2_i",
+       "phrase": "I changed the map label describes",
+       "at": 72.971
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c006",
+     "kind": "line",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 84.463,
+     "end": 100.242,
+     "speaker": "coach",
+     "tokens": {
+      "out": [
+       "o+act"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ap": [
+       "x+w+h+fs+o"
+      ],
+      "am": [
+       "x+w+h+fs+o"
+      ],
+      "an": [
+       "x+w+h+fs+o"
+      ],
+      "we": [
+       "o+act"
+      ],
+      "iC": [
+       "o+act"
+      ],
+      "n1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c006",
+       "phrase": "rather than filling a gap",
+       "at": 90.892
+      },
+      {
+       "name": "s2_priv",
+       "phrase": "Privately separate one personal action",
+       "at": 84.463
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.h101",
+     "kind": "hold",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 100.242,
+     "end": 108.242,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.d001",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 108.242,
+     "end": 113.306,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "qPart": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d001",
+       "phrase": "your own part",
+       "at": 109.099
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c007",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 113.306,
+     "end": 128.656,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qPart": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chNote": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c007",
+       "phrase": "a personal action",
+       "at": 121.449
+      },
+      {
+       "name": "s2_compare",
+       "phrase": "Compare three possible accounts",
+       "at": 113.306
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c008",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 128.656,
+     "end": 143.577,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c008",
+       "phrase": "not an added event",
+       "at": 135.085
+      },
+      {
+       "name": "s2_deliber",
+       "phrase": "One alternative deliberately claims more",
+       "at": 128.656
+      }
+     ]
+    },
+    {
+     "id": "L06.I01.watchThink",
+     "kind": "think",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 143.577,
+     "end": 151.577,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o",
+       "kind+act"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.d201",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "B",
+     "start": 151.577,
+     "end": 162.213,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "qPart": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d201",
+       "phrase": "checked the conflicting names with the coordinator",
+       "at": 153.291
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.d202",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "B",
+     "start": 162.213,
+     "end": 169.42,
+     "speaker": "maya",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d202",
+       "phrase": "the schedule and the assembled guide",
+       "at": 166.499
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.f201",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "B",
+     "start": 169.42,
+     "end": 185.627,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qPart": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "act",
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "lB"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_f201",
+       "phrase": "without taking over the other roles",
+       "at": 172.849
+      },
+      {
+       "name": "sB_names",
+       "phrase": "This account names actions supported by the case",
+       "at": 169.42
+      },
+      {
+       "name": "sB_add",
+       "phrase": "The surrounding explanation can add",
+       "at": 175.42
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c010",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 185.627,
+     "end": 202.691,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "lh1": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c010",
+       "phrase": "several distinct contributions",
+       "at": 201.056
+      },
+      {
+       "name": "s2_handled",
+       "phrase": "The participant handled the map",
+       "at": 185.627
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c011",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 202.691,
+     "end": 218.47,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "ap": [
+       "act"
+      ],
+      "am": [
+       "o"
+      ],
+      "an": [
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c011",
+       "phrase": "what was asked",
+       "at": 216.834
+      },
+      {
+       "name": "s2_enough",
+       "phrase": "Say enough about the others",
+       "at": 202.691
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c012",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 218.47,
+     "end": 236.391,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "we": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "iC": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c012",
+       "phrase": "ownership of every action",
+       "at": 233.899
+      },
+      {
+       "name": "s2_explain",
+       "phrase": "Privately explain the participant’s role",
+       "at": 218.47
+      },
+      {
+       "name": "s2_whereWe",
+       "phrase": "Where does we describe the team accurately",
+       "at": 224.041
+      },
+      {
+       "name": "s2_whereI",
+       "phrase": "where would I make your own action clearer",
+       "at": 227.47
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.h102",
+     "kind": "hold",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 236.391,
+     "end": 244.391,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.c013",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 244.391,
+     "end": 259.741,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "we": [
+       "o+act"
+      ],
+      "iC": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "pBlank": [
+       "o+act"
+      ],
+      "pNote": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c013",
+       "phrase": "who each action belongs to",
+       "at": 246.962
+      },
+      {
+       "name": "s2_formed",
+       "phrase": "If you formed a version",
+       "at": 244.391
+      },
+      {
+       "name": "s2_next",
+       "phrase": "Next, we will explain why",
+       "at": 253.82
+      }
+     ]
+    }
+   ]
+  },
+  "practice:A": {
+   "durationSeconds": 240.513,
+   "steps": [
+    {
+     "id": "L06.S02.c001",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 0,
+     "end": 16.207,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "out": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "out"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c001",
+       "phrase": "Neither I nor we is automatically the right choice",
+       "at": 12
+      },
+      {
+       "name": "s2_team",
+       "phrase": "An experience may belong to a team",
+       "at": 0
+      },
+      {
+       "name": "s2_visible",
+       "phrase": "A clear account makes your own part visible",
+       "at": 6
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c002",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 16.207,
+     "end": 33.271,
+     "speaker": "coach",
+     "tokens": {
+      "out": [
+       "o+act"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "k0": [
+       "o+act"
+      ],
+      "k1": [
+       "o+act"
+      ],
+      "k2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rp": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "ro": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "sb": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c002",
+       "phrase": "These role facts stay the same",
+       "at": 29.064
+      },
+      {
+       "name": "s2_fiction",
+       "phrase": "In our fictional example",
+       "at": 16.207
+      },
+      {
+       "name": "s2_drew",
+       "phrase": "The participant drew the map",
+       "at": 23.064
+      },
+      {
+       "name": "s2_maya",
+       "phrase": "Maya listed session times",
+       "at": 25.207
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c003",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 33.271,
+     "end": 49.478,
+     "speaker": "coach",
+     "tokens": {
+      "rp": [
+       "o+act"
+      ],
+      "ro": [
+       "o+act"
+      ],
+      "sb": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "check": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "mm"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c003",
+       "phrase": "rather than selecting a name by guessing",
+       "at": 46.128
+      },
+      {
+       "name": "s2_dayBefore",
+       "phrase": "The day before the event",
+       "at": 33.271
+      },
+      {
+       "name": "s2_blue",
+       "phrase": "Blue Room on the schedule",
+       "at": 39.271
+      },
+      {
+       "name": "s2_asked",
+       "phrase": "They asked the coordinator",
+       "at": 41.414
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c004",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 49.478,
+     "end": 69.542,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "sb": [
+       "o+act"
+      ],
+      "sr": [
+       "o+act"
+      ],
+      "check": [
+       "o+act"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "we": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "upd"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c004",
+       "phrase": "An individual action and a team result",
+       "at": 64.478
+      },
+      {
+       "name": "s2_after",
+       "phrase": "After confirmation",
+       "at": 49.478
+      },
+      {
+       "name": "s2_changed",
+       "phrase": "the participant changed the map label",
+       "at": 56.335
+      },
+      {
+       "name": "s2_mayaC",
+       "phrase": "Maya checked the schedule",
+       "at": 60.621
+      },
+      {
+       "name": "s2_noahA",
+       "phrase": "Noah assembled the updated guide",
+       "at": 62.335
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c005",
+     "kind": "line",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 69.542,
+     "end": 84.463,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "out": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "am": [
+       "x+w+h+fs+o"
+      ],
+      "an": [
+       "x+w+h+fs+o"
+      ],
+      "we": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "iC": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "n1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "pron"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c005",
+       "phrase": "who did what",
+       "at": 82.828
+      },
+      {
+       "name": "s2_we",
+       "phrase": "We prepared a guide describes",
+       "at": 69.542
+      },
+      {
+       "name": "s2_i",
+       "phrase": "I changed the map label describes",
+       "at": 72.971
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c006",
+     "kind": "line",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 84.463,
+     "end": 100.242,
+     "speaker": "coach",
+     "tokens": {
+      "out": [
+       "o+act"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ap": [
+       "x+w+h+fs+o"
+      ],
+      "am": [
+       "x+w+h+fs+o"
+      ],
+      "an": [
+       "x+w+h+fs+o"
+      ],
+      "we": [
+       "o+act"
+      ],
+      "iC": [
+       "o+act"
+      ],
+      "n1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c006",
+       "phrase": "rather than filling a gap",
+       "at": 90.892
+      },
+      {
+       "name": "s2_priv",
+       "phrase": "Privately separate one personal action",
+       "at": 84.463
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.h101",
+     "kind": "hold",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 100.242,
+     "end": 108.242,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.d001",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 108.242,
+     "end": 113.306,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "qPart": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d001",
+       "phrase": "your own part",
+       "at": 109.099
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c007",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 113.306,
+     "end": 128.656,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qPart": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chNote": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c007",
+       "phrase": "a personal action",
+       "at": 121.449
+      },
+      {
+       "name": "s2_compare",
+       "phrase": "Compare three possible accounts",
+       "at": 113.306
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c008",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 128.656,
+     "end": 143.577,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c008",
+       "phrase": "not an added event",
+       "at": 135.085
+      },
+      {
+       "name": "s2_deliber",
+       "phrase": "One alternative deliberately claims more",
+       "at": 128.656
+      }
+     ]
+    },
+    {
+     "id": "L06.I01.gate",
+     "kind": "gate",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 143.577,
+     "end": 144.777,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.d101",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "A",
+     "start": 144.777,
+     "end": 148.556,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "qPart": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d101",
+       "phrase": "updated it together",
+       "at": 146.92
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.d102",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "A",
+     "start": 148.556,
+     "end": 152.763,
+     "speaker": "maya",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d102",
+       "phrase": "Which actions were yours",
+       "at": 150.699
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.f101",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "A",
+     "start": 152.763,
+     "end": 166.399,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qPart": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "lA"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_f101",
+       "phrase": "for this particular question",
+       "at": 158.334
+      },
+      {
+       "name": "sA_shared",
+       "phrase": "The shared description is not necessarily wrong",
+       "at": 152.763
+      },
+      {
+       "name": "sA_unclear",
+       "phrase": "It leaves the personal role unclear",
+       "at": 155.763
+      },
+      {
+       "name": "sA_add",
+       "phrase": "Add the map work and the checking action",
+       "at": 160.049
+      }
+     ]
+    },
+    {
+     "id": "L06.I01.ready",
+     "kind": "ready",
+     "block": "L06.S02.B03",
+     "branch": "A",
+     "start": 166.399,
+     "end": 166.399,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.c010",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 166.399,
+     "end": 183.463,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "lh1": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c010",
+       "phrase": "several distinct contributions",
+       "at": 181.828
+      },
+      {
+       "name": "s2_handled",
+       "phrase": "The participant handled the map",
+       "at": 166.399
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c011",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 183.463,
+     "end": 199.242,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "ap": [
+       "act"
+      ],
+      "am": [
+       "o"
+      ],
+      "an": [
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c011",
+       "phrase": "what was asked",
+       "at": 197.606
+      },
+      {
+       "name": "s2_enough",
+       "phrase": "Say enough about the others",
+       "at": 183.463
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c012",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 199.242,
+     "end": 217.163,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "we": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "iC": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c012",
+       "phrase": "ownership of every action",
+       "at": 214.671
+      },
+      {
+       "name": "s2_explain",
+       "phrase": "Privately explain the participant’s role",
+       "at": 199.242
+      },
+      {
+       "name": "s2_whereWe",
+       "phrase": "Where does we describe the team accurately",
+       "at": 204.813
+      },
+      {
+       "name": "s2_whereI",
+       "phrase": "where would I make your own action clearer",
+       "at": 208.242
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.h102",
+     "kind": "hold",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 217.163,
+     "end": 225.163,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.c013",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 225.163,
+     "end": 240.513,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "we": [
+       "o+act"
+      ],
+      "iC": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "pBlank": [
+       "o+act"
+      ],
+      "pNote": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c013",
+       "phrase": "who each action belongs to",
+       "at": 227.734
+      },
+      {
+       "name": "s2_formed",
+       "phrase": "If you formed a version",
+       "at": 225.163
+      },
+      {
+       "name": "s2_next",
+       "phrase": "Next, we will explain why",
+       "at": 234.592
+      }
+     ]
+    }
+   ]
+  },
+  "practice:B": {
+   "durationSeconds": 252.941,
+   "steps": [
+    {
+     "id": "L06.S02.c001",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 0,
+     "end": 16.207,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "out": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "out"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c001",
+       "phrase": "Neither I nor we is automatically the right choice",
+       "at": 12
+      },
+      {
+       "name": "s2_team",
+       "phrase": "An experience may belong to a team",
+       "at": 0
+      },
+      {
+       "name": "s2_visible",
+       "phrase": "A clear account makes your own part visible",
+       "at": 6
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c002",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 16.207,
+     "end": 33.271,
+     "speaker": "coach",
+     "tokens": {
+      "out": [
+       "o+act"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "k0": [
+       "o+act"
+      ],
+      "k1": [
+       "o+act"
+      ],
+      "k2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rp": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "ro": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "sb": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c002",
+       "phrase": "These role facts stay the same",
+       "at": 29.064
+      },
+      {
+       "name": "s2_fiction",
+       "phrase": "In our fictional example",
+       "at": 16.207
+      },
+      {
+       "name": "s2_drew",
+       "phrase": "The participant drew the map",
+       "at": 23.064
+      },
+      {
+       "name": "s2_maya",
+       "phrase": "Maya listed session times",
+       "at": 25.207
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c003",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 33.271,
+     "end": 49.478,
+     "speaker": "coach",
+     "tokens": {
+      "rp": [
+       "o+act"
+      ],
+      "ro": [
+       "o+act"
+      ],
+      "sb": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "check": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "mm"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c003",
+       "phrase": "rather than selecting a name by guessing",
+       "at": 46.128
+      },
+      {
+       "name": "s2_dayBefore",
+       "phrase": "The day before the event",
+       "at": 33.271
+      },
+      {
+       "name": "s2_blue",
+       "phrase": "Blue Room on the schedule",
+       "at": 39.271
+      },
+      {
+       "name": "s2_asked",
+       "phrase": "They asked the coordinator",
+       "at": 41.414
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c004",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 49.478,
+     "end": 69.542,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "sb": [
+       "o+act"
+      ],
+      "sr": [
+       "o+act"
+      ],
+      "check": [
+       "o+act"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "we": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "upd"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c004",
+       "phrase": "An individual action and a team result",
+       "at": 64.478
+      },
+      {
+       "name": "s2_after",
+       "phrase": "After confirmation",
+       "at": 49.478
+      },
+      {
+       "name": "s2_changed",
+       "phrase": "the participant changed the map label",
+       "at": 56.335
+      },
+      {
+       "name": "s2_mayaC",
+       "phrase": "Maya checked the schedule",
+       "at": 60.621
+      },
+      {
+       "name": "s2_noahA",
+       "phrase": "Noah assembled the updated guide",
+       "at": 62.335
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c005",
+     "kind": "line",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 69.542,
+     "end": 84.463,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "out": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "am": [
+       "x+w+h+fs+o"
+      ],
+      "an": [
+       "x+w+h+fs+o"
+      ],
+      "we": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "iC": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "n1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "pron"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c005",
+       "phrase": "who did what",
+       "at": 82.828
+      },
+      {
+       "name": "s2_we",
+       "phrase": "We prepared a guide describes",
+       "at": 69.542
+      },
+      {
+       "name": "s2_i",
+       "phrase": "I changed the map label describes",
+       "at": 72.971
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c006",
+     "kind": "line",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 84.463,
+     "end": 100.242,
+     "speaker": "coach",
+     "tokens": {
+      "out": [
+       "o+act"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ap": [
+       "x+w+h+fs+o"
+      ],
+      "am": [
+       "x+w+h+fs+o"
+      ],
+      "an": [
+       "x+w+h+fs+o"
+      ],
+      "we": [
+       "o+act"
+      ],
+      "iC": [
+       "o+act"
+      ],
+      "n1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c006",
+       "phrase": "rather than filling a gap",
+       "at": 90.892
+      },
+      {
+       "name": "s2_priv",
+       "phrase": "Privately separate one personal action",
+       "at": 84.463
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.h101",
+     "kind": "hold",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 100.242,
+     "end": 108.242,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.d001",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 108.242,
+     "end": 113.306,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "qPart": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d001",
+       "phrase": "your own part",
+       "at": 109.099
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c007",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 113.306,
+     "end": 128.656,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qPart": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chNote": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c007",
+       "phrase": "a personal action",
+       "at": 121.449
+      },
+      {
+       "name": "s2_compare",
+       "phrase": "Compare three possible accounts",
+       "at": 113.306
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c008",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 128.656,
+     "end": 143.577,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c008",
+       "phrase": "not an added event",
+       "at": 135.085
+      },
+      {
+       "name": "s2_deliber",
+       "phrase": "One alternative deliberately claims more",
+       "at": 128.656
+      }
+     ]
+    },
+    {
+     "id": "L06.I01.gate",
+     "kind": "gate",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 143.577,
+     "end": 144.777,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.d201",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "B",
+     "start": 144.777,
+     "end": 155.413,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "qPart": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d201",
+       "phrase": "checked the conflicting names with the coordinator",
+       "at": 146.491
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.d202",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "B",
+     "start": 155.413,
+     "end": 162.62,
+     "speaker": "maya",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d202",
+       "phrase": "the schedule and the assembled guide",
+       "at": 159.699
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.f201",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "B",
+     "start": 162.62,
+     "end": 178.827,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qPart": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "act",
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "lB"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_f201",
+       "phrase": "without taking over the other roles",
+       "at": 166.049
+      },
+      {
+       "name": "sB_names",
+       "phrase": "This account names actions supported by the case",
+       "at": 162.62
+      },
+      {
+       "name": "sB_add",
+       "phrase": "The surrounding explanation can add",
+       "at": 168.62
+      }
+     ]
+    },
+    {
+     "id": "L06.I01.ready",
+     "kind": "ready",
+     "block": "L06.S02.B03",
+     "branch": "B",
+     "start": 178.827,
+     "end": 178.827,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.c010",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 178.827,
+     "end": 195.891,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "lh1": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c010",
+       "phrase": "several distinct contributions",
+       "at": 194.256
+      },
+      {
+       "name": "s2_handled",
+       "phrase": "The participant handled the map",
+       "at": 178.827
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c011",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 195.891,
+     "end": 211.67,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "ap": [
+       "act"
+      ],
+      "am": [
+       "o"
+      ],
+      "an": [
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c011",
+       "phrase": "what was asked",
+       "at": 210.034
+      },
+      {
+       "name": "s2_enough",
+       "phrase": "Say enough about the others",
+       "at": 195.891
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c012",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 211.67,
+     "end": 229.591,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "we": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "iC": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c012",
+       "phrase": "ownership of every action",
+       "at": 227.099
+      },
+      {
+       "name": "s2_explain",
+       "phrase": "Privately explain the participant’s role",
+       "at": 211.67
+      },
+      {
+       "name": "s2_whereWe",
+       "phrase": "Where does we describe the team accurately",
+       "at": 217.241
+      },
+      {
+       "name": "s2_whereI",
+       "phrase": "where would I make your own action clearer",
+       "at": 220.67
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.h102",
+     "kind": "hold",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 229.591,
+     "end": 237.591,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.c013",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 237.591,
+     "end": 252.941,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "we": [
+       "o+act"
+      ],
+      "iC": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "pBlank": [
+       "o+act"
+      ],
+      "pNote": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c013",
+       "phrase": "who each action belongs to",
+       "at": 240.162
+      },
+      {
+       "name": "s2_formed",
+       "phrase": "If you formed a version",
+       "at": 237.591
+      },
+      {
+       "name": "s2_next",
+       "phrase": "Next, we will explain why",
+       "at": 247.02
+      }
+     ]
+    }
+   ]
+  },
+  "practice:C": {
+   "durationSeconds": 246.941,
+   "steps": [
+    {
+     "id": "L06.S02.c001",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 0,
+     "end": 16.207,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "out": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "out"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c001",
+       "phrase": "Neither I nor we is automatically the right choice",
+       "at": 12
+      },
+      {
+       "name": "s2_team",
+       "phrase": "An experience may belong to a team",
+       "at": 0
+      },
+      {
+       "name": "s2_visible",
+       "phrase": "A clear account makes your own part visible",
+       "at": 6
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c002",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 16.207,
+     "end": 33.271,
+     "speaker": "coach",
+     "tokens": {
+      "out": [
+       "o+act"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "k0": [
+       "o+act"
+      ],
+      "k1": [
+       "o+act"
+      ],
+      "k2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rp": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "ro": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "sb": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c002",
+       "phrase": "These role facts stay the same",
+       "at": 29.064
+      },
+      {
+       "name": "s2_fiction",
+       "phrase": "In our fictional example",
+       "at": 16.207
+      },
+      {
+       "name": "s2_drew",
+       "phrase": "The participant drew the map",
+       "at": 23.064
+      },
+      {
+       "name": "s2_maya",
+       "phrase": "Maya listed session times",
+       "at": 25.207
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c003",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 33.271,
+     "end": 49.478,
+     "speaker": "coach",
+     "tokens": {
+      "rp": [
+       "o+act"
+      ],
+      "ro": [
+       "o+act"
+      ],
+      "sb": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "check": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "mm"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c003",
+       "phrase": "rather than selecting a name by guessing",
+       "at": 46.128
+      },
+      {
+       "name": "s2_dayBefore",
+       "phrase": "The day before the event",
+       "at": 33.271
+      },
+      {
+       "name": "s2_blue",
+       "phrase": "Blue Room on the schedule",
+       "at": 39.271
+      },
+      {
+       "name": "s2_asked",
+       "phrase": "They asked the coordinator",
+       "at": 41.414
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c004",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 49.478,
+     "end": 69.542,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "sb": [
+       "o+act"
+      ],
+      "sr": [
+       "o+act"
+      ],
+      "check": [
+       "o+act"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "we": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "upd"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c004",
+       "phrase": "An individual action and a team result",
+       "at": 64.478
+      },
+      {
+       "name": "s2_after",
+       "phrase": "After confirmation",
+       "at": 49.478
+      },
+      {
+       "name": "s2_changed",
+       "phrase": "the participant changed the map label",
+       "at": 56.335
+      },
+      {
+       "name": "s2_mayaC",
+       "phrase": "Maya checked the schedule",
+       "at": 60.621
+      },
+      {
+       "name": "s2_noahA",
+       "phrase": "Noah assembled the updated guide",
+       "at": 62.335
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c005",
+     "kind": "line",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 69.542,
+     "end": 84.463,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "out": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "am": [
+       "x+w+h+fs+o"
+      ],
+      "an": [
+       "x+w+h+fs+o"
+      ],
+      "we": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "iC": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "n1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "pron"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c005",
+       "phrase": "who did what",
+       "at": 82.828
+      },
+      {
+       "name": "s2_we",
+       "phrase": "We prepared a guide describes",
+       "at": 69.542
+      },
+      {
+       "name": "s2_i",
+       "phrase": "I changed the map label describes",
+       "at": 72.971
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c006",
+     "kind": "line",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 84.463,
+     "end": 100.242,
+     "speaker": "coach",
+     "tokens": {
+      "out": [
+       "o+act"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ap": [
+       "x+w+h+fs+o"
+      ],
+      "am": [
+       "x+w+h+fs+o"
+      ],
+      "an": [
+       "x+w+h+fs+o"
+      ],
+      "we": [
+       "o+act"
+      ],
+      "iC": [
+       "o+act"
+      ],
+      "n1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c006",
+       "phrase": "rather than filling a gap",
+       "at": 90.892
+      },
+      {
+       "name": "s2_priv",
+       "phrase": "Privately separate one personal action",
+       "at": 84.463
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.h101",
+     "kind": "hold",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 100.242,
+     "end": 108.242,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.d001",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 108.242,
+     "end": 113.306,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "qPart": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d001",
+       "phrase": "your own part",
+       "at": 109.099
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c007",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 113.306,
+     "end": 128.656,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qPart": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chNote": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c007",
+       "phrase": "a personal action",
+       "at": 121.449
+      },
+      {
+       "name": "s2_compare",
+       "phrase": "Compare three possible accounts",
+       "at": 113.306
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c008",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 128.656,
+     "end": 143.577,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c008",
+       "phrase": "not an added event",
+       "at": 135.085
+      },
+      {
+       "name": "s2_deliber",
+       "phrase": "One alternative deliberately claims more",
+       "at": 128.656
+      }
+     ]
+    },
+    {
+     "id": "L06.I01.gate",
+     "kind": "gate",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 143.577,
+     "end": 144.777,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.d301",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "C",
+     "start": 144.777,
+     "end": 149.841,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "qPart": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d301",
+       "phrase": "the schedule and the finished guide myself",
+       "at": 146.491
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.d302",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "C",
+     "start": 149.841,
+     "end": 157.477,
+     "speaker": "maya",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d302",
+       "phrase": "Noah assembled the guide",
+       "at": 152.412
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.f301",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": "C",
+     "start": 157.477,
+     "end": 172.827,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qPart": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text+hl+kind+tag",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "lC"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_f301",
+       "phrase": "The case does not support that claim",
+       "at": 161.334
+      },
+      {
+       "name": "sC_attrib",
+       "phrase": "This version attributes other volunteers’ work",
+       "at": 157.477
+      },
+      {
+       "name": "sC_return",
+       "phrase": "Return to the map",
+       "at": 164.334
+      }
+     ]
+    },
+    {
+     "id": "L06.I01.ready",
+     "kind": "ready",
+     "block": "L06.S02.B03",
+     "branch": "C",
+     "start": 172.827,
+     "end": 172.827,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.c010",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 172.827,
+     "end": 189.891,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o+act",
+       "o"
+      ],
+      "lh1": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c010",
+       "phrase": "several distinct contributions",
+       "at": 188.256
+      },
+      {
+       "name": "s2_handled",
+       "phrase": "The participant handled the map",
+       "at": 172.827
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c011",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 189.891,
+     "end": 205.67,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "ap": [
+       "act"
+      ],
+      "am": [
+       "o"
+      ],
+      "an": [
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c011",
+       "phrase": "what was asked",
+       "at": 204.034
+      },
+      {
+       "name": "s2_enough",
+       "phrase": "Say enough about the others",
+       "at": 189.891
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c012",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 205.67,
+     "end": 223.591,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "we": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "iC": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c012",
+       "phrase": "ownership of every action",
+       "at": 221.099
+      },
+      {
+       "name": "s2_explain",
+       "phrase": "Privately explain the participant’s role",
+       "at": 205.67
+      },
+      {
+       "name": "s2_whereWe",
+       "phrase": "Where does we describe the team accurately",
+       "at": 211.241
+      },
+      {
+       "name": "s2_whereI",
+       "phrase": "where would I make your own action clearer",
+       "at": 214.67
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.h102",
+     "kind": "hold",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 223.591,
+     "end": 231.591,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.c013",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 231.591,
+     "end": 246.941,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "we": [
+       "o+act"
+      ],
+      "iC": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "pBlank": [
+       "o+act"
+      ],
+      "pNote": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c013",
+       "phrase": "who each action belongs to",
+       "at": 234.162
+      },
+      {
+       "name": "s2_formed",
+       "phrase": "If you formed a version",
+       "at": 231.591
+      },
+      {
+       "name": "s2_next",
+       "phrase": "Next, we will explain why",
+       "at": 241.02
+      }
+     ]
+    }
+   ]
+  },
+  "practice:skip": {
+   "durationSeconds": 218.891,
+   "steps": [
+    {
+     "id": "L06.S02.c001",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 0,
+     "end": 16.207,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "out": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "k2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "out"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c001",
+       "phrase": "Neither I nor we is automatically the right choice",
+       "at": 12
+      },
+      {
+       "name": "s2_team",
+       "phrase": "An experience may belong to a team",
+       "at": 0
+      },
+      {
+       "name": "s2_visible",
+       "phrase": "A clear account makes your own part visible",
+       "at": 6
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c002",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 16.207,
+     "end": 33.271,
+     "speaker": "coach",
+     "tokens": {
+      "out": [
+       "o+act"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "k0": [
+       "o+act"
+      ],
+      "k1": [
+       "o+act"
+      ],
+      "k2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rp": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "ro": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "sb": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c002",
+       "phrase": "These role facts stay the same",
+       "at": 29.064
+      },
+      {
+       "name": "s2_fiction",
+       "phrase": "In our fictional example",
+       "at": 16.207
+      },
+      {
+       "name": "s2_drew",
+       "phrase": "The participant drew the map",
+       "at": 23.064
+      },
+      {
+       "name": "s2_maya",
+       "phrase": "Maya listed session times",
+       "at": 25.207
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c003",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 33.271,
+     "end": 49.478,
+     "speaker": "coach",
+     "tokens": {
+      "rp": [
+       "o+act"
+      ],
+      "ro": [
+       "o+act"
+      ],
+      "sb": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sr": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "check": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "mm"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c003",
+       "phrase": "rather than selecting a name by guessing",
+       "at": 46.128
+      },
+      {
+       "name": "s2_dayBefore",
+       "phrase": "The day before the event",
+       "at": 33.271
+      },
+      {
+       "name": "s2_blue",
+       "phrase": "Blue Room on the schedule",
+       "at": 39.271
+      },
+      {
+       "name": "s2_asked",
+       "phrase": "They asked the coordinator",
+       "at": 41.414
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c004",
+     "kind": "line",
+     "block": "L06.S02.B01",
+     "branch": null,
+     "start": 49.478,
+     "end": 69.542,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "sb": [
+       "o+act"
+      ],
+      "sr": [
+       "o+act"
+      ],
+      "check": [
+       "o+act"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "we": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "upd"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c004",
+       "phrase": "An individual action and a team result",
+       "at": 64.478
+      },
+      {
+       "name": "s2_after",
+       "phrase": "After confirmation",
+       "at": 49.478
+      },
+      {
+       "name": "s2_changed",
+       "phrase": "the participant changed the map label",
+       "at": 56.335
+      },
+      {
+       "name": "s2_mayaC",
+       "phrase": "Maya checked the schedule",
+       "at": 60.621
+      },
+      {
+       "name": "s2_noahA",
+       "phrase": "Noah assembled the updated guide",
+       "at": 62.335
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c005",
+     "kind": "line",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 69.542,
+     "end": 84.463,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "out": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "am": [
+       "x+w+h+fs+o"
+      ],
+      "an": [
+       "x+w+h+fs+o"
+      ],
+      "we": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "iC": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "n1": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "pron"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c005",
+       "phrase": "who did what",
+       "at": 82.828
+      },
+      {
+       "name": "s2_we",
+       "phrase": "We prepared a guide describes",
+       "at": 69.542
+      },
+      {
+       "name": "s2_i",
+       "phrase": "I changed the map label describes",
+       "at": 72.971
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c006",
+     "kind": "line",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 84.463,
+     "end": 100.242,
+     "speaker": "coach",
+     "tokens": {
+      "out": [
+       "o+act"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ap": [
+       "x+w+h+fs+o"
+      ],
+      "am": [
+       "x+w+h+fs+o"
+      ],
+      "an": [
+       "x+w+h+fs+o"
+      ],
+      "we": [
+       "o+act"
+      ],
+      "iC": [
+       "o+act"
+      ],
+      "n1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c006",
+       "phrase": "rather than filling a gap",
+       "at": 90.892
+      },
+      {
+       "name": "s2_priv",
+       "phrase": "Privately separate one personal action",
+       "at": 84.463
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.h101",
+     "kind": "hold",
+     "block": "L06.S02.B02",
+     "branch": null,
+     "start": 100.242,
+     "end": 108.242,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.d001",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 108.242,
+     "end": 113.306,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "qPart": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S02_d001",
+       "phrase": "your own part",
+       "at": 109.099
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c007",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 113.306,
+     "end": 128.656,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qPart": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chNote": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c007",
+       "phrase": "a personal action",
+       "at": 121.449
+      },
+      {
+       "name": "s2_compare",
+       "phrase": "Compare three possible accounts",
+       "at": 113.306
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c008",
+     "kind": "line",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 128.656,
+     "end": 143.577,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c008",
+       "phrase": "not an added event",
+       "at": 135.085
+      },
+      {
+       "name": "s2_deliber",
+       "phrase": "One alternative deliberately claims more",
+       "at": 128.656
+      }
+     ]
+    },
+    {
+     "id": "L06.I01.gate",
+     "kind": "gate",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 143.577,
+     "end": 144.777,
+     "speaker": null,
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.I01.skip",
+     "kind": "skip",
+     "block": "L06.S02.B03",
+     "branch": null,
+     "start": 144.777,
+     "end": 144.777,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "qPart": [
+       "o+act"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.c010",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 144.777,
+     "end": 161.841,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "qPart": [
+       "o+act"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c010",
+       "phrase": "several distinct contributions",
+       "at": 160.206
+      },
+      {
+       "name": "s2_handled",
+       "phrase": "The participant handled the map",
+       "at": 144.777
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c011",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 161.841,
+     "end": 177.62,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "ap": [
+       "act"
+      ],
+      "am": [
+       "o"
+      ],
+      "an": [
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c011",
+       "phrase": "what was asked",
+       "at": 175.984
+      },
+      {
+       "name": "s2_enough",
+       "phrase": "Say enough about the others",
+       "at": 161.841
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.c012",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 177.62,
+     "end": 195.541,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "we": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "iC": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c012",
+       "phrase": "ownership of every action",
+       "at": 193.049
+      },
+      {
+       "name": "s2_explain",
+       "phrase": "Privately explain the participant’s role",
+       "at": 177.62
+      },
+      {
+       "name": "s2_whereWe",
+       "phrase": "Where does we describe the team accurately",
+       "at": 183.191
+      },
+      {
+       "name": "s2_whereI",
+       "phrase": "where would I make your own action clearer",
+       "at": 186.62
+      }
+     ]
+    },
+    {
+     "id": "L06.S02.h102",
+     "kind": "hold",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 195.541,
+     "end": 203.541,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S02.c013",
+     "kind": "line",
+     "block": "L06.S02.B04",
+     "branch": null,
+     "start": 203.541,
+     "end": 218.891,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "we": [
+       "o+act"
+      ],
+      "iC": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "pBlank": [
+       "o+act"
+      ],
+      "pNote": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S02_c013",
+       "phrase": "who each action belongs to",
+       "at": 206.112
+      },
+      {
+       "name": "s2_formed",
+       "phrase": "If you formed a version",
+       "at": 203.541
+      },
+      {
+       "name": "s2_next",
+       "phrase": "Next, we will explain why",
+       "at": 212.97
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "rFrame",
+  "out",
+  "lh0",
+  "lh1",
+  "lh2",
+  "k0",
+  "k1",
+  "k2",
+  "caseL",
+  "rp",
+  "ro",
+  "sb",
+  "sr",
+  "check",
+  "conf",
+  "ap",
+  "am",
+  "an",
+  "we",
+  "iC",
+  "n1",
+  "n2",
+  "reh",
+  "qPart",
+  "chNote",
+  "sHead",
+  "resp",
+  "pBlank",
+  "pNote",
+  "next",
+  "opt.A",
+  "opt.B",
+  "opt.C",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

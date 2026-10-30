@@ -1,0 +1,5797 @@
+{
+ "sectionId": "L06.S03",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 269.092,
+   "steps": [
+    {
+     "id": "L06.S03.c001",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "h0": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "h1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "h2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "s0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "s1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "s2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c001",
+       "phrase": "the choice behind it",
+       "at": 5.571
+      },
+      {
+       "name": "s3_useful",
+       "phrase": "An account of an action becomes more useful",
+       "at": 0
+      },
+      {
+       "name": "s3_knew",
+       "phrase": "Explain what you knew",
+       "at": 7.286
+      },
+      {
+       "name": "s3_without",
+       "phrase": "without turning a decision into proof",
+       "at": 12.429
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c002",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 17.064,
+     "end": 37.128,
+     "speaker": "coach",
+     "tokens": {
+      "h0": [
+       "o+act"
+      ],
+      "h1": [
+       "o+act"
+      ],
+      "h2": [
+       "o+act"
+      ],
+      "s0": [
+       "o+act"
+      ],
+      "s1": [
+       "o+act"
+      ],
+      "s2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "roles": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ask": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c002",
+       "phrase": "did not know whether those names meant the same room",
+       "at": 32.493
+      },
+      {
+       "name": "s3_case",
+       "phrase": "In the fictional guide case",
+       "at": 17.064
+      },
+      {
+       "name": "s3_dayBefore",
+       "phrase": "The day before the event",
+       "at": 24.778
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c003",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 37.128,
+     "end": 53.335,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "roles": [
+       "o+act"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "x+w+h+fs+o"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "ask": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "upd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "seq"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c003",
+       "phrase": "Confirmation came afterward",
+       "at": 40.557
+      },
+      {
+       "name": "s3_asked",
+       "phrase": "The participant asked the coordinator",
+       "at": 37.128
+      },
+      {
+       "name": "s3_conf",
+       "phrase": "Confirmation came afterward",
+       "at": 40.557
+      },
+      {
+       "name": "s3_changed",
+       "phrase": "The map label was then changed",
+       "at": 47.842
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c004",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 53.335,
+     "end": 69.542,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "ask": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "upd": [
+       "o+act"
+      ],
+      "pF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "poss": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "act": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "pa"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c004",
+       "phrase": "does not measure how many visitors",
+       "at": 65.335
+      },
+      {
+       "name": "s3_stated",
+       "phrase": "The stated reasoning is",
+       "at": 53.335
+      },
+      {
+       "name": "s3_checking",
+       "phrase": "Checking the door-sign name",
+       "at": 57.621
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c005",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 69.542,
+     "end": 83.606,
+     "speaker": "coach",
+     "tokens": {
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pF": [
+       "o+act"
+      ],
+      "pH": [
+       "o+act"
+      ],
+      "poss": [
+       "o+act"
+      ],
+      "act": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c005",
+       "phrase": "knew beforehand",
+       "at": 78.971
+      },
+      {
+       "name": "s3_order",
+       "phrase": "Keep the information in the right order",
+       "at": 69.542
+      },
+      {
+       "name": "s3_after",
+       "phrase": "Knowing the correct door-sign name after asking",
+       "at": 72.542
+      },
+      {
+       "name": "s3_visible",
+       "phrase": "A clear account makes the original uncertainty visible",
+       "at": 79.828
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c006",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 83.606,
+     "end": 97.67,
+     "speaker": "coach",
+     "tokens": {
+      "hA": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c006",
+       "phrase": "what remained unknown",
+       "at": 88.749
+      },
+      {
+       "name": "s3_priv",
+       "phrase": "Privately identify what made checking relevant",
+       "at": 83.606
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.h101",
+     "kind": "hold",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 97.67,
+     "end": 105.67,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.d001",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 105.67,
+     "end": 112.02,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d001",
+       "phrase": "rather than choose one of the names yourself",
+       "at": 108.241
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c007",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 112.02,
+     "end": 126.513,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chNote": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c007",
+       "phrase": "the information available at the time",
+       "at": 115.877
+      },
+      {
+       "name": "s3_compare",
+       "phrase": "Compare three possible replies",
+       "at": 112.02
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c008",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 126.513,
+     "end": 141.863,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "then": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "later": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c008",
+       "phrase": "information available",
+       "at": 133.799
+      },
+      {
+       "name": "s3_check",
+       "phrase": "Check whether each reply explains the choice",
+       "at": 126.513
+      },
+      {
+       "name": "s3_later",
+       "phrase": "A later outcome cannot replace",
+       "at": 131.227
+      }
+     ]
+    },
+    {
+     "id": "L06.I02.watchThink",
+     "kind": "think",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 141.863,
+     "end": 149.863,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o",
+       "kind+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.d301",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "C",
+     "start": 149.863,
+     "end": 161.784,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "then": [
+       "o+act"
+      ],
+      "later": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d301",
+       "phrase": "so I would not choose a name by guessing",
+       "at": 157.577
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.d302",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "C",
+     "start": 161.784,
+     "end": 165.991,
+     "speaker": "maya",
+     "tokens": {
+      "before": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d302",
+       "phrase": "what you changed",
+       "at": 164.355
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.f301",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "C",
+     "start": 165.991,
+     "end": 181.341,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "act": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qWhy": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "lC"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_f301",
+       "phrase": "the information available then",
+       "at": 168.562
+      },
+      {
+       "name": "sC_info",
+       "phrase": "This reply explains the choice",
+       "at": 165.991
+      },
+      {
+       "name": "sC_places",
+       "phrase": "It leaves the confirmation and later observation",
+       "at": 170.277
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c010",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 181.341,
+     "end": 197.977,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "upd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "act": [
+       "o+act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c010",
+       "phrase": "None of that establishes a measured improvement",
+       "at": 193.341
+      },
+      {
+       "name": "s3_shared",
+       "phrase": "The shared facts support",
+       "at": 181.341
+      },
+      {
+       "name": "s3_laterConf",
+       "phrase": "The later confirmation allowed",
+       "at": 190.341
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c011",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 197.977,
+     "end": 213.327,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "upd": [
+       "o+act"
+      ],
+      "sPoss": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sUns": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pFic": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c011",
+       "phrase": "unless the account actually contains that observation",
+       "at": 209.977
+      },
+      {
+       "name": "s3_could",
+       "phrase": "Say could confuse visitors",
+       "at": 202.263
+      },
+      {
+       "name": "s3_were",
+       "phrase": "Do not change it into visitors were confused",
+       "at": 206.548
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c012",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 213.327,
+     "end": 229.106,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "o+act"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "sPoss": [
+       "o+act"
+      ],
+      "sUns": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "pFic": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pOwn": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rem": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c012",
+       "phrase": "what you did not know",
+       "at": 223.184
+      },
+      {
+       "name": "s3_attempt",
+       "phrase": "For a private attempt",
+       "at": 213.327
+      },
+      {
+       "name": "s3_truthful",
+       "phrase": "a truthful choice you remember",
+       "at": 218.47
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c013",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 229.106,
+     "end": 244.456,
+     "speaker": "coach",
+     "tokens": {
+      "before": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "pFic": [
+       "o+act"
+      ],
+      "pOwn": [
+       "o+act"
+      ],
+      "rem": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "notRec": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c013",
+       "phrase": "acknowledge that limit",
+       "at": 233.392
+      },
+      {
+       "name": "s3_cannot",
+       "phrase": "If you cannot remember exactly",
+       "at": 229.106
+      },
+      {
+       "name": "s3_another",
+       "phrase": "You can choose another episode",
+       "at": 237.677
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.h102",
+     "kind": "hold",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 244.456,
+     "end": 252.456,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.c014",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 252.456,
+     "end": 269.092,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "rem": [
+       "o+act"
+      ],
+      "notRec": [
+       "o+act"
+      ],
+      "pNote": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "div",
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c014",
+       "phrase": "something known only later",
+       "at": 261.027
+      },
+      {
+       "name": "s3_formed",
+       "phrase": "If you formed a version",
+       "at": 252.456
+      },
+      {
+       "name": "s3_next",
+       "phrase": "Next, we will describe results",
+       "at": 262.742
+      }
+     ]
+    }
+   ]
+  },
+  "practice:A": {
+   "durationSeconds": 253.722,
+   "steps": [
+    {
+     "id": "L06.S03.c001",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "h0": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "h1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "h2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "s0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "s1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "s2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c001",
+       "phrase": "the choice behind it",
+       "at": 5.571
+      },
+      {
+       "name": "s3_useful",
+       "phrase": "An account of an action becomes more useful",
+       "at": 0
+      },
+      {
+       "name": "s3_knew",
+       "phrase": "Explain what you knew",
+       "at": 7.286
+      },
+      {
+       "name": "s3_without",
+       "phrase": "without turning a decision into proof",
+       "at": 12.429
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c002",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 17.064,
+     "end": 37.128,
+     "speaker": "coach",
+     "tokens": {
+      "h0": [
+       "o+act"
+      ],
+      "h1": [
+       "o+act"
+      ],
+      "h2": [
+       "o+act"
+      ],
+      "s0": [
+       "o+act"
+      ],
+      "s1": [
+       "o+act"
+      ],
+      "s2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "roles": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ask": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c002",
+       "phrase": "did not know whether those names meant the same room",
+       "at": 32.493
+      },
+      {
+       "name": "s3_case",
+       "phrase": "In the fictional guide case",
+       "at": 17.064
+      },
+      {
+       "name": "s3_dayBefore",
+       "phrase": "The day before the event",
+       "at": 24.778
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c003",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 37.128,
+     "end": 53.335,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "roles": [
+       "o+act"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "x+w+h+fs+o"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "ask": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "upd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "seq"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c003",
+       "phrase": "Confirmation came afterward",
+       "at": 40.557
+      },
+      {
+       "name": "s3_asked",
+       "phrase": "The participant asked the coordinator",
+       "at": 37.128
+      },
+      {
+       "name": "s3_conf",
+       "phrase": "Confirmation came afterward",
+       "at": 40.557
+      },
+      {
+       "name": "s3_changed",
+       "phrase": "The map label was then changed",
+       "at": 47.842
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c004",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 53.335,
+     "end": 69.542,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "ask": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "upd": [
+       "o+act"
+      ],
+      "pF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "poss": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "act": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "pa"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c004",
+       "phrase": "does not measure how many visitors",
+       "at": 65.335
+      },
+      {
+       "name": "s3_stated",
+       "phrase": "The stated reasoning is",
+       "at": 53.335
+      },
+      {
+       "name": "s3_checking",
+       "phrase": "Checking the door-sign name",
+       "at": 57.621
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c005",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 69.542,
+     "end": 83.606,
+     "speaker": "coach",
+     "tokens": {
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pF": [
+       "o+act"
+      ],
+      "pH": [
+       "o+act"
+      ],
+      "poss": [
+       "o+act"
+      ],
+      "act": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c005",
+       "phrase": "knew beforehand",
+       "at": 78.971
+      },
+      {
+       "name": "s3_order",
+       "phrase": "Keep the information in the right order",
+       "at": 69.542
+      },
+      {
+       "name": "s3_after",
+       "phrase": "Knowing the correct door-sign name after asking",
+       "at": 72.542
+      },
+      {
+       "name": "s3_visible",
+       "phrase": "A clear account makes the original uncertainty visible",
+       "at": 79.828
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c006",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 83.606,
+     "end": 97.67,
+     "speaker": "coach",
+     "tokens": {
+      "hA": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c006",
+       "phrase": "what remained unknown",
+       "at": 88.749
+      },
+      {
+       "name": "s3_priv",
+       "phrase": "Privately identify what made checking relevant",
+       "at": 83.606
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.h101",
+     "kind": "hold",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 97.67,
+     "end": 105.67,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.d001",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 105.67,
+     "end": 112.02,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d001",
+       "phrase": "rather than choose one of the names yourself",
+       "at": 108.241
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c007",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 112.02,
+     "end": 126.513,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chNote": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c007",
+       "phrase": "the information available at the time",
+       "at": 115.877
+      },
+      {
+       "name": "s3_compare",
+       "phrase": "Compare three possible replies",
+       "at": 112.02
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c008",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 126.513,
+     "end": 141.863,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "then": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "later": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c008",
+       "phrase": "information available",
+       "at": 133.799
+      },
+      {
+       "name": "s3_check",
+       "phrase": "Check whether each reply explains the choice",
+       "at": 126.513
+      },
+      {
+       "name": "s3_later",
+       "phrase": "A later outcome cannot replace",
+       "at": 131.227
+      }
+     ]
+    },
+    {
+     "id": "L06.I02.gate",
+     "kind": "gate",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 141.863,
+     "end": 143.063,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.d101",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "A",
+     "start": 143.063,
+     "end": 146.842,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "then": [
+       "o+act"
+      ],
+      "later": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d101",
+       "phrase": "checking was important",
+       "at": 145.206
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.d102",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "A",
+     "start": 146.842,
+     "end": 151.478,
+     "speaker": "maya",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d102",
+       "phrase": "why did that affect your choice",
+       "at": 148.556
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.f101",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "A",
+     "start": 151.478,
+     "end": 165.971,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qWhy": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "lA"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_f101",
+       "phrase": "leaves its relevance unexplained",
+       "at": 153.621
+      },
+      {
+       "name": "sA_value",
+       "phrase": "This names a value",
+       "at": 151.478
+      },
+      {
+       "name": "sA_next",
+       "phrase": "The useful next detail is the mismatch",
+       "at": 157.478
+      }
+     ]
+    },
+    {
+     "id": "L06.I02.ready",
+     "kind": "ready",
+     "block": "L06.S03.B03",
+     "branch": "A",
+     "start": 165.971,
+     "end": 165.971,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.c010",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 165.971,
+     "end": 182.607,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "upd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c010",
+       "phrase": "None of that establishes a measured improvement",
+       "at": 177.971
+      },
+      {
+       "name": "s3_shared",
+       "phrase": "The shared facts support",
+       "at": 165.971
+      },
+      {
+       "name": "s3_laterConf",
+       "phrase": "The later confirmation allowed",
+       "at": 174.971
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c011",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 182.607,
+     "end": 197.957,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "upd": [
+       "o+act"
+      ],
+      "sPoss": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sUns": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pFic": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c011",
+       "phrase": "unless the account actually contains that observation",
+       "at": 194.607
+      },
+      {
+       "name": "s3_could",
+       "phrase": "Say could confuse visitors",
+       "at": 186.893
+      },
+      {
+       "name": "s3_were",
+       "phrase": "Do not change it into visitors were confused",
+       "at": 191.178
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c012",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 197.957,
+     "end": 213.736,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "o+act"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "sPoss": [
+       "o+act"
+      ],
+      "sUns": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "pFic": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pOwn": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rem": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c012",
+       "phrase": "what you did not know",
+       "at": 207.814
+      },
+      {
+       "name": "s3_attempt",
+       "phrase": "For a private attempt",
+       "at": 197.957
+      },
+      {
+       "name": "s3_truthful",
+       "phrase": "a truthful choice you remember",
+       "at": 203.1
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c013",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 213.736,
+     "end": 229.086,
+     "speaker": "coach",
+     "tokens": {
+      "before": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "pFic": [
+       "o+act"
+      ],
+      "pOwn": [
+       "o+act"
+      ],
+      "rem": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "notRec": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c013",
+       "phrase": "acknowledge that limit",
+       "at": 218.022
+      },
+      {
+       "name": "s3_cannot",
+       "phrase": "If you cannot remember exactly",
+       "at": 213.736
+      },
+      {
+       "name": "s3_another",
+       "phrase": "You can choose another episode",
+       "at": 222.307
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.h102",
+     "kind": "hold",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 229.086,
+     "end": 237.086,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.c014",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 237.086,
+     "end": 253.722,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "rem": [
+       "o+act"
+      ],
+      "notRec": [
+       "o+act"
+      ],
+      "pNote": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "div",
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c014",
+       "phrase": "something known only later",
+       "at": 245.657
+      },
+      {
+       "name": "s3_formed",
+       "phrase": "If you formed a version",
+       "at": 237.086
+      },
+      {
+       "name": "s3_next",
+       "phrase": "Next, we will describe results",
+       "at": 247.372
+      }
+     ]
+    }
+   ]
+  },
+  "practice:B": {
+   "durationSeconds": 262.292,
+   "steps": [
+    {
+     "id": "L06.S03.c001",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "h0": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "h1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "h2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "s0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "s1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "s2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c001",
+       "phrase": "the choice behind it",
+       "at": 5.571
+      },
+      {
+       "name": "s3_useful",
+       "phrase": "An account of an action becomes more useful",
+       "at": 0
+      },
+      {
+       "name": "s3_knew",
+       "phrase": "Explain what you knew",
+       "at": 7.286
+      },
+      {
+       "name": "s3_without",
+       "phrase": "without turning a decision into proof",
+       "at": 12.429
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c002",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 17.064,
+     "end": 37.128,
+     "speaker": "coach",
+     "tokens": {
+      "h0": [
+       "o+act"
+      ],
+      "h1": [
+       "o+act"
+      ],
+      "h2": [
+       "o+act"
+      ],
+      "s0": [
+       "o+act"
+      ],
+      "s1": [
+       "o+act"
+      ],
+      "s2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "roles": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ask": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c002",
+       "phrase": "did not know whether those names meant the same room",
+       "at": 32.493
+      },
+      {
+       "name": "s3_case",
+       "phrase": "In the fictional guide case",
+       "at": 17.064
+      },
+      {
+       "name": "s3_dayBefore",
+       "phrase": "The day before the event",
+       "at": 24.778
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c003",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 37.128,
+     "end": 53.335,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "roles": [
+       "o+act"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "x+w+h+fs+o"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "ask": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "upd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "seq"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c003",
+       "phrase": "Confirmation came afterward",
+       "at": 40.557
+      },
+      {
+       "name": "s3_asked",
+       "phrase": "The participant asked the coordinator",
+       "at": 37.128
+      },
+      {
+       "name": "s3_conf",
+       "phrase": "Confirmation came afterward",
+       "at": 40.557
+      },
+      {
+       "name": "s3_changed",
+       "phrase": "The map label was then changed",
+       "at": 47.842
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c004",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 53.335,
+     "end": 69.542,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "ask": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "upd": [
+       "o+act"
+      ],
+      "pF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "poss": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "act": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "pa"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c004",
+       "phrase": "does not measure how many visitors",
+       "at": 65.335
+      },
+      {
+       "name": "s3_stated",
+       "phrase": "The stated reasoning is",
+       "at": 53.335
+      },
+      {
+       "name": "s3_checking",
+       "phrase": "Checking the door-sign name",
+       "at": 57.621
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c005",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 69.542,
+     "end": 83.606,
+     "speaker": "coach",
+     "tokens": {
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pF": [
+       "o+act"
+      ],
+      "pH": [
+       "o+act"
+      ],
+      "poss": [
+       "o+act"
+      ],
+      "act": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c005",
+       "phrase": "knew beforehand",
+       "at": 78.971
+      },
+      {
+       "name": "s3_order",
+       "phrase": "Keep the information in the right order",
+       "at": 69.542
+      },
+      {
+       "name": "s3_after",
+       "phrase": "Knowing the correct door-sign name after asking",
+       "at": 72.542
+      },
+      {
+       "name": "s3_visible",
+       "phrase": "A clear account makes the original uncertainty visible",
+       "at": 79.828
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c006",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 83.606,
+     "end": 97.67,
+     "speaker": "coach",
+     "tokens": {
+      "hA": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c006",
+       "phrase": "what remained unknown",
+       "at": 88.749
+      },
+      {
+       "name": "s3_priv",
+       "phrase": "Privately identify what made checking relevant",
+       "at": 83.606
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.h101",
+     "kind": "hold",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 97.67,
+     "end": 105.67,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.d001",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 105.67,
+     "end": 112.02,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d001",
+       "phrase": "rather than choose one of the names yourself",
+       "at": 108.241
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c007",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 112.02,
+     "end": 126.513,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chNote": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c007",
+       "phrase": "the information available at the time",
+       "at": 115.877
+      },
+      {
+       "name": "s3_compare",
+       "phrase": "Compare three possible replies",
+       "at": 112.02
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c008",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 126.513,
+     "end": 141.863,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "then": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "later": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c008",
+       "phrase": "information available",
+       "at": 133.799
+      },
+      {
+       "name": "s3_check",
+       "phrase": "Check whether each reply explains the choice",
+       "at": 126.513
+      },
+      {
+       "name": "s3_later",
+       "phrase": "A later outcome cannot replace",
+       "at": 131.227
+      }
+     ]
+    },
+    {
+     "id": "L06.I02.gate",
+     "kind": "gate",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 141.863,
+     "end": 143.063,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.d201",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "B",
+     "start": 143.063,
+     "end": 148.984,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "then": [
+       "o+act"
+      ],
+      "later": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d201",
+       "phrase": "every visitor",
+       "at": 146.492
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.d202",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "B",
+     "start": 148.984,
+     "end": 157.905,
+     "speaker": "maya",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d202",
+       "phrase": "when you decided",
+       "at": 155.413
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.f201",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "B",
+     "start": 157.905,
+     "end": 174.541,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qWhy": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text+hl+kind+tag",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unkW": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_f201",
+       "phrase": "no comparison proves what the change caused",
+       "at": 163.905
+      },
+      {
+       "name": "sB_one",
+       "phrase": "One visitor was later seen using the map",
+       "at": 160.048
+      },
+      {
+       "name": "sB_explain",
+       "phrase": "Explain the uncertainty at the time",
+       "at": 166.905
+      }
+     ]
+    },
+    {
+     "id": "L06.I02.ready",
+     "kind": "ready",
+     "block": "L06.S03.B03",
+     "branch": "B",
+     "start": 174.541,
+     "end": 174.541,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "unkW": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.c010",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 174.541,
+     "end": 191.177,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "upd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "unkW": [
+       "o+act"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c010",
+       "phrase": "None of that establishes a measured improvement",
+       "at": 186.541
+      },
+      {
+       "name": "s3_shared",
+       "phrase": "The shared facts support",
+       "at": 174.541
+      },
+      {
+       "name": "s3_laterConf",
+       "phrase": "The later confirmation allowed",
+       "at": 183.541
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c011",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 191.177,
+     "end": 206.527,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "upd": [
+       "o+act"
+      ],
+      "obs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sPoss": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sUns": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pFic": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c011",
+       "phrase": "unless the account actually contains that observation",
+       "at": 203.177
+      },
+      {
+       "name": "s3_could",
+       "phrase": "Say could confuse visitors",
+       "at": 195.463
+      },
+      {
+       "name": "s3_were",
+       "phrase": "Do not change it into visitors were confused",
+       "at": 199.748
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c012",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 206.527,
+     "end": 222.306,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "o+act"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "sPoss": [
+       "o+act"
+      ],
+      "sUns": [
+       "o+act"
+      ],
+      "pFic": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pOwn": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rem": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c012",
+       "phrase": "what you did not know",
+       "at": 216.384
+      },
+      {
+       "name": "s3_attempt",
+       "phrase": "For a private attempt",
+       "at": 206.527
+      },
+      {
+       "name": "s3_truthful",
+       "phrase": "a truthful choice you remember",
+       "at": 211.67
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c013",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 222.306,
+     "end": 237.656,
+     "speaker": "coach",
+     "tokens": {
+      "before": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "pFic": [
+       "o+act"
+      ],
+      "pOwn": [
+       "o+act"
+      ],
+      "rem": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "notRec": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c013",
+       "phrase": "acknowledge that limit",
+       "at": 226.592
+      },
+      {
+       "name": "s3_cannot",
+       "phrase": "If you cannot remember exactly",
+       "at": 222.306
+      },
+      {
+       "name": "s3_another",
+       "phrase": "You can choose another episode",
+       "at": 230.877
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.h102",
+     "kind": "hold",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 237.656,
+     "end": 245.656,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.c014",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 245.656,
+     "end": 262.292,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "rem": [
+       "o+act"
+      ],
+      "notRec": [
+       "o+act"
+      ],
+      "pNote": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "div",
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c014",
+       "phrase": "something known only later",
+       "at": 254.227
+      },
+      {
+       "name": "s3_formed",
+       "phrase": "If you formed a version",
+       "at": 245.656
+      },
+      {
+       "name": "s3_next",
+       "phrase": "Next, we will describe results",
+       "at": 255.942
+      }
+     ]
+    }
+   ]
+  },
+  "practice:C": {
+   "durationSeconds": 262.292,
+   "steps": [
+    {
+     "id": "L06.S03.c001",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "h0": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "h1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "h2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "s0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "s1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "s2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c001",
+       "phrase": "the choice behind it",
+       "at": 5.571
+      },
+      {
+       "name": "s3_useful",
+       "phrase": "An account of an action becomes more useful",
+       "at": 0
+      },
+      {
+       "name": "s3_knew",
+       "phrase": "Explain what you knew",
+       "at": 7.286
+      },
+      {
+       "name": "s3_without",
+       "phrase": "without turning a decision into proof",
+       "at": 12.429
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c002",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 17.064,
+     "end": 37.128,
+     "speaker": "coach",
+     "tokens": {
+      "h0": [
+       "o+act"
+      ],
+      "h1": [
+       "o+act"
+      ],
+      "h2": [
+       "o+act"
+      ],
+      "s0": [
+       "o+act"
+      ],
+      "s1": [
+       "o+act"
+      ],
+      "s2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "roles": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ask": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c002",
+       "phrase": "did not know whether those names meant the same room",
+       "at": 32.493
+      },
+      {
+       "name": "s3_case",
+       "phrase": "In the fictional guide case",
+       "at": 17.064
+      },
+      {
+       "name": "s3_dayBefore",
+       "phrase": "The day before the event",
+       "at": 24.778
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c003",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 37.128,
+     "end": 53.335,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "roles": [
+       "o+act"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "x+w+h+fs+o"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "ask": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "upd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "seq"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c003",
+       "phrase": "Confirmation came afterward",
+       "at": 40.557
+      },
+      {
+       "name": "s3_asked",
+       "phrase": "The participant asked the coordinator",
+       "at": 37.128
+      },
+      {
+       "name": "s3_conf",
+       "phrase": "Confirmation came afterward",
+       "at": 40.557
+      },
+      {
+       "name": "s3_changed",
+       "phrase": "The map label was then changed",
+       "at": 47.842
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c004",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 53.335,
+     "end": 69.542,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "ask": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "upd": [
+       "o+act"
+      ],
+      "pF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "poss": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "act": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "pa"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c004",
+       "phrase": "does not measure how many visitors",
+       "at": 65.335
+      },
+      {
+       "name": "s3_stated",
+       "phrase": "The stated reasoning is",
+       "at": 53.335
+      },
+      {
+       "name": "s3_checking",
+       "phrase": "Checking the door-sign name",
+       "at": 57.621
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c005",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 69.542,
+     "end": 83.606,
+     "speaker": "coach",
+     "tokens": {
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pF": [
+       "o+act"
+      ],
+      "pH": [
+       "o+act"
+      ],
+      "poss": [
+       "o+act"
+      ],
+      "act": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c005",
+       "phrase": "knew beforehand",
+       "at": 78.971
+      },
+      {
+       "name": "s3_order",
+       "phrase": "Keep the information in the right order",
+       "at": 69.542
+      },
+      {
+       "name": "s3_after",
+       "phrase": "Knowing the correct door-sign name after asking",
+       "at": 72.542
+      },
+      {
+       "name": "s3_visible",
+       "phrase": "A clear account makes the original uncertainty visible",
+       "at": 79.828
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c006",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 83.606,
+     "end": 97.67,
+     "speaker": "coach",
+     "tokens": {
+      "hA": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c006",
+       "phrase": "what remained unknown",
+       "at": 88.749
+      },
+      {
+       "name": "s3_priv",
+       "phrase": "Privately identify what made checking relevant",
+       "at": 83.606
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.h101",
+     "kind": "hold",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 97.67,
+     "end": 105.67,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.d001",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 105.67,
+     "end": 112.02,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d001",
+       "phrase": "rather than choose one of the names yourself",
+       "at": 108.241
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c007",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 112.02,
+     "end": 126.513,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chNote": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c007",
+       "phrase": "the information available at the time",
+       "at": 115.877
+      },
+      {
+       "name": "s3_compare",
+       "phrase": "Compare three possible replies",
+       "at": 112.02
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c008",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 126.513,
+     "end": 141.863,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "then": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "later": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c008",
+       "phrase": "information available",
+       "at": 133.799
+      },
+      {
+       "name": "s3_check",
+       "phrase": "Check whether each reply explains the choice",
+       "at": 126.513
+      },
+      {
+       "name": "s3_later",
+       "phrase": "A later outcome cannot replace",
+       "at": 131.227
+      }
+     ]
+    },
+    {
+     "id": "L06.I02.gate",
+     "kind": "gate",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 141.863,
+     "end": 143.063,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.d301",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "C",
+     "start": 143.063,
+     "end": 154.984,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "then": [
+       "o+act"
+      ],
+      "later": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d301",
+       "phrase": "so I would not choose a name by guessing",
+       "at": 150.777
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.d302",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "C",
+     "start": 154.984,
+     "end": 159.191,
+     "speaker": "maya",
+     "tokens": {
+      "before": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d302",
+       "phrase": "what you changed",
+       "at": 157.555
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.f301",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": "C",
+     "start": 159.191,
+     "end": 174.541,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "act": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qWhy": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "lC"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_f301",
+       "phrase": "the information available then",
+       "at": 161.762
+      },
+      {
+       "name": "sC_info",
+       "phrase": "This reply explains the choice",
+       "at": 159.191
+      },
+      {
+       "name": "sC_places",
+       "phrase": "It leaves the confirmation and later observation",
+       "at": 163.477
+      }
+     ]
+    },
+    {
+     "id": "L06.I02.ready",
+     "kind": "ready",
+     "block": "L06.S03.B03",
+     "branch": "C",
+     "start": 174.541,
+     "end": 174.541,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "act": [
+       "o+act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.c010",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 174.541,
+     "end": 191.177,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "upd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "act": [
+       "o+act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c010",
+       "phrase": "None of that establishes a measured improvement",
+       "at": 186.541
+      },
+      {
+       "name": "s3_shared",
+       "phrase": "The shared facts support",
+       "at": 174.541
+      },
+      {
+       "name": "s3_laterConf",
+       "phrase": "The later confirmation allowed",
+       "at": 183.541
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c011",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 191.177,
+     "end": 206.527,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "upd": [
+       "o+act"
+      ],
+      "sPoss": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sUns": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pFic": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c011",
+       "phrase": "unless the account actually contains that observation",
+       "at": 203.177
+      },
+      {
+       "name": "s3_could",
+       "phrase": "Say could confuse visitors",
+       "at": 195.463
+      },
+      {
+       "name": "s3_were",
+       "phrase": "Do not change it into visitors were confused",
+       "at": 199.748
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c012",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 206.527,
+     "end": 222.306,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "o+act"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "sPoss": [
+       "o+act"
+      ],
+      "sUns": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "pFic": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pOwn": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rem": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c012",
+       "phrase": "what you did not know",
+       "at": 216.384
+      },
+      {
+       "name": "s3_attempt",
+       "phrase": "For a private attempt",
+       "at": 206.527
+      },
+      {
+       "name": "s3_truthful",
+       "phrase": "a truthful choice you remember",
+       "at": 211.67
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c013",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 222.306,
+     "end": 237.656,
+     "speaker": "coach",
+     "tokens": {
+      "before": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "pFic": [
+       "o+act"
+      ],
+      "pOwn": [
+       "o+act"
+      ],
+      "rem": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "notRec": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c013",
+       "phrase": "acknowledge that limit",
+       "at": 226.592
+      },
+      {
+       "name": "s3_cannot",
+       "phrase": "If you cannot remember exactly",
+       "at": 222.306
+      },
+      {
+       "name": "s3_another",
+       "phrase": "You can choose another episode",
+       "at": 230.877
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.h102",
+     "kind": "hold",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 237.656,
+     "end": 245.656,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.c014",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 245.656,
+     "end": 262.292,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "rem": [
+       "o+act"
+      ],
+      "notRec": [
+       "o+act"
+      ],
+      "pNote": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "div",
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c014",
+       "phrase": "something known only later",
+       "at": 254.227
+      },
+      {
+       "name": "s3_formed",
+       "phrase": "If you formed a version",
+       "at": 245.656
+      },
+      {
+       "name": "s3_next",
+       "phrase": "Next, we will describe results",
+       "at": 255.942
+      }
+     ]
+    }
+   ]
+  },
+  "practice:skip": {
+   "durationSeconds": 230.814,
+   "steps": [
+    {
+     "id": "L06.S03.c001",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "h0": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "h1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "h2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "s0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "s1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "s2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c001",
+       "phrase": "the choice behind it",
+       "at": 5.571
+      },
+      {
+       "name": "s3_useful",
+       "phrase": "An account of an action becomes more useful",
+       "at": 0
+      },
+      {
+       "name": "s3_knew",
+       "phrase": "Explain what you knew",
+       "at": 7.286
+      },
+      {
+       "name": "s3_without",
+       "phrase": "without turning a decision into proof",
+       "at": 12.429
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c002",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 17.064,
+     "end": 37.128,
+     "speaker": "coach",
+     "tokens": {
+      "h0": [
+       "o+act"
+      ],
+      "h1": [
+       "o+act"
+      ],
+      "h2": [
+       "o+act"
+      ],
+      "s0": [
+       "o+act"
+      ],
+      "s1": [
+       "o+act"
+      ],
+      "s2": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "roles": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ask": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c002",
+       "phrase": "did not know whether those names meant the same room",
+       "at": 32.493
+      },
+      {
+       "name": "s3_case",
+       "phrase": "In the fictional guide case",
+       "at": 17.064
+      },
+      {
+       "name": "s3_dayBefore",
+       "phrase": "The day before the event",
+       "at": 24.778
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c003",
+     "kind": "line",
+     "block": "L06.S03.B01",
+     "branch": null,
+     "start": 37.128,
+     "end": 53.335,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "roles": [
+       "o+act"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "x+w+h+fs+o"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "ask": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "upd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "seq"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c003",
+       "phrase": "Confirmation came afterward",
+       "at": 40.557
+      },
+      {
+       "name": "s3_asked",
+       "phrase": "The participant asked the coordinator",
+       "at": 37.128
+      },
+      {
+       "name": "s3_conf",
+       "phrase": "Confirmation came afterward",
+       "at": 40.557
+      },
+      {
+       "name": "s3_changed",
+       "phrase": "The map label was then changed",
+       "at": 47.842
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c004",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 53.335,
+     "end": 69.542,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "ask": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "upd": [
+       "o+act"
+      ],
+      "pF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "poss": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "act": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "pa"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c004",
+       "phrase": "does not measure how many visitors",
+       "at": 65.335
+      },
+      {
+       "name": "s3_stated",
+       "phrase": "The stated reasoning is",
+       "at": 53.335
+      },
+      {
+       "name": "s3_checking",
+       "phrase": "Checking the door-sign name",
+       "at": 57.621
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c005",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 69.542,
+     "end": 83.606,
+     "speaker": "coach",
+     "tokens": {
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pF": [
+       "o+act"
+      ],
+      "pH": [
+       "o+act"
+      ],
+      "poss": [
+       "o+act"
+      ],
+      "act": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c005",
+       "phrase": "knew beforehand",
+       "at": 78.971
+      },
+      {
+       "name": "s3_order",
+       "phrase": "Keep the information in the right order",
+       "at": 69.542
+      },
+      {
+       "name": "s3_after",
+       "phrase": "Knowing the correct door-sign name after asking",
+       "at": 72.542
+      },
+      {
+       "name": "s3_visible",
+       "phrase": "A clear account makes the original uncertainty visible",
+       "at": 79.828
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c006",
+     "kind": "line",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 83.606,
+     "end": 97.67,
+     "speaker": "coach",
+     "tokens": {
+      "hA": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c006",
+       "phrase": "what remained unknown",
+       "at": 88.749
+      },
+      {
+       "name": "s3_priv",
+       "phrase": "Privately identify what made checking relevant",
+       "at": 83.606
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.h101",
+     "kind": "hold",
+     "block": "L06.S03.B02",
+     "branch": null,
+     "start": 97.67,
+     "end": 105.67,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.d001",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 105.67,
+     "end": 112.02,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S03_d001",
+       "phrase": "rather than choose one of the names yourself",
+       "at": 108.241
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c007",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 112.02,
+     "end": 126.513,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "reh": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "qWhy": [
+       "x+w+h+fs+o"
+      ],
+      "rFrame": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chNote": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c007",
+       "phrase": "the information available at the time",
+       "at": 115.877
+      },
+      {
+       "name": "s3_compare",
+       "phrase": "Compare three possible replies",
+       "at": 112.02
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c008",
+     "kind": "line",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 126.513,
+     "end": 141.863,
+     "speaker": "coach",
+     "tokens": {
+      "chNote": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "then": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "later": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c008",
+       "phrase": "information available",
+       "at": 133.799
+      },
+      {
+       "name": "s3_check",
+       "phrase": "Check whether each reply explains the choice",
+       "at": 126.513
+      },
+      {
+       "name": "s3_later",
+       "phrase": "A later outcome cannot replace",
+       "at": 131.227
+      }
+     ]
+    },
+    {
+     "id": "L06.I02.gate",
+     "kind": "gate",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 141.863,
+     "end": 143.063,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.I02.skip",
+     "kind": "skip",
+     "block": "L06.S03.B03",
+     "branch": null,
+     "start": 143.063,
+     "end": 143.063,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "qWhy": [
+       "o+act"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "then": [
+       "o+act"
+      ],
+      "later": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.c010",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 143.063,
+     "end": 159.699,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "conf": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "upd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "reh": [
+       "o+act"
+      ],
+      "qWhy": [
+       "o+act"
+      ],
+      "rFrame": [
+       "o+act"
+      ],
+      "chNote": [
+       "o+act"
+      ],
+      "then": [
+       "o+act"
+      ],
+      "later": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c010",
+       "phrase": "None of that establishes a measured improvement",
+       "at": 155.063
+      },
+      {
+       "name": "s3_shared",
+       "phrase": "The shared facts support",
+       "at": 143.063
+      },
+      {
+       "name": "s3_laterConf",
+       "phrase": "The later confirmation allowed",
+       "at": 152.063
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c011",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 159.699,
+     "end": 175.049,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "hB": [
+       "o+act"
+      ],
+      "before": [
+       "o+act"
+      ],
+      "unk": [
+       "o+act"
+      ],
+      "hA": [
+       "o+act"
+      ],
+      "conf": [
+       "o+act"
+      ],
+      "upd": [
+       "o+act"
+      ],
+      "sPoss": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sUns": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pFic": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c011",
+       "phrase": "unless the account actually contains that observation",
+       "at": 171.699
+      },
+      {
+       "name": "s3_could",
+       "phrase": "Say could confuse visitors",
+       "at": 163.985
+      },
+      {
+       "name": "s3_were",
+       "phrase": "Do not change it into visitors were confused",
+       "at": 168.27
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c012",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 175.049,
+     "end": 190.828,
+     "speaker": "coach",
+     "tokens": {
+      "caseL": [
+       "o+act"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "sPoss": [
+       "o+act"
+      ],
+      "sUns": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "pFic": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pOwn": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rem": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c012",
+       "phrase": "what you did not know",
+       "at": 184.906
+      },
+      {
+       "name": "s3_attempt",
+       "phrase": "For a private attempt",
+       "at": 175.049
+      },
+      {
+       "name": "s3_truthful",
+       "phrase": "a truthful choice you remember",
+       "at": 180.192
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.c013",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 190.828,
+     "end": 206.178,
+     "speaker": "coach",
+     "tokens": {
+      "before": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "pFic": [
+       "o+act"
+      ],
+      "pOwn": [
+       "o+act"
+      ],
+      "rem": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "notRec": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pNote": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c013",
+       "phrase": "acknowledge that limit",
+       "at": 195.114
+      },
+      {
+       "name": "s3_cannot",
+       "phrase": "If you cannot remember exactly",
+       "at": 190.828
+      },
+      {
+       "name": "s3_another",
+       "phrase": "You can choose another episode",
+       "at": 199.399
+      }
+     ]
+    },
+    {
+     "id": "L06.S03.h102",
+     "kind": "hold",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 206.178,
+     "end": 214.178,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S03.c014",
+     "kind": "line",
+     "block": "L06.S03.B04",
+     "branch": null,
+     "start": 214.178,
+     "end": 230.814,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "before": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unk": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "rem": [
+       "o+act"
+      ],
+      "notRec": [
+       "o+act"
+      ],
+      "pNote": [
+       "o+act"
+      ],
+      "next": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "div",
+      "nx"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S03_c014",
+       "phrase": "something known only later",
+       "at": 222.749
+      },
+      {
+       "name": "s3_formed",
+       "phrase": "If you formed a version",
+       "at": 214.178
+      },
+      {
+       "name": "s3_next",
+       "phrase": "Next, we will describe results",
+       "at": 224.464
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "pF",
+  "rFrame",
+  "h0",
+  "h1",
+  "h2",
+  "s0",
+  "s1",
+  "s2",
+  "caseL",
+  "roles",
+  "hB",
+  "hA",
+  "before",
+  "unk",
+  "ask",
+  "conf",
+  "upd",
+  "pH",
+  "poss",
+  "act",
+  "blank",
+  "reh",
+  "qWhy",
+  "chNote",
+  "then",
+  "later",
+  "sHead",
+  "resp",
+  "obs",
+  "unkW",
+  "sPoss",
+  "sUns",
+  "pFic",
+  "pOwn",
+  "rem",
+  "notRec",
+  "pNote",
+  "next",
+  "opt.A",
+  "opt.B",
+  "opt.C",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

@@ -1,0 +1,1691 @@
+{
+ "sectionId": "L06.S07",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 172.15,
+   "steps": [
+    {
+     "id": "L06.S07.c001",
+     "kind": "line",
+     "block": "L06.S07.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.921,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f02m": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f02n": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f04": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f06": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f07": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f08": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f09": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c001",
+       "phrase": "the same facts",
+       "at": 6
+      },
+      {
+       "name": "s7_select",
+       "phrase": "select the part that answers this question",
+       "at": 7.714
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.c002",
+     "kind": "line",
+     "block": "L06.S07.B01",
+     "branch": null,
+     "start": 17.921,
+     "end": 35.414,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "q1": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "q2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "q3": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "lA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lI": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c002",
+       "phrase": "different requests",
+       "at": 34.207
+      },
+      {
+       "name": "s7_q1",
+       "phrase": "What did you contribute?",
+       "at": 21.35
+      },
+      {
+       "name": "s7_q2",
+       "phrase": "What would you change next time?",
+       "at": 23.064
+      },
+      {
+       "name": "s7_q3",
+       "phrase": "How much did the guide help?",
+       "at": 25.635
+      },
+      {
+       "name": "s7_action",
+       "phrase": "an action",
+       "at": 29.492
+      },
+      {
+       "name": "s7_prop",
+       "phrase": "a proposed improvement",
+       "at": 30.35
+      },
+      {
+       "name": "s7_impact",
+       "phrase": "evidence of impact",
+       "at": 32.064
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.h101",
+     "kind": "hold",
+     "block": "L06.S07.B01",
+     "branch": null,
+     "start": 35.414,
+     "end": 43.414,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S07.c003",
+     "kind": "line",
+     "block": "L06.S07.B02",
+     "branch": null,
+     "start": 43.414,
+     "end": 60.907,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "f02p": [
+       "x+w+h+fs+o"
+      ],
+      "f02m": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "f02n": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "f04": [
+       "x+w+h+fs+o"
+      ],
+      "f06": [
+       "x+w+h+fs+o"
+      ],
+      "f07": [
+       "o+act"
+      ],
+      "f08": [
+       "o+act"
+      ],
+      "f09": [
+       "o+act"
+      ],
+      "q1": [
+       "x+w+h+fs+o"
+      ],
+      "q2": [
+       "o+act"
+      ],
+      "q3": [
+       "o+act"
+      ],
+      "lA": [
+       "o+act"
+      ],
+      "lF": [
+       "o+act"
+      ],
+      "lI": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "hTeam": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hOwn": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c003",
+       "phrase": "their own work",
+       "at": 51.985
+      },
+      {
+       "name": "s7_bring",
+       "phrase": "bring forward drawing the map",
+       "at": 44.271
+      },
+      {
+       "name": "s7_check",
+       "phrase": "checking the conflicting names",
+       "at": 46.414
+      },
+      {
+       "name": "s7_label",
+       "phrase": "changing its label",
+       "at": 48.557
+      },
+      {
+       "name": "s7_keepMN",
+       "phrase": "Keep Maya and Noah",
+       "at": 49.843
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.d001",
+     "kind": "line",
+     "block": "L06.S07.B02",
+     "branch": null,
+     "start": 60.907,
+     "end": 75.4,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "o+act"
+      ],
+      "f02m": [
+       "o+act"
+      ],
+      "f02n": [
+       "o+act"
+      ],
+      "f04": [
+       "o+act"
+      ],
+      "f06": [
+       "o+act"
+      ],
+      "q1": [
+       "o+act"
+      ],
+      "q2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hTeam": [
+       "o+act"
+      ],
+      "hOwn": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "mFut": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S07_d001",
+       "phrase": "could help",
+       "at": 66.478
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.c004",
+     "kind": "line",
+     "block": "L06.S07.B02",
+     "branch": null,
+     "start": 75.4,
+     "end": 92.464,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f04": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f06": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f09": [
+       "x+w+h+fs+o+tag",
+       "o",
+       "act"
+      ],
+      "q2": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "mFut": [
+       "o+act"
+      ],
+      "hPast": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hNext": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "bnd",
+      "ghost"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c004",
+       "phrase": "stays in the future",
+       "at": 76.257
+      },
+      {
+       "name": "s7_connects",
+       "phrase": "It connects the proposed change",
+       "at": 77.971
+      },
+      {
+       "name": "s7_quietly",
+       "phrase": "Do not quietly move",
+       "at": 84.829
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.d002",
+     "kind": "line",
+     "block": "L06.S07.B03",
+     "branch": null,
+     "start": 92.464,
+     "end": 105.671,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "o+act"
+      ],
+      "f04": [
+       "o+act"
+      ],
+      "f06": [
+       "o+act"
+      ],
+      "f09": [
+       "o+act"
+      ],
+      "q3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "hPast": [
+       "o+act"
+      ],
+      "hNext": [
+       "o+act"
+      ],
+      "obs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S07_d002",
+       "phrase": "cannot say",
+       "at": 101.893
+      },
+      {
+       "name": "s7_saw",
+       "phrase": "I saw one visitor",
+       "at": 92.464
+      },
+      {
+       "name": "s7_noTotal",
+       "phrase": "We did not collect a total",
+       "at": 97.178
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.c005",
+     "kind": "line",
+     "block": "L06.S07.B03",
+     "branch": null,
+     "start": 105.671,
+     "end": 123.164,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "q3": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lim": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cause": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c005",
+       "phrase": "does not prove",
+       "at": 109.957
+      },
+      {
+       "name": "s7_answers",
+       "phrase": "This answers the impact question",
+       "at": 105.671
+      },
+      {
+       "name": "s7_precise",
+       "phrase": "A precise limit",
+       "at": 115.957
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.h102",
+     "kind": "hold",
+     "block": "L06.S07.B03",
+     "branch": null,
+     "start": 123.164,
+     "end": 131.164,
+     "speaker": null,
+     "tokens": {
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f04": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f06": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f07": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f09": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "lA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lI": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "lim": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cause": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S07.c006",
+     "kind": "line",
+     "block": "L06.S07.B04",
+     "branch": null,
+     "start": 131.164,
+     "end": 152.943,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "o+act"
+      ],
+      "f04": [
+       "o+act"
+      ],
+      "f06": [
+       "o+act"
+      ],
+      "f07": [
+       "o+act"
+      ],
+      "f09": [
+       "o+act"
+      ],
+      "lA": [
+       "o+act"
+      ],
+      "lF": [
+       "o+act"
+      ],
+      "lI": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "lim": [
+       "o+act"
+      ],
+      "pHead": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pBoard": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cQ": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c006",
+       "phrase": "not a personal history",
+       "at": 150.878
+      },
+      {
+       "name": "s7_try",
+       "phrase": "try one different follow-up",
+       "at": 133.735
+      },
+      {
+       "name": "s7_fiction",
+       "phrase": "If you are using the fictional case",
+       "at": 141.878
+      },
+      {
+       "name": "s7_model",
+       "phrase": "A model gives you a way to practise",
+       "at": 147.45
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.c007",
+     "kind": "line",
+     "block": "L06.S07.B04",
+     "branch": null,
+     "start": 152.943,
+     "end": 172.15,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "pHead": [
+       "o+act"
+      ],
+      "pBoard": [
+       "o+act"
+      ],
+      "pBlank": [
+       "o+act"
+      ],
+      "cQ": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "endLim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c007",
+       "phrase": "what is being asked",
+       "at": 154.229
+      },
+      {
+       "name": "s7_notice",
+       "phrase": "Before answering, notice",
+       "at": 152.943
+      },
+      {
+       "name": "s7_make",
+       "phrase": "make your contribution",
+       "at": 156.372
+      },
+      {
+       "name": "s7_pause",
+       "phrase": "You can pause",
+       "at": 161.086
+      },
+      {
+       "name": "s7_aim",
+       "phrase": "The aim is",
+       "at": 167.514
+      }
+     ]
+    }
+   ]
+  },
+  "practice:main": {
+   "durationSeconds": 172.15,
+   "steps": [
+    {
+     "id": "L06.S07.c001",
+     "kind": "line",
+     "block": "L06.S07.B01",
+     "branch": null,
+     "start": 0,
+     "end": 17.921,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f02m": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f02n": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f04": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f06": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f07": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f08": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "f09": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c001",
+       "phrase": "the same facts",
+       "at": 6
+      },
+      {
+       "name": "s7_select",
+       "phrase": "select the part that answers this question",
+       "at": 7.714
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.c002",
+     "kind": "line",
+     "block": "L06.S07.B01",
+     "branch": null,
+     "start": 17.921,
+     "end": 35.414,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "q1": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "q2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "q3": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "lA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lI": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c002",
+       "phrase": "different requests",
+       "at": 34.207
+      },
+      {
+       "name": "s7_q1",
+       "phrase": "What did you contribute?",
+       "at": 21.35
+      },
+      {
+       "name": "s7_q2",
+       "phrase": "What would you change next time?",
+       "at": 23.064
+      },
+      {
+       "name": "s7_q3",
+       "phrase": "How much did the guide help?",
+       "at": 25.635
+      },
+      {
+       "name": "s7_action",
+       "phrase": "an action",
+       "at": 29.492
+      },
+      {
+       "name": "s7_prop",
+       "phrase": "a proposed improvement",
+       "at": 30.35
+      },
+      {
+       "name": "s7_impact",
+       "phrase": "evidence of impact",
+       "at": 32.064
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.h101",
+     "kind": "hold",
+     "block": "L06.S07.B01",
+     "branch": null,
+     "start": 35.414,
+     "end": 43.414,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S07.c003",
+     "kind": "line",
+     "block": "L06.S07.B02",
+     "branch": null,
+     "start": 43.414,
+     "end": 60.907,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "f02p": [
+       "x+w+h+fs+o"
+      ],
+      "f02m": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "f02n": [
+       "x+w+h+fs+o",
+       "act"
+      ],
+      "f04": [
+       "x+w+h+fs+o"
+      ],
+      "f06": [
+       "x+w+h+fs+o"
+      ],
+      "f07": [
+       "o+act"
+      ],
+      "f08": [
+       "o+act"
+      ],
+      "f09": [
+       "o+act"
+      ],
+      "q1": [
+       "x+w+h+fs+o"
+      ],
+      "q2": [
+       "o+act"
+      ],
+      "q3": [
+       "o+act"
+      ],
+      "lA": [
+       "o+act"
+      ],
+      "lF": [
+       "o+act"
+      ],
+      "lI": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "hTeam": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hOwn": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c003",
+       "phrase": "their own work",
+       "at": 51.985
+      },
+      {
+       "name": "s7_bring",
+       "phrase": "bring forward drawing the map",
+       "at": 44.271
+      },
+      {
+       "name": "s7_check",
+       "phrase": "checking the conflicting names",
+       "at": 46.414
+      },
+      {
+       "name": "s7_label",
+       "phrase": "changing its label",
+       "at": 48.557
+      },
+      {
+       "name": "s7_keepMN",
+       "phrase": "Keep Maya and Noah",
+       "at": 49.843
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.d001",
+     "kind": "line",
+     "block": "L06.S07.B02",
+     "branch": null,
+     "start": 60.907,
+     "end": 75.4,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "o+act"
+      ],
+      "f02m": [
+       "o+act"
+      ],
+      "f02n": [
+       "o+act"
+      ],
+      "f04": [
+       "o+act"
+      ],
+      "f06": [
+       "o+act"
+      ],
+      "q1": [
+       "o+act"
+      ],
+      "q2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hTeam": [
+       "o+act"
+      ],
+      "hOwn": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "mFut": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S07_d001",
+       "phrase": "could help",
+       "at": 66.478
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.c004",
+     "kind": "line",
+     "block": "L06.S07.B02",
+     "branch": null,
+     "start": 75.4,
+     "end": 92.464,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f04": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f06": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f09": [
+       "x+w+h+fs+o+tag",
+       "o",
+       "act"
+      ],
+      "q2": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "mFut": [
+       "o+act"
+      ],
+      "hPast": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hNext": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "bnd",
+      "ghost"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c004",
+       "phrase": "stays in the future",
+       "at": 76.257
+      },
+      {
+       "name": "s7_connects",
+       "phrase": "It connects the proposed change",
+       "at": 77.971
+      },
+      {
+       "name": "s7_quietly",
+       "phrase": "Do not quietly move",
+       "at": 84.829
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.d002",
+     "kind": "line",
+     "block": "L06.S07.B03",
+     "branch": null,
+     "start": 92.464,
+     "end": 105.671,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "o+act"
+      ],
+      "f04": [
+       "o+act"
+      ],
+      "f06": [
+       "o+act"
+      ],
+      "f09": [
+       "o+act"
+      ],
+      "q3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "hPast": [
+       "o+act"
+      ],
+      "hNext": [
+       "o+act"
+      ],
+      "obs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S07_d002",
+       "phrase": "cannot say",
+       "at": 101.893
+      },
+      {
+       "name": "s7_saw",
+       "phrase": "I saw one visitor",
+       "at": 92.464
+      },
+      {
+       "name": "s7_noTotal",
+       "phrase": "We did not collect a total",
+       "at": 97.178
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.c005",
+     "kind": "line",
+     "block": "L06.S07.B03",
+     "branch": null,
+     "start": 105.671,
+     "end": 123.164,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "q3": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lim": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cause": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c005",
+       "phrase": "does not prove",
+       "at": 109.957
+      },
+      {
+       "name": "s7_answers",
+       "phrase": "This answers the impact question",
+       "at": 105.671
+      },
+      {
+       "name": "s7_precise",
+       "phrase": "A precise limit",
+       "at": 115.957
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.h102",
+     "kind": "hold",
+     "block": "L06.S07.B03",
+     "branch": null,
+     "start": 123.164,
+     "end": 131.164,
+     "speaker": null,
+     "tokens": {
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f04": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f06": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f07": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f09": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "lA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lI": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "lim": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cause": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S07.c006",
+     "kind": "line",
+     "block": "L06.S07.B04",
+     "branch": null,
+     "start": 131.164,
+     "end": 152.943,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "caseL": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "f02p": [
+       "o+act"
+      ],
+      "f04": [
+       "o+act"
+      ],
+      "f06": [
+       "o+act"
+      ],
+      "f07": [
+       "o+act"
+      ],
+      "f09": [
+       "o+act"
+      ],
+      "lA": [
+       "o+act"
+      ],
+      "lF": [
+       "o+act"
+      ],
+      "lI": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "lim": [
+       "o+act"
+      ],
+      "pHead": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pBoard": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pBlank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cQ": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c006",
+       "phrase": "not a personal history",
+       "at": 150.878
+      },
+      {
+       "name": "s7_try",
+       "phrase": "try one different follow-up",
+       "at": 133.735
+      },
+      {
+       "name": "s7_fiction",
+       "phrase": "If you are using the fictional case",
+       "at": 141.878
+      },
+      {
+       "name": "s7_model",
+       "phrase": "A model gives you a way to practise",
+       "at": 147.45
+      }
+     ]
+    },
+    {
+     "id": "L06.S07.c007",
+     "kind": "line",
+     "block": "L06.S07.B04",
+     "branch": null,
+     "start": 152.943,
+     "end": 172.15,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "pHead": [
+       "o+act"
+      ],
+      "pBoard": [
+       "o+act"
+      ],
+      "pBlank": [
+       "o+act"
+      ],
+      "cQ": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "endLim": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S07_c007",
+       "phrase": "what is being asked",
+       "at": 154.229
+      },
+      {
+       "name": "s7_notice",
+       "phrase": "Before answering, notice",
+       "at": 152.943
+      },
+      {
+       "name": "s7_make",
+       "phrase": "make your contribution",
+       "at": 156.372
+      },
+      {
+       "name": "s7_pause",
+       "phrase": "You can pause",
+       "at": 161.086
+      },
+      {
+       "name": "s7_aim",
+       "phrase": "The aim is",
+       "at": 167.514
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "pBoard",
+  "e0",
+  "e1",
+  "e2",
+  "caseL",
+  "q1",
+  "q2",
+  "q3",
+  "lA",
+  "lF",
+  "lI",
+  "f02p",
+  "f02m",
+  "f02n",
+  "f04",
+  "f06",
+  "f07",
+  "f08",
+  "f09",
+  "hOwn",
+  "hTeam",
+  "mFut",
+  "hPast",
+  "hNext",
+  "obs",
+  "lim",
+  "cause",
+  "pHead",
+  "pBlank",
+  "cQ",
+  "cF",
+  "cL",
+  "endLim",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

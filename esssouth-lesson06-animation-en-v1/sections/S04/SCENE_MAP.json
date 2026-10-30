@@ -1,0 +1,1840 @@
+{
+ "sectionId": "L06.S04",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 237.629,
+   "steps": [
+    {
+     "id": "L06.S04.c001",
+     "kind": "line",
+     "block": "L06.S04.B01",
+     "branch": null,
+     "start": 0,
+     "end": 18.779,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "e0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "es0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "es1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "es2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c001",
+       "phrase": "what you actually know",
+       "at": 10.286
+      },
+      {
+       "name": "s4_change",
+       "phrase": "Separate the change you made",
+       "at": 12
+      },
+      {
+       "name": "s4_observed",
+       "phrase": "what you observed",
+       "at": 14.143
+      },
+      {
+       "name": "s4_concl",
+       "phrase": "conclusions that would need more evidence",
+       "at": 15.857
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c002",
+     "kind": "line",
+     "block": "L06.S04.B01",
+     "branch": null,
+     "start": 18.779,
+     "end": 38.415,
+     "speaker": "coach",
+     "tokens": {
+      "e0": [
+       "o+act"
+      ],
+      "es0": [
+       "o+act"
+      ],
+      "e1": [
+       "o+act"
+      ],
+      "es1": [
+       "o+act"
+      ],
+      "e2": [
+       "o+act"
+      ],
+      "es2": [
+       "o+act"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c002",
+       "phrase": "different people responsible",
+       "at": 35.493
+      },
+      {
+       "name": "s4_return",
+       "phrase": "Return to our fictional visitor-guide example",
+       "at": 18.779
+      },
+      {
+       "name": "s4_changed",
+       "phrase": "The participant changed the map label",
+       "at": 21.779
+      },
+      {
+       "name": "s4_maya",
+       "phrase": "Maya checked the schedule",
+       "at": 27.779
+      },
+      {
+       "name": "s4_noah",
+       "phrase": "Noah assembled the updated guide",
+       "at": 29.922
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c003",
+     "kind": "line",
+     "block": "L06.S04.B01",
+     "branch": null,
+     "start": 38.415,
+     "end": 58.479,
+     "speaker": "coach",
+     "tokens": {
+      "obs": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "one"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c003",
+       "phrase": "this particular use of the map",
+       "at": 48.272
+      },
+      {
+       "name": "s4_one",
+       "phrase": "We also know one observation",
+       "at": 38.415
+      },
+      {
+       "name": "s4_notTotal",
+       "phrase": "It is not a total count",
+       "at": 50.844
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.h101",
+     "kind": "hold",
+     "block": "L06.S04.B01",
+     "branch": null,
+     "start": 58.479,
+     "end": 66.479,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S04.d001",
+     "kind": "line",
+     "block": "L06.S04.B02",
+     "branch": null,
+     "start": 66.479,
+     "end": 81.4,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "sModel": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "mRes": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cObs": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S04_d001",
+       "phrase": "I saw one visitor",
+       "at": 76.336
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c004",
+     "kind": "line",
+     "block": "L06.S04.B02",
+     "branch": null,
+     "start": 81.4,
+     "end": 99.75,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "sModel": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "mRes": [
+       "o+act"
+      ],
+      "cObs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "uF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "uH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "uns": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "miss": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c004",
+       "phrase": "this case cannot support",
+       "at": 91.257
+      },
+      {
+       "name": "s4_saw",
+       "phrase": "Notice the difference between I saw",
+       "at": 81.4
+      },
+      {
+       "name": "s4_everyone",
+       "phrase": "and everyone could",
+       "at": 83.971
+      },
+      {
+       "name": "s4_limits",
+       "phrase": "Specific limits do not erase a contribution",
+       "at": 92.971
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c005",
+     "kind": "line",
+     "block": "L06.S04.B02",
+     "branch": null,
+     "start": 99.75,
+     "end": 117.243,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "miss": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "lim": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "nUpd": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c005",
+       "phrase": "None of those details is available",
+       "at": 113.036
+      },
+      {
+       "name": "s4_survey",
+       "phrase": "There was no visitor survey",
+       "at": 99.75
+      },
+      {
+       "name": "s4_avoid",
+       "phrase": "Avoid turning the single observation",
+       "at": 104.464
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c006",
+     "kind": "line",
+     "block": "L06.S04.B03",
+     "branch": null,
+     "start": 117.243,
+     "end": 136.022,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "cObs": [
+       "o+act"
+      ],
+      "uF": [
+       "o+act"
+      ],
+      "uH": [
+       "o+act"
+      ],
+      "uns": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "miss": [
+       "o+act"
+      ],
+      "lim": [
+       "o+act"
+      ],
+      "nUpd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nUse": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cf": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "seq"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c006",
+       "phrase": "without the change",
+       "at": 125.814
+      },
+      {
+       "name": "s4_before",
+       "phrase": "The label was changed before",
+       "at": 117.243
+      },
+      {
+       "name": "s4_without",
+       "phrase": "we do not know what would have happened",
+       "at": 122.386
+      },
+      {
+       "name": "s4_anyway",
+       "phrase": "That visitor might have found the room anyway",
+       "at": 127.1
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c007",
+     "kind": "line",
+     "block": "L06.S04.B03",
+     "branch": null,
+     "start": 136.022,
+     "end": 155.229,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "nUpd": [
+       "o+act"
+      ],
+      "nUse": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cf": [
+       "o+act"
+      ],
+      "rAllow": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rAct": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "ra",
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c007",
+       "phrase": "the reasoning behind the action",
+       "at": 145.879
+      },
+      {
+       "name": "s4_still",
+       "phrase": "You can still explain the decision",
+       "at": 136.022
+      },
+      {
+       "name": "s4_conflict",
+       "phrase": "Conflicting labels could confuse visitors",
+       "at": 138.593
+      },
+      {
+       "name": "s4_checked",
+       "phrase": "so the participant checked",
+       "at": 140.736
+      },
+      {
+       "name": "s4_notEst",
+       "phrase": "It does not establish",
+       "at": 148.022
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.d002",
+     "kind": "line",
+     "block": "L06.S04.B03",
+     "branch": null,
+     "start": 155.229,
+     "end": 169.293,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "sModel": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "nUse": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rAllow": [
+       "o+act"
+      ],
+      "rAct": [
+       "o+act"
+      ],
+      "mInt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "mUnc": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S04_d002",
+       "phrase": "cannot say what would have happened",
+       "at": 165.086
+      },
+      {
+       "name": "s4_wanted",
+       "phrase": "I wanted the map label to match",
+       "at": 155.229
+      },
+      {
+       "name": "s4_saw2",
+       "phrase": "I saw one visitor",
+       "at": 159.515
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c008",
+     "kind": "line",
+     "block": "L06.S04.B03",
+     "branch": null,
+     "start": 169.293,
+     "end": 188.072,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "sModel": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "nUse": [
+       "o+act"
+      ],
+      "mInt": [
+       "o+act"
+      ],
+      "mUnc": [
+       "o+act"
+      ],
+      "ach": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c008",
+       "phrase": "other people’s work",
+       "at": 177.436
+      },
+      {
+       "name": "s4_preserves",
+       "phrase": "This account preserves the contribution",
+       "at": 169.293
+      },
+      {
+       "name": "s4_noNeed",
+       "phrase": "You do not need an invented achievement",
+       "at": 178.722
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c009",
+     "kind": "line",
+     "block": "L06.S04.B04",
+     "branch": null,
+     "start": 188.072,
+     "end": 207.708,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "obs": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "ach": [
+       "o+act"
+      ],
+      "pOwn": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pFic": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c009",
+       "phrase": "claim more",
+       "at": 199.643
+      },
+      {
+       "name": "s4_priv",
+       "phrase": "Privately form a result sentence",
+       "at": 188.072
+      },
+      {
+       "name": "s4_real",
+       "phrase": "or check one from a real experience",
+       "at": 191.929
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.h102",
+     "kind": "hold",
+     "block": "L06.S04.B04",
+     "branch": null,
+     "start": 207.708,
+     "end": 219.708,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S04.c010",
+     "kind": "line",
+     "block": "L06.S04.B04",
+     "branch": null,
+     "start": 219.708,
+     "end": 237.629,
+     "speaker": "coach",
+     "tokens": {
+      "e0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "pOwn": [
+       "o+act"
+      ],
+      "pFic": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "pHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c010",
+       "phrase": "not three compulsory sentences",
+       "at": 230.851
+      },
+      {
+       "name": "s4_modest",
+       "phrase": "A precise result can be modest",
+       "at": 219.708
+      },
+      {
+       "name": "s4_stateWhat",
+       "phrase": "State what changed",
+       "at": 222.279
+      },
+      {
+       "name": "s4_giveObs",
+       "phrase": "give the observation you can support",
+       "at": 223.565
+      },
+      {
+       "name": "s4_dist",
+       "phrase": "distinguish any wider uncertainty",
+       "at": 226.565
+      }
+     ]
+    }
+   ]
+  },
+  "practice:main": {
+   "durationSeconds": 237.629,
+   "steps": [
+    {
+     "id": "L06.S04.c001",
+     "kind": "line",
+     "block": "L06.S04.B01",
+     "branch": null,
+     "start": 0,
+     "end": 18.779,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "e0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "es0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "es1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "es2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c001",
+       "phrase": "what you actually know",
+       "at": 10.286
+      },
+      {
+       "name": "s4_change",
+       "phrase": "Separate the change you made",
+       "at": 12
+      },
+      {
+       "name": "s4_observed",
+       "phrase": "what you observed",
+       "at": 14.143
+      },
+      {
+       "name": "s4_concl",
+       "phrase": "conclusions that would need more evidence",
+       "at": 15.857
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c002",
+     "kind": "line",
+     "block": "L06.S04.B01",
+     "branch": null,
+     "start": 18.779,
+     "end": 38.415,
+     "speaker": "coach",
+     "tokens": {
+      "e0": [
+       "o+act"
+      ],
+      "es0": [
+       "o+act"
+      ],
+      "e1": [
+       "o+act"
+      ],
+      "es1": [
+       "o+act"
+      ],
+      "e2": [
+       "o+act"
+      ],
+      "es2": [
+       "o+act"
+      ],
+      "caseL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c002",
+       "phrase": "different people responsible",
+       "at": 35.493
+      },
+      {
+       "name": "s4_return",
+       "phrase": "Return to our fictional visitor-guide example",
+       "at": 18.779
+      },
+      {
+       "name": "s4_changed",
+       "phrase": "The participant changed the map label",
+       "at": 21.779
+      },
+      {
+       "name": "s4_maya",
+       "phrase": "Maya checked the schedule",
+       "at": 27.779
+      },
+      {
+       "name": "s4_noah",
+       "phrase": "Noah assembled the updated guide",
+       "at": 29.922
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c003",
+     "kind": "line",
+     "block": "L06.S04.B01",
+     "branch": null,
+     "start": 38.415,
+     "end": 58.479,
+     "speaker": "coach",
+     "tokens": {
+      "obs": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "one"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c003",
+       "phrase": "this particular use of the map",
+       "at": 48.272
+      },
+      {
+       "name": "s4_one",
+       "phrase": "We also know one observation",
+       "at": 38.415
+      },
+      {
+       "name": "s4_notTotal",
+       "phrase": "It is not a total count",
+       "at": 50.844
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.h101",
+     "kind": "hold",
+     "block": "L06.S04.B01",
+     "branch": null,
+     "start": 58.479,
+     "end": 66.479,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S04.d001",
+     "kind": "line",
+     "block": "L06.S04.B02",
+     "branch": null,
+     "start": 66.479,
+     "end": 81.4,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "sModel": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "mRes": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cObs": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S04_d001",
+       "phrase": "I saw one visitor",
+       "at": 76.336
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c004",
+     "kind": "line",
+     "block": "L06.S04.B02",
+     "branch": null,
+     "start": 81.4,
+     "end": 99.75,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "sModel": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "mRes": [
+       "o+act"
+      ],
+      "cObs": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "uF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "uH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "uns": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "miss": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c004",
+       "phrase": "this case cannot support",
+       "at": 91.257
+      },
+      {
+       "name": "s4_saw",
+       "phrase": "Notice the difference between I saw",
+       "at": 81.4
+      },
+      {
+       "name": "s4_everyone",
+       "phrase": "and everyone could",
+       "at": 83.971
+      },
+      {
+       "name": "s4_limits",
+       "phrase": "Specific limits do not erase a contribution",
+       "at": 92.971
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c005",
+     "kind": "line",
+     "block": "L06.S04.B02",
+     "branch": null,
+     "start": 99.75,
+     "end": 117.243,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "miss": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "lim": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "nUpd": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c005",
+       "phrase": "None of those details is available",
+       "at": 113.036
+      },
+      {
+       "name": "s4_survey",
+       "phrase": "There was no visitor survey",
+       "at": 99.75
+      },
+      {
+       "name": "s4_avoid",
+       "phrase": "Avoid turning the single observation",
+       "at": 104.464
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c006",
+     "kind": "line",
+     "block": "L06.S04.B03",
+     "branch": null,
+     "start": 117.243,
+     "end": 136.022,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "cObs": [
+       "o+act"
+      ],
+      "uF": [
+       "o+act"
+      ],
+      "uH": [
+       "o+act"
+      ],
+      "uns": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "miss": [
+       "o+act"
+      ],
+      "lim": [
+       "o+act"
+      ],
+      "nUpd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nUse": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cf": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ]
+     },
+     "layersShown": [
+      "seq"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c006",
+       "phrase": "without the change",
+       "at": 125.814
+      },
+      {
+       "name": "s4_before",
+       "phrase": "The label was changed before",
+       "at": 117.243
+      },
+      {
+       "name": "s4_without",
+       "phrase": "we do not know what would have happened",
+       "at": 122.386
+      },
+      {
+       "name": "s4_anyway",
+       "phrase": "That visitor might have found the room anyway",
+       "at": 127.1
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c007",
+     "kind": "line",
+     "block": "L06.S04.B03",
+     "branch": null,
+     "start": 136.022,
+     "end": 155.229,
+     "speaker": "coach",
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "nUpd": [
+       "o+act"
+      ],
+      "nUse": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cf": [
+       "o+act"
+      ],
+      "rAllow": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rAct": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "ra",
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c007",
+       "phrase": "the reasoning behind the action",
+       "at": 145.879
+      },
+      {
+       "name": "s4_still",
+       "phrase": "You can still explain the decision",
+       "at": 136.022
+      },
+      {
+       "name": "s4_conflict",
+       "phrase": "Conflicting labels could confuse visitors",
+       "at": 138.593
+      },
+      {
+       "name": "s4_checked",
+       "phrase": "so the participant checked",
+       "at": 140.736
+      },
+      {
+       "name": "s4_notEst",
+       "phrase": "It does not establish",
+       "at": 148.022
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.d002",
+     "kind": "line",
+     "block": "L06.S04.B03",
+     "branch": null,
+     "start": 155.229,
+     "end": 169.293,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "sModel": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "nUse": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rAllow": [
+       "o+act"
+      ],
+      "rAct": [
+       "o+act"
+      ],
+      "mInt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "mUnc": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L06_S04_d002",
+       "phrase": "cannot say what would have happened",
+       "at": 165.086
+      },
+      {
+       "name": "s4_wanted",
+       "phrase": "I wanted the map label to match",
+       "at": 155.229
+      },
+      {
+       "name": "s4_saw2",
+       "phrase": "I saw one visitor",
+       "at": 159.515
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c008",
+     "kind": "line",
+     "block": "L06.S04.B03",
+     "branch": null,
+     "start": 169.293,
+     "end": 188.072,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "caseL": [
+       "x+w+h+fs+o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "am": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "an": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "obs": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "sModel": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "nUse": [
+       "o+act"
+      ],
+      "mInt": [
+       "o+act"
+      ],
+      "mUnc": [
+       "o+act"
+      ],
+      "ach": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c008",
+       "phrase": "other people’s work",
+       "at": 177.436
+      },
+      {
+       "name": "s4_preserves",
+       "phrase": "This account preserves the contribution",
+       "at": 169.293
+      },
+      {
+       "name": "s4_noNeed",
+       "phrase": "You do not need an invented achievement",
+       "at": 178.722
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.c009",
+     "kind": "line",
+     "block": "L06.S04.B04",
+     "branch": null,
+     "start": 188.072,
+     "end": 207.708,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "ap": [
+       "o+act"
+      ],
+      "am": [
+       "o+act"
+      ],
+      "an": [
+       "o+act"
+      ],
+      "obs": [
+       "x+w+h+fs+o+tag",
+       "o+act",
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "ach": [
+       "o+act"
+      ],
+      "pOwn": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pFic": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "blank": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c009",
+       "phrase": "claim more",
+       "at": 199.643
+      },
+      {
+       "name": "s4_priv",
+       "phrase": "Privately form a result sentence",
+       "at": 188.072
+      },
+      {
+       "name": "s4_real",
+       "phrase": "or check one from a real experience",
+       "at": 191.929
+      }
+     ]
+    },
+    {
+     "id": "L06.S04.h102",
+     "kind": "hold",
+     "block": "L06.S04.B04",
+     "branch": null,
+     "start": 207.708,
+     "end": 219.708,
+     "speaker": null,
+     "tokens": {
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "holdHint": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L06.S04.c010",
+     "kind": "line",
+     "block": "L06.S04.B04",
+     "branch": null,
+     "start": 219.708,
+     "end": 237.629,
+     "speaker": "coach",
+     "tokens": {
+      "e0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "e2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "caseL": [
+       "o+act"
+      ],
+      "obs": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "pOwn": [
+       "o+act"
+      ],
+      "pFic": [
+       "o+act"
+      ],
+      "blank": [
+       "o+act"
+      ],
+      "pHint": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L06_S04_c010",
+       "phrase": "not three compulsory sentences",
+       "at": 230.851
+      },
+      {
+       "name": "s4_modest",
+       "phrase": "A precise result can be modest",
+       "at": 219.708
+      },
+      {
+       "name": "s4_stateWhat",
+       "phrase": "State what changed",
+       "at": 222.279
+      },
+      {
+       "name": "s4_giveObs",
+       "phrase": "give the observation you can support",
+       "at": 223.565
+      },
+      {
+       "name": "s4_dist",
+       "phrase": "distinguish any wider uncertainty",
+       "at": 226.565
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "uF",
+  "e0",
+  "e1",
+  "e2",
+  "es0",
+  "es1",
+  "es2",
+  "caseL",
+  "lh0",
+  "lh1",
+  "lh2",
+  "ap",
+  "am",
+  "an",
+  "obs",
+  "sModel",
+  "mRes",
+  "cObs",
+  "uH",
+  "uns",
+  "miss",
+  "lim",
+  "nUpd",
+  "nUse",
+  "cf",
+  "rAllow",
+  "rAct",
+  "mInt",
+  "mUnc",
+  "ach",
+  "pOwn",
+  "pFic",
+  "blank",
+  "pHint",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

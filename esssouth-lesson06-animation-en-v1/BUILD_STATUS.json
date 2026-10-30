@@ -41,10 +41,10 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.991)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.246)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.488)",
-    "PASS rate 2×: clock advances at 2× (measured 1.993)",
+    "PASS rate 1×: clock advances at 1× (measured 0.994)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.237)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.495)",
+    "PASS rate 2×: clock advances at 2× (measured 1.986)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -69,14 +69,14 @@
    "sourceArchive": null,
    "playableArchive": null,
    "video": null,
-   "nextAction": "Continue S02–S07; packaging after all sections.",
+   "nextAction": "Packaging and optional MP4 export.",
    "scriptedButNotStaged": [],
    "holds": [
     "L06.S01.h101",
     "L06.S01.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S01/report.json (2026-10-29T23:48:10.632Z, Chromium 153.0.8010.12, 41 checks, 0 failed)",
+   "qaReport": "qa/S01/report.json (2026-10-30T00:16:28.791Z, Chromium 153.0.8010.12, 41 checks, 0 failed)",
    "routeSeconds": {
     "watch": 236.902,
     "practice:main": 236.902
@@ -87,9 +87,9 @@
     "content/labels.staging.en.json": "d2d867eb919955bb381a5a0d1fba9c2a2f5fdd38acb7cbffa4860eddfcd58273",
     "data/l06s01-data.js": "1d3a04ab6dc1bc8e91e30ad89b088a325c5487d0c0ed1e8f702d6f7d444019f9",
     "index.html": "de587a28e79ad32de4c46824ea27b4c389e961525145b9ab680fc54f2c09a745",
-    "L06S01_player_standalone.html": "037690e908e1ac298ffbe0f315eda40eb6ad7bfdc95678a0f8afc963dcb5b71e"
+    "L06S01_player_standalone.html": "df7aaae784e2cd7f6235645988de3932d899b22db1920d014a4c1e0a17c1d380"
    },
-   "updatedAt": "2026-10-29T23:48:43.645Z"
+   "updatedAt": "2026-10-30T00:20:36.247Z"
   },
   {
    "id": "L06.S02",
@@ -149,10 +149,10 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.997)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.241)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.499)",
-    "PASS rate 2×: clock advances at 2× (measured 1.990)",
+    "PASS rate 1×: clock advances at 1× (measured 0.999)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.245)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.488)",
+    "PASS rate 2×: clock advances at 2× (measured 1.995)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -216,7 +216,7 @@
    "sourceArchive": null,
    "playableArchive": null,
    "video": null,
-   "nextAction": "Continue S03–S07; packaging after all sections.",
+   "nextAction": "Packaging and optional MP4 export.",
    "scriptedButNotStaged": [],
    "holds": [
     "L06.S02.h101",
@@ -225,7 +225,7 @@
    "interactions": [
     "L06.I01"
    ],
-   "qaReport": "qa/S02/report.json (2026-10-29T23:51:58.271Z, Chromium 153.0.8010.12, 92 checks, 0 failed)",
+   "qaReport": "qa/S02/report.json (2026-10-30T00:16:48.167Z, Chromium 153.0.8010.12, 92 checks, 0 failed)",
    "routeSeconds": {
     "watch": 259.741,
     "practice:A": 240.513,
@@ -239,9 +239,9 @@
     "content/labels.staging.en.json": "6d8a249a18b47db60443ca4869646f907b062230a14a7cd5ad55b1576a04911b",
     "data/l06s02-data.js": "8f8ac5220dbf364497941d54f0f3d356c0b1781814068efe5d446ff692e2ae7d",
     "index.html": "5de341e98b3e5e146d40f4c0f0458b4f23ef0bccec2fdbba268e729071ee3286",
-    "L06S02_player_standalone.html": "41603077ec59a0a7ffd0b6f164c1250477d30fe60e1ef4ede3cd1d02897b48d4"
+    "L06S02_player_standalone.html": "b427174ca4bdb2de6a91aa3c67429812b4ff845a6953a27877af8ab50f7e31ae"
    },
-   "updatedAt": "2026-10-29T23:53:03.750Z"
+   "updatedAt": "2026-10-30T00:20:36.290Z"
   },
   {
    "id": "L06.S03",
@@ -302,10 +302,10 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.991)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.247)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.491)",
-    "PASS rate 2×: clock advances at 2× (measured 1.980)",
+    "PASS rate 1×: clock advances at 1× (measured 0.995)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.239)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.497)",
+    "PASS rate 2×: clock advances at 2× (measured 1.990)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -369,7 +369,7 @@
    "sourceArchive": null,
    "playableArchive": null,
    "video": null,
-   "nextAction": "Continue S04–S07; packaging after all sections.",
+   "nextAction": "Packaging and optional MP4 export.",
    "scriptedButNotStaged": [],
    "holds": [
     "L06.S03.h101",
@@ -378,7 +378,7 @@
    "interactions": [
     "L06.I02"
    ],
-   "qaReport": "qa/S03/report.json (2026-10-29T23:56:41.944Z, Chromium 153.0.8010.12, 92 checks, 0 failed)",
+   "qaReport": "qa/S03/report.json (2026-10-30T00:17:34.752Z, Chromium 153.0.8010.12, 92 checks, 0 failed)",
    "routeSeconds": {
     "watch": 269.092,
     "practice:A": 253.722,
@@ -392,9 +392,9 @@
     "content/labels.staging.en.json": "a281e34d995c2c477402c42790c634013c8bfa6bbc962dc409c40ae409fa4e62",
     "data/l06s03-data.js": "27c8b769356bcf7ca4ab6872adfc09e11046a9c383703a555c53fc1c5a07ff3e",
     "index.html": "e2507751b1297170b76b0c56a885b884d5eaa9440b7572ea62ca09ef177ca532",
-    "L06S03_player_standalone.html": "4aadebb895e2de2ef4c66178ab56153bd99a2ca3a687c4b1fcf94c9da199f767"
+    "L06S03_player_standalone.html": "7f85887d37dd2d7f4f8035f9ec0fe4f1ff41d37575c714098b2c13bc1b41558a"
    },
-   "updatedAt": "2026-10-29T23:57:48.620Z"
+   "updatedAt": "2026-10-30T00:20:36.334Z"
   },
   {
    "id": "L06.S04",
@@ -432,10 +432,10 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.999)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.242)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.484)",
-    "PASS rate 2×: clock advances at 2× (measured 1.993)",
+    "PASS rate 1×: clock advances at 1× (measured 0.996)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.240)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.499)",
+    "PASS rate 2×: clock advances at 2× (measured 1.992)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -460,14 +460,14 @@
    "sourceArchive": null,
    "playableArchive": null,
    "video": null,
-   "nextAction": "Continue S05–S07; packaging after all sections.",
+   "nextAction": "Packaging and optional MP4 export.",
    "scriptedButNotStaged": [],
    "holds": [
     "L06.S04.h101",
     "L06.S04.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S04/report.json (2026-10-29T23:59:03.477Z, Chromium 153.0.8010.12, 41 checks, 0 failed)",
+   "qaReport": "qa/S04/report.json (2026-10-30T00:18:23.903Z, Chromium 153.0.8010.12, 41 checks, 0 failed)",
    "routeSeconds": {
     "watch": 237.629,
     "practice:main": 237.629
@@ -478,9 +478,9 @@
     "content/labels.staging.en.json": "ad54ec622e8ef3ef4bf2c10678daf321d5751984a9c7aff0632774b10dabbd69",
     "data/l06s04-data.js": "7c79456fda53b81bdb8bc23517f155bb7e54ec373e333049256039ce1e448fe3",
     "index.html": "d286fcc67eebeb9ec8828ba8b0a3cecfd27306569fb3ae2d63838e7f6812cc10",
-    "L06S04_player_standalone.html": "b48707cc8f5823fa30558b8cc95466110eb3d6d49b16dd4506e396f07a7b155b"
+    "L06S04_player_standalone.html": "7ff614b132ed9bde0631f97c530ccc08ed1b52d91486227bab773e812f55e886"
    },
-   "updatedAt": "2026-10-29T23:59:40.954Z"
+   "updatedAt": "2026-10-30T00:20:36.373Z"
   },
   {
    "id": "L06.S05",
@@ -521,10 +521,10 @@
     "PASS route practice:main: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.990)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.245)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.489)",
-    "PASS rate 2×: clock advances at 2× (measured 1.997)",
+    "PASS rate 1×: clock advances at 1× (measured 0.994)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.237)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.497)",
+    "PASS rate 2×: clock advances at 2× (measured 1.989)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -549,14 +549,14 @@
    "sourceArchive": null,
    "playableArchive": null,
    "video": null,
-   "nextAction": "Continue S06–S07; packaging after all sections.",
+   "nextAction": "Packaging and optional MP4 export.",
    "scriptedButNotStaged": [],
    "holds": [
     "L06.S05.h101",
     "L06.S05.h102"
    ],
    "interactions": [],
-   "qaReport": "qa/S05/report.json (2026-10-30T00:01:52.201Z, Chromium 153.0.8010.12, 41 checks, 0 failed)",
+   "qaReport": "qa/S05/report.json (2026-10-30T00:18:42.678Z, Chromium 153.0.8010.12, 41 checks, 0 failed)",
    "routeSeconds": {
     "watch": 261.823,
     "practice:main": 261.823
@@ -567,9 +567,9 @@
     "content/labels.staging.en.json": "7bf48b22c407323cc530d01df2d5c1e41ac4dcf709eaab1723a7a32e3493790c",
     "data/l06s05-data.js": "238be9d1a5874b4c56cede8c277f8eaeb413487809ad89ac34e06a30aa6c0315",
     "index.html": "bfdf55a526729cbbaa141a1002c5007f60163e19e7748ecc8eef88bfe5a93e46",
-    "L06S05_player_standalone.html": "5294eab07c89cb8de7e1f6716824477ac13abccb13d3f63b5a2b92f31f37af91"
+    "L06S05_player_standalone.html": "24c7b67563ac54598065b407e1180e3195ee6b64557cdb68b718e2f06f588990"
    },
-   "updatedAt": "2026-10-30T00:02:26.050Z"
+   "updatedAt": "2026-10-30T00:20:36.416Z"
   },
   {
    "id": "L06.S06",
@@ -613,10 +613,10 @@
     "PASS route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
     "PASS deterministic: same frame after different seek histories",
     "PASS reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
-    "PASS rate 1×: clock advances at 1× (measured 0.992)",
-    "PASS rate 1.25×: clock advances at 1.25× (measured 1.248)",
-    "PASS rate 1.5×: clock advances at 1.5× (measured 1.494)",
-    "PASS rate 2×: clock advances at 2× (measured 1.983)",
+    "PASS rate 1×: clock advances at 1× (measured 0.994)",
+    "PASS rate 1.25×: clock advances at 1.25× (measured 1.249)",
+    "PASS rate 1.5×: clock advances at 1.5× (measured 1.493)",
+    "PASS rate 2×: clock advances at 2× (measured 1.982)",
     "PASS mode switch at common content keeps cue and offset (watch → practice → watch)",
     "PASS restart returns to the section start and plays",
     "PASS keyboard: Space plays and pauses",
@@ -664,7 +664,7 @@
    "sourceArchive": null,
    "playableArchive": null,
    "video": null,
-   "nextAction": "Continue S07; packaging after all sections.",
+   "nextAction": "Packaging and optional MP4 export.",
    "scriptedButNotStaged": [],
    "holds": [
     "L06.S06.h101",
@@ -673,7 +673,7 @@
    "interactions": [
     "L06.I03"
    ],
-   "qaReport": "qa/S06/report.json (2026-10-30T00:09:42.420Z, Chromium 153.0.8010.12, 68 checks, 0 failed)",
+   "qaReport": "qa/S06/report.json (2026-10-30T00:19:02.841Z, Chromium 153.0.8010.12, 68 checks, 0 failed)",
    "routeSeconds": {
     "watch": 315.33,
     "practice:model": 281.53,
@@ -687,7 +687,7 @@
     "index.html": "73e4971d65c6ba529fcaeef746ba979a1b3e7b7b0012c50c15f3c49778b7e0b5",
     "L06S06_player_standalone.html": "c5a8c6af9e5402caa9a0d4728bd4c0203de639857e8165c6376ee0891cfa2add"
    },
-   "updatedAt": "2026-10-30T00:11:25.414Z"
+   "updatedAt": "2026-10-30T00:20:36.459Z"
   },
   {
    "id": "L06.S07",
@@ -750,7 +750,7 @@
    "sourceArchive": null,
    "playableArchive": null,
    "video": null,
-   "nextAction": "Combined lesson entry, docs, packaging, optional MP4.",
+   "nextAction": "Packaging and optional MP4 export.",
    "scriptedButNotStaged": [],
    "holds": [
     "L06.S07.h101",
@@ -770,7 +770,7 @@
     "index.html": "72c274a96d8b46b247992bf876da34784f027da4814f2bdf82e5aab16c8f64d4",
     "L06S07_player_standalone.html": "c66bb9e32ca9215ca22564c8722eededd87f51bd5dca0c888b7facd8e4f82246"
    },
-   "updatedAt": "2026-10-30T00:16:12.859Z"
+   "updatedAt": "2026-10-30T00:20:36.497Z"
   }
  ],
  "combinedEntryStatus": "not_started",
