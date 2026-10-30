@@ -1,0 +1,227 @@
+1
+00:00:00,000 --> 00:00:04,286
+Coach: When two arrangements compete, compare them against the same questions.
+
+2
+00:00:04,286 --> 00:00:09,429
+Coach: In this taster, will newcomers have an opportunity to discuss the text?
+
+3
+00:00:09,429 --> 00:00:12,857
+Coach: How will they find out about the club?
+
+4
+00:00:12,857 --> 00:00:16,714
+Coach: Can the stages and transitions fit within thirty minutes
+
+5
+00:00:16,714 --> 00:00:19,286
+Coach: while preserving the minimum question time?
+
+6
+00:00:19,286 --> 00:00:24,000
+Coach: These questions come from this task, not a universal ranking system.
+
+7
+00:00:24,350 --> 00:00:29,064
+Coach: One candidate gives more room to a demonstration before pairs begin.
+
+8
+00:00:29,064 --> 00:00:34,636
+Coach: Another keeps the example brief and leaves more room for participants to try.
+
+9
+00:00:34,636 --> 00:00:37,207
+Coach: Neither description supplies exact durations yet.
+
+10
+00:00:37,207 --> 00:00:40,635
+Coach: Compare the likely purpose and the possible cost,
+
+11
+00:00:40,635 --> 00:00:44,064
+Coach: without treating those expectations as measured visitor outcomes.
+
+12
+00:00:44,414 --> 00:00:48,700
+Coach: A longer example may make the reasoning easier to inspect.
+
+13
+00:00:48,700 --> 00:00:54,700
+Coach: It can also use minutes that would otherwise go to pairs, sharing or questions.
+
+14
+00:00:54,700 --> 00:01:00,700
+Coach: You cannot preserve every stage at full size simply by calling the arrangement balanced.
+
+15
+00:01:00,700 --> 00:01:06,271
+Coach: The total stays the same even when each element has a good reason.
+
+16
+00:01:14,621 --> 00:01:19,335
+Coach: A useful trade-off statement connects an arrangement to the goal
+
+17
+00:01:19,335 --> 00:01:21,049
+Coach: and names its limitation.
+
+18
+00:01:21,049 --> 00:01:23,621
+Coach: You can prefer the briefer example
+
+19
+00:01:23,621 --> 00:01:27,907
+Coach: because the task asks newcomers to try discussing the text.
+
+20
+00:01:27,907 --> 00:01:33,049
+Coach: That preference still needs a check that the example is clear enough
+
+21
+00:01:33,049 --> 00:01:37,335
+Coach: and that the pair task has a useful starting point.
+
+22
+00:01:37,685 --> 00:01:44,542
+You: I would keep the example brief so there is room to try the discussion in pairs.
+
+23
+00:01:44,542 --> 00:01:49,256
+You: We still need to check that it shows the reasoning clearly.
+
+24
+00:01:49,606 --> 00:01:54,320
+Coach: That statement does not claim a short example is always better.
+
+25
+00:01:54,320 --> 00:01:58,178
+Coach: It explains why this candidate might fit this task.
+
+26
+00:01:58,178 --> 00:02:00,749
+Coach: Someone can now question the link,
+
+27
+00:02:00,749 --> 00:02:07,178
+Coach: suggest a clearer example or ask whether sharing needs a different place in the sequence.
+
+28
+00:02:07,178 --> 00:02:11,892
+Coach: Those are useful revisions, not proof that the first speaker failed.
+
+29
+00:02:12,242 --> 00:02:17,385
+Noah: I want the example to include a reason, not only an interpretation.
+
+30
+00:02:17,385 --> 00:02:22,099
+Noah: Could we check that before deciding how brief it can be?
+
+31
+00:02:22,449 --> 00:02:27,592
+Coach: That question helps define what must survive if the example is shortened.
+
+32
+00:02:27,592 --> 00:02:32,306
+Coach: Keeping the reasoning visible is different from choosing the duration now.
+
+33
+00:02:32,306 --> 00:02:37,449
+Coach: The group can look at a proposed example, check its essential content,
+
+34
+00:02:37,449 --> 00:02:41,306
+Coach: and then consider how it affects the available time.
+
+35
+00:02:41,656 --> 00:02:45,085
+Coach: Apply the same care to the question period.
+
+36
+00:02:45,085 --> 00:02:47,656
+Coach: At least five minutes is required;
+
+37
+00:02:47,656 --> 00:02:51,942
+Coach: it is not evidence that five minutes will answer everything.
+
+38
+00:02:51,942 --> 00:02:56,656
+Coach: If questions need longer, another part must fit into less time.
+
+39
+00:02:56,656 --> 00:03:02,227
+Coach: Preserve the requirement while being honest about what the information sheet can answer.
+
+40
+00:03:02,577 --> 00:03:06,863
+Coach: Do not create a false choice between respect and selection.
+
+41
+00:03:06,863 --> 00:03:12,434
+Coach: Taking someone's contribution seriously can mean preserving its purpose in a different form.
+
+42
+00:03:12,434 --> 00:03:17,577
+Coach: It can also mean explaining why it does not fit this version.
+
+43
+00:03:17,577 --> 00:03:21,434
+Coach: Respect does not require keeping every proposed detail unchanged.
+
+44
+00:03:21,784 --> 00:03:28,213
+Coach: A trade-off remains open to review when you say which assumption it depends on.
+
+45
+00:03:28,213 --> 00:03:34,213
+Coach: Here, a brief example depends on someone being able and willing to provide it.
+
+46
+00:03:34,213 --> 00:03:40,641
+Coach: If that is not established, the next step is to check or revise the candidate,
+
+47
+00:03:40,641 --> 00:03:44,070
+Coach: not to announce that the arrangement is ready.
+
+48
+00:03:56,420 --> 00:04:01,992
+Coach: You can now explain a preference without presenting it as the group's decision.
+
+49
+00:04:01,992 --> 00:04:04,134
+Coach: Keep the proposal, its purpose,
+
+50
+00:04:04,134 --> 00:04:07,563
+Coach: its cost and its unresolved checks close together.
+
+51
+00:04:07,563 --> 00:04:14,849
+Coach: A listener should not have to recover the caveat from a much earlier part of the discussion.
+
+52
+00:04:15,199 --> 00:04:18,628
+Coach: Next, bring the candidate back to the group
+
+53
+00:04:18,628 --> 00:04:21,627
+Coach: and ask about the support that matters.
+
+54
+00:04:21,627 --> 00:04:24,627
+Coach: A useful check can reveal conditional support,
+
+55
+00:04:24,627 --> 00:04:28,484
+Coach: a specific reservation or a need for more information.
+
+56
+00:04:28,484 --> 00:04:32,342
+Coach: Each of those responses helps determine the next step
+
+57
+00:04:32,342 --> 00:04:35,770
+Coach: without inventing a vote or a final authority.

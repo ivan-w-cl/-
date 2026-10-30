@@ -1,0 +1,235 @@
+1
+00:00:00,000 --> 00:00:04,286
+Coach: A combined proposal should make its connections easy to follow.
+
+2
+00:00:04,286 --> 00:00:08,571
+Coach: Show the main sequence, explain how it serves the aims,
+
+3
+00:00:08,571 --> 00:00:11,143
+Coach: and keep the important checks nearby.
+
+4
+00:00:11,143 --> 00:00:14,143
+Coach: You are giving people something to inspect,
+
+5
+00:00:14,143 --> 00:00:20,571
+Coach: not presenting a polished diagram as proof that the discussion has already reached a decision.
+
+6
+00:00:20,921 --> 00:00:25,635
+Coach: This is a later authored check of the book-club candidate.
+
+7
+00:00:25,635 --> 00:00:29,064
+Coach: The earlier partial support remains the starting point.
+
+8
+00:00:29,064 --> 00:00:33,350
+Coach: The next lines supply new statements for this example only;
+
+9
+00:00:33,350 --> 00:00:38,921
+Coach: a person must actually say what they support before their status card changes.
+
+10
+00:00:39,271 --> 00:00:44,842
+You: We could begin with a brief example, use the same text in pairs,
+
+11
+00:00:44,842 --> 00:00:49,985
+You: share one idea, and keep at least five minutes for club questions.
+
+12
+00:00:49,985 --> 00:00:55,985
+You: Can we check the timing and who would give the example before we decide?
+
+13
+00:00:56,335 --> 00:01:00,621
+Coach: The proposed example and pair discussion use the same text,
+
+14
+00:01:00,621 --> 00:01:06,192
+Coach: so they are connected stages rather than separate activities competing for a place.
+
+15
+00:01:06,192 --> 00:01:09,192
+Coach: Sharing would draw on the pair task.
+
+16
+00:01:09,192 --> 00:01:13,906
+Coach: The candidate still needs timing and someone to give the example;
+
+17
+00:01:13,906 --> 00:01:18,192
+Coach: mentioning those checks does not mean they have been completed.
+
+18
+00:01:26,542 --> 00:01:32,542
+Coach: A focused check asks about an element or a condition that is still open.
+
+19
+00:01:32,542 --> 00:01:37,685
+Coach: Do you support this sequence, or is there something you would change?
+
+20
+00:01:37,685 --> 00:01:39,399
+Coach: That is more useful
+
+21
+00:01:39,399 --> 00:01:44,542
+Coach: than asking everyone to approve a summary that already says everyone agrees.
+
+22
+00:01:44,542 --> 00:01:47,971
+Coach: Leave space for a limited or negative answer.
+
+23
+00:01:48,321 --> 00:01:52,178
+Maya: I support that sequence if the demonstration stays brief
+
+24
+00:01:52,178 --> 00:01:54,321
+Maya: and the pair task remains.
+
+25
+00:01:54,671 --> 00:01:58,100
+Coach: Maya has now supported the sequence, with conditions.
+
+26
+00:01:58,100 --> 00:02:03,671
+Coach: Record the whole statement: the example stays brief and the pair task remains.
+
+27
+00:02:03,671 --> 00:02:06,671
+Coach: Do not turn it into unconditional support,
+
+28
+00:02:06,671 --> 00:02:13,100
+Coach: and do not treat her response as an answer to who would lead the example.
+
+29
+00:02:13,450 --> 00:02:17,736
+Noah: I support starting with an example and keeping question time.
+
+30
+00:02:17,736 --> 00:02:24,164
+Noah: I am not ready to agree on the full sequence until we check the timings.
+
+31
+00:02:24,514 --> 00:02:28,371
+Coach: Noah's reply is not a rejection of every part.
+
+32
+00:02:28,371 --> 00:02:30,943
+Coach: It preserves support for two elements
+
+33
+00:02:30,943 --> 00:02:35,657
+Coach: and gives a reason for withholding support for the complete arrangement.
+
+34
+00:02:35,657 --> 00:02:39,943
+Coach: Your summary should be able to hold that mixed position
+
+35
+00:02:39,943 --> 00:02:43,800
+Coach: without colouring the whole row simply yes or no.
+
+36
+00:02:44,150 --> 00:02:46,721
+Coach: The current record has moved forward,
+
+37
+00:02:46,721 --> 00:02:50,579
+Coach: but it is still not a final group decision.
+
+38
+00:02:50,579 --> 00:02:57,436
+Coach: A useful next step is to draft stage lengths, include transitions and protect the question period,
+
+39
+00:02:57,436 --> 00:03:00,864
+Coach: then ask whether the result addresses the reservation.
+
+40
+00:03:00,864 --> 00:03:05,150
+Coach: Someone also needs to check who could give the example.
+
+41
+00:03:05,500 --> 00:03:12,357
+Coach: If you offer to make that draft, present it as an offer rather than a command.
+
+42
+00:03:12,357 --> 00:03:17,500
+Coach: Nothing in this case appoints a leader or establishes a voting rule.
+
+43
+00:03:17,500 --> 00:03:21,357
+Coach: The group can decide how to do the check;
+
+44
+00:03:21,357 --> 00:03:25,643
+Coach: the summariser should not quietly claim authority over that decision.
+
+45
+00:03:25,993 --> 00:03:30,279
+You: Would it help if we sketched the stage lengths next,
+
+46
+00:03:30,279 --> 00:03:34,136
+You: including transitions, and then checked whether the sequence fits?
+
+47
+00:03:34,486 --> 00:03:37,914
+Coach: An offer without a reply remains an offer.
+
+48
+00:03:37,914 --> 00:03:41,771
+Coach: Keep that distinction when you hand over the summary.
+
+49
+00:03:41,771 --> 00:03:45,629
+Coach: Otherwise, a proposed action can quietly become someone's obligation,
+
+50
+00:03:45,629 --> 00:03:49,057
+Coach: just as partial support can quietly become consensus.
+
+51
+00:04:01,407 --> 00:04:06,550
+Coach: A helpful handover lets someone see the candidate, whose support is conditional,
+
+52
+00:04:06,550 --> 00:04:10,407
+Coach: what remains unresolved and what check is being proposed.
+
+53
+00:04:10,407 --> 00:04:16,407
+Coach: Keep it concise enough to use, but not so short that the conditions disappear.
+
+54
+00:04:16,407 --> 00:04:20,693
+Coach: The next speaker should be able to correct one item
+
+55
+00:04:20,693 --> 00:04:22,836
+Coach: without rebuilding the whole account.
+
+56
+00:04:23,186 --> 00:04:27,900
+Coach: The point of checking is not to collect a polite yes.
+
+57
+00:04:27,900 --> 00:04:34,329
+Coach: It is to make the group's actual position clear enough for a useful next decision.
+
+58
+00:04:34,329 --> 00:04:36,043
+Coach: In the next section,
+
+59
+00:04:36,043 --> 00:04:43,329
+Coach: practise giving that kind of summary while keeping your own private rehearsal separate from the authored example.

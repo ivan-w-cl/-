@@ -1,0 +1,159 @@
+1
+00:00:00,000 --> 00:00:05,572
+Coach: The task can change while the need for an accurate shared account remains.
+
+2
+00:00:05,572 --> 00:00:07,714
+Coach: Here is a fresh example:
+
+3
+00:00:07,714 --> 00:00:13,715
+Coach: a walking group needs one printed notice with meeting details and a bring-list.
+
+4
+00:00:13,715 --> 00:00:17,143
+Coach: We are no longer arranging a taster session,
+
+5
+00:00:17,143 --> 00:00:21,429
+Coach: and no earlier proposal or agreement carries into this case.
+
+6
+00:00:21,779 --> 00:00:25,208
+Coach: Maya wants the meeting details at the top.
+
+7
+00:00:25,208 --> 00:00:29,493
+Coach: Noah proposes a short checklist using the existing bring-list.
+
+8
+00:00:29,493 --> 00:00:33,351
+Coach: The details themselves are supplied to that fictional group,
+
+9
+00:00:33,351 --> 00:00:36,351
+Coach: but their length is not given here.
+
+10
+00:00:36,351 --> 00:00:41,494
+Coach: Keep them as labelled content blocks instead of inventing a meeting time,
+
+11
+00:00:41,494 --> 00:00:43,208
+Coach: place or required item.
+
+12
+00:00:43,558 --> 00:00:45,701
+Maya: I support keeping the checklist.
+
+13
+00:00:45,701 --> 00:00:49,987
+Maya: I would still put the meeting details at the top.
+
+14
+00:00:50,337 --> 00:00:53,337
+Noah: I support making the meeting details prominent.
+
+15
+00:00:53,337 --> 00:00:58,051
+Noah: Can we check that both parts stay readable on one page?
+
+16
+00:01:06,401 --> 00:01:08,544
+Coach: The contributions can be connected
+
+17
+00:01:08,544 --> 00:01:11,972
+Coach: because the page needs both kinds of information.
+
+18
+00:01:11,972 --> 00:01:15,401
+Coach: That does not mean every possible layout fits.
+
+19
+00:01:15,401 --> 00:01:19,258
+Coach: The exact content length and readability still need checking.
+
+20
+00:01:19,258 --> 00:01:22,687
+Coach: A compact summary can preserve the shared direction
+
+21
+00:01:22,687 --> 00:01:25,258
+Coach: while leaving that practical question open.
+
+22
+00:01:25,608 --> 00:01:29,894
+You: There is support for prominent meeting details and a checklist.
+
+23
+00:01:29,894 --> 00:01:32,894
+You: We could try them on one page,
+
+24
+00:01:32,894 --> 00:01:35,894
+You: then check readability before choosing the layout.
+
+25
+00:01:36,244 --> 00:01:40,530
+Coach: This model reports the supported direction and proposes a test.
+
+26
+00:01:40,530 --> 00:01:46,530
+Coach: It does not say that the page has been laid out, checked or approved.
+
+27
+00:01:46,530 --> 00:01:54,244
+Coach: If the content does not fit, the group would need a revision that preserves the essential printed information,
+
+28
+00:01:54,244 --> 00:01:58,530
+Coach: not an unsupported claim that a link solves the problem.
+
+29
+00:02:10,880 --> 00:02:12,166
+Coach: Notice what transferred:
+
+30
+00:02:12,166 --> 00:02:15,594
+Coach: keep ownership clear, retain the scope of support,
+
+31
+00:02:15,594 --> 00:02:19,451
+Coach: connect compatible purposes and name what still needs checking.
+
+32
+00:02:19,451 --> 00:02:22,451
+Coach: The content and the relevant constraint changed.
+
+33
+00:02:22,451 --> 00:02:26,737
+Coach: You did not need to copy the book-club sequence
+
+34
+00:02:26,737 --> 00:02:30,594
+Coach: or force time calculations onto a page-layout task.
+
+35
+00:02:30,944 --> 00:02:35,658
+Coach: Before your next group summary, choose one question to ask yourself.
+
+36
+00:02:35,658 --> 00:02:38,230
+Coach: Am I reporting what was said?
+
+37
+00:02:38,230 --> 00:02:41,230
+Coach: Have I turned a condition into agreement?
+
+38
+00:02:41,230 --> 00:02:44,658
+Coach: Is my next step proposed or already decided?
+
+39
+00:02:44,658 --> 00:02:47,658
+Coach: Use the question that fits the moment,
+
+40
+00:02:47,658 --> 00:02:51,515
+Coach: then let the group's actual reply determine what changes.

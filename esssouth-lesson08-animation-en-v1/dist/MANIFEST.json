@@ -2,64 +2,148 @@
  "note": "Sizes and SHA-256 of the delivered files. Every ZIP is below 20,000,000 bytes.",
  "files": {
   "esssouth-L08-lesson-bundle.zip": {
-   "bytes": 397933,
-   "sha256": "db7ef8ff800fcb3d455c624306d604f0670765f61d17750eeac47b85d51cc006"
+   "bytes": 398519,
+   "sha256": "127c1db374ddd7b46a3f399c945504a06ecdec3c5721e244438b8158d8386741"
   },
   "esssouth-L08S01-playable.zip": {
    "bytes": 61250,
    "sha256": "6974dfc05d662b37121fcbc448ccf8e43c264a00709107e2a25b5706fe0555b7"
   },
   "esssouth-L08S01-source.zip": {
-   "bytes": 2121542,
-   "sha256": "daf7170aa389308c51766298bbbe4bbae0dadebfdff9875faa8930ad4544ca38"
+   "bytes": 2122128,
+   "sha256": "3dd17ce09a85afc6d7f4bfc54d416f0334fe16b8ed419e8f900a3cd012e87ffc"
   },
   "esssouth-L08S02-playable.zip": {
    "bytes": 64552,
    "sha256": "f74fe92e171329d6ec18e713e46edd02f3008fcdc700cda005f28f43bf15ae65"
   },
   "esssouth-L08S02-source.zip": {
-   "bytes": 5044793,
-   "sha256": "94536f34049a9a8aa148afa94d8ae177074411a09c03dbd93130250a392ffb02"
+   "bytes": 5045379,
+   "sha256": "f5b6499bfd0ff4f3096d2a1939e1f6820aa0a72f8a98c338e4907bad558d72f0"
   },
   "esssouth-L08S03-playable.zip": {
    "bytes": 65346,
    "sha256": "756f37eeecac9bf64504dcc9710aa8663d78f58d452c132e053b6e8ff75468d8"
   },
   "esssouth-L08S03-source.zip": {
-   "bytes": 4703523,
-   "sha256": "05e385706f972c7dd10581c4626fe192edc4287c09ca76b2a14aafe5232cff3e"
+   "bytes": 4704108,
+   "sha256": "5c32ab83d67f4bb9b8eecc23b2175900acc6d3d081240deed8948133c86c3ece"
   },
   "esssouth-L08S04-playable.zip": {
    "bytes": 60919,
    "sha256": "1eb927527c32837432dfa364e8e41c520272e4c07c092f440a55a1a3d0f0a7dd"
   },
   "esssouth-L08S04-source.zip": {
-   "bytes": 1874583,
-   "sha256": "22aa5c75e9d150b24173f88dff4d1e4d6185b1ba902fdc2621028493f61cda37"
+   "bytes": 1875169,
+   "sha256": "27807cd8e95cce323453f05d06a6df696b806adc8d38311aba26c30fc78c4c0b"
   },
   "esssouth-L08S05-playable.zip": {
    "bytes": 62203,
    "sha256": "011f758ed047424ec46634a5956a8614e8cfd7301f41640db14a4dc2c23a99b0"
   },
   "esssouth-L08S05-source.zip": {
-   "bytes": 2399505,
-   "sha256": "ff3197ae865cf535d9310a60564de0d308cd2e5c99fbb645c98ff073364f23b8"
+   "bytes": 2400091,
+   "sha256": "b2464ccfca78e27aa30cebf5755777baf4c504cb296aff57cbbbca781a94e63f"
   },
   "esssouth-L08S06-playable.zip": {
    "bytes": 63531,
    "sha256": "7c8f38200a2a7dd874d43d41072ad9f817e05e7665db6656cdc75ee8fc11d44f"
   },
   "esssouth-L08S06-source.zip": {
-   "bytes": 3331628,
-   "sha256": "45769633ebfb02bbbe9b82c0fad533cbfed591f0067aaaf326fa49d66b8b7b2d"
+   "bytes": 3332215,
+   "sha256": "3c593bd6f5a4df664b3ae732ebf99c6789fe65bd4898d6d7fe669a2cb11daa2e"
   },
   "esssouth-L08S07-playable.zip": {
    "bytes": 56295,
    "sha256": "4a5ed9097c280f89c89178a23f395c53c95d5628f016571494ab05d29607b44f"
   },
   "esssouth-L08S07-source.zip": {
-   "bytes": 1669202,
-   "sha256": "c215d7cd7037836d5bfc75b220bd893affdfe89e76d57417ffd5f86e52bb59f4"
+   "bytes": 1669788,
+   "sha256": "3333942ad29acd568901be597edf77efc632ce80b0a5812f30cf133f88461765"
+  },
+  "video/esssouth-L08S01-watch-SILENT.export.json": {
+   "bytes": 292,
+   "sha256": "b7253e6fc30ae2bab403fe7c906ed9ce461136fde21d176b33a49ecf7abb0e3b"
+  },
+  "video/esssouth-L08S01-watch-SILENT.mp4": {
+   "bytes": 6697944,
+   "sha256": "11daa9db03945c4203fe75b1b9ef7ca66ace221dbb7e073da88599c28f687005"
+  },
+  "video/esssouth-L08S01-watch-SILENT.srt": {
+   "bytes": 5158,
+   "sha256": "a6a7d9ffd4476643c8661459934c61ce559be951328e7023093843aa666378e4"
+  },
+  "video/esssouth-L08S02-watch-SILENT.export.json": {
+   "bytes": 281,
+   "sha256": "b4abd2a2fb3ca0d9ea8e0bf1ceef14120e57592631024e3255f750ef3926396d"
+  },
+  "video/esssouth-L08S02-watch-SILENT.mp4": {
+   "bytes": 6875237,
+   "sha256": "e7c24e243cc121d1b680bce5b72cdfa64c890b153e2bef9580c3d2fcc942d5b8"
+  },
+  "video/esssouth-L08S02-watch-SILENT.srt": {
+   "bytes": 6390,
+   "sha256": "ca414ce3f3b9573073604fe65a3c9ad29b5498e52b9cf91ee4ee3bdd4c3d5461"
+  },
+  "video/esssouth-L08S03-watch-SILENT.export.json": {
+   "bytes": 281,
+   "sha256": "9cac890fb62dcc017dbbf82f08515e224f4e20d760b43b415f272506dae025b8"
+  },
+  "video/esssouth-L08S03-watch-SILENT.mp4": {
+   "bytes": 6616521,
+   "sha256": "5e9162e26e44fc2719e61ca2dc750e51e70fd009807e32e60ef1941ced04ea79"
+  },
+  "video/esssouth-L08S03-watch-SILENT.srt": {
+   "bytes": 6364,
+   "sha256": "3c6090d57b8074be614890852709f1377dc187b2ad0997f41cddd153c6558252"
+  },
+  "video/esssouth-L08S04-watch-SILENT.export.json": {
+   "bytes": 292,
+   "sha256": "35af80c898cef5f58cc4df8cd7dbfa2da995b0fc98e8450bf406b1aa389eecfa"
+  },
+  "video/esssouth-L08S04-watch-SILENT.mp4": {
+   "bytes": 5640149,
+   "sha256": "94c7484ed8779cba93944f1e6928aeb696727438e4f58a41de62f5aa3412cc44"
+  },
+  "video/esssouth-L08S04-watch-SILENT.srt": {
+   "bytes": 5839,
+   "sha256": "f14c5548baad59dfcf44fc6ecbefdf1e80cfd755c3a8c1dfc39ef2993873ac1f"
+  },
+  "video/esssouth-L08S05-watch-SILENT.export.json": {
+   "bytes": 281,
+   "sha256": "df0c8405d7697f563ba02cf8e60deb915ef9aefeee3f46e6ffd3fc5f48a25180"
+  },
+  "video/esssouth-L08S05-watch-SILENT.mp4": {
+   "bytes": 8146707,
+   "sha256": "ff694e2f7f222f70677c136927210ea6927b1f40c46ebf9049eb249afff975a2"
+  },
+  "video/esssouth-L08S05-watch-SILENT.srt": {
+   "bytes": 5954,
+   "sha256": "f2e762cf5cbd5257d9a94e4896f396f7ac783803c121a2c1a85fc9b6e343661e"
+  },
+  "video/esssouth-L08S06-watch-SILENT.export.json": {
+   "bytes": 293,
+   "sha256": "a10c0903b2606dfe79d20d2b28c38dd400dc8bdf70d970734bea14da6b447f05"
+  },
+  "video/esssouth-L08S06-watch-SILENT.mp4": {
+   "bytes": 8096030,
+   "sha256": "5bff1cfd3518b0e1dfac0eb60f1d38a20dc19aacd2a7168ea1710876bef04de3"
+  },
+  "video/esssouth-L08S06-watch-SILENT.srt": {
+   "bytes": 6838,
+   "sha256": "c17d6f4046eb0059f5a348c17865203b72c1b7779fa3463a01e6680ab32809ae"
+  },
+  "video/esssouth-L08S07-watch-SILENT.export.json": {
+   "bytes": 292,
+   "sha256": "4c57df84847e1314ce3ce2bf13d547b1c08f00a5ab139364a0f5d66cff3396c6"
+  },
+  "video/esssouth-L08S07-watch-SILENT.mp4": {
+   "bytes": 4929497,
+   "sha256": "a03f9bc768f28ff8b80a32513a1a6c888482a6ec2fe82ea2f31012a0c2a48158"
+  },
+  "video/esssouth-L08S07-watch-SILENT.srt": {
+   "bytes": 3704,
+   "sha256": "bc7522f2053a7650898794cfc21785f9ab12549e19dfa37ec44aedb59c324fa3"
   }
  }
 }

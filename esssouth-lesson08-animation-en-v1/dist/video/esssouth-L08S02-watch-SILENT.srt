@@ -1,0 +1,271 @@
+1
+00:00:00,000 --> 00:00:04,286
+Coach: A shared summary is more than a list of suggestions.
+
+2
+00:00:04,286 --> 00:00:08,571
+Coach: It says what people support, how far that support goes,
+
+3
+00:00:08,571 --> 00:00:10,714
+Coach: and what is still unresolved.
+
+4
+00:00:10,714 --> 00:00:12,428
+Coach: Those are separate claims.
+
+5
+00:00:12,428 --> 00:00:18,857
+Coach: If one person supports an example, that is not the same as supporting its length,
+
+6
+00:00:18,857 --> 00:00:22,714
+Coach: its place in the session or the complete plan.
+
+7
+00:00:23,064 --> 00:00:25,207
+Coach: Return to the taster proposals.
+
+8
+00:00:25,207 --> 00:00:29,064
+Coach: The following support statements are available in this baseline.
+
+9
+00:00:29,064 --> 00:00:32,921
+Coach: Read their qualifications as carefully as their positive words.
+
+10
+00:00:32,921 --> 00:00:35,921
+Coach: A condition is part of the contribution;
+
+11
+00:00:35,921 --> 00:00:41,493
+Coach: it is not a small detail to delete when you shorten the summary.
+
+12
+00:00:41,843 --> 00:00:45,700
+Coach: Maya supports showing an example, while protecting pair discussion.
+
+13
+00:00:45,700 --> 00:00:47,843
+Coach: Noah supports some pair discussion
+
+14
+00:00:47,843 --> 00:00:51,700
+Coach: and still wants a decision about the example's length.
+
+15
+00:00:51,700 --> 00:00:54,271
+Coach: These positions have a useful connection,
+
+16
+00:00:54,271 --> 00:00:58,557
+Coach: but the connection is not yet a fully timed agreement.
+
+17
+00:01:06,907 --> 00:01:12,907
+Coach: A person who has not replied has not supplied a view you can report.
+
+18
+00:01:12,907 --> 00:01:15,050
+Coach: Nodding, looking at the board
+
+19
+00:01:15,050 --> 00:01:18,907
+Coach: or letting a summary pass might have several meanings.
+
+20
+00:01:18,907 --> 00:01:20,621
+Coach: If the status matters,
+
+21
+00:01:20,621 --> 00:01:27,478
+Coach: ask a focused question and leave room for a correction or a request for more time.
+
+22
+00:01:27,828 --> 00:01:29,542
+Coach: You can also overcorrect.
+
+23
+00:01:29,542 --> 00:01:34,256
+Coach: Saying nothing is agreed can erase a real point of support.
+
+24
+00:01:34,256 --> 00:01:37,685
+Coach: Keep agreement at the level where it exists:
+
+25
+00:01:37,685 --> 00:01:43,685
+Coach: a named person's support for a named element, with the words that limit it.
+
+26
+00:01:43,685 --> 00:01:48,399
+Coach: A complete group decision requires more evidence than a tidy diagram.
+
+27
+00:01:48,749 --> 00:01:51,320
+Coach: The prompt gives a firm constraint:
+
+28
+00:01:51,320 --> 00:01:54,749
+Coach: at least five minutes for questions within thirty.
+
+29
+00:01:54,749 --> 00:01:59,892
+Coach: That is not something you have to infer from a person's reaction.
+
+30
+00:01:59,892 --> 00:02:05,892
+Coach: Separate the task requirement from the group's preferences so the summary can preserve both
+
+31
+00:02:05,892 --> 00:02:09,320
+Coach: without calling them the same kind of agreement.
+
+32
+00:02:09,670 --> 00:02:13,527
+Coach: A useful summary can therefore contain a positive connection
+
+33
+00:02:13,527 --> 00:02:15,670
+Coach: and an open question together.
+
+34
+00:02:15,670 --> 00:02:17,813
+Coach: It need not sound indecisive.
+
+35
+00:02:17,813 --> 00:02:22,956
+Coach: Saying what is supported gives the group a base to work from;
+
+36
+00:02:22,956 --> 00:02:28,099
+Coach: saying what remains open tells them what their next decision actually concerns.
+
+37
+00:02:28,449 --> 00:02:32,306
+Coach: Now compare three possible accounts of this same baseline.
+
+38
+00:02:32,306 --> 00:02:34,877
+Coach: Judge each against the actual statements,
+
+39
+00:02:34,877 --> 00:02:38,735
+Coach: not just against how confident or friendly it sounds.
+
+40
+00:02:38,735 --> 00:02:43,449
+Coach: The question is whether the account changes the scope of support
+
+41
+00:02:43,449 --> 00:02:45,163
+Coach: or discards useful information.
+
+42
+00:02:45,513 --> 00:02:50,656
+Coach: Choose the account you could defend by pointing back to the source.
+
+43
+00:02:50,656 --> 00:02:55,370
+Coach: Afterward, notice whether a peer's reply confirms only their own position
+
+44
+00:02:55,370 --> 00:02:57,084
+Coach: or settles something wider.
+
+45
+00:02:57,084 --> 00:03:01,370
+Coach: A reply from one person is still one person's reply.
+
+46
+00:03:09,720 --> 00:03:13,577
+You: There is support for an example and pair discussion,
+
+47
+00:03:13,577 --> 00:03:17,863
+You: but their timing and the whole sequence are still open.
+
+48
+00:03:17,863 --> 00:03:21,291
+You: Question time must stay within the thirty minutes.
+
+49
+00:03:21,641 --> 00:03:27,212
+Noah: Yes, I still want us to decide how short the demonstration should be.
+
+50
+00:03:27,562 --> 00:03:32,276
+Coach: This summary preserves support for elements while keeping the timing open.
+
+51
+00:03:32,276 --> 00:03:35,276
+Coach: Noah confirms his own unresolved question here.
+
+52
+00:03:35,276 --> 00:03:38,276
+Coach: That reply does not certify Maya's view,
+
+53
+00:03:38,276 --> 00:03:42,133
+Coach: complete the schedule or establish a whole-group decision.
+
+54
+00:03:42,483 --> 00:03:46,769
+Coach: On any path, return to the scope of the claim.
+
+55
+00:03:46,769 --> 00:03:50,197
+Coach: The baseline supports keeping useful elements in consideration,
+
+56
+00:03:50,197 --> 00:03:54,483
+Coach: and it leaves decisions about their arrangement and timing open.
+
+57
+00:03:54,483 --> 00:04:00,912
+Coach: A summary is ready for use when another person can see what to confirm, qualify
+
+58
+00:04:00,912 --> 00:04:01,769
+Coach: or correct.
+
+59
+00:04:14,119 --> 00:04:17,119
+Coach: Use accurate status words when they help:
+
+60
+00:04:17,119 --> 00:04:20,548
+Coach: proposed, supported with a condition, or still open.
+
+61
+00:04:20,548 --> 00:04:24,834
+Coach: You do not need to recite labels in every sentence.
+
+62
+00:04:24,834 --> 00:04:30,405
+Coach: Their job is to stop a provisional idea from becoming a decision simply
+
+63
+00:04:30,405 --> 00:04:32,548
+Coach: because it has been repeated.
+
+64
+00:04:32,898 --> 00:04:35,469
+Coach: Once the shared ground is clear,
+
+65
+00:04:35,469 --> 00:04:39,327
+Coach: the group can test whether the elements fit together.
+
+66
+00:04:39,327 --> 00:04:44,041
+Coach: That is a different question from whether they all sound attractive.
+
+67
+00:04:44,041 --> 00:04:47,041
+Coach: The next section looks at the connections
+
+68
+00:04:47,041 --> 00:04:50,898
+Coach: and constraints that make a combined proposal worth developing.

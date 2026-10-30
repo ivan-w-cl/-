@@ -1,0 +1,207 @@
+1
+00:00:00,000 --> 00:00:04,286
+Coach: Several useful contributions do not yet make a shared proposal.
+
+2
+00:00:04,286 --> 00:00:09,429
+Coach: First find out what each person has offered and what remains unsettled.
+
+3
+00:00:09,429 --> 00:00:13,286
+Coach: A good summary makes the discussion easier to inspect.
+
+4
+00:00:13,286 --> 00:00:19,286
+Coach: It does not turn the person summarising into the owner of everyone else's ideas.
+
+5
+00:00:19,636 --> 00:00:24,350
+Coach: Our practice group is planning a thirty-minute book-club taster.
+
+6
+00:00:24,350 --> 00:00:28,207
+Coach: It should let newcomers try discussing a short text
+
+7
+00:00:28,207 --> 00:00:31,208
+Coach: and learn how the weekly club works.
+
+8
+00:00:31,208 --> 00:00:35,065
+Coach: The main room and the stated materials are available.
+
+9
+00:00:35,065 --> 00:00:39,779
+Coach: At least five minutes for questions belongs inside the thirty minutes.
+
+10
+00:00:40,129 --> 00:00:43,986
+Coach: Now look at three proposals already on the table.
+
+11
+00:00:43,986 --> 00:00:48,272
+Coach: Keep each person's words available while you make shorter notes.
+
+12
+00:00:48,272 --> 00:00:52,129
+Coach: A label such as pairs is useful for navigation,
+
+13
+00:00:52,129 --> 00:00:58,986
+Coach: but it should not replace the important detail about discussing one line before whole-group sharing.
+
+14
+00:00:59,336 --> 00:01:06,622
+Maya: Pairs could compare one line from the short text before we share anything with the whole group.
+
+15
+00:01:06,972 --> 00:01:10,401
+Coach: That is a proposal about participation and sequence.
+
+16
+00:01:10,401 --> 00:01:14,258
+Coach: We can ask why starting in pairs might help,
+
+17
+00:01:14,258 --> 00:01:19,829
+Coach: but we should not silently add a reason that Maya has not given.
+
+18
+00:01:19,829 --> 00:01:25,401
+Coach: Keep an offered action distinct from your own interpretation of its possible benefit.
+
+19
+00:01:25,751 --> 00:01:31,322
+Noah: A short demonstration could show newcomers what it means to give an interpretation
+
+20
+00:01:31,322 --> 00:01:32,608
+Noah: and a reason.
+
+21
+00:01:32,958 --> 00:01:37,672
+Coach: Noah offers a short example and says what it would show.
+
+22
+00:01:37,672 --> 00:01:41,101
+Coach: That purpose may connect with the pair task:
+
+23
+00:01:41,101 --> 00:01:45,815
+Coach: newcomers could see the kind of contribution they will then try.
+
+24
+00:01:45,815 --> 00:01:47,958
+Coach: It is a possible connection,
+
+25
+00:01:47,958 --> 00:01:52,244
+Coach: not evidence that every newcomer will understand or feel ready.
+
+26
+00:01:52,594 --> 00:01:56,451
+You: I suggest keeping time for questions about the club,
+
+27
+00:01:56,451 --> 00:02:00,308
+You: using the information sheet for anything it actually answers.
+
+28
+00:02:08,658 --> 00:02:12,944
+Coach: Question time is not merely a third person's favourite idea.
+
+29
+00:02:12,944 --> 00:02:16,801
+Coach: The prompt requires at least five minutes for it.
+
+30
+00:02:16,801 --> 00:02:20,658
+Coach: By contrast, the order and length of the example,
+
+31
+00:02:20,658 --> 00:02:23,658
+Coach: pair discussion and sharing are still proposals.
+
+32
+00:02:23,658 --> 00:02:25,801
+Coach: Put these on different rows
+
+33
+00:02:25,801 --> 00:02:29,658
+Coach: so a suggestion does not quietly override a requirement.
+
+34
+00:02:30,008 --> 00:02:34,294
+Coach: The available information sheet can support answers about the club.
+
+35
+00:02:34,294 --> 00:02:37,294
+Coach: Its full contents are not supplied here,
+
+36
+00:02:37,294 --> 00:02:41,151
+Coach: so we cannot promise it answers every visitor's question.
+
+37
+00:02:41,151 --> 00:02:44,151
+Coach: A useful note can preserve that limit:
+
+38
+00:02:44,151 --> 00:02:49,294
+Coach: answer what the sheet covers, and identify anything that still needs checking.
+
+39
+00:02:49,644 --> 00:02:54,787
+Coach: It is tempting to tidy the board by removing repetition or uncertainty.
+
+40
+00:02:54,787 --> 00:02:57,358
+Coach: Remove duplicate wording if it helps,
+
+41
+00:02:57,358 --> 00:03:00,358
+Coach: but keep different conditions and unresolved questions.
+
+42
+00:03:00,358 --> 00:03:04,644
+Coach: Two people can favour the same element for different reasons,
+
+43
+00:03:04,644 --> 00:03:09,787
+Coach: and those reasons may matter when you decide how to use it.
+
+44
+00:03:22,137 --> 00:03:26,851
+Coach: Before combining anything, check your map against what was actually said.
+
+45
+00:03:26,851 --> 00:03:31,566
+Coach: Have you kept the main proposal, the reason that was supplied,
+
+46
+00:03:31,566 --> 00:03:34,566
+Coach: the fixed limits and the unresolved question?
+
+47
+00:03:34,566 --> 00:03:38,851
+Coach: You do not need four boxes in every real conversation;
+
+48
+00:03:38,851 --> 00:03:43,137
+Coach: you need enough structure to avoid losing a material distinction.
+
+49
+00:03:43,487 --> 00:03:47,773
+Coach: The next step is not to announce that everyone agrees.
+
+50
+00:03:47,773 --> 00:03:52,058
+Coach: It is to ask which parts already have explicit support
+
+51
+00:03:52,058 --> 00:03:54,201
+Coach: and which still need discussion.
+
+52
+00:03:54,201 --> 00:04:01,487
+Coach: A clear map gives the group something concrete to correct before you invest in a combined plan.

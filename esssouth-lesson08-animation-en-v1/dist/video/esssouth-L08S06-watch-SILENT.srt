@@ -1,0 +1,279 @@
+1
+00:00:00,000 --> 00:00:02,571
+Coach: Now practise bringing several contributions together.
+
+2
+00:00:02,571 --> 00:00:06,429
+Coach: Use the current snapshot of the book-club discussion,
+
+3
+00:00:06,429 --> 00:00:08,572
+Coach: after the explicit proposal check.
+
+4
+00:00:08,572 --> 00:00:15,000
+Coach: Your job is to make the shared position clear enough for another person to respond.
+
+5
+00:00:15,000 --> 00:00:21,429
+Coach: You are not announcing a final plan or trying to repeat every sentence in order.
+
+6
+00:00:21,779 --> 00:00:26,065
+Coach: The candidate links a brief example, pair discussion and sharing,
+
+7
+00:00:26,065 --> 00:00:31,636
+Coach: with at least five minutes for club questions inside the thirty-minute total.
+
+8
+00:00:31,636 --> 00:00:33,779
+Coach: The resource limits still apply.
+
+9
+00:00:33,779 --> 00:00:38,065
+Coach: No exact stage lengths or demonstration leader have been settled,
+
+10
+00:00:38,065 --> 00:00:41,922
+Coach: so those checks must not disappear from the summary.
+
+11
+00:00:42,272 --> 00:00:48,272
+Coach: Maya supports the sequence if the example stays brief and the pair task remains.
+
+12
+00:00:48,272 --> 00:00:52,558
+Coach: Noah supports starting with an example and keeping question time,
+
+13
+00:00:52,558 --> 00:00:58,558
+Coach: but is not ready to agree to the full sequence before timing is checked.
+
+14
+00:00:58,558 --> 00:01:03,272
+Coach: These are related positions, not identical signatures on a completed plan.
+
+15
+00:01:11,622 --> 00:01:15,479
+Coach: Think about what a listener needs to know now.
+
+16
+00:01:15,479 --> 00:01:18,908
+Coach: Name the candidate without making it sound adopted.
+
+17
+00:01:18,908 --> 00:01:23,622
+Coach: Include the support and the reservation that affect the next decision.
+
+18
+00:01:23,622 --> 00:01:29,194
+Coach: Then offer a relevant check, such as working out stage lengths including transitions,
+
+19
+00:01:29,194 --> 00:01:33,908
+Coach: rather than asking a vague question about whether everyone is happy.
+
+20
+00:01:34,258 --> 00:01:38,972
+Coach: You may speak in English or make a few private notes.
+
+21
+00:01:38,972 --> 00:01:40,687
+Coach: Nothing is recorded here.
+
+22
+00:01:40,687 --> 00:01:47,115
+Coach: Leave out a detail only when it does not change the meaning of the proposal
+
+23
+00:01:47,115 --> 00:01:48,830
+Coach: or a person's position.
+
+24
+00:01:48,830 --> 00:01:53,544
+Coach: In particular, do not lose the words that make support conditional.
+
+25
+00:01:53,894 --> 00:01:58,180
+Coach: You do not have to sound like a formal chairperson.
+
+26
+00:01:58,180 --> 00:02:01,608
+Coach: A short, clear summary can invite a correction
+
+27
+00:02:01,608 --> 00:02:04,608
+Coach: and leave another person room to continue.
+
+28
+00:02:04,608 --> 00:02:11,037
+Coach: Choose ordinary wording that you could explain if someone asked what you meant by agreed,
+
+29
+00:02:11,037 --> 00:02:12,751
+Coach: supported or still open.
+
+30
+00:02:13,101 --> 00:02:15,672
+Coach: Take time to prepare your version.
+
+31
+00:02:15,672 --> 00:02:19,530
+Coach: In Watch, a possible model follows the preparation pause.
+
+32
+00:02:19,530 --> 00:02:22,530
+Coach: In Practice, continue when you are ready,
+
+33
+00:02:22,530 --> 00:02:26,815
+Coach: look at the model if useful, or skip this rehearsal.
+
+34
+00:02:26,815 --> 00:02:29,815
+Coach: The model will be a separate example,
+
+35
+00:02:29,815 --> 00:02:34,101
+Coach: not a reply to words you may have said privately.
+
+36
+00:03:09,451 --> 00:03:13,737
+You: Our candidate links a brief example, pair discussion and sharing,
+
+37
+00:03:13,737 --> 00:03:18,451
+You: with at least five minutes for club questions inside thirty minutes.
+
+38
+00:03:18,451 --> 00:03:23,594
+You: Maya supports the sequence if the example stays brief and pairs remain.
+
+39
+00:03:23,594 --> 00:03:26,594
+You: Noah supports the example and question time,
+
+40
+00:03:26,594 --> 00:03:31,308
+You: but wants the timings checked before agreeing to the whole sequence.
+
+41
+00:03:31,308 --> 00:03:34,737
+You: Could we check a complete schedule, including transitions,
+
+42
+00:03:34,737 --> 00:03:37,308
+You: and who would give the example?
+
+43
+00:03:37,658 --> 00:03:40,229
+Noah: Please keep my timing question open.
+
+44
+00:03:40,229 --> 00:03:43,658
+Noah: I haven't agreed to the full sequence yet.
+
+45
+00:03:44,008 --> 00:03:49,580
+Coach: The model connects the elements, reports the two support statements with their limits,
+
+46
+00:03:49,580 --> 00:03:51,294
+Coach: and offers a check.
+
+47
+00:03:51,294 --> 00:03:54,294
+Coach: Noah's reply reinforces the open timing point.
+
+48
+00:03:54,294 --> 00:03:59,008
+Coach: Nothing here adopts a schedule or proves the activity will work.
+
+49
+00:03:59,008 --> 00:04:03,294
+Coach: You can use different wording while keeping those distinctions clear.
+
+50
+00:04:03,644 --> 00:04:07,073
+Coach: Use the source statements to review any summary,
+
+51
+00:04:07,073 --> 00:04:11,358
+Coach: whether you rehearsed one, watched the model or moved on.
+
+52
+00:04:11,358 --> 00:04:14,787
+Coach: Does it distinguish the candidate from a decision?
+
+53
+00:04:14,787 --> 00:04:18,216
+Coach: Does it keep each person's condition or reservation?
+
+54
+00:04:18,216 --> 00:04:22,930
+Coach: Is the proposed next check still presented as something to discuss,
+
+55
+00:04:22,930 --> 00:04:25,930
+Coach: rather than an assigned or completed action?
+
+56
+00:04:26,280 --> 00:04:30,137
+Coach: If a phrase is too broad, revise that phrase.
+
+57
+00:04:30,137 --> 00:04:36,566
+Coach: For example, replace everyone agrees with a more specific account of who supports which part.
+
+58
+00:04:36,566 --> 00:04:39,566
+Coach: If your wording is accurate but long,
+
+59
+00:04:39,566 --> 00:04:42,566
+Coach: shorten the repetition rather than the condition.
+
+60
+00:04:42,566 --> 00:04:48,566
+Coach: The useful target is a clearer account, not a memorised version of the model.
+
+61
+00:05:00,916 --> 00:05:05,202
+Coach: A summary can help the group see its next decision,
+
+62
+00:05:05,202 --> 00:05:09,059
+Coach: but it does not make that decision for them.
+
+63
+00:05:09,059 --> 00:05:10,773
+Coach: After offering a check,
+
+64
+00:05:10,773 --> 00:05:15,916
+Coach: allow an answer and use the actual reply to update your account.
+
+65
+00:05:15,916 --> 00:05:20,630
+Coach: Someone may qualify their support, disagree or ask for more information.
+
+66
+00:05:20,980 --> 00:05:24,409
+Coach: For your next discussion, choose one small focus:
+
+67
+00:05:24,409 --> 00:05:29,980
+Coach: keep a condition beside its supported element, separate a proposal from a decision,
+
+68
+00:05:29,980 --> 00:05:32,551
+Coach: or name the next unresolved check.
+
+69
+00:05:32,551 --> 00:05:36,837
+Coach: Choose the one that would help your own summaries most.
+
+70
+00:05:36,837 --> 00:05:43,694
+Coach: The final section uses a different task to see what these distinctions still help you notice.
