@@ -1,6 +1,6 @@
 {
  "section": "S07",
- "ranAt": "2026-10-30T06:48:50.824Z",
+ "ranAt": "2026-10-30T06:49:40.779Z",
  "environment": {
   "os": "linux 6.18.44-fc-v185",
   "browser": "Chromium 153.0.8010.12",
@@ -113,22 +113,22 @@
   {
    "name": "rate 1×: clock advances at 1× (measured 0.998)",
    "pass": true,
-   "detail": 0.9984669732719809
+   "detail": 0.9975338265680509
   },
   {
-   "name": "rate 1.25×: clock advances at 1.25× (measured 1.246)",
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.242)",
    "pass": true,
-   "detail": 1.2458338888146308
+   "detail": 1.2423343554193158
   },
   {
-   "name": "rate 1.5×: clock advances at 1.5× (measured 1.490)",
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.485)",
    "pass": true,
-   "detail": 1.4898020395918963
+   "detail": 1.4849030193960286
   },
   {
-   "name": "rate 2×: clock advances at 2× (measured 1.980)",
+   "name": "rate 2×: clock advances at 2× (measured 1.996)",
    "pass": true,
-   "detail": 1.9801373058719733
+   "detail": 1.9956002933137174
   },
   {
    "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
@@ -145,7 +145,7 @@
    "name": "restart returns to the section start and plays",
    "pass": true,
    "detail": {
-    "t": 0.1935999999998603,
+    "t": 0.19569999999995344,
     "playing": true,
     "gate": "none",
     "choice": null

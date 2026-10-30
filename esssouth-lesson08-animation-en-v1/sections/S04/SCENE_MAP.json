@@ -1,0 +1,1848 @@
+{
+ "sectionId": "L08.S04",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 276.12,
+   "steps": [
+    {
+     "id": "L08.S04.c001",
+     "kind": "line",
+     "block": "L08.S04.B01",
+     "branch": null,
+     "start": 0,
+     "end": 24.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "crit": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cr0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cr1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cr2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c001",
+       "phrase": "the same questions",
+       "at": 3
+      },
+      {
+       "name": "s4_when",
+       "phrase": "When two arrangements compete",
+       "at": 0
+      },
+      {
+       "name": "s4_will",
+       "phrase": "will newcomers have an opportunity",
+       "at": 5.571
+      },
+      {
+       "name": "s4_how",
+       "phrase": "How will they find out",
+       "at": 9.429
+      },
+      {
+       "name": "s4_can",
+       "phrase": "Can the stages and transitions fit",
+       "at": 12.857
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c002",
+     "kind": "line",
+     "block": "L08.S04.B01",
+     "branch": null,
+     "start": 24.35,
+     "end": 44.414,
+     "speaker": "coach",
+     "tokens": {
+      "oL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unset": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tot": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c002",
+       "phrase": "possible cost",
+       "at": 39.779
+      },
+      {
+       "name": "s4_one",
+       "phrase": "One candidate gives more room",
+       "at": 24.35
+      },
+      {
+       "name": "s4_another",
+       "phrase": "Another keeps the example brief",
+       "at": 29.064
+      },
+      {
+       "name": "s4_neither",
+       "phrase": "Neither description supplies",
+       "at": 34.636
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c003",
+     "kind": "line",
+     "block": "L08.S04.B01",
+     "branch": null,
+     "start": 44.414,
+     "end": 66.621,
+     "speaker": "coach",
+     "tokens": {
+      "crit": [
+       "o+act"
+      ],
+      "cr0": [
+       "o+act"
+      ],
+      "cr1": [
+       "o+act"
+      ],
+      "cr2": [
+       "o+act"
+      ],
+      "cA": [
+       "o+act"
+      ],
+      "cB": [
+       "o+act"
+      ],
+      "oL": [
+       "o+act"
+      ],
+      "oB": [
+       "o+act"
+      ],
+      "unset": [
+       "o+act"
+      ],
+      "tot": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "b0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "b1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "b2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "b3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ct": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "bar"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c003",
+       "phrase": "The total stays the same",
+       "at": 60.7
+      },
+      {
+       "name": "s4_longer",
+       "phrase": "A longer example may make",
+       "at": 44.414
+      },
+      {
+       "name": "s4_also",
+       "phrase": "It can also use minutes",
+       "at": 48.7
+      },
+      {
+       "name": "s4_total",
+       "phrase": "The total stays the same",
+       "at": 60.7
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.h101",
+     "kind": "hold",
+     "block": "L08.S04.B01",
+     "branch": null,
+     "start": 66.621,
+     "end": 74.621,
+     "speaker": null,
+     "tokens": {
+      "tot": [
+       "o+act"
+      ],
+      "b0": [
+       "o+act"
+      ],
+      "b1": [
+       "o+act"
+      ],
+      "b2": [
+       "o+act"
+      ],
+      "b3": [
+       "o+act"
+      ],
+      "ct": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "bH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "cH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cN": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S04.c004",
+     "kind": "line",
+     "block": "L08.S04.B02",
+     "branch": null,
+     "start": 74.621,
+     "end": 97.685,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "oB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bH": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "cH": [
+       "o+act"
+      ],
+      "cN": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "rl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rc": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c004",
+       "phrase": "names its limitation",
+       "at": 79.764
+      },
+      {
+       "name": "s4_useful",
+       "phrase": "A useful trade-off statement",
+       "at": 74.621
+      },
+      {
+       "name": "s4_prefer",
+       "phrase": "You can prefer the briefer example",
+       "at": 81.05
+      },
+      {
+       "name": "s4_still",
+       "phrase": "That preference still needs a check",
+       "at": 87.907
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.d001",
+     "kind": "line",
+     "block": "L08.S04.B02",
+     "branch": null,
+     "start": 97.685,
+     "end": 109.606,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "oB": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rl": [
+       "o+act"
+      ],
+      "rc": [
+       "o+act"
+      ],
+      "trd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S04_d001",
+       "phrase": "shows the reasoning clearly",
+       "at": 107.542
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c005",
+     "kind": "line",
+     "block": "L08.S04.B02",
+     "branch": null,
+     "start": 109.606,
+     "end": 132.242,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "oB": [
+       "x+w+h+fs+o"
+      ],
+      "rl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "trd": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "scope": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rOpen": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chal": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c005",
+       "phrase": "this candidate might fit this task",
+       "at": 115.606
+      },
+      {
+       "name": "s4_not",
+       "phrase": "That statement does not claim",
+       "at": 109.606
+      },
+      {
+       "name": "s4_someone",
+       "phrase": "Someone can now question the link",
+       "at": 118.177
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.d002",
+     "kind": "line",
+     "block": "L08.S04.B02",
+     "branch": null,
+     "start": 132.242,
+     "end": 142.449,
+     "speaker": "noah",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "oB": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rl": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "scope": [
+       "o+act"
+      ],
+      "rOpen": [
+       "o+act"
+      ],
+      "chal": [
+       "o+act"
+      ],
+      "chk": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S04_d002",
+       "phrase": "include a reason",
+       "at": 134.385
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c006",
+     "kind": "line",
+     "block": "L08.S04.B02",
+     "branch": null,
+     "start": 142.449,
+     "end": 161.656,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "oB": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "chk": [
+       "o+act"
+      ],
+      "ess": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "dur": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c006",
+       "phrase": "what must survive",
+       "at": 144.163
+      },
+      {
+       "name": "s4_helps",
+       "phrase": "That question helps define",
+       "at": 142.449
+      },
+      {
+       "name": "s4_keeping",
+       "phrase": "Keeping the reasoning visible",
+       "at": 147.592
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c007",
+     "kind": "line",
+     "block": "L08.S04.B03",
+     "branch": null,
+     "start": 161.656,
+     "end": 182.577,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ess": [
+       "o+act"
+      ],
+      "dur": [
+       "o+act"
+      ],
+      "qm": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "uq": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c007",
+       "phrase": "not evidence that five minutes will answer everything",
+       "at": 168.513
+      },
+      {
+       "name": "s4_apply",
+       "phrase": "Apply the same care",
+       "at": 161.656
+      },
+      {
+       "name": "s4_least",
+       "phrase": "At least five minutes is required",
+       "at": 165.085
+      },
+      {
+       "name": "s4_pres",
+       "phrase": "Preserve the requirement",
+       "at": 176.656
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c008",
+     "kind": "line",
+     "block": "L08.S04.B03",
+     "branch": null,
+     "start": 182.577,
+     "end": 201.784,
+     "speaker": "coach",
+     "tokens": {
+      "qm": [
+       "o+act"
+      ],
+      "sl": [
+       "o+act"
+      ],
+      "uq": [
+       "o+act"
+      ],
+      "pm": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "rp": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sr": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c008",
+       "phrase": "preserving its purpose in a different form",
+       "at": 189.434
+      },
+      {
+       "name": "s4_false",
+       "phrase": "Do not create a false choice",
+       "at": 182.577
+      },
+      {
+       "name": "s4_taking",
+       "phrase": "Taking someone's contribution seriously",
+       "at": 186.863
+      },
+      {
+       "name": "s4_explain",
+       "phrase": "It can also mean explaining",
+       "at": 192.434
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c009",
+     "kind": "line",
+     "block": "L08.S04.B03",
+     "branch": null,
+     "start": 201.784,
+     "end": 224.42,
+     "speaker": "coach",
+     "tokens": {
+      "b0": [
+       "x+w+h+fs+o+tag+kind+slot",
+       "o"
+      ],
+      "pm": [
+       "o+act"
+      ],
+      "rp": [
+       "o+act"
+      ],
+      "sr": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c009",
+       "phrase": "which assumption it depends on",
+       "at": 206.07
+      },
+      {
+       "name": "s4_remains",
+       "phrase": "A trade-off remains open to review",
+       "at": 201.784
+      },
+      {
+       "name": "s4_here",
+       "phrase": "Here, a brief example depends",
+       "at": 208.213
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.h102",
+     "kind": "hold",
+     "block": "L08.S04.B03",
+     "branch": null,
+     "start": 224.42,
+     "end": 236.42,
+     "speaker": null,
+     "tokens": {
+      "cr0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cr1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cr2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "b0": [
+       "o+act"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "kF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S04.c010",
+     "kind": "line",
+     "block": "L08.S04.B04",
+     "branch": null,
+     "start": 236.42,
+     "end": 255.199,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "cr0": [
+       "o+act"
+      ],
+      "cr1": [
+       "o+act"
+      ],
+      "cr2": [
+       "o+act"
+      ],
+      "oB": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ct": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "rl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rc": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ],
+      "kF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "kH": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c010",
+       "phrase": "without presenting it as the group",
+       "at": 238.991
+      },
+      {
+       "name": "s4_now",
+       "phrase": "You can now explain a preference",
+       "at": 236.42
+      },
+      {
+       "name": "s4_keep",
+       "phrase": "Keep the proposal, its purpose",
+       "at": 241.991
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c011",
+     "kind": "line",
+     "block": "L08.S04.B04",
+     "branch": null,
+     "start": 255.199,
+     "end": 276.12,
+     "speaker": "coach",
+     "tokens": {
+      "oB": [
+       "o+act"
+      ],
+      "ct": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "rl": [
+       "o+act"
+      ],
+      "rc": [
+       "o+act"
+      ],
+      "kF": [
+       "o+act"
+      ],
+      "kH": [
+       "o+act"
+      ],
+      "grp": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c011",
+       "phrase": "the support that matters",
+       "at": 259.913
+      },
+      {
+       "name": "s4_next",
+       "phrase": "Next, bring the candidate back",
+       "at": 255.199
+      },
+      {
+       "name": "s4_check",
+       "phrase": "A useful check can reveal",
+       "at": 261.628
+      }
+     ]
+    }
+   ]
+  },
+  "practice:main": {
+   "durationSeconds": 276.12,
+   "steps": [
+    {
+     "id": "L08.S04.c001",
+     "kind": "line",
+     "block": "L08.S04.B01",
+     "branch": null,
+     "start": 0,
+     "end": 24.35,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "crit": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cr0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cr1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cr2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cA": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oL": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c001",
+       "phrase": "the same questions",
+       "at": 3
+      },
+      {
+       "name": "s4_when",
+       "phrase": "When two arrangements compete",
+       "at": 0
+      },
+      {
+       "name": "s4_will",
+       "phrase": "will newcomers have an opportunity",
+       "at": 5.571
+      },
+      {
+       "name": "s4_how",
+       "phrase": "How will they find out",
+       "at": 9.429
+      },
+      {
+       "name": "s4_can",
+       "phrase": "Can the stages and transitions fit",
+       "at": 12.857
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c002",
+     "kind": "line",
+     "block": "L08.S04.B01",
+     "branch": null,
+     "start": 24.35,
+     "end": 44.414,
+     "speaker": "coach",
+     "tokens": {
+      "oL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "oB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "unset": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "tot": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c002",
+       "phrase": "possible cost",
+       "at": 39.779
+      },
+      {
+       "name": "s4_one",
+       "phrase": "One candidate gives more room",
+       "at": 24.35
+      },
+      {
+       "name": "s4_another",
+       "phrase": "Another keeps the example brief",
+       "at": 29.064
+      },
+      {
+       "name": "s4_neither",
+       "phrase": "Neither description supplies",
+       "at": 34.636
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c003",
+     "kind": "line",
+     "block": "L08.S04.B01",
+     "branch": null,
+     "start": 44.414,
+     "end": 66.621,
+     "speaker": "coach",
+     "tokens": {
+      "crit": [
+       "o+act"
+      ],
+      "cr0": [
+       "o+act"
+      ],
+      "cr1": [
+       "o+act"
+      ],
+      "cr2": [
+       "o+act"
+      ],
+      "cA": [
+       "o+act"
+      ],
+      "cB": [
+       "o+act"
+      ],
+      "oL": [
+       "o+act"
+      ],
+      "oB": [
+       "o+act"
+      ],
+      "unset": [
+       "o+act"
+      ],
+      "tot": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "b0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "b1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "b2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "b3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ct": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "bar"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c003",
+       "phrase": "The total stays the same",
+       "at": 60.7
+      },
+      {
+       "name": "s4_longer",
+       "phrase": "A longer example may make",
+       "at": 44.414
+      },
+      {
+       "name": "s4_also",
+       "phrase": "It can also use minutes",
+       "at": 48.7
+      },
+      {
+       "name": "s4_total",
+       "phrase": "The total stays the same",
+       "at": 60.7
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.h101",
+     "kind": "hold",
+     "block": "L08.S04.B01",
+     "branch": null,
+     "start": 66.621,
+     "end": 74.621,
+     "speaker": null,
+     "tokens": {
+      "tot": [
+       "o+act"
+      ],
+      "b0": [
+       "o+act"
+      ],
+      "b1": [
+       "o+act"
+      ],
+      "b2": [
+       "o+act"
+      ],
+      "b3": [
+       "o+act"
+      ],
+      "ct": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "bH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "cH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cN": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S04.c004",
+     "kind": "line",
+     "block": "L08.S04.B02",
+     "branch": null,
+     "start": 74.621,
+     "end": 97.685,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "oB": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bH": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "cH": [
+       "o+act"
+      ],
+      "cN": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "rl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rc": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c004",
+       "phrase": "names its limitation",
+       "at": 79.764
+      },
+      {
+       "name": "s4_useful",
+       "phrase": "A useful trade-off statement",
+       "at": 74.621
+      },
+      {
+       "name": "s4_prefer",
+       "phrase": "You can prefer the briefer example",
+       "at": 81.05
+      },
+      {
+       "name": "s4_still",
+       "phrase": "That preference still needs a check",
+       "at": 87.907
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.d001",
+     "kind": "line",
+     "block": "L08.S04.B02",
+     "branch": null,
+     "start": 97.685,
+     "end": 109.606,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "oB": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rl": [
+       "o+act"
+      ],
+      "rc": [
+       "o+act"
+      ],
+      "trd": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S04_d001",
+       "phrase": "shows the reasoning clearly",
+       "at": 107.542
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c005",
+     "kind": "line",
+     "block": "L08.S04.B02",
+     "branch": null,
+     "start": 109.606,
+     "end": 132.242,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "oB": [
+       "x+w+h+fs+o"
+      ],
+      "rl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "trd": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "scope": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rOpen": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "chal": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c005",
+       "phrase": "this candidate might fit this task",
+       "at": 115.606
+      },
+      {
+       "name": "s4_not",
+       "phrase": "That statement does not claim",
+       "at": 109.606
+      },
+      {
+       "name": "s4_someone",
+       "phrase": "Someone can now question the link",
+       "at": 118.177
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.d002",
+     "kind": "line",
+     "block": "L08.S04.B02",
+     "branch": null,
+     "start": 132.242,
+     "end": 142.449,
+     "speaker": "noah",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "oB": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rl": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "scope": [
+       "o+act"
+      ],
+      "rOpen": [
+       "o+act"
+      ],
+      "chal": [
+       "o+act"
+      ],
+      "chk": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S04_d002",
+       "phrase": "include a reason",
+       "at": 134.385
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c006",
+     "kind": "line",
+     "block": "L08.S04.B02",
+     "branch": null,
+     "start": 142.449,
+     "end": 161.656,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "oB": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "chk": [
+       "o+act"
+      ],
+      "ess": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "dur": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "div"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c006",
+       "phrase": "what must survive",
+       "at": 144.163
+      },
+      {
+       "name": "s4_helps",
+       "phrase": "That question helps define",
+       "at": 142.449
+      },
+      {
+       "name": "s4_keeping",
+       "phrase": "Keeping the reasoning visible",
+       "at": 147.592
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c007",
+     "kind": "line",
+     "block": "L08.S04.B03",
+     "branch": null,
+     "start": 161.656,
+     "end": 182.577,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ess": [
+       "o+act"
+      ],
+      "dur": [
+       "o+act"
+      ],
+      "qm": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "uq": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c007",
+       "phrase": "not evidence that five minutes will answer everything",
+       "at": 168.513
+      },
+      {
+       "name": "s4_apply",
+       "phrase": "Apply the same care",
+       "at": 161.656
+      },
+      {
+       "name": "s4_least",
+       "phrase": "At least five minutes is required",
+       "at": 165.085
+      },
+      {
+       "name": "s4_pres",
+       "phrase": "Preserve the requirement",
+       "at": 176.656
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c008",
+     "kind": "line",
+     "block": "L08.S04.B03",
+     "branch": null,
+     "start": 182.577,
+     "end": 201.784,
+     "speaker": "coach",
+     "tokens": {
+      "qm": [
+       "o+act"
+      ],
+      "sl": [
+       "o+act"
+      ],
+      "uq": [
+       "o+act"
+      ],
+      "pm": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "rp": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sr": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c008",
+       "phrase": "preserving its purpose in a different form",
+       "at": 189.434
+      },
+      {
+       "name": "s4_false",
+       "phrase": "Do not create a false choice",
+       "at": 182.577
+      },
+      {
+       "name": "s4_taking",
+       "phrase": "Taking someone's contribution seriously",
+       "at": 186.863
+      },
+      {
+       "name": "s4_explain",
+       "phrase": "It can also mean explaining",
+       "at": 192.434
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c009",
+     "kind": "line",
+     "block": "L08.S04.B03",
+     "branch": null,
+     "start": 201.784,
+     "end": 224.42,
+     "speaker": "coach",
+     "tokens": {
+      "b0": [
+       "x+w+h+fs+o+tag+kind+slot",
+       "o"
+      ],
+      "pm": [
+       "o+act"
+      ],
+      "rp": [
+       "o+act"
+      ],
+      "sr": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c009",
+       "phrase": "which assumption it depends on",
+       "at": 206.07
+      },
+      {
+       "name": "s4_remains",
+       "phrase": "A trade-off remains open to review",
+       "at": 201.784
+      },
+      {
+       "name": "s4_here",
+       "phrase": "Here, a brief example depends",
+       "at": 208.213
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.h102",
+     "kind": "hold",
+     "block": "L08.S04.B03",
+     "branch": null,
+     "start": 224.42,
+     "end": 236.42,
+     "speaker": null,
+     "tokens": {
+      "cr0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cr1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "cr2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "b0": [
+       "o+act"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "kF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S04.c010",
+     "kind": "line",
+     "block": "L08.S04.B04",
+     "branch": null,
+     "start": 236.42,
+     "end": 255.199,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "cr0": [
+       "o+act"
+      ],
+      "cr1": [
+       "o+act"
+      ],
+      "cr2": [
+       "o+act"
+      ],
+      "oB": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "ct": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "rl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rc": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ],
+      "kF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "kH": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c010",
+       "phrase": "without presenting it as the group",
+       "at": 238.991
+      },
+      {
+       "name": "s4_now",
+       "phrase": "You can now explain a preference",
+       "at": 236.42
+      },
+      {
+       "name": "s4_keep",
+       "phrase": "Keep the proposal, its purpose",
+       "at": 241.991
+      }
+     ]
+    },
+    {
+     "id": "L08.S04.c011",
+     "kind": "line",
+     "block": "L08.S04.B04",
+     "branch": null,
+     "start": 255.199,
+     "end": 276.12,
+     "speaker": "coach",
+     "tokens": {
+      "oB": [
+       "o+act"
+      ],
+      "ct": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "rl": [
+       "o+act"
+      ],
+      "rc": [
+       "o+act"
+      ],
+      "kF": [
+       "o+act"
+      ],
+      "kH": [
+       "o+act"
+      ],
+      "grp": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S04_c011",
+       "phrase": "the support that matters",
+       "at": 259.913
+      },
+      {
+       "name": "s4_next",
+       "phrase": "Next, bring the candidate back",
+       "at": 255.199
+      },
+      {
+       "name": "s4_check",
+       "phrase": "A useful check can reveal",
+       "at": 261.628
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "bN",
+  "cN",
+  "resp",
+  "kF",
+  "crit",
+  "cr0",
+  "cr1",
+  "cr2",
+  "cA",
+  "cB",
+  "oL",
+  "oB",
+  "unset",
+  "tot",
+  "b0",
+  "b1",
+  "b2",
+  "b3",
+  "ct",
+  "bH",
+  "cH",
+  "rl",
+  "rc",
+  "trd",
+  "chk",
+  "scope",
+  "rOpen",
+  "chal",
+  "ess",
+  "dur",
+  "qm",
+  "sl",
+  "uq",
+  "pm",
+  "rp",
+  "sr",
+  "kH",
+  "grp",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

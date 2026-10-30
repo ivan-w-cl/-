@@ -1,0 +1,1414 @@
+{
+ "sectionId": "L08.S07",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 171.865,
+   "steps": [
+    {
+     "id": "L08.S07.c001",
+     "kind": "line",
+     "block": "L08.S07.B01",
+     "branch": null,
+     "start": 0,
+     "end": 21.779,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "reset": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prompt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pM": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c001",
+       "phrase": "no earlier proposal or agreement",
+       "at": 17.571
+      },
+      {
+       "name": "s7_task",
+       "phrase": "The task can change",
+       "at": 0
+      },
+      {
+       "name": "s7_here",
+       "phrase": "Here is a fresh example",
+       "at": 5.571
+      },
+      {
+       "name": "s7_no",
+       "phrase": "We are no longer arranging",
+       "at": 13.714
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.c002",
+     "kind": "line",
+     "block": "L08.S07.B01",
+     "branch": null,
+     "start": 21.779,
+     "end": 43.558,
+     "speaker": "coach",
+     "tokens": {
+      "prompt": [
+       "o+act"
+      ],
+      "pM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "page": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bD": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bL": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c002",
+       "phrase": "instead of inventing",
+       "at": 38.922
+      },
+      {
+       "name": "s7_maya",
+       "phrase": "Maya wants the meeting details at the top",
+       "at": 21.779
+      },
+      {
+       "name": "s7_noah",
+       "phrase": "Noah proposes a short checklist",
+       "at": 25.208
+      },
+      {
+       "name": "s7_details",
+       "phrase": "The details themselves are supplied",
+       "at": 29.493
+      },
+      {
+       "name": "s7_keep",
+       "phrase": "Keep them as labelled content blocks",
+       "at": 36.35
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.d001",
+     "kind": "line",
+     "block": "L08.S07.B01",
+     "branch": null,
+     "start": 43.558,
+     "end": 50.337,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "reset": [
+       "o+act"
+      ],
+      "pM": [
+       "o+act"
+      ],
+      "pN": [
+       "o+act"
+      ],
+      "page": [
+       "o+act"
+      ],
+      "pH": [
+       "o+act"
+      ],
+      "bD": [
+       "o+act"
+      ],
+      "bL": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "mT": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S07_d001",
+       "phrase": "keeping the checklist",
+       "at": 44.415
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.d002",
+     "kind": "line",
+     "block": "L08.S07.B01",
+     "branch": null,
+     "start": 50.337,
+     "end": 58.401,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "nT": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_d002",
+       "phrase": "readable on one page",
+       "at": 56.337
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.h101",
+     "kind": "hold",
+     "block": "L08.S07.B01",
+     "branch": null,
+     "start": 58.401,
+     "end": 66.401,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o"
+      ],
+      "pM": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "mT": [
+       "o+act"
+      ],
+      "nT": [
+       "o+act"
+      ],
+      "qM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "qN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n1H": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n1": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "n2H": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S07.c003",
+     "kind": "line",
+     "block": "L08.S07.B02",
+     "branch": null,
+     "start": 66.401,
+     "end": 85.608,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "pM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "page": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bD": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "qM": [
+       "o+act"
+      ],
+      "qN": [
+       "o+act"
+      ],
+      "n1H": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2H": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "rd": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c003",
+       "phrase": "every possible layout fits",
+       "at": 73.687
+      },
+      {
+       "name": "s7_conn",
+       "phrase": "The contributions can be connected",
+       "at": 66.401
+      },
+      {
+       "name": "s7_not",
+       "phrase": "That does not mean every possible layout fits",
+       "at": 71.972
+      },
+      {
+       "name": "s7_exact",
+       "phrase": "The exact content length",
+       "at": 75.401
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.d003",
+     "kind": "line",
+     "block": "L08.S07.B02",
+     "branch": null,
+     "start": 85.608,
+     "end": 96.244,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "pM": [
+       "o+act"
+      ],
+      "pN": [
+       "o+act"
+      ],
+      "page": [
+       "o+act"
+      ],
+      "pH": [
+       "o+act"
+      ],
+      "bD": [
+       "o+act"
+      ],
+      "bL": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "mT": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nT": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "rd": [
+       "o+act"
+      ],
+      "mod": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S07_d003",
+       "phrase": "before choosing the layout",
+       "at": 94.179
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.c004",
+     "kind": "line",
+     "block": "L08.S07.B02",
+     "branch": null,
+     "start": 96.244,
+     "end": 118.88,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "mT": [
+       "o+act"
+      ],
+      "nT": [
+       "o+act"
+      ],
+      "mod": [
+       "o+act"
+      ],
+      "tp": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ru": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c004",
+       "phrase": "a test",
+       "at": 99.673
+      },
+      {
+       "name": "s7_model",
+       "phrase": "This model reports the supported direction",
+       "at": 96.244
+      },
+      {
+       "name": "s7_doesnt",
+       "phrase": "It does not say that the page",
+       "at": 100.53
+      },
+      {
+       "name": "s7_if",
+       "phrase": "If the content does not fit",
+       "at": 106.53
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.h102",
+     "kind": "hold",
+     "block": "L08.S07.B02",
+     "branch": null,
+     "start": 118.88,
+     "end": 130.88,
+     "speaker": null,
+     "tokens": {
+      "prompt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "tp": [
+       "o+act"
+      ],
+      "ru": [
+       "o+act"
+      ],
+      "hpH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hp": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S07.c005",
+     "kind": "line",
+     "block": "L08.S07.B03",
+     "branch": null,
+     "start": 130.88,
+     "end": 150.944,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "prompt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "hpH": [
+       "o+act"
+      ],
+      "hp": [
+       "o+act"
+      ],
+      "m0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "m1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "m2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "m3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ch": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c005",
+       "phrase": "The content and the relevant constraint changed",
+       "at": 139.451
+      },
+      {
+       "name": "s7_notice",
+       "phrase": "Notice what transferred",
+       "at": 130.88
+      },
+      {
+       "name": "s7_changed",
+       "phrase": "The content and the relevant constraint changed",
+       "at": 139.451
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.c006",
+     "kind": "line",
+     "block": "L08.S07.B03",
+     "branch": null,
+     "start": 150.944,
+     "end": 171.865,
+     "speaker": "coach",
+     "tokens": {
+      "m0": [
+       "o+act"
+      ],
+      "m1": [
+       "o+act"
+      ],
+      "m2": [
+       "o+act"
+      ],
+      "m3": [
+       "o+act"
+      ],
+      "ch": [
+       "o+act"
+      ],
+      "rq0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rq1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rq2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nxH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nx": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c006",
+       "phrase": "let the group",
+       "at": 168.087
+      },
+      {
+       "name": "s7_before",
+       "phrase": "Before your next group summary",
+       "at": 150.944
+      },
+      {
+       "name": "s7_q1",
+       "phrase": "Am I reporting what was said?",
+       "at": 155.658
+      },
+      {
+       "name": "s7_q2",
+       "phrase": "Have I turned a condition into agreement?",
+       "at": 158.23
+      },
+      {
+       "name": "s7_q3",
+       "phrase": "Is my next step proposed or already decided?",
+       "at": 161.23
+      }
+     ]
+    }
+   ]
+  },
+  "practice:main": {
+   "durationSeconds": 171.865,
+   "steps": [
+    {
+     "id": "L08.S07.c001",
+     "kind": "line",
+     "block": "L08.S07.B01",
+     "branch": null,
+     "start": 0,
+     "end": 21.779,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "reset": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "prompt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pM": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c001",
+       "phrase": "no earlier proposal or agreement",
+       "at": 17.571
+      },
+      {
+       "name": "s7_task",
+       "phrase": "The task can change",
+       "at": 0
+      },
+      {
+       "name": "s7_here",
+       "phrase": "Here is a fresh example",
+       "at": 5.571
+      },
+      {
+       "name": "s7_no",
+       "phrase": "We are no longer arranging",
+       "at": 13.714
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.c002",
+     "kind": "line",
+     "block": "L08.S07.B01",
+     "branch": null,
+     "start": 21.779,
+     "end": 43.558,
+     "speaker": "coach",
+     "tokens": {
+      "prompt": [
+       "o+act"
+      ],
+      "pM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "page": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bD": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bL": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c002",
+       "phrase": "instead of inventing",
+       "at": 38.922
+      },
+      {
+       "name": "s7_maya",
+       "phrase": "Maya wants the meeting details at the top",
+       "at": 21.779
+      },
+      {
+       "name": "s7_noah",
+       "phrase": "Noah proposes a short checklist",
+       "at": 25.208
+      },
+      {
+       "name": "s7_details",
+       "phrase": "The details themselves are supplied",
+       "at": 29.493
+      },
+      {
+       "name": "s7_keep",
+       "phrase": "Keep them as labelled content blocks",
+       "at": 36.35
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.d001",
+     "kind": "line",
+     "block": "L08.S07.B01",
+     "branch": null,
+     "start": 43.558,
+     "end": 50.337,
+     "speaker": "maya",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "reset": [
+       "o+act"
+      ],
+      "pM": [
+       "o+act"
+      ],
+      "pN": [
+       "o+act"
+      ],
+      "page": [
+       "o+act"
+      ],
+      "pH": [
+       "o+act"
+      ],
+      "bD": [
+       "o+act"
+      ],
+      "bL": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ],
+      "mT": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S07_d001",
+       "phrase": "keeping the checklist",
+       "at": 44.415
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.d002",
+     "kind": "line",
+     "block": "L08.S07.B01",
+     "branch": null,
+     "start": 50.337,
+     "end": 58.401,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "nT": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_d002",
+       "phrase": "readable on one page",
+       "at": 56.337
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.h101",
+     "kind": "hold",
+     "block": "L08.S07.B01",
+     "branch": null,
+     "start": 58.401,
+     "end": 66.401,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o"
+      ],
+      "pM": [
+       "x+w+h+fs+o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "mT": [
+       "o+act"
+      ],
+      "nT": [
+       "o+act"
+      ],
+      "qM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "qN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n1H": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n1": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "n2H": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S07.c003",
+     "kind": "line",
+     "block": "L08.S07.B02",
+     "branch": null,
+     "start": 66.401,
+     "end": 85.608,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "pM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "page": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "pH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bD": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bL": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "qM": [
+       "o+act"
+      ],
+      "qN": [
+       "o+act"
+      ],
+      "n1H": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2H": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "rd": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c003",
+       "phrase": "every possible layout fits",
+       "at": 73.687
+      },
+      {
+       "name": "s7_conn",
+       "phrase": "The contributions can be connected",
+       "at": 66.401
+      },
+      {
+       "name": "s7_not",
+       "phrase": "That does not mean every possible layout fits",
+       "at": 71.972
+      },
+      {
+       "name": "s7_exact",
+       "phrase": "The exact content length",
+       "at": 75.401
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.d003",
+     "kind": "line",
+     "block": "L08.S07.B02",
+     "branch": null,
+     "start": 85.608,
+     "end": 96.244,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "pM": [
+       "o+act"
+      ],
+      "pN": [
+       "o+act"
+      ],
+      "page": [
+       "o+act"
+      ],
+      "pH": [
+       "o+act"
+      ],
+      "bD": [
+       "o+act"
+      ],
+      "bL": [
+       "o+act"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ],
+      "mT": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nT": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "rd": [
+       "o+act"
+      ],
+      "mod": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S07_d003",
+       "phrase": "before choosing the layout",
+       "at": 94.179
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.c004",
+     "kind": "line",
+     "block": "L08.S07.B02",
+     "branch": null,
+     "start": 96.244,
+     "end": 118.88,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "mT": [
+       "o+act"
+      ],
+      "nT": [
+       "o+act"
+      ],
+      "mod": [
+       "o+act"
+      ],
+      "tp": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ru": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c004",
+       "phrase": "a test",
+       "at": 99.673
+      },
+      {
+       "name": "s7_model",
+       "phrase": "This model reports the supported direction",
+       "at": 96.244
+      },
+      {
+       "name": "s7_doesnt",
+       "phrase": "It does not say that the page",
+       "at": 100.53
+      },
+      {
+       "name": "s7_if",
+       "phrase": "If the content does not fit",
+       "at": 106.53
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.h102",
+     "kind": "hold",
+     "block": "L08.S07.B02",
+     "branch": null,
+     "start": 118.88,
+     "end": 130.88,
+     "speaker": null,
+     "tokens": {
+      "prompt": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "tp": [
+       "o+act"
+      ],
+      "ru": [
+       "o+act"
+      ],
+      "hpH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "hp": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S07.c005",
+     "kind": "line",
+     "block": "L08.S07.B03",
+     "branch": null,
+     "start": 130.88,
+     "end": 150.944,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "prompt": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "hpH": [
+       "o+act"
+      ],
+      "hp": [
+       "o+act"
+      ],
+      "m0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "m1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "m2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "m3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ch": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c005",
+       "phrase": "The content and the relevant constraint changed",
+       "at": 139.451
+      },
+      {
+       "name": "s7_notice",
+       "phrase": "Notice what transferred",
+       "at": 130.88
+      },
+      {
+       "name": "s7_changed",
+       "phrase": "The content and the relevant constraint changed",
+       "at": 139.451
+      }
+     ]
+    },
+    {
+     "id": "L08.S07.c006",
+     "kind": "line",
+     "block": "L08.S07.B03",
+     "branch": null,
+     "start": 150.944,
+     "end": 171.865,
+     "speaker": "coach",
+     "tokens": {
+      "m0": [
+       "o+act"
+      ],
+      "m1": [
+       "o+act"
+      ],
+      "m2": [
+       "o+act"
+      ],
+      "m3": [
+       "o+act"
+      ],
+      "ch": [
+       "o+act"
+      ],
+      "rq0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rq1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rq2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nxH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nx": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S07_c006",
+       "phrase": "let the group",
+       "at": 168.087
+      },
+      {
+       "name": "s7_before",
+       "phrase": "Before your next group summary",
+       "at": 150.944
+      },
+      {
+       "name": "s7_q1",
+       "phrase": "Am I reporting what was said?",
+       "at": 155.658
+      },
+      {
+       "name": "s7_q2",
+       "phrase": "Have I turned a condition into agreement?",
+       "at": 158.23
+      },
+      {
+       "name": "s7_q3",
+       "phrase": "Is my next step proposed or already decided?",
+       "at": 161.23
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "page",
+  "n1",
+  "n2",
+  "hp",
+  "nx",
+  "reset",
+  "prompt",
+  "pH",
+  "bD",
+  "bL",
+  "pM",
+  "pN",
+  "mT",
+  "nT",
+  "qM",
+  "qN",
+  "n1H",
+  "n2H",
+  "rd",
+  "mod",
+  "tp",
+  "ru",
+  "hpH",
+  "m0",
+  "m1",
+  "m2",
+  "m3",
+  "ch",
+  "rq0",
+  "rq1",
+  "rq2",
+  "nxH",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

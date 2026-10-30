@@ -1,6 +1,6 @@
 {
  "section": "S06",
- "ranAt": "2026-10-30T06:46:04.375Z",
+ "ranAt": "2026-10-30T06:52:48.625Z",
  "environment": {
   "os": "linux 6.18.44-fc-v185",
   "browser": "Chromium 153.0.8010.12",
@@ -131,24 +131,24 @@
    "detail": []
   },
   {
-   "name": "rate 1×: clock advances at 1× (measured 0.999)",
+   "name": "rate 1×: clock advances at 1× (measured 0.995)",
    "pass": true,
-   "detail": 0.9991343720867986
+   "detail": 0.9946677331203522
   },
   {
-   "name": "rate 1.25×: clock advances at 1.25× (measured 1.244)",
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.237)",
    "pass": true,
-   "detail": 1.2442507665645353
+   "detail": 1.2372525494898712
   },
   {
-   "name": "rate 1.5×: clock advances at 1.5× (measured 1.488)",
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.495)",
    "pass": true,
-   "detail": 1.4875016664444745
+   "detail": 1.4952009598077598
   },
   {
-   "name": "rate 2×: clock advances at 2× (measured 1.997)",
+   "name": "rate 2×: clock advances at 2× (measured 1.987)",
    "pass": true,
-   "detail": 1.996802770931673
+   "detail": 1.9868026394716116
   },
   {
    "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
@@ -165,7 +165,7 @@
    "name": "restart returns to the section start and plays",
    "pass": true,
    "detail": {
-    "t": 0.19530000000004658,
+    "t": 0.188,
     "playing": true,
     "gate": "none",
     "choice": null
@@ -350,7 +350,7 @@
    "name": "practice model: first selection wins; branch plays on its own route",
    "pass": true,
    "detail": {
-    "t": 155.66299999999998,
+    "t": 155.6609000000001,
     "gate": "branch_playing",
     "route": "practice:model",
     "choice": "model",
@@ -453,7 +453,7 @@
    "name": "practice model: Continue rejoins L08.S06.c008 once",
    "pass": true,
    "detail": {
-    "t": 210.30270000000004,
+    "t": 210.28020000000038,
     "gate": "resolved",
     "route": "practice:model",
     "choice": "model",
@@ -530,7 +530,7 @@
    "name": "practice: Skip enters the common continuation once, unanswered, no assessment",
    "pass": true,
    "detail": {
-    "t": 155.95909999999984,
+    "t": 155.94154999999955,
     "gate": "resolved",
     "route": "practice:skip",
     "choice": "skip",
@@ -550,7 +550,7 @@
    "name": "practice rehearsal: Continue without the model rejoins once (modelViewed stays false)",
    "pass": true,
    "detail": {
-    "t": 155.95714999999979,
+    "t": 155.9459000000001,
     "gate": "resolved",
     "route": "practice:skip",
     "choice": "skip",
@@ -670,7 +670,7 @@
    "name": "watch: no waiting at the gate; the declared path (model) follows the 35 s thinking hold",
    "pass": true,
    "detail": {
-    "t": 191.1751999999997,
+    "t": 191.12719999999925,
     "gate": "none",
     "route": "watch",
     "choice": null,

@@ -1,0 +1,5326 @@
+{
+ "sectionId": "L08.S02",
+ "generatedFrom": "compiled routes + score keyframes of the running player",
+ "routes": {
+  "watch": {
+   "durationSeconds": 291.248,
+   "steps": [
+    {
+     "id": "L08.S02.c001",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 0,
+     "end": 23.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c001",
+       "phrase": "how far that support goes",
+       "at": 6.429
+      },
+      {
+       "name": "s2_more",
+       "phrase": "A shared summary is more than",
+       "at": 0
+      },
+      {
+       "name": "s2_says",
+       "phrase": "It says what people support",
+       "at": 4.286
+      },
+      {
+       "name": "s2_one",
+       "phrase": "If one person supports",
+       "at": 12.429
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c002",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 23.064,
+     "end": 41.843,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "lh3": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "msup": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c002",
+       "phrase": "A condition is part",
+       "at": 32.921
+      },
+      {
+       "name": "s2_return",
+       "phrase": "Return to the taster proposals",
+       "at": 23.064
+      },
+      {
+       "name": "s2_read",
+       "phrase": "Read their qualifications",
+       "at": 29.064
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c003",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 41.843,
+     "end": 58.907,
+     "speaker": "coach",
+     "tokens": {
+      "snap": [
+       "o+act"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "msup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "notT": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "con"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c003",
+       "phrase": "not yet a fully timed agreement",
+       "at": 55.986
+      },
+      {
+       "name": "s2_maya",
+       "phrase": "Maya supports showing an example",
+       "at": 41.843
+      },
+      {
+       "name": "s2_noah",
+       "phrase": "Noah supports some pair discussion",
+       "at": 45.7
+      },
+      {
+       "name": "s2_these",
+       "phrase": "These positions have a useful connection",
+       "at": 51.7
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.h101",
+     "kind": "hold",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 58.907,
+     "end": 66.907,
+     "speaker": null,
+     "tokens": {
+      "bM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "notT": [
+       "o+act"
+      ],
+      "n1": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "sh0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c004",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 66.907,
+     "end": 87.828,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "sh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "noR": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "inv": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "whole": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c004",
+       "phrase": "has not supplied a view",
+       "at": 69.478
+      },
+      {
+       "name": "s2_person",
+       "phrase": "A person who has not replied",
+       "at": 66.907
+      },
+      {
+       "name": "s2_nod",
+       "phrase": "Nodding",
+       "at": 72.907
+      },
+      {
+       "name": "s2_if",
+       "phrase": "If the status matters",
+       "at": 78.907
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c005",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 87.828,
+     "end": 108.749,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh0": [
+       "o+act"
+      ],
+      "sh1": [
+       "o+act"
+      ],
+      "sh2": [
+       "o+act"
+      ],
+      "noR": [
+       "o+act"
+      ],
+      "inv": [
+       "o+act"
+      ],
+      "whole": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "lvl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rail": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c005",
+       "phrase": "at the level where it exists",
+       "at": 95.114
+      },
+      {
+       "name": "s2_over",
+       "phrase": "You can also overcorrect",
+       "at": 87.828
+      },
+      {
+       "name": "s2_keep",
+       "phrase": "Keep agreement at the level",
+       "at": 94.257
+      },
+      {
+       "name": "s2_complete",
+       "phrase": "A complete group decision",
+       "at": 103.685
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c006",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 108.749,
+     "end": 129.67,
+     "speaker": "coach",
+     "tokens": {
+      "whole": [
+       "o+act"
+      ],
+      "rail": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "req": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c006",
+       "phrase": "Separate the task requirement",
+       "at": 119.892
+      },
+      {
+       "name": "s2_firm",
+       "phrase": "The prompt gives a firm constraint",
+       "at": 108.749
+      },
+      {
+       "name": "s2_sep",
+       "phrase": "Separate the task requirement",
+       "at": 119.892
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c007",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 129.67,
+     "end": 148.449,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "o+act",
+       "x+w+h+fs+o+tag"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "lvl": [
+       "o+act"
+      ],
+      "rail": [
+       "o+act"
+      ],
+      "req": [
+       "o+act"
+      ],
+      "sF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sS": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sO": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sBl": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c007",
+       "phrase": "a positive connection and an open question",
+       "at": 132.241
+      },
+      {
+       "name": "s2_useful",
+       "phrase": "A useful summary can therefore",
+       "at": 129.67
+      },
+      {
+       "name": "s2_saying",
+       "phrase": "Saying what is supported",
+       "at": 137.813
+      },
+      {
+       "name": "s2_open",
+       "phrase": "saying what remains open",
+       "at": 142.956
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c008",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 148.449,
+     "end": 165.513,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "sF": [
+       "o+act"
+      ],
+      "sH": [
+       "o+act"
+      ],
+      "sS": [
+       "o+act"
+      ],
+      "sO": [
+       "o+act"
+      ],
+      "sBl": [
+       "o+act"
+      ],
+      "cP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "focus": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c008",
+       "phrase": "the scope of support",
+       "at": 161.735
+      },
+      {
+       "name": "s2_compare",
+       "phrase": "Now compare three possible accounts",
+       "at": 148.449
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c009",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 165.513,
+     "end": 181.72,
+     "speaker": "coach",
+     "tokens": {
+      "scope": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c009",
+       "phrase": "one person is still one person",
+       "at": 178.37
+      },
+      {
+       "name": "s2_choose",
+       "phrase": "Choose the account you could defend",
+       "at": 165.513
+      },
+      {
+       "name": "s2_after",
+       "phrase": "Afterward, notice",
+       "at": 170.656
+      }
+     ]
+    },
+    {
+     "id": "L08.I01.watchThink",
+     "kind": "think",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 181.72,
+     "end": 189.72,
+     "speaker": null,
+     "tokens": {
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o",
+       "kind+act"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.d201",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "B",
+     "start": 189.72,
+     "end": 201.641,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "msup": [
+       "x+w+h+fs+o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "cP": [
+       "x+w+h+fs+o"
+      ],
+      "focus": [
+       "o+act"
+      ],
+      "scope": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S02_d201",
+       "phrase": "timing and the whole sequence",
+       "at": 194.434
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.d202",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "B",
+     "start": 201.641,
+     "end": 207.562,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_d202",
+       "phrase": "how short",
+       "at": 204.641
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.f201",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "B",
+     "start": 207.562,
+     "end": 222.483,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o"
+      ],
+      "bM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "cP": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text+hl+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_f201",
+       "phrase": "support",
+       "at": 208.848
+      },
+      {
+       "name": "sB_pres",
+       "phrase": "This summary preserves support",
+       "at": 207.562
+      },
+      {
+       "name": "sB_noah",
+       "phrase": "Noah confirms his own unresolved question",
+       "at": 212.276
+      },
+      {
+       "name": "sB_reply",
+       "phrase": "That reply does not certify",
+       "at": 215.276
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c010",
+     "kind": "line",
+     "block": "L08.S02.B03",
+     "branch": null,
+     "start": 222.483,
+     "end": 242.119,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c010",
+       "phrase": "confirm, qualify or correct",
+       "at": 240.054
+      },
+      {
+       "name": "s2_any",
+       "phrase": "On any path",
+       "at": 222.483
+      },
+      {
+       "name": "s2_ready",
+       "phrase": "A summary is ready for use",
+       "at": 234.483
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.h102",
+     "kind": "hold",
+     "block": "L08.S02.B03",
+     "branch": null,
+     "start": 242.119,
+     "end": 254.119,
+     "speaker": null,
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "o+act"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "rv": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rvBl": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c011",
+     "kind": "line",
+     "block": "L08.S02.B04",
+     "branch": null,
+     "start": 254.119,
+     "end": 272.898,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "rv": [
+       "o+act"
+      ],
+      "rvBl": [
+       "o+act"
+      ],
+      "st0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "nF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c011",
+       "phrase": "simply because it has been repeated",
+       "at": 269.976
+      },
+      {
+       "name": "s2_words",
+       "phrase": "Use accurate status words",
+       "at": 254.119
+      },
+      {
+       "name": "s2_job",
+       "phrase": "Their job is to stop",
+       "at": 264.833
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c012",
+     "kind": "line",
+     "block": "L08.S02.B04",
+     "branch": null,
+     "start": 272.898,
+     "end": 291.248,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "st0": [
+       "o+act"
+      ],
+      "st1": [
+       "o+act"
+      ],
+      "st2": [
+       "o+act"
+      ],
+      "nF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nSlot": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c012",
+       "phrase": "whether the elements fit together",
+       "at": 277.184
+      },
+      {
+       "name": "s2_once",
+       "phrase": "Once the shared ground is clear",
+       "at": 272.898
+      },
+      {
+       "name": "s2_nextS",
+       "phrase": "The next section looks at",
+       "at": 284.041
+      }
+     ]
+    }
+   ]
+  },
+  "practice:A": {
+   "durationSeconds": 281.021,
+   "steps": [
+    {
+     "id": "L08.S02.c001",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 0,
+     "end": 23.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c001",
+       "phrase": "how far that support goes",
+       "at": 6.429
+      },
+      {
+       "name": "s2_more",
+       "phrase": "A shared summary is more than",
+       "at": 0
+      },
+      {
+       "name": "s2_says",
+       "phrase": "It says what people support",
+       "at": 4.286
+      },
+      {
+       "name": "s2_one",
+       "phrase": "If one person supports",
+       "at": 12.429
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c002",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 23.064,
+     "end": 41.843,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "lh3": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "msup": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c002",
+       "phrase": "A condition is part",
+       "at": 32.921
+      },
+      {
+       "name": "s2_return",
+       "phrase": "Return to the taster proposals",
+       "at": 23.064
+      },
+      {
+       "name": "s2_read",
+       "phrase": "Read their qualifications",
+       "at": 29.064
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c003",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 41.843,
+     "end": 58.907,
+     "speaker": "coach",
+     "tokens": {
+      "snap": [
+       "o+act"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "msup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "notT": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "con"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c003",
+       "phrase": "not yet a fully timed agreement",
+       "at": 55.986
+      },
+      {
+       "name": "s2_maya",
+       "phrase": "Maya supports showing an example",
+       "at": 41.843
+      },
+      {
+       "name": "s2_noah",
+       "phrase": "Noah supports some pair discussion",
+       "at": 45.7
+      },
+      {
+       "name": "s2_these",
+       "phrase": "These positions have a useful connection",
+       "at": 51.7
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.h101",
+     "kind": "hold",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 58.907,
+     "end": 66.907,
+     "speaker": null,
+     "tokens": {
+      "bM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "notT": [
+       "o+act"
+      ],
+      "n1": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "sh0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c004",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 66.907,
+     "end": 87.828,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "sh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "noR": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "inv": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "whole": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c004",
+       "phrase": "has not supplied a view",
+       "at": 69.478
+      },
+      {
+       "name": "s2_person",
+       "phrase": "A person who has not replied",
+       "at": 66.907
+      },
+      {
+       "name": "s2_nod",
+       "phrase": "Nodding",
+       "at": 72.907
+      },
+      {
+       "name": "s2_if",
+       "phrase": "If the status matters",
+       "at": 78.907
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c005",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 87.828,
+     "end": 108.749,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh0": [
+       "o+act"
+      ],
+      "sh1": [
+       "o+act"
+      ],
+      "sh2": [
+       "o+act"
+      ],
+      "noR": [
+       "o+act"
+      ],
+      "inv": [
+       "o+act"
+      ],
+      "whole": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "lvl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rail": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c005",
+       "phrase": "at the level where it exists",
+       "at": 95.114
+      },
+      {
+       "name": "s2_over",
+       "phrase": "You can also overcorrect",
+       "at": 87.828
+      },
+      {
+       "name": "s2_keep",
+       "phrase": "Keep agreement at the level",
+       "at": 94.257
+      },
+      {
+       "name": "s2_complete",
+       "phrase": "A complete group decision",
+       "at": 103.685
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c006",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 108.749,
+     "end": 129.67,
+     "speaker": "coach",
+     "tokens": {
+      "whole": [
+       "o+act"
+      ],
+      "rail": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "req": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c006",
+       "phrase": "Separate the task requirement",
+       "at": 119.892
+      },
+      {
+       "name": "s2_firm",
+       "phrase": "The prompt gives a firm constraint",
+       "at": 108.749
+      },
+      {
+       "name": "s2_sep",
+       "phrase": "Separate the task requirement",
+       "at": 119.892
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c007",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 129.67,
+     "end": 148.449,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "o+act",
+       "x+w+h+fs+o+tag"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "lvl": [
+       "o+act"
+      ],
+      "rail": [
+       "o+act"
+      ],
+      "req": [
+       "o+act"
+      ],
+      "sF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sS": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sO": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sBl": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c007",
+       "phrase": "a positive connection and an open question",
+       "at": 132.241
+      },
+      {
+       "name": "s2_useful",
+       "phrase": "A useful summary can therefore",
+       "at": 129.67
+      },
+      {
+       "name": "s2_saying",
+       "phrase": "Saying what is supported",
+       "at": 137.813
+      },
+      {
+       "name": "s2_open",
+       "phrase": "saying what remains open",
+       "at": 142.956
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c008",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 148.449,
+     "end": 165.513,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "sF": [
+       "o+act"
+      ],
+      "sH": [
+       "o+act"
+      ],
+      "sS": [
+       "o+act"
+      ],
+      "sO": [
+       "o+act"
+      ],
+      "sBl": [
+       "o+act"
+      ],
+      "cP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "focus": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c008",
+       "phrase": "the scope of support",
+       "at": 161.735
+      },
+      {
+       "name": "s2_compare",
+       "phrase": "Now compare three possible accounts",
+       "at": 148.449
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c009",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 165.513,
+     "end": 181.72,
+     "speaker": "coach",
+     "tokens": {
+      "scope": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c009",
+       "phrase": "one person is still one person",
+       "at": 178.37
+      },
+      {
+       "name": "s2_choose",
+       "phrase": "Choose the account you could defend",
+       "at": 165.513
+      },
+      {
+       "name": "s2_after",
+       "phrase": "Afterward, notice",
+       "at": 170.656
+      }
+     ]
+    },
+    {
+     "id": "L08.I01.gate",
+     "kind": "gate",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 181.72,
+     "end": 182.92,
+     "speaker": null,
+     "tokens": {
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.d101",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "A",
+     "start": 182.92,
+     "end": 188.413,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "msup": [
+       "x+w+h+fs+o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "cP": [
+       "x+w+h+fs+o"
+      ],
+      "focus": [
+       "o+act"
+      ],
+      "scope": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S02_d101",
+       "phrase": "complete plan",
+       "at": 185.063
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.d102",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "A",
+     "start": 188.413,
+     "end": 196.477,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_d102",
+       "phrase": "decided",
+       "at": 189.27
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.f101",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "A",
+     "start": 196.477,
+     "end": 212.256,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o"
+      ],
+      "bM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "cP": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text+hl+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_f101",
+       "phrase": "support",
+       "at": 198.191
+      },
+      {
+       "name": "sA_promotes",
+       "phrase": "This account promotes partial support",
+       "at": 196.477
+      },
+      {
+       "name": "sA_keep",
+       "phrase": "Keep the supported elements",
+       "at": 205.048
+      }
+     ]
+    },
+    {
+     "id": "L08.I01.ready",
+     "kind": "ready",
+     "block": "L08.S02.B02",
+     "branch": "A",
+     "start": 212.256,
+     "end": 212.256,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c010",
+     "kind": "line",
+     "block": "L08.S02.B03",
+     "branch": null,
+     "start": 212.256,
+     "end": 231.892,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c010",
+       "phrase": "confirm, qualify or correct",
+       "at": 229.827
+      },
+      {
+       "name": "s2_any",
+       "phrase": "On any path",
+       "at": 212.256
+      },
+      {
+       "name": "s2_ready",
+       "phrase": "A summary is ready for use",
+       "at": 224.256
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.h102",
+     "kind": "hold",
+     "block": "L08.S02.B03",
+     "branch": null,
+     "start": 231.892,
+     "end": 243.892,
+     "speaker": null,
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "o+act"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "rv": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rvBl": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c011",
+     "kind": "line",
+     "block": "L08.S02.B04",
+     "branch": null,
+     "start": 243.892,
+     "end": 262.671,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "rv": [
+       "o+act"
+      ],
+      "rvBl": [
+       "o+act"
+      ],
+      "st0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "nF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c011",
+       "phrase": "simply because it has been repeated",
+       "at": 259.749
+      },
+      {
+       "name": "s2_words",
+       "phrase": "Use accurate status words",
+       "at": 243.892
+      },
+      {
+       "name": "s2_job",
+       "phrase": "Their job is to stop",
+       "at": 254.606
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c012",
+     "kind": "line",
+     "block": "L08.S02.B04",
+     "branch": null,
+     "start": 262.671,
+     "end": 281.021,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "st0": [
+       "o+act"
+      ],
+      "st1": [
+       "o+act"
+      ],
+      "st2": [
+       "o+act"
+      ],
+      "nF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nSlot": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c012",
+       "phrase": "whether the elements fit together",
+       "at": 266.957
+      },
+      {
+       "name": "s2_once",
+       "phrase": "Once the shared ground is clear",
+       "at": 262.671
+      },
+      {
+       "name": "s2_nextS",
+       "phrase": "The next section looks at",
+       "at": 273.814
+      }
+     ]
+    }
+   ]
+  },
+  "practice:B": {
+   "durationSeconds": 284.448,
+   "steps": [
+    {
+     "id": "L08.S02.c001",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 0,
+     "end": 23.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c001",
+       "phrase": "how far that support goes",
+       "at": 6.429
+      },
+      {
+       "name": "s2_more",
+       "phrase": "A shared summary is more than",
+       "at": 0
+      },
+      {
+       "name": "s2_says",
+       "phrase": "It says what people support",
+       "at": 4.286
+      },
+      {
+       "name": "s2_one",
+       "phrase": "If one person supports",
+       "at": 12.429
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c002",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 23.064,
+     "end": 41.843,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "lh3": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "msup": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c002",
+       "phrase": "A condition is part",
+       "at": 32.921
+      },
+      {
+       "name": "s2_return",
+       "phrase": "Return to the taster proposals",
+       "at": 23.064
+      },
+      {
+       "name": "s2_read",
+       "phrase": "Read their qualifications",
+       "at": 29.064
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c003",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 41.843,
+     "end": 58.907,
+     "speaker": "coach",
+     "tokens": {
+      "snap": [
+       "o+act"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "msup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "notT": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "con"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c003",
+       "phrase": "not yet a fully timed agreement",
+       "at": 55.986
+      },
+      {
+       "name": "s2_maya",
+       "phrase": "Maya supports showing an example",
+       "at": 41.843
+      },
+      {
+       "name": "s2_noah",
+       "phrase": "Noah supports some pair discussion",
+       "at": 45.7
+      },
+      {
+       "name": "s2_these",
+       "phrase": "These positions have a useful connection",
+       "at": 51.7
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.h101",
+     "kind": "hold",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 58.907,
+     "end": 66.907,
+     "speaker": null,
+     "tokens": {
+      "bM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "notT": [
+       "o+act"
+      ],
+      "n1": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "sh0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c004",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 66.907,
+     "end": 87.828,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "sh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "noR": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "inv": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "whole": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c004",
+       "phrase": "has not supplied a view",
+       "at": 69.478
+      },
+      {
+       "name": "s2_person",
+       "phrase": "A person who has not replied",
+       "at": 66.907
+      },
+      {
+       "name": "s2_nod",
+       "phrase": "Nodding",
+       "at": 72.907
+      },
+      {
+       "name": "s2_if",
+       "phrase": "If the status matters",
+       "at": 78.907
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c005",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 87.828,
+     "end": 108.749,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh0": [
+       "o+act"
+      ],
+      "sh1": [
+       "o+act"
+      ],
+      "sh2": [
+       "o+act"
+      ],
+      "noR": [
+       "o+act"
+      ],
+      "inv": [
+       "o+act"
+      ],
+      "whole": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "lvl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rail": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c005",
+       "phrase": "at the level where it exists",
+       "at": 95.114
+      },
+      {
+       "name": "s2_over",
+       "phrase": "You can also overcorrect",
+       "at": 87.828
+      },
+      {
+       "name": "s2_keep",
+       "phrase": "Keep agreement at the level",
+       "at": 94.257
+      },
+      {
+       "name": "s2_complete",
+       "phrase": "A complete group decision",
+       "at": 103.685
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c006",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 108.749,
+     "end": 129.67,
+     "speaker": "coach",
+     "tokens": {
+      "whole": [
+       "o+act"
+      ],
+      "rail": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "req": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c006",
+       "phrase": "Separate the task requirement",
+       "at": 119.892
+      },
+      {
+       "name": "s2_firm",
+       "phrase": "The prompt gives a firm constraint",
+       "at": 108.749
+      },
+      {
+       "name": "s2_sep",
+       "phrase": "Separate the task requirement",
+       "at": 119.892
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c007",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 129.67,
+     "end": 148.449,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "o+act",
+       "x+w+h+fs+o+tag"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "lvl": [
+       "o+act"
+      ],
+      "rail": [
+       "o+act"
+      ],
+      "req": [
+       "o+act"
+      ],
+      "sF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sS": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sO": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sBl": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c007",
+       "phrase": "a positive connection and an open question",
+       "at": 132.241
+      },
+      {
+       "name": "s2_useful",
+       "phrase": "A useful summary can therefore",
+       "at": 129.67
+      },
+      {
+       "name": "s2_saying",
+       "phrase": "Saying what is supported",
+       "at": 137.813
+      },
+      {
+       "name": "s2_open",
+       "phrase": "saying what remains open",
+       "at": 142.956
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c008",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 148.449,
+     "end": 165.513,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "sF": [
+       "o+act"
+      ],
+      "sH": [
+       "o+act"
+      ],
+      "sS": [
+       "o+act"
+      ],
+      "sO": [
+       "o+act"
+      ],
+      "sBl": [
+       "o+act"
+      ],
+      "cP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "focus": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c008",
+       "phrase": "the scope of support",
+       "at": 161.735
+      },
+      {
+       "name": "s2_compare",
+       "phrase": "Now compare three possible accounts",
+       "at": 148.449
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c009",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 165.513,
+     "end": 181.72,
+     "speaker": "coach",
+     "tokens": {
+      "scope": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c009",
+       "phrase": "one person is still one person",
+       "at": 178.37
+      },
+      {
+       "name": "s2_choose",
+       "phrase": "Choose the account you could defend",
+       "at": 165.513
+      },
+      {
+       "name": "s2_after",
+       "phrase": "Afterward, notice",
+       "at": 170.656
+      }
+     ]
+    },
+    {
+     "id": "L08.I01.gate",
+     "kind": "gate",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 181.72,
+     "end": 182.92,
+     "speaker": null,
+     "tokens": {
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.d201",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "B",
+     "start": 182.92,
+     "end": 194.841,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "msup": [
+       "x+w+h+fs+o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "cP": [
+       "x+w+h+fs+o"
+      ],
+      "focus": [
+       "o+act"
+      ],
+      "scope": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S02_d201",
+       "phrase": "timing and the whole sequence",
+       "at": 187.634
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.d202",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "B",
+     "start": 194.841,
+     "end": 200.762,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_d202",
+       "phrase": "how short",
+       "at": 197.841
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.f201",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "B",
+     "start": 200.762,
+     "end": 215.683,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o"
+      ],
+      "bM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "cP": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text+hl+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_f201",
+       "phrase": "support",
+       "at": 202.048
+      },
+      {
+       "name": "sB_pres",
+       "phrase": "This summary preserves support",
+       "at": 200.762
+      },
+      {
+       "name": "sB_noah",
+       "phrase": "Noah confirms his own unresolved question",
+       "at": 205.476
+      },
+      {
+       "name": "sB_reply",
+       "phrase": "That reply does not certify",
+       "at": 208.476
+      }
+     ]
+    },
+    {
+     "id": "L08.I01.ready",
+     "kind": "ready",
+     "block": "L08.S02.B02",
+     "branch": "B",
+     "start": 215.683,
+     "end": 215.683,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c010",
+     "kind": "line",
+     "block": "L08.S02.B03",
+     "branch": null,
+     "start": 215.683,
+     "end": 235.319,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c010",
+       "phrase": "confirm, qualify or correct",
+       "at": 233.254
+      },
+      {
+       "name": "s2_any",
+       "phrase": "On any path",
+       "at": 215.683
+      },
+      {
+       "name": "s2_ready",
+       "phrase": "A summary is ready for use",
+       "at": 227.683
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.h102",
+     "kind": "hold",
+     "block": "L08.S02.B03",
+     "branch": null,
+     "start": 235.319,
+     "end": 247.319,
+     "speaker": null,
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "o+act"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "rv": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rvBl": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c011",
+     "kind": "line",
+     "block": "L08.S02.B04",
+     "branch": null,
+     "start": 247.319,
+     "end": 266.098,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "rv": [
+       "o+act"
+      ],
+      "rvBl": [
+       "o+act"
+      ],
+      "st0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "nF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c011",
+       "phrase": "simply because it has been repeated",
+       "at": 263.176
+      },
+      {
+       "name": "s2_words",
+       "phrase": "Use accurate status words",
+       "at": 247.319
+      },
+      {
+       "name": "s2_job",
+       "phrase": "Their job is to stop",
+       "at": 258.033
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c012",
+     "kind": "line",
+     "block": "L08.S02.B04",
+     "branch": null,
+     "start": 266.098,
+     "end": 284.448,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "st0": [
+       "o+act"
+      ],
+      "st1": [
+       "o+act"
+      ],
+      "st2": [
+       "o+act"
+      ],
+      "nF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nSlot": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c012",
+       "phrase": "whether the elements fit together",
+       "at": 270.384
+      },
+      {
+       "name": "s2_once",
+       "phrase": "Once the shared ground is clear",
+       "at": 266.098
+      },
+      {
+       "name": "s2_nextS",
+       "phrase": "The next section looks at",
+       "at": 277.241
+      }
+     ]
+    }
+   ]
+  },
+  "practice:C": {
+   "durationSeconds": 282.736,
+   "steps": [
+    {
+     "id": "L08.S02.c001",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 0,
+     "end": 23.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c001",
+       "phrase": "how far that support goes",
+       "at": 6.429
+      },
+      {
+       "name": "s2_more",
+       "phrase": "A shared summary is more than",
+       "at": 0
+      },
+      {
+       "name": "s2_says",
+       "phrase": "It says what people support",
+       "at": 4.286
+      },
+      {
+       "name": "s2_one",
+       "phrase": "If one person supports",
+       "at": 12.429
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c002",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 23.064,
+     "end": 41.843,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "lh3": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "msup": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c002",
+       "phrase": "A condition is part",
+       "at": 32.921
+      },
+      {
+       "name": "s2_return",
+       "phrase": "Return to the taster proposals",
+       "at": 23.064
+      },
+      {
+       "name": "s2_read",
+       "phrase": "Read their qualifications",
+       "at": 29.064
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c003",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 41.843,
+     "end": 58.907,
+     "speaker": "coach",
+     "tokens": {
+      "snap": [
+       "o+act"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "msup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "notT": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "con"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c003",
+       "phrase": "not yet a fully timed agreement",
+       "at": 55.986
+      },
+      {
+       "name": "s2_maya",
+       "phrase": "Maya supports showing an example",
+       "at": 41.843
+      },
+      {
+       "name": "s2_noah",
+       "phrase": "Noah supports some pair discussion",
+       "at": 45.7
+      },
+      {
+       "name": "s2_these",
+       "phrase": "These positions have a useful connection",
+       "at": 51.7
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.h101",
+     "kind": "hold",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 58.907,
+     "end": 66.907,
+     "speaker": null,
+     "tokens": {
+      "bM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "notT": [
+       "o+act"
+      ],
+      "n1": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "sh0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c004",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 66.907,
+     "end": 87.828,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "sh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "noR": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "inv": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "whole": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c004",
+       "phrase": "has not supplied a view",
+       "at": 69.478
+      },
+      {
+       "name": "s2_person",
+       "phrase": "A person who has not replied",
+       "at": 66.907
+      },
+      {
+       "name": "s2_nod",
+       "phrase": "Nodding",
+       "at": 72.907
+      },
+      {
+       "name": "s2_if",
+       "phrase": "If the status matters",
+       "at": 78.907
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c005",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 87.828,
+     "end": 108.749,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh0": [
+       "o+act"
+      ],
+      "sh1": [
+       "o+act"
+      ],
+      "sh2": [
+       "o+act"
+      ],
+      "noR": [
+       "o+act"
+      ],
+      "inv": [
+       "o+act"
+      ],
+      "whole": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "lvl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rail": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c005",
+       "phrase": "at the level where it exists",
+       "at": 95.114
+      },
+      {
+       "name": "s2_over",
+       "phrase": "You can also overcorrect",
+       "at": 87.828
+      },
+      {
+       "name": "s2_keep",
+       "phrase": "Keep agreement at the level",
+       "at": 94.257
+      },
+      {
+       "name": "s2_complete",
+       "phrase": "A complete group decision",
+       "at": 103.685
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c006",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 108.749,
+     "end": 129.67,
+     "speaker": "coach",
+     "tokens": {
+      "whole": [
+       "o+act"
+      ],
+      "rail": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "req": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c006",
+       "phrase": "Separate the task requirement",
+       "at": 119.892
+      },
+      {
+       "name": "s2_firm",
+       "phrase": "The prompt gives a firm constraint",
+       "at": 108.749
+      },
+      {
+       "name": "s2_sep",
+       "phrase": "Separate the task requirement",
+       "at": 119.892
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c007",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 129.67,
+     "end": 148.449,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "o+act",
+       "x+w+h+fs+o+tag"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "lvl": [
+       "o+act"
+      ],
+      "rail": [
+       "o+act"
+      ],
+      "req": [
+       "o+act"
+      ],
+      "sF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sS": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sO": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sBl": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c007",
+       "phrase": "a positive connection and an open question",
+       "at": 132.241
+      },
+      {
+       "name": "s2_useful",
+       "phrase": "A useful summary can therefore",
+       "at": 129.67
+      },
+      {
+       "name": "s2_saying",
+       "phrase": "Saying what is supported",
+       "at": 137.813
+      },
+      {
+       "name": "s2_open",
+       "phrase": "saying what remains open",
+       "at": 142.956
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c008",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 148.449,
+     "end": 165.513,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "sF": [
+       "o+act"
+      ],
+      "sH": [
+       "o+act"
+      ],
+      "sS": [
+       "o+act"
+      ],
+      "sO": [
+       "o+act"
+      ],
+      "sBl": [
+       "o+act"
+      ],
+      "cP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "focus": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c008",
+       "phrase": "the scope of support",
+       "at": 161.735
+      },
+      {
+       "name": "s2_compare",
+       "phrase": "Now compare three possible accounts",
+       "at": 148.449
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c009",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 165.513,
+     "end": 181.72,
+     "speaker": "coach",
+     "tokens": {
+      "scope": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c009",
+       "phrase": "one person is still one person",
+       "at": 178.37
+      },
+      {
+       "name": "s2_choose",
+       "phrase": "Choose the account you could defend",
+       "at": 165.513
+      },
+      {
+       "name": "s2_after",
+       "phrase": "Afterward, notice",
+       "at": 170.656
+      }
+     ]
+    },
+    {
+     "id": "L08.I01.gate",
+     "kind": "gate",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 181.72,
+     "end": 182.92,
+     "speaker": null,
+     "tokens": {
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.d301",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "C",
+     "start": 182.92,
+     "end": 189.699,
+     "speaker": "learner",
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "msup": [
+       "x+w+h+fs+o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "cP": [
+       "x+w+h+fs+o"
+      ],
+      "focus": [
+       "o+act"
+      ],
+      "scope": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ],
+      "sHead": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl",
+       "o+hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": true,
+     "anchors": [
+      {
+       "name": "a_L08_S02_d301",
+       "phrase": "completely new ideas",
+       "at": 188.063
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.d302",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "C",
+     "start": 189.699,
+     "end": 198.192,
+     "speaker": "noah",
+     "tokens": {
+      "bubL": [
+       "x+w+h+fs+text+hl+o+spk+kind+slot",
+       "o",
+       "hl"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_d302",
+       "phrase": "some pair discussion",
+       "at": 191.842
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.f301",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": "C",
+     "start": 198.192,
+     "end": 213.971,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o"
+      ],
+      "bM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "cP": [
+       "o+act"
+      ],
+      "sHead": [
+       "o+act"
+      ],
+      "bubL": [
+       "o+act"
+      ],
+      "resp": [
+       "x+w+h+fs+o+text+hl+kind",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_f301",
+       "phrase": "already available",
+       "at": 200.763
+      },
+      {
+       "name": "sC_loses",
+       "phrase": "This account loses support",
+       "at": 198.192
+      },
+      {
+       "name": "sC_keep",
+       "phrase": "Keep the partial support",
+       "at": 206.335
+      }
+     ]
+    },
+    {
+     "id": "L08.I01.ready",
+     "kind": "ready",
+     "block": "L08.S02.B02",
+     "branch": "C",
+     "start": 213.971,
+     "end": 213.971,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c010",
+     "kind": "line",
+     "block": "L08.S02.B03",
+     "branch": null,
+     "start": 213.971,
+     "end": 233.607,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "o",
+       "x+w+h+fs+slot+text+o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "o+act",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "resp": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c010",
+       "phrase": "confirm, qualify or correct",
+       "at": 231.542
+      },
+      {
+       "name": "s2_any",
+       "phrase": "On any path",
+       "at": 213.971
+      },
+      {
+       "name": "s2_ready",
+       "phrase": "A summary is ready for use",
+       "at": 225.971
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.h102",
+     "kind": "hold",
+     "block": "L08.S02.B03",
+     "branch": null,
+     "start": 233.607,
+     "end": 245.607,
+     "speaker": null,
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "o+act"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "rv": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rvBl": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c011",
+     "kind": "line",
+     "block": "L08.S02.B04",
+     "branch": null,
+     "start": 245.607,
+     "end": 264.386,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "rv": [
+       "o+act"
+      ],
+      "rvBl": [
+       "o+act"
+      ],
+      "st0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "nF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c011",
+       "phrase": "simply because it has been repeated",
+       "at": 261.464
+      },
+      {
+       "name": "s2_words",
+       "phrase": "Use accurate status words",
+       "at": 245.607
+      },
+      {
+       "name": "s2_job",
+       "phrase": "Their job is to stop",
+       "at": 256.321
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c012",
+     "kind": "line",
+     "block": "L08.S02.B04",
+     "branch": null,
+     "start": 264.386,
+     "end": 282.736,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "st0": [
+       "o+act"
+      ],
+      "st1": [
+       "o+act"
+      ],
+      "st2": [
+       "o+act"
+      ],
+      "nF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nSlot": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c012",
+       "phrase": "whether the elements fit together",
+       "at": 268.672
+      },
+      {
+       "name": "s2_once",
+       "phrase": "Once the shared ground is clear",
+       "at": 264.386
+      },
+      {
+       "name": "s2_nextS",
+       "phrase": "The next section looks at",
+       "at": 275.529
+      }
+     ]
+    }
+   ]
+  },
+  "practice:skip": {
+   "durationSeconds": 251.685,
+   "steps": [
+    {
+     "id": "L08.S02.c001",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 0,
+     "end": 23.064,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "x+w+h+fs+text+o",
+       "o"
+      ],
+      "lh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "lh3": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c001",
+       "phrase": "how far that support goes",
+       "at": 6.429
+      },
+      {
+       "name": "s2_more",
+       "phrase": "A shared summary is more than",
+       "at": 0
+      },
+      {
+       "name": "s2_says",
+       "phrase": "It says what people support",
+       "at": 4.286
+      },
+      {
+       "name": "s2_one",
+       "phrase": "If one person supports",
+       "at": 12.429
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c002",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 23.064,
+     "end": 41.843,
+     "speaker": "coach",
+     "tokens": {
+      "lh0": [
+       "o+act"
+      ],
+      "lh1": [
+       "o+act"
+      ],
+      "lh2": [
+       "o+act"
+      ],
+      "lh3": [
+       "o+act"
+      ],
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "msup": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c002",
+       "phrase": "A condition is part",
+       "at": 32.921
+      },
+      {
+       "name": "s2_return",
+       "phrase": "Return to the taster proposals",
+       "at": 23.064
+      },
+      {
+       "name": "s2_read",
+       "phrase": "Read their qualifications",
+       "at": 29.064
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c003",
+     "kind": "line",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 41.843,
+     "end": 58.907,
+     "speaker": "coach",
+     "tokens": {
+      "snap": [
+       "o+act"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "msup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "notT": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [
+      "con"
+     ],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c003",
+       "phrase": "not yet a fully timed agreement",
+       "at": 55.986
+      },
+      {
+       "name": "s2_maya",
+       "phrase": "Maya supports showing an example",
+       "at": 41.843
+      },
+      {
+       "name": "s2_noah",
+       "phrase": "Noah supports some pair discussion",
+       "at": 45.7
+      },
+      {
+       "name": "s2_these",
+       "phrase": "These positions have a useful connection",
+       "at": 51.7
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.h101",
+     "kind": "hold",
+     "block": "L08.S02.B01",
+     "branch": null,
+     "start": 58.907,
+     "end": 66.907,
+     "speaker": null,
+     "tokens": {
+      "bM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "notT": [
+       "o+act"
+      ],
+      "n1": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "n2": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "sh0": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c004",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 66.907,
+     "end": 87.828,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "n1": [
+       "o+act"
+      ],
+      "n2": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "sh0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh2": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "noR": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "inv": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "whole": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c004",
+       "phrase": "has not supplied a view",
+       "at": 69.478
+      },
+      {
+       "name": "s2_person",
+       "phrase": "A person who has not replied",
+       "at": 66.907
+      },
+      {
+       "name": "s2_nod",
+       "phrase": "Nodding",
+       "at": 72.907
+      },
+      {
+       "name": "s2_if",
+       "phrase": "If the status matters",
+       "at": 78.907
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c005",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 87.828,
+     "end": 108.749,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sh0": [
+       "o+act"
+      ],
+      "sh1": [
+       "o+act"
+      ],
+      "sh2": [
+       "o+act"
+      ],
+      "noR": [
+       "o+act"
+      ],
+      "inv": [
+       "o+act"
+      ],
+      "whole": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "lvl": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rail": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c005",
+       "phrase": "at the level where it exists",
+       "at": 95.114
+      },
+      {
+       "name": "s2_over",
+       "phrase": "You can also overcorrect",
+       "at": 87.828
+      },
+      {
+       "name": "s2_keep",
+       "phrase": "Keep agreement at the level",
+       "at": 94.257
+      },
+      {
+       "name": "s2_complete",
+       "phrase": "A complete group decision",
+       "at": 103.685
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c006",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 108.749,
+     "end": 129.67,
+     "speaker": "coach",
+     "tokens": {
+      "whole": [
+       "o+act"
+      ],
+      "rail": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "req": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c006",
+       "phrase": "Separate the task requirement",
+       "at": 119.892
+      },
+      {
+       "name": "s2_firm",
+       "phrase": "The prompt gives a firm constraint",
+       "at": 108.749
+      },
+      {
+       "name": "s2_sep",
+       "phrase": "Separate the task requirement",
+       "at": 119.892
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c007",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 129.67,
+     "end": 148.449,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "o+act",
+       "x+w+h+fs+o+tag"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "lvl": [
+       "o+act"
+      ],
+      "rail": [
+       "o+act"
+      ],
+      "req": [
+       "o+act"
+      ],
+      "sF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sS": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sO": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "sBl": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c007",
+       "phrase": "a positive connection and an open question",
+       "at": 132.241
+      },
+      {
+       "name": "s2_useful",
+       "phrase": "A useful summary can therefore",
+       "at": 129.67
+      },
+      {
+       "name": "s2_saying",
+       "phrase": "Saying what is supported",
+       "at": 137.813
+      },
+      {
+       "name": "s2_open",
+       "phrase": "saying what remains open",
+       "at": 142.956
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c008",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 148.449,
+     "end": 165.513,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "sF": [
+       "o+act"
+      ],
+      "sH": [
+       "o+act"
+      ],
+      "sS": [
+       "o+act"
+      ],
+      "sO": [
+       "o+act"
+      ],
+      "sBl": [
+       "o+act"
+      ],
+      "cP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "focus": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c008",
+       "phrase": "the scope of support",
+       "at": 161.735
+      },
+      {
+       "name": "s2_compare",
+       "phrase": "Now compare three possible accounts",
+       "at": 148.449
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c009",
+     "kind": "line",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 165.513,
+     "end": 181.72,
+     "speaker": "coach",
+     "tokens": {
+      "scope": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c009",
+       "phrase": "one person is still one person",
+       "at": 178.37
+      },
+      {
+       "name": "s2_choose",
+       "phrase": "Choose the account you could defend",
+       "at": 165.513
+      },
+      {
+       "name": "s2_after",
+       "phrase": "Afterward, notice",
+       "at": 170.656
+      }
+     ]
+    },
+    {
+     "id": "L08.I01.gate",
+     "kind": "gate",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 181.72,
+     "end": 182.92,
+     "speaker": null,
+     "tokens": {
+      "snap": [
+       "x+w+h+fs+o"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "opt.A": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.B": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "opt.C": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.I01.skip",
+     "kind": "skip",
+     "block": "L08.S02.B02",
+     "branch": null,
+     "start": 182.92,
+     "end": 182.92,
+     "speaker": null,
+     "tokens": {
+      "kick": [
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "cP": [
+       "o+act"
+      ],
+      "focus": [
+       "o+act"
+      ],
+      "scope": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c010",
+     "kind": "line",
+     "block": "L08.S02.B03",
+     "branch": null,
+     "start": 182.92,
+     "end": 202.556,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "ttl": [
+       "x+w+h+fs+slot+text+o",
+       "o"
+      ],
+      "snap": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bM": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bN": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "bP": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "msup": [
+       "o+act"
+      ],
+      "nsup": [
+       "o+act"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "cP": [
+       "o+act"
+      ],
+      "focus": [
+       "o+act"
+      ],
+      "scope": [
+       "o+act"
+      ],
+      "opt.A": [
+       "o+act"
+      ],
+      "opt.B": [
+       "o+act"
+      ],
+      "opt.C": [
+       "o+act"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c010",
+       "phrase": "confirm, qualify or correct",
+       "at": 200.491
+      },
+      {
+       "name": "s2_any",
+       "phrase": "On any path",
+       "at": 182.92
+      },
+      {
+       "name": "s2_ready",
+       "phrase": "A summary is ready for use",
+       "at": 194.92
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.h102",
+     "kind": "hold",
+     "block": "L08.S02.B03",
+     "branch": null,
+     "start": 202.556,
+     "end": 214.556,
+     "speaker": null,
+     "tokens": {
+      "ttl": [
+       "o"
+      ],
+      "snap": [
+       "o+act"
+      ],
+      "bM": [
+       "o+act"
+      ],
+      "bN": [
+       "o+act"
+      ],
+      "bP": [
+       "o+act"
+      ],
+      "holdHint": [
+       "text",
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "holdTxt": [
+       "x+w+h+fs+o+text",
+       "o"
+      ],
+      "holdBar": [
+       "x+w+h+fs+o",
+       "w"
+      ],
+      "rv": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "rvBl": [
+       "x+w+h+fs+o+text",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": []
+    },
+    {
+     "id": "L08.S02.c011",
+     "kind": "line",
+     "block": "L08.S02.B04",
+     "branch": null,
+     "start": 214.556,
+     "end": 233.335,
+     "speaker": "coach",
+     "tokens": {
+      "kick": [
+       "o",
+       "x+w+h+fs+text"
+      ],
+      "holdHint": [
+       "o+act"
+      ],
+      "holdTxt": [
+       "o+act"
+      ],
+      "holdBar": [
+       "o+act"
+      ],
+      "rv": [
+       "o+act"
+      ],
+      "rvBl": [
+       "o+act"
+      ],
+      "st0": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st1": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "st2": [
+       "x+w+h+fs+o",
+       "o",
+       "act"
+      ],
+      "nF": [
+       "x+w+h+fs+o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c011",
+       "phrase": "simply because it has been repeated",
+       "at": 230.413
+      },
+      {
+       "name": "s2_words",
+       "phrase": "Use accurate status words",
+       "at": 214.556
+      },
+      {
+       "name": "s2_job",
+       "phrase": "Their job is to stop",
+       "at": 225.27
+      }
+     ]
+    },
+    {
+     "id": "L08.S02.c012",
+     "kind": "line",
+     "block": "L08.S02.B04",
+     "branch": null,
+     "start": 233.335,
+     "end": 251.685,
+     "speaker": "coach",
+     "tokens": {
+      "msup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "nsup": [
+       "x+w+h+fs+o+tag",
+       "o"
+      ],
+      "st0": [
+       "o+act"
+      ],
+      "st1": [
+       "o+act"
+      ],
+      "st2": [
+       "o+act"
+      ],
+      "nF": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nH": [
+       "x+w+h+fs+o",
+       "o"
+      ],
+      "nSlot": [
+       "x+w+h+fs+o",
+       "o"
+      ]
+     },
+     "layersShown": [],
+     "roomIn": false,
+     "anchors": [
+      {
+       "name": "a_L08_S02_c012",
+       "phrase": "whether the elements fit together",
+       "at": 237.621
+      },
+      {
+       "name": "s2_once",
+       "phrase": "Once the shared ground is clear",
+       "at": 233.335
+      },
+      {
+       "name": "s2_nextS",
+       "phrase": "The next section looks at",
+       "at": 244.478
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "labelsUsedOnStage": [
+  "kick",
+  "ttl",
+  "n1",
+  "n2",
+  "sF",
+  "sBl",
+  "rvBl",
+  "nF",
+  "lh0",
+  "lh1",
+  "lh2",
+  "lh3",
+  "snap",
+  "bM",
+  "bN",
+  "bP",
+  "msup",
+  "nsup",
+  "notT",
+  "sh0",
+  "sh1",
+  "sh2",
+  "noR",
+  "inv",
+  "whole",
+  "lvl",
+  "rail",
+  "req",
+  "sH",
+  "sS",
+  "sO",
+  "cP",
+  "focus",
+  "scope",
+  "sHead",
+  "resp",
+  "rv",
+  "st0",
+  "st1",
+  "st2",
+  "nH",
+  "nSlot",
+  "opt.A",
+  "opt.B",
+  "opt.C",
+  "holdTxt",
+  "holdBar",
+  "holdHint",
+  "bubL"
+ ]
+}

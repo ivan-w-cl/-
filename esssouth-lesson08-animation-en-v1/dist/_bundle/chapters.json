@@ -1,0 +1,115 @@
+{
+ "lesson": "L08",
+ "title": "Bring Contributions Together into a Shared Proposal",
+ "note": "Durations are compiled from the silent estimated timing (140 wpm + 0.35 s tail + fixed holds). Practice excludes unlimited waiting; alternative branches are not summed.",
+ "watchTotalSeconds": 1917.616,
+ "chapters": [
+  {
+   "id": "L08.S01",
+   "num": "8.1",
+   "title": "Map the Contributions before Combining Them",
+   "watchSeconds": 241.837,
+   "watchStartInCourse": 0,
+   "practice": {
+    "practice:main": 241.837
+   },
+   "gate": null,
+   "src": "players/L08S01_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L08.S02",
+   "num": "8.2",
+   "title": "Separate Shared Ground from Open Questions",
+   "watchSeconds": 291.248,
+   "watchStartInCourse": 241.837,
+   "practice": {
+    "practice:A": 281.021,
+    "practice:B": 284.448,
+    "practice:C": 282.736,
+    "practice:skip": 251.685
+   },
+   "gate": {
+    "id": "L08.I01",
+    "kind": "choice"
+   },
+   "src": "players/L08S02_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L08.S03",
+   "num": "8.3",
+   "title": "Combine Compatible Contributions",
+   "watchSeconds": 308.823,
+   "watchStartInCourse": 533.085,
+   "practice": {
+    "practice:A": 290.879,
+    "practice:B": 295.594,
+    "practice:C": 302.023,
+    "practice:skip": 260.258
+   },
+   "gate": {
+    "id": "L08.I02",
+    "kind": "choice"
+   },
+   "src": "players/L08S03_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L08.S04",
+   "num": "8.4",
+   "title": "Explain a Trade-off against Shared Criteria",
+   "watchSeconds": 276.12,
+   "watchStartInCourse": 841.908,
+   "practice": {
+    "practice:main": 276.12
+   },
+   "gate": null,
+   "src": "players/L08S04_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L08.S05",
+   "num": "8.5",
+   "title": "Present a Combined Proposal and Check Its Status",
+   "watchSeconds": 283.679,
+   "watchStartInCourse": 1118.028,
+   "practice": {
+    "practice:main": 283.679
+   },
+   "gate": null,
+   "src": "players/L08S05_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L08.S06",
+   "num": "8.6",
+   "title": "Rehearse a Faithful Summary and Next Step",
+   "watchSeconds": 344.044,
+   "watchStartInCourse": 1401.707,
+   "practice": {
+    "practice:model": 310.244,
+    "practice:skip": 256.051
+   },
+   "gate": {
+    "id": "L08.I03",
+    "kind": "private_rehearsal"
+   },
+   "src": "players/L08S06_player_standalone.html",
+   "built": true
+  },
+  {
+   "id": "L08.S07",
+   "num": "8.7",
+   "title": "Transfer the Synthesis to a New Task",
+   "watchSeconds": 171.865,
+   "watchStartInCourse": 1745.751,
+   "practice": {
+    "practice:main": 171.865
+   },
+   "gate": null,
+   "src": "players/L08S07_player_standalone.html",
+   "built": true
+  }
+ ]
+}
