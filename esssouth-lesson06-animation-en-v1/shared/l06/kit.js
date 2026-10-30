@@ -43,9 +43,13 @@
     X.stepsOf = (block) => tr.steps.filter((s) => s.block === X.id(block));
     // speaker-aware bubble: exact cue text, key phrases blue 0.1 s after it rises (the approved say(), plus the speaker)
     X.say = (c, hls, wait, rectOverride) => { // rectOverride: a taller bubble for an unusually long line (same width, style and tail)
-      const s = c.start + (wait || 0), rect = rectOverride || GG.bubWide, spk = c.speakerId;
+      const spk = c.speakerId;
+      // the approved .bubble rule caps the visible bubble at 760 px; Noah's bubble is placed so his seat (stage x 874) lies over
+      // it and the tail can reach him (Lesson 06 fix: in L03/L04 the Noah tail could sit beyond the 760 px edge)
+      const base = rectOverride || (spk === 'noah' ? Object.assign({}, GG.bubWide, { x: 274, w: 760 }) : GG.bubWide);
+      const s = c.start + (wait || 0), rect = base, extra = (rectOverride && rectOverride.cls) ? ' ' + rectOverride.cls : '';
       if (S.vis.has('bubL')) S.put('bubL', c.start - 0.1, MOTION.focus, { o: 0, hl: 0 }); // the previous speaker's words leave as this line starts
-      S.set('bubL', s - 0.16, 0, Object.assign({}, rect, { text: markup(E.cueText(c.cueId), hls || []), hl: 0, y: rect.y + 12, o: 0, spk, kind: 'bubble spk-' + spk }));
+      S.set('bubL', s - 0.16, 0, Object.assign({}, rect, { text: markup(E.cueText(c.cueId), hls || []), hl: 0, y: rect.y + 12, o: 0, spk, kind: 'bubble spk-' + spk + extra, slot: (rectOverride && rectOverride.slot) || 'token.quote' }));
       S.put('bubL', s - 0.15, MOTION.rise, { y: rect.y, o: 1 }); S.put('bubL', s + 0.1, MOTION.focus, { hl: 1 });
     };
     // a character line in the side layout: room in (once), speaker pose and listeners, bubble after the room settles

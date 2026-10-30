@@ -345,7 +345,7 @@ textarea.privnotes:focus-visible { outline: 4px solid var(--blue); outline-offse
 /* esssouth Lesson 06 · player additions on top of shared/toolkit/style.css (the approved stylesheet, unchanged).
    Stage art is unchanged except the speaker-aware bubble tail. Everything else here is page chrome outside the stage. */
 /* bubble tail toward the speaking seat in the side layout (room x 40, scale 0.56: Maya 281, You 578, Noah 874; bubble x 70) */
-.tok:has(> .t2.spk-noah) .ttail { left: 792px; }
+.tok:has(> .t2.spk-noah) .ttail { left: 588px; } /* bubble x 274 (kit.js): Noah's seat at stage x 874 */
 .tok:has(> .t2.spk-maya) .ttail { left: 199px; }
 .head .tag.silent { background: #EEF2F8; }
 .modes { display: inline-flex; border: 1px solid #C9D0DA; border-radius: 8px; overflow: hidden; }
@@ -374,6 +374,9 @@ html, body { overflow-x: hidden; }
 .casefacts summary { cursor: pointer; font-weight: 650; min-height: 32px; display: flex; align-items: center; }
 .casefacts ol { margin: 8px 0 0; padding-left: 22px; }
 body.export .casefacts { display: none; }
+
+/* Lesson 06: an unusually long model line may use the full 1040 px bubble width (same border, radius, shadow, tail) */
+.t2.bubble.wide { max-width: none; }
 
 </style>
 </head>
@@ -1277,6 +1280,7 @@ window.EsssouthStyleContract = { diagram: [34, 26, 3], dialogue: [40, 30, 6], ca
 /* esssouth Lesson 06 · extra text slots (same policy as shared/toolkit/slots.js; overflow is reported, never hidden). */
 window.L06Slots = {
   "token.option": { "travelling": true, "minScale": 0.87, "maxLines": 3, "minPx": 26 },
+  "token.quoteLong": { "travelling": true, "minScale": 0.94, "maxLines": 9, "minPx": 30 },
   "token.summary": { "travelling": true, "minScale": 0.9, "maxLines": 4, "minPx": 28 }
 };
 
@@ -1481,9 +1485,13 @@ window.L06Slots = {
     X.stepsOf = (block) => tr.steps.filter((s) => s.block === X.id(block));
     // speaker-aware bubble: exact cue text, key phrases blue 0.1 s after it rises (the approved say(), plus the speaker)
     X.say = (c, hls, wait, rectOverride) => { // rectOverride: a taller bubble for an unusually long line (same width, style and tail)
-      const s = c.start + (wait || 0), rect = rectOverride || GG.bubWide, spk = c.speakerId;
+      const spk = c.speakerId;
+      // the approved .bubble rule caps the visible bubble at 760 px; Noah's bubble is placed so his seat (stage x 874) lies over
+      // it and the tail can reach him (Lesson 06 fix: in L03/L04 the Noah tail could sit beyond the 760 px edge)
+      const base = rectOverride || (spk === 'noah' ? Object.assign({}, GG.bubWide, { x: 274, w: 760 }) : GG.bubWide);
+      const s = c.start + (wait || 0), rect = base, extra = (rectOverride && rectOverride.cls) ? ' ' + rectOverride.cls : '';
       if (S.vis.has('bubL')) S.put('bubL', c.start - 0.1, MOTION.focus, { o: 0, hl: 0 }); // the previous speaker's words leave as this line starts
-      S.set('bubL', s - 0.16, 0, Object.assign({}, rect, { text: markup(E.cueText(c.cueId), hls || []), hl: 0, y: rect.y + 12, o: 0, spk, kind: 'bubble spk-' + spk }));
+      S.set('bubL', s - 0.16, 0, Object.assign({}, rect, { text: markup(E.cueText(c.cueId), hls || []), hl: 0, y: rect.y + 12, o: 0, spk, kind: 'bubble spk-' + spk + extra, slot: (rectOverride && rectOverride.slot) || 'token.quote' }));
       S.put('bubL', s - 0.15, MOTION.rise, { y: rect.y, o: 1 }); S.put('bubL', s + 0.1, MOTION.focus, { hl: 1 });
     };
     // a character line in the side layout: room in (once), speaker pose and listeners, bubble after the room settles

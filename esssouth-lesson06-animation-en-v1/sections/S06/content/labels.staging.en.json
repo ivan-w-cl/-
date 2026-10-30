@@ -1,0 +1,9 @@
+{
+  "schema": "esssouth.l06.staging-labels/1",
+  "sectionId": "L06.S06",
+  "note": "Short diagram labels added by the animation build where a cue's visual direction needs on-screen words the supplied labels do not contain. 'Next time / Proposed' follows docs/CASE_AND_EVIDENCE_CONTRACT_EN.md. Not spoken; editable; listed in CHANGES_FROM_HANDOFF.md. x.caseLabel is the case ledger's caseLabel (content/case-facts.en.json), which S06 labels.en.json does not include.",
+  "labels": {
+    "x.future": "Next time / Proposed",
+    "x.caseLabel": "Fictional worked example"
+  }
+}

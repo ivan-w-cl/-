@@ -1,0 +1,1202 @@
+{
+ "section": "S06",
+ "ranAt": "2026-10-30T00:09:42.420Z",
+ "environment": {
+  "os": "linux 6.18.44-fc-v185",
+  "browser": "Chromium 153.0.8010.12",
+  "playwright": "1.63.0",
+  "node": "v22.22.0",
+  "fonts": "Inter installed (first in the stack); the approved reference frames were rendered with Segoe UI",
+  "viewportsAreEmulated": true
+ },
+ "checks": [
+  {
+   "name": "page loads without errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no layout / overflow warnings from the engine (all routes, settled states)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "no remote requests (offline)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "silent: no media elements, no microphone request",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "stage accessible name names Lesson 06 and this section",
+   "pass": true,
+   "detail": "Lesson 06, Section 6.6, Rehearse a Truthful Account: animation stage"
+  },
+  {
+   "name": "captions reproduce exact cue words (every route)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "every supplied cue is reachable in some route",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L06.S06.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route watch: L06.S06.h102 lasts 12 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:model: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:model: L06.S06.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:model: L06.S06.h102 lasts 12 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:skip: each step once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:skip: L06.S06.h101 lasts 8 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "route practice:skip: L06.S06.h102 lasts 12 s",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "every character line shows its exact words in a visible bubble near its end",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route watch: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:model: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "route practice:skip: visible text inside the stage, clear of the caption band, no clipping or overlaps (sampled every 0.25 s + transition midpoints)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "deterministic: same frame after different seek histories",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "reduced motion: no partially faded tokens mid-transition (motions cut at their start)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "rate 1×: clock advances at 1× (measured 0.992)",
+   "pass": true,
+   "detail": 0.9921349063521863
+  },
+  {
+   "name": "rate 1.25×: clock advances at 1.25× (measured 1.248)",
+   "pass": true,
+   "detail": 1.2480835888547812
+  },
+  {
+   "name": "rate 1.5×: clock advances at 1.5× (measured 1.494)",
+   "pass": true,
+   "detail": 1.4937004199719557
+  },
+  {
+   "name": "rate 2×: clock advances at 2× (measured 1.983)",
+   "pass": true,
+   "detail": 1.982535661911931
+  },
+  {
+   "name": "mode switch at common content keeps cue and offset (watch → practice → watch)",
+   "pass": true,
+   "detail": {
+    "a": "L06.S06.c005",
+    "off1": 2,
+    "b": "L06.S06.c005",
+    "off2": 2,
+    "mode": "watch"
+   }
+  },
+  {
+   "name": "restart returns to the section start and plays",
+   "pass": true,
+   "detail": {
+    "t": 0.18910000000009314,
+    "playing": true,
+    "gate": "none",
+    "choice": null
+   }
+  },
+  {
+   "name": "keyboard: Space plays and pauses",
+   "pass": true,
+   "detail": {
+    "k1": true,
+    "k2": false
+   }
+  },
+  {
+   "name": "keyboard: Tab reaches mode and playback controls with a visible focus outline",
+   "pass": true,
+   "detail": [
+    {
+     "tag": "BUTTON",
+     "id": "watch",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "practice",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "play",
+     "outline": true
+    },
+    {
+     "tag": "BUTTON",
+     "id": "restart",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "scrub",
+     "outline": true
+    },
+    {
+     "tag": "INPUT",
+     "id": "cap",
+     "outline": true
+    }
+   ]
+  },
+  {
+   "name": "captions toggle hides the stage caption; DOM caption carries the current words",
+   "pass": true,
+   "detail": {
+    "on": 1,
+    "off": 0,
+    "dom": "CoachNow prepare a short account of an experience."
+   }
+  },
+  {
+   "name": "case facts panel lists the exact fictional fact ledger",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 9,
+    "facts": 9,
+    "lrn": "Case participant",
+    "capName": "Case participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Case participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "the model speaker is labelled from the graph (caption and seat), not as the learner",
+   "pass": true,
+   "detail": {
+    "shown": true,
+    "items": 9,
+    "facts": 9,
+    "lrn": "Case participant",
+    "capName": "Case participant",
+    "hasLine": true,
+    "seat": [
+     "Maya",
+     "Case participant",
+     "Noah"
+    ]
+   }
+  },
+  {
+   "name": "no runtime errors during transport tests",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: while waiting, no caption from the next cue; the DOM line shows the prompt",
+   "pass": true,
+   "detail": {
+    "stage": 0,
+    "dom": "Privately explain a contribution you made and what you know about its outcome. Use a truthful experience, or explicitly label the guide case as fictional language practice.",
+    "prompt": "Privately explain a contribution you made and what you know about its outcome. Use a truthful experience, or explicitly label the guide case as fictional language practice."
+   }
+  },
+  {
+   "name": "practice: playback stops and waits at the gate (awaiting_choice)",
+   "pass": true,
+   "detail": {
+    "t": 138.93099999999998,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.I03.gate"
+   }
+  },
+  {
+   "name": "practice: the waiting frame keeps everything that was settled just before it (nothing from the next step leaks in or out)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "practice: Play, Space, a rate change and 36.5 s of wall time do not choose (still waiting beyond the 35 s Watch hold)",
+   "pass": true,
+   "detail": {
+    "t": 138.93099999999998,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.I03.gate"
+   }
+  },
+  {
+   "name": "practice model: first selection wins; branch plays on its own route",
+   "pass": true,
+   "detail": {
+    "t": 138.94095000000004,
+    "gate": "branch_playing",
+    "route": "practice:model",
+    "choice": "model",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.S06.d101"
+   }
+  },
+  {
+   "name": "practice model: scrubber is branch-local",
+   "pass": true,
+   "detail": [
+    138.93599999999998,
+    201.26699999999997
+   ]
+  },
+  {
+   "name": "practice model: seek beyond the branch stays inside it (branch_ready, no common cue)",
+   "pass": true,
+   "detail": {
+    "t": 201.26699999999997,
+    "gate": "branch_ready",
+    "route": "practice:model",
+    "choice": "model",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": true,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.S06.f101"
+   }
+  },
+  {
+   "name": "practice model: branch end waits for Continue",
+   "pass": true,
+   "detail": {
+    "t": 201.26699999999997,
+    "gate": "branch_ready",
+    "route": "practice:model",
+    "choice": "model",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": true,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.S06.f101"
+   }
+  },
+  {
+   "name": "practice model: viewing sets modelViewed only (no speakingObserved / completionAssumed / experienceVerified / proposalAdopted)",
+   "pass": true,
+   "detail": {
+    "responseText": null,
+    "modelViewed": true,
+    "speakingObserved": false,
+    "completionAssumed": false,
+    "experienceVerified": false
+   }
+  },
+  {
+   "name": "practice model: Try again restores the gate baseline (state + identical stage)",
+   "pass": true,
+   "detail": {
+    "s": {
+     "t": 138.93099999999998,
+     "gate": "awaiting",
+     "route": "practice:skip",
+     "choice": null,
+     "playing": false,
+     "flags": {
+      "responseText": null,
+      "modelViewed": false,
+      "speakingObserved": false,
+      "completionAssumed": false,
+      "experienceVerified": false
+     },
+     "step": "L06.I03.gate"
+    },
+    "same": true
+   }
+  },
+  {
+   "name": "practice model: Continue rejoins L06.S06.c008 once",
+   "pass": true,
+   "detail": {
+    "t": 201.71149999999997,
+    "gate": "resolved",
+    "route": "practice:model",
+    "choice": "model",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": true,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.S06.c008"
+   }
+  },
+  {
+   "name": "practice model: flags after Continue still claim nothing",
+   "pass": true,
+   "detail": {
+    "responseText": null,
+    "modelViewed": true,
+    "speakingObserved": false,
+    "completionAssumed": false,
+    "experienceVerified": false
+   }
+  },
+  {
+   "name": "practice model: no branch words in the common continuation caption",
+   "pass": true,
+   "detail": "For any account you choose to review,"
+  },
+  {
+   "name": "practice model: seek before the gate resets the attempt",
+   "pass": true,
+   "detail": {
+    "t": 134.736,
+    "gate": "before",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.S06.c007"
+   }
+  },
+  {
+   "name": "practice model: seek to the gate stops there",
+   "pass": true,
+   "detail": {
+    "t": 138.93099999999998,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.I03.gate"
+   }
+  },
+  {
+   "name": "practice: Skip enters the common continuation once, unanswered, no assessment",
+   "pass": true,
+   "detail": {
+    "t": 139.24049999999997,
+    "gate": "resolved",
+    "route": "practice:skip",
+    "choice": "skip",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.S06.c008"
+   }
+  },
+  {
+   "name": "practice rehearsal: Continue without the model rejoins once (modelViewed stays false)",
+   "pass": true,
+   "detail": {
+    "t": 139.24259999999984,
+    "gate": "resolved",
+    "route": "practice:skip",
+    "choice": "skip",
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.S06.c008"
+   }
+  },
+  {
+   "name": "practice: seek forward across an unvisited gate stops at the gate",
+   "pass": true,
+   "detail": {
+    "t": 138.93099999999998,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.I03.gate"
+   }
+  },
+  {
+   "name": "practice: after Skip, seeking within the continuation is allowed",
+   "pass": true,
+   "detail": {
+    "t": 215.19399999999996,
+    "gate": "resolved",
+    "route": "practice:skip",
+    "choice": "skip",
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.S06.c011"
+   }
+  },
+  {
+   "name": "mode switch at the gate: Watch restarts at its thinking hold",
+   "pass": true,
+   "detail": {
+    "t": 137.736,
+    "gate": "none",
+    "route": "watch",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.I03.watchThink"
+   }
+  },
+  {
+   "name": "mode switch at the gate: Practice returns to awaiting_choice",
+   "pass": true,
+   "detail": {
+    "t": 138.93099999999998,
+    "gate": "awaiting",
+    "route": "practice:skip",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.I03.gate"
+   }
+  },
+  {
+   "name": "mode switch inside a branch: Watch restarts at its thinking hold (no branch carried over)",
+   "pass": true,
+   "detail": {
+    "t": 137.736,
+    "gate": "none",
+    "route": "watch",
+    "choice": null,
+    "playing": false,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.I03.watchThink"
+   }
+  },
+  {
+   "name": "watch: no waiting at the gate; the declared path (model) follows the 35 s thinking hold",
+   "pass": true,
+   "detail": {
+    "t": 174.44440000000037,
+    "gate": "none",
+    "route": "watch",
+    "choice": null,
+    "playing": true,
+    "flags": {
+     "responseText": null,
+     "modelViewed": false,
+     "speakingObserved": false,
+     "completionAssumed": false,
+     "experienceVerified": false
+    },
+    "step": "L06.S06.d101"
+   }
+  },
+  {
+   "name": "practice: no runtime errors",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: Watch duration changes by the expected clip delta (19.950 s)",
+   "pass": true,
+   "detail": {
+    "prod": 315.33,
+    "retimed": 335.28
+   }
+  },
+  {
+   "name": "retime: step order unchanged in every route",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: holds keep their fixture length; think holds unchanged",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "name": "retime: anchors in a lengthened cue keep their relative place (local time × multiplier; phrase-initial anchors stay at 0)",
+   "pass": true,
+   "detail": [
+    {
+     "name": "a_L06_S06_c001",
+     "zero": false,
+     "ratio": 1.35,
+     "m": 1.35
+    },
+    {
+     "name": "a_L06_S06_d101",
+     "zero": false,
+     "ratio": 1.350002287596651,
+     "m": 1.35
+    },
+    {
+     "name": "s6_prepare",
+     "zero": true,
+     "ratio": 1,
+     "m": 1.35
+    },
+    {
+     "name": "s6_truthful",
+     "zero": false,
+     "ratio": 1.3499840916321983,
+     "m": 1.35
+    },
+    {
+     "name": "s6_fiction",
+     "zero": false,
+     "ratio": 1.3499999999999999,
+     "m": 1.35
+    },
+    {
+     "name": "s6_dayBefore",
+     "zero": false,
+     "ratio": 1.3500129634430904,
+     "m": 1.35
+    }
+   ]
+  },
+  {
+   "name": "retime: board state 0.7 s after each anchor of a retimed cue equals production (semantic placement kept)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "retime: no layout warnings",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "name": "phone 390x844 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 172,
+    "domcapFs": 16,
+    "panel": true
+   }
+  },
+  {
+   "name": "tablet 820x1180 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 172,
+    "domcapFs": 16,
+    "panel": true
+   }
+  },
+  {
+   "name": "tablet landscape 1180x820 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 172,
+    "domcapFs": 16,
+    "panel": true
+   }
+  },
+  {
+   "name": "desktop 1366x768 (emulated): no horizontal scroll, controls ≥ 44 px, readable DOM caption/prompt",
+   "pass": true,
+   "detail": {
+    "hscroll": false,
+    "small": [],
+    "domcap": 172,
+    "domcapFs": 16,
+    "panel": true
+   }
+  }
+ ],
+ "failures": [],
+ "notes": [
+  "Text expansion is a stress report, not a pass/fail gate: overflow at ×1.3/×1.6 is reported by the fitter (never clipped silently) and needs layout work in the localization pass where it occurs."
+ ],
+ "routes": {
+  "watch": 315.33,
+  "practice:model": 281.53,
+  "practice:skip": 219.194
+ },
+ "anchors": [
+  {
+   "name": "a_L06_S06_c001",
+   "cue": "L06.S06.c001",
+   "phrase": "purely for language practice",
+   "localSec": 15,
+   "suppliedSec": 15,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_c002",
+   "cue": "L06.S06.c002",
+   "phrase": "Keep the substance accurate",
+   "localSec": 5.143,
+   "suppliedSec": 5.143,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_c003",
+   "cue": "L06.S06.c003",
+   "phrase": "not a required sequence",
+   "localSec": 12.429,
+   "suppliedSec": 12.429,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_c004",
+   "cue": "L06.S06.c004",
+   "phrase": "Sharing credit",
+   "localSec": 13.286,
+   "suppliedSec": 13.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_c005",
+   "cue": "L06.S06.c005",
+   "phrase": "one boundary you should retain",
+   "localSec": 3,
+   "suppliedSec": 3,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_c006",
+   "cue": "L06.S06.c006",
+   "phrase": "Rehearse your account in English",
+   "localSec": 0,
+   "suppliedSec": 0,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_c007",
+   "cue": "L06.S06.c007",
+   "phrase": "put the account together",
+   "localSec": 1.714,
+   "suppliedSec": 1.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_c008",
+   "cue": "L06.S06.c008",
+   "phrase": "the result words match",
+   "localSec": 6,
+   "suppliedSec": 6,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_c009",
+   "cue": "L06.S06.c009",
+   "phrase": "instead of constructing a confident answer",
+   "localSec": 15,
+   "suppliedSec": 15,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_c010",
+   "cue": "L06.S06.c010",
+   "phrase": "different words or a different experience",
+   "localSec": 14.571,
+   "suppliedSec": 14.571,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_c011",
+   "cue": "L06.S06.c011",
+   "phrase": "keep their limits intact",
+   "localSec": 1.714,
+   "suppliedSec": 1.714,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_d101",
+   "cue": "L06.S06.d101",
+   "phrase": "I changed my map",
+   "localSec": 21.857,
+   "suppliedSec": 21.857,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_d102",
+   "cue": "L06.S06.d102",
+   "phrase": "do differently",
+   "localSec": 1.286,
+   "suppliedSec": 1.286,
+   "source": "supplied semantic anchor"
+  },
+  {
+   "name": "a_L06_S06_f101",
+   "cue": "L06.S06.f101",
+   "phrase": "keep it in the future",
+   "localSec": 8.143,
+   "suppliedSec": 8.143,
+   "source": "supplied semantic anchor"
+  }
+ ],
+ "layoutAudit": {
+  "watch": [],
+  "practice:model": [],
+  "practice:skip": []
+ },
+ "stills": [
+  "S06_watch_B01-open_t1.20.jpg",
+  "S06_watch_B01-mid_t27.74.jpg",
+  "S06_watch_B01-end_t55.18.jpg",
+  "S06_watch_B02-open_t56.68.jpg",
+  "S06_watch_B02-mid_t78.47.jpg",
+  "S06_watch_B02-end_t101.16.jpg",
+  "S06_watch_B03-open_t102.66.jpg",
+  "S06_watch_B03-mid_t168.27.jpg",
+  "S06_watch_B03-end_t234.77.jpg",
+  "S06_watch_B04-open_t236.27.jpg",
+  "S06_watch_B04-mid_t275.20.jpg",
+  "S06_watch_B04-end_t315.03.jpg",
+  "S06_watch_trans-c002_t21.27.jpg",
+  "S06_watch_trans-c003_t41.34.jpg",
+  "S06_watch_trans-c004_t55.83.jpg",
+  "S06_watch_trans-c005_t74.61.jpg",
+  "S06_watch_trans-h101_t93.81.jpg",
+  "S06_watch_trans-c006_t101.81.jpg",
+  "S06_watch_trans-c007_t121.45.jpg",
+  "S06_watch_trans-watchThink_t138.09.jpg",
+  "S06_watch_trans-d101_t173.09.jpg",
+  "S06_watch_trans-d102_t209.86.jpg",
+  "S06_watch_trans-f101_t214.93.jpg",
+  "S06_watch_trans-c008_t235.42.jpg",
+  "S06_watch_trans-c009_t255.91.jpg",
+  "S06_watch_trans-c010_t274.69.jpg",
+  "S06_watch_trans-h102_t292.19.jpg",
+  "S06_watch_trans-c011_t304.19.jpg",
+  "S06_practice-model_B03-open_t140.14.jpg",
+  "S06_practice-model_B03-mid_t170.10.jpg",
+  "S06_practice-model_B03-end_t200.97.jpg",
+  "S06_practice-model_trans-d101_t139.29.jpg",
+  "S06_practice-model_settled-d101_t175.41.jpg",
+  "S06_practice-model_trans-d102_t176.06.jpg",
+  "S06_practice-model_settled-d102_t180.48.jpg",
+  "S06_practice-model_trans-f101_t181.13.jpg",
+  "S06_practice-model_settled-f101_t200.97.jpg",
+  "S06_practice-model_trans-ready_t201.62.jpg",
+  "S06_practice-model_settled-ready_t200.97.jpg",
+  "S06_practice-skip_B03-open_t102.66.jpg",
+  "S06_practice-skip_B03-mid_t120.20.jpg",
+  "S06_practice-skip_B03-end_t138.64.jpg",
+  "S06_reduced-motion_t138.04.jpg",
+  "S06_practice_gate-awaiting.jpg",
+  "S06_practice_model_branch-ready.jpg",
+  "S06_retime-demo_c001-end_t27.62.jpg",
+  "S06_retime-demo_d101-end_t228.97.jpg",
+  "S06_text-x1.3_t137.34.jpg",
+  "S06_text-x1.6_t137.34.jpg",
+  "S06_text-long_t137.34.jpg",
+  "S06_viewport-390x844.png",
+  "S06_viewport-820x1180.png",
+  "S06_viewport-1180x820.png",
+  "S06_viewport-1366x768.png"
+ ],
+ "textExpansion": {
+  "x1.3": {
+   "warnings": 2,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "pPriv",
+     "score": "watch",
+     "t": 22.64,
+     "text": "Omit private identifiers or choose another topic Omit private identifiers"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.quoteLong",
+     "token": "bubL",
+     "score": "watch",
+     "t": 173.69,
+     "text": "I drew the map for a visitor guide. Maya listed the session times, and Noah asse"
+    }
+   ],
+   "errors": []
+  },
+  "x1.6": {
+   "warnings": 5,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "pPriv",
+     "score": "watch",
+     "t": 22.64,
+     "text": "Omit private identifiers or choose another topic Omit private identifiers or cho"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 101.26,
+     "text": "Explain a contribution and what you know about its outcome Explain a contributio"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.hold",
+     "token": "holdTxt",
+     "score": "watch",
+     "t": 137.79,
+     "text": "Privately explain a contribution you made and what you know about its outcome. U"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "chipF",
+     "score": "watch",
+     "t": 112.61,
+     "text": "Identify fictional practice as fiction Identify fictional practice"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.quoteLong",
+     "token": "bubL",
+     "score": "watch",
+     "t": 173.69,
+     "text": "I drew the map for a visitor guide. Maya listed the session times, and Noah asse"
+    }
+   ],
+   "errors": []
+  },
+  "long": {
+   "warnings": 19,
+   "sample": [
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "rF",
+     "score": "watch",
+     "t": 12,
+     "text": "Labelled fictional Unbreakablelongtokenforlayoutchecking language practice"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "pPriv",
+     "score": "watch",
+     "t": 22.64,
+     "text": "Omit private identifiers Unbreakablelongtokenforlayoutchecking or choose another"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "caseL",
+     "score": "watch",
+     "t": 31.21,
+     "text": "Fictional Unbreakablelongtokenforlayoutchecking worked example"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 101.26,
+     "text": "Explain a contribution and what Unbreakablelongtokenforlayoutchecking you know a"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.title",
+     "token": "ttl",
+     "score": "watch",
+     "t": 304.44,
+     "text": "Relevant detail; accurate Unbreakablelongtokenforlayoutchecking scope; clear lim"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "o1",
+     "score": "watch",
+     "t": 64.91,
+     "text": "Maya: session times Unbreakablelongtokenforlayoutchecking and schedule check"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.note",
+     "token": "pSp",
+     "score": "watch",
+     "t": 55.98,
+     "text": "Your private Unbreakablelongtokenforlayoutchecking account stays private"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "vis",
+     "score": "watch",
+     "t": 87.97,
+     "text": "One visitor used the Unbreakablelongtokenforlayoutchecking map to find Blue Room"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "chipP",
+     "score": "watch",
+     "t": 110.04,
+     "text": "Private practice; Unbreakablelongtokenforlayoutchecking no recording"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.chip",
+     "token": "chipF",
+     "score": "watch",
+     "t": 112.61,
+     "text": "Identify fictional Unbreakablelongtokenforlayoutchecking practice as fiction"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "m0",
+     "score": "watch",
+     "t": 124.53,
+     "text": "Watch: 35 seconds, Unbreakablelongtokenforlayoutchecking then a fictional model"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "m1",
+     "score": "watch",
+     "t": 127.96,
+     "text": "Practice: wait Unbreakablelongtokenforlayoutchecking until you choose"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "m2",
+     "score": "watch",
+     "t": 134.81,
+     "text": "Pause for Unbreakablelongtokenforlayoutchecking more time"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.idea",
+     "token": "mOwn",
+     "score": "watch",
+     "t": 194.59,
+     "text": "Drew map; checked; changed Unbreakablelongtokenforlayoutchecking label; told the"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "mObs",
+     "score": "watch",
+     "t": 198.02,
+     "text": "One visitor used the Unbreakablelongtokenforlayoutchecking map to find Blue Room"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.step",
+     "token": "mLim",
+     "score": "watch",
+     "t": 202.74,
+     "text": "No total count Unbreakablelongtokenforlayoutchecking or causal comparison"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.frame",
+     "token": "mMaya",
+     "score": "watch",
+     "t": 209.71,
+     "text": "Later Unbreakablelongtokenforlayoutchecking rehearsal partner"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.question",
+     "token": "mFU",
+     "score": "watch",
+     "t": 210.8,
+     "text": "What would you Unbreakablelongtokenforlayoutchecking change next time?"
+    },
+    {
+     "type": "text-overflow",
+     "slot": "token.colhead",
+     "token": "hFut",
+     "score": "watch",
+     "t": 214.58,
+     "text": "Next time Unbreakablelongtokenforlayoutchecking / Proposed"
+    }
+   ],
+   "errors": []
+  }
+ },
+ "viewports": [
+  {
+   "viewport": "phone 390x844",
+   "hscroll": false,
+   "small": [],
+   "domcap": 172,
+   "domcapFs": 16,
+   "panel": true
+  },
+  {
+   "viewport": "tablet 820x1180",
+   "hscroll": false,
+   "small": [],
+   "domcap": 172,
+   "domcapFs": 16,
+   "panel": true
+  },
+  {
+   "viewport": "tablet landscape 1180x820",
+   "hscroll": false,
+   "small": [],
+   "domcap": 172,
+   "domcapFs": 16,
+   "panel": true
+  },
+  {
+   "viewport": "desktop 1366x768",
+   "hscroll": false,
+   "small": [],
+   "domcap": 172,
+   "domcapFs": 16,
+   "panel": true
+  }
+ ],
+ "summary": {
+  "checks": 68,
+  "failed": 0,
+  "stills": 54
+ }
+}

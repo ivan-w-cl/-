@@ -1,7 +1,7 @@
 /* esssouth Lesson 06 · player additions on top of shared/toolkit/style.css (the approved stylesheet, unchanged).
    Stage art is unchanged except the speaker-aware bubble tail. Everything else here is page chrome outside the stage. */
 /* bubble tail toward the speaking seat in the side layout (room x 40, scale 0.56: Maya 281, You 578, Noah 874; bubble x 70) */
-.tok:has(> .t2.spk-noah) .ttail { left: 792px; }
+.tok:has(> .t2.spk-noah) .ttail { left: 588px; } /* bubble x 274 (kit.js): Noah's seat at stage x 874 */
 .tok:has(> .t2.spk-maya) .ttail { left: 199px; }
 .head .tag.silent { background: #EEF2F8; }
 .modes { display: inline-flex; border: 1px solid #C9D0DA; border-radius: 8px; overflow: hidden; }
@@ -30,3 +30,6 @@ html, body { overflow-x: hidden; }
 .casefacts summary { cursor: pointer; font-weight: 650; min-height: 32px; display: flex; align-items: center; }
 .casefacts ol { margin: 8px 0 0; padding-left: 22px; }
 body.export .casefacts { display: none; }
+
+/* Lesson 06: an unusually long model line may use the full 1040 px bubble width (same border, radius, shadow, tail) */
+.t2.bubble.wide { max-width: none; }
