@@ -1,0 +1,56 @@
+/* Discussion language layer (discussion-layer.js). Uses the site tokens; lesson-blue marks a discussion move. */
+:root{--dl-move:#356CC8;--dl-move-soft:#E8EFFA}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--dl-move:#7BA4EA;--dl-move-soft:#1B2638}}
+:root[data-theme="dark"]{--dl-move:#7BA4EA;--dl-move-soft:#1B2638}
+
+.dl-pad{padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.chip.dl-move{background:var(--dl-move-soft);color:var(--dl-move);text-decoration:none}
+.chip.dl-move.ok{background:var(--ok-soft);color:var(--ok)}
+.chip.dl-move.warn{background:var(--warn-soft);color:var(--warn)}
+.chip.dl-pick{height:32px;padding:0 12px;font-size:13px;background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.chip.dl-pick.on{background:var(--ink);color:var(--bg);box-shadow:none}
+.dl-lesson{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--dl-move);text-decoration:none}
+.dl-lesson:hover{text-decoration:underline}
+.dl-lesson .mono{font-size:11.5px}
+.dl-pending{font-size:12.5px;color:var(--faint)}
+.dl-note{font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.dl-ex{font-size:14px;background:var(--tile2);border-radius:10px;padding:8px 12px}
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.dl-word{justify-content:flex-start}
+.dl-foot{display:flex;flex-direction:column;gap:4px}
+.dl-turns{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.dl-turns li{display:flex;flex-direction:column;gap:6px;padding:10px 12px;border-radius:12px;background:var(--tile2);border:1px solid var(--line)}
+.dl-try{display:flex;flex-direction:column;gap:6px;font-size:13.5px;background:var(--tile2);border-radius:10px;padding:10px 12px}
+.dl-ctx{display:flex;flex-direction:column;gap:8px}
+.dl-q{background:var(--tile2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px;display:flex;flex-direction:column}
+.dl-q b{font-size:12px;color:var(--muted);font-weight:500}
+.dl-pad textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:10px 12px;resize:vertical;font-size:15px;color:var(--ink);min-height:84px}
+.dl-pad .field input{font-family:var(--f-body);font-size:15px}
+.dl-fb{display:flex;flex-direction:column;gap:8px}
+.dl-fbrow{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.dl-fbrow .chip{flex:none}
+.dl-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.dl-list li{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 12px;border-radius:10px;background:var(--tile2);border:1px solid var(--line)}
+.dl-list .t{display:flex;flex-direction:column;gap:4px;min-width:0;font-size:13px}
+.dl-list .t .chip{align-self:flex-start}
+.dl-toggle{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);cursor:pointer}
+.dl-toggle input{margin-top:3px;width:18px;height:18px;accent-color:var(--accent);flex:none}
+.dl-kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;margin:0;font-size:14px}
+.dl-kv dt{color:var(--muted)}.dl-kv dd{margin:0}
+.dl-rules{margin:0;padding-left:18px;font-size:13.5px;display:flex;flex-direction:column;gap:4px}
+.dl-demo{border-style:dashed}
+.dl-demo-bar{border:1px dashed var(--line)}
+.dl-sheet{margin-top:4px}
+@media (max-width:760px){.dl-list li{flex-direction:column;align-items:flex-start}}
+
+/* lesson pages: section move strip + section-end card (moves-bridge.js) */
+.mb-strip{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px;font-size:13px}
+.mb-strip .mb-chip{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#E8EFFA;color:#356CC8;font-weight:500}
+.mb-strip a{color:#356CC8}
+.mb-end{margin-top:12px;padding:14px 16px;border-radius:12px;background:#FFFFFF;border:1px solid #D8DEE8;box-shadow:0 8px 24px rgba(32,38,50,.08);display:flex;flex-direction:column;gap:8px;color:#202632}
+.mb-end h3{margin:0;font-size:16px}
+.mb-end p{margin:0;color:#5D6878;font-size:14px}
+.mb-end .mb-row{display:flex;flex-wrap:wrap;gap:8px}
+.mb-end .mb-go{display:inline-flex;align-items:center;height:36px;padding:0 14px;border-radius:999px;background:#202632;color:#FFFFFF;text-decoration:none;font-size:14px;font-weight:500}
+.mb-end .mb-close{height:36px;padding:0 14px;border-radius:999px;background:transparent;border:1px solid #B9C5D6;color:#202632;font:inherit;font-size:14px;cursor:pointer}
+.mb-strip[hidden],.mb-end[hidden]{display:none}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>esssouth · 第一课 · 小组讨论</title><link rel="stylesheet" href="course.css"></head>
+<body>
+<header class="top"><a class="brand" href="/#home" aria-label="返回网站首页">esssouth<span>COURSES</span></a><div class="edition">中文讲解 <span>·</span> 英文示范</div><nav class="course-site-nav" aria-label="网站导航"><a href="/#courses">返回课程</a><a href="/#home">返回首页</a></nav><button id="directoryToggle" class="plain" type="button" aria-expanded="false" aria-controls="chapters">课程目录</button></header>
+<main>
+  <section class="intro"><p class="eyebrow">GROUP DISCUSSION / LESSON 01</p><h1>看懂小组讨论，找到自己的参与方式</h1><p>理解任务，回应同伴，推动讨论。</p><div class="metadata"><span id="totalTime">7 个小节</span><span>观看 / 互动练习</span><span>无需录音</span></div></section>
+  <div class="workspace">
+    <section class="lesson" aria-label="课程播放器">
+      <div class="lesson-top"><div><p class="kicker" id="sectionNumber">第一课</p><h2 id="sectionTitle">正在载入课程</h2></div><div class="mode" role="group" aria-label="学习模式"><button id="watchMode" type="button" aria-pressed="true">连续观看</button><button id="practiceMode" type="button" aria-pressed="false">互动练习</button></div></div>
+      <p id="modeNote" class="mode-note">连续观看依次播放七个小节。切换模式会从当前小节重新开始。</p>
+      <div class="screen" id="screen"><div id="frameMount"></div><div id="loading" role="status">正在准备本节画面与配音…</div></div>
+      <div class="transport">
+        <button id="playToggle" class="primary" type="button" disabled>播放</button><button id="restartChapter" class="plain" type="button" disabled>重播本节</button><span id="transportStatus" role="status">正在载入</span>
+        <div class="scrub-row"><input id="progress" type="range" value="0" min="0" max="1" step="0.01" aria-label="当前小节播放进度" disabled><span id="time">0:00 / 0:00</span></div>
+        <div class="options"><label class="rate-control" for="playbackRate">倍速 <select id="playbackRate"><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><label><input id="captions" type="checkbox" checked>字幕</label><label><input id="reduceMotion" type="checkbox">减少动态</label><label><input id="autoNext" type="checkbox" checked>自动播放下一节</label></div>
+      </div>
+      <div id="notice" class="notice" role="status" hidden></div>
+      <section id="mobileActions" class="mobile-actions" aria-label="本节互动操作" hidden><h3>在这里作答</h3><p>与上方画面同步；点击选项后查看原有反馈。</p><div id="mobileFeedback" aria-label="原练习反馈" hidden></div><div id="actionButtons"></div><label id="draftWrap" hidden><span id="draftLabel"></span><textarea id="draft" rows="4"></textarea></label></section>
+      <div class="below"><p id="chapterDescription"></p><div class="chapter-nav"><button id="previousChapter" class="plain" type="button">上一节</button><span id="position">1 / 7</span><button id="nextChapter" class="plain" type="button">下一节</button></div></div>
+      <section id="courseEnd" class="end-card" hidden><p class="eyebrow">END OF LESSON 01</p><h2>第一课已播放到结尾</h2><p>可以回看示例，或重新练习其中一次回应。</p><div><button id="reviewExamples" type="button" class="primary">回看示例</button><button id="practiceAgain" type="button" class="plain">再练一次</button><button id="replayCourse" type="button" class="plain">从第一节重播</button></div></section>
+    </section>
+    <aside id="chapters" class="chapters" aria-label="第一课目录"><div class="chapters-title"><h2>课程目录</h2><span>07 SECTIONS</span></div><ol id="chapterList"></ol><p class="directory-note">练习作答时间另计。选择、草稿和播放位置仅在当前页面保留；离开或切换小节后不保存。</p></aside>
+  </div>
+  <p class="footer-note">本课使用原创教学情境。练习用于观察和思考，不提供自动评分。</p>
+</main>
+<dialog id="reviewDialog"><div class="dialog-head"><h2>选择要回看的部分</h2><button id="closeReview" class="plain" type="button">关闭</button></div><p>按自己的需要选择一段示例或互动。</p><div id="reviewChoices"></div></dialog>
+<div class="sr-only" id="live" role="status" aria-live="polite"></div>
+<script src="course-data.js"></script><script src="course.js"></script><link rel="stylesheet" href="/discussion-layer.css"><script src="/discussion-moves.js"></script><script src="../shared/moves-bridge.js"></script>
+</body></html>

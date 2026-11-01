@@ -1,0 +1,9 @@
+--- ../web/esssouth-Web-Handoff-EN/web-demo/lessons/lesson01/index.html	2026-10-20 15:29:24.000000000 +0000
++++ web-demo/lessons/lesson01/index.html	2026-10-30 11:28:30.099509659 +0000
+@@ -26,5 +26,5 @@
+ </main>
+ <dialog id="reviewDialog"><div class="dialog-head"><h2>选择要回看的部分</h2><button id="closeReview" class="plain" type="button">关闭</button></div><p>按自己的需要选择一段示例或互动。</p><div id="reviewChoices"></div></dialog>
+ <div class="sr-only" id="live" role="status" aria-live="polite"></div>
+-<script src="course-data.js"></script><script src="course.js"></script>
++<script src="course-data.js"></script><script src="course.js"></script><link rel="stylesheet" href="/discussion-layer.css"><script src="/discussion-moves.js"></script><script src="../shared/moves-bridge.js"></script>
+ </body></html>

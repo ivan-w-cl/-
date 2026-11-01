@@ -1,0 +1,26 @@
+--- ../web/esssouth-Web-Handoff-EN/web-demo/index.html	2026-10-20 15:35:40.000000000 +0000
++++ web-demo/index.html	2026-10-30 11:28:30.098589093 +0000
+@@ -4,6 +4,7 @@
+ <meta name="robots" content="noindex,nofollow">
+ <script src="team-preview-data.js"></script>
+ <script src="team-preview.js"></script>
++<script src="team-preview-demo.js"></script>
+ <style>.team-preview-badge{position:fixed;right:16px;bottom:16px;z-index:80;border:1px solid var(--line,#ddd);border-radius:24px;padding:9px 14px;background:var(--surface,#fff);color:var(--muted,#696970);font:12px system-ui;box-shadow:0 3px 16px #0001;cursor:pointer}@media(max-width:700px){.team-preview-badge{bottom:calc(76px + env(safe-area-inset-bottom));right:10px;font-size:11px}}</style>
+ <meta charset="utf-8">
+ <title>综评国本备考院 · esssouth</title>
+@@ -11,6 +12,7 @@
+ <link rel="stylesheet" href="platform.css">
+ <link rel="stylesheet" href="experience.css">
+ <link rel="stylesheet" href="question-library.css">
++<link rel="stylesheet" href="discussion-layer.css">
+ <style>
+ /* Layout: left rail (today / practice / courses / mocks / records + my schools) and one calm content column.
+    Practice, lessons, live rooms and mocks open as a full-screen focus layer instead of windows. */
+@@ -1627,5 +1629,7 @@
+ <script src="training-core.js"></script>
+ <script src="training.js"></script>
+ <script src="learning-client.js"></script>
++<script src="discussion-moves.js"></script>
++<script src="discussion-layer.js"></script>
+ </body>
+ </html>
