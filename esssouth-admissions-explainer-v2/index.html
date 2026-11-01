@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>三校考情与流程解析</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@500;600;700&display=swap">
+<style>
+/* Layout: the esssouth lesson player — a 1920×1080 light stage scaled into a 16:9 viewport, caption bar inside,
+   plain controls underneath; school/province pickers and an episode list sit around it.
+   Stage colours are the lesson palette (fixed, like the lesson videos); the page chrome follows light/dark. */
+:root{
+  --bg:#E9ECF1; --surface:#FFFFFF; --ink:#202632; --muted:#5D6878; --line:#C9D0DA; --blue:#356CC8; --teal:#30766D; --pale:#E8EFFA; --chip:#F4F7FC;
+  --font:"Noto Sans SC",Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15181E; --surface:#1E222A; --ink:#EEF1F6; --muted:#A3ACBA; --line:#343A46; --pale:#1E2A3D; --chip:#1E2430; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15181E; --surface:#1E222A; --ink:#EEF1F6; --muted:#A3ACBA; --line:#343A46; --pale:#1E2A3D; --chip:#1E2430; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font)}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.page{max-width:max(760px,min(1320px,calc((100vh - 230px) * 16 / 9 + 32px)));margin:0 auto;padding:16px max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:center;margin-bottom:12px}
+.head h1{font-size:20px;margin:0;font-weight:700}
+.head .tag{font-size:12.5px;color:#8A4B12;background:#FBEFD9;border-radius:6px;padding:3px 8px}
+.pickers{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:12px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:transparent;padding:0 14px;min-height:40px;font-size:14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--blue);color:#FFFFFF}
+.viewport{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:10px;background:#F6F7F9;box-shadow:0 1px 2px rgba(20,30,50,.08),0 8px 30px rgba(20,30,50,.10)}
+.controls{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center;margin-top:12px;font-size:14px}
+.controls button{font-size:14px;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--surface);cursor:pointer;min-height:40px}
+.controls button.primary{background:var(--ink);color:var(--bg);border-color:var(--ink);min-width:92px}
+.controls select{font-size:14px;min-height:40px;padding:4px 8px;border-radius:8px;border:1px solid var(--line);background:var(--surface)}
+.controls input[type=range]{flex:1 1 260px;accent-color:var(--blue)}
+.controls label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+.time{font-variant-numeric:tabular-nums;color:var(--muted);min-width:110px}
+.eps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:14px}
+.eps button{display:grid;gap:2px;text-align:left;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:13px;color:var(--muted)}
+.eps button b{font-size:14.5px;color:var(--ink)}
+.eps button[aria-current="true"]{border-color:var(--blue);box-shadow:0 0 0 2px color-mix(in srgb,var(--blue) 25%,transparent)}
+.notes{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.6}
+.notes a{color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:720px){.eps{grid-template-columns:repeat(2,minmax(0,1fr))}.head h1{font-size:18px}}
+
+/* ---- stage (fixed lesson palette, 1920 × 1080) ---- */
+#stage{--xj:#2B8494;--cu:#B44E68;--si:#786193;--c:#356CC8;position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;overflow:hidden;background:#F6F7F9;color:#202632;font-family:"Noto Sans SC",Inter,sans-serif}
+.secchip{position:absolute;left:96px;top:52px;display:flex;gap:14px;align-items:center;z-index:3}
+.secchip .num{font-size:22px;font-weight:700;color:#FFFFFF;background:#202632;border-radius:10px;padding:6px 14px}
+.secchip .t{font-size:30px;font-weight:600;white-space:nowrap}
+.tchips{position:absolute;right:96px;top:54px;display:flex;gap:10px;z-index:3}
+.tchips span{height:44px;padding:0 18px;border-radius:22px;font-size:21px;font-weight:600;display:flex;align-items:center;border:2px solid #CBD3DE;background:#FFFFFF;white-space:nowrap}
+.capbar{position:absolute;left:96px;right:96px;top:884px;height:140px;background:#FFFFFF;border:2px solid #E1E5EB;border-radius:22px;display:flex;align-items:center;gap:28px;padding:0 40px;z-index:3}
+.capbar .who{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:700;min-width:96px;white-space:nowrap}
+.capbar .who i{width:14px;height:14px;border-radius:50%}
+.capbar .ctext{flex:1;font-size:40px;line-height:1.3;max-height:106px;overflow:hidden}
+.xs-src{position:absolute;left:110px;right:110px;top:842px;font-size:17px;color:#8592A6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:2}
+.xs-root,.xs-room,.xs-scene{position:absolute;inset:0}
+.bubble{position:absolute;max-width:900px;background:#FFFFFF;border:2px solid #D5DBE4;border-radius:24px;padding:16px 28px 20px;font-size:44px;line-height:1.3;font-weight:600;box-shadow:0 2px 12px rgba(20,30,50,.07)}
+.bubble .who{display:block;font-size:22px;font-weight:700;letter-spacing:.06em;margin-bottom:4px}
+.bubble .tail{position:absolute;bottom:-13px;width:24px;height:24px;background:inherit;border:inherit;border-top:0;border-left:0;transform:rotate(45deg)}
+.xs-kick{position:absolute;left:110px;top:136px;font-size:36px;font-weight:700;color:#30766D}
+.xs-area{position:absolute;left:110px;right:110px;top:220px;height:600px;display:grid;align-content:center;gap:18px}
+.xs-title,.xs-cta{justify-items:start;gap:26px}
+.xs-tkicker{font-size:28px;font-weight:600;color:#30766D}
+.xs-big{font-size:96px;font-weight:900;line-height:1.15;letter-spacing:-.01em}
+.xs-big em{font-style:normal;color:#356CC8}
+.xs-chips{display:flex;gap:14px;flex-wrap:wrap}
+.xs-chips span{height:58px;padding:0 26px;border-radius:29px;font-size:28px;font-weight:600;display:flex;align-items:center;border:2px solid #9DB6E0;background:#E8EFFA;color:#244F96}
+.xs-cards{grid-template-columns:repeat(auto-fit,minmax(380px,1fr))}
+.xs-card{background:#FFFFFF;border:2px solid #D5DBE4;border-radius:22px;padding:24px 28px;display:grid;gap:8px;align-content:start;min-height:120px}
+.xs-card b{font-size:36px;font-weight:700;line-height:1.25}
+.xs-card span{font-size:26px;color:#5D6878;line-height:1.35}
+.xs-card.ok{background:#E6F2EF;border-color:#8FC2B8}
+.xs-card.warn{border-style:dashed;border-color:#8FA8D6;background:rgba(250,252,255,.8)}
+.xs-card.warn b::after{content:" ?";color:#356CC8}
+.xs-gates{gap:18px}
+.xs-gate{display:grid;grid-template-columns:84px minmax(0,1fr);gap:24px;align-items:center;background:#FFFFFF;border:2px solid #D5DBE4;border-radius:22px;padding:20px 28px}
+.xs-gate .lk{width:84px;height:84px;border-radius:22px;display:grid;place-items:center;background:#E1E5EB;transition:background .3s}
+.xs-gate .lk svg{width:44px;height:44px;fill:none;stroke:#8592A6;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.xs-gate.on .lk{background:#30766D}
+.xs-gate.on .lk svg{stroke:#FFFFFF}
+.xs-gate.warn .lk{background:#FBEFD9}.xs-gate.warn.on .lk{background:#E0A84A}
+.xs-gate .tx{display:grid;gap:4px}
+.xs-gate b{font-size:38px;font-weight:700;line-height:1.25}
+.xs-gate .tx span{font-size:26px;color:#5D6878}
+.xs-steps{grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:20px;align-content:center}
+.xs-line{position:absolute;left:28px;right:28px;top:calc(50% - 128px);height:6px;border-radius:3px;background:#E1E5EB}
+.xs-line i{display:block;height:100%;width:0;border-radius:3px;background:#356CC8}
+.xs-step{display:grid;gap:10px;justify-items:start;align-content:start;position:relative;min-height:260px}
+.cnum{width:62px;height:62px;border-radius:50%;background:#E8EFFA;color:#356CC8;font-size:28px;font-weight:700;display:flex;align-items:center;justify-content:center;border:3px solid #9DB6E0}
+.xs-step.on .cnum{background:#356CC8;color:#FFFFFF;border-color:#356CC8}
+.xs-step b{font-size:34px;font-weight:700;line-height:1.25}
+.xs-step .date{font-size:24px;font-weight:600;color:#244F96;background:#E8EFFA;border-radius:10px;padding:4px 12px;line-height:1.35}
+.xs-step .x{font-size:23px;color:#5D6878;line-height:1.4}
+.xs-checks{gap:14px}
+.xs-check{display:grid;grid-template-columns:52px minmax(0,1fr);gap:20px;align-items:start;background:#FFFFFF;border:2px solid #D5DBE4;border-radius:20px;padding:16px 24px}
+.xs-check .bx{width:46px;height:46px;border-radius:12px;border:3px solid #B9C5D6;display:grid;place-items:center;margin-top:2px}
+.xs-check .bx svg{width:30px;height:30px;fill:none;stroke:#FFFFFF;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.xs-check.on .bx{background:#30766D;border-color:#30766D}.xs-check.on .bx svg{opacity:1}
+.xs-check .tx{display:grid;gap:2px}
+.xs-check b{font-size:32px;font-weight:700;line-height:1.3}
+.xs-check .tx span{font-size:24px;color:#5D6878;line-height:1.35}
+.xs-qa{gap:20px}
+.xs-q{display:grid;gap:6px;background:#E8EFFA;border:2px solid #9DB6E0;border-radius:22px;padding:18px 28px;max-width:1400px}
+.xs-q .tag{font-size:22px;font-weight:700;color:#5D7FB8;letter-spacing:.04em}
+.xs-q .en{font-family:Inter,"Noto Sans SC",sans-serif;font-size:40px;font-weight:600;line-height:1.3}
+.xs-note{font-size:22px;color:#8A4B12;background:#FBEFD9;border-radius:8px;padding:4px 12px;justify-self:start}
+.xs-table{gap:12px}
+.xs-row{display:grid;grid-template-columns:260px 300px minmax(0,1fr);gap:16px;align-items:center;background:#FFFFFF;border:2px solid #D5DBE4;border-radius:20px;padding:18px 26px;font-size:28px;line-height:1.35}
+.xs-row b{font-size:32px;font-weight:700}
+.xs-row .mid{font-weight:700;color:#244F96}
+.xs-row span:last-child{color:#5D6878;font-size:26px}
+.xs-head{background:transparent;border:0;padding:0 28px;font-size:22px;font-weight:700;color:#5D7FB8;letter-spacing:.04em}
+.xs-head span{color:#5D7FB8!important;font-size:22px!important}
+.xs-formula{gap:30px}
+.xs-fbar{display:flex;height:120px;border-radius:22px;overflow:hidden;background:#E1E5EB}
+.xs-fbar .seg{display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:900;color:#FFFFFF;flex-basis:0;overflow:hidden;white-space:nowrap}
+.xs-fleg{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:18px}
+.xs-fleg>div{display:grid;gap:4px;background:#FFFFFF;border:2px solid #D5DBE4;border-radius:20px;padding:18px 24px}
+.xs-fleg b{font-size:32px;font-weight:700;display:flex;align-items:center;gap:12px}
+.xs-fleg i{width:22px;height:22px;border-radius:6px;display:inline-block}
+.xs-fleg span{font-size:24px;color:#5D6878}
+
+body.export{background:#F6F7F9;overflow:hidden}
+body.export .page{max-width:none;padding:0;margin:0}
+body.export .head,body.export .pickers,body.export .controls,body.export .eps,body.export .notes{display:none}
+body.export .viewport{width:1920px;height:1080px;border-radius:0;box-shadow:none}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head"><h1>三校考情与流程解析</h1><span class="tag">依据 2026 年官方简章 · esssouth 整理 · 与学校无官方合作关系</span></div>
+  <div class="pickers">
+    <div class="seg" role="group" aria-label="学校" id="schools"></div>
+    <div class="seg" role="group" aria-label="考生省份" id="provs"></div>
+  </div>
+  <div class="viewport" id="vp"><div id="stage" aria-hidden="true"></div></div>
+  <div class="sr" aria-live="polite" id="live"></div>
+  <div class="controls">
+    <button class="primary" id="play" type="button">播放</button>
+    <button id="restart" type="button">重播本集</button>
+    <input id="seek" type="range" min="0" max="1000" value="0" aria-label="播放进度">
+    <span class="time" id="time">0:00 / 0:00</span>
+    <select id="rate" aria-label="播放速度"><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select>
+    <label><input type="checkbox" id="caps" checked>字幕</label>
+    <label><input type="checkbox" id="rm">减少动态</label>
+  </div>
+  <div class="eps" id="eps"></div>
+  <div class="notes" id="notes"></div>
+</div>
+<script src="characters.js"></script>
+<script src="data.js"></script>
+<script src="explainer.js"></script>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const q = new URLSearchParams(location.search), EXPORT = q.get('export') === '1';
+  if (EXPORT) document.body.classList.add('export');
+  const E = EsssouthExplainer.create($('stage'), { reducedMotion: false });
+  let school = 'xjtlu', prov = 'js', t = 0, playing = false, rate = 1, last = 0;
+  const h = location.hash.slice(1).split('-');
+  if (SCHOOLS[h[0]]) { school = h[0]; if (h[1] && SCHOOLS[school].provinces && SCHOOLS[school].provinces[h[1]]) prov = h[1]; }
+  if (EXPORT) { school = q.get('school') || school; prov = q.get('prov') || prov; }
+
+  const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+  function fit() { const w = $('vp').clientWidth; $('stage').style.transform = `scale(${w / 1920})`; }
+  function pickers() {
+    $('schools').innerHTML = Object.entries(SCHOOLS).map(([k, S]) => `<button type="button" data-s="${k}" aria-pressed="${k === school}">${S.short}</button>`).join('');
+    const P = SCHOOLS[school].provinces;
+    $('provs').innerHTML = P ? Object.entries(P).map(([k, v]) => `<button type="button" data-p="${k}" aria-pressed="${k === prov}">${v}考生</button>`).join('') : '<button type="button" aria-pressed="true" disabled>全国考生</button>';
+  }
+  function load(keepCh) {
+    if (!SCHOOLS[school].provinces) prov = 'all'; else if (!SCHOOLS[school].provinces[prov]) prov = 'js';
+    const TL = E.load(school, prov);
+    const starts = E.chapterStarts();
+    t = (keepCh ? (starts.find(s => s[0] === keepCh) || starts[0])[2] : 0) + 0.5; // show the table, not the blank first frame
+    $('eps').innerHTML = starts.map(([ch, n, st], i) => { const end = i + 1 < starts.length ? starts[i + 1][2] : TL.duration; return `<button type="button" data-t="${st}" data-ch="${ch}"><b>${i + 1} · ${n}</b><span>${fmt(end - st)}</span></button>`; }).join('');
+    const sd = SOURCES[school], src = sd.all || sd[prov];
+    $('notes').innerHTML = `依据：<a href="${src[1]}">${src[0]}</a>。esssouth 根据学校公开简章整理，与学校无官方合作关系；招生政策每年可能调整，一切以学校官方发布为准。练习题为 esssouth 原创，不是真题。`;
+    if (!EXPORT) history.replaceState(null, '', '#' + school + (SCHOOLS[school].provinces ? '-' + prov : ''));
+    pickers(); draw();
+  }
+  function draw() {
+    const TL = E.timeline; E.render(t);
+    $('seek').value = Math.round(t / TL.duration * 1000);
+    $('time').textContent = `${fmt(t)} / ${fmt(TL.duration)}`;
+    const starts = E.chapterStarts(); let ci = 0; starts.forEach((s, i) => { if (t >= s[2]) ci = i; });
+    document.querySelectorAll('#eps button').forEach((b, i) => b.setAttribute('aria-current', String(i === ci)));
+  }
+  function loop(now) {
+    if (!playing) return;
+    const dt = Math.min(0.1, (now - last) / 1000); last = now; t += dt * rate;
+    if (t >= E.timeline.duration) { t = E.timeline.duration - 0.001; playing = false; $('play').textContent = '播放'; }
+    draw(); const line = E.lineAt(t); if (line !== $('live').textContent) $('live').textContent = line;
+    if (playing) requestAnimationFrame(loop);
+  }
+  function setPlay(v) { playing = v; $('play').textContent = v ? '暂停' : '播放'; if (v) { last = performance.now(); requestAnimationFrame(loop); } }
+
+  $('play').onclick = () => { if (!playing && t >= E.timeline.duration - 0.01) t = 0; setPlay(!playing); };
+  $('restart').onclick = () => { const starts = E.chapterStarts(); let st = 0; starts.forEach(s => { if (t >= s[2]) st = s[2]; }); t = st; draw(); };
+  $('seek').oninput = e => { t = e.target.value / 1000 * E.timeline.duration; draw(); };
+  $('rate').onchange = e => { rate = +e.target.value; };
+  $('caps').onchange = e => { E.setCaptions(e.target.checked); draw(); };
+  $('rm').onchange = e => { E.setReduced(e.target.checked); draw(); };
+  document.addEventListener('click', e => {
+    const s = e.target.closest('[data-s]'), p = e.target.closest('[data-p]'), ep = e.target.closest('#eps button');
+    if (s) { school = s.dataset.s; setPlay(false); load(); }
+    if (p) { const ch = E.timeline.items.find(x => t >= x.start && t < x.start + x.dur)?.ch; prov = p.dataset.p; load(ch); }
+    if (ep) { t = +ep.dataset.t; draw(); }
+  });
+  document.addEventListener('keydown', e => {
+    if (['INPUT', 'SELECT'].includes(document.activeElement?.tagName) && document.activeElement.type !== 'checkbox') return;
+    if (e.key === ' ') { e.preventDefault(); $('play').click(); }
+    if (e.key === 'ArrowRight') { t = Math.min(E.timeline.duration - 0.01, t + 5); draw(); }
+    if (e.key === 'ArrowLeft') { t = Math.max(0, t - 5); draw(); }
+  });
+  try { if (matchMedia('(prefers-reduced-motion: reduce)').matches) { $('rm').checked = true; E.setReduced(true); } } catch (_) {}
+  addEventListener('resize', fit); fit(); load();
+  window.__explainer = { render(x) { t = x; E.render(x); }, get duration() { return E.timeline.duration; }, timeline: () => E.timeline, load(s, p) { school = s; prov = p; load(); } };
+})();
+</script>
+</body>
+</html>
