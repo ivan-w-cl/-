@@ -215,6 +215,59 @@ textarea{min-height:88px}
 .clip b{display:block;font-size:16px}
 .clip span{font-size:13px;color:#5D6878}
 
+
+/* landing (#welcome): what the tool is, in one playable moment */
+body.lp .tabs,body.lp .btabs,body.lp .proto{display:none!important}
+#topcta{display:none;margin-left:auto}
+body.lp #topcta{display:inline-flex}
+body.lp main{padding-bottom:40px}
+.lp-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:center;padding:20px 0 8px}
+.lp-hero h1{font-size:clamp(32px,5.2vw,52px);font-weight:900;line-height:1.12;letter-spacing:-.01em}
+.lp-hero h1 em{font-style:normal;color:var(--accent)}
+.lp-hero .lead{font-size:17px;color:var(--muted);max-width:34em}
+.lp-schools{display:flex;gap:8px;flex-wrap:wrap}
+.lp-free{font-size:13px;color:var(--muted)}
+.try{background:var(--stage);color:var(--stage-ink);border-radius:24px;padding:20px;display:grid;gap:14px;box-shadow:0 24px 50px rgba(28,34,48,.22)}
+.try .eyebrow{color:var(--stage-muted)}
+.try .say{font-size:19px;font-weight:500;line-height:1.45;min-height:56px}
+.try .who{font-size:12.5px;color:var(--stage-muted)}
+.try-ans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.try-ans button{min-height:48px;border-radius:14px;border:1px solid #3A4560;background:#252D3F;color:var(--stage-ink);font-weight:700;font-size:15px}
+.try-ans button.right{background:var(--ok);border-color:var(--ok);color:#FFFFFF}
+.try-ans button.wrong{background:#5A4320;border-color:#8A6A30}
+.try-ans button[disabled]{cursor:default}
+.try-why{font-size:14px;color:var(--stage-muted);min-height:22px}
+.try-dots{display:flex;gap:6px}
+.try-dots i{width:22px;height:5px;border-radius:3px;background:#3A4560}
+.try-dots i.on{background:var(--accent)}
+.lp-sec{display:grid;gap:14px;padding-top:18px}
+.lp-sec>h2{font-size:24px;font-weight:900}
+.lp-sec>p{color:var(--muted);max-width:44em}
+.lp-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.lp-three .card{align-content:start}
+.lp-three .n{font-family:var(--f-mono);font-size:12px;color:var(--faint)}
+.lp-three h3{font-size:18px;font-weight:900}
+.lp-three .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--tile2)}
+.lp-three .ic svg{width:22px;height:22px}
+.lp-three .paid{background:var(--accent-soft);color:var(--accent)}
+.lp-loop{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.lp-loop span{padding:8px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+.lp-loop span.hot{background:var(--accent-soft);border-color:transparent;color:var(--accent);font-weight:700}
+.lp-loop b{color:var(--faint);font-weight:400}
+.lp-school-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.lp-school-grid .bar{height:4px;border-radius:2px;background:var(--xj,#2B8494)}
+.lp-promise{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
+.lp-promise li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;padding:14px;border-radius:14px;background:var(--surface);border:1px solid var(--line);font-size:14px}
+.lp-promise li i{width:22px;height:22px;border-radius:50%;background:var(--ok-soft);color:var(--ok);display:grid;place-items:center;font-style:normal;font-weight:900;font-size:12px}
+.lp-faq{display:grid;gap:8px}
+.lp-faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.lp-faq summary{cursor:pointer;font-weight:700}
+.lp-faq p{margin-top:8px;color:var(--muted);font-size:14px}
+.lp-end{background:var(--stage);color:var(--stage-ink);border-radius:24px;padding:26px;display:grid;gap:12px;justify-items:start;margin-top:12px}
+.lp-end h2{font-size:24px;font-weight:900}
+.lp-end p{color:var(--stage-muted)}
+.lp-foot{font-size:12px;color:var(--faint);padding-top:8px}
+@media (max-width:760px){.lp-hero,.lp-three,.lp-school-grid,.lp-promise{grid-template-columns:minmax(0,1fr)}.lp-hero{padding-top:8px}}
 /* bottom tabs (phone) */
 .btabs{display:none}
 @media (max-width:760px){
@@ -235,9 +288,10 @@ textarea{min-height:88px}
 </head>
 <body>
 <header class="top"><div class="top-in">
-  <a class="brand" href="#home"><i>综</i>综评国本备考院</a>
+  <a class="brand" href="#welcome"><i>综</i>综评国本备考院</a>
   <nav class="tabs" aria-label="主导航" id="tabs"></nav>
   <span class="proto">原型 · 示例数据 · 不连接后端</span>
+  <a class="btn sm accent" id="topcta" href="#home">进入工具台</a>
 </div></header>
 <main id="main"></main>
 <nav class="btabs" aria-label="主导航（手机）" id="btabs"></nav>
@@ -612,13 +666,75 @@ textarea{min-height:88px}
   let ut = 0;
   function showUnlock(id) { const m = MV[id], el = $('#unlock'); el.innerHTML = `<span class="glyph">${svg(id)}</span><span><b>点亮新卡：${esc(m.name)}</b><span>已放进动作图鉴</span></span>`; el.classList.add('on'); clearTimeout(ut); ut = setTimeout(() => el.classList.remove('on'), 2800); }
 
+
+  /* ---------- landing ---------- */
+  const TRY = [['Leo', 'I agree with Mia, and lockers are cheap too.', 'build'], ['Mia', 'What if phones stay in bags during lessons?', 'propose'], ['Sam', 'By the way, is lunch pizza today?', 'off']];
+  let W = { i: 0, picked: '', right: 0 };
+  function tryBox() {
+    if (W.i >= TRY.length) return `<div class="try" id="try"><span class="eyebrow">试一题 · 完成</span><span class="say">${W.right} / ${TRY.length} 判对。这就是「快判」，里面还有更多玩法。</span><div class="row"><a class="btn accent" href="#home">进去来一局</a><button class="btn light sm" type="button" data-a="wagain">再试一次</button></div></div>`;
+    const it = TRY[W.i];
+    return `<div class="try" id="try"><div class="row" style="justify-content:space-between"><span class="eyebrow">现在就试 · 这句话起什么作用？</span><span class="try-dots">${TRY.map((_, i) => `<i class="${i <= W.i ? 'on' : ''}"></i>`).join('')}</span></div>
+      <div><span class="who">${esc(it[0])} · 话题：Should students bring phones to school?</span><p class="say" lang="en">${esc(it[1])}</p></div>
+      <div class="try-ans">${['build', 'propose', 'invite', 'off'].map(k => `<button type="button" data-a="wpick" data-k="${k}" class="${W.picked ? (k === it[2] ? 'right' : k === W.picked ? 'wrong' : '') : ''}" ${W.picked ? 'disabled' : ''}>${esc(JLABEL[k])}</button>`).join('')}</div>
+      <div class="row" style="justify-content:space-between"><span class="try-why">${W.picked ? esc((W.picked === it[2] ? '对了。' : `是「${JLABEL[it[2]]}」：`) + JWHY[it[2]]) : '点一个答案'}</span>${W.picked ? `<button class="btn light sm" type="button" data-a="wnext">下一句 ›</button>` : ''}</div></div>`;
+  }
+  function vWelcome() {
+    return `<section class="view" style="gap:8px">
+      <div class="lp-hero">
+        <div style="display:grid;gap:16px;align-content:start">
+          <div class="lp-schools"><span class="chip">西浦</span><span class="chip">港中深</span><span class="chip">上悉 4+0</span></div>
+          <h1>小组讨论和面试，<br><em>每天练一局。</em></h1>
+          <p class="lead">一个练英文讨论与表达的小工具。1 分钟一局，卡住了看一个几分钟的例子，准备好了约老师真人模拟。</p>
+          <div class="row"><a class="btn accent" href="#home">免费开始</a><a class="btn ghost" href="#examples">先看例子库</a></div>
+          <span class="lp-free">测试期全部免费 · 不用下载 · 手机电脑都能用</span>
+        </div>
+        ${tryBox()}
+      </div>
+
+      <div class="lp-sec"><h2>三件事，按你的节奏用</h2>
+        <div class="lp-three">
+          <div class="card"><span class="ic">${svg('bolt')}</span><span class="n">每天 · 1–5 分钟</span><h3>练一局</h3><p class="small muted">接话挑战、快判 30 秒、改一句、抽题计时。像玩小游戏，练的是讨论里真正用得上的动作。</p></div>
+          <div class="card"><span class="ic">${svg('play')}</span><span class="n">卡住时 · 几分钟</span><h3>看个例子</h3><p class="small muted">10 节课拆成一个个小例子，每个只讲一个讨论动作。看完马上回去练，不用从头上一整节。</p></div>
+          <div class="card"><span class="ic paid">${svg('people')}</span><span class="n">准备好了 · 老师主持</span><h3>真人模拟</h3><p class="small muted">一对一或小组模拟，在腾讯会议进行。上课前有准备卡，结束后老师写复盘。</p></div>
+        </div></div>
+
+      <div class="lp-sec"><h2>练过的每一步，都连在一起</h2><p>课程、小游戏、AI 反馈和老师复盘，用的是同一套「讨论动作」：接住别人的话、邀请发言、忠实总结……在哪里看到同一个词，都能找到同一个例子和练习。</p>
+        <div class="lp-loop"><span>练一局</span><b>→</b><span>用出新动作，点亮图鉴</span><b>→</b><span>卡住了看个例子</span><b>→</b><span class="hot">约老师真人模拟</span><b>→</b><span>复盘变成下一局</span></div></div>
+
+      <div class="lp-sec"><h2>按目标院校准备</h2>
+        <div class="lp-school-grid">
+          <div class="card"><span class="bar" style="background:#2B8494"></span><b>西浦</b><span class="small muted">西交利物浦大学</span><span class="small">英文小组讨论 · 个人表达</span></div>
+          <div class="card"><span class="bar" style="background:#B44E68"></span><b>港中深</b><span class="small muted">香港中文大学（深圳）</span><span class="small">文理基础 · 英文口试 · 写作</span></div>
+          <div class="card"><span class="bar" style="background:#786193"></span><b>上悉 4+0</b><span class="small muted">上海大学悉尼工商学院</span><span class="small">英语学习与表达</span></div>
+        </div></div>
+
+      <div class="lp-sec"><h2>写给家长和老师</h2>
+        <ul class="lp-promise">
+          <li><i>✓</i><span><b>我们是练习工具，不是机构。</b>提供练习和反馈，不对考试或录取结果作任何承诺。</span></li>
+          <li><i>✓</i><span><b>不打分，不排名。</b>反馈只说这句话起了什么作用、下次可以怎么做。</span></li>
+          <li><i>✓</i><span><b>真人模拟只用昵称。</b>不交换联系方式，未经双方同意不录音录像。</span></li>
+          <li><i>✓</i><span><b>未成年人需监护人同意。</b>老师查看练习记录，需要学生自己勾选同意。</span></li>
+        </ul></div>
+
+      <div class="lp-sec"><h2>常见问题</h2><div class="lp-faq">
+        <details><summary>要花钱吗？</summary><p>测试期全部免费。以后按学校开通，每所学校都有可以免费体验的内容。</p></details>
+        <details><summary>和上课有什么不一样？</summary><p>不用排时间、不用看完一整节。每天打开练一局就行；想系统看，例子库里也能从头看完整一课。</p></details>
+        <details><summary>AI 反馈准吗？</summary><p>AI 根据你写下或说出的内容给练习反馈，可能有误，不是评分。拿不准的地方，可以在真人模拟时请老师看。</p></details>
+        <details><summary>真人模拟怎么进行？</summary><p>在网站上选时间预约，开始前 15 分钟出现腾讯会议入口。上课前填准备卡，结束后在记录里看老师的复盘。</p></details>
+      </div></div>
+
+      <div class="lp-end"><h2>现在来一局？</h2><p>1 分钟就够。练完你会点亮第一张动作卡。</p><a class="btn accent" href="#home">免费开始</a></div>
+      <p class="lp-foot">综评国本备考院 · 页面中的学校名称仅用于说明覆盖范围，与学校无官方合作关系。原型 · 示例数据 · 不连接后端。</p>
+    </section>`;
+  }
   /* ---------- router ---------- */
-  const VIEWS = { home: vHome, reply: vReply, judge: vJudge, fix: vFix, tools: vTools, examples: vExamples, cards: vCards, timer: vTimer, pocket: vPocket, mock: vMock };
-  const cur = () => { const h = location.hash.slice(1); return VIEWS[h] ? h : 'home'; };
+  const VIEWS = { welcome: vWelcome, home: vHome, reply: vReply, judge: vJudge, fix: vFix, tools: vTools, examples: vExamples, cards: vCards, timer: vTimer, pocket: vPocket, mock: vMock };
+  const cur = () => { const h = location.hash.slice(1); return VIEWS[h] ? h : 'welcome'; };
   function render() {
     const v = cur(), tab = TABOF[v];
     const nav = TABS.map(([k, t, ic]) => `<a href="#${k}" ${tab === k ? 'aria-current="page"' : ''}>${svg(ic)}<span>${t}</span></a>`).join('');
     $('#tabs').innerHTML = nav; $('#btabs').innerHTML = nav;
+    document.body.classList.toggle('lp', v === 'welcome');
     $('#main').innerHTML = VIEWS[v]();
   }
   let lastView = '';
@@ -636,6 +752,9 @@ textarea{min-height:88px}
     if (a === 'scrim' || a === 'close') { closeSheet(); return; }
     if (a === 'example') { exampleSheet(el.dataset.m); return; }
     if (a === 'card') { cardSheet(el.dataset.m); return; }
+    if (a === 'wpick') { const it = TRY[W.i]; W.picked = el.dataset.k; if (W.picked === it[2]) W.right++; $('#try').outerHTML = tryBox(); return; }
+    if (a === 'wnext') { W.i++; W.picked = ''; $('#try').outerHTML = tryBox(); return; }
+    if (a === 'wagain') { W = { i: 0, picked: '', right: 0 }; $('#try').outerHTML = tryBox(); return; }
     if (a === 'exm') { EX.move = el.dataset.v; render(); return; }
     if (a === 'sec') { secSheet(+el.dataset.i); return; }
     if (a === 'whole') { openSheet(`<b>第 ${el.dataset.n} 课 · 完整观看</b><div class="clip"><div><b>这里连续播放 7 个小节（29 分钟）</b><span>就是网站上现有的第 1 课播放器；可以连续看，也可以在练习点停下来</span></div></div>`); return; }
