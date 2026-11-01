@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>讨论练习工具台</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: phone-first tool shell — one "play now" stage on top, a drawer of small tools, the move-card book as the progress view.
+   Palette follows the esssouth site tokens; discussion moves keep their lesson blue, coral stays the one action colour. */
+:root{
+  --bg:#F2F2EF; --surface:#FFFFFF; --tile:#E8E8E4; --tile2:#F7F7F4; --ink:#1A1A1C; --muted:#696970; --faint:#9B9BA0; --line:#E1E1DC;
+  --accent:#DD5636; --accent-ink:#FFFFFF; --accent-soft:#FBE8E2;
+  --move:#356CC8; --move-soft:#E8EFFA; --ok:#2E8656; --ok-soft:#E3F2E9; --warn:#A86E14; --warn-soft:#F8EEDB;
+  --stage:#1C2230; --stage-ink:#F3F5F9; --stage-muted:#A9B2C3;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(0,0,0,.07);
+  --f-body:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --r:16px; --ease:cubic-bezier(.2,.8,.2,1);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141416; --surface:#1C1C1F; --tile:#26262A; --tile2:#202023; --ink:#F1F1EF; --muted:#A3A3A9; --faint:#6F6F75; --line:#2E2E33;
+  --accent:#EC6A4A; --accent-soft:#3B231D; --move:#7BA4EA; --move-soft:#1B2638; --ok:#5CBF86; --ok-soft:#18301F; --warn:#E0A84A; --warn-soft:#352A16;
+  --stage:#10141D; --stage-ink:#F3F5F9; --stage-muted:#9AA4B8; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141416; --surface:#1C1C1F; --tile:#26262A; --tile2:#202023; --ink:#F1F1EF; --muted:#A3A3A9; --faint:#6F6F75; --line:#2E2E33;
+  --accent:#EC6A4A; --accent-soft:#3B231D; --move:#7BA4EA; --move-soft:#1B2638; --ok:#5CBF86; --ok-soft:#18301F; --warn:#E0A84A; --warn-soft:#352A16;
+  --stage:#10141D; --stage-ink:#F3F5F9; --stage-muted:#9AA4B8; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35); color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{margin:0;line-height:1.3;text-wrap:balance}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)} .small{font-size:13px}
+[hidden]{display:none!important}
+
+/* shell */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);padding-top:env(safe-area-inset-top,0px)}
+.top-in{max-width:980px;margin:0 auto;height:56px;display:flex;align-items:center;gap:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{display:flex;align-items:center;gap:8px;font-weight:900;text-decoration:none;white-space:nowrap}
+.brand i{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--ink);color:var(--bg);font-style:normal;font-size:14px}
+.tabs{display:flex;gap:4px;margin-left:8px}
+.tabs a{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;text-decoration:none;color:var(--muted);font-weight:500;font-size:14px}
+.tabs a[aria-current="page"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.tabs svg{width:18px;height:18px}
+.proto{margin-left:auto;font-size:12px;color:var(--muted);border:1px dashed var(--line);border-radius:999px;padding:3px 10px;white-space:nowrap}
+main{max-width:980px;margin:0 auto;padding-block:12px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.view{display:grid;gap:18px;animation:in .28s var(--ease)}
+@keyframes in{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);text-decoration:none;justify-self:start}
+.back:hover{color:var(--ink)}
+.back svg{width:18px;height:18px;flex:none}
+.page-h{display:grid;gap:4px}
+.page-h h1{font-size:26px;font-weight:900}
+.page-h p{color:var(--muted);max-width:56ch}
+.eyebrow{font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:12px;min-width:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 20px;border-radius:999px;border:0;background:var(--ink);color:var(--bg);font-weight:700;font-size:15px;text-decoration:none;transition:transform .12s var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn.accent{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.sm{min-height:36px;padding:0 14px;font-size:13.5px}
+.btn.light{background:var(--stage-ink);color:var(--stage)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:5px;min-height:24px;padding:0 10px;border-radius:999px;font-size:12.5px;font-weight:500;background:var(--tile);color:var(--muted);white-space:nowrap}
+.chip.move{background:var(--move-soft);color:var(--move)}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}
+.chip.warn{background:var(--warn-soft);color:var(--warn)}
+.note{font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+
+/* home */
+.hello{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.hello h1{font-size:28px;font-weight:900}
+.week{display:flex;gap:6px;align-items:center}
+.week span{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-size:11px;background:var(--tile);color:var(--faint);font-weight:500}
+.week span.on{background:var(--ok-soft);color:var(--ok)}
+.week span.today{box-shadow:inset 0 0 0 2px var(--ink);color:var(--ink)}
+.week-note{font-size:12.5px;color:var(--muted)}
+
+.stage{position:relative;overflow:hidden;background:var(--stage);color:var(--stage-ink);border-radius:22px;padding:22px;display:grid;gap:16px}
+.stage .eyebrow{color:var(--stage-muted)}
+.stage h2{font-size:22px;font-weight:900}
+.stage .muted{color:var(--stage-muted)}
+.deal{display:grid;gap:10px;max-width:560px}
+.line{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:start;animation:dealIn .5s var(--ease) both}
+.line:nth-child(2){animation-delay:.12s}
+@keyframes dealIn{from{opacity:0;transform:translateY(10px) rotate(-1deg)}to{opacity:1;transform:none}}
+.av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;background:#2E3647;color:var(--stage-ink)}
+.av.me{background:var(--accent);color:var(--accent-ink)}
+.bub{background:#283044;border-radius:14px;padding:9px 13px;font-size:15.5px}
+.bub .who{display:block;font-size:12px;color:var(--stage-muted)}
+.bub.me{background:transparent;border:1.5px dashed #56607A;color:var(--stage-muted)}
+.stage-deco{position:absolute;right:-50px;top:-50px;width:170px;height:170px;opacity:.35;pointer-events:none}
+
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tool{display:grid;gap:6px;align-content:start;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;min-height:132px;transition:transform .15s var(--ease),box-shadow .15s var(--ease)}
+.tool:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.tool .ic{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:var(--tile2);color:var(--ink)}
+.tool .ic svg{width:20px;height:20px}
+.tool b{font-size:16px}
+.tool span{font-size:13px;color:var(--muted)}
+.tool .time{font-family:var(--f-mono);font-size:11.5px;color:var(--faint)}
+.split{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px}
+.minibook{display:flex;gap:6px;flex-wrap:wrap}
+.mini{width:34px;height:46px;border-radius:7px;background:var(--tile);border:1px dashed var(--line)}
+.mini.on{background:var(--move);border:0;box-shadow:inset 0 -6px 0 rgba(0,0,0,.18)}
+.mock-row{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+
+/* move cards */
+.book{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.mcard{position:relative;border-radius:18px;padding:16px;min-height:236px;display:grid;grid-template-rows:auto 1fr auto;gap:10px;background:var(--surface);border:1px solid var(--line);overflow:hidden;text-align:left;width:100%}
+.mcard.got{background:linear-gradient(160deg,var(--move) 0%,color-mix(in srgb,var(--move) 70%,#000) 100%);color:#FFFFFF;border:0;box-shadow:0 10px 24px color-mix(in srgb,var(--move) 30%,transparent)}
+.mcard .glyph{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.16)}
+.mcard:not(.got) .glyph{background:var(--tile2);color:var(--faint)}
+.mcard .glyph svg{width:24px;height:24px}
+.mcard h3{font-size:18px;font-weight:900}
+.mcard .en{font-family:var(--f-mono);font-size:11.5px;opacity:.75}
+.mcard .lv{display:flex;gap:4px;align-items:center;font-size:12px}
+.mcard .lv i{width:16px;height:6px;border-radius:3px;background:rgba(255,255,255,.28)}
+.mcard .lv i.on{background:#FFFFFF}
+.mcard:not(.got) .lv i{background:var(--tile)}
+.mcard:not(.got) h3{color:var(--muted)}
+.mcard .lock{font-size:12.5px;color:var(--muted)}
+.mcard .ring{position:absolute;right:-40px;bottom:-40px;width:140px;height:140px;border-radius:50%;border:18px solid rgba(255,255,255,.08)}
+.detail{display:grid;gap:12px}
+.ex{font-size:14.5px;background:var(--tile2);border-radius:12px;padding:10px 12px}
+
+/* games */
+.gamebar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.timebar{height:8px;border-radius:4px;background:var(--tile);overflow:hidden;flex:1}
+.timebar i{display:block;height:100%;background:var(--accent);transition:width .2s linear}
+.big{font-family:var(--f-mono);font-size:22px;font-variant-numeric:tabular-nums}
+.judge-card{min-height:170px;display:grid;align-content:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow);animation:flip .32s var(--ease)}
+@keyframes flip{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+.judge-card .ctx{font-size:13px;color:var(--muted)}
+.judge-card .say{font-size:20px;font-weight:500;line-height:1.45}
+.judge-card.right{border-color:var(--ok);box-shadow:0 0 0 3px var(--ok-soft)}
+.judge-card.wrong{border-color:var(--warn);box-shadow:0 0 0 3px var(--warn-soft)}
+.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ans{min-height:58px;border-radius:16px;border:1px solid var(--line);background:var(--surface);font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;gap:8px;transition:transform .1s var(--ease)}
+.ans:active{transform:scale(.97)}
+.ans kbd{font-family:var(--f-mono);font-size:11px;color:var(--faint);border:1px solid var(--line);border-radius:5px;padding:0 5px}
+.combo{font-weight:900;color:var(--accent)}
+.result-big{font-size:44px;font-weight:900;line-height:1}
+.miss{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.miss li{padding:10px 12px;border-radius:12px;background:var(--tile2);font-size:14px;display:grid;gap:4px}
+
+.ctxline{display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:start}
+.ctxline .av{background:var(--tile);color:var(--muted);width:30px;height:30px}
+.ctxline .bub{background:var(--tile2);color:var(--ink);border:1px solid var(--line)}
+.ctxline .bub .who{color:var(--muted)}
+.flawed{font-size:18px;font-weight:500;padding:12px 14px;border-radius:14px;background:var(--warn-soft);color:var(--ink);text-decoration:line-through;text-decoration-color:var(--warn);text-decoration-thickness:2px}
+textarea,input[type=text]{width:100%;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:12px 14px;font-size:16px;resize:vertical}
+textarea{min-height:88px}
+.fb{display:grid;gap:8px}
+.fbrow{display:flex;gap:10px;align-items:flex-start;font-size:14.5px}
+.fbrow .chip{flex:none}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--surface);font-size:15px;display:grid;gap:4px}
+.opt.best{border-color:var(--ok);background:var(--ok-soft)}
+.opt.meh{border-color:var(--warn);background:var(--warn-soft)}
+.opt .why{font-size:13px;color:var(--muted)}
+.seg{display:inline-flex;background:var(--tile);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;padding:6px 14px;border-radius:999px;font-size:13.5px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);font-weight:700;box-shadow:var(--shadow)}
+
+/* unlock toast */
+.unlock{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(30px) scale(.9);opacity:0;z-index:50;display:flex;gap:12px;align-items:center;background:var(--move);color:#FFFFFF;padding:12px 18px 12px 12px;border-radius:18px;box-shadow:0 14px 30px rgba(0,0,0,.25);transition:all .4s var(--ease);pointer-events:none;max-width:calc(100% - 32px)}
+.unlock.on{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}
+.unlock .glyph{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.18);display:grid;place-items:center}
+.unlock .glyph svg{width:22px;height:22px}
+.unlock b{display:block;font-size:15px;white-space:nowrap}
+.unlock>span:last-child{min-width:0}
+.unlock span{font-size:12.5px;opacity:.85}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:999px;font-size:14px;z-index:49;opacity:0;transition:opacity .25s;pointer-events:none}
+.toast.on{opacity:1}
+
+/* timer */
+.schools{display:flex;gap:8px;flex-wrap:wrap}
+.pick{min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:14px}
+.pick[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.qcard{background:var(--stage);color:var(--stage-ink);border-radius:20px;padding:20px;display:grid;gap:10px}
+.qcard .eyebrow{color:var(--stage-muted)}
+.qcard .q{font-size:20px;font-weight:500;line-height:1.45}
+.clock{display:grid;place-items:center;gap:6px;padding:8px 0}
+.clock svg{width:200px;height:200px}
+.clock .t{font-family:var(--f-mono);font-size:44px;font-variant-numeric:tabular-nums}
+.stages{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.stg{display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:12px;background:var(--tile2);border:1px solid var(--line);font-size:14px}
+.stg.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:700}
+.stg button{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:var(--surface);line-height:1;font-size:15px}
+
+/* pocket */
+.pocket{display:grid;gap:14px}
+.pgroup{display:grid;gap:8px}
+.phrase{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:15px}
+.phrase button{flex:none;border:0;background:var(--tile2);border-radius:999px;padding:4px 12px;font-size:12.5px;color:var(--muted)}
+.phrase .star[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent)}
+
+/* example sheet */
+.scrim{position:fixed;inset:0;background:rgba(20,20,24,.5);z-index:60;display:grid;place-items:end center;padding:16px;animation:fade .2s}
+@keyframes fade{from{opacity:0}}
+.sheet{width:min(560px,100%);background:var(--surface);border-radius:22px;padding:18px;display:grid;gap:12px;box-shadow:0 20px 50px rgba(0,0,0,.3);margin-bottom:env(safe-area-inset-bottom,0px)}
+.clip{aspect-ratio:16/9;border-radius:14px;background:linear-gradient(180deg,#F6F7F9,#E9EDF4);display:grid;place-items:center;color:#202632;text-align:center;padding:16px;border:1px solid var(--line)}
+.clip b{display:block;font-size:16px}
+.clip span{font-size:13px;color:#5D6878}
+
+/* bottom tabs (phone) */
+.btabs{display:none}
+@media (max-width:760px){
+  .tabs,.proto{display:none}
+  .btabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+  .btabs a{flex:1;display:grid;place-items:center;gap:2px;padding:8px 0;min-height:56px;text-decoration:none;font-size:11.5px;color:var(--muted)}
+  .btabs a svg{width:22px;height:22px}
+  .btabs a[aria-current="page"]{color:var(--accent);font-weight:700}
+  main{padding-bottom:100px}
+  .tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split{grid-template-columns:minmax(0,1fr)}
+  .hello h1{font-size:24px}
+  .stage{padding:18px}
+  .stage h2{font-size:19px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="#home"><i>综</i>综评国本备考院</a>
+  <nav class="tabs" aria-label="主导航" id="tabs"></nav>
+  <span class="proto">原型 · 示例数据 · 不连接后端</span>
+</div></header>
+<main id="main"></main>
+<nav class="btabs" aria-label="主导航（手机）" id="btabs"></nav>
+<div class="unlock" id="unlock" role="status" aria-live="polite"></div>
+<div class="toast" id="toast" role="status"></div>
+<div id="sheet"></div>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, el = document) => el.querySelector(s);
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+  /* ---------- icons ---------- */
+  const I = {
+    home: '<path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/>',
+    grid: '<rect x="4" y="4" width="7" height="7" rx="2"/><rect x="13" y="4" width="7" height="7" rx="2"/><rect x="4" y="13" width="7" height="7" rx="2"/><rect x="13" y="13" width="7" height="7" rx="2"/>',
+    cards: '<rect x="6" y="4" width="12" height="16" rx="2"/><path d="M3 7v11a2 2 0 0 0 2 2M21 7v11a2 2 0 0 1-2 2"/>',
+    people: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M14.5 14.5c3 0 6 1.5 6 4.5"/>',
+    bolt: '<path d="M13 3L5 13h6l-1 8 8-10h-6z"/>',
+    edit: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>',
+    clock: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>',
+    pocket: '<path d="M5 5h14v6a7 7 0 0 1-14 0z"/><path d="M9 10l3 3 3-3"/>',
+    chat: '<path d="M4 6h16v10H9l-5 4z"/>',
+    back: '<path d="M15 6l-6 6 6 6"/>',
+    play: '<path d="M8 5v14l11-7z"/>',
+    // move glyphs
+    task: '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/>',
+    propose: '<path d="M12 3a6 6 0 0 1 4 10.5V17H8v-3.5A6 6 0 0 1 12 3z"/><path d="M9 21h6"/>',
+    build: '<path d="M4 17l6-6 4 4 6-6"/><path d="M15 9h5v5"/>',
+    ask: '<path d="M9 9a3 3 0 1 1 4 2.8c-.7.3-1 .9-1 1.7V15"/><circle cx="12" cy="19" r=".8"/>',
+    invite: '<path d="M4 12h11"/><path d="M11 7l5 5-5 5"/><path d="M20 5v14"/>',
+    adjust: '<path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/>',
+    reason: '<path d="M5 12h6M5 7h10M5 17h14"/>',
+    summary: '<path d="M6 4h12v16l-6-4-6 4z"/>',
+    back2: '<path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/>',
+  };
+  const svg = (n, w = 2) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
+
+  /* ---------- shared discussion language (same ids as discussion-moves.js on the website) ---------- */
+  const MOVES = [
+    { id: 'build', name: '接住别人的话', en: 'Build on a point', what: '先回应上一位同学说的，再加上自己的内容。', ex: 'I agree with Mia, because many students check messages in class.', cue: /\b(i (partly )?agree with|as \w+ said|building on|to add to|good point|i see your point)\b/i, ref: '第 1 课 · 第 4 节' },
+    { id: 'invite', name: '邀请发言', en: 'Invite a contribution', what: '给还没说话的同学一个可以接、也可以不接的机会。', ex: "Sam, what do you think? It's fine to pass.", cue: /\b(what do you think|how about you|what about you|would you like to|any thoughts)\b/i, ref: '第 1 课 · 第 5 节' },
+    { id: 'ask', name: '追问澄清', en: 'Ask to clarify', what: '意思不确定时，请对方说具体一点。', ex: 'When you say "clear rules", what kind of rules do you mean?', cue: /\b(what do you mean|could you explain|when you say|do you mean|why do you think)\b/i, ref: '第 1 课 · 第 4 节' },
+    { id: 'propose', name: '提出具体建议', en: 'Make a concrete proposal', what: '给出一个具体做法，让讨论能往前走。', ex: 'What if we keep phones in lockers during lessons?', cue: /\b(what if|how about|maybe we (could|can)|i suggest|let'?s|we could)\b/i, ref: '第 1 课 · 第 3 节' },
+    { id: 'reason', name: '观点加理由', en: 'Give a reason', what: '说出立场后，马上补一句为什么。', ex: 'I think phones should be allowed, because parents may need to reach us.', cue: /\b(because|since|the reason is)\b/i, ref: null },
+    { id: 'task', name: '看清共同任务', en: 'Clarify the task', what: '先确认大家要一起决定什么，避免各说各的。', ex: 'So our task is to choose one plan for the class trip, right?', cue: /\b(our task|we need to (decide|choose|agree)|the (goal|question) is)\b/i, ref: '第 1 课 · 第 2 节' },
+    { id: 'adjust', name: '条件变化后调整方案', en: 'Adjust the plan', what: '出现新限制时，保留目标，只改具体安排。', ex: 'If the hall is not free, we could keep the talk and move it online.', cue: /\b(in that case|instead|then we could|we could change|still)\b/i, ref: '第 1 课 · 第 6 节' },
+    { id: 'summary', name: '忠实总结', en: 'Summarise faithfully', what: '说清楚谁支持了什么、带着什么条件、还剩什么没定。', ex: 'So we have support for rules in class; emergencies are still open.', cue: /\b(so we have|to sum up|so far we|in summary|still open)\b/i, ref: null },
+  ];
+  const MV = Object.fromEntries(MOVES.map(m => [m.id, m]));
+  const tag = t => MOVES.filter(m => m.cue.test(t)).map(m => m.id);
+
+  /* ---------- state (this browser only) ---------- */
+  const KEY = 'esssouth-tool-proto-v1';
+  const fresh = () => ({ uses: { build: 2, invite: 1 }, days: [1, 2, 4], judgeBest: 0, misses: {}, fixDone: [], replyDone: [], stars: [], school: 'xjtlu' });
+  let S = fresh();
+  try { const raw = localStorage.getItem(KEY); if (raw) S = { ...fresh(), ...JSON.parse(raw) }; } catch (_) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (_) {} };
+  const level = id => { const n = S.uses[id] || 0; return n >= 6 ? 3 : n >= 3 ? 2 : n >= 1 ? 1 : 0; };
+  function use(ids) {
+    const fresh = [];
+    ids.forEach(id => { if (!S.uses[id]) fresh.push(id); S.uses[id] = (S.uses[id] || 0) + 1; });
+    const d = (new Date().getDay() + 6) % 7; if (!S.days.includes(d)) S.days.push(d);
+    save();
+    if (fresh.length) showUnlock(fresh[0]);
+  }
+
+  /* ---------- content (sample, written for the prototype) ---------- */
+  const REPLY = [
+    { who: 'Mia', say: 'I think phones are a big distraction in class.', aim: 'build',
+      opts: [['I agree with Mia, and teachers also lose time asking students to put them away.', 'best', '先接住 Mia，再加了一个新理由。'], ['Phones are good.', 'meh', '没有回应 Mia，也没有理由。'], ['Mia is wrong.', 'meh', '直接否定，讨论接不下去。']] },
+    { who: 'Leo', say: 'We should ban phones completely.', aim: 'ask',
+      opts: [['When you say completely, do you mean at lunch too?', 'best', '先弄清楚「完全禁止」指什么，再讨论。'], ['No, that is a bad idea.', 'meh', '没说为什么，Leo 很难接。'], ['OK, I agree.', 'meh', '可以同意，但没加任何内容。']] },
+    { who: 'Leo', say: 'So lockers could work. Mia likes it too.', note: 'Sam 还没开口。', aim: 'invite',
+      opts: [["Sam, what do you think? It's fine if you want to hear more first.", 'best', '点名邀请，同时让 Sam 可以先不说。'], ['Sam, you have to say something.', 'meh', '有压力，Sam 可能更不想开口。'], ['Great, we all agree then.', 'meh', 'Sam 还没表态，不能算大家都同意。']] },
+    { who: 'Teacher', say: 'Update: the school hall is not available on Friday.', aim: 'adjust',
+      opts: [['We can still hold the talk; we could move it to the library instead.', 'best', '保留目标，只改地点。'], ['Then we should cancel everything.', 'meh', '放弃了目标。'], ['That is unfair.', 'meh', '表达情绪，但没有推进方案。']] },
+    { who: 'Mia', say: "Let's just vote and move on.", aim: 'propose',
+      opts: [['Before we vote, how about we list the two options and one reason for each?', 'best', '给出一个具体做法，让投票更有依据。'], ['Fine.', 'meh', '没有推进讨论。'], ['Voting is stupid.', 'meh', '否定但没给办法。']] },
+  ];
+  const JUDGE = [
+    ['I agree with Leo, and I would add that lockers are cheap.', 'build'], ['As Mia said, phones distract us. Another problem is noise.', 'build'],
+    ['That is a good point. It also helps with exams.', 'build'], ['What if phones stay in bags during lessons?', 'propose'],
+    ['How about a phone-free morning, and phones at lunch?', 'propose'], ["Let's ask the class to vote on two rules.", 'propose'],
+    ['Sam, what do you think?', 'invite'], ['Mia, would you like to add anything?', 'invite'], ['We have not heard from Leo yet. Any thoughts?', 'invite'],
+    ['My cousin has the newest phone. It is so expensive.', 'off'], ['I watched a great film about robots last night.', 'off'], ['By the way, is lunch pizza today?', 'off'],
+  ];
+  const JLABEL = { build: '接住别人的话', propose: '提出建议', invite: '邀请发言', off: '跑题了' };
+  const JWHY = { build: '先回应了别人的话，再加内容。', propose: '给出了一个具体做法。', invite: '把机会交给了还没说话的人。', off: '和要讨论的问题无关。' };
+  const FIX = [
+    { ctx: [['Leo', 'I support phones, but only with clear rules.'], ['Sam', 'Lockers during lessons could be one rule.']], bad: 'So we all agree phones should be banned.', aim: 'summary',
+      need: [/\b(rules?|lockers?)\b/i], avoid: /\b(we all agree|everyone agrees|banned)\b/i, others: ['So Leo supports phones with clear rules, and Sam suggested lockers during lessons.', 'We have two ideas: clear rules, and lockers in class. Can we check both?'] },
+    { ctx: [['Leo', 'Lockers sound good to me.'], ['Mia', 'Me too.'], ['', 'Sam 一直没说话。']], bad: 'Sam, you have to say something now.', aim: 'invite',
+      need: [/\bsam\b/i], avoid: /\b(have to|must)\b/i, others: ["Sam, what do you think? It's OK to pass.", 'Sam, would you like to add anything, or hear more first?'] },
+    { ctx: [['Mia', 'What about emergencies? Parents may need to reach us.']], bad: 'My phone has a really good camera.', aim: 'build',
+      need: [/\b(emergenc|parents?|agree|mia)\b/i], avoid: /\bcamera\b/i, others: ['Good point, Mia. Maybe the office phone could be used for emergencies.', 'I agree with Mia. Could parents call the school office instead?'] },
+    { ctx: [['Leo', 'Should students bring phones to school?']], bad: 'I think phones are bad.', aim: 'reason',
+      need: [/\b(because|since|the reason)\b/i], avoid: null, others: ['I think phones are bad in class, because students check messages instead of listening.', 'I am against phones in class, since they make it hard to focus.'] },
+  ];
+  const QUESTIONS = {
+    xjtlu: ['Should students bring mobile phones to high school?', 'Should schools replace some exams with group projects?', 'Is it better to study alone or in a group?'],
+    cuhksz: ['Tell us about a time you changed your mind about something.', 'What is one problem in your city you would like to solve?', 'Why do you want to study at university in Shenzhen?'],
+    silc: ['Describe a person who has influenced your learning.', 'Should young people work part-time while studying?', 'What makes a good team member?'],
+  };
+  const SCHOOL = { xjtlu: '西浦', cuhksz: '港中深', silc: '上悉 4+0' };
+  const POCKET = [
+    ['开场', [['Shall we start by agreeing on what we need to decide?', 'task'], ['Can I start with one idea, and then hear yours?', 'propose']]],
+    ['接话', [['I agree with Mia, and I would add that…', 'build'], ["That's a good point. Another thing is…", 'build'], ['I see your point, but I wonder if…', 'build']]],
+    ['追问', [['When you say …, do you mean …?', 'ask'], ['Could you give an example?', 'ask']]],
+    ['邀请', [["Sam, what do you think? It's fine to pass.", 'invite'], ["We haven't heard from Leo yet. Any thoughts?", 'invite']]],
+    ['拉回', [['That is interesting. Could we get back to the question?', 'task'], ['We have five minutes left. Shall we decide on one plan?', 'task']]],
+    ['总结', [['So far we have support for…, and … is still open.', 'summary'], ['To sum up, most of us prefer…, with one condition: …', 'summary']]],
+  ];
+
+  /* ---------- views ---------- */
+  const TABS = [['home', '今天', 'home'], ['tools', '工具', 'grid'], ['cards', '图鉴', 'cards'], ['mock', '真人模拟', 'people']];
+  const TABOF = { home: 'home', reply: 'home', tools: 'tools', judge: 'tools', fix: 'tools', timer: 'tools', pocket: 'tools', cards: 'cards', mock: 'mock' };
+  const got = () => MOVES.filter(m => S.uses[m.id]).length;
+  const backTo = (h, t) => `<a class="back" href="#${h}">${svg('back')}${t}</a>`;
+
+  function vHome() {
+    const r = REPLY[new Date().getDate() % REPLY.length];
+    const days = ['一', '二', '三', '四', '五', '六', '日'], today = (new Date().getDay() + 6) % 7;
+    return `<section class="view">
+      <div class="hello"><div><div class="eyebrow">小周（示例）· 西浦</div><h1>来一局？1 分钟就够</h1></div>
+        <div style="display:grid;gap:4px;justify-items:end"><div class="week" aria-label="这周练习的日子">${days.map((d, i) => `<span class="${S.days.includes(i) ? 'on' : ''} ${i === today ? 'today' : ''}">${d}</span>`).join('')}</div><span class="week-note">这周练了 ${S.days.length} 天 · 断了也不清零</span></div></div>
+      <div class="stage">
+        <svg class="stage-deco" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="70" fill="none" stroke="#3A4560" stroke-width="22"/><circle cx="100" cy="100" r="30" fill="#DD5636" opacity=".6"/></svg>
+        <div class="eyebrow">今日接话挑战 · 每天一题</div>
+        <div class="deal">
+          <div class="line"><span class="av">${esc(r.who[0])}</span><div class="bub"><span class="who">${esc(r.who)}${r.note ? ' · ' + esc(r.note) : ''}</span>${esc(r.say)}</div></div>
+          <div class="line"><span class="av me">你</span><div class="bub me">轮到你接一句……</div></div>
+        </div>
+        <div class="row"><a class="btn accent" href="#reply">接一句</a><span class="muted small">打字或选一句都行 · 不录音 · 不打分</span></div>
+      </div>
+      <div class="tools">
+        <a class="tool" href="#judge"><span class="ic">${svg('bolt')}</span><b>快判 30 秒</b><span>这句话起什么作用？越判越快</span><span class="time">30s · 最好 ${S.judgeBest} 题</span></a>
+        <a class="tool" href="#fix"><span class="ic">${svg('edit')}</span><b>改一句</b><span>把一句有问题的话改好，再看别人怎么改</span><span class="time">2 min</span></a>
+        <a class="tool" href="#timer"><span class="ic">${svg('clock')}</span><b>抽题计时</b><span>随机抽一道题，自己对着练</span><span class="time">自定时长</span></a>
+      </div>
+      <div class="split">
+        <a class="card" href="#cards" style="text-decoration:none"><div class="row" style="justify-content:space-between"><b>动作图鉴</b><span class="mono small muted">${got()} / ${MOVES.length}</span></div>
+          <div class="minibook">${MOVES.map(m => `<span class="mini ${S.uses[m.id] ? 'on' : ''}" title="${esc(m.name)}"></span>`).join('')}</div>
+          <span class="small muted">在练习里用出一个新动作，就点亮一张卡</span></a>
+        <a class="card" href="#mock" style="text-decoration:none"><div class="row" style="justify-content:space-between"><b>真人模拟</b><span class="chip ok">已预约</span></div>
+          <span class="small">周日 19:00 · 林老师（示例）</span><span class="small muted">工具里常卡的动作，已自动放进准备卡</span></a>
+      </div>
+      <a class="card" href="#pocket" style="text-decoration:none;grid-template-columns:auto minmax(0,1fr) auto;align-items:center"><span class="tool" style="all:unset;display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:var(--tile2)">${svg('pocket')}</span><span><b>句式口袋</b><br><span class="small muted">开场、接话、追问、邀请、拉回、总结的常用说法 · 考前翻一翻</span></span><span class="muted">›</span></a>
+    </section>`;
+  }
+
+  let RS = { i: 0, mode: 'type', text: '', out: null, pick: -1 };
+  function vReply() {
+    const r = REPLY[RS.i];
+    return `<section class="view">${backTo('home', '今天')}
+      <div class="page-h"><div class="eyebrow">接话挑战 · 第 ${RS.i + 1} / ${REPLY.length} 题</div><h1>轮到你接一句</h1></div>
+      <div class="stage"><div class="deal"><div class="line"><span class="av">${esc(r.who[0])}</span><div class="bub"><span class="who">${esc(r.who)}${r.note ? ' · ' + esc(r.note) : ''}</span>${esc(r.say)}</div></div></div></div>
+      <div class="card">
+        <div class="row" style="justify-content:space-between"><div class="seg" role="group" aria-label="作答方式"><button type="button" data-a="rmode" data-v="type" aria-pressed="${RS.mode === 'type'}">打字</button><button type="button" data-a="rmode" data-v="pick" aria-pressed="${RS.mode === 'pick'}">选一句</button></div><button class="btn sm ghost" type="button" data-a="example" data-m="${r.aim}">看个例子 · 30 秒</button></div>
+        ${RS.mode === 'type' ? `<label for="r-in" class="small muted">用英文接一句（不录音，不保存到服务器）</label><textarea id="r-in" placeholder="例如：I agree with ${esc(r.who)}, and …">${esc(RS.text)}</textarea><div class="row"><button class="btn accent" type="button" data-a="rgo">看我用了什么动作</button></div>`
+          : `<div class="opts">${r.opts.map((o, i) => `<button type="button" class="opt ${RS.pick >= 0 ? (o[1] === 'best' ? 'best' : i === RS.pick ? 'meh' : '') : ''}" data-a="rpick" data-i="${i}" ${RS.pick >= 0 ? 'disabled' : ''}><span lang="en">${esc(o[0])}</span>${RS.pick >= 0 ? `<span class="why">${o[1] === 'best' ? '更好的接法：' : ''}${esc(o[2])}</span>` : ''}</button>`).join('')}</div>`}
+        <div id="r-out" aria-live="polite">${RS.out || ''}</div>
+      </div>
+      <div class="row" style="justify-content:space-between"><span class="small muted">反馈是演示用的关键词规则，正式版由 AI 生成，不打分。</span><button class="btn ghost sm" type="button" data-a="rnext">换一句 ›</button></div>
+    </section>`;
+  }
+  function replyFeedback(text) {
+    const r = REPLY[RS.i], ids = tag(text), words = text.trim().split(/\s+/).filter(Boolean).length;
+    const rows = [];
+    if (ids.length) rows.push(['ok', `用出了：${ids.map(id => MV[id].name).join('、')}`]);
+    if (!ids.includes(r.aim)) rows.push(['warn', `这一题最适合「${MV[r.aim].name}」：${MV[r.aim].what}`]);
+    else rows.push(['ok', `正好是这一题要的「${MV[r.aim].name}」。`]);
+    if (words < 5) rows.push(['warn', '再说长一点，试着加一个理由或例子。']);
+    return { ids, html: `<div class="fb">${rows.map(([k, t]) => `<div class="fbrow"><span class="chip ${k}">${k === 'ok' ? '做到了' : '可以试试'}</span><span>${esc(t)}</span></div>`).join('')}<p class="small muted">一种接法：<span lang="en">${esc(r.opts[0][0])}</span></p></div>` };
+  }
+
+  let J = null;
+  function vJudge() {
+    if (!J || J.phase === 'ready') return `<section class="view">${backTo('tools', '工具')}
+      <div class="page-h"><div class="eyebrow">快判 · 30 秒</div><h1>这句话起什么作用？</h1><p>一张张卡片弹出来，选它是在接话、提建议、邀请发言，还是跑题了。连对有连击。电脑上可以用数字键 1–4。</p></div>
+      <div class="judge-card"><span class="ctx">话题：Should students bring mobile phones to high school?</span><span class="say" lang="en">Sam, what do you think?</span><span class="chip move" style="justify-self:start">示例：邀请发言</span></div>
+      <div class="row"><button class="btn accent" type="button" data-a="jstart">开始 30 秒</button><span class="small muted">最好成绩 ${S.judgeBest} 题</span></div></section>`;
+    if (J.phase === 'done') {
+      const best = J.right > S.judgeBest;
+      return `<section class="view">${backTo('tools', '工具')}
+        <div class="card" style="justify-items:start"><span class="eyebrow">30 秒结束</span><div class="result-big">${J.right}<span style="font-size:18px;font-weight:500" class="muted"> 题判对 / ${J.done} 题</span></div>
+          ${best ? '<span class="chip ok">新的最好成绩</span>' : ''}<span class="small muted">最长连击 ${J.maxCombo}</span></div>
+        ${J.wrong.length ? `<div class="card"><b>判错的几句</b><ul class="miss">${J.wrong.map(w => `<li><span lang="en">${esc(w[0])}</span><span class="small"><span class="chip warn">你选了 ${esc(JLABEL[w[2]])}</span> 其实是「${esc(JLABEL[w[1]])}」：${esc(JWHY[w[1]])}</span></li>`).join('')}</ul></div>` : ''}
+        <div class="row"><button class="btn accent" type="button" data-a="jstart">再来一局</button><a class="btn ghost" href="#cards">看图鉴</a></div></section>`;
+    }
+    const it = J.deck[J.idx];
+    return `<section class="view">
+      <div class="gamebar"><span class="big" id="j-time">${Math.ceil(J.left)}s</span><div class="timebar"><i id="j-bar" style="width:${J.left / 30 * 100}%"></i></div><span class="small"><b>${J.right}</b> 对 ${J.combo > 1 ? `<span class="combo">· 连击 ×${J.combo}</span>` : ''}</span></div>
+      <div class="judge-card ${J.flash || ''}" id="j-card"><span class="ctx">话题：phones at school</span><span class="say" lang="en">${esc(it[0])}</span></div>
+      <div class="answers">${['build', 'propose', 'invite', 'off'].map((k, i) => `<button class="ans" type="button" data-a="jans" data-k="${k}">${esc(JLABEL[k])}<kbd>${i + 1}</kbd></button>`).join('')}</div>
+    </section>`;
+  }
+  let jTimer = 0;
+  function jStart() {
+    J = { phase: 'play', deck: shuffle(JUDGE.concat(shuffle(JUDGE))), idx: 0, left: 30, right: 0, done: 0, combo: 0, maxCombo: 0, wrong: [], flash: '' };
+    clearInterval(jTimer); const t0 = Date.now();
+    jTimer = setInterval(() => {
+      J.left = Math.max(0, 30 - (Date.now() - t0) / 1000);
+      const tEl = $('#j-time'), bEl = $('#j-bar'); if (tEl) tEl.textContent = Math.ceil(J.left) + 's'; if (bEl) bEl.style.width = (J.left / 30 * 100) + '%';
+      if (J.left <= 0) { clearInterval(jTimer); jEnd(); }
+    }, 200);
+    render();
+  }
+  function jAnswer(k) {
+    if (!J || J.phase !== 'play') return;
+    const it = J.deck[J.idx]; J.done++;
+    if (it[1] === k) { J.right++; J.combo++; J.maxCombo = Math.max(J.maxCombo, J.combo); J.flash = 'right'; }
+    else { J.combo = 0; J.flash = 'wrong'; J.wrong.push([it[0], it[1], k]); S.misses[it[1]] = (S.misses[it[1]] || 0) + 1; }
+    J.idx = (J.idx + 1) % J.deck.length; render();
+  }
+  function jEnd() {
+    J.phase = 'done';
+    if (J.right > S.judgeBest) { S.judgeBest = J.right; }
+    use(J.right >= 5 ? ['build', 'invite', 'propose'].filter(id => J.deck.some((d, i) => i < J.done && d[1] === id)) : []);
+    save(); if (TABOF[cur()] === 'tools' && cur() === 'judge') render();
+  }
+
+  let F = { i: 0, text: '', out: '' };
+  function vFix() {
+    const f = FIX[F.i];
+    return `<section class="view">${backTo('tools', '工具')}
+      <div class="page-h"><div class="eyebrow">改一句 · 第 ${F.i + 1} / ${FIX.length} 句 · 目标动作「${esc(MV[f.aim].name)}」</div><h1>这句话哪里不对？改好它</h1></div>
+      <div class="card">
+        ${f.ctx.map(([w, t]) => w ? `<div class="ctxline"><span class="av">${esc(w[0])}</span><div class="bub"><span class="who">${esc(w)}</span><span lang="en">${esc(t)}</span></div></div>` : `<p class="small muted">${esc(t)}</p>`).join('')}
+        <p class="flawed" lang="en">${esc(f.bad)}</p>
+        <label for="f-in" class="small muted">你的改法（英文）</label><textarea id="f-in" placeholder="改成更好的一句">${esc(F.text)}</textarea>
+        <div class="row"><button class="btn accent" type="button" data-a="fgo">改好了</button><button class="btn ghost sm" type="button" data-a="example" data-m="${f.aim}">看个例子 · 30 秒</button></div>
+        <div aria-live="polite">${F.out}</div>
+      </div>
+      <div class="row" style="justify-content:flex-end"><button class="btn ghost sm" type="button" data-a="fnext">下一句 ›</button></div>
+    </section>`;
+  }
+  function fixFeedback(text) {
+    const f = FIX[F.i], t = text.trim();
+    if (!t) return '<p class="small muted">先写一句再看。</p>';
+    const ok = f.need.every(re => re.test(t)) && !(f.avoid && f.avoid.test(t)) && t.split(/\s+/).length >= 4;
+    if (ok) { use([f.aim]); if (!S.fixDone.includes(F.i)) S.fixDone.push(F.i); save(); }
+    return `<div class="fb"><div class="fbrow"><span class="chip ${ok ? 'ok' : 'warn'}">${ok ? '改好了' : '还差一点'}</span><span>${ok ? `用到了「${esc(MV[f.aim].name)}」。` : esc(MV[f.aim].what)}</span></div>
+      <b class="small">别人是这样改的</b>${f.others.map(o => `<p class="ex" lang="en">${esc(o)}</p>`).join('')}<p class="small muted">示例改法 · 正式版可以展示同学匿名的改法</p></div>`;
+  }
+
+  function vTools() {
+    return `<section class="view"><div class="page-h"><div class="eyebrow">工具</div><h1>想练哪个就点哪个</h1><p>每个都在 5 分钟以内。不用排课，也不用看完一整节。</p></div>
+      <div class="tools">
+        <a class="tool" href="#reply"><span class="ic">${svg('chat')}</span><b>接话挑战</b><span>AI 组员说一句，你接一句</span><span class="time">1 min</span></a>
+        <a class="tool" href="#judge"><span class="ic">${svg('bolt')}</span><b>快判 30 秒</b><span>判断一句话起什么作用</span><span class="time">30s</span></a>
+        <a class="tool" href="#fix"><span class="ic">${svg('edit')}</span><b>改一句</b><span>把有问题的话改好</span><span class="time">2 min</span></a>
+        <a class="tool" href="#timer"><span class="ic">${svg('clock')}</span><b>抽题计时</b><span>按学校抽题，自定准备和作答时间</span><span class="time">自定</span></a>
+        <a class="tool" href="#pocket"><span class="ic">${svg('pocket')}</span><b>句式口袋</b><span>常用说法，一键复制</span><span class="time">随时</span></a>
+        <a class="tool" href="#cards"><span class="ic">${svg('cards')}</span><b>动作图鉴</b><span>看看自己已经会了哪些</span><span class="time">${got()} / ${MOVES.length}</span></a>
+      </div>
+      <div class="card" style="grid-template-columns:auto minmax(0,1fr) auto;align-items:center"><span class="ic" style="display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:var(--tile2)">${svg('play')}</span><span><b>AI 小组讨论 · 10 分钟</b><br><span class="small muted">想完整练一场时用。结束后每句话都会标上讨论动作。</span></span><span class="chip">网站已有</span></div>
+    </section>`;
+  }
+
+  function vCards() {
+    return `<section class="view"><div class="page-h"><div class="eyebrow">动作图鉴 · ${got()} / ${MOVES.length}</div><h1>你已经会用的讨论动作</h1><p>在任何练习里用出一个动作，就点亮它；用得越多，卡上的格子越满。点卡片看用法。</p></div>
+      <div class="book">${MOVES.map(m => { const l = level(m.id), n = S.uses[m.id] || 0;
+        return `<button type="button" class="mcard ${n ? 'got' : ''}" data-a="card" data-m="${m.id}" aria-label="${esc(m.name)}，${n ? '已点亮，用过 ' + n + ' 次' : '未点亮'}"><span class="ring" aria-hidden="true"></span>
+          <span class="glyph">${svg(m.id)}</span>
+          <span style="display:grid;gap:4px;align-content:start"><h3>${esc(m.name)}</h3><span class="en">${esc(m.en)}</span>${n ? '' : `<span class="lock">还没用出来 · 去练练看</span>`}</span>
+          <span class="lv">${[1, 2, 3].map(i => `<i class="${l >= i ? 'on' : ''}"></i>`).join('')}<span style="margin-left:6px">${n ? `用过 ${n} 次` : ''}</span></span></button>`; }).join('')}</div>
+      <p class="small muted">等级只表示用过几次（1 / 3 / 6 次），不是评分。</p></section>`;
+  }
+  function cardSheet(id) {
+    const m = MV[id], n = S.uses[id] || 0;
+    const go = { build: '#reply', invite: '#fix', ask: '#reply', propose: '#judge', reason: '#fix', task: '#pocket', adjust: '#reply', summary: '#fix' }[id];
+    openSheet(`<div class="detail"><div class="row" style="justify-content:space-between"><span class="chip move">${esc(m.name)}</span><span class="small muted">${n ? `用过 ${n} 次` : '还没点亮'}</span></div>
+      <p>${esc(m.what)}</p><p class="ex" lang="en">${esc(m.ex)}</p>
+      <div class="row"><a class="btn accent sm" href="${go}" data-a="close">练一下</a><button class="btn ghost sm" type="button" data-a="example" data-m="${id}">看个例子 · 30 秒</button></div>
+      <p class="small muted">${m.ref ? `例子出自 ${esc(m.ref)}` : '对应课程片段待录入'}</p></div>`);
+  }
+
+  let T = { stage: 0, prep: 60, talk: 120, left: 60, run: false, q: '' };
+  let tTimer = 0;
+  function vTimer() {
+    const list = QUESTIONS[S.school]; if (!T.q || !list.includes(T.q)) T.q = list[0];
+    const total = T.stage === 0 ? T.prep : T.talk, frac = total ? T.left / total : 0, C = 2 * Math.PI * 88;
+    const mm = s => `${Math.floor(s / 60)}:${String(Math.ceil(s % 60) === 60 ? 0 : Math.ceil(s % 60)).padStart(2, '0')}`;
+    return `<section class="view">${backTo('tools', '工具')}
+      <div class="page-h"><div class="eyebrow">抽题计时</div><h1>抽一道题，自己对着练</h1><p>时长可以自己调。想有人听、有人追问，就去约真人模拟。</p></div>
+      <div class="schools" role="group" aria-label="学校">${Object.entries(SCHOOL).map(([k, v]) => `<button type="button" class="pick" data-a="school" data-v="${k}" aria-pressed="${S.school === k}">${v}</button>`).join('')}</div>
+      <div class="qcard"><span class="eyebrow">${SCHOOL[S.school]} · 示例题（正式版接入已核对的题库）</span><span class="q" lang="en">${esc(T.q)}</span><div><button class="btn light sm" type="button" data-a="draw">换一题</button></div></div>
+      <div class="card">
+        <div class="stages">${[['准备', 'prep'], ['作答', 'talk']].map(([n, k], i) => `<span class="stg ${T.stage === i ? 'on' : ''}">${n}<button type="button" data-a="tadj" data-k="${k}" data-d="-30" aria-label="${n}减 30 秒">−</button><span class="mono">${mm(T[k])}</span><button type="button" data-a="tadj" data-k="${k}" data-d="30" aria-label="${n}加 30 秒">+</button></span>`).join('')}</div>
+        <div class="clock"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="88" fill="none" stroke="var(--tile)" stroke-width="12"/><circle id="t-ring" cx="100" cy="100" r="88" fill="none" stroke="${T.stage === 0 ? 'var(--move)' : 'var(--accent)'}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - frac)}" transform="rotate(-90 100 100)"/></svg>
+          <span class="t" id="t-left">${mm(T.left)}</span><span class="small muted">${T.stage === 0 ? '准备中：想好观点和一个理由' : '作答中：大声说出来'}</span></div>
+        <div class="row" style="justify-content:center"><button class="btn accent" type="button" data-a="trun">${T.run ? '暂停' : T.left < total ? '继续' : '开始'}</button><button class="btn ghost" type="button" data-a="treset">重来</button></div>
+        <p class="note">时长默认准备 1 分钟、作答 2 分钟，只是练习用，不代表学校的正式考试流程。</p>
+      </div></section>`;
+  }
+  function tTick() {
+    const total = T.stage === 0 ? T.prep : T.talk, t0 = Date.now(), start = T.left;
+    clearInterval(tTimer);
+    tTimer = setInterval(() => {
+      T.left = Math.max(0, start - (Date.now() - t0) / 1000);
+      const el = $('#t-left'), ring = $('#t-ring');
+      if (el) { const s = T.left; el.textContent = `${Math.floor(s / 60)}:${String(Math.ceil(s % 60) === 60 ? 0 : Math.ceil(s % 60)).padStart(2, '0')}`; }
+      if (ring) { const C = 2 * Math.PI * 88; ring.setAttribute('stroke-dashoffset', C * (1 - T.left / total)); }
+      if (T.left <= 0) {
+        clearInterval(tTimer);
+        if (T.stage === 0) { T.stage = 1; T.left = T.talk; toast('准备结束，开始作答'); render(); tTick(); }
+        else { T.run = false; toast('时间到。说完了吗？'); use(['reason']); render(); }
+      }
+    }, 200);
+  }
+
+  function vPocket() {
+    return `<section class="view">${backTo('tools', '工具')}
+      <div class="page-h"><div class="eyebrow">句式口袋</div><h1>常用说法，考前翻一翻</h1><p>点「复制」放进自己的笔记；点「收藏」放到最上面。</p></div>
+      <div class="pocket">${S.stars.length ? `<div class="pgroup"><b>我的收藏</b>${S.stars.map(p => phrase(p)).join('')}</div>` : ''}
+      ${POCKET.map(([g, list]) => `<div class="pgroup"><div class="row" style="justify-content:space-between"><b>${g}</b><span class="chip move">${esc(MV[list[0][1]].name)}</span></div>${list.map(([p]) => phrase(p)).join('')}</div>`).join('')}</div></section>`;
+  }
+  const phrase = p => `<div class="phrase"><span lang="en">${esc(p)}</span><span class="row" style="gap:6px;flex-wrap:nowrap"><button type="button" class="star" data-a="star" data-p="${esc(p)}" aria-pressed="${S.stars.includes(p)}">${S.stars.includes(p) ? '已收藏' : '收藏'}</button><button type="button" data-a="copy" data-p="${esc(p)}">复制</button></span></div>`;
+
+  function vMock() {
+    const weak = Object.entries(S.misses).sort((a, b) => b[1] - a[1]).map(([k]) => k).filter(k => k !== 'off');
+    const focus = [...new Set([...(weak.length ? weak : ['invite']), ...MOVES.filter(m => !S.uses[m.id]).map(m => m.id)])].filter(id => MV[id]).slice(0, 2);
+    return `<section class="view"><div class="page-h"><div class="eyebrow">真人模拟 · 老师主持 · 腾讯会议</div><h1>和真人练，才知道临场怎么样</h1><p>工具帮你平时练动作；真人模拟让老师听你完整说一遍，再告诉你下次练什么。</p></div>
+      <div class="card"><div class="mock-row"><div><b>老师一对一模拟面试</b><br><span class="small muted">周日 19:00 · 45 分钟 · 林老师（示例）</span></div><span class="chip ok">已预约</span></div>
+        <div style="display:grid;gap:8px"><b class="small">准备卡：工具自动带进来的</b>
+          <div class="row">${MOVES.filter(m => S.uses[m.id]).slice(0, 4).map(m => `<span class="chip ok">已会：${esc(m.name)}</span>`).join('')}</div>
+          <div class="row">${focus.map(id => `<span class="chip warn">建议重点：${esc(MV[id].name)}</span>`).join('')}</div>
+          ${Object.keys(S.misses).length ? `<span class="small muted">来自快判里判错最多的类型和还没点亮的动作</span>` : `<span class="small muted">玩几局快判或改一句，这里会更准</span>`}</div>
+        <label for="m-note" class="small muted">我最想请老师帮我看的</label><textarea id="m-note" placeholder="例如：别人跑题时，我不知道怎么礼貌地拉回来。"></textarea>
+        <div class="row"><button class="btn" type="button" data-a="msave">保存准备卡</button><span class="small muted">开始前 15 分钟出现「进入腾讯会议」</span></div></div>
+      <div class="card"><b>结束后</b><p class="small">老师用同一套讨论动作写复盘：做得好的、下次重点。复盘里的重点会直接变成工具里的下一局，比如「改一句 · 忠实总结」。</p>
+        <p class="note">会议里只用昵称；未经双方同意不录音录像；本工具提供练习与反馈，不对考试或录取结果作任何承诺。</p></div></section>`;
+  }
+
+  /* ---------- sheets, toasts, unlock ---------- */
+  function openSheet(html) { $('#sheet').innerHTML = `<div class="scrim" data-a="scrim"><div class="sheet" role="dialog" aria-modal="true">${html}<div class="row" style="justify-content:flex-end"><button class="btn ghost sm" type="button" data-a="close">关闭</button></div></div></div>`; $('#sheet .sheet button, #sheet .sheet a')?.focus(); }
+  function closeSheet() { $('#sheet').innerHTML = ''; }
+  function exampleSheet(id) {
+    const m = MV[id];
+    openSheet(`<b>看个例子 · ${esc(m.name)}</b><div class="clip"><div><b>这里播放课程里约 30 秒的示范片段</b><span>${m.ref ? `来自 ${esc(m.ref)}（课程录入后接入）` : '对应课程片段待录入'}</span></div></div><p class="ex" lang="en">${esc(m.ex)}</p><p class="small muted">看完直接回到刚才的练习，不用从头看一整节。</p>`);
+  }
+  let tt = 0;
+  function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => el.classList.remove('on'), 2200); }
+  let ut = 0;
+  function showUnlock(id) { const m = MV[id], el = $('#unlock'); el.innerHTML = `<span class="glyph">${svg(id)}</span><span><b>点亮新卡：${esc(m.name)}</b><span>已放进动作图鉴</span></span>`; el.classList.add('on'); clearTimeout(ut); ut = setTimeout(() => el.classList.remove('on'), 2800); }
+
+  /* ---------- router ---------- */
+  const VIEWS = { home: vHome, reply: vReply, judge: vJudge, fix: vFix, tools: vTools, cards: vCards, timer: vTimer, pocket: vPocket, mock: vMock };
+  const cur = () => { const h = location.hash.slice(1); return VIEWS[h] ? h : 'home'; };
+  function render() {
+    const v = cur(), tab = TABOF[v];
+    const nav = TABS.map(([k, t, ic]) => `<a href="#${k}" ${tab === k ? 'aria-current="page"' : ''}>${svg(ic)}<span>${t}</span></a>`).join('');
+    $('#tabs').innerHTML = nav; $('#btabs').innerHTML = nav;
+    $('#main').innerHTML = VIEWS[v]();
+  }
+  let lastView = '';
+  window.addEventListener('hashchange', () => {
+    const v = cur();
+    if (lastView === 'judge' && v !== 'judge') { clearInterval(jTimer); if (J && J.phase === 'play') J = null; }
+    if (lastView === 'timer' && v !== 'timer') { clearInterval(tTimer); T.run = false; }
+    lastView = v; closeSheet(); render(); window.scrollTo(0, 0);
+  });
+
+  document.addEventListener('click', e => {
+    const el = e.target.closest('[data-a]'); if (!el) return;
+    const a = el.dataset.a;
+    if (a === 'scrim' && e.target !== el) return;
+    if (a === 'scrim' || a === 'close') { closeSheet(); return; }
+    if (a === 'example') { exampleSheet(el.dataset.m); return; }
+    if (a === 'card') { cardSheet(el.dataset.m); return; }
+    if (a === 'rmode') { RS.text = $('#r-in')?.value || RS.text; RS.mode = el.dataset.v; RS.out = null; RS.pick = -1; render(); return; }
+    if (a === 'rgo') { RS.text = $('#r-in').value; if (!RS.text.trim()) { toast('先写一句'); return; } const f = replyFeedback(RS.text); RS.out = f.html; use(f.ids); render(); return; }
+    if (a === 'rpick') { RS.pick = +el.dataset.i; const o = REPLY[RS.i].opts[RS.pick]; if (o[1] === 'best') use([REPLY[RS.i].aim]); RS.out = o[1] === 'best' ? `<div class="fbrow"><span class="chip ok">选得好</span><span>这就是「${esc(MV[REPLY[RS.i].aim].name)}」。</span></div>` : `<div class="fbrow"><span class="chip warn">可以试试</span><span>绿色那句更好，看看为什么。</span></div>`; render(); return; }
+    if (a === 'rnext') { RS = { i: (RS.i + 1) % REPLY.length, mode: RS.mode, text: '', out: null, pick: -1 }; render(); return; }
+    if (a === 'jstart') { jStart(); return; }
+    if (a === 'jans') { jAnswer(el.dataset.k); return; }
+    if (a === 'fgo') { F.text = $('#f-in').value; F.out = fixFeedback(F.text); render(); return; }
+    if (a === 'fnext') { F = { i: (F.i + 1) % FIX.length, text: '', out: '' }; render(); return; }
+    if (a === 'school') { S.school = el.dataset.v; T.q = ''; save(); render(); return; }
+    if (a === 'draw') { const list = QUESTIONS[S.school].filter(q => q !== T.q); T.q = list[Math.floor(Math.random() * list.length)]; render(); return; }
+    if (a === 'tadj') { if (T.run) return; const k = el.dataset.k; T[k] = Math.min(600, Math.max(30, T[k] + +el.dataset.d)); T.left = T.stage === 0 ? T.prep : T.talk; render(); return; }
+    if (a === 'trun') { if (T.run) { T.run = false; clearInterval(tTimer); } else { T.run = true; tTick(); } render(); return; }
+    if (a === 'treset') { clearInterval(tTimer); T.run = false; T.stage = 0; T.left = T.prep; render(); return; }
+    if (a === 'star') { const p = el.dataset.p, i = S.stars.indexOf(p); if (i >= 0) S.stars.splice(i, 1); else S.stars.unshift(p); save(); render(); return; }
+    if (a === 'copy') { const p = el.dataset.p; Promise.resolve().then(() => navigator.clipboard.writeText(p)).then(() => toast('已复制'), () => toast('复制没有成功，可以长按选中文字')); return; }
+    if (a === 'msave') { toast('准备卡已保存（示例）'); return; }
+  });
+  document.addEventListener('keydown', e => {
+    if (cur() !== 'judge' || !J || J.phase !== 'play') return;
+    const k = { 1: 'build', 2: 'propose', 3: 'invite', 4: 'off' }[e.key]; if (k) { e.preventDefault(); jAnswer(k); }
+  });
+
+  lastView = cur(); render();
+})();
+</script>
+</body>
+</html>
