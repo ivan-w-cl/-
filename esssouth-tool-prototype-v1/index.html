@@ -53,7 +53,7 @@ p{margin:0}
 .tabs svg{width:18px;height:18px}
 .proto{margin-left:auto;font-size:12px;color:var(--muted);border:1px dashed var(--line);border-radius:999px;padding:3px 10px;white-space:nowrap}
 main{max-width:980px;margin:0 auto;padding-block:12px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.view{display:grid;gap:18px;animation:in .28s var(--ease)}
+.view{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;animation:in .28s var(--ease)}
 @keyframes in{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
 .back{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--muted);text-decoration:none;justify-self:start}
 .back:hover{color:var(--ink)}
@@ -267,6 +267,66 @@ body.lp main{padding-bottom:40px}
 .lp-end h2{font-size:24px;font-weight:900}
 .lp-end p{color:var(--stage-muted)}
 .lp-foot{font-size:12px;color:var(--faint);padding-top:8px}
+
+/* landing animation: a live discussion scene, move chips fly into the card deck */
+.scene{position:relative;background:var(--stage);color:var(--stage-ink);border-radius:26px;padding:18px;display:grid;grid-template-rows:auto 1fr auto;gap:12px;height:430px;overflow:hidden;box-shadow:0 30px 60px rgba(28,34,48,.25)}
+.scene::before{content:"";position:absolute;inset:-40% -20% auto auto;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(221,86,54,.35),transparent 65%);animation:glow 6s ease-in-out infinite alternate;pointer-events:none}
+@keyframes glow{to{transform:translate(-60px,40px) scale(1.15)}}
+.seats{display:flex;justify-content:space-between;align-items:center;position:relative}
+.seat{display:grid;justify-items:center;gap:4px;font-size:11.5px;color:var(--stage-muted);transition:color .3s}
+.seat .av{width:40px;height:40px;font-size:14px;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.seat.on{color:var(--stage-ink)}
+.seat.on .av{transform:scale(1.14);box-shadow:0 0 0 3px var(--stage),0 0 0 5px var(--accent)}
+.seat.on .av.me{box-shadow:0 0 0 3px var(--stage),0 0 0 5px #FFFFFF}
+.seat .wave{display:flex;gap:2px;height:10px;align-items:flex-end;opacity:0;transition:opacity .2s}
+.seat.on .wave{opacity:1}
+.seat .wave i{width:3px;background:var(--accent);border-radius:2px;animation:wv .6s ease-in-out infinite alternate}
+.seat .wave i:nth-child(2){animation-delay:.15s}.seat .wave i:nth-child(3){animation-delay:.3s}
+@keyframes wv{from{height:2px}to{height:10px}}
+.feed{display:flex;flex-direction:column;justify-content:flex-end;gap:8px;overflow:hidden;position:relative;mask-image:linear-gradient(to bottom,transparent,#000 22%)}
+.msg{display:grid;gap:6px;max-width:88%;animation:msgIn .4s var(--ease) both}
+.msg.me{justify-self:end;align-self:flex-end}
+@keyframes msgIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.msg .b{background:#283044;border-radius:14px 14px 14px 4px;padding:8px 12px;font-size:14.5px;line-height:1.45}
+.msg.me .b{background:var(--accent);color:var(--accent-ink);border-radius:14px 14px 4px 14px}
+.msg .w{font-size:11px;color:var(--stage-muted)}
+.msg.me .w{text-align:right}
+.msg .caret{display:inline-block;width:2px;height:1em;background:currentColor;vertical-align:-2px;margin-left:1px;animation:blink .8s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.msg .mv{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}
+.flychip{display:inline-flex;align-items:center;gap:4px;min-height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:700;background:#FFFFFF;color:var(--move,#356CC8);box-shadow:0 6px 16px rgba(0,0,0,.25);animation:pop .35s var(--ease) both}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.flying{position:fixed;z-index:70;pointer-events:none;margin:0}
+.scene-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.scene-topic{font-size:12px;color:var(--stage-muted);max-width:60%}
+.deck{position:relative;width:118px;height:76px;flex:none}
+.deck .dc{position:absolute;inset:0;border-radius:12px;background:linear-gradient(160deg,#4A7FD9,#2A56A8);box-shadow:0 8px 18px rgba(0,0,0,.3);display:grid;align-content:space-between;padding:8px 10px;color:#FFFFFF;font-size:12px;font-weight:700;transition:transform .4s var(--ease)}
+.deck .dc:nth-child(1){transform:rotate(-8deg) translate(-8px,4px);opacity:.55}
+.deck .dc:nth-child(2){transform:rotate(-3deg) translate(-3px,2px);opacity:.8}
+.deck .dc span{font-family:var(--f-mono);font-size:10.5px;opacity:.8;font-weight:500}
+.deck.bump .dc:nth-child(3){animation:bump .5s var(--ease)}
+@keyframes bump{30%{transform:translateY(-8px) scale(1.08) rotate(3deg)}}
+.deck-n{position:absolute;top:-10px;right:-8px;min-width:26px;height:26px;border-radius:13px;background:var(--accent);color:#FFFFFF;font-family:var(--f-mono);font-size:12px;display:grid;place-items:center;padding:0 6px;box-shadow:0 0 0 3px var(--stage)}
+.lp-hero h1 .ln{display:block;animation:rise .7s var(--ease) both}
+.lp-hero h1 .ln:nth-child(2){animation-delay:.12s}
+@keyframes rise{from{opacity:.15;transform:translateY(18px)}to{opacity:1;transform:none}}
+.lp-hero h1 em{background:linear-gradient(transparent 62%,var(--accent-soft) 62%);background-size:0 100%;background-repeat:no-repeat;animation:mark 1s .7s var(--ease) forwards}
+@keyframes mark{to{background-size:100% 100%}}
+.rv.in{animation:rvIn .6s var(--ease) both}
+@keyframes rvIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.lp-three .card:hover .ic{animation:wig .5s var(--ease)}
+@keyframes wig{30%{transform:rotate(-10deg) scale(1.1)}60%{transform:rotate(6deg)}}
+.lp-loop{position:relative}
+.lp-loop span{position:relative;transition:background .3s,color .3s,border-color .3s}
+.lp-loop span.lit{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.lp-loop span.hot.lit{background:var(--accent);color:var(--accent-ink)}
+.lp-fan{display:flex;justify-content:center;padding:30px 0 10px;min-height:190px;overflow:hidden}
+.lp-fan .fc{width:120px;height:160px;margin:0 -26px;border-radius:16px;background:linear-gradient(160deg,var(--move),color-mix(in srgb,var(--move) 65%,#000));color:#FFFFFF;padding:12px;display:grid;align-content:space-between;font-weight:900;font-size:14px;box-shadow:0 12px 26px rgba(0,0,0,.18);transform-origin:50% 120%;transition:transform .5s var(--ease)}
+.lp-fan .fc span{font-family:var(--f-mono);font-size:10.5px;font-weight:500;opacity:.8}
+.lp-fan .fc.off{background:var(--surface);color:var(--faint);border:1.5px dashed var(--line);box-shadow:none}
+.lp-fan:hover .fc,.lp-fan.open .fc{margin:0 -10px}
+@media (max-width:760px){.scene{height:400px}.lp-fan .fc{width:84px;height:120px;font-size:12px;margin:0 -27px}.lp-fan:hover .fc,.lp-fan.open .fc{margin:0 -22px}}
+@media (prefers-reduced-motion:reduce){.scene::before,.seat .wave i{animation:none}}
 @media (max-width:760px){.lp-hero,.lp-three,.lp-school-grid,.lp-promise{grid-template-columns:minmax(0,1fr)}.lp-hero{padding-top:8px}}
 /* bottom tabs (phone) */
 .btabs{display:none}
@@ -683,32 +743,42 @@ body.lp main{padding-bottom:40px}
       <div class="lp-hero">
         <div style="display:grid;gap:16px;align-content:start">
           <div class="lp-schools"><span class="chip">西浦</span><span class="chip">港中深</span><span class="chip">上悉 4+0</span></div>
-          <h1>小组讨论和面试，<br><em>每天练一局。</em></h1>
+          <h1><span class="ln">小组讨论和面试，</span><span class="ln"><em>每天练一局。</em></span></h1>
           <p class="lead">一个练英文讨论与表达的小工具。1 分钟一局，卡住了看一个几分钟的例子，准备好了约老师真人模拟。</p>
           <div class="row"><a class="btn accent" href="#home">免费开始</a><a class="btn ghost" href="#examples">先看例子库</a></div>
           <span class="lp-free">测试期全部免费 · 不用下载 · 手机电脑都能用</span>
         </div>
-        ${tryBox()}
+        <div class="scene" id="scene" aria-label="动画演示：一场小组讨论里用出讨论动作，动作卡片飞进图鉴">
+          <div class="seats">${[['Leo', 'L'], ['Mia', 'M'], ['Sam', 'S'], ['你', '你']].map(([n, a]) => `<div class="seat" data-seat="${n}"><span class="av ${n === '你' ? 'me' : ''}">${a}</span><span>${n}</span><span class="wave"><i></i><i></i><i></i></span></div>`).join('')}</div>
+          <div class="feed" id="feed"></div>
+          <div class="scene-foot"><span class="scene-topic">话题：Should students bring mobile phones to high school?<br>AI 组员 + 你 · 示例</span>
+            <div class="deck" id="deck"><div class="dc"><b>邀请发言</b><span>Invite</span></div><div class="dc"><b>接住别人的话</b><span>Build</span></div><div class="dc"><b id="deck-top">动作图鉴</b><span id="deck-en">Move cards</span></div><span class="deck-n" id="deck-n">2</span></div></div>
+        </div>
       </div>
 
-      <div class="lp-sec"><h2>三件事，按你的节奏用</h2>
+      <div class="lp-sec rv"><h2>30 秒试一题</h2><p>这句话起什么作用？点一个答案。这就是工具里的「快判」。</p><div style="max-width:560px">${tryBox()}</div></div>
+
+      <div class="lp-sec rv"><h2>三件事，按你的节奏用</h2>
         <div class="lp-three">
           <div class="card"><span class="ic">${svg('bolt')}</span><span class="n">每天 · 1–5 分钟</span><h3>练一局</h3><p class="small muted">接话挑战、快判 30 秒、改一句、抽题计时。像玩小游戏，练的是讨论里真正用得上的动作。</p></div>
           <div class="card"><span class="ic">${svg('play')}</span><span class="n">卡住时 · 几分钟</span><h3>看个例子</h3><p class="small muted">10 节课拆成一个个小例子，每个只讲一个讨论动作。看完马上回去练，不用从头上一整节。</p></div>
           <div class="card"><span class="ic paid">${svg('people')}</span><span class="n">准备好了 · 老师主持</span><h3>真人模拟</h3><p class="small muted">一对一或小组模拟，在腾讯会议进行。上课前有准备卡，结束后老师写复盘。</p></div>
         </div></div>
 
-      <div class="lp-sec"><h2>练过的每一步，都连在一起</h2><p>课程、小游戏、AI 反馈和老师复盘，用的是同一套「讨论动作」：接住别人的话、邀请发言、忠实总结……在哪里看到同一个词，都能找到同一个例子和练习。</p>
+      <div class="lp-sec rv"><h2>练过的每一步，都连在一起</h2><p>课程、小游戏、AI 反馈和老师复盘，用的是同一套「讨论动作」：接住别人的话、邀请发言、忠实总结……在哪里看到同一个词，都能找到同一个例子和练习。</p>
         <div class="lp-loop"><span>练一局</span><b>→</b><span>用出新动作，点亮图鉴</span><b>→</b><span>卡住了看个例子</span><b>→</b><span class="hot">约老师真人模拟</span><b>→</b><span>复盘变成下一局</span></div></div>
 
-      <div class="lp-sec"><h2>按目标院校准备</h2>
+      <div class="lp-sec rv"><h2>按目标院校准备</h2>
         <div class="lp-school-grid">
           <div class="card"><span class="bar" style="background:#2B8494"></span><b>西浦</b><span class="small muted">西交利物浦大学</span><span class="small">英文小组讨论 · 个人表达</span></div>
           <div class="card"><span class="bar" style="background:#B44E68"></span><b>港中深</b><span class="small muted">香港中文大学（深圳）</span><span class="small">文理基础 · 英文口试 · 写作</span></div>
           <div class="card"><span class="bar" style="background:#786193"></span><b>上悉 4+0</b><span class="small muted">上海大学悉尼工商学院</span><span class="small">英语学习与表达</span></div>
         </div></div>
 
-      <div class="lp-sec"><h2>写给家长和老师</h2>
+      <div class="lp-sec rv"><h2>用出一个动作，就点亮一张卡</h2><p>8 张讨论动作卡，在任何练习里用出来就点亮。用得越多，卡上的格子越满。等级只表示用过几次，不是评分。</p>
+        <div class="lp-fan" id="fan">${MOVES.map((m, i) => `<div class="fc ${i < 3 ? '' : 'off'}" style="transform:rotate(${(i - 3.5) * 7}deg) translateY(${Math.abs(i - 3.5) * 6}px)"><b>${esc(m.name)}</b><span>${esc(m.en)}</span></div>`).join('')}</div></div>
+
+      <div class="lp-sec rv"><h2>写给家长和老师</h2>
         <ul class="lp-promise">
           <li><i>✓</i><span><b>我们是练习工具，不是机构。</b>提供练习和反馈，不对考试或录取结果作任何承诺。</span></li>
           <li><i>✓</i><span><b>不打分，不排名。</b>反馈只说这句话起了什么作用、下次可以怎么做。</span></li>
@@ -716,7 +786,7 @@ body.lp main{padding-bottom:40px}
           <li><i>✓</i><span><b>未成年人需监护人同意。</b>老师查看练习记录，需要学生自己勾选同意。</span></li>
         </ul></div>
 
-      <div class="lp-sec"><h2>常见问题</h2><div class="lp-faq">
+      <div class="lp-sec rv"><h2>常见问题</h2><div class="lp-faq">
         <details><summary>要花钱吗？</summary><p>测试期全部免费。以后按学校开通，每所学校都有可以免费体验的内容。</p></details>
         <details><summary>和上课有什么不一样？</summary><p>不用排时间、不用看完一整节。每天打开练一局就行；想系统看，例子库里也能从头看完整一课。</p></details>
         <details><summary>AI 反馈准吗？</summary><p>AI 根据你写下或说出的内容给练习反馈，可能有误，不是评分。拿不准的地方，可以在真人模拟时请老师看。</p></details>
@@ -727,6 +797,73 @@ body.lp main{padding-bottom:40px}
       <p class="lp-foot">综评国本备考院 · 页面中的学校名称仅用于说明覆盖范围，与学校无官方合作关系。原型 · 示例数据 · 不连接后端。</p>
     </section>`;
   }
+
+  /* ---------- landing scene timeline ---------- */
+  const SCRIPT = [
+    ['Leo', 'I think phones should be allowed, but with clear rules.'],
+    ['Mia', 'They are a big distraction in class, though.'],
+    ['你', 'I agree with Mia, because many students check messages. Sam, what do you think?', ['build', 'invite']],
+    ['Sam', 'Maybe keep them in lockers during lessons?'],
+    ['你', 'So Leo wants clear rules, and Sam suggested lockers. Shall we check both?', ['summary']],
+  ];
+  let scTok = 0, rvObs = null, loopT = 0;
+  const reduce = () => window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const wait = (ms, tok) => new Promise((res, rej) => setTimeout(() => tok === scTok ? res() : rej(0), ms));
+  function msgEl(who, text, done) {
+    const me = who === '你', d = document.createElement('div');
+    d.className = 'msg' + (me ? ' me' : '');
+    d.innerHTML = `<span class="w">${esc(who)}${me ? '' : ' · AI 组员'}</span><span class="b" lang="en">${done ? esc(text) : '<span class="caret"></span>'}</span>`;
+    return d;
+  }
+  async function sceneRun(tok) {
+    const feed = $('#feed'); if (!feed) return;
+    let n = 2; const nEl = $('#deck-n'); nEl.textContent = n; feed.innerHTML = '';
+    for (const [who, text, moves] of SCRIPT) {
+      document.querySelectorAll('.seat').forEach(x => x.classList.toggle('on', x.dataset.seat === who));
+      const m = msgEl(who, text, false); feed.appendChild(m);
+      while (feed.children.length > 4) feed.firstElementChild.remove();
+      const b = m.querySelector('.b'); await wait(350, tok);
+      for (let i = 1; i <= text.length; i += 2) { b.innerHTML = esc(text.slice(0, i)) + '<span class="caret"></span>'; await wait(26, tok); }
+      b.textContent = text;
+      if (moves) {
+        const row = document.createElement('div'); row.className = 'mv'; m.appendChild(row);
+        for (const id of moves) {
+          const c = document.createElement('span'); c.className = 'flychip'; c.textContent = MV[id].name + ' +1'; row.appendChild(c);
+          await wait(650, tok);
+          const from = c.getBoundingClientRect(), deck = $('#deck'), to = deck.getBoundingClientRect();
+          const f = c.cloneNode(true); f.classList.add('flying'); f.style.left = from.left + 'px'; f.style.top = from.top + 'px'; document.body.appendChild(f);
+          c.style.visibility = 'hidden';
+          const dx = to.left + to.width / 2 - (from.left + from.width / 2), dy = to.top + to.height / 2 - (from.top + from.height / 2);
+          const anim = f.animate([{ transform: 'none', opacity: 1 }, { transform: `translate(${dx * .5}px,${dy * .5 - 60}px) scale(1.1) rotate(-8deg)`, opacity: 1, offset: .5 }, { transform: `translate(${dx}px,${dy}px) scale(.35) rotate(6deg)`, opacity: .2 }], { duration: 750, easing: 'cubic-bezier(.5,0,.3,1)' });
+          await new Promise(r => { anim.onfinish = r; anim.oncancel = r; });
+          f.remove(); if (tok !== scTok) return;
+          $('#deck-top').textContent = MV[id].name; $('#deck-en').textContent = MV[id].en; nEl.textContent = ++n;
+          deck.classList.remove('bump'); void deck.offsetWidth; deck.classList.add('bump');
+        }
+      }
+      await wait(900, tok);
+    }
+    document.querySelectorAll('.seat').forEach(x => x.classList.remove('on'));
+    await wait(2600, tok);
+    sceneRun(tok).catch(() => {});
+  }
+  function sceneStatic() {
+    const feed = $('#feed'); if (!feed) return;
+    feed.innerHTML = ''; SCRIPT.slice(1).forEach(([w, t, mv]) => { const m = msgEl(w, t, true); if (mv) m.insertAdjacentHTML('beforeend', `<div class="mv">${mv.map(id => `<span class="flychip">${esc(MV[id].name)}</span>`).join('')}</div>`); feed.appendChild(m); });
+    $('#deck-n').textContent = 5;
+  }
+  function sceneStart() {
+    sceneStop(); const tok = ++scTok;
+    if (reduce()) sceneStatic(); else sceneRun(tok).catch(() => {});
+    if ('IntersectionObserver' in window && !reduce()) {
+      rvObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && e.boundingClientRect.top > 40) { e.target.classList.add('in'); rvObs.unobserve(e.target); } }), { threshold: .12 });
+      document.querySelectorAll('.rv').forEach(el => { if (el.getBoundingClientRect().top > innerHeight) rvObs.observe(el); });
+    }
+    const steps = [...document.querySelectorAll('.lp-loop span')]; let k = 0;
+    if (steps.length && !reduce()) loopT = setInterval(() => { steps.forEach((x, i) => x.classList.toggle('lit', i === k)); k = (k + 1) % steps.length; }, 1100);
+    const fan = $('#fan'); if (fan && !reduce()) setTimeout(() => fan.classList.add('open'), 900);
+  }
+  function sceneStop() { scTok++; clearInterval(loopT); if (rvObs) { rvObs.disconnect(); rvObs = null; } document.querySelectorAll('.flying').forEach(x => x.remove()); }
   /* ---------- router ---------- */
   const VIEWS = { welcome: vWelcome, home: vHome, reply: vReply, judge: vJudge, fix: vFix, tools: vTools, examples: vExamples, cards: vCards, timer: vTimer, pocket: vPocket, mock: vMock };
   const cur = () => { const h = location.hash.slice(1); return VIEWS[h] ? h : 'welcome'; };
@@ -736,6 +873,7 @@ body.lp main{padding-bottom:40px}
     $('#tabs').innerHTML = nav; $('#btabs').innerHTML = nav;
     document.body.classList.toggle('lp', v === 'welcome');
     $('#main').innerHTML = VIEWS[v]();
+    if (v === 'welcome') sceneStart(); else sceneStop();
   }
   let lastView = '';
   window.addEventListener('hashchange', () => {
