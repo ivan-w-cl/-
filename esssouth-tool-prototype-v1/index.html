@@ -355,8 +355,8 @@ textarea{min-height:88px}
   ];
 
   /* ---------- views ---------- */
-  const TABS = [['home', '今天', 'home'], ['tools', '工具', 'grid'], ['cards', '图鉴', 'cards'], ['mock', '真人模拟', 'people']];
-  const TABOF = { home: 'home', reply: 'home', tools: 'tools', judge: 'tools', fix: 'tools', timer: 'tools', pocket: 'tools', cards: 'cards', mock: 'mock' };
+  const TABS = [['home', '今天', 'home'], ['tools', '工具', 'grid'], ['examples', '例子库', 'play'], ['cards', '图鉴', 'cards'], ['mock', '真人模拟', 'people']];
+  const TABOF = { home: 'home', reply: 'home', tools: 'tools', judge: 'tools', fix: 'tools', timer: 'tools', pocket: 'tools', cards: 'cards', mock: 'mock', examples: 'examples' };
   const got = () => MOVES.filter(m => S.uses[m.id]).length;
   const backTo = (h, t) => `<a class="back" href="#${h}">${svg('back')}${t}</a>`;
 
@@ -380,6 +380,7 @@ textarea{min-height:88px}
         <a class="tool" href="#fix"><span class="ic">${svg('edit')}</span><b>改一句</b><span>把一句有问题的话改好，再看别人怎么改</span><span class="time">2 min</span></a>
         <a class="tool" href="#timer"><span class="ic">${svg('clock')}</span><b>抽题计时</b><span>随机抽一道题，自己对着练</span><span class="time">自定时长</span></a>
       </div>
+      <a class="card" href="#examples" style="text-decoration:none;grid-template-columns:auto minmax(0,1fr) auto;align-items:center"><span style="display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:var(--move-soft);color:var(--move)">${svg('play')}</span><span><b>例子库</b><br><span class="small muted">第 1 课的 7 个例子已上线 · 每个几分钟 · 也可以看完整一课</span></span><span class="muted">›</span></a>
       <div class="split">
         <a class="card" href="#cards" style="text-decoration:none"><div class="row" style="justify-content:space-between"><b>动作图鉴</b><span class="mono small muted">${got()} / ${MOVES.length}</span></div>
           <div class="minibook">${MOVES.map(m => `<span class="mini ${S.uses[m.id] ? 'on' : ''}" title="${esc(m.name)}"></span>`).join('')}</div>
@@ -486,6 +487,30 @@ textarea{min-height:88px}
       <b class="small">别人是这样改的</b>${f.others.map(o => `<p class="ex" lang="en">${esc(o)}</p>`).join('')}<p class="small muted">示例改法 · 正式版可以展示同学匿名的改法</p></div>`;
   }
 
+  /* Courses as an examples library: every section is a short example of one or two moves; whole lessons stay available. */
+  const LESSONS = [
+    { n: 1, title: '看懂小组讨论，找到自己的参与方式', min: 29, sections: [
+      ['先看一场讨论', [], '2:59'], ['看清共同任务', ['task'], '4:09'], ['判断一句话的作用', ['propose'], '4:30'], ['接住别人的话', ['build', 'ask'], '5:44'],
+      ['找到不同的参与方式', ['invite'], '5:02'], ['条件变化后，调整方案', ['adjust'], '5:06'], ['回看自己的参与方式', [], '1:37']] },
+    ...[2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => ({ n, title: '', sections: [] })),
+  ];
+  let EX = { move: '' };
+  function vExamples() {
+    const L1 = LESSONS[0], secs = L1.sections.map((x, i) => ({ i, t: x[0], m: x[1], d: x[2] })).filter(x => !EX.move || x.m.includes(EX.move));
+    return `<section class="view"><div class="page-h"><div class="eyebrow">例子库 · 来自 10 节课程</div><h1>卡住了？看一个例子</h1><p>每一小节就是一个讨论动作的示范，几分钟看完就能回去练。想系统看，也可以从头看完整一课。</p></div>
+      <div class="row" role="group" aria-label="按动作筛选"><button type="button" class="pick" data-a="exm" data-v="" aria-pressed="${!EX.move}">全部</button>${MOVES.map(m => `<button type="button" class="pick" data-a="exm" data-v="${m.id}" aria-pressed="${EX.move === m.id}">${esc(m.name)}</button>`).join('')}</div>
+      <div class="card"><div class="row" style="justify-content:space-between"><div><span class="eyebrow">第 1 课 · ${L1.sections.length} 个例子 · 共 ${L1.min} 分钟</span><h2 style="font-size:18px">${esc(L1.title)}</h2></div><button class="btn sm" type="button" data-a="whole" data-n="1">从头看完整一课</button></div>
+        ${secs.length ? `<div class="opts">${secs.map(x => `<button type="button" class="opt" data-a="sec" data-i="${x.i}" style="grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px"><span class="mono small muted">S${String(x.i + 1).padStart(2, '0')}</span><span style="display:grid;gap:4px"><b style="font-weight:500">${esc(x.t)}</b><span class="row" style="gap:6px">${x.m.length ? x.m.map(id => `<span class="chip move">${esc(MV[id].name)}</span>`).join('') : '<span class="small muted">整体示范</span>'}</span></span><span class="mono small muted">${x.d}</span></button>`).join('')}</div>` : `<p class="small muted">第 1 课里还没有「${esc(MV[EX.move].name)}」的例子，其他课程录入后会出现在这里。</p>`}</div>
+      <div class="tools" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">${LESSONS.slice(1).map(l => `<div class="tool" style="min-height:96px"><span class="mono small muted">第 ${l.n} 课</span><b style="color:var(--muted)">待录入</b><span>课程录入后，每一小节自动变成例子</span></div>`).join('')}</div>
+      <p class="small muted">原型：视频位置是占位。录入后，点小节就播放那一小节，看完回到刚才的练习。</p></section>`;
+  }
+  function secSheet(i) {
+    const x = LESSONS[0].sections[i];
+    openSheet(`<b>第 1 课 · 第 ${i + 1} 小节 · ${esc(x[0])}</b><div class="clip"><div><b>这里播放这一小节（${x[2]}）</b><span>课程录入后接入；可以倍速、可以随时退出</span></div></div>
+      ${x[1].length ? `<div class="row">${x[1].map(id => `<span class="chip move">${esc(MV[id].name)}</span>`).join('')}</div><p class="small">${x[1].map(id => esc(MV[id].what)).join(' ')}</p>` : '<p class="small muted">这一小节是整体示范，不对应单个动作。</p>'}
+      <div class="row">${x[1].length ? `<a class="btn accent sm" href="#${{ build: 'reply', ask: 'reply', invite: 'fix', propose: 'judge', task: 'pocket', adjust: 'reply' }[x[1][0]] || 'tools'}" data-a="close">看完去练一下</a>` : ''}${i + 1 < LESSONS[0].sections.length ? `<button class="btn ghost sm" type="button" data-a="sec" data-i="${i + 1}">下一小节</button>` : ''}</div>`);
+  }
+
   function vTools() {
     return `<section class="view"><div class="page-h"><div class="eyebrow">工具</div><h1>想练哪个就点哪个</h1><p>每个都在 5 分钟以内。不用排课，也不用看完一整节。</p></div>
       <div class="tools">
@@ -580,7 +605,7 @@ textarea{min-height:88px}
   function closeSheet() { $('#sheet').innerHTML = ''; }
   function exampleSheet(id) {
     const m = MV[id];
-    openSheet(`<b>看个例子 · ${esc(m.name)}</b><div class="clip"><div><b>这里播放课程里约 30 秒的示范片段</b><span>${m.ref ? `来自 ${esc(m.ref)}（课程录入后接入）` : '对应课程片段待录入'}</span></div></div><p class="ex" lang="en">${esc(m.ex)}</p><p class="small muted">看完直接回到刚才的练习，不用从头看一整节。</p>`);
+    openSheet(`<b>看个例子 · ${esc(m.name)}</b><div class="clip"><div><b>这里播放课程里约 30 秒的示范片段</b><span>${m.ref ? `来自 ${esc(m.ref)}（课程录入后接入）` : '对应课程片段待录入'}</span></div></div><p class="ex" lang="en">${esc(m.ex)}</p><p class="small muted">看完直接回到刚才的练习，不用从头看一整节。</p><a class="small" href="#examples" data-a="close" style="color:var(--move)">去例子库看全部 ›</a>`);
   }
   let tt = 0;
   function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => el.classList.remove('on'), 2200); }
@@ -588,7 +613,7 @@ textarea{min-height:88px}
   function showUnlock(id) { const m = MV[id], el = $('#unlock'); el.innerHTML = `<span class="glyph">${svg(id)}</span><span><b>点亮新卡：${esc(m.name)}</b><span>已放进动作图鉴</span></span>`; el.classList.add('on'); clearTimeout(ut); ut = setTimeout(() => el.classList.remove('on'), 2800); }
 
   /* ---------- router ---------- */
-  const VIEWS = { home: vHome, reply: vReply, judge: vJudge, fix: vFix, tools: vTools, cards: vCards, timer: vTimer, pocket: vPocket, mock: vMock };
+  const VIEWS = { home: vHome, reply: vReply, judge: vJudge, fix: vFix, tools: vTools, examples: vExamples, cards: vCards, timer: vTimer, pocket: vPocket, mock: vMock };
   const cur = () => { const h = location.hash.slice(1); return VIEWS[h] ? h : 'home'; };
   function render() {
     const v = cur(), tab = TABOF[v];
@@ -611,6 +636,9 @@ textarea{min-height:88px}
     if (a === 'scrim' || a === 'close') { closeSheet(); return; }
     if (a === 'example') { exampleSheet(el.dataset.m); return; }
     if (a === 'card') { cardSheet(el.dataset.m); return; }
+    if (a === 'exm') { EX.move = el.dataset.v; render(); return; }
+    if (a === 'sec') { secSheet(+el.dataset.i); return; }
+    if (a === 'whole') { openSheet(`<b>第 ${el.dataset.n} 课 · 完整观看</b><div class="clip"><div><b>这里连续播放 7 个小节（29 分钟）</b><span>就是网站上现有的第 1 课播放器；可以连续看，也可以在练习点停下来</span></div></div>`); return; }
     if (a === 'rmode') { RS.text = $('#r-in')?.value || RS.text; RS.mode = el.dataset.v; RS.out = null; RS.pick = -1; render(); return; }
     if (a === 'rgo') { RS.text = $('#r-in').value; if (!RS.text.trim()) { toast('先写一句'); return; } const f = replyFeedback(RS.text); RS.out = f.html; use(f.ids); render(); return; }
     if (a === 'rpick') { RS.pick = +el.dataset.i; const o = REPLY[RS.i].opts[RS.pick]; if (o[1] === 'best') use([REPLY[RS.i].aim]); RS.out = o[1] === 'best' ? `<div class="fbrow"><span class="chip ok">选得好</span><span>这就是「${esc(MV[REPLY[RS.i].aim].name)}」。</span></div>` : `<div class="fbrow"><span class="chip warn">可以试试</span><span>绿色那句更好，看看为什么。</span></div>`; render(); return; }
