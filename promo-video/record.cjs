@@ -6,6 +6,7 @@ const RAIN = { current: { temperature_2m: 12.4, apparent_temperature: 10.1, weat
   fs.mkdirSync(out, { recursive: true });
   const b = await chromium.launch({ args: ['--disable-gpu-vsync', '--force-color-profile=srgb', '--font-render-hinting=none'] });
   const ctx = await b.newContext({ viewport: process.env.PORTRAIT ? { width: 1080, height: 1920 } : { width: 1920, height: 1080 }, deviceScaleFactor: +dpr, locale: 'zh-CN', timezoneId: 'Europe/London' });
+  if (process.env.FRESH !== '0') await ctx.addInitScript(() => { try { if (!sessionStorage.getItem('rec')) { sessionStorage.setItem('rec', 1); localStorage.clear(); } } catch (e) { /* 忽略 */ } });   // 每次都是第一次打开（保留引导和房屋落下）
   await ctx.route('https://api.open-meteo.com/**', r => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(process.env.WEATHER ? JSON.parse(process.env.WEATHER) : RAIN) }));
   await ctx.route(/fonts\.(googleapis|gstatic)\.com/, r => r.abort());
   const p = await ctx.newPage();
@@ -13,12 +14,13 @@ const RAIN = { current: { temperature_2m: 12.4, apparent_temperature: 10.1, weat
   p.on('response', r => { if (r.status() >= 400) console.log('[http ' + r.status() + ']', r.url()); });
   p.on('pageerror', e => console.log('[pageerror]', e.message));
   // 假时钟必须暂停：不然真实时间也在走，截图越慢网页里的计时器越快，每次录出来都不一样
-  await p.clock.install({ time: new Date('2026-10-23T15:41:00Z') });
-  await p.clock.pauseAt(new Date('2026-10-23T15:41:00.200Z'));
-  await p.goto('http://localhost:8780/stage/index.html?' + (process.env.TL ? 'tl=' + process.env.TL : '') + (process.env.PORTRAIT ? '&p=1' : ''));   // PORTRAIT=1 → 竖版
+  const T0 = Date.parse(process.env.DATE || '2026-10-23T15:41:00Z');   // DATE：网页里的「现在」（日照「今天」、抢房倒计时用）
+  await p.clock.install({ time: new Date(T0) });
+  await p.clock.pauseAt(new Date(T0 + 200));
+  await p.goto('http://localhost:' + (process.env.PORT || 8780) + '/stage/index.html?' + (process.env.TL ? 'tl=' + process.env.TL : '') + (process.env.PORTRAIT ? '&p=1' : '') + (process.env.PK ? '&pk=' + process.env.PK + '&pay=' + (process.env.PAY || 1160) : ''));   // PORTRAIT=1 → 竖版
   await p.evaluate(() => document.fonts.ready);
   await p.evaluate(() => S.load({ app: '/web/index.html#lang=zh', appT: '/web/index.html#lang=zh', appF: '/web/index.html#lang=zh' }));
-  await p.clock.runFor(3000);                       // 网页启动：字体、开场弹窗
+  await p.clock.runFor(+(process.env.PRE || 3000));   // 网页启动：字体、开场弹窗（PRE 改短，开场弹窗就在镜头里出现）
   await p.evaluate(() => document.fonts.ready);
   const t0 = Date.now(); let shots = 0, warmed = +from <= 0;
   const n = Math.round(+to * FPS);

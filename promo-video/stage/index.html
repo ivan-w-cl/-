@@ -33,6 +33,7 @@ html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--
 .fold .screen iframe { width: 746px; height: 676px; }
 .fold .crease { position: absolute; left: 50%; top: 13px; bottom: 13px; width: 2px; margin-left: -1px; background: linear-gradient(rgba(0,0,0,.06), rgba(0,0,0,.12), rgba(0,0,0,.06)); z-index: 6; }
 /* 手指点按 */
+.mark { position: absolute; z-index: 8; pointer-events: none; opacity: 0; border: 3px solid #c2522f; border-radius: 12px; background: rgba(242,193,78,.14); box-shadow: 0 0 0 4px rgba(194,82,47,.14); }
 .tap { position: absolute; width: 54px; height: 54px; margin: -27px 0 0 -27px; border-radius: 50%; background: rgba(255,255,255,.42); border: 2px solid rgba(255,255,255,.9);
   box-shadow: 0 6px 18px rgba(0,0,0,.18); z-index: 9; opacity: 0; pointer-events: none; }
 /* 标题 */

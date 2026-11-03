@@ -44,7 +44,7 @@ function K(t, v) {
 /* 竖版（?p=1）：画面 1080×1920。舞台上的设备坐标不变，整体映射到竖屏：标题在上方一条，手机占下面；
    镜头推近时以目标点为中心放大（放大幅度收一些，避免盖住标题）；片尾三台设备改成前后叠放。 */
 const PORTRAIT = new URLSearchParams(location.search).get('p') === '1';
-const PK = 1.42, PAY = 1185, PZ = 0.45;   // 竖版：基础缩放、手机中心的高度、镜头放大幅度的折算
+const QS = new URLSearchParams(location.search), PK = +QS.get('pk') || 1.42, PAY = +QS.get('pay') || 1185, PZ = 0.45;   // 竖版：基础缩放、手机中心的高度、镜头放大幅度的折算（?pk= ?pay= 可改：手机放大一些，字更清楚）
 const S = window.S = {
   portrait: PORTRAIT,
   actions: [], titles: [], taps: [], tracks: {}, done: 0, ready: false,
@@ -56,8 +56,9 @@ const S = window.S = {
   tap(t, sel, opts) {
     opts = opts || {};
     const lead = opts.lead == null ? 0.32 : opts.lead, dur = Math.max(0.4, lead * 2.35);
-    const find = () => { const w = this.win(opts.frame); return typeof sel === 'function' ? sel(w) : w.document.querySelector(sel); };
-    const ring = (t0, el) => { const r = el.getBoundingClientRect(); this.taps.push({ t: t0, dur, x: r.left + r.width * (opts.ax == null ? 0.5 : opts.ax), y: r.top + r.height * (opts.ay == null ? 0.5 : opts.ay), frame: opts.frame || 'app' }); };
+    const host = () => { const w = this.win(opts.frame); if (!opts.inner) return { w, dx: 0, dy: 0 }; const f = w.document.querySelector(opts.inner); const r = f.getBoundingClientRect(); return { w: f.contentWindow, dx: r.left, dy: r.top }; };   // opts.inner：点 app 里嵌套的 iframe（周边报告）
+    const find = () => { const { w } = host(); return typeof sel === 'function' ? sel(w) : w.document.querySelector(sel); };
+    const ring = (t0, el) => { const r = el.getBoundingClientRect(), o = host(); this.taps.push({ t: t0, dur, x: o.dx + r.left + r.width * (opts.ax == null ? 0.5 : opts.ax), y: o.dy + r.top + r.height * (opts.ay == null ? 0.5 : opts.ay), frame: opts.frame || 'app' }); };
     let found = null;
     this.at(t - lead, () => { found = find(); if (found) ring(t - lead, found); });
     this.at(t, () => {
@@ -101,6 +102,33 @@ const S = window.S = {
       w.eval(`z = ${z}; tx = ${vw / 2 - cx * fk * z}; ty = ${vh / 2 - cy * fk * z}; render(false);`);
     });
   },
+  /* 平滑滚动：t0–t1 把容器滚到 target（数字，或返回数字的函数，例如让某一行滚到中间） */
+  scroll(t0, t1, box, target, ease) {
+    let from = null, to = null;
+    this.during(t0, t1, u => {
+      const el = typeof box === 'function' ? box(this.win()) : this.doc().querySelector(box); if (!el) return;
+      if (from == null) { from = el.scrollTop; to = typeof target === 'function' ? target(el, this.win()) : target; }
+      el.scrollTop = from + (to - from) * (E[ease || 'apple'])(u);
+    });
+  },
+  /* 拖滑块：t0 手指按下（点按圈出现并停住），t0–t1 把 range 从 a 拖到 b，松手后点按圈淡出 */
+  holds: [],
+  slide(t0, t1, sel, a, b, ease) {
+    const get = () => (typeof sel === 'function' ? sel(this.win()) : this.doc().querySelector(sel));
+    const h = { t0: t0 - 0.25, t1: t1 + 0.35, x: 0, y: 0 }; this.holds.push(h);
+    const thumb = el => { const r = el.getBoundingClientRect(), f = (el.value - el.min) / (el.max - el.min); h.x = r.left + 10 + (r.width - 20) * f; h.y = r.top + r.height / 2; };
+    this.at(t0 - 0.25, () => { const el = get(); if (el) thumb(el); });
+    this.during(t0, t1, u => {
+      const el = get(); if (!el) return;
+      const v = Math.round(a + (b - a) * (E[ease || 'io'])(u));
+      if (+el.value !== v) { el.value = v; el.dispatchEvent(new Event('input', { bubbles: true })); }
+      thumb(el);
+    });
+    this.at(t1, () => { const el = get(); if (el) el.dispatchEvent(new Event('change', { bubbles: true })); });
+  },
+  /* 高亮框：t0–t1 在 app 里某个元素外面画一个圆角框（只是镜头上的标注，不改网页） */
+  marks: [],
+  mark(t0, t1, sel, o) { this.marks.push(Object.assign({ t0, t1, sel, pad: 6 }, o || {})); },
   win(f) { return document.getElementById(f || 'app').contentWindow; },
   doc(f) { return this.win(f).document; },
 
@@ -159,6 +187,7 @@ const S = window.S = {
     if (T.veil) document.getElementById('veil').style.opacity = T.veil(t).o;
     this.paintTitles(t);
     this.paintTap(t);
+    this.paintMarks(t);
     if (dt > 0) for (const id of ['app', 'appT', 'appF']) { try { this.stepAnims(this.doc(id), dt); } catch (e) { /* 还没载入 */ } }
   },
   /* 设备变形：手机 → 折叠屏 → 平板（S.morph = { t0, t1, t2, t3, G }，t0–t1 手机变折叠屏，t2–t3 折叠屏变平板）。
@@ -235,7 +264,25 @@ const S = window.S = {
       el.style.transform = `scale(${1.35 - 0.45 * E.out(down) + 0.5 * E.out(up)})`;
       shown = true;
     }
+    for (const h of this.holds) {   // 按住拖动：按下 → 停住 → 抬起
+      if (t < h.t0 || t > h.t1) continue;
+      const down = clamp01((t - h.t0) / 0.22), up = clamp01((t - (h.t1 - 0.3)) / 0.3);
+      el.style.left = h.x + 'px'; el.style.top = h.y + 'px';
+      el.style.opacity = E.out(down) * (1 - E.out(up));
+      el.style.transform = `scale(${1.35 - 0.45 * E.out(down) + 0.5 * E.out(up)})`;
+      shown = true;
+    }
     if (!shown) el.style.opacity = 0;
+  },
+  paintMarks(t) {
+    for (const m of this.marks) {
+      if (!m.el) { m.el = document.createElement('div'); m.el.className = 'mark'; document.getElementById('scr').appendChild(m.el); }
+      const a = Math.min(clamp01((t - m.t0) / 0.35), clamp01((m.t1 - t) / 0.35));
+      m.el.style.opacity = E.io(a); if (a <= 0) continue;
+      const e = typeof m.sel === 'function' ? m.sel(this.win()) : this.doc().querySelector(m.sel); if (!e) continue;
+      const r = e.getBoundingClientRect();
+      Object.assign(m.el.style, { left: (r.left - m.pad) + 'px', top: (r.top - m.pad) + 'px', width: (r.width + 2 * m.pad) + 'px', height: (r.height + 2 * m.pad) + 'px' });
+    }
   },
   /* CSS 动画 / 过渡：全部暂停，每帧手动往前推 dt，录出来和真实播放一样流畅、每次录都一样 */
   stepAnims(doc, dt) {
