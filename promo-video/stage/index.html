@@ -61,9 +61,20 @@ html.fs .mark { border-width: 2px; border-radius: 8px; }
 html.fs .tt .h { font-size: 80px; white-space: nowrap; }
 html.fs .tt .k { font-size: 30px; margin-bottom: 10px; }
 html.fs .tt .s { font-size: 30px; margin-top: 10px; }
+/* 显示器版（?dk=1）：显示器支架、字幕底色（上面一条渐隐，镜头推近时盖住网页顶边）、标注标签 */
+.stand { position: absolute; width: 150px; height: 150px; display: none; transform-origin: 50% 0; z-index: 1; }
+.stand .neck { position: absolute; left: 50%; top: 0; width: 120px; height: 132px; margin-left: -60px; background: linear-gradient(90deg, #2c2c2e, #48484a 50%, #2c2c2e); clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%); }
+.stand .base { position: absolute; left: 50%; top: 128px; width: 440px; height: 20px; margin-left: -220px; border-radius: 10px 10px 6px 6px; background: linear-gradient(#48484a, #1c1c1e); box-shadow: 0 30px 40px -18px rgba(60,40,20,.45); }
+#capbg { position: absolute; left: 0; right: 0; top: 0; height: 600px; pointer-events: none; display: none; background: linear-gradient(to bottom, var(--bg1) 0, var(--bg1) 430px, rgba(251,248,242,0) 600px); }
+html.dk #capbg { display: block; }
+html.dk .tt .h { font-size: 84px; }
+html.dk .tt .k { font-size: 32px; margin-bottom: 12px; }
+html.dk .tt .s { font-size: 32px; margin-top: 12px; }
+.mark .note { position: absolute; left: 50%; top: 0; white-space: nowrap; font: 700 30px/1.2 'Noto Sans SC', sans-serif; color: #fff; background: #c2522f; border-radius: 999px; box-shadow: 0 6px 16px rgba(120,50,20,.28); --g: 14px; }
+.mark .note.bottom { top: 100%; } .mark .note.left { left: 0; top: 50%; } .mark .note.right { left: 100%; top: 50%; }
 #veil { position: absolute; inset: 0; background: var(--bg1); opacity: 0; pointer-events: none; }
 </style></head>
-<script>if (new URLSearchParams(location.search).get('p') === '1') document.documentElement.classList.add('portrait'); if (new URLSearchParams(location.search).get('fs') === '1') document.documentElement.classList.add('fs');</script>
+<script>if (new URLSearchParams(location.search).get('p') === '1') document.documentElement.classList.add('portrait'); if (new URLSearchParams(location.search).get('fs') === '1') document.documentElement.classList.add('fs'); if (new URLSearchParams(location.search).get('dk') === '1') document.documentElement.classList.add('dk');</script>
 <body>
 <div id="bg"></div>
 <div id="cam">
@@ -80,9 +91,11 @@ html.fs .tt .s { font-size: 30px; margin-top: 10px; }
       <div class="tap" id="tap"></div>
     </div></div>
   </div>
+  <div class="stand" id="stand"><div class="neck"></div><div class="base"></div></div>
   <div class="dev tablet" id="tablet" style="opacity:0"><div class="body"><div class="screen"><iframe id="appT" src="about:blank"></iframe></div></div></div>
   <div class="dev fold" id="fold" style="opacity:0"><div class="body"><div class="screen"><iframe id="appF" src="about:blank"></iframe><div class="crease"></div></div></div></div>
 </div>
+<div id="capbg"></div>
 <div id="titles"></div>
 <div id="veil"></div>
 <script src="engine.js"></script>

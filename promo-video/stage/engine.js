@@ -48,8 +48,17 @@ const QS = new URLSearchParams(location.search), PK = +QS.get('pk') || 1.42, PAY
 /* 铺满版（?p=1&fs=1）：不画手机外框，网页铺满标题下面的整块画面（网页按 432×672 排版，放大 2.5 倍）；
    片尾 tracks.fs 从 0 到 1：镜头慢慢拉远，画面收成手机（外框、状态栏渐显），接着设备变形（S.morph） */
 const FS = PORTRAIT && QS.get('fs') === '1', FS_BAND = 240, FS_VW = 432, FS_VH = (1920 - FS_BAND) * FS_VW / 1080;
+/* 显示器版（?p=1&dk=1）：一开头是一台显示器，网页按电脑版排版（1440×900）；镜头推近到某一个功能演示（S.cam），
+   有特色的功能加标注（S.note）；片尾镜头拉远，同一个网页的窗口变成手机、再变成平板（S.geom，网页跟着重新排版）。
+   镜头 { fx, fy, k }：网页里的点 (fx, fy) 放在画面 (540, DK_CY)，放大 k 倍；字幕在上面一条（中心 y = DK_TY） */
+const DK = PORTRAIT && QS.get('dk') === '1', DK_CY = 1190, DK_TY = 330;
+const GEO = {
+  monitor: { sw: 1440, sh: 900, pad: 16, R: 24, r: 8, stand: 1, ph: 0 },
+  phone: { sw: 390, sh: 844, pad: 14, R: 66, r: 53, stand: 0, ph: 1 },
+  tablet: { sw: 1180, sh: 820, pad: 20, R: 46, r: 28, stand: 0, ph: 0 }
+};
 const S = window.S = {
-  portrait: PORTRAIT, fs: FS,
+  portrait: PORTRAIT, fs: FS, dk: DK, GEO,
   actions: [], titles: [], taps: [], tracks: {}, done: 0, ready: false,
   /* 音效：录制时记下每个音效的时间，录完由 music/mix.py 按时间混进配乐（tick 点按、pop、whoosh、ding、hit…） */
   sfxLog: [], tapSfx: null,
@@ -166,7 +175,7 @@ const S = window.S = {
   },
   /* iframe 里 env(safe-area-inset-*) 是 0：换成真机的刘海和底部横条高度 */
   patchSafeArea(doc, ins) {
-    const rep = v => v.replace(/env\(\s*safe-area-inset-(top|bottom|left|right)\s*(,\s*[^)]*)?\)/g, (_, side) => (FS ? `var(--sa-${side}, 0px)` : (ins[side] || 0) + 'px'));   // 铺满版：没有刘海，拉远成手机时再渐渐让出状态栏
+    const rep = v => v.replace(/env\(\s*safe-area-inset-(top|bottom|left|right)\s*(,\s*[^)]*)?\)/g, (_, side) => (FS || DK ? `var(--sa-${side}, 0px)` : (ins[side] || 0) + 'px'));   // 铺满版：没有刘海，拉远成手机时再渐渐让出状态栏
     const walk = rules => { for (const r of rules) {
       if (r.style) for (let i = 0; i < r.style.length; i++) { const p = r.style[i], v = r.style.getPropertyValue(p); if (v.includes('safe-area-inset')) r.style.setProperty(p, rep(v), r.style.getPropertyPriority(p)); }
       if (r.cssRules) walk(r.cssRules);
@@ -191,6 +200,7 @@ const S = window.S = {
       else if (t > h.t1 && !h.last) { h.last = true; try { h.fn(1, t); } catch (e) { console.error('hook', e); } }
     }
     const T = this.tracks;
+    if (DK) { this.paintDK(t); this.paintTitles(t); this.paintTap(t); this.paintMarks(t); if (T.veil) document.getElementById('veil').style.opacity = T.veil(t).o; if (dt > 0) for (const id of ['app']) { try { this.stepAnims(this.doc(id), dt); } catch (e) { /* 还没载入 */ } } return; }
     if (FS && (!this.morph || t < this.morph.t0)) { this.paintFS(t); this.paintTitles(t); this.paintTap(t); this.paintMarks(t); if (dt > 0) for (const id of ['app', 'appT', 'appF']) { try { this.stepAnims(this.doc(id), dt); } catch (e) { /* 还没载入 */ } } return; }
     const cam = T.cam ? T.cam(t) : { x: 960, y: 540, s: 1 };
     if (PORTRAIT) {   // 横向的镜头偏移是给侧边标题让位置的，竖版不需要；只保留推近的高度和幅度
@@ -263,6 +273,60 @@ const S = window.S = {
     const cx = L(540, 540 + (g.cx - 960) * PK), cy = L(FS_BAND + (1920 - FS_BAND) / 2, PAY + (g.cy - 540) * PK);
     document.getElementById('cam').style.transform = `translate(${cx - g.cx * k}px,${cy - g.cy * k}px) scale(${k})`;
   },
+  /* ---------- 显示器版 ---------- */
+  geoms: [], cams: [],
+  geom(t0, dur, target, ease) { this.geoms.push({ t0, dur, target: typeof target === 'string' ? GEO[target] : target, ease }); this.geoms.sort((a, b) => a.t0 - b.t0); },
+  /* target：{ fx, fy, k }、'fit'（整台设备放进画面，设备变形时一直跟着）、或 (w, g) => { fx, fy, k }（开始那一刻在网页里算，例如对准某个元素） */
+  cam(t0, dur, target, ease) { this.cams.push({ t0, dur, target, ease }); this.cams.sort((a, b) => a.t0 - b.t0); },
+  fitCam(g) { const H = g.sh + 2 * g.pad + g.stand * 170; return { k: Math.min(1000 / (g.sw + 2 * g.pad), 1300 / H), fx: g.sw / 2, fy: g.sh / 2 + g.stand * 85 }; },
+  /* 对准一个元素：sel 是选择器或 w => 元素；k 放大倍数；o.ox / o.oy 对准元素的哪个位置（0–1），o.dx / o.dy 再偏移（网页像素）。画面边上不露出网页外面 */
+  focus(sel, k, o) {
+    o = o || {};
+    return (w, g) => {
+      const e = typeof sel === 'function' ? sel(w) : w.document.querySelector(sel); if (!e) { console.warn('focus: missing', sel); return null; }
+      const r = e.getBoundingClientRect();
+      let fx = r.left + r.width * (o.ox == null ? 0.5 : o.ox) + (o.dx || 0), fy = r.top + r.height * (o.oy == null ? 0.5 : o.oy) + (o.dy || 0);
+      const hw = 540 / k, vt = (DK_CY - 470) / k, vb = (1920 - DK_CY) / k;
+      fx = g.sw > 2 * hw ? Math.max(hw, Math.min(g.sw - hw, fx)) : g.sw / 2;
+      fy = g.sh > vt + vb ? Math.max(vt, Math.min(g.sh - vb, fy)) : g.sh / 2;
+      return { fx, fy, k };
+    };
+  },
+  runGlides(list, t, cur, resolve, lerp) {
+    for (const gl of list) {
+      if (t < gl.t0) break;
+      if (!gl.from) { gl.from = Object.assign({}, cur); gl.to = resolve(gl.target, cur) || cur; }
+      const p = (E[gl.ease || 'apple'])(clamp01((t - gl.t0) / Math.max(1e-6, gl.dur)));
+      cur = lerp(gl.from, gl.target === 'fit' ? resolve('fit', cur) : gl.to, p);
+    }
+    return cur;
+  },
+  paintDK(t) {
+    const T = this.tracks, rise = T.rise ? T.rise(t).y : 0;
+    const lin = (a, b, p) => { const o = {}; for (const k in b) o[k] = a[k] + (b[k] - a[k]) * p; return o; };
+    const g = this.runGlides(this.geoms, t, Object.assign({}, GEO.monitor), x => x, lin);
+    const c = this.runGlides(this.cams, t, this.fitCam(GEO.monitor), (x, cur) => (x === 'fit' ? this.fitCam(g) : typeof x === 'function' ? x(this.win(), g) : x),
+      (a, b, p) => ({ fx: a.fx + (b.fx - a.fx) * p, fy: a.fy + (b.fy - a.fy) * p, k: Math.exp(Math.log(a.k) + (Math.log(b.k) - Math.log(a.k)) * p) }));
+    this.dkCam = c;
+    const el = document.getElementById('phone'), body = el.querySelector('.body'), screen = el.querySelector('.screen'), fr = document.getElementById('app');
+    Object.assign(el.style, { left: -g.pad + 'px', top: -g.pad + 'px', width: (g.sw + 2 * g.pad) + 'px', height: (g.sh + 2 * g.pad) + 'px', opacity: 1, transform: 'none' });
+    Object.assign(body.style, { padding: g.pad + 'px', borderRadius: g.R + 'px' });
+    Object.assign(screen.style, { width: g.sw + 'px', height: g.sh + 'px', borderRadius: g.r + 'px' });
+    const fw = Math.round(g.sw), fh = Math.round(g.sh);
+    if (fr.__w !== fw || fr.__h !== fh) { fr.__w = fw; fr.__h = fh; Object.assign(fr.style, { width: fw + 'px', height: fh + 'px', left: '0px', top: '0px' }); }
+    const ui = clamp01((g.ph - 0.6) / 0.4);
+    document.querySelectorAll('#phone .status, #phone .island, #phone .homebar').forEach(b => { b.style.opacity = ui; });
+    document.querySelectorAll('#phone .btn').forEach(b => { b.style.opacity = ui; });
+    try { const de = this.doc().documentElement, st = Math.round(47 * ui), sb = Math.round(34 * ui);
+      if (de.__st !== st || de.__sb !== sb) { de.__st = st; de.__sb = sb; de.style.setProperty('--sa-top', st + 'px'); de.style.setProperty('--sa-bottom', sb + 'px'); } } catch (e) { /* 还没载入 */ }
+    const st = document.getElementById('stand');   // 显示器支架：变成手机时收掉
+    Object.assign(st.style, { display: g.stand > 0.01 ? 'block' : 'none', left: (g.sw / 2) + 'px', top: (g.sh + g.pad) + 'px', opacity: Math.min(1, g.stand * 1.6), transform: `translateX(-50%) scaleY(${g.stand})` });
+    document.getElementById('cam').style.transform = `translate(${540 - c.fx * c.k}px,${DK_CY + rise - c.fy * c.k}px) scale(${c.k})`;
+    const tap = document.getElementById('tap'), ts = 64 / c.k;   // 点按圈、标注在画面上保持差不多大
+    Object.assign(tap.style, { width: ts + 'px', height: ts + 'px', margin: (-ts / 2) + 'px 0 0 ' + (-ts / 2) + 'px', borderWidth: (2.5 / c.k) + 'px' });
+  },
+  /* 标注：t0–t1 在元素外面画框，旁边挂一个标签（o.pos：top / bottom / left / right） */
+  note(t0, t1, sel, text, o) { this.marks.push(Object.assign({ t0, t1, sel, pad: 6, label: text, pos: 'top' }, o || {})); },
   /* 竖版片尾：平板在上方，手机在左前，折叠屏在右下（手机片尾的 y 0→30 当作进度） */
   portraitDevice(id, d) {
     const o = d.o == null ? 1 : d.o;
@@ -285,7 +349,8 @@ const S = window.S = {
           const big = /big/.test(o.cls || ''), end = /end/.test(o.cls || '');
           el.classList.add('c');
           Object.assign(el.style, { left: '60px', width: '960px', top: (big ? 720 : end ? 150 : QS.get('tt1') ? 130 : 175) + 'px' });
-          if (FS && !big) { box.appendChild(el); el.style.top = Math.round(FS_BAND / 2 - el.offsetHeight / 2) + 'px'; }   // 铺满版：标题在网页上方那一条里上下居中
+          if (FS && !big) { box.appendChild(el); el.style.top = Math.round(FS_BAND / 2 - el.offsetHeight / 2) + 'px'; }
+          if (DK) { box.appendChild(el); el.style.top = Math.round((big ? 610 : DK_TY) - el.offsetHeight / 2) + 'px'; }   // 显示器版：字幕放在上面偏中间   // 铺满版：标题在网页上方那一条里上下居中
         } else Object.assign(el.style, { left: (o.x || 0) + 'px', top: (o.y || 0) + 'px', width: (o.w || 760) + 'px' });
         box.appendChild(el);
       }
@@ -321,12 +386,19 @@ const S = window.S = {
   },
   paintMarks(t) {
     for (const m of this.marks) {
-      if (!m.el) { m.el = document.createElement('div'); m.el.className = 'mark'; document.getElementById('scr').appendChild(m.el); }
+      if (!m.el) { m.el = document.createElement('div'); m.el.className = 'mark'; document.getElementById('scr').appendChild(m.el);
+        if (m.label) { m.lb = document.createElement('div'); m.lb.className = 'note ' + m.pos; m.lb.textContent = m.label; m.el.appendChild(m.lb); } }
       const a = Math.min(clamp01((t - m.t0) / 0.35), clamp01((m.t1 - t) / 0.35));
       m.el.style.opacity = E.io(a); if (a <= 0) continue;
       const e = typeof m.sel === 'function' ? m.sel(this.win()) : this.doc().querySelector(m.sel); if (!e) continue;
       const r = e.getBoundingClientRect();
       Object.assign(m.el.style, { left: (r.left - m.pad) + 'px', top: (r.top - m.pad) + 'px', width: (r.width + 2 * m.pad) + 'px', height: (r.height + 2 * m.pad) + 'px' });
+      if (m.box === false) Object.assign(m.el.style, { border: 'none', background: 'none', boxShadow: 'none' });
+      else if (DK && this.dkCam) { const k = this.dkCam.k; m.el.style.borderWidth = (4 / k) + 'px'; m.el.style.borderRadius = (14 / k) + 'px';
+      }
+      if (DK && this.dkCam && m.lb) { const k = this.dkCam.k;
+        Object.assign(m.lb.style, { fontSize: (30 / k) + 'px', padding: (8 / k) + 'px ' + (20 / k) + 'px', ['--g']: (14 / k) + 'px' }); }
+      if (m.lb) m.lb.style.transform = (m.pos === 'top' ? 'translate(-50%, calc(-100% - var(--g)))' : m.pos === 'bottom' ? 'translate(-50%, var(--g))' : m.pos === 'left' ? 'translate(calc(-100% - var(--g)), -50%)' : 'translate(var(--g), -50%)') + ` scale(${0.85 + 0.15 * E.out(a)})`;
     }
   },
   /* CSS 动画 / 过渡：全部暂停，每帧手动往前推 dt，录出来和真实播放一样流畅、每次录都一样 */
