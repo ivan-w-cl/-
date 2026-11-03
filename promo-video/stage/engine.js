@@ -236,11 +236,12 @@ const S = window.S = {
       let el = o.el;
       if (!el) {
         el = o.el = document.createElement('div'); el.className = 'tt ' + (o.cls || '');
-        el.innerHTML = (o.k ? `<div class="k">${o.k}</div>` : '') + `<div class="h">${o.h}</div>` + (o.s ? `<div class="s">${o.s}</div>` : '');
+        const hh = PORTRAIT && QS.get('tt1') && o.h.replace(/<br>/g, '').length <= 11 ? o.h.replace(/<br>/g, '') : o.h;   // 竖版（?tt1=1）：短标题放一行，手机上方留出空间
+        el.innerHTML = (o.k ? `<div class="k">${o.k}</div>` : '') + `<div class="h">${hh}</div>` + (o.s ? `<div class="s">${o.s}</div>` : '');
         if (PORTRAIT) {   // 竖版：标题都居中，放在手机上方；开场大标题在画面中间
           const big = /big/.test(o.cls || ''), end = /end/.test(o.cls || '');
           el.classList.add('c');
-          Object.assign(el.style, { left: '60px', width: '960px', top: (big ? 720 : end ? 150 : 175) + 'px' });
+          Object.assign(el.style, { left: '60px', width: '960px', top: (big ? 720 : end ? 150 : QS.get('tt1') ? 130 : 175) + 'px' });
         } else Object.assign(el.style, { left: (o.x || 0) + 'px', top: (o.y || 0) + 'px', width: (o.w || 760) + 'px' });
         box.appendChild(el);
       }
