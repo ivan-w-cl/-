@@ -1,7 +1,7 @@
 /* 留学住宿通 · 60 秒版（59 秒）—— 快节奏：每小节都有动作，按钮落在半拍上
    配乐 AudioEra「Stylish Trailer Percussion」（music/assemble-full.py 60）：bar 0–1 前奏 · 2–5 律动 A · 6 冲击 · 7–14 律动 B · 15 断拍 · 16–23 强段 C · 24–27 强段 D · 28 最后一下
    天气 → 我的专业 → 答题匹配（八分音符一题）→ 推荐理由 → 对比 → 列表筛选 → 通勤圈 → 冬季日照/安静 → 周边安全 → 吃饭 → 官网周价
-   → 断拍 → 日照（重拍）→ 一年总花费 → 按预算 → 人格测试分享卡 → 抢房计划 + 分享二维码 → 工具拖到边上收起 → 多设备 → 片名
+   → 断拍 → 日照（重拍）→ 一年总花费 → 按预算 → 订房专家群码（重拍）→ 抢房计划 + 分享二维码 → 工具拖到边上收起 → 多设备 → 片名
    录制：TL=timeline-t60 PRE=300 DATE=2026-11-03T12:00:00Z（竖版加 PORTRAIT=1 TT1=1） */
 'use strict';
 const BAR = 4 * 0.50026, LAG = 0.05;
@@ -156,16 +156,15 @@ S.tap(bar(19), byText('.hi-bar-b', '按预算'), { lead: 0.12, sfx: 'pop' });
 typeInto(at(19, 1), at(19, 2), w => w.document.querySelector('.bt-box input'), '8000');
 S.scroll(at(19, 2.4), at(19, 3.6), w => scrollParent(w.document.querySelector('.bt-box input')), box => box.scrollTop + 260);
 T(19, 20, { k: '按预算看房', h: '按总预算，反着找房。' });
-/* bar 20–21：人格测试 → 分享卡片 */
-S.at(bar(20) - 0.15, () => { closeAll(); try { W().FunQuizzes.open('buddy'); } catch (e) {} });
-S.tap(at(20, 0.4), '#fqWrap [data-fq="start"]', HALF);
-S.speed(at(20, 0.4), bar(21), 3, 0.1);
-for (let i = 0; i < 5; i++) S.tap(at(20, 1 + i * 0.5), `#fqWrap [data-fq="opt"][data-i="${i % 2}"]`, HALF);
-S.tap(bar(21), '#fqRes [data-fr="share"]', { lead: 0.12, sfx: 'pop' });
-['拍立得', '车票', '便利贴'].forEach((k, i) => S.tap(at(21, 1 + i * 0.8), byText('.sc-tab', k), HALF));
-T(20, 22, { k: '留学人格测试', h: '分享你的利物浦。' }, R);
+/* bar 20–21：订房专家群（群码在 bar 21 重拍上回传；网页 1.3 秒后才可以回传，那一拍点「刷新」） */
+S.at(bar(20) - 0.15, () => { closeAll(); W().show(homeById(W(), HOME_B), true); });
+S.tap(at(20, 0.1), '#card .cta', HALF);
+S.tap(bar(21) - 1.42, byText('.f83-button', '申请我的专家群'), HALF);
+S.tap(bar(21) - 0.04, w => [...w.document.querySelectorAll('button')].find(b => vis(b) && b.textContent.trim() === '刷新'), { lead: 0.25, sfx: false });
+S.sfx(bar(21), 'ding', 1);
+T(20, 22, { k: '订房专家', h: '一键，连上订房专家。', s: '演示群码，不会加入真实群聊。' }, R);
 /* bar 22–23：抢房准备 → 计划 → 分享二维码 */
-S.at(bar(22) - 0.15, () => { const x = [...D_().querySelectorAll('.sc-wrap .x')].find(vis); if (x) x.click(); closeAll(); W().show(homeById(W(), HOME_B), true); });
+S.at(bar(22) - 0.15, () => { const m = byText('.f83-button', '收起')(W()); if (m) m.click(); closeAll(); W().show(homeById(W(), HOME_B), true); });
 S.scroll(at(22, 0.1), at(22, 0.8), ...scrollTo(byText('.bt-tool', '抢房准备'), 0.5));
 S.tap(at(22, 1), byText('.bt-tool', '抢房准备'), { lead: 0.12, sfx: 'pop' });
 S.tap(at(22, 2), byText('button', '加入计划'), HALF);
