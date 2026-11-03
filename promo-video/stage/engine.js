@@ -126,6 +126,23 @@ const S = window.S = {
     });
     this.at(t1, () => { const el = get(); if (el) el.dispatchEvent(new Event('change', { bubbles: true })); });
   },
+  /* 拖动：t0 手指按下（点按圈停在按下的位置），t0–t1 拖过 (dx, dy) 像素，t1 松手。用合成的 PointerEvent，
+     所以先把网页里的 setPointerCapture 换成空操作（合成事件没有真实指针，原生方法会报错）。ax / ay：按在元素的哪个位置（像素） */
+  drag(t0, t1, sel, dx, dy, opts) {
+    opts = opts || {};
+    const h = { t0: t0 - 0.25, t1: t1 + 0.35, x: 0, y: 0 }; this.holds.push(h);
+    let el = null, x0 = 0, y0 = 0, tgt = null;
+    const ev = (type, x, y) => new (this.win().PointerEvent)(type, { bubbles: true, cancelable: true, pointerId: 7, isPrimary: true, pointerType: 'touch', clientX: x, clientY: y, button: 0, buttons: type === 'pointerup' ? 0 : 1 });
+    this.at(t0 - 0.25, () => {
+      const w = this.win(); for (const k of ['setPointerCapture', 'releasePointerCapture']) w.Element.prototype[k] = function () {};
+      el = typeof sel === 'function' ? sel(w) : w.document.querySelector(sel); if (!el) { console.warn('drag: missing', sel); return; }
+      const r = el.getBoundingClientRect(); x0 = r.left + (opts.ax == null ? r.width / 2 : opts.ax); y0 = r.top + (opts.ay == null ? r.height / 2 : opts.ay); h.x = x0; h.y = y0;
+      tgt = w.document.elementFromPoint(x0, y0) || el;
+    });
+    this.at(t0, () => { if (tgt) tgt.dispatchEvent(ev('pointerdown', x0, y0)); });
+    this.during(t0, t1, u => { if (!tgt) return; const p = (E[opts.ease || 'io'])(u), x = x0 + dx * p, y = y0 + dy * p; h.x = x; h.y = y; tgt.dispatchEvent(ev('pointermove', x, y)); });
+    this.at(t1, () => { if (tgt) tgt.dispatchEvent(ev('pointerup', x0 + dx, y0 + dy)); });
+  },
   /* 高亮框：t0–t1 在 app 里某个元素外面画一个圆角框（只是镜头上的标注，不改网页） */
   marks: [],
   mark(t0, t1, sel, o) { this.marks.push(Object.assign({ t0, t1, sel, pad: 6 }, o || {})); },
