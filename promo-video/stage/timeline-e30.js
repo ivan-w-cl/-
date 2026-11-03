@@ -85,8 +85,8 @@ S.at(bar(2) - 0.15, () => { closeAll(); W().show(homeById(W(), HOME_B), true); }
 QUICK(bar(2), F(895, 450, 1.55));
 S.tap(at(2, 0), '#card .cta', HALF);
 QUICK(at(2, 1.25), F(330, 450, 1.65));
-S.tap(at(2, 1.25), byText('.f83-button', '申请我的专家群'), HALF);
-S.tap(bar(3) - 0.04, refresh, { lead: 0.25, sfx: false });
+S.tap(at(2, 1.0), byText('.f83-button', '申请我的专家群'), HALF);
+S.tap(bar(3) - 0.02, refresh, { lead: 0.25, sfx: false });
 S.sfx(bar(3), 'ding', 1);
 PUNCH(bar(3), 1.07);
 T(2, 4, { k: '一键联系', h: '不用留任何联系方式', s: '群码自动弹出 演示码不会加入真实群聊' });
