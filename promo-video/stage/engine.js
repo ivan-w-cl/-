@@ -45,9 +45,9 @@ function K(t, v) {
    镜头推近时以目标点为中心放大（放大幅度收一些，避免盖住标题）；片尾三台设备改成前后叠放。 */
 const PORTRAIT = new URLSearchParams(location.search).get('p') === '1';
 const QS = new URLSearchParams(location.search), PK = +QS.get('pk') || 1.42, PAY = +QS.get('pay') || 1185, PZ = 0.45;   // 竖版：基础缩放、手机中心的高度、镜头放大幅度的折算（?pk= ?pay= 可改：手机放大一些，字更清楚）
-/* 铺满版（?p=1&fs=1）：不画手机外框，网页铺满标题下面的整块画面（网页按 432×648 排版，放大 2.5 倍）；
+/* 铺满版（?p=1&fs=1）：不画手机外框，网页铺满标题下面的整块画面（网页按 432×672 排版，放大 2.5 倍）；
    片尾 tracks.fs 从 0 到 1：镜头慢慢拉远，画面收成手机（外框、状态栏渐显），接着设备变形（S.morph） */
-const FS = PORTRAIT && QS.get('fs') === '1', FS_BAND = 300, FS_VW = 432, FS_VH = (1920 - FS_BAND) * FS_VW / 1080;
+const FS = PORTRAIT && QS.get('fs') === '1', FS_BAND = 240, FS_VW = 432, FS_VH = (1920 - FS_BAND) * FS_VW / 1080;
 const S = window.S = {
   portrait: PORTRAIT, fs: FS,
   actions: [], titles: [], taps: [], tracks: {}, done: 0, ready: false,

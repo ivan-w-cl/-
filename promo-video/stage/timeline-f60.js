@@ -101,6 +101,8 @@ S.tap(at(13, 0.1), '#card .cta', HALF);
 S.tap(bar(14) - 1.42, byText('.f83-button', '申请我的专家群'), HALF);
 S.tap(bar(14) - 0.04, w => [...w.document.querySelectorAll('button')].find(b => vis(b) && b.textContent.trim() === '刷新'), { lead: 0.25, sfx: false });
 S.sfx(bar(14), 'ding', 1);
+const qrImg = w => [...w.document.querySelectorAll('div, p, span')].reverse().find(e => vis(e) && e.textContent.includes('示例码') && scrollParent(e));
+S.scroll(at(14, 0.8), at(14, 2.2), w => scrollParent(qrImg(w)), box => box.scrollHeight - box.clientHeight - 52);   // 铺满版窗口矮一些：群码回传后把聊天滚到底，整张码露出来
 T(13, 15, { k: '订房专家', h: '一键连上订房专家', s: '演示群码 不会加入真实群聊' });
 /* bar 15（断拍）：true Liverpool → 安静度 */
 S.at(bar(15) - 0.15, () => { const m = byText('.f83-button', '收起')(W()); if (m) m.click(); closeAll(); W().show(homeById(W(), HOME_A), true); });
@@ -124,7 +126,7 @@ S.tap(at(19, 0.5), byText('.bp-room', '单人公寓'), HALF);
 S.scroll(at(19, 1), at(19, 2), ...scrollTo(byText('.bp-mp > .bt-btn', '分享'), 0.35));
 S.tap(at(19, 2.4), byText('.bp-mp > .bt-btn', '分享'), { lead: 0.12, sfx: 'pop' });
 S.scroll(at(19, 2.9), at(19, 3.7), ...scrollTo(w => w.document.querySelector('.bp-mp-card') || byText('.bp-mp > .bt-btn', '分享')(w), 0.2));
-T(18, 20, { k: '抢房准备', h: '排好要订哪间<br>分享给朋友' });
+T(18, 20, { k: '抢房准备', h: '排好要订哪间 分享给朋友' });
 /* bar 20–21：工具拖到边上收起，再点回来 */
 S.at(bar(20) - 0.15, () => { CLOSE(); const t = byText('button, a', '清空')(W()); if (t) t.click(); });
 S.mapGlide(bar(20) - 0.1, 0.8, studentsView);
