@@ -47,6 +47,14 @@ const T = (n0, n1, o) => S.title(bar(n0) + 0.02, bar(n1) - 0.12, Object.assign(o
 const CLOSE = () => { closeAll(); try { W().hide(); } catch (e) {} const c = D_().getElementById('cardX'); if (c && vis(c)) c.click(); };
 const F = (fx, fy, k) => ({ fx, fy, k });
 const CAM = (t, target, dur, ease) => S.cam(t - (dur || 0.5), dur || 0.5, target, ease || 'apple');   // 镜头在 t 这一刻到位
+
+/* 镜头快慢跟着音乐走：重拍一下到位，律动段短而快，断拍整小节慢慢推近，强段两小节一句、停留时镜头慢慢呼吸 */
+const SNAP = (t, tg) => CAM(t, tg, 0.2, 'out5');
+const QUICK = (t, tg) => CAM(t, tg, 0.32, 'out');
+const SMOOTH = (t, tg) => CAM(t, tg, 0.7, 'apple');
+const CREEP = (t0, t1, tg) => S.cam(t0, t1 - t0, tg, 'io');
+const DRIFT = (t0, t1, f, dx, dy) => S.cam(t0, t1 - t0, (w, g, c) => ({ fx: c.fx + (dx || 0), fy: c.fy + (dy || 0), k: c.k * f }), 'io');
+const PUNCH = (t, f) => S.cam(t, 0.3, (w, g, c) => ({ fx: c.fx, fy: c.fy, k: c.k * f }), 'out5');
 /* 报告里的元素（嵌在 iframe 里）：换成网页坐标 */
 const inner = (frameSel, find) => w => { const f = w.document.querySelector(frameSel); if (!f || !f.contentDocument) return null; const e = find(f.contentWindow); if (!e) return null; const o = f.getBoundingClientRect();
   return { getBoundingClientRect: () => { const r = e.getBoundingClientRect(); return { left: r.left + o.left, top: r.top + o.top, width: r.width, height: r.height }; } }; };
@@ -59,43 +67,43 @@ S.sfx(0.2, 'whoosh-up', 0.7);
 replayDrop(bar(1) - 0.9);
 /* bar 1–2：生活选房，八分音符一题 */
 S.at(bar(1) - 0.45, () => { try { W().HomeMatch.open(); } catch (e) {} });
-CAM(bar(1), F(720, 420, 1.55));
+QUICK(bar(1), F(720, 420, 1.55)); DRIFT(bar(1) + 0.1, at(2, 2.6), 1.06);
 S.tap(at(1, 0.4), leafText('开始生活选房'), HALF);
 S.speed(at(1, 0.4), bar(3), 3, 0.1);
 quiz(at(1, 0.8), BAR / 8);
 S.sfx(at(2, 2.4), 'pop', 0.8);
 T(1, 3, { k: '按生活选房', h: '8个问题 帮你匹配房源' });
 /* bar 3：推荐理由 */
-CAM(at(2, 3), S.focus('.why2', 1.75, { dy: -120 }), 0.6);
+QUICK(at(2, 3), S.focus('.why2', 1.75, { dy: -120 })); DRIFT(at(2, 3) + 0.1, at(3, 3.4), 1.04, 0, 20);
 S.scroll(at(2, 3.2), at(3, 1.4), ...scrollTo(byText('.why2 li', '亚洲食材'), 0.45));
 S.note(at(3, 0.2), at(3, 3.6), '.why2', '按你的答案 写出推荐理由', { pos: 'top', pad: 8 });
 T(3, 4, { k: '推荐房源', h: '推荐3处 理由写清楚' });
 /* bar 4–5：通勤圈 */
 S.at(bar(4) - 0.15, () => closeAll());
-CAM(bar(4), F(720, 430, 1.5), 0.5);
+QUICK(bar(4), F(720, 430, 1.5));
 S.tap(at(4, 0.2), byText('.hi-bar-b', '通勤'), { lead: 0.12, sfx: 'pop' });
 S.tap(at(4, 1.2), byText('.bt-chipbtn', '15 分钟'), HALF);
 S.tap(at(4, 2.2), byText('.bt-btn', '在地图上看'), HALF);
-CAM(at(5, 0), F(650, 470, 1.15), 0.9);
+CAM(at(5, 0), F(650, 470, 1.15), 0.6, 'out'); DRIFT(at(5, 0) + 0.1, at(5, 3.6), 1.05);
 S.note(at(5, 0.2), at(5, 3.6), w => ({ getBoundingClientRect: () => ({ left: 500, top: 300, width: 320, height: 300 }) }), '步行15分钟能到的范围', { pos: 'top', box: false });
 T(4, 6, { k: '通勤时间圈', h: '上课想住多近' });
 /* bar 6：周边安全 */
 S.at(bar(6) - 0.15, () => { const c = byText('.bt-link', '清除')(W()); if (c) c.click(); closeAll(); W().show(homeById(W(), HOME_A), true); });
-CAM(bar(6), F(895, 450, 1.55), 0.45);
+QUICK(bar(6), F(895, 450, 1.55));
 S.scroll(at(6, 0.1), at(6, 0.6), ...scrollTo(byText('.bt-tool', '周边报告'), 0.5));
 S.tap(at(6, 0.9), byText('.bt-tool', '周边报告'), { lead: 0.12, sfx: 'pop' });
-CAM(at(6, 1.8), F(720, 470, 1.4), 0.5);
+QUICK(at(6, 1.8), F(720, 470, 1.4));
 S.tap(at(6, 2.4), '[data-tab=safety]', { inner: '.full83-report-frame', lead: 0.12 });
 S.note(at(6, 2.7), bar(7) - 0.1, inner('.full83-report-frame', w => w.document.querySelector('[data-tab=safety]')), '公开记录 按类型统计', { pos: 'bottom', pad: 6 });
 T(6, 7, { k: '周边安全', h: '住进去之前 先看看周边' });
 /* bar 7（断拍）安静度 → bar 8（重拍）日照 */
 S.at(bar(7) - 0.15, () => { closeAll(); W().show(homeById(W(), HOME_A), true); });
-CAM(bar(7) + 0.2, F(830, 300, 1.5), 0.6);
+CREEP(bar(7) - 0.05, bar(8) - 0.08, F(840, 300, 1.62));
 S.tap(at(7, 0.8), byText('.hi-rb', '安静度'), { lead: 0.15, sfx: 'pop' });
 T(7, 8, { k: '安静度', h: '离主路铁路多远' });
 S.tap(bar(8), byText('.hi-rb', '日照'), { lead: 0.25, sfx: 'pop' });
 S.sfx(bar(8), 'hit', 0.55);
-CAM(bar(8) + 0.5, F(560, 420, 1.35), 0.6);
+SNAP(bar(8) + 0.02, F(560, 420, 1.35)); DRIFT(bar(8) + 0.3, bar(10) - 0.3, 1.06, 0, -10);
 S.tap(at(8, 1.2), byText('.hi-panel .bt-chipbtn', '今天'), HALF);
 S.slide(at(8, 2), at(8, 3.6), '.hi-panel input[type=range]', 720, 630);
 S.slide(at(9, 0.2), at(9, 3.4), '.hi-panel input[type=range]', 630, 860);
@@ -103,7 +111,7 @@ S.note(at(8, 1.8), at(9, 3.6), '.hi-panel input[type=range]', '拖一下 看一�
 T(8, 10, { k: '日照', h: '看看下午的光' });
 /* bar 10–11：拉远看整台显示器，界面全收起 */
 S.at(bar(10) - 0.15, () => { CLOSE(); const t = byText('button, a', '清空')(W()); if (t) t.click(); });
-CAM(bar(10), 'fit', 0.8);
+SMOOTH(bar(10), 'fit'); DRIFT(bar(11), bar(12) - 0.3, 1.05);
 S.tap(at(10, 0.4), panelClose('公寓列表'), HALF);
 S.tap(at(10, 1.0), panelClose('找公寓'), HALF);
 S.drag(at(10, 1.6), at(10, 3.1), '.hi-bar .hi-handle', -760, 40, { ax: 6, ay: 8 });
@@ -118,6 +126,7 @@ S.sfx(bar(12) - 0.1, 'whoosh-up', 0.55);
 S.during(bar(12) - 0.2, bar(12) + 2.0, () => { if (W().innerWidth < 1000) for (const id of ['homesPanel', 'controls']) { const e = D_().getElementById(id); if (e) e.classList.remove('collapsed'); } });
 S.geom(bar(13) + 0.1, 1.8, 'tablet', 'apple');
 S.cam(bar(13) + 0.1, 1.8, 'fit', 'apple');
+PUNCH(bar(14), 1.04);
 S.sfx(bar(13) + 0.2, 'whoosh-up', 0.55);
 T(12, 14, { k: '全设备适配', h: '电脑 手机 平板' });
 S.sfx(bar(14), 'hit', 0.9);

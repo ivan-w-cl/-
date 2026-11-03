@@ -276,7 +276,7 @@ const S = window.S = {
   /* ---------- 显示器版 ---------- */
   geoms: [], cams: [],
   geom(t0, dur, target, ease) { this.geoms.push({ t0, dur, target: typeof target === 'string' ? GEO[target] : target, ease }); this.geoms.sort((a, b) => a.t0 - b.t0); },
-  /* target：{ fx, fy, k }、'fit'（整台设备放进画面，设备变形时一直跟着）、或 (w, g) => { fx, fy, k }（开始那一刻在网页里算，例如对准某个元素） */
+  /* target：{ fx, fy, k }、'fit'（整台设备放进画面，设备变形时一直跟着）、或 (w, g, cur) => { fx, fy, k }（开始那一刻算：对准某个元素，或在当前镜头上慢慢推近） */
   cam(t0, dur, target, ease) { this.cams.push({ t0, dur, target, ease }); this.cams.sort((a, b) => a.t0 - b.t0); },
   fitCam(g) { const H = g.sh + 2 * g.pad + g.stand * 170; return { k: Math.min(1000 / (g.sw + 2 * g.pad), 1300 / H), fx: g.sw / 2, fy: g.sh / 2 + g.stand * 85 }; },
   /* 对准一个元素：sel 是选择器或 w => 元素；k 放大倍数；o.ox / o.oy 对准元素的哪个位置（0–1），o.dx / o.dy 再偏移（网页像素）。画面边上不露出网页外面 */
@@ -305,7 +305,7 @@ const S = window.S = {
     const T = this.tracks, rise = T.rise ? T.rise(t).y : 0;
     const lin = (a, b, p) => { const o = {}; for (const k in b) o[k] = a[k] + (b[k] - a[k]) * p; return o; };
     const g = this.runGlides(this.geoms, t, Object.assign({}, GEO.monitor), x => x, lin);
-    const c = this.runGlides(this.cams, t, this.fitCam(GEO.monitor), (x, cur) => (x === 'fit' ? this.fitCam(g) : typeof x === 'function' ? x(this.win(), g) : x),
+    const c = this.runGlides(this.cams, t, this.fitCam(GEO.monitor), (x, cur) => (x === 'fit' ? this.fitCam(g) : typeof x === 'function' ? x(this.win(), g, cur) : x),
       (a, b, p) => ({ fx: a.fx + (b.fx - a.fx) * p, fy: a.fy + (b.fy - a.fy) * p, k: Math.exp(Math.log(a.k) + (Math.log(b.k) - Math.log(a.k)) * p) }));
     this.dkCam = c;
     const el = document.getElementById('phone'), body = el.querySelector('.body'), screen = el.querySelector('.screen'), fr = document.getElementById('app');
