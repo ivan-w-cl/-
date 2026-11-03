@@ -55,9 +55,15 @@ html.portrait .tt .h { font-size: 82px; }
 html.portrait .tt.big .h { font-size: 118px; }
 html.portrait .tt.end .h { font-size: 76px; }
 html.portrait .tt.end .s { font-size: 30px; }
+/* 铺满版（?fs=1）：点按圈小一些（网页放大了 2.5 倍），标题字号略小、一行放下 */
+html.fs .tap { width: 30px; height: 30px; margin: -15px 0 0 -15px; border-width: 1.5px; }
+html.fs .mark { border-width: 2px; border-radius: 8px; }
+html.fs .tt .h { font-size: 80px; white-space: nowrap; }
+html.fs .tt .k { font-size: 30px; margin-bottom: 10px; }
+html.fs .tt .s { font-size: 30px; margin-top: 10px; }
 #veil { position: absolute; inset: 0; background: var(--bg1); opacity: 0; pointer-events: none; }
 </style></head>
-<script>if (new URLSearchParams(location.search).get('p') === '1') document.documentElement.classList.add('portrait');</script>
+<script>if (new URLSearchParams(location.search).get('p') === '1') document.documentElement.classList.add('portrait'); if (new URLSearchParams(location.search).get('fs') === '1') document.documentElement.classList.add('fs');</script>
 <body>
 <div id="bg"></div>
 <div id="cam">

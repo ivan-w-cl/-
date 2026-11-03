@@ -45,8 +45,11 @@ function K(t, v) {
    镜头推近时以目标点为中心放大（放大幅度收一些，避免盖住标题）；片尾三台设备改成前后叠放。 */
 const PORTRAIT = new URLSearchParams(location.search).get('p') === '1';
 const QS = new URLSearchParams(location.search), PK = +QS.get('pk') || 1.42, PAY = +QS.get('pay') || 1185, PZ = 0.45;   // 竖版：基础缩放、手机中心的高度、镜头放大幅度的折算（?pk= ?pay= 可改：手机放大一些，字更清楚）
+/* 铺满版（?p=1&fs=1）：不画手机外框，网页铺满标题下面的整块画面（网页按 432×648 排版，放大 2.5 倍）；
+   片尾 tracks.fs 从 0 到 1：镜头慢慢拉远，画面收成手机（外框、状态栏渐显），接着设备变形（S.morph） */
+const FS = PORTRAIT && QS.get('fs') === '1', FS_BAND = 300, FS_VW = 432, FS_VH = (1920 - FS_BAND) * FS_VW / 1080;
 const S = window.S = {
-  portrait: PORTRAIT,
+  portrait: PORTRAIT, fs: FS,
   actions: [], titles: [], taps: [], tracks: {}, done: 0, ready: false,
   /* 音效：录制时记下每个音效的时间，录完由 music/mix.py 按时间混进配乐（tick 点按、pop、whoosh、ding、hit…） */
   sfxLog: [], tapSfx: null,
@@ -163,7 +166,7 @@ const S = window.S = {
   },
   /* iframe 里 env(safe-area-inset-*) 是 0：换成真机的刘海和底部横条高度 */
   patchSafeArea(doc, ins) {
-    const rep = v => v.replace(/env\(\s*safe-area-inset-(top|bottom|left|right)\s*(,\s*[^)]*)?\)/g, (_, side) => (ins[side] || 0) + 'px');
+    const rep = v => v.replace(/env\(\s*safe-area-inset-(top|bottom|left|right)\s*(,\s*[^)]*)?\)/g, (_, side) => (FS ? `var(--sa-${side}, 0px)` : (ins[side] || 0) + 'px'));   // 铺满版：没有刘海，拉远成手机时再渐渐让出状态栏
     const walk = rules => { for (const r of rules) {
       if (r.style) for (let i = 0; i < r.style.length; i++) { const p = r.style[i], v = r.style.getPropertyValue(p); if (v.includes('safe-area-inset')) r.style.setProperty(p, rep(v), r.style.getPropertyPriority(p)); }
       if (r.cssRules) walk(r.cssRules);
@@ -188,6 +191,7 @@ const S = window.S = {
       else if (t > h.t1 && !h.last) { h.last = true; try { h.fn(1, t); } catch (e) { console.error('hook', e); } }
     }
     const T = this.tracks;
+    if (FS && (!this.morph || t < this.morph.t0)) { this.paintFS(t); this.paintTitles(t); this.paintTap(t); this.paintMarks(t); if (dt > 0) for (const id of ['app', 'appT', 'appF']) { try { this.stepAnims(this.doc(id), dt); } catch (e) { /* 还没载入 */ } } return; }
     const cam = T.cam ? T.cam(t) : { x: 960, y: 540, s: 1 };
     if (PORTRAIT) {   // 横向的镜头偏移是给侧边标题让位置的，竖版不需要；只保留推近的高度和幅度
       const k = PK * (1 + (cam.s - 1) * PZ), ay = PAY + (cam.y - 540) * PK;
@@ -237,6 +241,28 @@ const S = window.S = {
     document.querySelectorAll('#phone .btn').forEach(b => { b.style.opacity = 1 - fade(0, 0.25); });
     const crease = document.querySelector('#fold .crease'); if (crease) crease.style.opacity = clamp01(1 - Math.abs(p - 1) / 0.45);
   },
+  /* 铺满版：u = tracks.fs（0 铺满 → 1 手机），rise = tracks.rise（开场从下面升起，舞台像素）。
+     手机放在设备变形的起点（GP.phone），镜头从「屏幕铺满标题下面」插值到默认镜头，接上 paintMorph 不跳 */
+  paintFS(t) {
+    const T = this.tracks, u = T.fs ? T.fs(t).u : 0, rise = T.rise ? T.rise(t).y : 0, L = (a, b) => a + (b - a) * u;
+    const g = (this.morph && (this.morph.GP || this.morph.G) || {}).phone || { cx: 960, cy: 600, sc: 0.88 };
+    const sw = L(FS_VW, 390), sh = L(FS_VH, 844), pad = L(0, 14), W = sw + 2 * pad, H = sh + 2 * pad;
+    const el = document.getElementById('phone'), body = el.querySelector('.body'), screen = el.querySelector('.screen'), fr = document.getElementById('app');
+    Object.assign(el.style, { left: (g.cx - W / 2) + 'px', top: (g.cy - H / 2) + 'px', width: W + 'px', height: H + 'px', opacity: 1, transform: `translate(0px,${rise}px) scale(${g.sc})` });
+    Object.assign(body.style, { padding: pad + 'px', borderRadius: L(0, 66) + 'px',
+      boxShadow: `0 50px 90px -30px rgba(60,40,20,${0.45 * u}), 0 20px 40px -20px rgba(60,40,20,${0.35 * u}), inset 0 0 0 1.5px rgba(255,255,255,${0.12 * u})` });
+    Object.assign(screen.style, { width: sw + 'px', height: sh + 'px', borderRadius: L(0, 53) + 'px' });
+    const fw = Math.round(sw), fh = Math.round(sh);
+    if (fr.__w !== fw || fr.__h !== fh) { fr.__w = fw; fr.__h = fh; Object.assign(fr.style, { width: fw + 'px', height: fh + 'px', left: '0px', top: '0px' }); }
+    const ui = clamp01((u - 0.55) / 0.4);
+    document.querySelectorAll('#phone .status, #phone .island, #phone .homebar').forEach(b => { b.style.opacity = ui; });
+    document.querySelectorAll('#phone .btn').forEach(b => { b.style.opacity = u; });
+    try { const de = this.doc().documentElement, st = Math.round(47 * ui), sb = Math.round(34 * ui);
+      if (de.__st !== st || de.__sb !== sb) { de.__st = st; de.__sb = sb; de.style.setProperty('--sa-top', st + 'px'); de.style.setProperty('--sa-bottom', sb + 'px'); } } catch (e) { /* 还没载入 */ }
+    const k0 = 1080 / (FS_VW * g.sc), k = Math.exp(Math.log(k0) + (Math.log(PK) - Math.log(k0)) * u);
+    const cx = L(540, 540 + (g.cx - 960) * PK), cy = L(FS_BAND + (1920 - FS_BAND) / 2, PAY + (g.cy - 540) * PK);
+    document.getElementById('cam').style.transform = `translate(${cx - g.cx * k}px,${cy - g.cy * k}px) scale(${k})`;
+  },
   /* 竖版片尾：平板在上方，手机在左前，折叠屏在右下（手机片尾的 y 0→30 当作进度） */
   portraitDevice(id, d) {
     const o = d.o == null ? 1 : d.o;
@@ -259,6 +285,7 @@ const S = window.S = {
           const big = /big/.test(o.cls || ''), end = /end/.test(o.cls || '');
           el.classList.add('c');
           Object.assign(el.style, { left: '60px', width: '960px', top: (big ? 720 : end ? 150 : QS.get('tt1') ? 130 : 175) + 'px' });
+          if (FS && !big) { box.appendChild(el); el.style.top = Math.round(FS_BAND / 2 - el.offsetHeight / 2) + 'px'; }   // 铺满版：标题在网页上方那一条里上下居中
         } else Object.assign(el.style, { left: (o.x || 0) + 'px', top: (o.y || 0) + 'px', width: (o.w || 760) + 'px' });
         box.appendChild(el);
       }

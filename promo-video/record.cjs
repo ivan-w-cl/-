@@ -17,7 +17,7 @@ const RAIN = { current: { temperature_2m: 12.4, apparent_temperature: 10.1, weat
   const T0 = Date.parse(process.env.DATE || '2026-10-23T15:41:00Z');   // DATE：网页里的「现在」（日照「今天」、抢房倒计时用）
   await p.clock.install({ time: new Date(T0) });
   await p.clock.pauseAt(new Date(T0 + 200));
-  await p.goto('http://localhost:' + (process.env.PORT || 8780) + '/stage/index.html?' + (process.env.TL ? 'tl=' + process.env.TL : '') + (process.env.PORTRAIT ? '&p=1' : '') + (process.env.TT1 ? '&tt1=1' : '') + (process.env.PK ? '&pk=' + process.env.PK + '&pay=' + (process.env.PAY || 1160) : ''));   // PORTRAIT=1 → 竖版
+  await p.goto('http://localhost:' + (process.env.PORT || 8780) + '/stage/index.html?' + (process.env.TL ? 'tl=' + process.env.TL : '') + (process.env.PORTRAIT ? '&p=1' : '') + (process.env.TT1 ? '&tt1=1' : '') + (process.env.FS ? '&fs=1' : '') + (process.env.PK ? '&pk=' + process.env.PK + '&pay=' + (process.env.PAY || 1160) : ''));   // PORTRAIT=1 → 竖版
   await p.evaluate(() => document.fonts.ready);
   await p.evaluate(() => S.load({ app: '/web/index.html#lang=zh', appT: '/web/index.html#lang=zh', appF: '/web/index.html#lang=zh' }));
   await p.clock.runFor(+(process.env.PRE || 3000));   // 网页启动：字体、开场弹窗（PRE 改短，开场弹窗就在镜头里出现）
