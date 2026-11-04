@@ -274,7 +274,9 @@ const S = window.S = {
     document.getElementById('cam').style.transform = `translate(${cx - g.cx * k}px,${cy - g.cy * k}px) scale(${k})`;
   },
   /* ---------- 显示器版 ---------- */
-  geoms: [], cams: [],
+  geoms: [], cams: [], tilts: [], pulses: [],
+  tilt(t, deg, dur) { this.tilts.push({ t, deg, dur: dur || 0.6 }); },
+  pulse(t, amt, dur) { this.pulses.push({ t, amt: amt == null ? 0.02 : amt, dur: dur || 0.35 }); },
   geom(t0, dur, target, ease) { this.geoms.push({ t0, dur, target: typeof target === 'string' ? GEO[target] : target, ease }); this.geoms.sort((a, b) => a.t0 - b.t0); },
   /* target：{ fx, fy, k }、'fit'（整台设备放进画面，设备变形时一直跟着）、或 (w, g, cur) => { fx, fy, k }（开始那一刻算：对准某个元素，或在当前镜头上慢慢推近） */
   cam(t0, dur, target, ease) { this.cams.push({ t0, dur, target, ease }); this.cams.sort((a, b) => a.t0 - b.t0); },
@@ -321,7 +323,17 @@ const S = window.S = {
       if (de.__st !== st || de.__sb !== sb) { de.__st = st; de.__sb = sb; de.style.setProperty('--sa-top', st + 'px'); de.style.setProperty('--sa-bottom', sb + 'px'); } } catch (e) { /* 还没载入 */ }
     const st = document.getElementById('stand');   // 显示器支架：变成手机时收掉
     Object.assign(st.style, { display: g.stand > 0.01 ? 'block' : 'none', left: (g.sw / 2) + 'px', top: (g.sh + g.pad) + 'px', opacity: Math.min(1, g.stand * 1.6), transform: `translateX(-50%) scaleY(${g.stand})` });
-    document.getElementById('cam').style.transform = `translate(${540 - c.fx * c.k}px,${DK_CY + rise - c.fy * c.k}px) scale(${c.k})`;
+    /* 动态一点：S.tilt 重拍时画面轻轻一斜再回来，S.pulse 跟着鼓点轻推一下；镜头移动快时加一点运动模糊 */
+    let rz = 0, pz = 1;
+    for (const q of this.tilts) { const u = (t - q.t) / q.dur; if (u >= 0 && u <= 1) rz += q.deg * Math.sin(Math.PI * u) * (1 - u * 0.35); }
+    for (const q of this.pulses) { const u = (t - q.t) / q.dur; if (u >= 0 && u <= 1) pz *= 1 + q.amt * Math.exp(-u * 5) * Math.min(1, u * 12); }
+    const fxs = c.fx * c.k, fys = c.fy * c.k, prev = this.dkPrev;
+    let blur = 0;
+    if (prev && t > prev.t) { const v = Math.hypot(fxs - prev.x, fys - prev.y) + Math.abs(Math.log(c.k / prev.k)) * 900; blur = Math.max(0, Math.min(3.2, (v - 18) / 22)); }
+    this.dkPrev = { t, x: fxs, y: fys, k: c.k };
+    const camEl = document.getElementById('cam');
+    camEl.style.transform = `translate(540px,${DK_CY}px) rotate(${rz}deg) scale(${pz}) translate(-540px,${-DK_CY}px) translate(${540 - c.fx * c.k}px,${DK_CY + rise - c.fy * c.k}px) scale(${c.k})`;
+    camEl.style.filter = blur > 0.25 ? `blur(${blur.toFixed(2)}px)` : 'none';
     const tap = document.getElementById('tap'), ts = 64 / c.k;   // 点按圈、标注在画面上保持差不多大
     Object.assign(tap.style, { width: ts + 'px', height: ts + 'px', margin: (-ts / 2) + 'px 0 0 ' + (-ts / 2) + 'px', borderWidth: (2.5 / c.k) + 'px' });
   },
