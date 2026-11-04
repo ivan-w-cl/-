@@ -67,7 +67,8 @@ html.fs .tt .s { font-size: 30px; margin-top: 10px; }
 .stand .base { position: absolute; left: 50%; top: 128px; width: 440px; height: 20px; margin-left: -220px; border-radius: 10px 10px 6px 6px; background: linear-gradient(#48484a, #1c1c1e); box-shadow: 0 30px 40px -18px rgba(60,40,20,.45); }
 #capbg { position: absolute; left: 0; right: 0; top: 0; height: 600px; pointer-events: none; display: none; background: linear-gradient(to bottom, var(--bg1) 0, var(--bg1) 430px, rgba(251,248,242,0) 600px); }
 html.dk #capbg { display: block; }
-html.dk .tt .h { font-size: 84px; }
+html.dk .tt .h { font-size: 86px; font-weight: 900; letter-spacing: .02em; }
+.tt .w { transform-origin: 50% 70%; }
 html.dk .tt .k { font-size: 32px; margin-bottom: 12px; }
 html.dk .tt .s { font-size: 32px; margin-top: 12px; }
 .mark .note { position: absolute; left: 50%; top: 0; white-space: nowrap; font: 700 30px/1.2 'Noto Sans SC', sans-serif; color: #fff; background: #c2522f; border-radius: 999px; box-shadow: 0 6px 16px rgba(120,50,20,.28); --g: 14px; }
@@ -97,6 +98,7 @@ html.dk .tt .s { font-size: 32px; margin-top: 12px; }
 </div>
 <div id="capbg"></div>
 <div id="titles"></div>
+<div id="flash" style="position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none"></div>
 <div id="veil"></div>
 <script src="engine.js"></script>
 <script>document.write('<script src="' + (new URLSearchParams(location.search).get('tl') || 'timeline') + '.js"><\/script>');</script>   <!-- ?tl=timeline-30 选 30 秒版 -->

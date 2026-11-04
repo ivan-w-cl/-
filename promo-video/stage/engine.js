@@ -67,6 +67,7 @@ const S = window.S = {
   /* 点按：t-lead 出现点按圈（默认 0.32 秒），t 时真的点。每个点按记住自己找到的按钮，快速连点时互不干扰 */
   tap(t, sel, opts) {
     opts = opts || {};
+    const tb = t; t -= opts.early == null ? (this.tapEarly || 0) : opts.early;   // tapEarly：网页的弹出 / 展开动画要 0.2 秒左右，提前一点点下去，画面变化正好落在拍子上（点按声还在拍子上）
     const lead = opts.lead == null ? 0.32 : opts.lead, dur = Math.max(0.4, lead * 2.35);
     const host = () => { const w = this.win(opts.frame); if (!opts.inner) return { w, dx: 0, dy: 0 }; const f = w.document.querySelector(opts.inner); const r = f.getBoundingClientRect(); return { w: f.contentWindow, dx: r.left, dy: r.top }; };   // opts.inner：点 app 里嵌套的 iframe（周边报告）
     const find = () => { const { w } = host(); return typeof sel === 'function' ? sel(w) : w.document.querySelector(sel); };
@@ -80,7 +81,7 @@ const S = window.S = {
         el = find();
         if (el) ring(t - Math.min(0.12, lead), el); else console.warn('tap: still no element', sel);
       }
-      if (el) { if (opts.fn) opts.fn(el); else el.click(); if (this.tapSfx && opts.sfx !== false) this.sfxLog.push({ t, name: opts.sfx || this.tapSfx, gain: opts.gain == null ? 1 : opts.gain }); }
+      if (el) { if (opts.fn) opts.fn(el); else el.click(); if (this.tapSfx && opts.sfx !== false) this.sfxLog.push({ t: tb, name: opts.sfx || this.tapSfx, gain: opts.gain == null ? 1 : opts.gain }); }
     });
   },
   title(tin, tout, o) { this.titles.push(Object.assign({ tin, tout }, o)); },
@@ -274,7 +275,8 @@ const S = window.S = {
     document.getElementById('cam').style.transform = `translate(${cx - g.cx * k}px,${cy - g.cy * k}px) scale(${k})`;
   },
   /* ---------- 显示器版 ---------- */
-  geoms: [], cams: [], tilts: [], pulses: [], cuts: [],
+  geoms: [], cams: [], tilts: [], pulses: [], cuts: [], flashes: [],
+  flash(t, amt, dur) { this.flashes.push({ t, amt: amt == null ? 0.35 : amt, dur: dur || 0.22 }); },
   /* 一刀切：t 这一帧镜头直接到位（不推不移） */
   cut(t, target) { this.cuts.push(t); this.cam(t - 0.001, 0.001, target, 'lin'); },
   tilt(t, deg, dur) { this.tilts.push({ t, deg, dur: dur || 0.6 }); },
@@ -338,6 +340,8 @@ const S = window.S = {
     const camEl = document.getElementById('cam');
     camEl.style.transform = `translate(540px,${DK_CY}px) rotate(${rz}deg) scale(${pz}) translate(-540px,${-DK_CY}px) translate(${540 - c.fx * c.k}px,${DK_CY + rise - c.fy * c.k}px) scale(${c.k})`;
     camEl.style.filter = blur > 0.25 ? `blur(${blur.toFixed(2)}px)` : 'none';
+    let fl = 0; for (const q of this.flashes) { const u = (t - q.t) / q.dur; if (u >= 0 && u <= 1) fl = Math.max(fl, q.amt * (1 - u) * (1 - u)); }
+    const fe = document.getElementById('flash'); if (fe) fe.style.opacity = fl;   // 镲上闪一下白
     const tap = document.getElementById('tap'), ts = 64 / c.k;   // 点按圈、标注在画面上保持差不多大
     Object.assign(tap.style, { width: ts + 'px', height: ts + 'px', margin: (-ts / 2) + 'px 0 0 ' + (-ts / 2) + 'px', borderWidth: (2.5 / c.k) + 'px' });
   },
@@ -360,7 +364,8 @@ const S = window.S = {
       if (!el) {
         el = o.el = document.createElement('div'); el.className = 'tt ' + (o.cls || '');
         const hh = PORTRAIT && QS.get('tt1') && o.h.replace(/<br>/g, '').length <= 11 ? o.h.replace(/<br>/g, '') : o.h;   // 竖版（?tt1=1）：短标题放一行，手机上方留出空间
-        el.innerHTML = (o.k ? `<div class="k">${o.k}</div>` : '') + `<div class="h">${hh}</div>` + (o.s ? `<div class="s">${o.s}</div>` : '');
+        const hc = o.beats ? hh.split(/ |<br>/).map((w, j, arr) => `<span class="w" data-i="${j}">${w}</span>`).join(hh.includes('<br>') ? '<br>' : ' ') : hh;   // o.beats：一句话按空格分块，每块落在一个拍子上
+        el.innerHTML = (o.k ? `<div class="k">${o.k}</div>` : '') + `<div class="h">${hc}</div>` + (o.s ? `<div class="s">${o.s}</div>` : '');
         if (PORTRAIT) {   // 竖版：标题都居中，放在手机上方；开场大标题在画面中间
           const big = /big/.test(o.cls || ''), end = /end/.test(o.cls || '');
           el.classList.add('c');
@@ -369,6 +374,17 @@ const S = window.S = {
           if (DK) { box.appendChild(el); el.style.top = Math.round((o.cy || (big ? 610 : DK_TY)) - el.offsetHeight / 2) + 'px'; }   // o.cy：标题中心放在哪个高度   // 显示器版：字幕放在上面偏中间   // 铺满版：标题在网页上方那一条里上下居中
         } else Object.assign(el.style, { left: (o.x || 0) + 'px', top: (o.y || 0) + 'px', width: (o.w || 760) + 'px' });
         box.appendChild(el);
+      }
+      if (o.beats) {   // 跟着鼓点砸出来：每块放大一点落下、立刻到位；离场快速往上收
+        const out = clamp01((t - (o.tout - 0.16)) / 0.16), vis0 = t >= o.beats[0] - 1e-6 && out < 1;
+        el.style.display = vis0 ? '' : 'none'; if (!vis0) return;
+        el.style.opacity = 1 - out; el.style.filter = 'none'; el.style.transform = `translateY(${-E.in(out) * 26}px)`;
+        el.querySelectorAll('.w').forEach(w => { const bt = o.beats[Math.min(+w.dataset.i, o.beats.length - 1)], u = clamp01((t - bt) / 0.16);
+          w.style.opacity = t < bt ? 0 : Math.min(1, u * 3); w.style.display = 'inline-block'; w.style.transform = `scale(${t < bt ? 1.3 : 1 + 0.3 * (1 - E.out5(u))})`; });
+        const k = el.querySelector('.k'), s2 = el.querySelector('.s');
+        if (k) k.style.opacity = clamp01((t - o.beats[0]) / 0.1);
+        if (s2) s2.style.opacity = clamp01((t - o.beats[o.beats.length - 1] - 0.1) / 0.2);
+        return;
       }
       const fi = o.fade || 0.7, pin = clamp01((t - o.tin) / fi), pout = clamp01((t - (o.tout - fi * 0.8)) / (fi * 0.8));
       const a = E.out(pin) * (1 - E.in(pout));
