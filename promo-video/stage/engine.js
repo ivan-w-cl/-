@@ -274,7 +274,9 @@ const S = window.S = {
     document.getElementById('cam').style.transform = `translate(${cx - g.cx * k}px,${cy - g.cy * k}px) scale(${k})`;
   },
   /* ---------- 显示器版 ---------- */
-  geoms: [], cams: [], tilts: [], pulses: [],
+  geoms: [], cams: [], tilts: [], pulses: [], cuts: [],
+  /* 一刀切：t 这一帧镜头直接到位（不推不移） */
+  cut(t, target) { this.cuts.push(t); this.cam(t - 0.001, 0.001, target, 'lin'); },
   tilt(t, deg, dur) { this.tilts.push({ t, deg, dur: dur || 0.6 }); },
   pulse(t, amt, dur) { this.pulses.push({ t, amt: amt == null ? 0.02 : amt, dur: dur || 0.35 }); },
   geom(t0, dur, target, ease) { this.geoms.push({ t0, dur, target: typeof target === 'string' ? GEO[target] : target, ease }); this.geoms.sort((a, b) => a.t0 - b.t0); },
@@ -306,8 +308,9 @@ const S = window.S = {
   paintDK(t) {
     const T = this.tracks, rise = T.rise ? T.rise(t).y : 0;
     const lin = (a, b, p) => { const o = {}; for (const k in b) o[k] = a[k] + (b[k] - a[k]) * p; return o; };
-    const g = this.runGlides(this.geoms, t, Object.assign({}, GEO.monitor), x => x, lin);
-    const c = this.runGlides(this.cams, t, this.fitCam(GEO.monitor), (x, cur) => (x === 'fit' ? this.fitCam(g) : typeof x === 'function' ? x(this.win(), g, cur) : x),
+    const g0 = GEO[QS.get('dkstart') || 'monitor'];   // ?dkstart=phone：一开头就是手机
+    const g = this.runGlides(this.geoms, t, Object.assign({}, g0), x => x, lin);
+    const c = this.runGlides(this.cams, t, this.fitCam(g0), (x, cur) => (x === 'fit' ? this.fitCam(g) : typeof x === 'function' ? x(this.win(), g, cur) : x),
       (a, b, p) => ({ fx: a.fx + (b.fx - a.fx) * p, fy: a.fy + (b.fy - a.fy) * p, k: Math.exp(Math.log(a.k) + (Math.log(b.k) - Math.log(a.k)) * p) }));
     this.dkCam = c;
     const el = document.getElementById('phone'), body = el.querySelector('.body'), screen = el.querySelector('.screen'), fr = document.getElementById('app');
@@ -329,7 +332,8 @@ const S = window.S = {
     for (const q of this.pulses) { const u = (t - q.t) / q.dur; if (u >= 0 && u <= 1) pz *= 1 + q.amt * Math.exp(-u * 5) * Math.min(1, u * 12); }
     const fxs = c.fx * c.k, fys = c.fy * c.k, prev = this.dkPrev;
     let blur = 0;
-    if (prev && t > prev.t) { const v = Math.hypot(fxs - prev.x, fys - prev.y) + Math.abs(Math.log(c.k / prev.k)) * 900; blur = Math.max(0, Math.min(3.2, (v - 18) / 22)); }
+    const cutNow = prev && this.cuts.some(x => x > prev.t - 1e-6 && x <= t + 1e-6);   // 一刀切：这一帧不加运动模糊
+    if (prev && t > prev.t && !cutNow) { const v = Math.hypot(fxs - prev.x, fys - prev.y) + Math.abs(Math.log(c.k / prev.k)) * 900; blur = Math.max(0, Math.min(3.2, (v - 18) / 22)); }
     this.dkPrev = { t, x: fxs, y: fys, k: c.k };
     const camEl = document.getElementById('cam');
     camEl.style.transform = `translate(540px,${DK_CY}px) rotate(${rz}deg) scale(${pz}) translate(-540px,${-DK_CY}px) translate(${540 - c.fx * c.k}px,${DK_CY + rise - c.fy * c.k}px) scale(${c.k})`;
@@ -362,7 +366,7 @@ const S = window.S = {
           el.classList.add('c');
           Object.assign(el.style, { left: '60px', width: '960px', top: (big ? 720 : end ? 150 : QS.get('tt1') ? 130 : 175) + 'px' });
           if (FS && !big) { box.appendChild(el); el.style.top = Math.round(FS_BAND / 2 - el.offsetHeight / 2) + 'px'; }
-          if (DK) { box.appendChild(el); el.style.top = Math.round((big ? 610 : DK_TY) - el.offsetHeight / 2) + 'px'; }   // 显示器版：字幕放在上面偏中间   // 铺满版：标题在网页上方那一条里上下居中
+          if (DK) { box.appendChild(el); el.style.top = Math.round((o.cy || (big ? 610 : DK_TY)) - el.offsetHeight / 2) + 'px'; }   // o.cy：标题中心放在哪个高度   // 显示器版：字幕放在上面偏中间   // 铺满版：标题在网页上方那一条里上下居中
         } else Object.assign(el.style, { left: (o.x || 0) + 'px', top: (o.y || 0) + 'px', width: (o.w || 760) + 'px' });
         box.appendChild(el);
       }
