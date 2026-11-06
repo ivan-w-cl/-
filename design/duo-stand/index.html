@@ -1,0 +1,489 @@
+<title>Duo 磁吸支架</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: 一屏产品舞台（可旋转 3D 模型）+ 下方工程说明，单列 980px，苹果式留白 */
+:root{
+  --bg:#f5f5f7; --surface:#ffffff; --stage-a:#fbfbfd; --stage-b:#e8e8ed;
+  --fg:#1d1d1f; --muted:#6e6e73; --line:#d2d2d7; --accent:#0066cc; --warn:#d70015;
+  --alu:#a1a1a6;
+  --font-ui:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --font-data:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#000000; --surface:#161617; --stage-a:#1c1c1e; --stage-b:#0a0a0b;
+  --fg:#f5f5f7; --muted:#a1a1a6; --line:#38383b; --accent:#2997ff; --warn:#ff453a; --alu:#6e6e73; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#000000; --surface:#161617; --stage-a:#1c1c1e; --stage-b:#0a0a0b;
+  --fg:#f5f5f7; --muted:#a1a1a6; --line:#38383b; --accent:#2997ff; --warn:#ff453a; --alu:#6e6e73; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-ui);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(34px,6vw,56px);font-weight:700;line-height:1.08}
+h2{font-size:clamp(24px,3.6vw,34px);font-weight:700;line-height:1.15}
+h3{font-size:17px;font-weight:600}
+p{margin:0}
+.eyebrow{font-size:13px;letter-spacing:.08em;color:var(--muted);font-weight:500}
+.lede{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:40em;line-height:1.5}
+.mono{font-family:var(--font-data);font-variant-numeric:tabular-nums}
+
+header.hero{display:grid;gap:14px;padding-block:56px 28px;text-align:left}
+
+/* stage */
+.stage{position:relative;border-radius:28px;overflow:hidden;
+  background:radial-gradient(120% 90% at 50% 20%,var(--stage-a),var(--stage-b));
+  aspect-ratio:16/11;max-width:100%;min-height:420px}
+.stage canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+.stage canvas:active{cursor:grabbing}
+.badge{position:absolute;left:max(18px,env(safe-area-inset-left,0px));top:18px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;pointer-events:none}
+.pill{font-size:13px;padding:5px 12px;border-radius:999px;background:var(--surface);color:var(--fg);border:1px solid var(--line)}
+.pill.warn{color:var(--warn);border-color:currentColor}
+.pill.ok{color:var(--accent);border-color:currentColor}
+.views{position:absolute;right:18px;top:16px;display:flex;gap:6px}
+.chip{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{color:var(--fg);border-color:var(--fg)}
+.hint{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-size:12px;color:var(--muted);pointer-events:none}
+
+.controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding-block:18px 8px}
+.btn{font:inherit;font-size:15px;font-weight:500;padding:10px 20px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;transition:border-color .2s,background .2s}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:focus-visible,.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.status{text-align:center;color:var(--muted);font-size:14px;min-height:1.6em}
+
+section{padding-block:72px 0;display:grid;gap:22px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px;align-items:start}
+.cols > *{min-width:0}
+.card{background:var(--surface);border-radius:22px;padding:24px;display:grid;gap:10px}
+
+/* physics */
+.calc{display:grid;gap:0;border-top:1px solid var(--line)}
+.calc div{display:flex;justify-content:space-between;gap:16px;padding-block:11px;border-bottom:1px solid var(--line);font-size:15px}
+.calc div span:first-child{color:var(--muted)}
+.calc div.hl span:last-child{color:var(--warn);font-weight:600}
+.calc div.good span:last-child{color:var(--accent);font-weight:600}
+.note{font-size:13px;color:var(--muted)}
+
+/* drawing + table */
+.drawing{background:var(--surface);border-radius:22px;padding:16px;overflow-x:auto}
+.drawing svg{display:block;width:100%;height:auto;min-width:300px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:11px 10px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;color:var(--muted);font-weight:500}
+td:first-child{font-weight:600;white-space:nowrap}
+td.mono{white-space:nowrap;font-size:13px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{background:var(--surface);border-radius:22px;padding:22px;display:grid;gap:8px;align-content:start}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--font-data);font-size:13px;color:var(--accent)}
+.steps p{color:var(--muted);font-size:15px}
+
+/* CMF */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px}
+.sw{display:grid;gap:12px}
+.chipball{aspect-ratio:16/9;max-width:100%;border-radius:22px}
+.sw p{font-size:14px;color:var(--muted)}
+.c-white{background:radial-gradient(80% 80% at 30% 25%,#ffffff,#ecece9 55%,#d9d9d6)}
+.c-alu{background:linear-gradient(135deg,#f0f1f3 0%,#c9cacd 40%,#e9eaec 55%,#b4b5b8 100%)}
+.c-sil{background:radial-gradient(90% 90% at 40% 30%,#fbfbf9,#efefec 70%,#e2e2df)}
+.c-steel{background:linear-gradient(160deg,#dedfe1,#9fa1a5 45%,#e6e7e9 60%,#8d8f93)}
+
+ul.plain{margin:0;padding-left:1.1em;display:grid;gap:8px;color:var(--muted)}
+ul.plain b{color:var(--fg);font-weight:600}
+footer{padding-block:64px 0;color:var(--muted);font-size:13px}
+
+@media (max-width:560px){
+  .stage{aspect-ratio:3/4;min-height:0;border-radius:22px}
+  .views{top:auto;bottom:40px;right:50%;transform:translateX(50%)}
+  .hint{bottom:12px}
+}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">桌面支架 · 概念设计 · 适配 iPhone 折叠屏</p>
+    <h1>Duo 磁吸支架</h1>
+    <p class="lede">一根铝立柱，一个磁吸头。磁吸圈背后多藏了一根伸缩支撑杆：手机展开后往外一提，硅胶脚顶住另一半机身，不再往下滑。不用时收回去，和立柱连成一条线。</p>
+  </header>
+
+  <div class="stage" id="stage">
+    <canvas id="c" aria-label="Duo 磁吸支架 3D 模型，可拖动旋转"></canvas>
+    <div class="badge" aria-live="polite"><span class="pill" id="pState">展开 · 支撑杆抬起</span><span class="pill ok" id="pSlip">稳定 0°</span></div>
+    <div class="views" role="group" aria-label="视角">
+      <button class="chip" data-view="back" aria-pressed="true">背面</button>
+      <button class="chip" data-view="front" aria-pressed="false">正面</button>
+      <button class="chip" data-view="side" aria-pressed="false">侧面</button>
+    </div>
+    <p class="hint">拖动旋转 · 滚轮或双指缩放</p>
+  </div>
+  <div class="controls">
+    <button class="btn primary" id="bDemo">播放演示</button>
+    <button class="btn" id="bFold" aria-pressed="false">折叠手机</button>
+    <button class="btn" id="bArm" aria-pressed="true">收起支撑杆</button>
+  </div>
+  <p class="status" id="status">支撑杆顶住左半边机身背面，整机保持水平。</p>
+
+  <section>
+    <p class="eyebrow">问题</p>
+    <h2>为什么现在的磁吸支架一展开就滑</h2>
+    <div class="cols">
+      <div class="card">
+        <p>折叠屏的磁吸圈只在其中一半的背面。合上时，重心正好落在磁吸圈上；一展开，另一半（约 120 g）悬在 8 cm 之外，形成一个绕磁吸圈转动的力矩。玻璃背板和磁吸面之间的摩擦扛不住这个力矩，整台手机就会慢慢转着往下溜。</p>
+        <p>所以问题不在吸力不够，而是缺一个<b>离磁吸圈足够远</b>的支点。支撑杆的硅胶脚放在距磁吸中心 85 mm 的位置，正好落在另一半机身的中心附近。</p>
+      </div>
+      <div>
+        <div class="calc mono">
+          <div><span>悬空半边重量</span><span>≈ 120 g</span></div>
+          <div><span>重心到磁吸中心</span><span>≈ 80 mm</span></div>
+          <div class="hl"><span>下滑力矩</span><span>≈ 0.094 N·m</span></div>
+          <div><span>磁吸面能提供的转动摩擦</span><span>≈ 0.06 N·m</span></div>
+          <div class="good"><span>支撑杆在 85 mm 处需要的托力</span><span>≈ 1.1 N（≈ 113 g）</span></div>
+        </div>
+        <p class="note" style="margin-top:10px">估算条件：展开整机约 240 g，磁吸拉力约 10 N，玻璃背板与硅胶的摩擦系数约 0.25，等效摩擦半径 23 mm。拿到实机后按实测值复核。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">结构</p>
+    <h2>七个零件，一个新增的支点</h2>
+    <div class="cols">
+      <div class="drawing">
+        <svg viewBox="40 18 270 322" role="img" aria-label="正视尺寸图：展开手机宽 160 毫米，高 118 毫米，支撑杆伸出 85 毫米，磁吸头直径 60 毫米，磁吸中心离桌面 176 毫米，底座直径 110 毫米">
+          <defs>
+            <marker id="ar" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L7,4 L0,7 z" fill="var(--muted)"/></marker>
+          </defs>
+          <g fill="none" stroke="var(--muted)" stroke-width=".6">
+            <line x1="40" y1="296" x2="300" y2="296" stroke-dasharray="3 3"/>
+          </g>
+          <!-- base + column -->
+          <rect x="145" y="286" width="110" height="10" rx="4" fill="var(--surface)" stroke="var(--fg)" stroke-width="1"/>
+          <rect x="194" y="150" width="12" height="136" fill="var(--surface)" stroke="var(--fg)" stroke-width="1"/>
+          <!-- phone (transparent) -->
+          <rect x="80" y="61" width="160" height="118" rx="9" fill="var(--bg)" fill-opacity=".55" stroke="var(--fg)" stroke-width="1.2"/>
+          <line x1="160" y1="61" x2="160" y2="179" stroke="var(--muted)" stroke-width=".8" stroke-dasharray="4 3"/>
+          <text x="120" y="76" text-anchor="middle" font-size="8" fill="var(--muted)" font-family="var(--font-ui)">悬空的一半</text>
+          <text x="200" y="76" text-anchor="middle" font-size="8" fill="var(--muted)" font-family="var(--font-ui)">磁吸的一半</text>
+          <!-- puck -->
+          <circle cx="200" cy="120" r="30" fill="none" stroke="var(--fg)" stroke-width="1.2"/>
+          <circle cx="200" cy="120" r="23" fill="none" stroke="var(--muted)" stroke-width=".8"/>
+          <!-- arm -->
+          <line x1="191" y1="120" x2="115" y2="120" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="115" cy="120" r="4.2" fill="var(--accent)"/>
+          <text x="115" y="136" text-anchor="middle" font-size="8" fill="var(--accent)" font-family="var(--font-ui)">硅胶脚</text>
+          <!-- dims -->
+          <g stroke="var(--muted)" stroke-width=".6" fill="none">
+            <line x1="80" y1="40" x2="240" y2="40" marker-start="url(#ar)" marker-end="url(#ar)"/>
+            <line x1="80" y1="36" x2="80" y2="58"/><line x1="240" y1="36" x2="240" y2="58"/>
+            <line x1="115" y1="104" x2="200" y2="104" marker-start="url(#ar)" marker-end="url(#ar)"/>
+            <line x1="262" y1="61" x2="262" y2="179" marker-start="url(#ar)" marker-end="url(#ar)"/>
+            <line x1="285" y1="120" x2="285" y2="296" marker-start="url(#ar)" marker-end="url(#ar)"/>
+            <line x1="230" y1="120" x2="290" y2="120" stroke-dasharray="2 2"/>
+            <line x1="145" y1="318" x2="255" y2="318" marker-start="url(#ar)" marker-end="url(#ar)"/>
+            <line x1="145" y1="298" x2="145" y2="322"/><line x1="255" y1="298" x2="255" y2="322"/>
+            <line x1="221" y1="99" x2="236" y2="88"/>
+          </g>
+          <g font-family="var(--font-data)" font-size="9" fill="var(--fg)" text-anchor="middle">
+            <text x="160" y="35">160</text>
+            <text x="157" y="100">85</text>
+            <text x="270" y="124" transform="rotate(-90 270 124)">118</text>
+            <text x="295" y="212" transform="rotate(-90 295 212)">176</text>
+            <text x="200" y="334">Ø110</text>
+            <text x="248" y="87">Ø60</text>
+          </g>
+        </svg>
+        <p class="note" style="padding:6px 6px 2px">正视图，机身按透明绘制，单位 mm。手机尺寸为假设值，需按实机修正。</p>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>部件</th><th>材料 / 工艺</th><th>关键尺寸</th></tr></thead>
+          <tbody>
+            <tr><td>底座</td><td>铝外壳 + 锌合金配重芯，纯白陶瓷质感涂层；底面白色硅胶防滑</td><td class="mono">Ø110 × 10</td></tr>
+            <tr><td>立柱</td><td>6061 铝棒，细喷砂 + 本色阳极氧化</td><td class="mono">Ø12 × 160</td></tr>
+            <tr><td>球形关节</td><td>不锈钢球 + POM 阻尼碗，松紧可调</td><td class="mono">仰角 0–30°</td></tr>
+            <tr><td>磁吸头</td><td>铝壳白色涂层，N52 磁环，兼容 MagSafe；白色硅胶贴面</td><td class="mono">Ø60 × 10</td></tr>
+            <tr><td>旋转环</td><td>夹在磁吸头背面，钢珠定位，支撑杆可转到任意一侧</td><td class="mono">24 档 · 15°</td></tr>
+            <tr><td>支撑杆</td><td>三节伸缩不锈钢管，喷砂银，阻尼圈防自滑</td><td class="mono">41 → 85</td></tr>
+            <tr><td>硅胶脚</td><td>弹簧铰链，拉到底自动翻出 90°；邵氏 30A 硅胶</td><td class="mono">Ø8 · 前伸 13</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">用法</p>
+    <h2>吸上、展开、一提</h2>
+    <ol class="steps">
+      <li><h3>吸上</h3><p>合着的手机直接吸在磁吸头上。支撑杆收在背面，竖直朝下，和立柱看起来是一根线。</p></li>
+      <li><h3>展开</h3><p>打开手机。悬空的那一半会开始往下沉，这就是现在其他支架的问题。</p></li>
+      <li><h3>提起支撑杆</h3><p>捏住杆头往悬空一侧转、往外提。拉到底时硅胶脚自动翻出，贴住背面把那一半托平。</p></li>
+      <li><h3>收起</h3><p>按一下硅胶脚让它折回，把杆推回去，再转回竖直位置。横屏竖屏都可以用，旋转环每 15° 一档。</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <p class="eyebrow">外观与工艺</p>
+    <h2>纯白，加一点铝</h2>
+    <div class="swatches">
+      <div class="sw"><div class="chipball c-white"></div><h3>纯白陶瓷质感涂层</h3><p>底座、磁吸头外壳。微弧氧化或陶瓷漆，摸起来细腻温润，不发黄。</p></div>
+      <div class="sw"><div class="chipball c-alu"></div><h3>本色喷砂铝</h3><p>立柱、旋转环。细砂面阳极氧化，和白色形成一冷一暖。</p></div>
+      <div class="sw"><div class="chipball c-steel"></div><h3>喷砂不锈钢</h3><p>伸缩支撑杆。管壁薄、刚性好，伸出 85 mm 也不晃。</p></div>
+      <div class="sw"><div class="chipball c-sil"></div><h3>白色硅胶</h3><p>磁吸贴面、硅胶脚、底部防滑圈。增加摩擦，不留印。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">打样前要确认</p>
+    <h2>三件事</h2>
+    <ul class="plain">
+      <li><b>量实机。</b>磁吸圈中心到折叠铰链的距离，决定支撑杆要伸多长；本稿按 40 mm 计算。</li>
+      <li><b>先做手板。</b>磁吸头和支撑杆用 3D 打印验证手感和托力，确认硅胶脚的高度刚好贴住背面、不把手机顶歪。</li>
+      <li><b>再做金属件。</b>立柱和底座 CNC + 阳极氧化，磁吸头外壳做白色涂层小样，对比两三种白度后定色。</li>
+    </ul>
+  </section>
+
+  <footer>Duo 磁吸支架 · 概念设计稿。iPhone 和 MagSafe 是 Apple Inc. 的商标，本设计与 Apple 无关。</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+  const canvas=document.getElementById('c'), stage=document.getElementById('stage');
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!window.THREE){document.getElementById('status').textContent='3D 模型加载失败，请刷新页面。';return;}
+  const C=h=>new THREE.Color(h).convertSRGBToLinear();
+
+  const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.outputEncoding=THREE.sRGBEncoding;
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure=1.15;
+  renderer.shadowMap.enabled=true;
+  renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  renderer.setClearColor(0x000000,0);
+
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(30,1,0.5,400);
+
+  // studio environment for metal reflections
+  (function(){
+    const env=new THREE.Scene();
+    const room=new THREE.Mesh(new THREE.BoxGeometry(60,40,60),new THREE.MeshBasicMaterial({color:C('#7a7b80'),side:THREE.BackSide}));
+    env.add(room);
+    const box=(w,h,x,y,z,ry,rx,i)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:new THREE.Color(i,i,i),side:THREE.DoubleSide}));m.position.set(x,y,z);m.rotation.set(rx||0,ry||0,0);env.add(m);};
+    box(30,8,0,19,0,0,Math.PI/2,5);
+    box(14,24,-29,4,6,Math.PI/2,0,3.2);
+    box(10,20,29,2,-8,-Math.PI/2,0,2.2);
+    box(24,10,0,6,29,Math.PI,0,1.8);
+    box(60,6,0,-6,-29,0,0,1.2);
+    const pm=new THREE.PMREMGenerator(renderer);
+    scene.environment=pm.fromScene(env,0.03).texture;
+  })();
+
+  scene.add(new THREE.HemisphereLight(0xffffff,0xb0b0b8,0.35));
+  const sun=new THREE.DirectionalLight(0xffffff,1.3);
+  sun.position.set(-14,40,22);sun.castShadow=true;
+  sun.shadow.mapSize.set(2048,2048);
+  Object.assign(sun.shadow.camera,{left:-22,right:22,top:22,bottom:-22,near:1,far:90});
+  sun.shadow.radius=6;sun.shadow.bias=-0.0004;
+  scene.add(sun);
+
+  const ground=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.ShadowMaterial({opacity:0.16}));
+  ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+
+  // materials
+  const M={
+    white:new THREE.MeshPhysicalMaterial({color:C('#f3f3f1'),roughness:0.38,metalness:0,clearcoat:0.35,clearcoatRoughness:0.35,envMapIntensity:0.9}),
+    alu:new THREE.MeshStandardMaterial({color:C('#e4e5e8'),roughness:0.3,metalness:1}),
+    polish:new THREE.MeshStandardMaterial({color:C('#eceef1'),roughness:0.12,metalness:1}),
+    steel:new THREE.MeshStandardMaterial({color:C('#cfd1d4'),roughness:0.26,metalness:1}),
+    sil:new THREE.MeshStandardMaterial({color:C('#f6f6f3'),roughness:0.85,metalness:0}),
+    gray:new THREE.MeshStandardMaterial({color:C('#c9c9c6'),roughness:0.9,metalness:0}),
+    back:new THREE.MeshPhysicalMaterial({color:C('#3b3d42'),roughness:0.45,metalness:0.15,clearcoat:0.5,clearcoatRoughness:0.5}),
+    frame:new THREE.MeshStandardMaterial({color:C('#8d9096'),roughness:0.25,metalness:1}),
+    lens:new THREE.MeshStandardMaterial({color:C('#0b0b0d'),roughness:0.08,metalness:0.6}),
+  };
+  const shadowAll=o=>o.traverse(m=>{if(m.isMesh){m.castShadow=true;m.receiveShadow=true;}});
+
+  function cyl(r,h,mat,seg){return new THREE.Mesh(new THREE.CylinderGeometry(r,r,h,seg||48),mat);}
+  function zCyl(r,len,z0,mat){const m=cyl(r,len,mat);m.rotation.x=Math.PI/2;m.position.z=z0+len/2;return m;}
+  function xCyl(r,len,x0,mat){const m=cyl(r,len,mat,24);m.rotation.z=-Math.PI/2;m.position.x=x0+len/2;return m;}
+  function slab(w,h,d,r,mats){
+    const b=Math.min(d*0.3,0.08), W=w-2*b, H=h-2*b, R=Math.max(r-b,0.01), x=-W/2, y=-H/2, s=new THREE.Shape();
+    s.moveTo(x+R,y);s.lineTo(x+W-R,y);s.quadraticCurveTo(x+W,y,x+W,y+R);s.lineTo(x+W,y+H-R);s.quadraticCurveTo(x+W,y+H,x+W-R,y+H);
+    s.lineTo(x+R,y+H);s.quadraticCurveTo(x,y+H,x,y+H-R);s.lineTo(x,y+R);s.quadraticCurveTo(x,y,x+R,y);
+    const g=new THREE.ExtrudeGeometry(s,{depth:d-2*b,bevelEnabled:true,bevelThickness:b,bevelSize:b,bevelSegments:3,curveSegments:12});
+    g.translate(0,0,b);return new THREE.Mesh(g,mats);
+  }
+  function roundRectPath(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+
+  // ---------- base + column (units: cm) ----------
+  const stand=new THREE.Group();scene.add(stand);
+  const prof=[[0,0.06],[5.15,0.06],[5.42,0.14],[5.5,0.36],[5.5,0.72],[5.42,0.92],[5.2,1.0],[0,1.0]].map(p=>new THREE.Vector2(p[0],p[1]));
+  stand.add(new THREE.Mesh(new THREE.LatheGeometry(prof,96),M.white));
+  const pad=cyl(5.0,0.06,M.gray,96);pad.position.y=0.03;stand.add(pad);
+  const colZ=-1.2, ballY=17.0;
+  const collarB=cyl(0.95,0.18,M.alu);collarB.position.set(0,1.09,colZ);stand.add(collarB);
+  const col=cyl(0.6,ballY-0.55-1.0,M.alu);col.position.set(0,1.0+(ballY-0.55-1.0)/2,colZ);stand.add(col);
+  const cup=cyl(0.78,0.5,M.alu);cup.position.set(0,ballY-0.55,colZ);stand.add(cup);
+  const ball=new THREE.Mesh(new THREE.SphereGeometry(0.8,40,28),M.polish);ball.position.set(0,ballY,colZ);stand.add(ball);
+
+  // ---------- head ----------
+  const headPivot=new THREE.Group();headPivot.position.set(0,ballY,colZ);headPivot.rotation.x=-0.26;stand.add(headPivot);
+  const head=new THREE.Group();head.position.z=2.4;headPivot.add(head);
+  head.add(zCyl(0.5,1.45,-2.4,M.polish));                 // neck
+  head.add(zCyl(3.0,0.85,-1.0,M.white));                  // housing
+  const lip=new THREE.Mesh(new THREE.TorusGeometry(2.96,0.07,12,96),M.polish);lip.position.z=-0.15;head.add(lip);
+  head.add(zCyl(2.85,0.15,-0.15,M.sil));                  // silicone face
+  const rearRing=new THREE.Mesh(new THREE.TorusGeometry(1.15,0.06,10,64),M.alu);rearRing.position.z=-1.02;head.add(rearRing);
+
+  // arm (rotating collar + 3-stage telescope + flip foot)
+  const ARMZ=-1.3;
+  const arm=new THREE.Group();arm.position.z=ARMZ;head.add(arm);
+  arm.add(zCyl(0.95,0.42,-0.21,M.alu));
+  arm.add(xCyl(0.22,3.2,0.9,M.steel));
+  const s1=new THREE.Group();arm.add(s1);s1.add(xCyl(0.17,3.0,1.0,M.steel));
+  const s2=new THREE.Group();s1.add(s2);s2.add(xCyl(0.12,3.0,1.1,M.steel));
+  const foot=new THREE.Group();foot.position.x=4.1;s2.add(foot);
+  foot.add(new THREE.Mesh(new THREE.SphereGeometry(0.16,16,12),M.steel));
+  foot.add(zCyl(0.13,1.05,0,M.steel));
+  foot.add(zCyl(0.42,0.25,1.05,M.sil));
+
+  // ---------- phone ----------
+  const phone=new THREE.Group();head.add(phone);
+  const HW=8.0, PH=11.8, T=0.45;
+  // wallpaper texture spanning both halves
+  const wp=document.createElement('canvas');wp.width=1280;wp.height=944;
+  (function(){const g=wp.getContext('2d');
+    let gr=g.createLinearGradient(0,0,1280,944);gr.addColorStop(0,'#0e1a2b');gr.addColorStop(.5,'#1f3b63');gr.addColorStop(1,'#d9e4ef');g.fillStyle=gr;g.fillRect(0,0,1280,944);
+    const blob=(x,y,r,c)=>{const q=g.createRadialGradient(x,y,0,x,y,r);q.addColorStop(0,c);q.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=q;g.fillRect(0,0,1280,944);};
+    blob(300,700,520,'rgba(140,190,255,.55)');blob(1000,240,460,'rgba(255,255,255,.35)');blob(760,820,380,'rgba(90,120,255,.35)');
+    g.fillStyle='rgba(255,255,255,.92)';g.font='600 120px -apple-system,"PingFang SC",sans-serif';g.fillText('09:41',90,200);
+    g.font='500 34px -apple-system,"PingFang SC",sans-serif';g.fillStyle='rgba(255,255,255,.75)';g.fillText('11月6日 星期五',96,252);
+    g.fillStyle='rgba(255,255,255,.16)';
+    [[700,110,240,240],[970,110,240,240],[700,380,510,240],[90,620,510,240]].forEach(r=>{roundRectPath(g,r[0],r[1],r[2],r[3],42);g.fill();});
+  })();
+  const wpTex=new THREE.CanvasTexture(wp);wpTex.encoding=THREE.sRGBEncoding;wpTex.anisotropy=4;
+  function screenMat(u0){const t=wpTex.clone();t.needsUpdate=true;t.repeat.set(0.5,1);t.offset.set(u0,0);return new THREE.MeshBasicMaterial({map:t,toneMapped:false});}
+  const scrGeo=new THREE.PlaneGeometry(HW-0.35,PH-0.35);
+
+  const right=new THREE.Group();phone.add(right);
+  right.add(slab(HW,PH,T,0.9,[M.back,M.frame]));
+  const rs=new THREE.Mesh(scrGeo,screenMat(0.5));rs.position.z=T+0.003;right.add(rs);
+  const bump=slab(2.4,2.4,0.16,0.6,[M.back,M.frame]);bump.rotation.y=Math.PI;bump.position.set(2.2,4.2,0);right.add(bump);
+  [[1.65,4.75],[2.75,4.75],[1.65,3.65]].forEach(p=>{const l=zCyl(0.42,0.1,-0.26,M.lens);l.position.x=p[0];l.position.y=p[1];right.add(l);});
+
+  const hinge=new THREE.Mesh(new THREE.CylinderGeometry(T/2,T/2,PH-0.6,24),M.frame);hinge.position.set(-HW/2,0,T/2);phone.add(hinge);
+  const leftPivot=new THREE.Group();leftPivot.position.set(-HW/2,0,T);phone.add(leftPivot);
+  const leftBody=slab(HW,PH,T,0.9,[M.back,M.frame]);leftBody.position.set(-HW/2,0,-T);leftPivot.add(leftBody);
+  const ls=new THREE.Mesh(scrGeo,screenMat(0));ls.position.set(-HW/2,0,0.003);leftPivot.add(ls);
+  // cover screen on the outside of the left half
+  const cv=document.createElement('canvas');cv.width=512;cv.height=760;
+  (function(){const g=cv.getContext('2d');const gr=g.createLinearGradient(0,0,0,760);gr.addColorStop(0,'#1d2a40');gr.addColorStop(1,'#0a0d14');g.fillStyle=gr;g.fillRect(0,0,512,760);
+    g.fillStyle='rgba(255,255,255,.9)';g.font='600 110px -apple-system,"PingFang SC",sans-serif';g.textAlign='center';g.fillText('09:41',256,250);
+    g.font='500 30px -apple-system,"PingFang SC",sans-serif';g.fillStyle='rgba(255,255,255,.6)';g.fillText('11月6日 星期五',256,300);})();
+  const cvTex=new THREE.CanvasTexture(cv);cvTex.encoding=THREE.sRGBEncoding;
+  const cover=new THREE.Mesh(new THREE.PlaneGeometry(HW-0.6,PH-0.6),new THREE.MeshBasicMaterial({map:cvTex,toneMapped:false}));
+  cover.rotation.y=Math.PI;cover.position.set(-HW/2,0,-T-0.003);leftPivot.add(cover);
+
+  shadowAll(stand);rs.castShadow=ls.castShadow=cover.castShadow=false;
+
+  // ---------- camera / controls ----------
+  const controls=new THREE.OrbitControls(camera,canvas);
+  controls.enableDamping=true;controls.enablePan=false;controls.minDistance=22;controls.maxDistance=120;
+  controls.maxPolarAngle=Math.PI*0.52;controls.target.set(0,14,0);
+  const VIEWS={back:[-34,22,-46],front:[6,20,62],side:[62,17,6]};
+  const isNarrow=()=>stage.clientWidth<560;
+  function viewPos(k){const v=new THREE.Vector3(...VIEWS[k]);if(isNarrow())v.multiplyScalar(1.45);return v;}
+  camera.position.copy(viewPos('back'));
+  let camTo=null;
+  document.querySelectorAll('.chip[data-view]').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.chip[data-view]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+    camTo=viewPos(b.dataset.view);
+  }));
+  controls.addEventListener('start',()=>{camTo=null;});
+
+  function resize(){const w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+  new ResizeObserver(resize).observe(stage);resize();
+
+  // ---------- state ----------
+  const st={open:1,openT:1,arm:1,armT:1,droop:0};
+  const DROOP=0.38;
+  const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const ph=(t,a,b)=>ease(clamp((t-a)/(b-a),0,1));
+  function step(v,target,rate,dt){const d=target-v;const s=rate*dt;return Math.abs(d)<=s?target:v+Math.sign(d)*s;}
+
+  const pState=document.getElementById('pState'),pSlip=document.getElementById('pSlip'),statusEl=document.getElementById('status');
+  const bFold=document.getElementById('bFold'),bArm=document.getElementById('bArm'),bDemo=document.getElementById('bDemo');
+  function syncButtons(){
+    bFold.textContent=st.openT?'折叠手机':'展开手机';bFold.setAttribute('aria-pressed',String(!st.openT));
+    bArm.textContent=st.armT?'收起支撑杆':'抬起支撑杆';bArm.setAttribute('aria-pressed',String(!!st.armT));
+  }
+  let lastMsg='';
+  function updateLabels(){
+    const deg=Math.round(st.droop*180/Math.PI);
+    pState.textContent=(st.open>0.5?'展开':'折叠')+' · 支撑杆'+(st.arm>0.5?'抬起':'收起');
+    let msg;
+    if(st.open<0.98){pSlip.className='pill';pSlip.textContent='重心在磁吸圈上';msg='合着的时候重心正好落在磁吸圈上，支撑杆可以收着。';}
+    else if(deg>0 && st.armT===0){pSlip.className='pill warn';pSlip.textContent='下滑 '+deg+'°';msg='展开后左半边悬空，玻璃背面太滑，整台手机绕着磁吸圈往下转。';}
+    else if(deg>0){pSlip.className='pill ok';pSlip.textContent='托起中 '+deg+'°';msg='支撑杆转到悬空一侧，往外提，硅胶脚翻出顶住背面。';}
+    else {pSlip.className='pill ok';pSlip.textContent='稳定 0°';msg=st.arm>0.98?'支撑杆顶住左半边机身背面，整机保持水平。':'展开了，但还没有支撑。';}
+    if(msg!==lastMsg){statusEl.textContent=msg;lastMsg=msg;}
+  }
+
+  let demoId=0;
+  bFold.addEventListener('click',()=>{demoId++;st.openT=st.openT?0:1;syncButtons();});
+  bArm.addEventListener('click',()=>{demoId++;st.armT=st.armT?0:1;syncButtons();});
+  const wait=ms=>new Promise(r=>setTimeout(r,reduce?Math.min(ms,300):ms));
+  bDemo.addEventListener('click',async()=>{
+    const id=++demoId;const ok=()=>id===demoId;
+    camTo=viewPos('back');document.querySelectorAll('.chip[data-view]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.view==='back')));
+    st.armT=0;syncButtons();await wait(900);if(!ok())return;
+    st.openT=0;syncButtons();await wait(1500);if(!ok())return;
+    st.openT=1;syncButtons();await wait(3600);if(!ok())return;
+    st.armT=1;syncButtons();
+  });
+
+  // ---------- loop ----------
+  let prev=performance.now();
+  function frame(now){
+    const dt=Math.min((now-prev)/1000,0.05);prev=now;
+    const k=reduce?6:1;
+    st.open=step(st.open,st.openT,0.7*k,dt);
+    st.arm=step(st.arm,st.armT,0.55*k,dt);
+    const supported=st.arm>=0.999;
+    const droopT=(st.open>=0.999&&!supported)?DROOP:0;
+    // slip is slow and accelerating; lifting follows the arm
+    const rate=droopT>st.droop?0.10+st.droop*0.9:0.5;
+    st.droop=step(st.droop,droopT,rate*k,dt);
+
+    leftPivot.rotation.y=(1-ease(st.open))*Math.PI;
+    hinge.visible=st.open<0.999;
+    phone.rotation.z=st.droop;
+    const a=st.arm;
+    arm.rotation.z=-Math.PI/2-ph(a,0,0.35)*Math.PI/2;
+    const ext=ph(a,0.3,0.85)*4.4;
+    s1.position.x=Math.min(ext,2.2);s2.position.x=Math.max(ext-2.2,0);
+    foot.rotation.y=(1-ph(a,0.85,1))*Math.PI/2;
+
+    if(camTo){camera.position.lerp(camTo,reduce?1:0.06);if(camera.position.distanceTo(camTo)<0.2)camTo=null;}
+    controls.update();
+    renderer.render(scene,camera);
+    updateLabels();
+    requestAnimationFrame(frame);
+  }
+  syncButtons();
+  requestAnimationFrame(frame);
+})();
+</script>
