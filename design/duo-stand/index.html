@@ -98,10 +98,10 @@ td.mono{white-space:nowrap;font-size:13px}
 .sw{display:grid;gap:12px}
 .chipball{aspect-ratio:16/9;max-width:100%;border-radius:22px}
 .sw p{font-size:14px;color:var(--muted)}
-.c-white{background:radial-gradient(80% 80% at 30% 25%,#ffffff,#ecece9 55%,#d9d9d6)}
-.c-alu{background:linear-gradient(135deg,#f0f1f3 0%,#c9cacd 40%,#e9eaec 55%,#b4b5b8 100%)}
+.c-white{background:radial-gradient(80% 80% at 30% 25%,#ffffff,#f1f1ee 45%,#dcdcd9)}
+.c-alu{background:linear-gradient(180deg,#f4f5f7 0 6%,#cfd0d3 7%,#c5c6c9 60%,#bdbec1 92%,#f6f7f9 93%,#d0d1d4 100%)}
 .c-sil{background:radial-gradient(90% 90% at 40% 30%,#fbfbf9,#efefec 70%,#e2e2df)}
-.c-steel{background:linear-gradient(160deg,#dedfe1,#9fa1a5 45%,#e6e7e9 60%,#8d8f93)}
+.c-steel{background:linear-gradient(160deg,#fbfcfd 0%,#8e9095 30%,#f4f5f7 48%,#5f6166 70%,#e9eaec 100%)}
 
 ul.plain{margin:0;padding-left:1.1em;display:grid;gap:8px;color:var(--muted)}
 ul.plain b{color:var(--fg);font-weight:600}
@@ -118,7 +118,7 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
   <header class="hero">
     <p class="eyebrow">桌面支架 · 概念设计 · 适配 iPhone 折叠屏</p>
     <h1>Duo 磁吸支架</h1>
-    <p class="lede">一根铝立柱，一个磁吸头。磁吸圈背后多藏了一根伸缩支撑杆：手机展开后往外一提，支撑脚的托唇钩住另一半机身的下沿，不再往下滑。磁吸盘坐着站着都能调角度，底座上还有一个手表充电位。</p>
+    <p class="lede">一根铝立柱，一个磁吸头。磁吸圈背后多藏了一根伸缩支撑杆：手机展开后往外一提，支撑脚伸到没有磁吸的那一半的外侧下角，托唇从底下钩住机身，不再往下滑。全金属机身，雾面为主、高光点睛；磁吸盘坐着站着都能调角度，底座上还有一个手表充电位。</p>
   </header>
 
   <div class="stage" id="stage">
@@ -137,17 +137,25 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
     <button class="btn" id="bArm" aria-pressed="true">收起支撑杆</button>
     <button class="btn" id="bWatch" aria-pressed="true">拿走手表</button>
   </div>
-  <p class="status" id="status">托唇钩住左半边机身的下沿，整机保持水平。</p>
+  <p class="status" id="status">托唇钩住悬空那一半的外侧下角，整机保持水平。</p>
   <div class="tune">
     <div>
-      <div class="row"><label for="rFoot">支撑脚上下角度</label><output id="oFoot">下 40°</output></div>
-      <input type="range" id="rFoot" min="-50" max="40" step="1" value="-40">
-      <small>调到约下 40° 托唇正好钩住下沿，最稳；往中间调是贴背面靠摩擦；调过头就撑空了。</small>
+      <div class="row"><label for="rFoot">支撑脚上下角度</label><output id="oFoot">下 27°</output></div>
+      <input type="range" id="rFoot" min="-45" max="35" step="1" value="-27">
+      <small>调到约下 27°，托唇正好钩住外侧下角的底边，最稳；往水平调是贴背面靠摩擦；调过头就撑空了。</small>
     </div>
     <div>
       <div class="row"><label for="rTilt">磁吸盘仰角</label><output id="oTilt">15°</output></div>
       <input type="range" id="rTilt" min="-10" max="45" step="1" value="15">
       <div class="presets"><button class="chip" data-tilt="12">坐着 12°</button><button class="chip" data-tilt="38">站着 38°</button></div>
+    </div>
+    <div>
+      <div class="row"><span>外观</span></div>
+      <div class="presets" role="group" aria-label="外观">
+        <button class="chip" data-finish="satin" aria-pressed="true">雾面 + 高光边</button>
+        <button class="chip" data-finish="mirror" aria-pressed="false">全镜面</button>
+        <button class="chip" data-finish="white" aria-pressed="false">纯白涂层</button>
+      </div>
     </div>
     <div>
       <div class="row"><label for="rYaw">左右转</label><output id="oYaw">0°</output></div>
@@ -161,19 +169,20 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
     <h2>为什么现在的磁吸支架一展开就滑</h2>
     <div class="cols">
       <div class="card">
-        <p>折叠屏的磁吸圈只在其中一半的背面。合上时，重心正好落在磁吸圈上；一展开，另一半（约 120 g）悬在 8 cm 之外，形成一个绕磁吸圈转动的力矩。玻璃背板和磁吸面之间的摩擦扛不住这个力矩，整台手机就会慢慢转着往下溜。</p>
-        <p>所以问题不在吸力不够，而是缺一个<b>离磁吸圈足够远</b>的支点。支撑脚伸到距磁吸中心 85 mm 的地方，落在另一半机身上。</p>
-        <p>支撑脚只贴在背面的话，挡住下滑全靠硅胶摩擦，力量偏小。所以脚上加了一个弹簧<b>托唇</b>：把脚往下调到机身下沿，托唇弹出来从下面钩住机身，靠结构托住，不靠摩擦。</p>
+        <p>折叠屏的磁吸圈只在其中一半的背面。合上时，重心正好落在磁吸圈上；一展开，另一半（约 120 g）的重心悬在 8.4 cm 之外，形成一个绕磁吸圈转动的力矩。玻璃背板和磁吸面之间的摩擦扛不住这个力矩，整台手机就会慢慢转着往下溜。</p>
+        <p>所以问题不在吸力不够，而是缺一个<b>离磁吸圈足够远</b>的支点。支撑脚越远，需要的力越小，所以支撑杆做成四节伸缩，一直伸到 123 mm，落在悬空那一半的<b>外侧下角</b>，离外边缘约 15 mm。</p>
+        <p>支撑脚只贴在背面的话，挡住下滑全靠硅胶摩擦，力量偏小。所以脚上加了一个弹簧<b>托唇</b>：脚落到底边时，托唇弹出来从下面钩住机身，靠结构托住，不靠摩擦。托唇只碰悬空那一半，磁吸那一半完全不用管。</p>
       </div>
       <div>
         <div class="calc mono">
           <div><span>悬空半边重量</span><span>≈ 120 g</span></div>
-          <div><span>重心到磁吸中心</span><span>≈ 80 mm</span></div>
-          <div class="hl"><span>下滑力矩</span><span>≈ 0.094 N·m</span></div>
+          <div><span>重心到磁吸中心</span><span>≈ 84 mm</span></div>
+          <div class="hl"><span>下滑力矩</span><span>≈ 0.099 N·m</span></div>
           <div><span>磁吸面能提供的转动摩擦</span><span>≈ 0.06 N·m</span></div>
-          <div class="good"><span>托唇在 85 mm 处要承担的力</span><span>≈ 1.1 N（≈ 113 g）</span></div>
+          <div><span>托唇到磁吸中心的水平距离</span><span>≈ 110 mm</span></div>
+          <div class="good"><span>托唇要承担的力</span><span>≈ 0.9 N（≈ 92 g）</span></div>
         </div>
-        <p class="note" style="margin-top:10px">估算条件：展开整机约 240 g，磁吸拉力约 10 N，玻璃背板与硅胶的摩擦系数约 0.25，等效摩擦半径 23 mm。拿到实机后按实测值复核。</p>
+        <p class="note" style="margin-top:10px">估算条件：机身尺寸按爆料的 167.6 × 120.6 mm（展开），重量官方未公布、按整机约 240 g 估，磁吸拉力约 10 N，玻璃背板与硅胶的摩擦系数约 0.25，等效摩擦半径 23 mm。拿到实机后按实测值复核。</p>
       </div>
     </div>
   </section>
@@ -183,39 +192,32 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
     <h2>九个零件，一个新增的支点</h2>
     <div class="cols">
       <div class="drawing">
-        <svg viewBox="40 18 270 322" role="img" aria-label="正视尺寸图：展开手机宽 160 毫米，高 118 毫米，支撑杆向下 40 度伸出 85 毫米、托唇钩住机身下沿，底座右侧有手表充电位，磁吸头直径 60 毫米，磁吸中心离桌面 176 毫米，底座直径 110 毫米">
+        <svg viewBox="40 18 270 322" role="img" aria-label="正视尺寸图：展开手机宽 167.6 毫米，高 120.6 毫米；支撑杆向下 27 度伸出 123 毫米，托唇钩住悬空那一半外侧下角的底边；磁吸头直径 60 毫米，磁吸中心离桌面 176 毫米，底座直径 110 毫米，右侧有手表充电位">
           <defs>
             <marker id="ar" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,1 L7,4 L0,7 z" fill="var(--muted)"/></marker>
           </defs>
-          <g fill="none" stroke="var(--muted)" stroke-width=".6">
-            <line x1="40" y1="296" x2="300" y2="296" stroke-dasharray="3 3"/>
-          </g>
-          <!-- base + column -->
+          <line x1="40" y1="296" x2="300" y2="296" stroke="var(--muted)" stroke-width=".6" stroke-dasharray="3 3"/>
           <rect x="145" y="286" width="110" height="10" rx="4" fill="var(--surface)" stroke="var(--fg)" stroke-width="1"/>
           <rect x="194" y="150" width="12" height="136" fill="var(--surface)" stroke="var(--fg)" stroke-width="1"/>
-          <!-- phone (transparent) -->
-          <rect x="80" y="61" width="160" height="118" rx="9" fill="var(--bg)" fill-opacity=".55" stroke="var(--fg)" stroke-width="1.2"/>
-          <line x1="160" y1="61" x2="160" y2="179" stroke="var(--muted)" stroke-width=".8" stroke-dasharray="4 3"/>
-          <text x="120" y="76" text-anchor="middle" font-size="8" fill="var(--muted)" font-family="var(--font-ui)">悬空的一半</text>
-          <text x="200" y="76" text-anchor="middle" font-size="8" fill="var(--muted)" font-family="var(--font-ui)">磁吸的一半</text>
-          <!-- puck -->
+          <rect x="74.5" y="59.7" width="167.4" height="120.6" rx="9" fill="var(--bg)" fill-opacity=".55" stroke="var(--fg)" stroke-width="1.2"/>
+          <line x1="158.1" y1="59.7" x2="158.1" y2="180.3" stroke="var(--muted)" stroke-width=".8" stroke-dasharray="4 3"/>
+          <text x="116" y="75" text-anchor="middle" font-size="8" fill="var(--muted)" font-family="var(--font-ui)">悬空的一半（无磁吸）</text>
+          <text x="200" y="75" text-anchor="middle" font-size="8" fill="var(--muted)" font-family="var(--font-ui)">磁吸的一半</text>
           <circle cx="200" cy="120" r="30" fill="none" stroke="var(--fg)" stroke-width="1.2"/>
           <circle cx="200" cy="120" r="23" fill="none" stroke="var(--muted)" stroke-width=".8"/>
-          <!-- arm -->
-          <line x1="193" y1="125.8" x2="134.9" y2="174.6" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
-          <circle cx="134.9" cy="174.6" r="4.2" fill="var(--accent)"/>
-          <rect x="130.4" y="179.2" width="9" height="2.6" rx="1" fill="var(--accent)"/>
-          <text x="127" y="172" text-anchor="end" font-size="8" fill="var(--accent)" font-family="var(--font-ui)">支撑脚 + 托唇</text>
-          <path d="M178 120 A22 22 0 0 0 183.1 134.1" fill="none" stroke="var(--accent)" stroke-width=".8"/>
-          <text x="171" y="132" text-anchor="end" font-size="8" fill="var(--accent)" font-family="var(--font-data)">40°</text>
+          <line x1="192" y1="124" x2="90" y2="175.9" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+          <circle cx="90" cy="175.9" r="4.2" fill="var(--accent)"/>
+          <rect x="84" y="180.4" width="12" height="2.8" rx="1" fill="var(--accent)"/>
+          <text x="90" y="195" text-anchor="middle" font-size="8" fill="var(--accent)" font-family="var(--font-ui)">托唇钩住外侧下角</text>
+          <path d="M178 120 A22 22 0 0 0 180.4 130" fill="none" stroke="var(--accent)" stroke-width=".8"/>
+          <text x="174" y="133" text-anchor="end" font-size="8" fill="var(--accent)" font-family="var(--font-data)">27°</text>
           <rect x="218" y="283" width="22" height="3" rx="1.2" fill="var(--fg)"/>
           <line x1="236" y1="283" x2="244" y2="270" stroke="var(--muted)" stroke-width=".6"/>
           <text x="246" y="268" font-size="8" fill="var(--muted)" font-family="var(--font-ui)">手表充电</text>
-          <!-- dims -->
           <g stroke="var(--muted)" stroke-width=".6" fill="none">
-            <line x1="80" y1="40" x2="240" y2="40" marker-start="url(#ar)" marker-end="url(#ar)"/>
-            <line x1="80" y1="36" x2="80" y2="58"/><line x1="240" y1="36" x2="240" y2="58"/>
-            <line x1="262" y1="61" x2="262" y2="179" marker-start="url(#ar)" marker-end="url(#ar)"/>
+            <line x1="74.5" y1="40" x2="241.9" y2="40" marker-start="url(#ar)" marker-end="url(#ar)"/>
+            <line x1="74.5" y1="36" x2="74.5" y2="57"/><line x1="241.9" y1="36" x2="241.9" y2="57"/>
+            <line x1="262" y1="59.7" x2="262" y2="180.3" marker-start="url(#ar)" marker-end="url(#ar)"/>
             <line x1="285" y1="120" x2="285" y2="296" marker-start="url(#ar)" marker-end="url(#ar)"/>
             <line x1="230" y1="120" x2="290" y2="120" stroke-dasharray="2 2"/>
             <line x1="145" y1="318" x2="255" y2="318" marker-start="url(#ar)" marker-end="url(#ar)"/>
@@ -223,29 +225,29 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
             <line x1="221" y1="99" x2="236" y2="88"/>
           </g>
           <g font-family="var(--font-data)" font-size="9" fill="var(--fg)" text-anchor="middle">
-            <text x="160" y="35">160</text>
-            <text x="157" y="170" fill="var(--accent)">85</text>
-            <text x="270" y="124" transform="rotate(-90 270 124)">118</text>
+            <text x="158" y="35">167.6</text>
+            <text x="138" y="163" fill="var(--accent)">123</text>
+            <text x="270" y="124" transform="rotate(-90 270 124)">120.6</text>
             <text x="295" y="212" transform="rotate(-90 295 212)">176</text>
             <text x="200" y="334">Ø110</text>
             <text x="248" y="87">Ø60</text>
           </g>
         </svg>
-        <p class="note" style="padding:6px 6px 2px">正视图，机身按透明绘制，单位 mm。手机尺寸为假设值，需按实机修正。</p>
+        <p class="note" style="padding:6px 6px 2px">正视图，机身按透明绘制，单位 mm。手机尺寸按爆料数据（合起 83.8 × 120.6 × 9.6，展开宽 167.6、厚约 4.8），苹果官方还没公布，拿到实机要复核。</p>
       </div>
       <div class="tablewrap">
         <table>
           <thead><tr><th>部件</th><th>材料 / 工艺</th><th>关键尺寸</th></tr></thead>
           <tbody>
-            <tr><td>底座</td><td>铝外壳 + 锌合金配重芯，纯白陶瓷质感涂层；底面白色硅胶防滑；背面一个 USB-C 口</td><td class="mono">Ø110 × 10</td></tr>
-            <tr><td>立柱</td><td>6061 铝管，细喷砂 + 本色阳极氧化，电线从管内走到磁吸头</td><td class="mono">Ø12 × 160</td></tr>
-            <tr><td>球形关节</td><td>不锈钢球 + POM 阻尼碗，松紧可调，放手即停</td><td class="mono">仰角 −10°~45°<br>左右 ±30°</td></tr>
-            <tr><td>磁吸头</td><td>铝壳白色涂层，N52 磁环，兼容 MagSafe；白色硅胶贴面</td><td class="mono">Ø60 × 10</td></tr>
+            <tr><td>底座</td><td>实心 316L 不锈钢（约 750 g），顶面细喷砂，边缘钻切一圈高光倒角；底面硅胶防滑；背面一个 USB-C 口</td><td class="mono">Ø110 × 10</td></tr>
+            <tr><td>立柱</td><td>不锈钢管，镜面抛光 + PVD 镀膜（银 / 香槟金 / 深空灰），电线从管内走到磁吸头</td><td class="mono">Ø12 × 160</td></tr>
+            <tr><td>球形关节</td><td>镜面不锈钢球 + POM 阻尼碗，松紧可调，放手即停</td><td class="mono">仰角 −10°~45°<br>左右 ±30°</td></tr>
+            <tr><td>磁吸头</td><td>铝壳细喷砂，前缘钻切高光边，N52 磁环，兼容 MagSafe；白色硅胶贴面</td><td class="mono">Ø60 × 10</td></tr>
             <tr><td>旋转环</td><td>夹在磁吸头背面，阻尼无级旋转，支撑杆可转到任意一侧、任意上下角度</td><td class="mono">360° 无级</td></tr>
-            <tr><td>支撑杆</td><td>三节伸缩不锈钢管，喷砂银，阻尼圈防自滑</td><td class="mono">41 → 85</td></tr>
+            <tr><td>支撑杆</td><td>四节伸缩不锈钢管，镜面 PVD，阻尼圈防自滑</td><td class="mono">47 → 123</td></tr>
             <tr><td>支撑脚</td><td>弹簧铰链，拉到底自动翻出 90°；邵氏 30A 硅胶面，球铰万向 ±15° 贴合背面</td><td class="mono">Ø8 · 前伸 13</td></tr>
-            <tr><td>托唇</td><td>藏在支撑脚里的弹簧小钩，可上下滑 10 mm，碰到机身下沿自动弹出钩住，外包硅胶</td><td class="mono">宽 9 · 钩深 6</td></tr>
-            <tr><td>手表充电模块</td><td>嵌在底座右前方，磁吸固定、可整块取下带走；与磁吸头共用一根 USB-C 供电</td><td class="mono">Ø27 × 3</td></tr>
+            <tr><td>托唇</td><td>藏在支撑脚里的弹簧小钩，可上下滑 10 mm，碰到悬空那一半的底边自动弹出钩住，外包硅胶</td><td class="mono">宽 9 · 钩深 6</td></tr>
+            <tr><td>手表充电模块</td><td>嵌在底座右前方，表面白色陶瓷（金属会挡住无线充电），磁吸固定、可整块取下带走；与磁吸头共用一根 USB-C 供电</td><td class="mono">Ø27 × 3</td></tr>
           </tbody>
         </table>
       </div>
@@ -258,7 +260,7 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
     <ol class="steps">
       <li><h3>吸上</h3><p>合着的手机直接吸在磁吸头上。支撑杆收在背面，竖直朝下，和立柱看起来是一根线。</p></li>
       <li><h3>展开</h3><p>打开手机。悬空的那一半会开始往下沉，这就是现在其他支架的问题。</p></li>
-      <li><h3>提起支撑杆</h3><p>捏住杆头往悬空一侧转、往外提。拉到底时支撑脚自动翻出。再把脚往下转到机身下沿（约下 40°），托唇弹出钩住，那一半就托平了。</p></li>
+      <li><h3>提起支撑杆</h3><p>捏住杆头往悬空一侧转、往外提。拉到底时支撑脚自动翻出。再把脚往下转到悬空那一半的外侧下角（约下 27°），托唇弹出从底下钩住，那一半就托平了。</p></li>
       <li><h3>收起</h3><p>按一下支撑脚让它折回，托唇自动缩进去，把杆推回去，再转回竖直位置。横屏竖屏都可以用。</p></li>
     </ol>
   </section>
@@ -302,12 +304,13 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
 
   <section>
     <p class="eyebrow">外观与工艺</p>
-    <h2>纯白，加一点铝</h2>
+    <h2>全金属，雾面为主，高光点睛</h2>
+    <p class="lede" style="font-size:17px">大面积用细喷砂，不留指纹、不反光；高光只放在立柱、支撑杆和两圈钻切倒角上，像 iPhone 边框那圈亮边。三种外观可以在上面的 3D 模型里切换对比。</p>
     <div class="swatches">
-      <div class="sw"><div class="chipball c-white"></div><h3>纯白陶瓷质感涂层</h3><p>底座、磁吸头外壳。微弧氧化或陶瓷漆，摸起来细腻温润，不发黄。</p></div>
-      <div class="sw"><div class="chipball c-alu"></div><h3>本色喷砂铝</h3><p>立柱、旋转环。细砂面阳极氧化，和白色形成一冷一暖。</p></div>
-      <div class="sw"><div class="chipball c-steel"></div><h3>喷砂不锈钢</h3><p>伸缩支撑杆。管壁薄、刚性好，伸出 85 mm 也不晃。</p></div>
-      <div class="sw"><div class="chipball c-sil"></div><h3>白色硅胶</h3><p>磁吸贴面、硅胶脚、底部防滑圈。增加摩擦，不留印。</p></div>
+      <div class="sw"><div class="chipball c-steel"></div><h3>镜面不锈钢 + PVD</h3><p>立柱、球头、支撑杆。抛光到镜面再镀 PVD，硬度高、不易刮花，可选银色、香槟金、深空灰；外加防指纹镀膜。</p></div>
+      <div class="sw"><div class="chipball c-alu"></div><h3>细喷砂 + 钻切高光边</h3><p>底座、磁吸头。大面积雾面，边缘钻石切削一圈亮边。底座用实心不锈钢，约 750 g，展开手机也纹丝不动。</p></div>
+      <div class="sw"><div class="chipball c-white"></div><h3>白色陶瓷</h3><p>手表充电面。金属会挡住无线充电还会发热，这里必须用陶瓷或玻璃，正好成为一个白色亮点。</p></div>
+      <div class="sw"><div class="chipball c-sil"></div><h3>硅胶</h3><p>磁吸贴面、支撑脚、托唇、底部防滑圈。凡是碰手机和桌面的地方都不用金属，避免刮伤。</p></div>
     </div>
   </section>
 
@@ -348,7 +351,7 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
   // studio environment for metal reflections
   (function(){
     const env=new THREE.Scene();
-    const room=new THREE.Mesh(new THREE.BoxGeometry(60,40,60),new THREE.MeshBasicMaterial({color:C('#7a7b80'),side:THREE.BackSide}));
+    const room=new THREE.Mesh(new THREE.BoxGeometry(60,40,60),new THREE.MeshBasicMaterial({color:C('#9a9ba1'),side:THREE.BackSide}));
     env.add(room);
     const box=(w,h,x,y,z,ry,rx,i)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:new THREE.Color(i,i,i),side:THREE.DoubleSide}));m.position.set(x,y,z);m.rotation.set(rx||0,ry||0,0);env.add(m);};
     box(30,8,0,19,0,0,Math.PI/2,5);
@@ -378,6 +381,9 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
     polish:new THREE.MeshStandardMaterial({color:C('#eceef1'),roughness:0.12,metalness:1}),
     steel:new THREE.MeshStandardMaterial({color:C('#cfd1d4'),roughness:0.26,metalness:1}),
     sil:new THREE.MeshStandardMaterial({color:C('#f6f6f3'),roughness:0.85,metalness:0}),
+    blast:new THREE.MeshStandardMaterial({color:C('#d3d5d9'),roughness:0.46,metalness:1}),
+    mirror:new THREE.MeshStandardMaterial({color:C('#eef0f3'),roughness:0.05,metalness:1}),
+    ceramic:new THREE.MeshPhysicalMaterial({color:C('#f7f7f5'),roughness:0.15,metalness:0,clearcoat:1,clearcoatRoughness:0.05}),
     gray:new THREE.MeshStandardMaterial({color:C('#c9c9c6'),roughness:0.9,metalness:0}),
     back:new THREE.MeshPhysicalMaterial({color:C('#3b3d42'),roughness:0.45,metalness:0.15,clearcoat:0.5,clearcoatRoughness:0.5}),
     frame:new THREE.MeshStandardMaterial({color:C('#8d9096'),roughness:0.25,metalness:1}),
@@ -400,45 +406,49 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
   // ---------- base + column (units: cm) ----------
   const stand=new THREE.Group();scene.add(stand);
   const prof=[[0,0.06],[5.15,0.06],[5.42,0.14],[5.5,0.36],[5.5,0.72],[5.42,0.92],[5.2,1.0],[0,1.0]].map(p=>new THREE.Vector2(p[0],p[1]));
-  stand.add(new THREE.Mesh(new THREE.LatheGeometry(prof,96),M.white));
+  const BODY=[],ROD=[];const R=m=>(ROD.push(m),m);
+  const baseMesh=new THREE.Mesh(new THREE.LatheGeometry(prof,96),M.blast);stand.add(baseMesh);BODY.push(baseMesh);
+  const baseEdge=new THREE.Mesh(new THREE.TorusGeometry(5.4,0.07,12,128),M.polish);baseEdge.rotation.x=Math.PI/2;baseEdge.position.y=0.95;stand.add(baseEdge);
   const pad=cyl(5.0,0.06,M.gray,96);pad.position.y=0.03;stand.add(pad);
   const colZ=-1.2, ballY=17.0;
-  const collarB=cyl(0.95,0.18,M.alu);collarB.position.set(0,1.09,colZ);stand.add(collarB);
-  const col=cyl(0.6,ballY-0.55-1.0,M.alu);col.position.set(0,1.0+(ballY-0.55-1.0)/2,colZ);stand.add(col);
-  const cup=cyl(0.78,0.5,M.alu);cup.position.set(0,ballY-0.55,colZ);stand.add(cup);
-  const ball=new THREE.Mesh(new THREE.SphereGeometry(0.8,40,28),M.polish);ball.position.set(0,ballY,colZ);stand.add(ball);
+  const collarB=R(cyl(0.95,0.18,M.mirror));collarB.position.set(0,1.09,colZ);stand.add(collarB);
+  const col=R(cyl(0.6,ballY-0.55-1.0,M.mirror));col.position.set(0,1.0+(ballY-0.55-1.0)/2,colZ);stand.add(col);
+  const cup=R(cyl(0.78,0.5,M.mirror));cup.position.set(0,ballY-0.55,colZ);stand.add(cup);
+  const ball=R(new THREE.Mesh(new THREE.SphereGeometry(0.8,40,28),M.mirror));ball.position.set(0,ballY,colZ);stand.add(ball);
 
   // ---------- head ----------
   const headPivot=new THREE.Group();headPivot.position.set(0,ballY,colZ);headPivot.rotation.order='YXZ';headPivot.rotation.x=-0.26;stand.add(headPivot);
   const head=new THREE.Group();head.position.z=2.4;headPivot.add(head);
-  head.add(zCyl(0.5,1.45,-2.4,M.polish));                 // neck
-  head.add(zCyl(3.0,0.85,-1.0,M.white));                  // housing
+  head.add(R(zCyl(0.5,1.45,-2.4,M.mirror)));                 // neck
+  const housing=zCyl(3.0,0.85,-1.0,M.blast);head.add(housing);BODY.push(housing);                  // housing
   const lip=new THREE.Mesh(new THREE.TorusGeometry(2.96,0.07,12,96),M.polish);lip.position.z=-0.15;head.add(lip);
   head.add(zCyl(2.85,0.15,-0.15,M.sil));                  // silicone face
-  const rearRing=new THREE.Mesh(new THREE.TorusGeometry(1.15,0.06,10,64),M.alu);rearRing.position.z=-1.02;head.add(rearRing);
+  const rearRing=R(new THREE.Mesh(new THREE.TorusGeometry(1.15,0.06,10,64),M.mirror));rearRing.position.z=-1.02;head.add(rearRing);
 
   // arm (rotating collar + 3-stage telescope + flip foot)
   const ARMZ=-1.3;
   const arm=new THREE.Group();arm.position.z=ARMZ;head.add(arm);
-  arm.add(zCyl(0.95,0.42,-0.21,M.alu));
-  arm.add(xCyl(0.22,3.2,0.9,M.steel));
-  const s1=new THREE.Group();arm.add(s1);s1.add(xCyl(0.17,3.0,1.0,M.steel));
-  const s2=new THREE.Group();s1.add(s2);s2.add(xCyl(0.12,3.0,1.1,M.steel));
-  const foot=new THREE.Group();foot.position.x=4.1;s2.add(foot);
-  foot.add(new THREE.Mesh(new THREE.SphereGeometry(0.16,16,12),M.steel));
-  foot.add(zCyl(0.13,1.05,0,M.steel));
+  arm.add(R(zCyl(0.95,0.42,-0.21,M.mirror)));
+  // 4-stage telescope: sleeve + three stages, each slides out up to 2.55 cm → tip 4.7 → 12.35 cm
+  arm.add(R(xCyl(0.25,3.7,0.9,M.mirror)));
+  const s1=new THREE.Group();arm.add(s1);s1.add(R(xCyl(0.2,3.5,1.0,M.mirror)));
+  const s2=new THREE.Group();s1.add(s2);s2.add(R(xCyl(0.155,3.5,1.1,M.mirror)));
+  const s3=new THREE.Group();s2.add(s3);s3.add(R(xCyl(0.115,3.5,1.2,M.mirror)));
+  const foot=new THREE.Group();foot.position.x=4.7;s3.add(foot);
+  foot.add(R(new THREE.Mesh(new THREE.SphereGeometry(0.17,16,12),M.mirror)));
+  foot.add(R(zCyl(0.13,1.05,0,M.mirror)));
   foot.add(zCyl(0.42,0.25,1.05,M.sil));
   // spring lip: hangs straight down (head frame), slides to the phone's bottom edge, then pops forward under it
   const lipG=new THREE.Group();lipG.position.z=1.3;foot.add(lipG);
-  const lipStem=new THREE.Mesh(new THREE.BoxGeometry(0.5,1,0.14),M.steel);lipG.add(lipStem);
+  const lipStem=R(new THREE.Mesh(new THREE.BoxGeometry(0.5,1,0.14),M.mirror));lipG.add(lipStem);
   const lipHook=new THREE.Group();lipG.add(lipHook);
-  const hookShelf=new THREE.Mesh(new THREE.BoxGeometry(0.9,0.14,0.62),M.sil);hookShelf.position.set(0,-0.07,0.31);lipHook.add(hookShelf);
-  const hookTip=new THREE.Mesh(new THREE.BoxGeometry(0.9,0.26,0.1),M.sil);hookTip.position.set(0,0.03,0.57);lipHook.add(hookTip);
+  const hookShelf=new THREE.Mesh(new THREE.BoxGeometry(1.2,0.14,0.65),M.sil);hookShelf.position.set(0,-0.07,0.325);lipHook.add(hookShelf);
+  const hookTip=new THREE.Mesh(new THREE.BoxGeometry(1.2,0.26,0.1),M.sil);hookTip.position.set(0,0.03,0.6);lipHook.add(hookTip);
 
   // ---------- watch charger on the base ----------
   const WX=2.55, WZ=2.0;
-  const wBezel=cyl(1.5,0.08,M.alu,64);wBezel.position.set(WX,1.04,WZ);stand.add(wBezel);
-  const wPuck=cyl(1.35,0.16,M.sil,64);wPuck.position.set(WX,1.1,WZ);stand.add(wPuck);
+  const wBezel=cyl(1.5,0.08,M.polish,64);wBezel.position.set(WX,1.04,WZ);stand.add(wBezel);
+  const wPuck=cyl(1.35,0.16,M.ceramic,64);wPuck.position.set(WX,1.1,WZ);stand.add(wPuck);
   const usb=slab(0.9,0.28,0.2,0.14,[M.lens,M.lens]);usb.position.set(0,0.5,-5.52);usb.rotation.y=Math.PI;stand.add(usb);
   const watch=new THREE.Group();watch.position.set(WX,1.18,WZ);watch.rotation.y=-0.5;stand.add(watch);
   (function(){
@@ -458,7 +468,7 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
 
   // ---------- phone ----------
   const phone=new THREE.Group();head.add(phone);
-  const HW=8.0, PH=11.8, T=0.45;
+  const HW=8.38, PH=12.06, T=0.48;
   // wallpaper texture spanning both halves
   const wp=document.createElement('canvas');wp.width=1280;wp.height=944;
   (function(){const g=wp.getContext('2d');
@@ -515,15 +525,15 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
 
   // ---------- state ----------
   const D=Math.PI/180;
-  const st={open:1,openT:1,arm:1,armT:1,droop:0,foot:-40,footT:-40,tilt:15,tiltT:15,yaw:0,yawT:0,lip:1};
-  const DROOP=0.38, REACH=8.5, EDGE=-PH/2;
+  const st={open:1,openT:1,arm:1,armT:1,droop:0,foot:-27,footT:-27,tilt:15,tiltT:15,yaw:0,yawT:0,lip:1};
+  const DROOP=0.38, REACH=12.35, EDGE=-PH/2, OUTER=-HW*1.5;
   const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
   const ph=(t,a,b)=>ease(clamp((t-a)/(b-a),0,1));
   function step(v,target,rate,dt){const d=target-v;const s=rate*dt;return Math.abs(d)<=s?target:v+Math.sign(d)*s;}
   // where the deployed foot lands on the (level) phone: 'edge' = lip hooks the bottom edge, 'back' = friction only, 'air' = misses
   function zoneOf(deg){const f=Math.PI-deg*D, x=REACH*Math.cos(f), y=REACH*Math.sin(f);
-    const on=x<-HW/2-0.4 && y>EDGE-0.1 && y<-EDGE-0.4; return {x,y,zone:!on?'air':(y<=EDGE+1.0?'edge':'back')};}
+    const on=x<-HW/2-0.4 && x>OUTER+0.35 && y>EDGE-0.1 && y<-EDGE-0.4; return {x,y,zone:!on?'air':(y<=EDGE+1.0?'edge':'back')};}
 
   const $=id=>document.getElementById(id);
   const pState=$('pState'),pSlip=$('pSlip'),statusEl=$('status');
@@ -544,10 +554,10 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
     let cls='pill ok',pill,msg;
     if(st.open<0.98){cls='pill';pill='重心在磁吸圈上';msg='合着的时候重心正好落在磁吸圈上，支撑杆可以收着。';}
     else if(droopT===DROOP && st.armT===0){cls='pill warn';pill='下滑 '+deg+'°';msg='展开后左半边悬空，玻璃背面太滑，整台手机绕着磁吸圈往下转。';}
-    else if(droopT===DROOP){cls='pill warn';pill='下滑 '+deg+'°';msg='支撑脚撑空了：角度调过头，脚没落在机身上。往回调一点。';}
+    else if(droopT===DROOP){cls='pill warn';pill='下滑 '+deg+'°';msg='支撑脚撑空了：角度调过头，脚没落在悬空那一半上。往回调一点。';}
     else if(deg>Math.round(droopT/D)){pill='托起中 '+deg+'°';msg='支撑杆转到悬空一侧，往外提，支撑脚翻出顶住机身。';}
-    else if(z.zone==='back'){cls='pill';pill='轻微滑动 '+deg+'°';msg='支撑脚贴在背面只靠硅胶摩擦，还会轻微滑。往下调到下沿，让托唇钩住更稳。';}
-    else if(st.arm>0.98){pill='托住 0°';msg='托唇钩住左半边机身的下沿，整机保持水平。';}
+    else if(z.zone==='back'){cls='pill';pill='轻微滑动 '+deg+'°';msg='支撑脚贴在背面只靠硅胶摩擦，还会轻微滑。往下调到外侧下角，让托唇钩住底边更稳。';}
+    else if(st.arm>0.98){pill='托住 0°';msg='托唇钩住悬空那一半的外侧下角，整机保持水平。';}
     else {pill='稳定 0°';msg='展开了，支撑杆正在动。';}
     pSlip.className=cls;pSlip.textContent=pill;
     if(msg!==lastMsg){statusEl.textContent=msg;lastMsg=msg;}
@@ -559,17 +569,22 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
   bWatch.addEventListener('click',()=>{watch.visible=!watch.visible;syncButtons();});
   rFoot.addEventListener('input',()=>{demoId++;st.footT=+rFoot.value;syncButtons();});
   rTilt.addEventListener('input',()=>{st.tiltT=+rTilt.value;syncButtons();});
+  const FIN={satin:[M.blast,M.mirror],mirror:[M.mirror,M.mirror],white:[M.white,M.alu]};
+  document.querySelectorAll('[data-finish]').forEach(b=>b.addEventListener('click',()=>{
+    const f=FIN[b.dataset.finish];BODY.forEach(m=>m.material=f[0]);ROD.forEach(m=>m.material=f[1]);
+    document.querySelectorAll('[data-finish]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  }));
   rYaw.addEventListener('input',()=>{st.yawT=+rYaw.value;syncButtons();});
   document.querySelectorAll('[data-tilt]').forEach(b=>b.addEventListener('click',()=>{st.tiltT=+b.dataset.tilt;syncButtons();}));
   const wait=ms=>new Promise(r=>setTimeout(r,reduce?Math.min(ms,300):ms));
   bDemo.addEventListener('click',async()=>{
     const id=++demoId;const ok=()=>id===demoId;
     camTo=viewPos('back');document.querySelectorAll('.chip[data-view]').forEach(x=>x.setAttribute('aria-pressed',String(x.dataset.view==='back')));
-    st.armT=0;st.footT=0;syncButtons();await wait(900);if(!ok())return;
+    st.armT=0;st.footT=-12;syncButtons();await wait(900);if(!ok())return;
     st.openT=0;syncButtons();await wait(1500);if(!ok())return;
     st.openT=1;syncButtons();await wait(3600);if(!ok())return;
     st.armT=1;syncButtons();await wait(3400);if(!ok())return;
-    st.footT=-40;syncButtons();
+    st.footT=-27;syncButtons();
   });
 
   // ---------- loop ----------
@@ -597,8 +612,8 @@ footer{padding-block:64px 0;color:var(--muted);font-size:13px}
     phone.rotation.z=st.droop;
     const a=st.arm, dir=Math.PI-st.foot*D-2*Math.PI;
     arm.rotation.z=-Math.PI/2+(dir+Math.PI/2)*ph(a,0,0.35);
-    const ext=ph(a,0.3,0.85)*4.4;
-    s1.position.x=Math.min(ext,2.2);s2.position.x=Math.max(ext-2.2,0);
+    const ext=ph(a,0.3,0.85)*7.65;
+    s1.position.x=clamp(ext,0,2.55);s2.position.x=clamp(ext-2.55,0,2.55);s3.position.x=clamp(ext-5.1,0,2.55);
     foot.rotation.y=(1-ph(a,0.85,1))*Math.PI/2;
     // lip: kept pointing straight down in the head frame, slides to the phone's bottom edge
     lipG.rotation.z=-arm.rotation.z;
