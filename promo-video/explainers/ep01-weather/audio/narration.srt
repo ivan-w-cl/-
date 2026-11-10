@@ -1,0 +1,119 @@
+1
+00:00:00,600 --> 00:00:03,067
+In Liverpool, you can leave home in sunshine,
+
+2
+00:00:03,227 --> 00:00:04,876
+get rained on at the bus stop,
+
+3
+00:00:05,036 --> 00:00:07,566
+and be back in sunshine before the bus arrives.
+
+4
+00:00:08,166 --> 00:00:11,413
+There's a reason. Britain sits where different air masses meet.
+
+5
+00:00:11,573 --> 00:00:15,043
+The Met Office says the most common one arrives from the north-west:
+
+6
+00:00:15,203 --> 00:00:19,664
+cold polar air that warms and picks up moisture as it crosses the Atlantic.
+
+7
+00:00:19,824 --> 00:00:22,940
+That makes it unstable, and unstable air builds showers.
+
+8
+00:00:23,490 --> 00:00:27,688
+A shower is small. One can cover as little as a single square kilometre,
+
+9
+00:00:27,848 --> 00:00:29,125
+drifting on the wind.
+
+10
+00:00:29,285 --> 00:00:32,118
+So one street gets soaked while the next stays dry.
+
+11
+00:00:32,668 --> 00:00:34,941
+And daylight is not the same as sunshine.
+
+12
+00:00:35,101 --> 00:00:38,169
+Daylight is just the time between sunrise and sunset.
+
+13
+00:00:38,329 --> 00:00:43,968
+In late December, Liverpool gets about seven and a half hours of it. In late June, about seventeen.
+
+14
+00:00:44,128 --> 00:00:47,838
+Sunshine hours only count the time the sun actually shines through.
+
+15
+00:00:47,998 --> 00:00:54,068
+Across north-west England and north Wales, December averages about forty hours of sunshine in the whole month.
+
+16
+00:00:54,618 --> 00:00:59,252
+This is where one tool in our Liverpool student accommodation mini program helps.
+
+17
+00:00:59,412 --> 00:01:02,927
+Pick a building, open the sunlight reference, and drag through the day.
+
+18
+00:01:03,087 --> 00:01:05,562
+Switch between the winter and summer solstice,
+
+19
+00:01:05,722 --> 00:01:08,902
+and you can see where the sun sits and which outer walls face it.
+
+20
+00:01:09,062 --> 00:01:13,778
+It's a guide to orientation, and a starting point for asking about a specific room.
+
+21
+00:01:13,938 --> 00:01:17,457
+It doesn't account for neighbouring buildings, cloud, or light indoors.
+
+22
+00:01:18,007 --> 00:01:19,855
+The seasons explain the gap.
+
+23
+00:01:20,015 --> 00:01:25,688
+At midday in midwinter, the sun over Liverpool climbs only about thirteen degrees above the horizon,
+
+24
+00:01:25,848 --> 00:01:28,429
+so your shadow is around four times your height.
+
+25
+00:01:28,589 --> 00:01:33,422
+At midsummer it reaches about sixty degrees, and your shadow shrinks to just over half.
+
+26
+00:01:33,972 --> 00:01:38,604
+So when you check the forecast, skip the single icon for the day. Read it hour by hour.
+
+27
+00:01:38,764 --> 00:01:44,799
+On the Met Office forecast, a seventy percent chance means seven in ten that some rain falls within that hour,
+
+28
+00:01:44,959 --> 00:01:46,243
+not rain all day.
+
+29
+00:01:46,793 --> 00:01:49,101
+Britain has sunny days and grey days,
+
+30
+00:01:49,261 --> 00:01:51,500
+and quite often, both in one afternoon.

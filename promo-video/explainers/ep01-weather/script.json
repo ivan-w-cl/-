@@ -1,0 +1,52 @@
+{
+  "title": "Liverpool weather: sun and rain in one day, daylight vs sunshine",
+  "voice": "bm_george", "speed": 1.25, "lang": "en-gb",
+  "scenes": [
+    { "id": "hook", "gap": 0.35, "lines": [
+      "In Liverpool, you can leave home in sunshine,",
+      "get rained on at the bus stop,",
+      "and be back in sunshine before the bus arrives."
+    ] },
+    { "id": "airmass", "gap": 0.3, "lines": [
+      "There's a reason. Britain sits where different air masses meet.",
+      "The Met Office says the most common one arrives from the north-west:",
+      "cold polar air that warms and picks up moisture as it crosses the Atlantic.",
+      "That makes it unstable, and unstable air builds showers."
+    ] },
+    { "id": "showers", "gap": 0.3, "lines": [
+      "A shower is small. One can cover as little as a single square kilometre,",
+      "drifting on the wind.",
+      "So one street gets soaked while the next stays dry."
+    ] },
+    { "id": "daylight", "gap": 0.3, "lines": [
+      "And daylight is not the same as sunshine.",
+      "Daylight is just the time between sunrise and sunset.",
+      "In late December, Liverpool gets about seven and a half hours of it. In late June, about seventeen.",
+      "Sunshine hours only count the time the sun actually shines through.",
+      "Across north-west England and north Wales, December averages about forty hours of sunshine in the whole month."
+    ] },
+    { "id": "insert", "gap": 0.3, "lines": [
+      "This is where one tool in our Liverpool student accommodation mini program helps.",
+      "Pick a building, open the sunlight reference, and drag through the day.",
+      "Switch between the winter and summer solstice,",
+      "and you can see where the sun sits and which outer walls face it.",
+      "It's a guide to orientation, and a starting point for asking about a specific room.",
+      "It doesn't account for neighbouring buildings, cloud, or light indoors."
+    ] },
+    { "id": "seasons", "gap": 0.3, "lines": [
+      "The seasons explain the gap.",
+      "At midday in midwinter, the sun over Liverpool climbs only about thirteen degrees above the horizon,",
+      "so your shadow is around four times your height.",
+      "At midsummer it reaches about sixty degrees, and your shadow shrinks to just over half."
+    ] },
+    { "id": "forecast", "gap": 0.3, "lines": [
+      "So when you check the forecast, skip the single icon for the day. Read it hour by hour.",
+      "On the Met Office forecast, a seventy percent chance means seven in ten that some rain falls within that hour,",
+      "not rain all day."
+    ] },
+    { "id": "close", "gap": 0.3, "lines": [
+      "Britain has sunny days and grey days,",
+      "and quite often, both in one afternoon."
+    ] }
+  ]
+}

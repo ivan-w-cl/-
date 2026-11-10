@@ -1,0 +1,185 @@
+{
+ "duration": 112.85,
+ "lines": [
+  {
+   "scene": "hook",
+   "text": "In Liverpool, you can leave home in sunshine,",
+   "start": 0.6,
+   "end": 3.067
+  },
+  {
+   "scene": "hook",
+   "text": "get rained on at the bus stop,",
+   "start": 3.227,
+   "end": 4.876
+  },
+  {
+   "scene": "hook",
+   "text": "and be back in sunshine before the bus arrives.",
+   "start": 5.036,
+   "end": 7.566
+  },
+  {
+   "scene": "airmass",
+   "text": "There's a reason. Britain sits where different air masses meet.",
+   "start": 8.166,
+   "end": 11.413
+  },
+  {
+   "scene": "airmass",
+   "text": "The Met Office says the most common one arrives from the north-west:",
+   "start": 11.573,
+   "end": 15.043
+  },
+  {
+   "scene": "airmass",
+   "text": "cold polar air that warms and picks up moisture as it crosses the Atlantic.",
+   "start": 15.203,
+   "end": 19.664
+  },
+  {
+   "scene": "airmass",
+   "text": "That makes it unstable, and unstable air builds showers.",
+   "start": 19.824,
+   "end": 22.94
+  },
+  {
+   "scene": "showers",
+   "text": "A shower is small. One can cover as little as a single square kilometre,",
+   "start": 23.49,
+   "end": 27.688
+  },
+  {
+   "scene": "showers",
+   "text": "drifting on the wind.",
+   "start": 27.848,
+   "end": 29.125
+  },
+  {
+   "scene": "showers",
+   "text": "So one street gets soaked while the next stays dry.",
+   "start": 29.285,
+   "end": 32.118
+  },
+  {
+   "scene": "daylight",
+   "text": "And daylight is not the same as sunshine.",
+   "start": 32.668,
+   "end": 34.941
+  },
+  {
+   "scene": "daylight",
+   "text": "Daylight is just the time between sunrise and sunset.",
+   "start": 35.101,
+   "end": 38.169
+  },
+  {
+   "scene": "daylight",
+   "text": "In late December, Liverpool gets about seven and a half hours of it. In late June, about seventeen.",
+   "start": 38.329,
+   "end": 43.968
+  },
+  {
+   "scene": "daylight",
+   "text": "Sunshine hours only count the time the sun actually shines through.",
+   "start": 44.128,
+   "end": 47.838
+  },
+  {
+   "scene": "daylight",
+   "text": "Across north-west England and north Wales, December averages about forty hours of sunshine in the whole month.",
+   "start": 47.998,
+   "end": 54.068
+  },
+  {
+   "scene": "insert",
+   "text": "This is where one tool in our Liverpool student accommodation mini program helps.",
+   "start": 54.618,
+   "end": 59.252
+  },
+  {
+   "scene": "insert",
+   "text": "Pick a building, open the sunlight reference, and drag through the day.",
+   "start": 59.412,
+   "end": 62.927
+  },
+  {
+   "scene": "insert",
+   "text": "Switch between the winter and summer solstice,",
+   "start": 63.087,
+   "end": 65.562
+  },
+  {
+   "scene": "insert",
+   "text": "and you can see where the sun sits and which outer walls face it.",
+   "start": 65.722,
+   "end": 68.902
+  },
+  {
+   "scene": "insert",
+   "text": "It's a guide to orientation, and a starting point for asking about a specific room.",
+   "start": 69.062,
+   "end": 73.778
+  },
+  {
+   "scene": "insert",
+   "text": "It doesn't account for neighbouring buildings, cloud, or light indoors.",
+   "start": 73.938,
+   "end": 77.457
+  },
+  {
+   "scene": "seasons",
+   "text": "The seasons explain the gap.",
+   "start": 78.007,
+   "end": 79.855
+  },
+  {
+   "scene": "seasons",
+   "text": "At midday in midwinter, the sun over Liverpool climbs only about thirteen degrees above the horizon,",
+   "start": 80.015,
+   "end": 85.688
+  },
+  {
+   "scene": "seasons",
+   "text": "so your shadow is around four times your height.",
+   "start": 85.848,
+   "end": 88.429
+  },
+  {
+   "scene": "seasons",
+   "text": "At midsummer it reaches about sixty degrees, and your shadow shrinks to just over half.",
+   "start": 88.589,
+   "end": 93.422
+  },
+  {
+   "scene": "forecast",
+   "text": "So when you check the forecast, skip the single icon for the day. Read it hour by hour.",
+   "start": 93.972,
+   "end": 98.604
+  },
+  {
+   "scene": "forecast",
+   "text": "On the Met Office forecast, a seventy percent chance means seven in ten that some rain falls within that hour,",
+   "start": 98.764,
+   "end": 104.799
+  },
+  {
+   "scene": "forecast",
+   "text": "not rain all day.",
+   "start": 104.959,
+   "end": 106.243
+  },
+  {
+   "scene": "close",
+   "text": "Britain has sunny days and grey days,",
+   "start": 106.793,
+   "end": 109.101
+  },
+  {
+   "scene": "close",
+   "text": "and quite often, both in one afternoon.",
+   "start": 109.261,
+   "end": 111.5
+  }
+ ]
+}
