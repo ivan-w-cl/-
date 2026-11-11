@@ -1,15 +1,13 @@
-/* 公寓 PK · 第 1 期 快版（旁白 1.25 倍速，约 55 秒，竖屏铺满）
-   和 timeline-ep01 同一个问题、同一组数据，节奏和画面更有冲击力：
-   - 开场：地图上砸出「£37」和「凭什么？」
-   - 筛选：每点一下镜头就推近那个控件，「47 → 9」大数字滚动
-   - 价格：两根柱子升起，多出来的 £37 单独标红
-   - 距离：两个小人同时从公寓出发，同时到利物浦大学（都是 9 分钟）
-   - 评分：天平，4.4 对 4.3，晃一下几乎是平的
-   - 结论：三项盖上「≈」章，三张卡片翻出来
-   场景之间横向甩镜头（带动态模糊）。旁白时间在 ep01b-cues.json（episodes/tts.py ep01b 生成）。
-   录制：PORTRAIT=1 FS=1 TL=timeline-ep01b PRE=300 SFX_LOG=episodes/ep01b/sfx.json node record.cjs frames/ep01b 30 0 <EP_END> 1.5 */
+/* 公寓 PK（竖屏铺满，带旁白、字幕、音效）—— 第 1 期快版，也是之后每一期的模板。
+   做新一期：复制这个文件改名 timeline-<期号>.js，只改下面「每期只改这一块」的 EP；旁白在 episodes/<期号>/script.json。
+   画面顺序（每段跟着同名的旁白句子走）：
+   hook 开场大字 → open 筛选（镜头推近每个选项）→ count 大数字滚动 → sort 排序、标出前两名
+   → gap 价格柱 → dist 走路比赛 → rate 评分天平 → life 楼里有什么 → verdict 结论 → cta 回到地图选专业 → 片名。
+   旁白时间在 <期号>-cues.json（episodes/tts.py 生成），文件名跟着录制时的 TL 自动找。
+   录制：见 .claude/skills/apartment-pk-video/SKILL.md（scripts/render.sh） */
 'use strict';
-const CUES = (() => { const x = new XMLHttpRequest(); x.open('GET', 'ep01b-cues.json', false); x.send(); return JSON.parse(x.responseText); })();
+const EPID = (new URLSearchParams(location.search).get('tl') || '').replace(/^timeline-/, '');
+const CUES = (() => { const x = new XMLHttpRequest(); x.open('GET', EPID + '-cues.json', false); x.send(); return JSON.parse(x.responseText); })();
 const C = {}; CUES.cues.forEach(c => { C[c.id] = c; });
 const at = (id, f) => C[id].t0 + (C[id].t1 - C[id].t0) * f;
 const cp = (id, i) => C[id].cap[i].t;                              // 第 i 段字幕出现的时间
@@ -27,10 +25,34 @@ const row = n => w => w.document.querySelector(`#homesPanel li.hrow[data-rank="$
 const el$ = sel => w => w.document.querySelector(sel);
 S.tapSfx = 'tick';
 
-/* ---------- 数据（data/homes.json、网页 PRICES：Amber 平台起价，2026-10-17 核对） ---------- */
-const A = { name: 'Europa', price: 95, uol: 9, ljmu: 18, lime: 16, centre: 28, rating: 4.4, reviews: 19, has: ['休息室', '游戏区', '住户活动'] };
-const B = { name: 'Prospect Point', price: 132, uol: 9, ljmu: 17, lime: 15, centre: 27, rating: 4.3, reviews: 19, has: ['公共厨房', '用餐区', '24 小时安保'] };
-const SOURCE = '价格与评分：Amber 平台起价，2026-10-17 核对 · 步行时间按距离估算';
+/* ==================== 每期只改这一块 ==================== */
+const EP = {
+  /* 网页「筛选」里的选项值。房型 room：any / ensuite / studio；步行 walk：5 / 10 / 15 / 20 / 30 / 45（到 dest）；
+     dest：uol 利物浦大学 / ljmu；预算 budget：0 不限 / 100 / 125 / 150 / 175 / 200 / 250 / 300；
+     排序 rank：ensuite 独卫最便宜 / studio / cheapest / uol / ljmu / lime / centre / reviews / rating */
+  filter: { room: 'ensuite', walk: '10', dest: 'uol', budget: '0', rank: 'ensuite' },
+  /* 两栋楼：A 是排第 1 的（便宜的），B 是第 2 名。数字来自 data/homes.json 和网页里的 PRICES。
+     has：楼里有什么（每栋 2–4 项）；B.hot：B 的第几项标红（从 0 数，不标就写 -1） */
+  A: { name: 'Europa', price: 95, uol: 9, ljmu: 18, lime: 16, centre: 28, rating: 4.4, reviews: 19, has: ['休息室', '游戏区', '住户活动'] },
+  B: { name: 'Prospect Point', price: 132, uol: 9, ljmu: 17, lime: 15, centre: 27, rating: 4.3, reviews: 19, has: ['公共厨房', '用餐区', '24 小时安保'], hot: 2 },
+  hook: { big: '£37', unit: '/周', stamp: '凭什么？' },                       // 开场砸下来的大字和红章
+  count: { from: 47, to: 9, sub: '独卫 · 步行 10 分钟内' },                    // 筛选后的大数字
+  rank: ['第 1 名 £95', '第 2 名 £132'],                                      // 列表上两个标签
+  price: { kick: '第 1 名 VS 第 2 名', title: '每周差多少？', extra: '多出来的这一截', near: '两栋楼相距不到 100 米' },
+  race: { title: '走到利物浦大学', to: 'uol', flag: '利物浦<br>大学', done: '同时到 · 都是 9 分钟',
+    rows: [['去 LJMU', 'ljmu', '差 1 分钟'], ['去莱姆街火车站', 'lime', '差 1 分钟'], ['去市中心', 'centre', '差 1 分钟']] },
+  rate: { title: '放到天平上' },
+  life: { title: '楼里有什么？' },
+  verdict: { rows: [['位置', '相距不到 100 米'], ['距离', '最多差 1 分钟'], ['评分', '4.4 对 4.3']],
+    line: '全都解释不了 <span class="b">£37</span>', sub: '订房之前，请对比三样',
+    cards: [['房间面积', '同样叫独卫<br>大小可以差很多'], ['装修新旧', '看实拍照片<br>和翻新年份'], ['合同周数', '周数不同<br>总价差得更多']] },
+  subject: 'medicine',                                                      // 片尾选的专业（网页 #subject 的值）
+  source: '价格与评分：Amber 平台起价，2026-10-17 核对 · 步行时间按距离估算',     // 画面底部的数据来源
+  end: { h: '留学住宿通', s: '利物浦学生住宿地图' },                             // 片名
+  zoom: { filter: 1.45, button: 1.4, rank: 1.35, subject: 1.5 }             // 镜头推近的倍数
+};
+/* ======================================================= */
+const A = EP.A, B = EP.B, SOURCE = EP.source;
 
 /* ---------- 网页镜头：把整块屏幕绕某一点放大（焦点可以是网页里的元素，录制时取它的位置） ---------- */
 const SW = 432, SH = 672;                                           // 铺满版网页的排版尺寸
@@ -67,30 +89,31 @@ zoom(C.hook.t1 - 0.05, 0.3, 1, null);
 const FAST = { lead: 0.18 };
 S.tap(C.open.t0 - 0.12, leafText('筛选'), FAST);
 S.sfx(C.open.t0, 'whoosh', 0.35);
-zoom(C.open.t0 + 0.05, 0.3, 1.45, el$('#homeRoom'), 300);
-S.tap(cp('open', 1) + 0.05, '#homeRoom', Object.assign({ fn: setValue('ensuite') }, FAST));
-zoom(cp('open', 2) - 0.12, 0.26, 1.45, el$('#homeWalk'), 300);
-S.tap(cp('open', 2) + 0.12, '#homeWalk', Object.assign({ fn: setValue('10') }, FAST));
-zoom(C.count.t0 - 0.12, 0.25, 1.4, el$('#viewResults'));
+zoom(C.open.t0 + 0.05, 0.3, EP.zoom.filter, el$('#homeRoom'), 300);
+S.at(C.open.t0 + 0.1, () => { const d = W().document; for (const [id, v] of [['homeBudget', EP.filter.budget], ['homeDestination', EP.filter.dest]]) { const e = d.getElementById(id); if (e && e.value !== v) setValue(v)(e); } });
+S.tap(cp('open', 1) + 0.05, '#homeRoom', Object.assign({ fn: setValue(EP.filter.room) }, FAST));
+zoom(cp('open', 2) - 0.12, 0.26, EP.zoom.filter, el$('#homeWalk'), 300);
+S.tap(cp('open', 2) + 0.12, '#homeWalk', Object.assign({ fn: setValue(EP.filter.walk) }, FAST));
+zoom(C.count.t0 - 0.12, 0.25, EP.zoom.button, el$('#viewResults'));
 S.tap(C.count.t0 + 0.02, '#viewResults', FAST);
 zoom(C.count.t1 - 0.1, 0.3, 1, null);
-S.tap(C.sort.t0 + 0.05, '#rank', Object.assign({ fn: setValue('ensuite') }, FAST));
+S.tap(C.sort.t0 + 0.05, '#rank', Object.assign({ fn: setValue(EP.filter.rank) }, FAST));
 S.scroll(C.sort.t0 + 0.2, C.sort.t0 + 0.55, w => scrollParent(row(1)(w)), (box, w) => box.scrollTop + row(1)(w).getBoundingClientRect().top - box.getBoundingClientRect().top - box.clientHeight * 0.34);
-zoom(cp('sort', 1) - 0.25, 0.3, 1.35, row(1), 216);
-zoom(cp('sort', 2) - 0.15, 0.3, 1.35, row(2), 216);
-S.note(cp('sort', 1), cp('sort', 2) - 0.1, row(1), '第 1 名 £95', { pos: 'top' });
-S.note(cp('sort', 2), C.gap.t0, row(2), '第 2 名 £132', { pos: 'top' });
+zoom(cp('sort', 1) - 0.25, 0.3, EP.zoom.rank, row(1), 216);
+zoom(cp('sort', 2) - 0.15, 0.3, EP.zoom.rank, row(2), 216);
+S.note(cp('sort', 1), cp('sort', 2) - 0.1, row(1), EP.rank[0], { pos: 'top' });
+S.note(cp('sort', 2), C.gap.t0, row(2), EP.rank[1], { pos: 'top' });
 S.sfx(cp('sort', 1), 'pop', 0.7); S.sfx(cp('sort', 2), 'pop', 0.7);
 /* 数据画面盖住网页时：关列表、回到地图，片尾用 */
 S.at(C.dist.t0, () => { const b = [...W().document.querySelectorAll('#homesPanel .closeSheet')].find(vis); if (b) b.click(); });
 zoom(C.gap.t0, 0.1, 1, null);
-zoom(C.cta.t0 + 0.1, 0.5, 1.5, el$('.subject-tab'));
+zoom(C.cta.t0 + 0.1, 0.5, EP.zoom.subject, el$('.subject-tab'));
 S.tap(cp('cta', 0) + 0.7, '.subject-tab', FAST);
 zoom(cp('cta', 1) - 0.1, 0.4, 1.35, el$('#subject'));
-S.tap(cp('cta', 1) + 0.25, '#subject', Object.assign({ fn: setValue('medicine') }, FAST));
+S.tap(cp('cta', 1) + 0.25, '#subject', Object.assign({ fn: setValue(EP.subject) }, FAST));
 zoom(cp('cta', 1) + 0.7, 0.9, 1, null);
 S.sfx(cp('cta', 1) + 0.3, 'whoosh', 0.4);
-S.title(CUES.voiceEnd + 0.4, END + 1, { h: '留学住宿通', s: '利物浦学生住宿地图', cls: 'c end', fade: 0.4 });
+S.title(CUES.voiceEnd + 0.4, END + 1, { h: EP.end.h, s: EP.end.s, cls: 'c end', fade: 0.4 });
 S.sfx(CUES.voiceEnd + 0.4, 'hit', 0.5);
 /* 数据画面的音效 */
 const SCENES = ['gap', 'dist', 'rate', 'life', 'verdict'];
@@ -191,48 +214,48 @@ document.head.appendChild(css);
 const mk = (id, html) => { const d = document.createElement('div'); d.id = id; if (html) d.innerHTML = html; document.body.appendChild(d); return d; };
 mk('band'); const cap = mk('epcap');
 const kin = mk('kin', `<div class="veil"></div><div class="flash"></div>
-  <div class="k37">£37<small> /周</small></div><div class="why"><span>凭什么？</span></div>
-  <div class="cnt"><span class="n">47</span><span class="u">栋</span><span class="of">独卫 · 步行 10 分钟内</span></div>`);
-const PX = 6;                                                        // 价格柱：每 £1 高 6 px
+  <div class="k37">${EP.hook.big}<small> ${EP.hook.unit}</small></div><div class="why"><span>${EP.hook.stamp}</span></div>
+  <div class="cnt"><span class="n">${EP.count.from}</span><span class="u">栋</span><span class="of">${EP.count.sub}</span></div>`);
+const PX = 800 / Math.max(A.price, B.price);                          // 价格柱：贵的那根 800 px 高
 const ep = mk('ep', `
 <div class="sc" data-sc="gap">
-  <div class="kick">第 1 名 VS 第 2 名</div><div class="big">每周差多少？</div>
+  <div class="kick">${EP.price.kick}</div><div class="big">${EP.price.title}</div>
   <div class="base"></div>
   <div class="pbar bga" data-pb="a" style="left:190px"></div><div class="pbar bgb" data-pb="b" style="left:590px"><div class="extra"></div></div>
   <div class="ptop a" data-pt="a" style="left:190px">£0</div><div class="ptop b" data-pt="b" style="left:590px">£0</div>
   <div class="pname a" style="left:190px">${A.name}</div><div class="pname b" style="left:590px">${B.name}</div>
   <div class="dash" data-e="dash" style="left:190px;width:700px"></div>
-  <div class="plus" data-e="plus">+£37<small>多出来的这一截</small></div>
-  <div class="near" data-e="near"><div class="lb">两栋楼相距不到 100 米</div><div class="ln"></div>
+  <div class="plus" data-e="plus">+£${B.price - A.price}<small>${EP.price.extra}</small></div>
+  <div class="near" data-e="near"><div class="lb">${EP.price.near}</div><div class="ln"></div>
     <div class="pin bga" style="left:60px">1</div><div class="pin bgb" style="right:60px">2</div>
     <div class="nm a" style="left:0">${A.name}</div><div class="nm b" style="right:0;text-align:right">${B.name}</div></div>
 </div>
 <div class="sc" data-sc="dist">
-  <div class="kick">位置</div><div class="big">走到利物浦大学</div>
+  <div class="kick">位置</div><div class="big">${EP.race.title}</div>
   <div class="clock" data-e="clock">0<small>分钟</small></div>
   ${[['a', A], ['b', B]].map(([k, o], i) => `<div class="lane" style="top:${330 + i * 190}px"><div class="who ${k}">${o.name}</div><div class="trk"></div><div class="walked bg${k}" data-w="${k}"></div><div class="run bg${k}" data-r="${k}">${i + 1}</div></div>`).join('')}
-  <div class="flag"><div class="pole"></div>利物浦<br>大学</div>
-  <div class="tie" data-e="tie"><span>同时到 · 都是 9 分钟</span></div>
-  ${[['去 LJMU', 'ljmu'], ['去莱姆街火车站', 'lime'], ['去市中心', 'centre']].map((r, i) => `<div class="mrow" data-m="${i}" style="top:${930 + i * 140}px">${r[0]}<span class="v"><span class="a">${A[r[1]]}</span> · <span class="b">${B[r[1]]}</span> 分钟</span><span class="d">差 1 分钟</span></div>`).join('')}
+  <div class="flag"><div class="pole"></div>${EP.race.flag}</div>
+  <div class="tie" data-e="tie"><span>${EP.race.done}</span></div>
+  ${EP.race.rows.map((r, i) => `<div class="mrow" data-m="${i}" style="top:${930 + i * 140}px">${r[0]}<span class="v"><span class="a">${A[r[1]]}</span> · <span class="b">${B[r[1]]}</span> 分钟</span><span class="d">${r[2]}</span></div>`).join('')}
 </div>
 <div class="sc" data-sc="rate">
-  <div class="kick">口碑</div><div class="big">放到天平上</div>
+  <div class="kick">口碑</div><div class="big">${EP.rate.title}</div>
   <div class="scale"><div class="post"></div><div class="foot"></div>
     <div class="beam" data-e="beam">
       ${[['a', A, 0], ['b', B, 800]].map(([k, o, x]) => `<div class="pan" data-pan="${k}" style="left:${x}px"><div class="str"></div><div class="dish"><div class="sc3 ${k}" data-sv="${k}">0.0</div><div class="bowl bg${k}"></div><div class="nm ${k}">${o.name}</div><div class="rv">${o.reviews} 条评价</div></div></div>`).join('')}
     </div><div class="hub"></div></div>
 </div>
 <div class="sc" data-sc="life">
-  <div class="kick">生活</div><div class="big">楼里有什么？</div>
+  <div class="kick">生活</div><div class="big">${EP.life.title}</div>
   <div class="lcol" style="left:70px"><div class="nm a">${A.name}</div>${A.has.map((h, i) => `<div class="chip" data-chip="a${i}">${h}</div>`).join('')}</div>
-  <div class="lcol" style="left:560px"><div class="nm b">${B.name}</div>${B.has.map((h, i) => `<div class="chip${i === 2 ? ' hot' : ''}" data-chip="b${i}">${h}</div>`).join('')}</div>
+  <div class="lcol" style="left:560px"><div class="nm b">${B.name}</div>${B.has.map((h, i) => `<div class="chip${i === B.hot ? ' hot' : ''}" data-chip="b${i}">${h}</div>`).join('')}</div>
 </div>
 <div class="sc" data-sc="verdict">
   <div class="kick">结论</div><div class="big">差在哪里？</div>
-  ${[['位置', '相距不到 100 米'], ['距离', '最多差 1 分钟'], ['评分', '4.4 对 4.3']].map((r, i) => `<div class="vrow" data-v="${i}" style="top:${300 + i * 156}px">${r[0]}<span>${r[1]}</span><div class="stamp" data-st="${i}">≈</div></div>`).join('')}
-  <div class="vline" data-e="vline">全都解释不了 <span class="b">£37</span></div>
-  <div class="vsub" data-e="vsub">订房之前，请对比三样</div>
-  ${[['房间面积', '同样叫独卫<br>大小可以差很多'], ['装修新旧', '看实拍照片<br>和翻新年份'], ['合同周数', '周数不同<br>总价差得更多']].map((c, i) => `<div class="vcard" data-vc="${i}" style="left:${70 + i * 325}px">${c[0]}<small>${c[1]}</small></div>`).join('')}
+  ${EP.verdict.rows.map((r, i) => `<div class="vrow" data-v="${i}" style="top:${300 + i * 156}px">${r[0]}<span>${r[1]}</span><div class="stamp" data-st="${i}">≈</div></div>`).join('')}
+  <div class="vline" data-e="vline">${EP.verdict.line}</div>
+  <div class="vsub" data-e="vsub">${EP.verdict.sub}</div>
+  ${EP.verdict.cards.map((c, i) => `<div class="vcard" data-vc="${i}" style="left:${70 + i * 325}px">${c[0]}<small>${c[1]}</small></div>`).join('')}
 </div>
 <div class="src">${SOURCE}</div>`);
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
@@ -263,7 +286,7 @@ function paint(t) {
   if (cv > 0) { $('#kin .veil').style.opacity = 0.85 * cv; }
   const cnt = $('#kin .cnt'); cnt.style.opacity = cv;
   const cu = c01((t - ct0 - 0.15) / (C.count.t1 - ct0 - 0.35));
-  cnt.querySelector('.n').textContent = Math.round(47 - 38 * (cu < 1 ? Math.pow(cu, 0.6) : 1));
+  cnt.querySelector('.n').textContent = Math.round(EP.count.from - (EP.count.from - EP.count.to) * (cu < 1 ? Math.pow(cu, 0.6) : 1));
   cnt.style.transform = `scale(${1 + 0.08 * Math.sin(Math.min(1, cu) * Math.PI)})`;
   const fl = (t - (C.count.t1 - 0.15)) / 0.35; $('#kin .flash').style.opacity = fl > 0 && fl < 1 ? 0.55 * (1 - fl) * (1 - fl) : 0;
   /* 数据画面：横向甩进甩出 */
@@ -285,15 +308,15 @@ function paint(t) {
       const pl = $('[data-e="plus"]'); pl.style.top = (1680 - 600 - B.price * PX + 30) + 'px'; pop(pl, (t - cp('gap', 0) - 0.55) / 0.35);
       show($('[data-e="near"]'), (t - cp('gap', 2) + 0.1) / 0.35);
     } else if (id === 'dist') {
-      const r0 = cp('dist', 0) - 0.05, r1 = cp('dist', 1) + 0.15, ur = c01((t - r0) / (r1 - r0)), e = ur < 1 ? ur * ur * (3 - 2 * ur) : 1;
-      for (const k of ['a', 'b']) { const run = $(`[data-r="${k}"]`), wob = Math.sin((t - r0) * 26 + (k === 'a' ? 0 : 1.7)) * 6 * (ur > 0 && ur < 1 ? 1 : 0);
+      const r0 = cp('dist', 0) - 0.05, r1 = cp('dist', 1) + 0.15, mx = Math.max(A[EP.race.to], B[EP.race.to]), ur = c01((t - r0) / (r1 - r0)), mins = mx * ur;   // 时钟走到慢的那栋到达
+      for (const [k, o] of [['a', A], ['b', B]]) { const uk = c01(mins / o[EP.race.to]), e = uk < 1 ? uk * uk * (3 - 2 * uk) : 1, run = $(`[data-r="${k}"]`), wob = Math.sin((t - r0) * 26 + (k === 'a' ? 0 : 1.7)) * 6 * (uk > 0 && uk < 1 ? 1 : 0);
         const x = 48 + e * 692; run.style.left = x + 'px'; run.style.transform = `translateY(${wob}px)`; $(`[data-w="${k}"]`).style.width = Math.max(0, x - 48) + 'px'; }
-      const ck = $('[data-e="clock"]'); ck.firstChild.textContent = String(Math.round(9 * e)); ck.style.color = ur >= 1 ? '#2c8a57' : '#1d1d1f';
+      const ck = $('[data-e="clock"]'); ck.firstChild.textContent = String(Math.round(mins)); ck.style.color = ur >= 1 ? '#2c8a57' : '#1d1d1f';
       const tie = $('[data-e="tie"]'); pop(tie, (t - r1) / 0.35);
       [0, 1, 2].forEach(i => show($(`[data-m="${i}"]`), (t - cp('dist', 2) - i * 0.12) / 0.3, 30));
     } else if (id === 'rate') {
       const u = out((t - a0 - 0.2) / 0.7); $('[data-sv="a"]').textContent = (A.rating * u).toFixed(1); $('[data-sv="b"]').textContent = (B.rating * u).toFixed(1);
-      const s0 = a0 + 0.35, tilt = -1.2, d = Math.max(0, t - s0);
+      const s0 = a0 + 0.35, tilt = Math.max(-12, Math.min(12, -(A.rating - B.rating) * 12)), d = Math.max(0, t - s0);   // 分高的一边沉一点
       const ang = t < s0 ? 0 : tilt + (0 - tilt) * Math.exp(-d * 2.2) * Math.cos(d * 9) + 7 * Math.exp(-d * 2.6) * Math.sin(d * 9);
       $('[data-e="beam"]').style.transform = `rotate(${ang}deg)`;
       $$('#ep [data-pan]').forEach(p => { p.style.transform = `rotate(${-ang}deg)`; });
