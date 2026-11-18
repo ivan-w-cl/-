@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>综评到底多给了考生什么机会</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&display=swap">
+<style>
+/* Flash-style explainer, 1080×1920: cream ground, ink outlines, flat colour blocks, small offset shadows. */
+:root{--cream:#FFF4E0;--ink:#1F1A17;--paper:#FFFFFF;--teal:#2E8C8C;--coral:#EF6A4B;--yellow:#FFC93C;--blue:#4B7BE5;--rose:#D45D7A;--green:#3C9D6B;--muted:#6B6259}
+html,body{margin:0;background:#2a2622}
+body{font-family:"Noto Sans SC","WenQuanYi Zen Hei",sans-serif;color:var(--ink)}
+#wrap{display:grid;place-items:center;min-height:100vh;gap:12px;padding:12px}
+#stage{position:relative;width:1080px;height:1920px;background:var(--cream);overflow:hidden;transform-origin:0 0}
+#vp{position:relative;overflow:hidden;border-radius:12px}
+#ctrl{display:flex;gap:10px;align-items:center;color:#fff;font:14px sans-serif}
+#ctrl button{font:inherit;padding:6px 14px;border-radius:8px;border:0;cursor:pointer}
+#ctrl input{width:420px}
+body.export{background:var(--cream)} body.export #wrap{display:block;padding:0} body.export #ctrl{display:none} body.export #vp{border-radius:0}
+.abs{position:absolute}
+.box{position:absolute;background:var(--paper);border:5px solid var(--ink);border-radius:30px;box-shadow:10px 10px 0 var(--ink);box-sizing:border-box}
+.pill{position:absolute;display:inline-flex;align-items:center;gap:10px;border:4px solid var(--ink);border-radius:999px;padding:6px 22px;font-weight:900;box-shadow:6px 6px 0 var(--ink);white-space:nowrap}
+.big{font-weight:900;line-height:1.15}
+.hl{color:var(--coral)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(31,26,23,.07) 3px,transparent 3.5px);background-size:46px 46px}
+#head{position:absolute;left:60px;right:60px;top:64px;display:flex;align-items:center;gap:18px}
+#head .tag{background:var(--yellow);border:4px solid var(--ink);border-radius:16px;padding:6px 16px;font-weight:900;font-size:30px;box-shadow:5px 5px 0 var(--ink)}
+#head .q{font-weight:900;font-size:34px}
+#cap{position:absolute;left:60px;right:60px;top:1500px;min-height:230px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px 40px;font-size:54px;font-weight:700;line-height:1.38;background:var(--paper);border:5px solid var(--ink);border-radius:32px;box-shadow:10px 10px 0 var(--ink);box-sizing:border-box}
+#cap .hl{color:var(--coral);font-weight:900}
+#foot{position:absolute;left:60px;right:60px;top:1800px;display:flex;align-items:center;gap:12px;font-size:28px;font-weight:700;color:var(--muted)}
+#foot b{display:inline-block;padding:3px 14px;border-radius:10px;border:3px solid var(--ink);color:var(--ink);font-size:26px;white-space:nowrap}
+#foot span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#scene{position:absolute;left:0;top:200px;width:1080px;height:1270px}
+.kid svg{display:block}
+.panel{position:absolute;left:90px;width:900px;background:#fff;border:6px solid var(--ink);border-radius:36px;box-shadow:12px 12px 0 var(--ink);overflow:hidden}
+.panel img{position:absolute;left:0;top:0;width:1080px;transform-origin:0 0}
+.panel .tap{position:absolute;width:90px;height:90px;margin:-45px 0 0 -45px;border-radius:50%;border:8px solid var(--coral);box-sizing:border-box}
+.ptag{position:absolute;left:90px;top:0;background:var(--ink);color:#fff;border-radius:14px;padding:6px 18px;font-size:28px;font-weight:900}
+.chip{position:absolute;border:4px solid var(--ink);border-radius:20px;padding:10px 20px;font-size:36px;font-weight:900;background:#fff;box-shadow:6px 6px 0 var(--ink);white-space:nowrap}
+.stamp{position:absolute;border:7px solid var(--coral);color:var(--coral);border-radius:22px;padding:10px 26px;font-size:54px;font-weight:900;background:rgba(255,255,255,.9);white-space:nowrap}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="vp"><div id="stage">
+    <div class="dots"></div>
+    <div id="head"><span class="tag">升学科普</span><span class="q">综评到底多给了考生什么机会？</span></div>
+    <div id="scene"></div>
+    <div id="cap"></div>
+    <div id="foot"></div>
+  </div></div>
+  <div id="ctrl"><button id="play">播放</button><input id="seek" type="range" min="0" max="1000" value="0"><span id="time">0:00</span></div>
+</div>
+<script src="script.js"></script>
+<script src="capture-meta.js"></script>
+<script src="voice-durations.js"></script>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+  const ease = x => 1 - Math.pow(1 - clamp(x), 3);
+  const back = x => { x = clamp(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+  const P = (u, a, d = 0.45) => clamp((u - a) / d);
+  const el = (cls, html, css) => { const n = document.createElement('div'); n.className = cls; if (html != null) n.innerHTML = html; if (css) n.style.cssText = css; return n; };
+  const plain = s => s.replace(/\[\[|\]\]/g, '');
+  const rich = s => s.replace(/\[\[(.+?)\]\]/g, '<span class="hl">$1</span>');
+  const len = s => plain(s).replace(/\s/g, '').length;
+  const CPS = 5.9, GAP = 0.38, LEAD = 0.6;
+  const EXTRA = { drill: 3.0, calc: 0.8, end: 2.4 };
+
+  /* ---------- timeline (estimated; tools/retime.cjs replaces durations with measured voice clips) ---------- */
+  const DUR = window.VOICE_DURATIONS || null; // optional: { "S03L1": seconds, … } from real narration
+  let t = LEAD; const TL = [];
+  SCENES.forEach((sc, si) => {
+    const start = t, lines = [];
+    sc.lines.forEach((ln, li) => {
+      const id = `S${String(si + 1).padStart(2, '0')}L${li + 1}`;
+      const d = DUR && DUR[id] ? DUR[id] : Math.max(1.8, len(ln.t) / CPS);
+      // caption segments: split long lines at punctuation, each segment gets time in proportion to its length
+      const parts = (plain(ln.t).length > 30 ? ln.t.match(/[^，；：。？]+[，；：。？]?/g) : [ln.t]) || [ln.t]; const segs = []; let buf = '';
+      parts.forEach(pt => { if (buf && len(buf + pt) > 30) { segs.push(buf); buf = pt; } else buf += pt; }); if (buf) segs.push(buf);
+      let u = t; const tot = segs.reduce((a, s) => a + len(s), 0);
+      const segT = segs.map(s => { const sd = d * len(s) / tot, o = { text: s, start: u, end: u + sd }; u += sd; return o; });
+      lines.push({ id, ...ln, start: t, end: t + d, segs: segT }); t += d + GAP;
+    });
+    t += EXTRA[sc.id] || 0;
+    TL.push({ ...sc, si, start, end: t, lines });
+  });
+  const TOTAL = t + 0.4;
+
+  /* ---------- drawing helpers ---------- */
+  function kid(color, label) {
+    return `<svg width="230" height="330" viewBox="0 0 230 330" aria-hidden="true"><g stroke="#1F1A17" stroke-width="7" stroke-linejoin="round">
+      <rect x="35" y="150" width="160" height="170" rx="60" fill="${color}"/><circle cx="115" cy="95" r="70" fill="#F6CFA8"/>
+      <path d="M45 85 Q115 0 185 85 Q150 55 115 62 Q80 55 45 85Z" fill="#2F2722"/>
+      <circle cx="92" cy="105" r="7" fill="#1F1A17" stroke="none"/><circle cx="138" cy="105" r="7" fill="#1F1A17" stroke="none"/>
+      <path d="M98 130 Q115 142 132 130" fill="none" stroke-width="6" stroke-linecap="round"/></g>
+      <text x="115" y="262" text-anchor="middle" font-size="48" font-weight="900" fill="#fff" font-family="Noto Sans SC, sans-serif">${label}</text></svg>`;
+  }
+  const S = $('scene');
+  function put(n, x, y) { n.style.left = x + 'px'; n.style.top = y + 'px'; S.appendChild(n); return n; }
+  const popIn = (n, p, baseT = '') => { n.style.opacity = p > 0 ? 1 : 0; n.style.transform = `${baseT} scale(${(0.6 + 0.4 * back(p)).toFixed(3)})`; };
+  const slideIn = (n, p, dx = 0, dy = 60) => { const e = ease(p); n.style.opacity = e; n.style.transform = `translate(${(1 - e) * dx}px,${(1 - e) * dy}px)`; };
+
+  /* product clip: frames placed by weight across a window; crop per frame (image px of the 1080-wide capture) */
+  const META = window.CAPTURE_META || {};
+  function productClip(name, opts) {
+    const meta = META[name], frames = meta.frames, panel = el('panel'), img = document.createElement('img'), tap = el('tap');
+    panel.style.top = opts.top + 'px'; panel.style.height = opts.h + 'px'; panel.appendChild(img); panel.appendChild(tap); S.appendChild(panel);
+    const tag = put(el('ptag', '真实产品画面 · ' + opts.label), 90, opts.top - 58);
+    const w = frames.map(f => /结果|默认|反馈|速记|练习题|已切到/.test(f.note) ? opts.hold || 7 : /点选|切到广东前/.test(f.note) ? 3 : 1);
+    const sum = w.reduce((a, b) => a + b, 0); let acc = 0; let times = w.map(x => { const v = opts.a + (opts.b - opts.a) * acc / sum; acc += x; return v; });
+    // anchors [[frameIndex, time]]: a result frame lands exactly when the narration says it; the typing frames
+    // before it are packed just ahead (dt apart), so the screen never runs behind the voice.
+    if (opts.anchors) { const dt = opts.dt || 0.07; times = frames.map(() => opts.a); let prev = -1, prevT = opts.a;
+      opts.anchors.forEach(([k, at]) => { for (let j = prev + 1; j <= k; j++) times[j] = Math.max(prevT + (j === prev + 1 && prev >= 0 ? 0.3 : 0), at - (k - j) * dt); prev = k; prevT = at; });
+      if (prev >= 0) times[0] = Math.min(times[0], opts.a); }
+    return { panel, tag, frames, update(u) {
+      let i = 0; while (i + 1 < frames.length && u >= times[i + 1]) i++;
+      const f = frames[i], crop = (opts.crop && opts.crop(f, i)) || [0, 1080];
+      const sc = 900 / 1080 * (opts.zoom || 1);
+      if (!img.src.endsWith(`${name}/${f.file}`)) img.src = `capture/${name}/${f.file}`;
+      img.style.transform = `scale(${sc}) translate(0,${-crop[0]}px)`;
+      const pin = ease(P(u, opts.a - 0.5, 0.5)); panel.style.opacity = pin; tag.style.opacity = pin; panel.style.transform = `translateY(${(1 - pin) * 50}px)`;
+      if (f.tap && u - times[i] < 0.9) { const k = (u - times[i]) / 0.9; tap.style.opacity = 1 - k; tap.style.left = f.tap.x * meta.scale * sc + 'px'; tap.style.top = (f.tap.y * meta.scale - crop[0]) * sc + 'px'; tap.style.transform = `scale(${0.6 + k * 0.7})`; }
+      else tap.style.opacity = 0;
+      return i;
+    } };
+  }
+
+  /* ---------- scenes: build(sc) → update(u, L) where L[i] = line i start (scene-relative) ---------- */
+  const BUILD = {
+    hook(sc) {
+      const a = put(el('kid abs', kid('#4B7BE5', 'A')), 170, 520), b = put(el('kid abs', kid('#2E8C8C', 'B')), 680, 520);
+      const ga = put(el('chip', '高考'), 210, 420), gb = put(el('chip', '高考'), 720, 420);
+      const iv = put(el('chip', '+ 学校面试', 'background:#FFC93C'), 130, 260);
+      const q = put(el('abs big', '?', 'font-size:300px;color:#EF6A4B;-webkit-text-stroke:8px #1F1A17;left:440px;top:20px'), 440, 0);
+      const title = put(el('box', '<div class="big" style="font-size:66px;padding:26px 30px;text-align:center">综评，到底多给了<br>考生<span class="hl">什么机会</span>？</div>'), 90, 900);
+      return (u, L) => { slideIn(a, P(u, 0), -60, 0); slideIn(b, P(u, 0.15), 60, 0); popIn(ga, P(u, 0.4)); popIn(gb, P(u, 0.5));
+        const d = P(u, L[0] + 1.3, 0.6); iv.style.opacity = d > 0 ? 1 : 0; iv.style.transform = `translateY(${(1 - back(d)) * -220}px) rotate(-4deg)`;
+        popIn(q, P(u, L[1])); q.style.transform += ` rotate(${Math.sin(u * 3) * 6}deg)`; slideIn(title, P(u, L[1] + 0.3)); };
+    },
+    define(sc) {
+      const b1 = put(el('chip', '高考成绩', 'background:#4B7BE5;color:#fff;font-size:44px'), 60, 120), pl = put(el('abs big', '+', 'font-size:80px'), 330, 104);
+      const b2 = put(el('chip', '学校考核', 'background:#2E8C8C;color:#fff;font-size:44px'), 400, 120), eq = put(el('abs big', '=', 'font-size:80px'), 672, 104);
+      const b3 = put(el('chip', '综合成绩', 'background:#FFC93C;font-size:44px'), 740, 120);
+      const tg = put(el('pill', '西浦 · 2026 · 江苏', 'background:#fff;font-size:34px'), 90, 360), full = put(el('pill', '满分 100 分', 'background:#FFC93C;font-size:34px'), 560, 360);
+      const bar = put(el('box', '', 'width:900px;height:200px;overflow:hidden;border-radius:26px'), 90, 540);
+      const s1 = el('abs big', '高考 65%', 'left:0;top:0;height:100%;background:#4B7BE5;color:#fff;display:flex;align-items:center;justify-content:center;font-size:56px;border-right:5px solid #1F1A17;box-sizing:border-box;white-space:nowrap;overflow:hidden');
+      const s2 = el('abs big', '面试 35%', 'top:0;height:100%;background:#2E8C8C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:52px;white-space:nowrap;overflow:hidden'); bar.append(s1, s2);
+      const n1 = put(el('abs', '高考投档成绩 · 折算成百分制', 'font-size:34px;font-weight:700'), 90, 790), n2 = put(el('abs', '学校面试 · 百分制评分', 'font-size:34px;font-weight:700;text-align:right'), 590, 840);
+      return (u, L) => { popIn(b1, P(u, 0.2)); popIn(pl, P(u, 0.6)); popIn(b2, P(u, 0.8)); popIn(eq, P(u, 1.6)); popIn(b3, P(u, 1.8));
+        popIn(tg, P(u, L[1])); popIn(full, P(u, L[1] + 0.8)); slideIn(bar, P(u, L[1] + 1.2), 0, 40);
+        const w1 = 890 * 0.65 * ease(P(u, L[2], 0.9)), w2 = 890 * 0.35 * ease(P(u, L[2] + 1.8, 0.9)); s1.style.width = w1 + 'px'; s2.style.left = w1 + 'px'; s2.style.width = w2 + 'px';
+        slideIn(n1, P(u, L[2] + 0.6)); slideIn(n2, P(u, L[2] + 2.2)); };
+    },
+    example(sc) {
+      const st = put(el('stamp', '假设算例', 'transform:rotate(-6deg)'), 330, 40);
+      const card = (k, col, g, i, x) => { const c = put(el('box', `<div style="display:flex;gap:20px;align-items:center;padding:26px"><div style="transform:scale(.62);transform-origin:0 0;width:143px;height:205px">${kid(col, k)}</div>
+        <div style="display:grid;gap:8px;font-size:46px;font-weight:900;white-space:nowrap"><span>小 ${k}</span><span style="font-size:36px">高考 <b class="n" data-v="${g}">0</b></span><span style="font-size:36px">面试 <b class="n" data-v="${i}">0</b></span></div></div>`, 'width:450px'), x, 260); return c; };
+      const A = card('A', '#4B7BE5', 600, 90, 70), B = card('B', '#2E8C8C', 615, 70, 570);
+      return (u, L) => { popIn(st, P(u, 0.1), 'rotate(-6deg)'); slideIn(A, P(u, L[1]), -80, 0); slideIn(B, P(u, L[1] + 0.3), 80, 0);
+        [A, B].forEach((c, k) => c.querySelectorAll('.n').forEach(n => { n.textContent = Math.round(+n.dataset.v * ease(P(u, L[1] + 0.5 + k * 0.3, 1.2))); })); };
+    },
+    calc(sc) {
+      const g = sc.lines[0].segs, rel = x => x - sc.start;
+      const clip = productClip('A-calculator', { top: 90, h: 900, a: 0, label: '考情导学 · 计算器（网页测试版）', crop: () => [520, 1600],
+        anchors: [[8, rel(g[0].start) + 1.3], [16, rel(g[g.length - 1].start) + 0.5]] });
+      const ca = put(el('chip', '小A 83.50', 'background:#4B7BE5;color:#fff'), 90, 1040), cb = put(el('chip', '小B 77.80', 'background:#2E8C8C;color:#fff'), 420, 1040);
+      const note = put(el('abs', '按满分 750 折算 · 示意', 'font-size:28px;font-weight:700;color:#6B6259'), 740, 1060);
+      let sa = null, sb = null;
+      return (u) => { const i = clip.update(u); if (i >= 8 && sa === null) sa = u; if (i >= 16 && sb === null) sb = u; if (i < 8) sa = null; if (i < 16) sb = null;
+        popIn(ca, sa === null ? 0 : P(u, sa)); popIn(cb, sb === null ? 0 : P(u, sb)); note.style.opacity = sa === null ? 0 : 1; };
+    },
+    first(sc) {
+      const st = put(el('pill', '第一样', 'background:#FFC93C;font-size:46px'), 90, 40);
+      const beam = put(el('abs', '', 'width:760px;height:26px;background:#1F1A17;border-radius:13px;transform-origin:50% 50%'), 160, 600);
+      const pivot = put(el('abs', '', 'width:0;height:0;border-left:70px solid transparent;border-right:70px solid transparent;border-bottom:120px solid #1F1A17'), 470, 626);
+      const lw = put(el('chip', '高考', 'background:#4B7BE5;color:#fff;font-size:44px'), 180, 470), rw = put(el('chip', '面试', 'background:#2E8C8C;color:#fff;font-size:44px'), 740, 470);
+      const msg = put(el('box', '<div class="big" style="font-size:54px;padding:24px 30px;text-align:center">高考之外，一块<br><span class="hl">可以靠准备争取</span>的分数</div>'), 90, 820);
+      return (u) => { popIn(st, P(u, 0)); slideIn(beam, P(u, 0.2), 0, 30); slideIn(pivot, P(u, 0.2), 0, 30); popIn(lw, P(u, 0.5)); popIn(rw, P(u, 0.8));
+        const tilt = Math.sin(u * 2.2) * 3; beam.style.transform += ` rotate(${tilt}deg)`; lw.style.transform += ` translateY(${-tilt * 6}px)`; rw.style.transform += ` translateY(${tilt * 6}px)`; slideIn(msg, P(u, 1.2)); };
+    },
+    caveat(sc) {
+      const st = put(el('stamp', '算例 ≠ 录取结果', 'transform:rotate(-5deg)'), 230, 60);
+      const line = put(el('abs', '', 'width:900px;height:12px;background:#EF6A4B;border-radius:6px'), 90, 720);
+      const lab = put(el('pill', '特殊类型招生控制线', 'background:#fff;font-size:36px'), 300, 750);
+      const k = put(el('kid abs', kid('#4B7BE5', 'A')), 120, 380);
+      const warn = put(el('box', '<div style="font-size:44px;font-weight:900;padding:22px 28px">面试没准备好 → <span class="hl">同样会被反超</span></div>'), 90, 930);
+      return (u, L) => { popIn(st, P(u, 0.1), 'rotate(-5deg)'); slideIn(line, P(u, L[1]), -200, 0); popIn(lab, P(u, L[1] + 0.3));
+        const j = clamp((u - L[1] - 0.8) / 1.4); k.style.opacity = u > L[1] ? 1 : 0; k.style.transform = `translate(${j * 640}px,${-Math.sin(j * Math.PI) * 260}px)`;
+        slideIn(warn, P(u, L[1] + 2.2)); };
+    },
+    second(sc) {
+      const st = put(el('pill', '第二样 · 多一次录取机会', 'background:#FFC93C;font-size:44px'), 90, 30);
+      const zp = put(el('chip', '综合评价志愿', 'background:#FFC93C;font-size:42px'), 330, 190);
+      const ok = put(el('chip', '✓ 录取', 'background:#3C9D6B;color:#fff;font-size:42px'), 120, 470), no = put(el('chip', '未录取', 'background:#fff;font-size:42px'), 690, 470);
+      const nx = put(el('chip', '后面的批次照常填报、录取', 'background:#4B7BE5;color:#fff;font-size:40px'), 300, 720);
+      const svg = put(el('abs', `<svg width="1080" height="700" viewBox="0 0 1080 700" aria-hidden="true"><g fill="none" stroke="#1F1A17" stroke-width="10" stroke-linecap="round" stroke-dasharray="1 0">
+        <path id="p1" d="M500 280 C 420 340 300 360 240 450" pathLength="1"/><path id="p2" d="M580 280 C 660 340 760 360 800 450" pathLength="1"/><path id="p3" d="M800 560 C 780 640 700 660 640 700" pathLength="1"/></g></svg>`), 0, 0);
+      const b1 = put(el('chip', '西浦：还能走本科批次', 'background:#fff;font-size:34px;border-color:#2E8C8C'), 90, 900), b2 = put(el('chip', '港中深：不影响后面的志愿和录取', 'background:#fff;font-size:34px;border-color:#D45D7A'), 90, 1010);
+      const paths = svg.querySelectorAll('path');
+      return (u, L) => { popIn(st, P(u, 0)); popIn(zp, P(u, 0.6));
+        paths.forEach((p, i) => { const pr = ease(P(u, [1.0, L[1], L[1] + 0.8][i], 0.8)); p.setAttribute('stroke-dasharray', `${pr} 1`); });
+        popIn(ok, P(u, 1.6)); popIn(no, P(u, L[1] + 0.3)); popIn(nx, P(u, L[1] + 1.2)); slideIn(b1, P(u, L[1] + 1.6), -80, 0); slideIn(b2, P(u, L[2]), -80, 0); };
+    },
+    province(sc) {
+      const js = put(el('chip', '江苏', 'background:#4B7BE5;color:#fff;font-size:50px'), 230, 40), gd = put(el('chip', '广东', 'background:#EF6A4B;color:#fff;font-size:50px'), 640, 40);
+      const vs = put(el('abs big', '≠', 'font-size:90px'), 500, 26);
+      const l1 = sc.lines[1].start - sc.start;
+      const clip = productClip('B-province', { top: 260, h: 760, a: 0.9, label: '考情导学 · 切换省份（网页测试版）', anchors: [[1, l1 - 0.9], [2, l1 - 0.2], [3, l1 + 0.6]],
+        crop: f => /速记/.test(f.note) ? [300, 1210] : [0, 910] });
+      const c1 = put(el('chip', '江苏 · 65% + 35% · 5 月 10 日截止', 'background:#fff;font-size:34px'), 90, 1060), c2 = put(el('chip', '广东 · 65% + 30% + 5% · 5 月 20 日截止', 'background:#FFF0E8;font-size:34px'), 90, 1150);
+      return (u, L) => { popIn(js, P(u, 0)); popIn(gd, P(u, 0.3)); popIn(vs, P(u, 0.6)); const i = clip.update(u); slideIn(c1, P(u, L[1] + 0.2), -60, 0); popIn(c2, i >= 3 ? 1 : 0); };
+    },
+    time(sc) {
+      const lab = put(el('pill', '以西浦 2026 年为例', 'background:#fff;font-size:34px'), 90, 40);
+      const axis = put(el('abs', '', 'width:900px;height:14px;background:#1F1A17;border-radius:7px'), 90, 560);
+      const M = [['4 月 20 日', '报名开始', 120, '#FFC93C'], ['5 月 10 / 20 日', '报名截止（苏 / 粤）', 330, '#FFC93C'], ['6 月 7 日起', '高考', 590, '#4B7BE5'], ['6 月 16–18 日', '面试（拟定）', 800, '#2E8C8C']];
+      const ms = M.map(([d, w, x, c], i) => { const g = put(el('abs', `<div style="width:34px;height:34px;border-radius:50%;background:${c};border:6px solid #1F1A17;margin:0 auto"></div>
+        <div style="text-align:center;font-size:32px;font-weight:900;margin-top:16px;white-space:nowrap">${d}</div><div style="text-align:center;font-size:30px;font-weight:700;white-space:nowrap">${w}</div>`, `width:250px;margin-left:-125px`), x + 125 - 125 + 0, 540); g.style.left = (x + 20) + 'px'; return g; });
+      const note = put(el('box', '<div style="font-size:40px;font-weight:900;padding:22px 28px">港中深：入学测试在<span class="hl">高考后、出分前</span></div>'), 90, 860);
+      return (u) => { popIn(lab, P(u, 0)); axis.style.transformOrigin = '0 50%'; axis.style.transform = `scaleX(${ease(P(u, 0.2, 1.2))})`;
+        ms.forEach((m, i) => slideIn(m, P(u, 0.6 + i * 0.7), 0, -40)); slideIn(note, P(u, 3.6)); };
+    },
+    interview(sc) {
+      const q = put(el('box', `<div style="padding:34px 40px;display:grid;gap:14px"><div style="font-size:30px;font-weight:700;color:#6B6259">西浦 2026 江苏简章 · 面试</div>
+        <div class="big" style="font-size:52px">“评估考生的英语水平、综合素养及综合能力，不考查专业知识。”</div></div>`), 90, 60);
+      const st = put(el('stamp', '不考专业知识', 'transform:rotate(-6deg)'), 560, 470);
+      const o = put(el('chip', '观点', 'background:#4B7BE5;color:#fff;font-size:48px'), 120, 760), by = put(el('abs big', 'because', 'font-size:48px;color:#EF6A4B'), 410, 772), r = put(el('chip', '理由', 'background:#2E8C8C;color:#fff;font-size:48px'), 700, 760);
+      return (u, L) => { slideIn(q, P(u, 0)); popIn(st, P(u, L[0] + 3.2), 'rotate(-6deg)'); popIn(o, P(u, L[1])); popIn(by, P(u, L[1] + 0.6)); popIn(r, P(u, L[1] + 1.1)); };
+    },
+    drill(sc) {
+      const L0 = sc.lines[0], rel = x => x - sc.start;
+      const clip = productClip('C-drill', { top: 70, h: 960, a: 0, dt: 0.045, label: '5 分钟练习 · 观点加理由（网页测试版）', crop: f => /练习题/.test(f.note) ? [120, 1272] : [180, 1332],
+        anchors: [[35, rel(L0.start) + 1.9], [76, rel(L0.end) - 0.1]] });
+      const st = put(el('stamp', '练习提示 · 不是评分 · 不预测录取', 'font-size:40px;transform:rotate(-3deg)'), 140, 1070);
+      return (u) => { const i = clip.update(u); popIn(st, i >= 76 ? 1 : 0, 'rotate(-3deg)'); };
+    },
+    end(sc) {
+      const a = put(el('chip', '+1 次评价', 'background:#FFC93C;font-size:56px'), 110, 60), b = put(el('chip', '+1 次录取机会', 'background:#FFC93C;font-size:56px'), 500, 60);
+      const cost = put(el('pill', '代价：门槛 · 时间 · 准备', 'background:#fff;font-size:42px'), 200, 230);
+      const items = ['在哪个省（看对应省份简章）', '高考能否稳过控制线', '愿不愿意留时间准备面试'];
+      const rows = items.map((x, i) => put(el('box', `<div style="display:flex;gap:22px;align-items:center;padding:22px 28px;font-size:44px;font-weight:900"><span class="tk" style="width:56px;height:56px;border-radius:14px;border:5px solid #1F1A17;display:grid;place-items:center;color:#fff;font-size:40px">✓</span>${x}</div>`, 'width:900px'), 90, 430 + i * 170));
+      const fin = put(el('abs', '具体规则以当年官方简章为准 · esssouth 整理，与学校无官方合作关系', 'font-size:30px;font-weight:700;color:#6B6259;width:900px;text-align:center'), 90, 1000);
+      return (u, L) => { popIn(a, P(u, 0.2)); popIn(b, P(u, 0.6)); popIn(cost, P(u, 1.4)); rows.forEach((r, i) => { slideIn(r, P(u, L[1] + 0.4 + i * 1.1), 80, 0); r.querySelector('.tk').style.background = u > L[1] + 0.9 + i * 1.1 ? '#3C9D6B' : '#fff'; }); slideIn(fin, P(u, L[1] + 4)); };
+    },
+  };
+
+  /* ---------- render(t) ---------- */
+  let cur = null, upd = null;
+  function footFor(sc, ln) {
+    if (!ln) return '';
+    if (ln.kind === 'product') return '<b>产品画面</b><span>esssouth 网页测试版 · 真实界面录制 · 演示账号与示例数据</span>';
+    if (ln.kind === 'example') return '<b>假设算例</b><span>仅说明权重如何起作用，不代表录取结果</span>';
+    if (ln.kind === 'advice') return '<b>作者建议</b><span>esssouth 整理，与学校无官方合作关系</span>';
+    const srcs = [].concat(sc.src || []).map(k => SOURCES[k][2]);
+    return `<b>官方规定</b><span>依据：${srcs.join('；') || '各校 2026 年官方简章'}</span>`;
+  }
+  function render(time) {
+    const sc = TL.find(s => time >= s.start && time < s.end) || TL[TL.length - 1];
+    if (sc !== cur) { cur = sc; S.innerHTML = ''; upd = BUILD[sc.id](sc); }
+    const u = time - sc.start, L = sc.lines.map(l => l.start - sc.start);
+    upd(u, L);
+    const ln = sc.lines.find(l => time >= l.start && time < l.end + GAP) || sc.lines.filter(l => time >= l.start).pop();
+    const seg = ln && ln.segs.find(s => time >= s.start && time < s.end + GAP * 0.9);
+    const cap = $('cap'); const html = seg ? rich(seg.text) : '';
+    if (cap.dataset.h !== html) { cap.dataset.h = html; cap.innerHTML = `<div>${html}</div>`; }
+    cap.style.opacity = html ? 1 : 0;
+    $('foot').innerHTML = footFor(sc, ln || sc.lines[0]);
+    S.style.opacity = Math.min(1, ease(P(u, 0, 0.25)), 1 - ease(P(u, sc.end - sc.start - 0.25, 0.25)));
+  }
+  window.__video = { TL, TOTAL, render, srt: () => TL.flatMap(s => s.lines.flatMap(l => l.segs.map(g => ({ start: g.start, end: g.end, text: plain(g.text) })))),
+    lines: () => TL.flatMap(s => s.lines.map(l => ({ id: l.id, scene: s.id, kind: l.kind, start: +l.start.toFixed(3), end: +l.end.toFixed(3), text: plain(l.t) }))) };
+
+  /* preview controls */
+  const q = new URLSearchParams(location.search); if (q.get('export') === '1') document.body.classList.add('export');
+  const fit = () => { if (document.body.classList.contains('export')) return; const s = Math.min((innerHeight - 70) / 1920, (innerWidth - 24) / 1080); $('stage').style.transform = `scale(${s})`; $('vp').style.width = 1080 * s + 'px'; $('vp').style.height = 1920 * s + 'px'; };
+  addEventListener('resize', fit); fit();
+  let T = 0, playing = false, last = 0;
+  const draw = () => { render(T); $('seek').value = T / TOTAL * 1000; $('time').textContent = `${Math.floor(T / 60)}:${String(Math.floor(T % 60)).padStart(2, '0')} / ${Math.floor(TOTAL / 60)}:${String(Math.floor(TOTAL % 60)).padStart(2, '0')}`; };
+  const loop = now => { if (!playing) return; T = Math.min(TOTAL, T + (now - last) / 1000); last = now; draw(); if (T >= TOTAL) { playing = false; $('play').textContent = '播放'; } else requestAnimationFrame(loop); };
+  $('play').onclick = () => { playing = !playing; $('play').textContent = playing ? '暂停' : '播放'; if (playing) { if (T >= TOTAL) T = 0; last = performance.now(); requestAnimationFrame(loop); } };
+  $('seek').oninput = e => { T = e.target.value / 1000 * TOTAL; draw(); };
+  draw();
+})();
+</script>
+</body>
+</html>

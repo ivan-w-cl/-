@@ -1,0 +1,198 @@
+{
+  "note": "每行旁白的起止时间（秒）。录好配音后，把每行音频按行号命名（如 S01L1.wav）放进 voice/，运行 node tools/set-voice.cjs，再运行 node tools/export.cjs 重新对齐。",
+  "total": 119.71,
+  "lines": [
+    {
+      "id": "S01L1",
+      "scene": "hook",
+      "kind": "advice",
+      "start": 0.6,
+      "end": 4.498,
+      "text": "同样准备高考，有的同学还多参加了一场学校面试。"
+    },
+    {
+      "id": "S01L2",
+      "scene": "hook",
+      "kind": "advice",
+      "start": 4.878,
+      "end": 7.082,
+      "text": "这场面试，到底给了他什么？"
+    },
+    {
+      "id": "S02L1",
+      "scene": "define",
+      "kind": "policy",
+      "start": 7.462,
+      "end": 12.377,
+      "text": "综合评价，是在高考成绩之外，把学校自己的考核也算进总成绩。"
+    },
+    {
+      "id": "S02L2",
+      "scene": "define",
+      "kind": "policy",
+      "start": 12.757,
+      "end": 17.333,
+      "text": "以西浦 2026 年江苏的简章为例，综合成绩满分 100 分："
+    },
+    {
+      "id": "S02L3",
+      "scene": "define",
+      "kind": "policy",
+      "start": 17.713,
+      "end": 22.459,
+      "text": "高考投档成绩折算成百分制，占 65%；学校面试，占 35%。"
+    },
+    {
+      "id": "S03L1",
+      "scene": "example",
+      "kind": "example",
+      "start": 22.839,
+      "end": 24.873,
+      "text": "用一个假设的例子算一算。"
+    },
+    {
+      "id": "S03L2",
+      "scene": "example",
+      "kind": "example",
+      "start": 25.253,
+      "end": 30.338,
+      "text": "小 A 高考 600 分、面试 90 分；小 B 高考 615 分、面试 70 分。"
+    },
+    {
+      "id": "S04L1",
+      "scene": "calc",
+      "kind": "product",
+      "start": 30.718,
+      "end": 36.141,
+      "text": "按满分 750 折算，小 A 的综合成绩是 83.50，小 B 是 77.80。"
+    },
+    {
+      "id": "S04L2",
+      "scene": "calc",
+      "kind": "product",
+      "start": 36.521,
+      "end": 39.572,
+      "text": "高考少了 15 分，面试把差距反了过来。"
+    },
+    {
+      "id": "S05L1",
+      "scene": "first",
+      "kind": "advice",
+      "start": 40.752,
+      "end": 46.006,
+      "text": "这是综评多给的第一样东西：高考之外，一块可以靠准备争取的分数。"
+    },
+    {
+      "id": "S06L1",
+      "scene": "caveat",
+      "kind": "example",
+      "start": 46.386,
+      "end": 49.607,
+      "text": "不过，算例只说明权重，不代表录取结果。"
+    },
+    {
+      "id": "S06L2",
+      "scene": "caveat",
+      "kind": "policy",
+      "start": 49.987,
+      "end": 55.58,
+      "text": "投档成绩还要先达到特殊类型招生控制线；面试没准备好，同样会被反超。"
+    },
+    {
+      "id": "S07L1",
+      "scene": "second",
+      "kind": "policy",
+      "start": 55.96,
+      "end": 58.502,
+      "text": "第二样东西，是多一次录取机会。"
+    },
+    {
+      "id": "S07L2",
+      "scene": "second",
+      "kind": "policy",
+      "start": 58.882,
+      "end": 62.272,
+      "text": "西浦写明，没被综评录取，还能走本科批次；"
+    },
+    {
+      "id": "S07L3",
+      "scene": "second",
+      "kind": "policy",
+      "start": 62.652,
+      "end": 65.873,
+      "text": "港中深也写明，不影响后面的志愿和录取。"
+    },
+    {
+      "id": "S08L1",
+      "scene": "province",
+      "kind": "policy",
+      "start": 66.253,
+      "end": 68.795,
+      "text": "但换一个省，办法可能就不一样。"
+    },
+    {
+      "id": "S08L2",
+      "scene": "province",
+      "kind": "product",
+      "start": 69.175,
+      "end": 75.107,
+      "text": "在广东，西浦是高考 65%、面试 30%、学考 5%，报名截止是 5 月 20 日。"
+    },
+    {
+      "id": "S08L3",
+      "scene": "province",
+      "kind": "advice",
+      "start": 75.487,
+      "end": 78.199,
+      "text": "所以先确认哪个省、哪一年的简章。"
+    },
+    {
+      "id": "S09L1",
+      "scene": "time",
+      "kind": "policy",
+      "start": 78.579,
+      "end": 83.833,
+      "text": "多一次机会，也多一段安排：四五月报名，高考结束后不久就是面试。"
+    },
+    {
+      "id": "S10L1",
+      "scene": "interview",
+      "kind": "policy",
+      "start": 84.213,
+      "end": 89.976,
+      "text": "面试看什么？简章写的是：英语水平、综合素养和综合能力，不考专业知识。"
+    },
+    {
+      "id": "S10L2",
+      "scene": "interview",
+      "kind": "advice",
+      "start": 90.356,
+      "end": 94.593,
+      "text": "落到练习上，就是能用英语把观点和理由连起来说清楚。"
+    },
+    {
+      "id": "S11L1",
+      "scene": "drill",
+      "kind": "product",
+      "start": 94.973,
+      "end": 99.888,
+      "text": "只写观点，提示会指出缺理由；补上 because，再看一遍。"
+    },
+    {
+      "id": "S12L1",
+      "scene": "end",
+      "kind": "advice",
+      "start": 103.268,
+      "end": 109.54,
+      "text": "综评多给的，是一次额外的评价和一次额外的录取机会；代价是门槛、时间和准备。"
+    },
+    {
+      "id": "S12L2",
+      "scene": "end",
+      "kind": "advice",
+      "start": 109.92,
+      "end": 116.53,
+      "text": "值不值得报，先看三件事：在哪个省，高考能否稳过控制线，愿不愿意留时间准备面试。"
+    }
+  ]
+}

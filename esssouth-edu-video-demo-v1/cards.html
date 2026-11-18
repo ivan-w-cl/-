@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>综评图文卡片</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&display=swap">
+<style>
+/* 1080×1440 cover + summary cards, same graphic language as the video. ?card=0 is the cover, 1–6 the summaries. */
+:root{--cream:#FFF4E0;--ink:#1F1A17;--teal:#2E8C8C;--coral:#EF6A4B;--yellow:#FFC93C;--blue:#4B7BE5;--rose:#D45D7A;--green:#3C9D6B;--muted:#6B6259}
+html,body{margin:0;background:var(--cream)}
+body{font-family:"Noto Sans SC","WenQuanYi Zen Hei",sans-serif;color:var(--ink)}
+.card{position:relative;width:1080px;height:1440px;box-sizing:border-box;padding:90px 80px 70px;display:flex;flex-direction:column;gap:34px;background:var(--cream);background-image:radial-gradient(rgba(31,26,23,.07) 3px,transparent 3.5px);background-size:46px 46px;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center}
+.tag{background:var(--yellow);border:4px solid var(--ink);border-radius:16px;padding:6px 18px;font-weight:900;font-size:32px;box-shadow:5px 5px 0 var(--ink)}
+.no{font-weight:900;font-size:32px;color:var(--muted)}
+h1{margin:0;font-size:84px;font-weight:900;line-height:1.15}
+h1 em,.hl{font-style:normal;color:var(--coral)}
+.box{background:#fff;border:5px solid var(--ink);border-radius:30px;box-shadow:10px 10px 0 var(--ink);padding:30px 36px;display:flex;flex-direction:column;gap:14px}
+.box b{font-size:44px}
+.box p{margin:0;font-size:36px;line-height:1.45;font-weight:500}
+.chip{display:inline-flex;border:4px solid var(--ink);border-radius:20px;padding:10px 22px;font-size:40px;font-weight:900;box-shadow:6px 6px 0 var(--ink);background:#fff;white-space:nowrap}
+.row{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.bar{display:flex;height:150px;border:5px solid var(--ink);border-radius:26px;overflow:hidden;box-shadow:10px 10px 0 var(--ink)}
+.bar span{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:48px;white-space:nowrap}
+.foot{margin-top:auto;font-size:26px;font-weight:700;color:var(--muted);line-height:1.5}
+.stamp{align-self:flex-start;border:7px solid var(--coral);color:var(--coral);border-radius:22px;padding:8px 24px;font-size:46px;font-weight:900;transform:rotate(-3deg);background:#fff}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.big{font-size:110px;font-weight:900;line-height:1}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const KID = (c, l) => `<svg width="200" height="290" viewBox="0 0 230 330" aria-hidden="true"><g stroke="#1F1A17" stroke-width="7" stroke-linejoin="round"><rect x="35" y="150" width="160" height="170" rx="60" fill="${c}"/><circle cx="115" cy="95" r="70" fill="#F6CFA8"/><path d="M45 85 Q115 0 185 85 Q150 55 115 62 Q80 55 45 85Z" fill="#2F2722"/><circle cx="92" cy="105" r="7" fill="#1F1A17" stroke="none"/><circle cx="138" cy="105" r="7" fill="#1F1A17" stroke="none"/><path d="M98 130 Q115 142 132 130" fill="none" stroke-width="6" stroke-linecap="round"/></g><text x="115" y="262" text-anchor="middle" font-size="48" font-weight="900" fill="#fff" font-family="Noto Sans SC, sans-serif">${l}</text></svg>`;
+const FOOT = '依据：西交利物浦大学、香港中文大学（深圳）2026 年江苏、广东综合评价招生简章（官网）。esssouth 整理，与学校无官方合作关系；以学校当年官方发布为准。';
+const head = n => `<div class="top"><span class="tag">升学科普 · 综评</span><span class="no">${n}/6</span></div>`;
+const CARDS = [
+  `<div class="top"><span class="tag">升学科普</span><span class="no">江苏 · 广东考生</span></div>
+   <h1 style="font-size:104px;margin-top:40px">综评到底<br>多给了考生<br><em>什么机会？</em></h1>
+   <div class="row" style="gap:24px;margin-top:10px"><span class="chip" style="background:#4B7BE5;color:#fff">高考</span><span class="big">+</span><span class="chip" style="background:#FFC93C">学校面试</span></div>
+   <div class="row" style="justify-content:space-between;align-items:flex-end;margin-top:auto"><div style="display:flex;gap:20px">${KID('#4B7BE5', 'A')}${KID('#2E8C8C', 'B')}</div><span class="big" style="font-size:300px;color:#EF6A4B;-webkit-text-stroke:8px #1F1A17">?</span></div>
+   <div class="foot" style="margin-top:0">以西浦、港中深 2026 年官方简章为例</div>`,
+  `${head(1)}<h1>综评 = 高考 + <em>学校考核</em></h1>
+   <div class="box"><b>西浦 · 2026 · 江苏</b><p>综合成绩满分 100 分</p></div>
+   <div class="bar"><span style="width:65%;background:#4B7BE5;border-right:5px solid #1F1A17">高考 65%</span><span style="width:35%;background:#2E8C8C">面试 35%</span></div>
+   <div class="box"><p>高考投档成绩<b style="font-size:36px">折算成百分制</b>后占 65%；学校面试按百分制评分，占 35%。</p></div>
+   <div class="foot">${FOOT}</div>`,
+  `${head(2)}<h1>假设算例：<br>高考少 15 分，<em>面试反超</em></h1>
+   <div class="two"><div class="box"><b>小 A</b><p>高考 600 · 面试 90</p><span class="big" style="font-size:90px;color:#4B7BE5">83.50</span></div><div class="box"><b>小 B</b><p>高考 615 · 面试 70</p><span class="big" style="font-size:90px;color:#2E8C8C">77.80</span></div></div>
+   <div class="box"><p>按西浦江苏办法、高考满分 750 折算的示意：600÷750×100×65% + 90×35% = 83.50。</p></div>
+   <span class="stamp">假设算例 · 不代表录取结果</span><div class="foot">${FOOT}</div>`,
+  `${head(3)}<h1>不是捷径：<br>先过<em>门槛</em></h1>
+   <div class="box"><b>① 高考投档成绩</b><p>不低于相应的特殊类型招生控制线</p></div>
+   <div class="box"><b>② 学考合格性考试</b><p>西浦：江苏 7 门全部合格；广东 6 门均达 B 及以上</p></div>
+   <div class="box"><b>③ 面试同样算分</b><p>面试没准备好，同样会被反超</p></div><div class="foot">${FOOT}</div>`,
+  `${head(4)}<h1>多一次<br><em>录取机会</em></h1>
+   <div class="box" style="border-color:#2E8C8C"><b>西浦</b><p>未被综评录取，也可填报西浦本科批次志愿，符合投档条件就参加本科批次录取。</p></div>
+   <div class="box" style="border-color:#D45D7A"><b>港中深</b><p>江苏：未被录取，不影响其高考志愿的填报及录取。<br>广东：未被录取，不影响其后续本科批次的录取。</p></div>
+   <div class="foot">${FOOT}</div>`,
+  `${head(5)}<h1>换一个省，<br><em>规则就会变</em></h1>
+   <div class="two"><div class="box"><b style="color:#4B7BE5">西浦 · 江苏</b><p>高考 65% + 面试 35%</p><p>报名截止 5 月 10 日 12:00</p><p>学考 7 门合格</p></div><div class="box"><b style="color:#EF6A4B">西浦 · 广东</b><p>高考 65% + 面试 30% + 学考 5%</p><p>报名截止 5 月 20 日 12:00</p><p>学考 6 门 B 及以上</p></div></div>
+   <span class="stamp">先确认：哪个省、哪一年</span><div class="foot">${FOOT}</div>`,
+  `${head(6)}<h1>值不值得报，<br>先看<em>三件事</em></h1>
+   <div class="box"><b>✓ 在哪个省</b><p>只看对应省份、对应年份的简章</p></div>
+   <div class="box"><b>✓ 高考能否稳过控制线</b><p>综评建立在高考基础上</p></div>
+   <div class="box"><b>✓ 愿不愿意留时间准备面试</b><p>以西浦 2026 年为例：4 月报名，6 月 16–18 日面试（拟定）</p></div>
+   <div class="foot">注意：上悉 4+0 是学院组织的项目入学考试，不属于综合评价。<br>${FOOT}</div>`,
+];
+const n = +(new URLSearchParams(location.search).get('card') || 0);
+document.getElementById('root').innerHTML = `<div class="card">${CARDS[n]}</div>`;
+</script>
+</body>
+</html>
