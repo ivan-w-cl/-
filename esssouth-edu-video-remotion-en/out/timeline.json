@@ -1,0 +1,181 @@
+{
+  "total": 125.767,
+  "lines": [
+    {
+      "id": "S01L1",
+      "scene": "hook",
+      "kind": "advice",
+      "start": 0.6,
+      "end": 5.784,
+      "text": "Two students are preparing for the gaokao. One of them also sits a university interview."
+    },
+    {
+      "id": "S01L2",
+      "scene": "hook",
+      "kind": "advice",
+      "start": 6.104,
+      "end": 8.6,
+      "text": "So what does that interview actually give them?"
+    },
+    {
+      "id": "S02L1",
+      "scene": "define",
+      "kind": "policy",
+      "start": 8.92,
+      "end": 14.509,
+      "text": "This is comprehensive evaluation: the university adds its own assessment to the gaokao score."
+    },
+    {
+      "id": "S02L2",
+      "scene": "define",
+      "kind": "policy",
+      "start": 14.829,
+      "end": 21.421,
+      "text": "Take XJTLU's 2026 rules for Jiangsu: the composite score is out of 100."
+    },
+    {
+      "id": "S02L3",
+      "scene": "define",
+      "kind": "policy",
+      "start": 21.741,
+      "end": 28.824,
+      "text": "The gaokao, scaled to 100 points, counts for 65 percent. The interview counts for 35 percent."
+    },
+    {
+      "id": "S03L1",
+      "scene": "example",
+      "kind": "example",
+      "start": 29.144,
+      "end": 36.504,
+      "text": "Student A scores 600 on the gaokao and 90 in the interview. Student B scores 615 and 70."
+    },
+    {
+      "id": "S04L1",
+      "scene": "calc",
+      "kind": "product",
+      "start": 36.824,
+      "end": 44.397,
+      "text": "Scaling the gaokao from 750, A gets 83.50, and B gets 77.80."
+    },
+    {
+      "id": "S04L2",
+      "scene": "calc",
+      "kind": "product",
+      "start": 44.717,
+      "end": 48.813,
+      "text": "Fifteen points behind on the gaokao, and the interview turns it around."
+    },
+    {
+      "id": "S05L1",
+      "scene": "first",
+      "kind": "advice",
+      "start": 49.933,
+      "end": 54.456,
+      "text": "That's the first thing it adds: points you can earn by preparing, beyond the gaokao."
+    },
+    {
+      "id": "S06L1",
+      "scene": "caveat",
+      "kind": "policy",
+      "start": 54.776,
+      "end": 59.661,
+      "text": "You must still clear the special-category control line, and a weak interview can pull you back."
+    },
+    {
+      "id": "S07L1",
+      "scene": "second",
+      "kind": "policy",
+      "start": 59.981,
+      "end": 62.52,
+      "text": "The second thing is one more chance to be admitted."
+    },
+    {
+      "id": "S07L2",
+      "scene": "second",
+      "kind": "policy",
+      "start": 62.84,
+      "end": 67.277,
+      "text": "XJTLU says you can still apply in the regular undergraduate round."
+    },
+    {
+      "id": "S07L3",
+      "scene": "second",
+      "kind": "policy",
+      "start": 67.597,
+      "end": 70.776,
+      "text": "CUHK-Shenzhen says it doesn't affect your later applications."
+    },
+    {
+      "id": "S08L1",
+      "scene": "province",
+      "kind": "policy",
+      "start": 71.096,
+      "end": 74.189,
+      "text": "But move to another province, and the rules can change."
+    },
+    {
+      "id": "S08L2",
+      "scene": "province",
+      "kind": "product",
+      "start": 74.509,
+      "end": 81.741,
+      "text": "In Guangdong, it's 65 percent gaokao, 30 interview and 5 academic tests, with a May 20th deadline."
+    },
+    {
+      "id": "S08L3",
+      "scene": "province",
+      "kind": "advice",
+      "start": 82.061,
+      "end": 85.581,
+      "text": "So always check which province and which year the rules are for."
+    },
+    {
+      "id": "S09L1",
+      "scene": "time",
+      "kind": "policy",
+      "start": 85.901,
+      "end": 90.829,
+      "text": "It takes time, too: apply in April or May, and interview soon after the gaokao."
+    },
+    {
+      "id": "S10L1",
+      "scene": "interview",
+      "kind": "policy",
+      "start": 91.149,
+      "end": 97.677,
+      "text": "The interview? The brochure says it assesses English, overall competence and ability, not subject knowledge."
+    },
+    {
+      "id": "S10L2",
+      "scene": "interview",
+      "kind": "advice",
+      "start": 97.997,
+      "end": 101.773,
+      "text": "In practice, that means stating a view and a reason clearly in English."
+    },
+    {
+      "id": "S11L1",
+      "scene": "drill",
+      "kind": "product",
+      "start": 102.093,
+      "end": 107.49,
+      "text": "Write only an opinion, and the feedback flags the missing reason. Add because, and check again."
+    },
+    {
+      "id": "S12L1",
+      "scene": "end",
+      "kind": "advice",
+      "start": 110.41,
+      "end": 116.575,
+      "text": "So it adds one more assessment and one more admission chance, at the cost of thresholds, time and preparation."
+    },
+    {
+      "id": "S12L2",
+      "scene": "end",
+      "kind": "advice",
+      "start": 116.895,
+      "end": 122.847,
+      "text": "Before applying, check three things: your province, whether you'll clear the line, and whether you have time to prepare."
+    }
+  ]
+}

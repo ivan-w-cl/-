@@ -1,0 +1,204 @@
+{
+ "title": "What does comprehensive evaluation actually give you?",
+ "voice": {
+  "engine": "Kokoro v1.0 (open source, Apache-2.0)",
+  "voice": "am_michael",
+  "speed": 1.2,
+  "lang": "en-us"
+ },
+ "sources": {
+  "xj_js": [
+   "Xi'an Jiaotong-Liverpool University 2026 Jiangsu comprehensive evaluation brochure",
+   "https://www.xjtlu.edu.cn/wp-content/uploads/2026/04/bf2775ec98e5c8b14e47a37c5218f575.pdf",
+   "2026 · Jiangsu · XJTLU"
+  ],
+  "xj_gd": [
+   "Xi'an Jiaotong-Liverpool University 2026 Guangdong comprehensive evaluation brochure",
+   "https://www.xjtlu.edu.cn/wp-content/uploads/2026/04/6e0b4d1bfbed86958729f625e16db083.pdf",
+   "2026 · Guangdong · XJTLU"
+  ],
+  "cu_js": [
+   "CUHK-Shenzhen 2026 Jiangsu comprehensive evaluation brochure",
+   "https://admissions.cuhk.edu.cn/article/2380",
+   "2026 · Jiangsu · CUHK-Shenzhen"
+  ],
+  "cu_gd": [
+   "CUHK-Shenzhen 2026 Guangdong comprehensive evaluation brochure",
+   "https://admissions.cuhk.edu.cn/article/2377",
+   "2026 · Guangdong · CUHK-Shenzhen"
+  ]
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "lines": [
+    {
+     "kind": "advice",
+     "t": "Two students are preparing for the gaokao. One of them also sits a [[university interview]]."
+    },
+    {
+     "kind": "advice",
+     "t": "So what does that interview actually give them?"
+    }
+   ]
+  },
+  {
+   "id": "define",
+   "src": [
+    "xj_js"
+   ],
+   "lines": [
+    {
+     "kind": "policy",
+     "t": "This is [[comprehensive evaluation]]: the university adds its own assessment to the gaokao score."
+    },
+    {
+     "kind": "policy",
+     "t": "Take XJTLU's 2026 rules for Jiangsu: the composite score is out of 100."
+    },
+    {
+     "kind": "policy",
+     "t": "The gaokao, scaled to 100 points, counts for [[65 percent]]. The interview counts for [[35 percent]]."
+    }
+   ]
+  },
+  {
+   "id": "example",
+   "lines": [
+    {
+     "kind": "example",
+     "t": "Student A scores 600 on the gaokao and 90 in the interview. Student B scores 615 and 70."
+    }
+   ]
+  },
+  {
+   "id": "calc",
+   "product": "A-calculator",
+   "lines": [
+    {
+     "kind": "product",
+     "t": "Scaling the gaokao from 750, A gets [[83.50]], and B gets [[77.80]]."
+    },
+    {
+     "kind": "product",
+     "t": "Fifteen points behind on the gaokao, and the interview turns it around."
+    }
+   ]
+  },
+  {
+   "id": "first",
+   "lines": [
+    {
+     "kind": "advice",
+     "t": "That's the first thing it adds: [[points you can earn by preparing]], beyond the gaokao."
+    }
+   ]
+  },
+  {
+   "id": "caveat",
+   "src": [
+    "xj_js"
+   ],
+   "lines": [
+    {
+     "kind": "policy",
+     "t": "You must still clear the [[special-category control line]], and a weak interview can pull you back."
+    }
+   ]
+  },
+  {
+   "id": "second",
+   "src": [
+    "xj_js",
+    "cu_js",
+    "cu_gd"
+   ],
+   "lines": [
+    {
+     "kind": "policy",
+     "t": "The second thing is [[one more chance to be admitted]]."
+    },
+    {
+     "kind": "policy",
+     "t": "XJTLU says you can still apply in the regular undergraduate round."
+    },
+    {
+     "kind": "policy",
+     "t": "CUHK-Shenzhen says it [[doesn't affect]] your later applications."
+    }
+   ]
+  },
+  {
+   "id": "province",
+   "product": "B-province",
+   "src": [
+    "xj_gd"
+   ],
+   "lines": [
+    {
+     "kind": "policy",
+     "t": "But move to another province, and the rules can change."
+    },
+    {
+     "kind": "product",
+     "t": "In Guangdong, it's 65 percent gaokao, 30 interview and [[5 academic tests]], with a [[May 20th]] deadline."
+    },
+    {
+     "kind": "advice",
+     "t": "So always check [[which province and which year]] the rules are for."
+    }
+   ]
+  },
+  {
+   "id": "time",
+   "src": [
+    "xj_js"
+   ],
+   "lines": [
+    {
+     "kind": "policy",
+     "t": "It takes time, too: apply in April or May, and interview [[soon after the gaokao]]."
+    }
+   ]
+  },
+  {
+   "id": "interview",
+   "src": [
+    "xj_js"
+   ],
+   "lines": [
+    {
+     "kind": "policy",
+     "t": "The interview? The brochure says it assesses English, overall competence and ability, [[not subject knowledge]]."
+    },
+    {
+     "kind": "advice",
+     "t": "In practice, that means stating [[a view and a reason]] clearly in English."
+    }
+   ]
+  },
+  {
+   "id": "drill",
+   "product": "C-drill",
+   "lines": [
+    {
+     "kind": "product",
+     "t": "Write only an opinion, and the feedback flags the missing reason. Add because, and check again."
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "lines": [
+    {
+     "kind": "advice",
+     "t": "So it adds [[one more assessment]] and [[one more admission chance]], at the cost of thresholds, time and preparation."
+    },
+    {
+     "kind": "advice",
+     "t": "Before applying, check three things: your province, whether you'll clear the line, and whether you have time to prepare."
+    }
+   ]
+  }
+ ]
+}

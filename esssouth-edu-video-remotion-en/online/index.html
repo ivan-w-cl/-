@@ -1,0 +1,84 @@
+<title>Comprehensive Evaluation Explained</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&family=Noto+Sans+SC:wght@500;700&display=swap">
+<style>
+/* Layout: one column — the vertical video with a version switch, then what it covers and how it was made.
+   Same graphic language as the video: cream ground, ink outlines, offset shadows. */
+:root{
+  --bg:#FFF4E0; --paper:#FFFFFF; --ink:#1F1A17; --muted:#6B6259; --accent:#EF6A4B; --yellow:#FFC93C;
+  --font:"Nunito","Noto Sans SC","PingFang SC",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1C1916; --paper:#26221E; --ink:#F3EAD9; --muted:#B9AE9F; --accent:#F58466; --yellow:#E8B735; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1C1916; --paper:#26221E; --ink:#F3EAD9; --muted:#B9AE9F; --accent:#F58466; --yellow:#E8B735; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6}
+main{max-width:980px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:32px}
+h1{margin:0;font-size:clamp(28px,5vw,42px);font-weight:900;line-height:1.15;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+.tag{justify-self:start;display:inline-block;background:var(--yellow);color:#1F1A17;border:3px solid var(--ink);border-radius:12px;padding:2px 12px;font-weight:900;font-size:14px}
+.lead{margin:0;color:var(--muted);max-width:42em}
+.watch{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:28px;align-items:start}
+.player{display:grid;gap:12px}
+video{width:100%;max-width:100%;aspect-ratio:9/16;background:#000;border:4px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink);display:block}
+.seg{display:inline-flex;border:3px solid var(--ink);border-radius:999px;overflow:hidden;background:var(--paper);justify-self:start}
+.seg button{border:0;background:transparent;color:var(--ink);font:inherit;font-weight:800;font-size:14px;padding:8px 16px;cursor:pointer;min-height:40px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.info{display:grid;gap:14px;min-width:0}
+.box{background:var(--paper);border:3px solid var(--ink);border-radius:18px;padding:16px 18px;display:grid;gap:6px}
+.box b{font-size:16px}
+.box p,.box li{margin:0;font-size:14.5px;color:var(--muted)}
+.box ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.foot{font-size:13px;color:var(--muted);border-top:2px dashed var(--muted);padding-top:14px}
+@media (max-width:760px){.watch{grid-template-columns:minmax(0,1fr)}.player{max-width:420px;margin:0 auto;width:100%}}
+</style>
+
+<main>
+  <header style="display:grid;gap:10px">
+    <span class="tag">Admissions explained · English · Remotion</span>
+    <h1>What does comprehensive evaluation <em>actually give you</em>?</h1>
+    <p class="lead">英文配音版 · 竖屏 · 2 分 06 秒。For students and parents in Jiangsu and Guangdong.</p>
+  </header>
+
+  <section class="watch" aria-label="Video">
+    <div class="player">
+      <video id="v" controls playsinline preload="metadata" poster="poster.jpg" src="video-music.mp4"></video>
+      <div class="seg" role="group" aria-label="版本 Version">
+        <button type="button" id="b-music" aria-pressed="true">配音 + 背景音乐</button>
+        <button type="button" id="b-voice" aria-pressed="false">只有配音</button>
+      </div>
+    </div>
+    <div class="info">
+      <div class="box"><b>What it covers</b>
+        <ul>
+          <li>First: points you can earn by preparing (XJTLU Jiangsu: gaokao 65% + interview 35%)</li>
+          <li>Hypothetical example: 15 points behind on the gaokao, the interview turns it around (83.50 vs 77.80)</li>
+          <li>Not a shortcut: clear the special-category control line first</li>
+          <li>Second: one more admission chance; later rounds are not affected</li>
+          <li>Rules change by province; three things to check before applying</li>
+        </ul>
+      </div>
+      <div class="box"><b>配音</b>
+        <p>Kokoro v1.0 开源语音模型（Apache-2.0），男声 am_michael，1.2 倍语速。每行单独生成，画面和字幕按实际时长对齐。</p>
+      </div>
+      <div class="box"><b>产品画面与依据</b>
+        <p>三处真实产品画面（计算器、切换省份、5 分钟练习）均为网页测试版中文界面的真实截图。政策依据：西浦、港中深 2026 年江苏、广东官方简章。</p>
+      </div>
+    </div>
+  </section>
+
+  <p class="foot">By esssouth, not affiliated with the universities. The example is hypothetical and does not predict admission. Always check the university's official brochure for that year.</p>
+</main>
+
+<script>
+(() => {
+  const v = document.getElementById('v'), bm = document.getElementById('b-music'), bv = document.getElementById('b-voice');
+  function pick(music) {
+    const t = v.currentTime || 0, playing = !v.paused;
+    v.src = music ? 'video-music.mp4' : 'video-voice.mp4';
+    bm.setAttribute('aria-pressed', String(music)); bv.setAttribute('aria-pressed', String(!music));
+    v.addEventListener('loadedmetadata', () => { v.currentTime = t; if (playing) v.play().catch(() => {}); }, { once: true });
+  }
+  bm.addEventListener('click', () => pick(true));
+  bv.addEventListener('click', () => pick(false));
+})();
+</script>
