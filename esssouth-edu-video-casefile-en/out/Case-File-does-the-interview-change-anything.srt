@@ -1,0 +1,151 @@
+1
+00:00:00,600 --> 00:00:01,411
+A parent asks:
+
+2
+00:00:01,411 --> 00:00:05,408
+my kid is sitting an extra university interview on top of the gaokao.
+
+3
+00:00:05,408 --> 00:00:07,320
+Does it actually change anything?
+
+4
+00:00:07,640 --> 00:00:08,941
+Let's open the file.
+
+5
+00:00:09,261 --> 00:00:13,247
+Exhibit A: XJTLU's 2026 brochure for Jiangsu.
+
+6
+00:00:13,247 --> 00:00:16,258
+The composite score is out of 100.
+
+7
+00:00:16,578 --> 00:00:20,225
+The gaokao, scaled to 100, counts for 65 percent.
+
+8
+00:00:20,225 --> 00:00:23,575
+The university's own interview counts for 35.
+
+9
+00:00:23,895 --> 00:00:27,537
+Now a hypothetical reconstruction. Student A:
+
+10
+00:00:27,537 --> 00:00:32,556
+600 on the gaokao, 90 in the interview. Student B: 615 and 70.
+
+11
+00:00:32,876 --> 00:00:39,788
+Scaled from 750, A comes to 83.50. B comes to 77.80.
+
+12
+00:00:40,108 --> 00:00:43,479
+B led by fifteen gaokao points, and still finishes behind.
+
+13
+00:00:44,599 --> 00:00:47,564
+Finding one: the interview is points you can prepare for.
+
+14
+00:00:47,884 --> 00:00:48,600
+Two caveats.
+
+15
+00:00:48,600 --> 00:00:51,703
+This example predicts nothing about real admissions.
+
+16
+00:00:52,023 --> 00:00:55,906
+And your gaokao score must first clear the special-category control line.
+
+17
+00:00:56,226 --> 00:00:59,928
+Exhibits B and C. XJTLU: if you're not admitted this way,
+
+18
+00:00:59,928 --> 00:01:03,501
+you can still apply in the regular undergraduate round.
+
+19
+00:01:03,821 --> 00:01:06,786
+CUHK-Shenzhen: it doesn't affect your later applications.
+
+20
+00:01:07,106 --> 00:01:09,581
+Finding two: one more chance to be admitted.
+
+21
+00:01:09,901 --> 00:01:11,202
+But check the jurisdiction.
+
+22
+00:01:11,522 --> 00:01:15,512
+In Guangdong, the same university uses 65 for the gaokao,
+
+23
+00:01:15,512 --> 00:01:18,523
+30 for the interview, 5 for academic tests,
+
+24
+00:01:18,523 --> 00:01:20,973
+and the deadline moves to May 20th.
+
+25
+00:01:21,293 --> 00:01:23,384
+Always check the province and the year.
+
+26
+00:01:23,704 --> 00:01:26,738
+It also costs time: applications in April and May,
+
+27
+00:01:26,738 --> 00:01:29,165
+and the interview soon after the gaokao.
+
+28
+00:01:29,485 --> 00:01:32,479
+Exhibit D, on the interview: it assesses English,
+
+29
+00:01:32,479 --> 00:01:35,778
+overall competence and ability, not subject knowledge.
+
+30
+00:01:36,098 --> 00:01:38,472
+So the skill to practise is simple: a view,
+
+31
+00:01:38,472 --> 00:01:39,853
+and the reason behind it.
+
+32
+00:01:40,173 --> 00:01:41,418
+Write only an opinion,
+
+33
+00:01:41,418 --> 00:01:44,531
+and the feedback flags the missing reason. Add because,
+
+34
+00:01:44,531 --> 00:01:45,720
+and that flag clears.
+
+35
+00:01:48,440 --> 00:01:51,161
+Verdict: one more assessment, and one more chance,
+
+36
+00:01:51,161 --> 00:01:53,773
+paid for with a threshold, time and preparation.
+
+37
+00:01:54,093 --> 00:01:56,938
+Before you apply, check three things: your province,
+
+38
+00:01:56,938 --> 00:02:00,002
+the control line, and your time to prepare. Case closed.

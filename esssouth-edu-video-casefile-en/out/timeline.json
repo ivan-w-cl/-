@@ -1,0 +1,181 @@
+{
+  "total": 123.322,
+  "lines": [
+    {
+      "id": "S01L1",
+      "scene": "open",
+      "kind": "advice",
+      "start": 0.6,
+      "end": 7.32,
+      "text": "A parent asks: my kid is sitting an extra university interview on top of the gaokao. Does it actually change anything?"
+    },
+    {
+      "id": "S01L2",
+      "scene": "open",
+      "kind": "advice",
+      "start": 7.64,
+      "end": 8.941,
+      "text": "Let's open the file."
+    },
+    {
+      "id": "S02L1",
+      "scene": "exhibitA",
+      "kind": "policy",
+      "start": 9.261,
+      "end": 16.258,
+      "text": "Exhibit A: XJTLU's 2026 brochure for Jiangsu. The composite score is out of 100."
+    },
+    {
+      "id": "S02L2",
+      "scene": "exhibitA",
+      "kind": "policy",
+      "start": 16.578,
+      "end": 23.575,
+      "text": "The gaokao, scaled to 100, counts for 65 percent. The university's own interview counts for 35."
+    },
+    {
+      "id": "S03L1",
+      "scene": "recon",
+      "kind": "example",
+      "start": 23.895,
+      "end": 32.556,
+      "text": "Now a hypothetical reconstruction. Student A: 600 on the gaokao, 90 in the interview. Student B: 615 and 70."
+    },
+    {
+      "id": "S04L1",
+      "scene": "tool1",
+      "kind": "product",
+      "start": 32.876,
+      "end": 39.788,
+      "text": "Scaled from 750, A comes to 83.50. B comes to 77.80."
+    },
+    {
+      "id": "S04L2",
+      "scene": "tool1",
+      "kind": "product",
+      "start": 40.108,
+      "end": 43.479,
+      "text": "B led by fifteen gaokao points, and still finishes behind."
+    },
+    {
+      "id": "S05L1",
+      "scene": "finding1",
+      "kind": "advice",
+      "start": 44.599,
+      "end": 47.564,
+      "text": "Finding one: the interview is points you can prepare for."
+    },
+    {
+      "id": "S06L1",
+      "scene": "caveats",
+      "kind": "example",
+      "start": 47.884,
+      "end": 51.703,
+      "text": "Two caveats. This example predicts nothing about real admissions."
+    },
+    {
+      "id": "S06L2",
+      "scene": "caveats",
+      "kind": "policy",
+      "start": 52.023,
+      "end": 55.906,
+      "text": "And your gaokao score must first clear the special-category control line."
+    },
+    {
+      "id": "S07L1",
+      "scene": "exhibitBC",
+      "kind": "policy",
+      "start": 56.226,
+      "end": 63.501,
+      "text": "Exhibits B and C. XJTLU: if you're not admitted this way, you can still apply in the regular undergraduate round."
+    },
+    {
+      "id": "S07L2",
+      "scene": "exhibitBC",
+      "kind": "policy",
+      "start": 63.821,
+      "end": 66.786,
+      "text": "CUHK-Shenzhen: it doesn't affect your later applications."
+    },
+    {
+      "id": "S07L3",
+      "scene": "exhibitBC",
+      "kind": "advice",
+      "start": 67.106,
+      "end": 69.581,
+      "text": "Finding two: one more chance to be admitted."
+    },
+    {
+      "id": "S08L1",
+      "scene": "jurisdiction",
+      "kind": "policy",
+      "start": 69.901,
+      "end": 71.202,
+      "text": "But check the jurisdiction."
+    },
+    {
+      "id": "S08L2",
+      "scene": "jurisdiction",
+      "kind": "product",
+      "start": 71.522,
+      "end": 80.973,
+      "text": "In Guangdong, the same university uses 65 for the gaokao, 30 for the interview, 5 for academic tests, and the deadline moves to May 20th."
+    },
+    {
+      "id": "S08L3",
+      "scene": "jurisdiction",
+      "kind": "advice",
+      "start": 81.293,
+      "end": 83.384,
+      "text": "Always check the province and the year."
+    },
+    {
+      "id": "S09L1",
+      "scene": "calendar",
+      "kind": "policy",
+      "start": 83.704,
+      "end": 89.165,
+      "text": "It also costs time: applications in April and May, and the interview soon after the gaokao."
+    },
+    {
+      "id": "S10L1",
+      "scene": "exhibitD",
+      "kind": "policy",
+      "start": 89.485,
+      "end": 95.778,
+      "text": "Exhibit D, on the interview: it assesses English, overall competence and ability, not subject knowledge."
+    },
+    {
+      "id": "S10L2",
+      "scene": "exhibitD",
+      "kind": "advice",
+      "start": 96.098,
+      "end": 99.853,
+      "text": "So the skill to practise is simple: a view, and the reason behind it."
+    },
+    {
+      "id": "S11L1",
+      "scene": "tool2",
+      "kind": "product",
+      "start": 100.173,
+      "end": 105.72,
+      "text": "Write only an opinion, and the feedback flags the missing reason. Add because, and that flag clears."
+    },
+    {
+      "id": "S12L1",
+      "scene": "verdict",
+      "kind": "advice",
+      "start": 108.44,
+      "end": 113.773,
+      "text": "Verdict: one more assessment, and one more chance, paid for with a threshold, time and preparation."
+    },
+    {
+      "id": "S12L2",
+      "scene": "verdict",
+      "kind": "advice",
+      "start": 114.093,
+      "end": 120.002,
+      "text": "Before you apply, check three things: your province, the control line, and your time to prepare. Case closed."
+    }
+  ]
+}
