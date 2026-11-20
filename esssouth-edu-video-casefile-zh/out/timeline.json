@@ -1,0 +1,181 @@
+{
+  "total": 110.929,
+  "lines": [
+    {
+      "id": "S01L1",
+      "scene": "open",
+      "kind": "advice",
+      "start": 0.6,
+      "end": 5.784,
+      "text": "一位家长问：孩子高考之外，还要多参加一场大学面试，这到底有没有用？"
+    },
+    {
+      "id": "S01L2",
+      "scene": "open",
+      "kind": "advice",
+      "start": 6.104,
+      "end": 8.984,
+      "text": "我们把它当成一桩案子，打开卷宗看看。"
+    },
+    {
+      "id": "S02L1",
+      "scene": "exhibitA",
+      "kind": "policy",
+      "start": 9.304,
+      "end": 15.192,
+      "text": "证物甲：西浦 2026 年江苏的综合评价招生简章。综合成绩，满分 100 分。"
+    },
+    {
+      "id": "S02L2",
+      "scene": "exhibitA",
+      "kind": "policy",
+      "start": 15.512,
+      "end": 21.379,
+      "text": "高考投档成绩折算成百分制，占 65%；学校自己的面试，占 35%。"
+    },
+    {
+      "id": "S03L1",
+      "scene": "recon",
+      "kind": "example",
+      "start": 21.699,
+      "end": 29.038,
+      "text": "现在用一个假设来还原案情。学生甲，高考 600 分、面试 90 分；学生乙，高考 615 分、面试 70 分。"
+    },
+    {
+      "id": "S04L1",
+      "scene": "tool1",
+      "kind": "product",
+      "start": 29.358,
+      "end": 34.862,
+      "text": "按满分 750 折算，甲的综合成绩是 83.50，乙是 77.80。"
+    },
+    {
+      "id": "S04L2",
+      "scene": "tool1",
+      "kind": "product",
+      "start": 35.182,
+      "end": 38.211,
+      "text": "乙的高考多了 15 分，最后却排在了后面。"
+    },
+    {
+      "id": "S05L1",
+      "scene": "finding1",
+      "kind": "advice",
+      "start": 39.331,
+      "end": 42.595,
+      "text": "结论一：面试，是一块可以靠准备拿到的分数。"
+    },
+    {
+      "id": "S06L1",
+      "scene": "caveats",
+      "kind": "example",
+      "start": 42.915,
+      "end": 46.414,
+      "text": "两点提醒。这个算例，不预测任何人的录取结果。"
+    },
+    {
+      "id": "S06L2",
+      "scene": "caveats",
+      "kind": "policy",
+      "start": 46.734,
+      "end": 50.787,
+      "text": "而且，高考投档成绩要先达到特殊类型招生控制线。"
+    },
+    {
+      "id": "S07L1",
+      "scene": "exhibitBC",
+      "kind": "policy",
+      "start": 51.107,
+      "end": 55.736,
+      "text": "证物乙和丙。西浦写明：没被综评录取，还能填报本科批次志愿。"
+    },
+    {
+      "id": "S07L2",
+      "scene": "exhibitBC",
+      "kind": "policy",
+      "start": 56.056,
+      "end": 59.875,
+      "text": "港中深也写明：没被录取，不影响后面的志愿和录取。"
+    },
+    {
+      "id": "S07L3",
+      "scene": "exhibitBC",
+      "kind": "advice",
+      "start": 60.195,
+      "end": 62.2,
+      "text": "结论二：多了一次录取机会。"
+    },
+    {
+      "id": "S08L1",
+      "scene": "jurisdiction",
+      "kind": "policy",
+      "start": 62.52,
+      "end": 64.291,
+      "text": "但是，要先看清管辖地。"
+    },
+    {
+      "id": "S08L2",
+      "scene": "jurisdiction",
+      "kind": "product",
+      "start": 64.611,
+      "end": 72.483,
+      "text": "同一所西浦，在广东是高考 65%、面试 30%、学考 5%，报名截止也推到了 5 月 20 日。"
+    },
+    {
+      "id": "S08L3",
+      "scene": "jurisdiction",
+      "kind": "advice",
+      "start": 72.803,
+      "end": 75.47,
+      "text": "所以，先确认是哪个省、哪一年的简章。"
+    },
+    {
+      "id": "S09L1",
+      "scene": "calendar",
+      "kind": "policy",
+      "start": 75.79,
+      "end": 79.758,
+      "text": "它还要花时间：四五月报名，高考结束后不久就是面试。"
+    },
+    {
+      "id": "S10L1",
+      "scene": "exhibitD",
+      "kind": "policy",
+      "start": 80.078,
+      "end": 85.049,
+      "text": "证物丁，关于面试：评估英语水平、综合素养和综合能力，不考专业知识。"
+    },
+    {
+      "id": "S10L2",
+      "scene": "exhibitD",
+      "kind": "advice",
+      "start": 85.369,
+      "end": 88.718,
+      "text": "所以要练的，就是用英语把观点和理由说清楚。"
+    },
+    {
+      "id": "S11L1",
+      "scene": "tool2",
+      "kind": "product",
+      "start": 89.038,
+      "end": 94.777,
+      "text": "只写观点，反馈会提示缺了理由；补上 because，再看一次，提示就消失了。"
+    },
+    {
+      "id": "S12L1",
+      "scene": "verdict",
+      "kind": "advice",
+      "start": 97.497,
+      "end": 101.87,
+      "text": "结论：多了一次评价，多了一次机会；代价是门槛、时间和准备。"
+    },
+    {
+      "id": "S12L2",
+      "scene": "verdict",
+      "kind": "advice",
+      "start": 102.19,
+      "end": 107.609,
+      "text": "报名之前先查三件事：你在哪个省，能不能过控制线，有没有时间准备。结案。"
+    }
+  ]
+}
