@@ -1,0 +1,108 @@
+{
+ "name": "A-calculator",
+ "url": "repo:esssouth-admissions-explainer-v1/index.html#xjtlu",
+ "viewport": [
+  390,
+  844
+ ],
+ "scale": 2.769230769230769,
+ "frames": [
+  {
+   "file": "000.png",
+   "note": "计算器 · 默认值",
+   "tap": null
+  },
+  {
+   "file": "001.png",
+   "note": "小A 高考 · 点选",
+   "tap": {
+    "x": 195,
+    "y": 322.5
+   }
+  },
+  {
+   "file": "002.png",
+   "note": "小A 高考 · 输入",
+   "tap": null
+  },
+  {
+   "file": "003.png",
+   "note": "小A 高考 · 输入",
+   "tap": null
+  },
+  {
+   "file": "004.png",
+   "note": "小A 高考 · 输入",
+   "tap": null
+  },
+  {
+   "file": "005.png",
+   "note": "小A 面试 · 点选",
+   "tap": {
+    "x": 195,
+    "y": 406.890625
+   }
+  },
+  {
+   "file": "006.png",
+   "note": "小A 面试 · 输入",
+   "tap": null
+  },
+  {
+   "file": "007.png",
+   "note": "小A 面试 · 输入",
+   "tap": null
+  },
+  {
+   "file": "008.png",
+   "note": "小A 结果",
+   "tap": null
+  },
+  {
+   "file": "009.png",
+   "note": "小B 高考 · 点选",
+   "tap": {
+    "x": 195,
+    "y": 322.5
+   }
+  },
+  {
+   "file": "010.png",
+   "note": "小B 高考 · 输入",
+   "tap": null
+  },
+  {
+   "file": "011.png",
+   "note": "小B 高考 · 输入",
+   "tap": null
+  },
+  {
+   "file": "012.png",
+   "note": "小B 高考 · 输入",
+   "tap": null
+  },
+  {
+   "file": "013.png",
+   "note": "小B 面试 · 点选",
+   "tap": {
+    "x": 195,
+    "y": 406.890625
+   }
+  },
+  {
+   "file": "014.png",
+   "note": "小B 面试 · 输入",
+   "tap": null
+  },
+  {
+   "file": "015.png",
+   "note": "小B 面试 · 输入",
+   "tap": null
+  },
+  {
+   "file": "016.png",
+   "note": "小B 结果",
+   "tap": null
+  }
+ ]
+}

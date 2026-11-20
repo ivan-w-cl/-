@@ -1,0 +1,46 @@
+{
+ "title": "Case file: does the extra interview actually change anything?",
+ "voice": { "engine": "Kokoro v1.0 (open source, Apache-2.0)", "voice": "am_michael", "speed": 1.25, "lang": "en-us" },
+ "sources": {
+  "xj_js": ["Xi'an Jiaotong-Liverpool University 2026 Jiangsu comprehensive evaluation brochure", "https://www.xjtlu.edu.cn/wp-content/uploads/2026/04/bf2775ec98e5c8b14e47a37c5218f575.pdf", "XJTLU · 2026 · Jiangsu"],
+  "xj_gd": ["Xi'an Jiaotong-Liverpool University 2026 Guangdong comprehensive evaluation brochure", "https://www.xjtlu.edu.cn/wp-content/uploads/2026/04/6e0b4d1bfbed86958729f625e16db083.pdf", "XJTLU · 2026 · Guangdong"],
+  "cu_js": ["CUHK-Shenzhen 2026 Jiangsu comprehensive evaluation brochure", "https://admissions.cuhk.edu.cn/article/2380", "CUHK-Shenzhen · 2026 · Jiangsu"],
+  "cu_gd": ["CUHK-Shenzhen 2026 Guangdong comprehensive evaluation brochure", "https://admissions.cuhk.edu.cn/article/2377", "CUHK-Shenzhen · 2026 · Guangdong"]
+ },
+ "scenes": [
+  { "id": "open", "lines": [
+   { "kind": "advice", "t": "A parent asks: my kid is sitting an extra university interview on top of the gaokao. [[Does it actually change anything?]]" },
+   { "kind": "advice", "t": "Let's open the file." } ] },
+  { "id": "exhibitA", "src": ["xj_js"], "lines": [
+   { "kind": "policy", "t": "Exhibit A: XJTLU's 2026 brochure for Jiangsu. The composite score is out of 100." },
+   { "kind": "policy", "t": "The gaokao, scaled to 100, counts for [[65 percent]]. The university's own interview counts for [[35]]." } ] },
+  { "id": "recon", "lines": [
+   { "kind": "example", "t": "Now a [[hypothetical]] reconstruction. Student A: 600 on the gaokao, 90 in the interview. Student B: 615 and 70." } ] },
+  { "id": "tool1", "product": "A-calculator", "lines": [
+   { "kind": "product", "t": "Scaled from 750, A comes to [[83.50]]. B comes to [[77.80]]." },
+   { "kind": "product", "t": "B led by fifteen gaokao points, and still finishes behind." } ] },
+  { "id": "finding1", "lines": [
+   { "kind": "advice", "t": "Finding one: the interview is [[points you can prepare for]]." } ] },
+  { "id": "caveats", "src": ["xj_js"], "lines": [
+   { "kind": "example", "t": "Two caveats. This example [[predicts nothing]] about real admissions." },
+   { "kind": "policy", "t": "And your gaokao score must first clear the [[special-category control line]]." } ] },
+  { "id": "exhibitBC", "src": ["xj_js", "cu_js", "cu_gd"], "lines": [
+   { "kind": "policy", "t": "Exhibits B and C. XJTLU: if you're not admitted this way, you can still apply in the [[regular undergraduate round]]." },
+   { "kind": "policy", "t": "CUHK-Shenzhen: it [[doesn't affect]] your later applications." },
+   { "kind": "advice", "t": "Finding two: [[one more chance]] to be admitted." } ] },
+  { "id": "jurisdiction", "product": "B-province", "src": ["xj_gd"], "lines": [
+   { "kind": "policy", "t": "But check the jurisdiction." },
+   { "kind": "product", "t": "In Guangdong, the same university uses 65 for the gaokao, 30 for the interview, [[5 for academic tests]], and the deadline moves to [[May 20th]]." },
+   { "kind": "advice", "t": "Always check [[the province and the year]]." } ] },
+  { "id": "calendar", "src": ["xj_js"], "lines": [
+   { "kind": "policy", "t": "It also costs time: applications in April and May, and the interview [[soon after the gaokao]]." } ] },
+  { "id": "exhibitD", "src": ["xj_js"], "lines": [
+   { "kind": "policy", "t": "Exhibit D, on the interview: it assesses English, overall competence and ability, [[not subject knowledge]]." },
+   { "kind": "advice", "t": "So the skill to practise is simple: [[a view, and the reason behind it]]." } ] },
+  { "id": "tool2", "product": "C-drill", "lines": [
+   { "kind": "product", "t": "Write only an opinion, and the feedback flags the missing reason. Add because, and that flag clears." } ] },
+  { "id": "verdict", "lines": [
+   { "kind": "advice", "t": "Verdict: [[one more assessment]], and [[one more chance]], paid for with a threshold, time and preparation." },
+   { "kind": "advice", "t": "Before you apply, check three things: your province, the control line, and your time to prepare. Case closed." } ] }
+ ]
+}

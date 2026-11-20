@@ -1,0 +1,70 @@
+<title>Case File: The Extra Interview</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Special+Elite&family=Nunito:wght@600;800&family=Noto+Sans+SC:wght@500;700&display=swap">
+<style>
+/* Layout: the video pinned on a corkboard column, notes beside it; stacks on phones. Mirrors the video's case-file look. */
+:root{
+  --bg:#B4895C; --paper:#FBF7EE; --ink:#1E1B18; --muted:#6E6253; --red:#C8362B; --manila:#E9C987; --hi:rgba(255,224,58,.85);
+  --display:"Archivo Black","Noto Sans SC",sans-serif; --type:"Special Elite",monospace; --body:"Nunito","Noto Sans SC",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#3A2A1C; --paper:#2A251F; --ink:#F2E9DA; --muted:#BFB2A0; --red:#E2685B; --manila:#8A6E3C; --hi:rgba(210,180,40,.55); color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#3A2A1C; --paper:#2A251F; --ink:#F2E9DA; --muted:#BFB2A0; --red:#E2685B; --manila:#8A6E3C; --hi:rgba(210,180,40,.55); color-scheme:dark}
+body{background:var(--bg);background-image:radial-gradient(rgba(60,35,12,.25) 2px,transparent 2.6px);background-size:23px 19px;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+main{max-width:1000px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:26px}
+.head{display:flex;flex-wrap:wrap;align-items:stretch}
+.head .tab{background:var(--manila);color:var(--ink);font-family:var(--type);padding:10px 16px;border-radius:10px 0 0 10px;display:grid;place-items:center}
+.head h1{margin:0;background:var(--paper);padding:10px 18px;border-radius:0 10px 10px 0;font-family:var(--display);font-weight:400;font-size:clamp(22px,4vw,34px);line-height:1.15;flex:1 1 300px;min-width:0;text-wrap:balance}
+.watch{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:26px;align-items:start}
+.player{display:grid;gap:12px}
+video{width:100%;max-width:100%;aspect-ratio:9/16;background:#000;border:10px solid #fff;border-radius:4px;box-shadow:0 18px 30px rgba(0,0,0,.35);display:block;transform:rotate(-1deg)}
+.seg{display:inline-flex;background:var(--paper);border-radius:999px;padding:3px;justify-self:start;box-shadow:0 6px 12px rgba(0,0,0,.2)}
+.seg button{border:0;background:transparent;color:var(--ink);font:inherit;font-weight:800;font-size:14px;padding:8px 16px;border-radius:999px;cursor:pointer;min-height:40px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.seg button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.notes{display:grid;gap:16px;min-width:0}
+.sheet{background:var(--paper);padding:18px 20px;border-radius:4px;box-shadow:0 12px 22px rgba(0,0,0,.28);display:grid;gap:6px}
+.sheet:nth-child(odd){transform:rotate(.6deg)} .sheet:nth-child(even){transform:rotate(-.5deg)}
+.label{font-family:var(--type);color:var(--red);letter-spacing:.06em;font-size:14px}
+.sheet p,.sheet li{margin:0;font-size:14.5px}
+.sheet ul{margin:0;padding-left:18px;display:grid;gap:4px}
+mark{background:var(--hi);color:inherit;padding:0 3px}
+.foot{font-size:13px;color:#FFF4E0;text-shadow:0 1px 2px rgba(0,0,0,.4)}
+@media (max-width:760px){.watch{grid-template-columns:minmax(0,1fr)}.player{max-width:400px;margin:0 auto;width:100%}}
+@media (prefers-reduced-motion:reduce){video,.sheet{transform:none!important}}
+</style>
+
+<main>
+  <div class="head"><span class="tab">CASE FILE</span><h1>Does the extra interview actually change anything?</h1></div>
+  <section class="watch" aria-label="Video">
+    <div class="player">
+      <video id="v" controls playsinline preload="metadata" poster="poster.jpg" src="video-music.mp4"></video>
+      <div class="seg" role="group" aria-label="版本 Version">
+        <button type="button" id="b-music" aria-pressed="true">配音 + 音乐</button>
+        <button type="button" id="b-voice" aria-pressed="false">只有配音</button>
+      </div>
+    </div>
+    <div class="notes">
+      <div class="sheet"><span class="label">THE CASE · 创意</span><p>把家长的问题当成一桩案子：官方简章是证物，用荧光笔划出原文；假设算例在白板上还原；真实产品画面是钉在板上的查证照片；最后给出结论，盖章结案。</p></div>
+      <div class="sheet"><span class="label">FINDINGS · 结论</span>
+        <ul><li><mark>Finding 1</mark>：面试是可以靠准备拿到的分数（西浦江苏：高考 65% + 面试 35%；假设算例 83.50 对 77.80）</li>
+        <li><mark>Finding 2</mark>：多一次录取机会，没被综评录取不影响后续批次</li>
+        <li>注意：要先过特殊类型招生控制线；规则因省份、年份而不同</li></ul></div>
+      <div class="sheet"><span class="label">PRODUCTION · 制作</span><p>Remotion 制作，竖屏 1080×1920，约 2 分 03 秒。英文配音用开源 Kokoro 模型的沉稳美式男声 am_michael（Apache-2.0）。背景音乐为原创。三处产品画面是网页测试版的真实截图。</p></div>
+    </div>
+  </section>
+  <p class="foot">By esssouth, not affiliated with the universities. Sources: XJTLU and CUHK-Shenzhen 2026 Jiangsu and Guangdong brochures (translated excerpts). The example is hypothetical and predicts nothing about admission.</p>
+</main>
+
+<script>
+(() => {
+  const v = document.getElementById('v'), bm = document.getElementById('b-music'), bv = document.getElementById('b-voice');
+  function pick(music) {
+    const t = v.currentTime || 0, playing = !v.paused;
+    v.src = music ? 'video-music.mp4' : 'video-voice.mp4';
+    bm.setAttribute('aria-pressed', String(music)); bv.setAttribute('aria-pressed', String(!music));
+    v.addEventListener('loadedmetadata', () => { v.currentTime = t; if (playing) v.play().catch(() => {}); }, { once: true });
+  }
+  bm.addEventListener('click', () => pick(true));
+  bv.addEventListener('click', () => pick(false));
+})();
+</script>

@@ -1,0 +1,22 @@
+{
+  "name": "esssouth-edu-video-casefile-en",
+  "private": true,
+  "description": "Case File: an English admissions explainer made with Remotion",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "node tools/render.mjs"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.539",
+    "@remotion/cli": "4.0.539",
+    "@remotion/fonts": "4.0.539",
+    "@remotion/renderer": "4.0.539",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "typescript": "5.6.3"
+  }
+}
