@@ -1,0 +1,60 @@
+<title>中文版配音试听</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@900&display=swap">
+<style>
+/* Layout: corkboard page; voice cards in a wrapping grid, then a two-column old/new script comparison that stacks on phones. */
+:root{--bg:#B4895C;--paper:#FBF7EE;--ink:#1E1B18;--muted:#6E6253;--red:#C8362B;--manila:#E9C987;--hi:rgba(255,224,58,.8);--line:#E2D8C6;--on:#FFF4E0;
+--sans:"Noto Sans SC",system-ui,sans-serif;--seal:"Noto Serif SC","Songti SC",serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#3A2A1C;--paper:#2A251F;--ink:#F2E9DA;--muted:#BFB2A0;--red:#E2685B;--manila:#8A6E3C;--hi:rgba(210,180,40,.5);--line:#4A4034;--on:#F2E9DA;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#3A2A1C;--paper:#2A251F;--ink:#F2E9DA;--muted:#BFB2A0;--red:#E2685B;--manila:#8A6E3C;--hi:rgba(210,180,40,.5);--line:#4A4034;--on:#F2E9DA;color-scheme:dark}
+body{background:var(--bg);background-image:radial-gradient(rgba(60,35,12,.25) 2px,transparent 2.6px);background-size:23px 19px;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65}
+main{max-width:1040px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:22px}
+.head{display:flex;flex-wrap:wrap}
+.tab{background:var(--manila);font-family:var(--seal);font-weight:900;padding:10px 16px;border-radius:10px 0 0 10px;display:grid;place-items:center;letter-spacing:.1em}
+h1{margin:0;background:var(--paper);padding:10px 18px;border-radius:0 10px 10px 0;font-size:clamp(22px,4vw,32px);font-weight:900;line-height:1.2;flex:1 1 280px;min-width:0;text-wrap:balance}
+.sheet{background:var(--paper);border-radius:4px;box-shadow:0 12px 22px rgba(0,0,0,.28);padding:20px 22px;display:grid;gap:12px;min-width:0}
+h2{margin:0;font-family:var(--seal);font-weight:900;font-size:22px;color:var(--red);letter-spacing:.06em}
+.sheet>p{margin:0;max-width:68ch}
+.voices{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.voice{margin:0;border:2px solid var(--line);border-radius:8px;padding:14px;display:grid;gap:8px;align-content:start}
+.voice.cur{border-color:var(--red)}
+.voice figcaption{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.voice code{font-size:15px;font-weight:700}
+.g{font-size:12px;font-weight:700;background:var(--ink);color:var(--paper);padding:1px 8px;border-radius:999px}
+.now{font-size:12px;font-weight:700;color:var(--red);border:1.5px solid var(--red);padding:0 7px;border-radius:999px}
+.voice p{margin:0;font-size:14px;color:var(--muted)}
+.voice p b{color:var(--ink)}
+audio{width:100%;max-width:100%}
+.cols,.row{display:grid;grid-template-columns:110px minmax(0,1fr) minmax(0,1fr);gap:16px}
+.cols{font-weight:700;font-size:13px;color:var(--muted);letter-spacing:.06em;border-bottom:2px solid var(--ink);padding-bottom:6px}
+.row{border-bottom:1px dashed var(--line);padding-block:10px}
+.row p{margin:0 0 4px}
+.sn{font-weight:700;font-size:14px;display:grid;align-content:start}
+.sn b{font-family:var(--seal);font-size:20px;color:var(--red)}
+.old{color:var(--muted);font-size:14.5px}
+.new{font-size:15.5px}
+mark{background:var(--hi);color:inherit;padding:0 2px}
+ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.foot{font-size:13px;color:var(--on);text-shadow:0 1px 2px rgba(0,0,0,.4);margin:0}
+@media (max-width:640px){.cols{display:none}.row{grid-template-columns:minmax(0,1fr);gap:6px}.sn{display:flex;gap:8px;align-items:baseline}.old::before{content:"现在：";font-weight:700}.new::before{content:"改写：";font-weight:700;color:var(--red)}}
+</style>
+<main>
+  <div class="head"><span class="tab">案件档案</span><h1>中文版：选配音，看改写后的文案</h1></div>
+  <section class="sheet" aria-labelledby="h-v">
+    <h2 id="h-v">一、选一个音色</h2>
+    <p>开源 Kokoro 模型共有 8 种中文音色。每段试听读的是同样两句新文案，语速都是原速。听完告诉我音色名字就行，比如“用 zm_yunxi”。也可以要求整体快一点或慢一点。</p>
+    <div class="voices"><figure class="voice cur"><figcaption><span class="g">男声</span><code>zm_yunyang</code><span class="now">当前</span></figcaption><p>沉稳，音高约 120 Hz。<b>现在成片用的就是它</b>，和英文版 am_michael 音高一样</p><audio controls preload="none" src="zm_yunyang.mp3"></audio></figure><figure class="voice"><figcaption><span class="g">男声</span><code>zm_yunjian</code></figcaption><p>偏低，音高约 132 Hz，和 yunyang 接近，咬字略有不同</p><audio controls preload="none" src="zm_yunjian.mp3"></audio></figure><figure class="voice"><figcaption><span class="g">男声</span><code>zm_yunxi</code></figcaption><p>年轻一些，音高约 170 Hz，听起来更轻快</p><audio controls preload="none" src="zm_yunxi.mp3"></audio></figure><figure class="voice"><figcaption><span class="g">男声</span><code>zm_yunxia</code></figcaption><p>音高约 296 Hz，偏少年音，面向家长时可能显得不够稳</p><audio controls preload="none" src="zm_yunxia.mp3"></audio></figure><figure class="voice"><figcaption><span class="g">女声</span><code>zf_xiaobei</code></figcaption><p>音高约 242 Hz</p><audio controls preload="none" src="zf_xiaobei.mp3"></audio></figure><figure class="voice"><figcaption><span class="g">女声</span><code>zf_xiaoni</code></figcaption><p>音高约 235 Hz</p><audio controls preload="none" src="zf_xiaoni.mp3"></audio></figure><figure class="voice"><figcaption><span class="g">女声</span><code>zf_xiaoxiao</code></figcaption><p>音高约 231 Hz</p><audio controls preload="none" src="zf_xiaoxiao.mp3"></audio></figure><figure class="voice"><figcaption><span class="g">女声</span><code>zf_xiaoyi</code></figcaption><p>音高约 301 Hz，偏高</p><audio controls preload="none" src="zf_xiaoyi.mp3"></audio></figure></div>
+  </section>
+  <section class="sheet" aria-labelledby="h-c">
+    <h2 id="h-c">二、文案改写（去“AI 味”）</h2>
+    <ul>
+      <li>去掉戏剧化的说法：“当成一桩案子”“证物甲”“结论一”“结案”不再出现在旁白里。画面仍保留案件档案的风格。</li>
+      <li>句子更短、更像人说话：少用分号和“A，B；代价是 C”这种对仗句，多用“也就是说”“那……会不会”这种口头衔接。</li>
+      <li>事实不变：数字、比例、日期和简章引用都和原来一样。</li>
+      <li>字数从 595 字变为 598 字，时长基本不变。</li>
+    </ul>
+    <div class="cols"><span>段落</span><span>现在</span><span>改写后</span></div>
+    <div class="row"><div class="sn"><b>01</b>开场</div><div class="old"><p>一位家长问：孩子高考之外，还要多参加一场大学面试，<mark>这到底有没有用？</mark></p><p>我们把它当成一桩案子，打开卷宗看看。</p></div><div class="new"><p>常有家长问：高考之外，孩子还要去参加一场大学面试，<mark>这到底有没有用？</mark></p><p>我们拿简章一条条对一下。</p></div></div><div class="row"><div class="sn"><b>02</b>计分方式</div><div class="old"><p>证物甲：西浦 2026 年江苏的综合评价招生简章。综合成绩，满分 100 分。</p><p>高考投档成绩折算成百分制，占 <mark>65%</mark>；学校自己的面试，占 <mark>35%</mark>。</p></div><div class="new"><p>先看西浦 2026 年在江苏的综评简章。综合成绩按满分 100 分算。</p><p>高考投档成绩折成百分制，占 <mark>65%</mark>，学校面试占 <mark>35%</mark>。</p></div></div><div class="row"><div class="sn"><b>03</b>假设算例</div><div class="old"><p>现在用一个<mark>假设</mark>来还原案情。学生甲，高考 600 分、面试 90 分；学生乙，高考 615 分、面试 70 分。</p></div><div class="new"><p>举个<mark>假设</mark>的例子。学生甲，高考 600、面试 90；学生乙，高考 615、面试 70。</p></div></div><div class="row"><div class="sn"><b>04</b>计算器演示</div><div class="old"><p>按满分 750 折算，甲的综合成绩是 <mark>83.50</mark>，乙是 <mark>77.80</mark>。</p><p>乙的高考多了 15 分，最后却排在了后面。</p></div><div class="new"><p>高考按满分 750 折算，甲的综合成绩是 <mark>83.50</mark>，乙是 <mark>77.80</mark>。</p><p>乙高考多考了 15 分，最后反而落在后面。</p></div></div><div class="row"><div class="sn"><b>05</b>小结一</div><div class="old"><p>结论一：面试，是一块<mark>可以靠准备拿到的分数</mark>。</p></div><div class="new"><p>也就是说，面试这 35%，<mark>是能靠准备争取的</mark>。</p></div></div><div class="row"><div class="sn"><b>06</b>两点提醒</div><div class="old"><p>两点提醒。这个算例，<mark>不预测</mark>任何人的录取结果。</p><p>而且，高考投档成绩要先达到<mark>特殊类型招生控制线</mark>。</p></div><div class="new"><p>不过这只是个例子，<mark>不代表</mark>谁一定能录取。</p><p>而且前提是，高考投档成绩得先过<mark>特殊类型招生控制线</mark>。</p></div></div><div class="row"><div class="sn"><b>07</b>没录取会不会吃亏</div><div class="old"><p>证物乙和丙。西浦写明：没被综评录取，还能<mark>填报本科批次志愿</mark>。</p><p>港中深也写明：没被录取，<mark>不影响</mark>后面的志愿和录取。</p><p>结论二：多了<mark>一次录取机会</mark>。</p></div><div class="new"><p>那没被录取会不会吃亏？西浦简章写得很清楚：还可以正常<mark>填报本科批次志愿</mark>。</p><p>港中深的简章也写了：<mark>不影响</mark>后面的志愿填报和录取。</p><p>所以综评相当于<mark>多给了一次机会</mark>。</p></div></div><div class="row"><div class="sn"><b>08</b>省份差异</div><div class="old"><p>但是，要先看清管辖地。</p><p>同一所西浦，在广东是高考 65%、面试 30%、<mark>学考 5%</mark>，报名截止也推到了 <mark>5 月 20 日</mark>。</p><p>所以，先确认是<mark>哪个省、哪一年</mark>的简章。</p></div><div class="new"><p>但要注意，每个省的规则不一样。</p><p>同样是西浦，广东是高考 65%、面试 30%、<mark>学考 5%</mark>，报名截止也晚一些，到 <mark>5 月 20 日</mark>。</p><p>看简章之前，先确认是<mark>哪个省、哪一年</mark>的。</p></div></div><div class="row"><div class="sn"><b>09</b>时间安排</div><div class="old"><p>它还要花时间：四五月报名，<mark>高考结束后不久</mark>就是面试。</p></div><div class="new"><p>时间上也要有准备：四五月报名，<mark>高考结束没几天</mark>就要面试。</p></div></div><div class="row"><div class="sn"><b>10</b>面试考什么</div><div class="old"><p>证物丁，关于面试：评估英语水平、综合素养和综合能力，<mark>不考专业知识</mark>。</p><p>所以要练的，就是用英语把<mark>观点和理由</mark>说清楚。</p></div><div class="new"><p>面试考什么？简章写的是英语水平、综合素养和综合能力，<mark>不考专业知识</mark>。</p><p>平时可以多练一件事：用英语说出自己的观点，再<mark>补一句理由</mark>。</p></div></div><div class="row"><div class="sn"><b>11</b>练习演示</div><div class="old"><p>只写观点，反馈会提示缺了理由；补上 because，再看一次，提示就消失了。</p></div><div class="new"><p>比如只写了观点，反馈会提醒你缺理由；加上 because 补一句，提醒就没了。</p></div></div><div class="row"><div class="sn"><b>12</b>总结</div><div class="old"><p>结论：多了<mark>一次评价</mark>，多了<mark>一次机会</mark>；代价是门槛、时间和准备。</p><p>报名之前先查三件事：你在哪个省，能不能过控制线，有没有时间准备。结案。</p></div><div class="new"><p>总结一下：综评让孩子<mark>多一次被评价的机会</mark>，但也有门槛，要花时间准备。</p><p>报名前，先想清楚三件事：你在哪个省，能不能过控制线，有没有时间准备。</p></div></div>
+  </section>
+  <p class="foot">esssouth 整理，与学校无官方合作关系。依据：西交利物浦大学、香港中文大学（深圳）2026 年江苏、广东综合评价招生简章。算例为假设，不预测录取。</p>
+</main>
