@@ -1,0 +1,34 @@
+{
+ "name": "B-province",
+ "url": "repo:esssouth-admissions-explainer-v1/index.html#xjtlu",
+ "viewport": [
+  390,
+  844
+ ],
+ "scale": 2.769230769230769,
+ "frames": [
+  {
+   "file": "000.png",
+   "note": "江苏 · 要点速记",
+   "tap": null
+  },
+  {
+   "file": "001.png",
+   "note": "切到广东前",
+   "tap": {
+    "x": 151,
+    "y": 149.5859375
+   }
+  },
+  {
+   "file": "002.png",
+   "note": "已切到广东",
+   "tap": null
+  },
+  {
+   "file": "003.png",
+   "note": "广东 · 要点速记",
+   "tap": null
+  }
+ ]
+}
